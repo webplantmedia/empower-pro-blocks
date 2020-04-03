@@ -1,11 +1,4 @@
 /**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
- */
-import { registerBlockType } from '@wordpress/blocks';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -24,17 +17,12 @@ const { name } = metadata;
 
 export { metadata, name };
 
-const settings = {
-	title: __( 'Cover 2' ),
+export const settings = {
+	title: __( 'Hero' ),
 	description: __(
 		'Add an image or video with a text overlay — great for headers.'
 	),
 	icon,
-	/**
-	 * Blocks are grouped into categories to help users browse and discover them.
-	 * The categories provided by core are `common`, `embed`, `formatting`, `layout` and `widgets`.
-	 */
-	category: 'layout',
 	supports: {
 		align: true,
 		html: false,
@@ -61,10 +49,3 @@ const settings = {
 	edit,
 	deprecated,
 };
-
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
- */
-registerBlockType( 'leadership-pro-blocks/leadership-pro-blocks', settings );

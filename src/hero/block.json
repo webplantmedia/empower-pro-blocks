@@ -1,6 +1,6 @@
 {
-	"name": "core/cover",
-	"category": "common",
+	"name": "leadership-pro-blocks/hero",
+	"category": "layout",
 	"attributes": {
 		"url": {
 			"type": "string"
