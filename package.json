@@ -15,5 +15,10 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^7.2.0"
+	},
+	"dependencies": {
+		"@wordpress/icons": "^1.2.0",
+		"fast-average-color": "^6.0.2",
+		"tinycolor2": "^1.4.1"
 	}
 }
