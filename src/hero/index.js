@@ -47,5 +47,4 @@ export const settings = {
 	transforms,
 	save,
 	edit,
-	deprecated,
 };

@@ -519,7 +519,7 @@ export default compose( [
 			toggleSelection,
 		};
 	} ),
-	withColors( { overlayColor: 'background-color' } ),
-	withNotices,
-	withInstanceId,
+	// withColors( { overlayColor: 'background-color' } ),
+	// withNotices,
+	// withInstanceId,
 ] )( CoverEdit );
