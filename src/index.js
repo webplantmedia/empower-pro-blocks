@@ -16,7 +16,6 @@ import {
  * Internal dependencies
  */
 import * as hero from './hero';
-import * as group2 from './group2';
 
 /**
  * Function to register an individual block.
@@ -40,5 +39,4 @@ const registerBlock = ( block ) => {
 	// in various contexts — like the inserter and auto-complete components.
 	// Register all remaining core blocks.
 	hero,
-	group2,
 ].forEach( registerBlock );
