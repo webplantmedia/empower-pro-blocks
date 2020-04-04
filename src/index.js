@@ -5,11 +5,6 @@ import '@wordpress/core-data';
 import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	setDefaultBlockName,
-	setFreeformContentHandlerName,
-	setUnregisteredTypeHandlerName,
-	setGroupingBlockName,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 
 /**
