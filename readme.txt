@@ -17,6 +17,14 @@ This is the long description. No limit, and you can use Markdown (as well as in 
 For backwards compatibility, if this section is missing, the full length of the short description will be used, and
 Markdown parsed.
 
+https://make.wordpress.org/core/2020/02/28/new-wordpress-create-block-package-for-block-scaffolding/
+
+https://github.com/WordPress/gutenberg
+
+https://jeffreycarandang.com/create-gutenberg-block-plugin-wp-scripts-postcss-build/
+
+https://github.com/zgordon/gutenberg-course
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
