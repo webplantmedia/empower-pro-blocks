@@ -1,5 +1,5 @@
 === Leadership Pro Blocks ===
-Contributors:      Chris Baldelomar
+Contributors:      Web Plant Media
 Tags:              block
 Requires at least: 5.3.2
 Tested up to:      5.3.2

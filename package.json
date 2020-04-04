@@ -2,7 +2,7 @@
 	"name": "leadership-pro-blocks",
 	"version": "0.1.0",
 	"description": "Custom blocks for Leadership Pro theme.",
-	"author": "Chris Baldelomar",
+	"author": "Web Plant Media",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -15,15 +15,5 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^7.2.0"
-	},
-	"dependencies": {
-		"@wordpress/block-editor": "^3.8.0",
-		"@wordpress/components": "^9.3.0",
-		"@wordpress/compose": "^3.12.0",
-		"@wordpress/core-data": "^2.13.0",
-		"@wordpress/data": "^4.15.0",
-		"@wordpress/icons": "^1.2.0",
-		"fast-average-color": "^6.0.2",
-		"tinycolor2": "^1.4.1"
 	}
 }
