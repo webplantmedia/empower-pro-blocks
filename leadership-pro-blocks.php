@@ -35,7 +35,7 @@ function wpm_lpb_leadership_pro_blocks_block_init() {
 		$script_asset['version']
 	);
 
-	$editor_css = 'editor.css';
+	$editor_css = 'build/editor.css';
 	wp_register_style(
 		'wpm-lpb-leadership-pro-blocks-block-editor',
 		plugins_url( $editor_css, __FILE__ ),
@@ -43,7 +43,7 @@ function wpm_lpb_leadership_pro_blocks_block_init() {
 		filemtime( "$dir/$editor_css" )
 	);
 
-	$style_css = 'style.css';
+	$style_css = 'build/style.css';
 	wp_register_style(
 		'wpm-lpb-leadership-pro-blocks-block',
 		plugins_url( $style_css, __FILE__ ),
