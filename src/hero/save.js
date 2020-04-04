@@ -33,17 +33,13 @@ export default function save( { attributes } ) {
 		hasParallax,
 		overlayColor,
 		url,
-		minHeight: minHeightProp,
-		minHeightUnit,
+		minHeight,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
 		overlayColor
 	);
 	const gradientClass = __experimentalGetGradientClass( gradient );
-	const minHeight = minHeightUnit
-		? `${ minHeightProp }${ minHeightUnit }`
-		: minHeightProp;
 
 	const style =
 		backgroundType === IMAGE_BACKGROUND_TYPE

@@ -6370,7 +6370,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"minHeightUnit\":{\"type\":\"string\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"}}}");
+module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"}}}");
 
 /***/ }),
 
@@ -7270,7 +7270,7 @@ var _block_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_
 var name = _block_json__WEBPACK_IMPORTED_MODULE_4__.name;
 
 var settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Hero'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Cover'),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Add an image or video with a text overlay — great for headers.'),
   icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["cover"],
   supports: {
@@ -7347,13 +7347,11 @@ function save(_ref) {
       hasParallax = attributes.hasParallax,
       overlayColor = attributes.overlayColor,
       url = attributes.url,
-      minHeightProp = attributes.minHeight,
-      minHeightUnit = attributes.minHeightUnit;
+      minHeight = attributes.minHeight;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
 
-  var minHeight = minHeightUnit ? "".concat(minHeightProp).concat(minHeightUnit) : minHeightProp;
   var style = backgroundType === _shared__WEBPACK_IMPORTED_MODULE_4__["IMAGE_BACKGROUND_TYPE"] ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["backgroundImageStyles"])(url) : {};
 
   if (!overlayColorClass) {
@@ -7400,7 +7398,7 @@ function save(_ref) {
 /*!****************************!*\
   !*** ./src/hero/shared.js ***!
   \****************************/
-/*! exports provided: IMAGE_BACKGROUND_TYPE, VIDEO_BACKGROUND_TYPE, COVER_MIN_HEIGHT, backgroundImageStyles, CSS_UNITS, dimRatioToClass, attributesFromMedia */
+/*! exports provided: IMAGE_BACKGROUND_TYPE, VIDEO_BACKGROUND_TYPE, COVER_MIN_HEIGHT, backgroundImageStyles, dimRatioToClass, attributesFromMedia */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7409,7 +7407,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VIDEO_BACKGROUND_TYPE", function() { return VIDEO_BACKGROUND_TYPE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COVER_MIN_HEIGHT", function() { return COVER_MIN_HEIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "backgroundImageStyles", function() { return backgroundImageStyles; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CSS_UNITS", function() { return CSS_UNITS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dimRatioToClass", function() { return dimRatioToClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "attributesFromMedia", function() { return attributesFromMedia; });
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
@@ -7428,27 +7425,6 @@ function backgroundImageStyles(url) {
     backgroundImage: "url(".concat(url, ")")
   } : {};
 }
-var CSS_UNITS = [{
-  value: 'px',
-  label: 'px',
-  default: 430
-}, {
-  value: 'em',
-  label: 'em',
-  default: 20
-}, {
-  value: 'rem',
-  label: 'rem',
-  default: 20
-}, {
-  value: 'vw',
-  label: 'vw',
-  default: 20
-}, {
-  value: 'vh',
-  label: 'vh',
-  default: 50
-}];
 function dimRatioToClass(ratio) {
   return ratio === 0 || ratio === 50 || !ratio ? null : 'has-background-dim-' + 10 * Math.round(ratio / 10);
 }
