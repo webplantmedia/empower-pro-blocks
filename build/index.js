@@ -6845,7 +6845,7 @@ var INNER_BLOCKS_TEMPLATE = [['core/paragraph', {
   align: 'center',
   fontSize: 'large',
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Write title…')
-}]];
+}], ['core/buttons']];
 
 function retrieveFastAverageColor() {
   if (!retrieveFastAverageColor.fastAverageColor) {
@@ -7292,10 +7292,8 @@ var settings = {
       }
     }]
   },
-  transforms: _transforms__WEBPACK_IMPORTED_MODULE_6__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_5__["default"],
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
-  deprecated: _deprecated__WEBPACK_IMPORTED_MODULE_2__["default"]
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"]
 };
 
 /***/ }),
