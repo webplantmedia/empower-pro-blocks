@@ -12,6 +12,7 @@ import {
  */
 import * as hero from './hero';
 import * as cover2 from './cover';
+import * as paragraph2 from './paragraph';
 
 /**
  * Function to register an individual block.
@@ -36,4 +37,5 @@ const registerBlock = ( block ) => {
 	// Register all remaining core blocks.
 	hero,
 	cover2,
+	paragraph2,
 ].forEach( registerBlock );
