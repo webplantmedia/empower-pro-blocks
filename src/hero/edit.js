@@ -254,7 +254,8 @@ function CoverEdit( {
 		hasParallax,
 		minHeight,
 		url,
-		heading,
+		heroHeading,
+		heroText,
 	} = attributes;
 	const {
 		gradientClass,
@@ -509,12 +510,23 @@ function CoverEdit( {
 							tagName="h1"
 							className="hero-heading"
 							placeholder={ __( 'Heading', 'wpm-lpb' ) }
-							onChange={ ( newHeading ) =>
+							onChange={ ( newHeroHeading ) =>
 								setAttributes( {
-									heading: newHeading,
+									heroHeading: newHeroHeading,
 								} )
 							}
-							value={ heading }
+							value={ heroHeading }
+						/>
+						<RichText
+							tagName="p"
+							className="hero-text"
+							placeholder={ __( 'Text', 'wpm-lpb' ) }
+							onChange={ ( newHeroText ) =>
+								setAttributes( {
+									heroText: newHeroText,
+								} )
+							}
+							value={ heroText }
 						/>
 					</div>
 				</div>

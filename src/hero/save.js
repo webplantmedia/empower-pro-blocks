@@ -9,6 +9,7 @@ import classnames from 'classnames';
 import {
 	InnerBlocks,
 	getColorClassName,
+	RichText,
 	__experimentalGetGradientClass,
 } from '@wordpress/block-editor';
 
@@ -34,7 +35,8 @@ export default function save( { attributes } ) {
 		overlayColor,
 		url,
 		minHeight,
-		heading,
+		heroHeading,
+		heroText,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -96,11 +98,18 @@ export default function save( { attributes } ) {
 				/>
 			) }
 			<div className="wp-block-cover__inner-container">
-				{ heading && (
+				{ heroHeading && (
 					<RichText.Content
 						tagName="h1"
 						className="hero-heading"
-						value={ heading }
+						value={ heroHeading }
+					/>
+				) }
+				{ heroText && (
+					<RichText.Content
+						tagName="p"
+						className="hero-text"
+						value={ heroText }
 					/>
 				) }
 			</div>

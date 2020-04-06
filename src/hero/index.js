@@ -18,7 +18,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Cover' ),
+	title: __( 'Hero' ),
 	description: __(
 		'Add an image or video with a text overlay — great for headers.'
 	),

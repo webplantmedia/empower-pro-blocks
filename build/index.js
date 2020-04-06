@@ -6370,7 +6370,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"}}}");
+module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heroHeading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"},\"heroText\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-text\"}}}");
 
 /***/ }),
 
@@ -7027,7 +7027,8 @@ function CoverEdit(_ref3) {
       hasParallax = attributes.hasParallax,
       minHeight = attributes.minHeight,
       url = attributes.url,
-      heading = attributes.heading;
+      heroHeading = attributes.heroHeading,
+      heroText = attributes.heroText;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -7226,12 +7227,22 @@ function CoverEdit(_ref3) {
     tagName: "h1",
     className: "hero-heading",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Heading', 'wpm-lpb'),
-    onChange: function onChange(newHeading) {
+    onChange: function onChange(newHeroHeading) {
       return setAttributes({
-        heading: newHeading
+        heroHeading: newHeroHeading
       });
     },
-    value: heading
+    value: heroHeading
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
+    tagName: "p",
+    className: "hero-text",
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Text', 'wpm-lpb'),
+    onChange: function onChange(newHeroText) {
+      return setAttributes({
+        heroText: newHeroText
+      });
+    },
+    value: heroText
   })))));
 }
 
@@ -7286,7 +7297,7 @@ var _block_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_
 var name = _block_json__WEBPACK_IMPORTED_MODULE_4__.name;
 
 var settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Cover'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Hero'),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Add an image or video with a text overlay — great for headers.'),
   icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["cover"],
   supports: {
@@ -7362,7 +7373,8 @@ function save(_ref) {
       overlayColor = attributes.overlayColor,
       url = attributes.url,
       minHeight = attributes.minHeight,
-      heading = attributes.heading;
+      heroHeading = attributes.heroHeading,
+      heroText = attributes.heroText;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7404,10 +7416,14 @@ function save(_ref) {
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-cover__inner-container"
-  }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText.Content, {
+  }, heroHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
     className: "hero-heading",
-    value: heading
+    value: heroHeading
+  }), heroText && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    tagName: "p",
+    className: "hero-text",
+    value: heroText
   })));
 }
 

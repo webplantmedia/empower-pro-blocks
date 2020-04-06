@@ -38,10 +38,15 @@
 		"customGradient": {
 			"type": "string"
 		},
-		"heading": {
+		"heroHeading": {
 			"type": "array",
 			"source": "children",
 			"selector": ".hero-heading"
+		},
+		"heroText": {
+			"type": "array",
+			"source": "children",
+			"selector": ".hero-text"
 		}
 	}
 }
