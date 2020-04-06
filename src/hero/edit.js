@@ -55,12 +55,37 @@ import {
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
 const INNER_BLOCKS_TEMPLATE = [
 	[
+		'core/heading',
+		{
+			level: 1,
+			placeholder: __( 'Heading...' ),
+		},
+	],
+	[
 		'core/paragraph',
 		{
-			align: 'center',
-			fontSize: 'large',
-			placeholder: __( 'Write title…' ),
+			placeholder: __( 'Paragraph...' ),
 		},
+	],
+	[
+		'core/buttons',
+		{
+			className: 'testing',
+		},
+		[
+			[
+				'core/button',
+				{
+					text: __( 'Link 1' ),
+				},
+			],
+			[
+				'core/button',
+				{
+					text: __( 'Link 2' ),
+				},
+			],
+		],
 	],
 ];
 
@@ -478,7 +503,7 @@ function CoverEdit( {
 						/>
 					) }
 					<div className="wp-block-cover__inner-container">
-						<InnerBlocks template={ INNER_BLOCKS_TEMPLATE } />
+						<InnerBlocks templateLock={true} template={ INNER_BLOCKS_TEMPLATE } />
 					</div>
 				</div>
 			</ResizableCover>

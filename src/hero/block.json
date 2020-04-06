@@ -37,6 +37,11 @@
 		},
 		"customGradient": {
 			"type": "string"
+		},
+		"heading": {
+			"type": "array",
+			"source": "children",
+			"selector": ".hero-heading"
 		}
 	}
 }
