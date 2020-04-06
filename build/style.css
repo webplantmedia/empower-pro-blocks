@@ -1,4 +1,38 @@
 /**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Button states and focus styles
+ */
+/**
+ * Block Toolbar/Formatting Buttons
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
  * Colors
  */
 /**
@@ -53,7 +87,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: z-index(".wp-block-cover.has-background-dim::before"); }
+    z-index: 1; }
   .wp-block-leadership-pro-blocks-hero.has-background-dim:not(.has-background-gradient)::before,
   .wp-block-leadership-pro-blocks-hero .wp-block-cover__gradient-background {
     opacity: 0.5; }
@@ -112,7 +146,7 @@
     display: flex; }
   .wp-block-leadership-pro-blocks-hero .wp-block-cover__inner-container {
     width: calc(100% - 70px);
-    z-index: z-index(".wp-block-cover__inner-container");
+    z-index: 1;
     color: #f8f9f9; }
   .wp-block-leadership-pro-blocks-hero p:not(.has-text-color),
   .wp-block-leadership-pro-blocks-hero h1:not(.has-text-color),
@@ -131,7 +165,7 @@
   transform: translateX(-50%) translateY(-50%);
   width: 100%;
   height: 100%;
-  z-index: z-index(".wp-block-cover__video-background");
+  z-index: 0;
   -o-object-fit: cover;
      object-fit: cover; }
 

@@ -7026,7 +7026,8 @@ function CoverEdit(_ref3) {
       focalPoint = attributes.focalPoint,
       hasParallax = attributes.hasParallax,
       minHeight = attributes.minHeight,
-      url = attributes.url;
+      url = attributes.url,
+      heading = attributes.heading;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -7221,9 +7222,16 @@ function CoverEdit(_ref3) {
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "wp-block-cover__inner-container"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["InnerBlocks"], {
-    templateLock: true,
-    template: INNER_BLOCKS_TEMPLATE
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
+    tagName: "h1",
+    className: "hero-heading",
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Heading', 'wpm-lpb'),
+    onChange: function onChange(newHeading) {
+      return setAttributes({
+        heading: newHeading
+      });
+    },
+    value: heading
   })))));
 }
 
@@ -7353,7 +7361,8 @@ function save(_ref) {
       hasParallax = attributes.hasParallax,
       overlayColor = attributes.overlayColor,
       url = attributes.url,
-      minHeight = attributes.minHeight;
+      minHeight = attributes.minHeight,
+      heading = attributes.heading;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7395,7 +7404,11 @@ function save(_ref) {
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-cover__inner-container"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)));
+  }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText.Content, {
+    tagName: "h1",
+    className: "hero-heading",
+    value: heading
+  })));
 }
 
 /***/ }),

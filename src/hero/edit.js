@@ -24,6 +24,7 @@ import { compose, withInstanceId } from '@wordpress/compose';
 import {
 	BlockControls,
 	BlockIcon,
+	RichText,
 	InnerBlocks,
 	InspectorControls,
 	MediaPlaceholder,
@@ -253,6 +254,7 @@ function CoverEdit( {
 		hasParallax,
 		minHeight,
 		url,
+		heading,
 	} = attributes;
 	const {
 		gradientClass,
@@ -503,7 +505,17 @@ function CoverEdit( {
 						/>
 					) }
 					<div className="wp-block-cover__inner-container">
-						<InnerBlocks templateLock={true} template={ INNER_BLOCKS_TEMPLATE } />
+						<RichText
+							tagName="h1"
+							className="hero-heading"
+							placeholder={ __( 'Heading', 'wpm-lpb' ) }
+							onChange={ ( newHeading ) =>
+								setAttributes( {
+									heading: newHeading,
+								} )
+							}
+							value={ heading }
+						/>
 					</div>
 				</div>
 			</ResizableCover>

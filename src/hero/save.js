@@ -34,6 +34,7 @@ export default function save( { attributes } ) {
 		overlayColor,
 		url,
 		minHeight,
+		heading,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -95,7 +96,13 @@ export default function save( { attributes } ) {
 				/>
 			) }
 			<div className="wp-block-cover__inner-container">
-				<InnerBlocks.Content />
+				{ heading && (
+					<RichText.Content
+						tagName="h1"
+						className="hero-heading"
+						value={ heading }
+					/>
+				) }
 			</div>
 		</div>
 	);
