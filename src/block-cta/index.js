@@ -11,8 +11,8 @@ import CallToAction from './components/cta';
 import deprecated from './deprecated/deprecated';
 
 // Import CSS
-import './styles/style.scss';
-import './styles/editor.scss';
+// import './styles/style.scss';
+// import './styles/editor.scss';
 
 // Components
 const { __ } = wp.i18n;
