@@ -1,26 +1,25 @@
 /**
  * Internal block libraries
  */
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-const {
+import { __ } from '@wordpress/i18n';
+import {
+	Component,
+	CheckboxControl,
+	PanelBody,
+	PanelRow,
+	RadioControl,
+	RangeControl,
+	TextControl,
+	TextareaControl,
+	ToggleControl,
+	SelectControl
+} from '@wordpress/components';
+import {
   InspectorControls,
   ColorPalette,
   PanelColorSettings,
   ContrastChecker
-} = wp.editor;
-
-const {
-  CheckboxControl,
-  PanelBody,
-  PanelRow,
-  RadioControl,
-  RangeControl,
-  TextControl,
-  TextareaControl,
-  ToggleControl,
-  SelectControl
-} = wp.components;
+} from '@wordpress/block-editor';
 
 /**
  * Create an Inspector Controls wrapper Component

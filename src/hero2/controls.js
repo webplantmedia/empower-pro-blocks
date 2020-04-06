@@ -1,13 +1,9 @@
 /**
  * Internal block libraries
  */
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-const {
-    AlignmentToolbar,
-    BlockControls,
-    BlockAlignmentToolbar,
-} = wp.editor;
+import { __ } from '@wordpress/i18n';
+import { Component } from '@wordpress/components';
+import { AlignmentToolbar, BlockControls, BlockAlignmentToolbar } from '@wordpress/block-editor';
 
 
 /**

@@ -6,11 +6,10 @@ import Inspector from "./inspector";
 import Controls from "./controls";
 import icon from "./icon";
 import attributes from "./attributes";
-import "./style.scss";
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { RichText } from '@wordpress/block-editor';
 
 // Note: atts changed from attributes, see below
 function getSettings(atts) {

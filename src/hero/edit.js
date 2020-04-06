@@ -62,9 +62,6 @@ const INNER_BLOCKS_TEMPLATE = [
 			placeholder: __( 'Write title…' ),
 		},
 	],
-	[
-		'core/buttons',
-	],
 ];
 
 function retrieveFastAverageColor() {
