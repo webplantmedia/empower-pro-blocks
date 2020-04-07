@@ -35,17 +35,17 @@ export default function save( { attributes } ) {
 		overlayColor,
 		url,
 		minHeight,
-		heroHeading,
-		heroText,
-		heroButton1Text,
-		heroButton1URL,
-		heroButton1LinkTarget,
-		heroButton2Text,
-		heroButton2URL,
-		heroButton2LinkTarget,
-		heroButton3Text,
-		heroButton3URL,
-		heroButton3LinkTarget,
+		heading,
+		text,
+		button1Text,
+		button1URL,
+		button1LinkTarget,
+		button2Text,
+		button2URL,
+		button2LinkTarget,
+		button3Text,
+		button3URL,
+		button3LinkTarget,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -108,50 +108,50 @@ export default function save( { attributes } ) {
 			) }
 			<div className="wp-block-cover__inner-container">
 				<div className="hero-content">
-					{ heroHeading && (
+					{ heading && (
 						<RichText.Content
 							tagName="h1"
 							className="hero-heading"
-							value={ heroHeading }
+							value={ heading }
 						/>
 					) }
-					{ heroText && (
+					{ text && (
 						<RichText.Content
 							tagName="p"
 							className="hero-text"
-							value={ heroText }
+							value={ text }
 						/>
 					) }
 					<div class="button-wrapper">
-						{ heroButton1Text && (
+						{ button1Text && (
 							<RichText.Content
 								tagName="a"
-								className="wp-block-button__link text"
-								value={ heroButton1Text }
-								href={ heroButton1URL }
-								target={ heroButton1LinkTarget }
+								className="wp-block-button__link button1"
+								value={ button1Text }
+								href={ button1URL }
+								target={ button1LinkTarget }
 							/>
 						) }
 					</div>
 					<div class="button-wrapper">
-						{ heroButton2Text && (
+						{ button2Text && (
 							<RichText.Content
 								tagName="a"
-								className="wp-block-button__link text"
-								value={ heroButton2Text }
-								href={ heroButton2URL }
-								target={ heroButton2LinkTarget }
+								className="wp-block-button__link button2"
+								value={ button2Text }
+								href={ button2URL }
+								target={ button2LinkTarget }
 							/>
 						) }
 					</div>
 					<div class="button-wrapper">
-						{ heroButton3Text && (
+						{ button3Text && (
 							<RichText.Content
 								tagName="a"
-								className="wp-block-button__link text"
-								value={ heroButton3Text }
-								href={ heroButton3URL }
-								target={ heroButton3LinkTarget }
+								className="wp-block-button__link button3"
+								value={ button3Text }
+								href={ button3URL }
+								target={ button3LinkTarget }
 							/>
 						) }
 					</div>

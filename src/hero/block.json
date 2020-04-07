@@ -38,65 +38,65 @@
 		"customGradient": {
 			"type": "string"
 		},
-		"heroHeading": {
+		"heading": {
 			"type": "array",
 			"source": "children",
 			"selector": ".hero-heading"
 		},
-		"heroText": {
+		"text": {
 			"type": "array",
 			"source": "children",
 			"selector": ".hero-text"
 		},
-		"heroButton1Text": {
+		"button1Text": {
 			"type": "string",
 			"source": "html",
-			"selector": "a"
+			"selector": "a.button1"
 		},
-		"heroButton1URL": {
+		"button1URL": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button1",
 			"attribute": "href"
 		},
-		"heroButton1LinkTarget": {
+		"button1LinkTarget": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button1",
 			"attribute": "target"
 		},
-		"heroButton2Text": {
+		"button2Text": {
 			"type": "string",
 			"source": "html",
-			"selector": "a"
+			"selector": "a.button2"
 		},
-		"heroButton2URL": {
+		"button2URL": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button2",
 			"attribute": "href"
 		},
-		"heroButton2LinkTarget": {
+		"button2LinkTarget": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button2",
 			"attribute": "target"
 		},
-		"heroButton3Text": {
+		"button3Text": {
 			"type": "string",
 			"source": "html",
-			"selector": "a"
+			"selector": "a.button3"
 		},
-		"heroButton3URL": {
+		"button3URL": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button3",
 			"attribute": "href"
 		},
-		"heroButton3LinkTarget": {
+		"button3LinkTarget": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a",
+			"selector": "a.button3",
 			"attribute": "target"
 		}
 

@@ -316,17 +316,17 @@ function CoverEdit( {
 		hasParallax,
 		minHeight,
 		url,
-		heroHeading,
-		heroText,
-		heroButton1Text,
-		heroButton1URL,
-		heroButton1LinkTarget,
-		heroButton2Text,
-		heroButton2URL,
-		heroButton2LinkTarget,
-		heroButton3Text,
-		heroButton3URL,
-		heroButton3LinkTarget,
+		heading,
+		text,
+		button1Text,
+		button1URL,
+		button1LinkTarget,
+		button2Text,
+		button2URL,
+		button2LinkTarget,
+		button3Text,
+		button3URL,
+		button3LinkTarget,
 	} = attributes;
 	const {
 		gradientClass,
@@ -593,40 +593,40 @@ function CoverEdit( {
 								tagName="h1"
 								className="hero-heading"
 								placeholder={ __( 'Heading', 'wpm-lpb' ) }
-								onChange={ ( newHeroHeading ) =>
+								onChange={ ( value ) =>
 									setAttributes( {
-										heroHeading: newHeroHeading,
+										heading: value,
 									} )
 								}
-								value={ heroHeading }
+								value={ heading }
 							/>
 							<RichText
 								tagName="p"
 								className="hero-text"
 								placeholder={ __( 'Text', 'wpm-lpb' ) }
-								onChange={ ( newHeroText ) =>
+								onChange={ ( value ) =>
 									setAttributes( {
-										heroText: newHeroText,
+										text: value,
 									} )
 								}
-								value={ heroText }
+								value={ text }
 							/>
 							<div class="button-wrapper">
 								<RichText
 									placeholder={ __( 'Button 1' ) }
-									value={ heroButton1Text }
-									onChange={ ( value ) => setAttributes( { heroButton1Text: value } ) }
+									value={ button1Text }
+									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 									withoutInteractiveFormatting
-									className="wp-block-button__link"
+									className="wp-block-button__link button1"
 								/>
 								<URLPicker
-									url={ heroButton1URL }
+									url={ button1URL }
 									setAttributes={ setAttributes }
 									isSelected={ isSelected }
-									opensInNewTab={ heroButton1LinkTarget === '_blank' }
+									opensInNewTab={ button1LinkTarget === '_blank' }
 									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="heroButton1URL"
-									keyLinkTarget="heroButton1LinkTarget"
+									keyURL="button1URL"
+									keyLinkTarget="button1LinkTarget"
 									toolbarButtonName="link1"
 									toolbarButtonTitle={ __( 'Link 1' ) }
 								/>
@@ -634,19 +634,19 @@ function CoverEdit( {
 							<div class="button-wrapper">
 								<RichText
 									placeholder={ __( 'Button 2' ) }
-									value={ heroButton2Text }
-									onChange={ ( value ) => setAttributes( { heroButton2Text: value } ) }
+									value={ button2Text }
+									onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 									withoutInteractiveFormatting
-									className="wp-block-button__link"
+									className="wp-block-button__link button2"
 								/>
 								<URLPicker
-									url={ heroButton2URL }
+									url={ button2URL }
 									setAttributes={ setAttributes }
 									isSelected={ isSelected }
-									opensInNewTab={ heroButton2LinkTarget === '_blank' }
+									opensInNewTab={ button2LinkTarget === '_blank' }
 									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="heroButton2URL"
-									keyLinkTarget="heroButton2LinkTarget"
+									keyURL="button2URL"
+									keyLinkTarget="button2LinkTarget"
 									toolbarButtonName="link2"
 									toolbarButtonTitle={ __( 'Link 2' ) }
 								/>
@@ -654,19 +654,19 @@ function CoverEdit( {
 							<div class="button-wrapper">
 								<RichText
 									placeholder={ __( 'Button 3' ) }
-									value={ heroButton3Text }
-									onChange={ ( value ) => setAttributes( { heroButton3Text: value } ) }
+									value={ button3Text }
+									onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 									withoutInteractiveFormatting
-									className="wp-block-button__link"
+									className="wp-block-button__link button3"
 								/>
 								<URLPicker
-									url={ heroButton3URL }
+									url={ button3URL }
 									setAttributes={ setAttributes }
 									isSelected={ isSelected }
-									opensInNewTab={ heroButton3LinkTarget === '_blank' }
+									opensInNewTab={ button3LinkTarget === '_blank' }
 									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="heroButton3URL"
-									keyLinkTarget="heroButton3LinkTarget"
+									keyURL="button3URL"
+									keyLinkTarget="button3LinkTarget"
 									toolbarButtonName="link3"
 									toolbarButtonTitle={ __( 'Link 3' ) }
 								/>

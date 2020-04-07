@@ -6370,7 +6370,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heroHeading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"},\"heroText\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-text\"},\"heroButton1Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a\"},\"heroButton1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"href\"},\"heroButton1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"target\"},\"heroButton2Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a\"},\"heroButton2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"href\"},\"heroButton2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"target\"},\"heroButton3Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a\"},\"heroButton3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"href\"},\"heroButton3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a\",\"attribute\":\"target\"}}}");
+module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"}}}");
 
 /***/ }),
 
@@ -6681,17 +6681,17 @@ function CoverEdit(_ref5) {
       hasParallax = attributes.hasParallax,
       minHeight = attributes.minHeight,
       url = attributes.url,
-      heroHeading = attributes.heroHeading,
-      heroText = attributes.heroText,
-      heroButton1Text = attributes.heroButton1Text,
-      heroButton1URL = attributes.heroButton1URL,
-      heroButton1LinkTarget = attributes.heroButton1LinkTarget,
-      heroButton2Text = attributes.heroButton2Text,
-      heroButton2URL = attributes.heroButton2URL,
-      heroButton2LinkTarget = attributes.heroButton2LinkTarget,
-      heroButton3Text = attributes.heroButton3Text,
-      heroButton3URL = attributes.heroButton3URL,
-      heroButton3LinkTarget = attributes.heroButton3LinkTarget;
+      heading = attributes.heading,
+      text = attributes.text,
+      button1Text = attributes.button1Text,
+      button1URL = attributes.button1URL,
+      button1LinkTarget = attributes.button1LinkTarget,
+      button2Text = attributes.button2Text,
+      button2URL = attributes.button2URL,
+      button2LinkTarget = attributes.button2LinkTarget,
+      button3Text = attributes.button3Text,
+      button3URL = attributes.button3URL,
+      button3LinkTarget = attributes.button3LinkTarget;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -6896,86 +6896,86 @@ function CoverEdit(_ref5) {
     tagName: "h1",
     className: "hero-heading",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'wpm-lpb'),
-    onChange: function onChange(newHeroHeading) {
+    onChange: function onChange(value) {
       return setAttributes({
-        heroHeading: newHeroHeading
+        heading: value
       });
     },
-    value: heroHeading
+    value: heading
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "p",
     className: "hero-text",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text', 'wpm-lpb'),
-    onChange: function onChange(newHeroText) {
+    onChange: function onChange(value) {
       return setAttributes({
-        heroText: newHeroText
+        text: value
       });
     },
-    value: heroText
+    value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     class: "button-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 1'),
-    value: heroButton1Text,
+    value: button1Text,
     onChange: function onChange(value) {
       return setAttributes({
-        heroButton1Text: value
+        button1Text: value
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link"
+    className: "wp-block-button__link button1"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
-    url: heroButton1URL,
+    url: button1URL,
     setAttributes: setAttributes,
     isSelected: isSelected,
-    opensInNewTab: heroButton1LinkTarget === '_blank',
+    opensInNewTab: button1LinkTarget === '_blank',
     onToggleOpenInNewTab: onToggleOpenInNewTab,
-    keyURL: "heroButton1URL",
-    keyLinkTarget: "heroButton1LinkTarget",
+    keyURL: "button1URL",
+    keyLinkTarget: "button1LinkTarget",
     toolbarButtonName: "link1",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1')
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     class: "button-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 2'),
-    value: heroButton2Text,
+    value: button2Text,
     onChange: function onChange(value) {
       return setAttributes({
-        heroButton2Text: value
+        button2Text: value
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link"
+    className: "wp-block-button__link button2"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
-    url: heroButton2URL,
+    url: button2URL,
     setAttributes: setAttributes,
     isSelected: isSelected,
-    opensInNewTab: heroButton2LinkTarget === '_blank',
+    opensInNewTab: button2LinkTarget === '_blank',
     onToggleOpenInNewTab: onToggleOpenInNewTab,
-    keyURL: "heroButton2URL",
-    keyLinkTarget: "heroButton2LinkTarget",
+    keyURL: "button2URL",
+    keyLinkTarget: "button2LinkTarget",
     toolbarButtonName: "link2",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 2')
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     class: "button-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 3'),
-    value: heroButton3Text,
+    value: button3Text,
     onChange: function onChange(value) {
       return setAttributes({
-        heroButton3Text: value
+        button3Text: value
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link"
+    className: "wp-block-button__link button3"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
-    url: heroButton3URL,
+    url: button3URL,
     setAttributes: setAttributes,
     isSelected: isSelected,
-    opensInNewTab: heroButton3LinkTarget === '_blank',
+    opensInNewTab: button3LinkTarget === '_blank',
     onToggleOpenInNewTab: onToggleOpenInNewTab,
-    keyURL: "heroButton3URL",
-    keyLinkTarget: "heroButton3LinkTarget",
+    keyURL: "button3URL",
+    keyLinkTarget: "button3LinkTarget",
     toolbarButtonName: "link3",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 3')
   })))))));
@@ -7104,17 +7104,17 @@ function save(_ref) {
       overlayColor = attributes.overlayColor,
       url = attributes.url,
       minHeight = attributes.minHeight,
-      heroHeading = attributes.heroHeading,
-      heroText = attributes.heroText,
-      heroButton1Text = attributes.heroButton1Text,
-      heroButton1URL = attributes.heroButton1URL,
-      heroButton1LinkTarget = attributes.heroButton1LinkTarget,
-      heroButton2Text = attributes.heroButton2Text,
-      heroButton2URL = attributes.heroButton2URL,
-      heroButton2LinkTarget = attributes.heroButton2LinkTarget,
-      heroButton3Text = attributes.heroButton3Text,
-      heroButton3URL = attributes.heroButton3URL,
-      heroButton3LinkTarget = attributes.heroButton3LinkTarget;
+      heading = attributes.heading,
+      text = attributes.text,
+      button1Text = attributes.button1Text,
+      button1URL = attributes.button1URL,
+      button1LinkTarget = attributes.button1LinkTarget,
+      button2Text = attributes.button2Text,
+      button2URL = attributes.button2URL,
+      button2LinkTarget = attributes.button2LinkTarget,
+      button3Text = attributes.button3Text,
+      button3URL = attributes.button3URL,
+      button3LinkTarget = attributes.button3LinkTarget;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7158,38 +7158,38 @@ function save(_ref) {
     className: "wp-block-cover__inner-container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "hero-content"
-  }, heroHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
     className: "hero-heading",
-    value: heroHeading
-  }), heroText && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    value: heading
+  }), text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "p",
     className: "hero-text",
-    value: heroText
+    value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "button-wrapper"
-  }, heroButton1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, button1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
-    className: "wp-block-button__link text",
-    value: heroButton1Text,
-    href: heroButton1URL,
-    target: heroButton1LinkTarget
+    className: "wp-block-button__link button1",
+    value: button1Text,
+    href: button1URL,
+    target: button1LinkTarget
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "button-wrapper"
-  }, heroButton2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
-    className: "wp-block-button__link text",
-    value: heroButton2Text,
-    href: heroButton2URL,
-    target: heroButton2LinkTarget
+    className: "wp-block-button__link button2",
+    value: button2Text,
+    href: button2URL,
+    target: button2LinkTarget
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "button-wrapper"
-  }, heroButton3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
-    className: "wp-block-button__link text",
-    value: heroButton3Text,
-    href: heroButton3URL,
-    target: heroButton3LinkTarget
+    className: "wp-block-button__link button3",
+    value: button3Text,
+    href: button3URL,
+    target: button3LinkTarget
   })))));
 }
 
