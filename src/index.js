@@ -5,6 +5,7 @@ import '@wordpress/core-data';
 import '@wordpress/block-editor';
 import {
 	registerBlockType,
+	unstable__bootstrapServerSideBlockDefinitions,
 } from '@wordpress/blocks';
 
 /**
@@ -22,9 +23,9 @@ const registerBlock = ( block ) => {
 	if ( ! block ) {
 		return;
 	}
-	const { metadata, settings, name } = block;
+	const { settings, metadata, name } = block;
 	if ( metadata ) {
-		settings.category = metadata.category;
+		unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
 	}
 	registerBlockType( name, settings );
 };
