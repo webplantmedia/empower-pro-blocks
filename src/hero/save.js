@@ -38,6 +38,14 @@ export default function save( { attributes } ) {
 		heroHeading,
 		heroText,
 		heroButton1Text,
+		heroButton1URL,
+		heroButton1LinkTarget,
+		heroButton2Text,
+		heroButton2URL,
+		heroButton2LinkTarget,
+		heroButton3Text,
+		heroButton3URL,
+		heroButton3LinkTarget,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -114,13 +122,39 @@ export default function save( { attributes } ) {
 							value={ heroText }
 						/>
 					) }
-					{ heroButton1Text && (
-						<RichText.Content
-							tagName="a"
-							className="wp-block-button__link text"
-							value={ heroButton1Text }
-						/>
-					) }
+					<div class="button-wrapper">
+						{ heroButton1Text && (
+							<RichText.Content
+								tagName="a"
+								className="wp-block-button__link text"
+								value={ heroButton1Text }
+								href={ heroButton1URL }
+								target={ heroButton1LinkTarget }
+							/>
+						) }
+					</div>
+					<div class="button-wrapper">
+						{ heroButton2Text && (
+							<RichText.Content
+								tagName="a"
+								className="wp-block-button__link text"
+								value={ heroButton2Text }
+								href={ heroButton2URL }
+								target={ heroButton2LinkTarget }
+							/>
+						) }
+					</div>
+					<div class="button-wrapper">
+						{ heroButton3Text && (
+							<RichText.Content
+								tagName="a"
+								className="wp-block-button__link text"
+								value={ heroButton3Text }
+								href={ heroButton3URL }
+								target={ heroButton3LinkTarget }
+							/>
+						) }
+					</div>
 				</div>
 			</div>
 		</div>

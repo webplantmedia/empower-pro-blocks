@@ -52,6 +52,53 @@
 			"type": "string",
 			"source": "html",
 			"selector": "a"
+		},
+		"heroButton1URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"heroButton1LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
+		},
+		"heroButton2Text": {
+			"type": "string",
+			"source": "html",
+			"selector": "a"
+		},
+		"heroButton2URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"heroButton2LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
+		},
+		"heroButton3Text": {
+			"type": "string",
+			"source": "html",
+			"selector": "a"
+		},
+		"heroButton3URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"heroButton3LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
 		}
+
 	}
 }

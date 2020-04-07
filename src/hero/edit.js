@@ -8,19 +8,25 @@ import tinycolor from 'tinycolor2';
 /**
  * WordPress dependencies
  */
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import {
 	BaseControl,
+	PanelBody,
 	Button,
 	FocalPointPicker,
-	PanelBody,
 	PanelRow,
 	RangeControl,
 	ResizableBox,
 	ToggleControl,
+	TextControl,
 	withNotices,
+	KeyboardShortcuts,
+	ToolbarButton,
+	ToolbarGroup,
+	Popover,
 } from '@wordpress/components';
 import { compose, withInstanceId } from '@wordpress/compose';
+import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
 	BlockControls,
 	BlockIcon,
@@ -33,10 +39,11 @@ import {
 	ColorPalette,
 	__experimentalUseGradient,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
+	__experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
-import { cover as icon } from '@wordpress/icons';
+import { cover as icon, link } from '@wordpress/icons';
 
 /**
  * Internal dependencies
@@ -237,6 +244,59 @@ function useCoverIsDark( url, dimRatio = 50, overlayColor, elementRef ) {
 	return isDark;
 }
 
+function URLPicker( {
+	isSelected,
+	url,
+	setAttributes,
+	opensInNewTab,
+	onToggleOpenInNewTab,
+	keyURL,
+	keyLinkTarget,
+	toolbarButtonName,
+	toolbarButtonTitle,
+} ) {
+	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
+	const openLinkControl = () => {
+		setIsURLPickerOpen( true );
+	};
+	const linkControl = isURLPickerOpen && (
+		<Popover
+			position="bottom center"
+			onClose={ () => setIsURLPickerOpen( false ) }
+		>
+			<LinkControl
+				className="wp-block-navigation-link__inline-link-input"
+				value={ { url, opensInNewTab } }
+				onChange={ ( {
+					url: newURL = '',
+					opensInNewTab: newOpensInNewTab,
+				} ) => {
+					setAttributes( { [keyURL]: newURL } );
+
+					if ( opensInNewTab !== newOpensInNewTab ) {
+						onToggleOpenInNewTab( keyLinkTarget, newOpensInNewTab );
+					}
+				} }
+			/>
+		</Popover>
+	);
+	return (
+		<>
+			<BlockControls>
+				<ToolbarGroup>
+					<ToolbarButton
+						name={ toolbarButtonName }
+						icon={ link }
+						title={ toolbarButtonTitle }
+						onClick={ openLinkControl }
+					/>
+				</ToolbarGroup>
+			</BlockControls>
+			{ linkControl }
+		</>
+	);
+}
+
 function CoverEdit( {
 	attributes,
 	setAttributes,
@@ -259,6 +319,14 @@ function CoverEdit( {
 		heroHeading,
 		heroText,
 		heroButton1Text,
+		heroButton1URL,
+		heroButton1LinkTarget,
+		heroButton2Text,
+		heroButton2URL,
+		heroButton2LinkTarget,
+		heroButton3Text,
+		heroButton3URL,
+		heroButton3LinkTarget,
 	} = attributes;
 	const {
 		gradientClass,
@@ -280,6 +348,17 @@ function CoverEdit( {
 		dimRatio,
 		overlayColor.color,
 		isDarkElement
+	);
+
+	const onToggleOpenInNewTab = useCallback(
+		( key, value ) => {
+			const newLinkTarget = value ? '_blank' : undefined;
+
+			setAttributes( {
+				[key]: newLinkTarget,
+			} );
+		},
+		[ setAttributes ]
 	);
 
 	const [ temporaryMinHeight, setTemporaryMinHeight ] = useState( null );
@@ -532,13 +611,66 @@ function CoverEdit( {
 								}
 								value={ heroText }
 							/>
-							<RichText
-								placeholder={ __( 'Button 1' ) }
-								value={ heroButton1Text }
-								onChange={ ( value ) => setAttributes( { heroButton1Text: value } ) }
-								withoutInteractiveFormatting
-								className="wp-block-button__link text text"
-							/>
+							<div class="button-wrapper">
+								<RichText
+									placeholder={ __( 'Button 1' ) }
+									value={ heroButton1Text }
+									onChange={ ( value ) => setAttributes( { heroButton1Text: value } ) }
+									withoutInteractiveFormatting
+									className="wp-block-button__link"
+								/>
+								<URLPicker
+									url={ heroButton1URL }
+									setAttributes={ setAttributes }
+									isSelected={ isSelected }
+									opensInNewTab={ heroButton1LinkTarget === '_blank' }
+									onToggleOpenInNewTab={ onToggleOpenInNewTab }
+									keyURL="heroButton1URL"
+									keyLinkTarget="heroButton1LinkTarget"
+									toolbarButtonName="link1"
+									toolbarButtonTitle={ __( 'Link 1' ) }
+								/>
+							</div>
+							<div class="button-wrapper">
+								<RichText
+									placeholder={ __( 'Button 2' ) }
+									value={ heroButton2Text }
+									onChange={ ( value ) => setAttributes( { heroButton2Text: value } ) }
+									withoutInteractiveFormatting
+									className="wp-block-button__link"
+								/>
+								<URLPicker
+									url={ heroButton2URL }
+									setAttributes={ setAttributes }
+									isSelected={ isSelected }
+									opensInNewTab={ heroButton2LinkTarget === '_blank' }
+									onToggleOpenInNewTab={ onToggleOpenInNewTab }
+									keyURL="heroButton2URL"
+									keyLinkTarget="heroButton2LinkTarget"
+									toolbarButtonName="link2"
+									toolbarButtonTitle={ __( 'Link 2' ) }
+								/>
+							</div>
+							<div class="button-wrapper">
+								<RichText
+									placeholder={ __( 'Button 3' ) }
+									value={ heroButton3Text }
+									onChange={ ( value ) => setAttributes( { heroButton3Text: value } ) }
+									withoutInteractiveFormatting
+									className="wp-block-button__link"
+								/>
+								<URLPicker
+									url={ heroButton3URL }
+									setAttributes={ setAttributes }
+									isSelected={ isSelected }
+									opensInNewTab={ heroButton3LinkTarget === '_blank' }
+									onToggleOpenInNewTab={ onToggleOpenInNewTab }
+									keyURL="heroButton3URL"
+									keyLinkTarget="heroButton3LinkTarget"
+									toolbarButtonName="link3"
+									toolbarButtonTitle={ __( 'Link 3' ) }
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

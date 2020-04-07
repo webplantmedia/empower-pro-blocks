@@ -218,5 +218,9 @@ section.wp-block-cover-image > h2,
   padding: 14px;
   text-align: center; }
 
+.button-wrapper {
+  display: inline-block;
+  position: relative; }
+
 
 /*# sourceMappingURL=style.css.map*/
