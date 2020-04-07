@@ -68,6 +68,8 @@ const INNER_BLOCKS_TEMPLATE = [
 			placeholder: __( 'Paragraph...' ),
 		},
 	],
+];
+const INNER_BLOCKS_BUTTONS_TEMPLATE = [
 	[
 		'core/buttons',
 		{
@@ -256,6 +258,7 @@ function CoverEdit( {
 		url,
 		heroHeading,
 		heroText,
+		heroButton1Text,
 	} = attributes;
 	const {
 		gradientClass,
@@ -506,28 +509,37 @@ function CoverEdit( {
 						/>
 					) }
 					<div className="wp-block-cover__inner-container">
-						<RichText
-							tagName="h1"
-							className="hero-heading"
-							placeholder={ __( 'Heading', 'wpm-lpb' ) }
-							onChange={ ( newHeroHeading ) =>
-								setAttributes( {
-									heroHeading: newHeroHeading,
-								} )
-							}
-							value={ heroHeading }
-						/>
-						<RichText
-							tagName="p"
-							className="hero-text"
-							placeholder={ __( 'Text', 'wpm-lpb' ) }
-							onChange={ ( newHeroText ) =>
-								setAttributes( {
-									heroText: newHeroText,
-								} )
-							}
-							value={ heroText }
-						/>
+						<div className="hero-content">
+							<RichText
+								tagName="h1"
+								className="hero-heading"
+								placeholder={ __( 'Heading', 'wpm-lpb' ) }
+								onChange={ ( newHeroHeading ) =>
+									setAttributes( {
+										heroHeading: newHeroHeading,
+									} )
+								}
+								value={ heroHeading }
+							/>
+							<RichText
+								tagName="p"
+								className="hero-text"
+								placeholder={ __( 'Text', 'wpm-lpb' ) }
+								onChange={ ( newHeroText ) =>
+									setAttributes( {
+										heroText: newHeroText,
+									} )
+								}
+								value={ heroText }
+							/>
+							<RichText
+								placeholder={ __( 'Button 1' ) }
+								value={ heroButton1Text }
+								onChange={ ( value ) => setAttributes( { heroButton1Text: value } ) }
+								withoutInteractiveFormatting
+								className="wp-block-button__link text text"
+							/>
+						</div>
 					</div>
 				</div>
 			</ResizableCover>

@@ -6370,7 +6370,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heroHeading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"},\"heroText\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-text\"}}}");
+module.exports = JSON.parse("{\"name\":\"leadership-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"minHeight\":{\"type\":\"number\"},\"gradient\":{\"type\":\"string\"},\"customGradient\":{\"type\":\"string\"},\"heroHeading\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-heading\"},\"heroText\":{\"type\":\"array\",\"source\":\"children\",\"selector\":\".hero-text\"},\"heroButton1Text\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"a\"}}}");
 
 /***/ }),
 
@@ -6446,7 +6446,8 @@ var INNER_BLOCKS_TEMPLATE = [['core/heading', {
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Heading...')
 }], ['core/paragraph', {
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Paragraph...')
-}], ['core/buttons', {
+}]];
+var INNER_BLOCKS_BUTTONS_TEMPLATE = [['core/buttons', {
   className: 'testing'
 }, [['core/button', {
   text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Link 1')
@@ -6628,7 +6629,8 @@ function CoverEdit(_ref3) {
       minHeight = attributes.minHeight,
       url = attributes.url,
       heroHeading = attributes.heroHeading,
-      heroText = attributes.heroText;
+      heroText = attributes.heroText,
+      heroButton1Text = attributes.heroButton1Text;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -6823,6 +6825,8 @@ function CoverEdit(_ref3) {
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "wp-block-cover__inner-container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "hero-content"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
     tagName: "h1",
     className: "hero-heading",
@@ -6843,7 +6847,17 @@ function CoverEdit(_ref3) {
       });
     },
     value: heroText
-  })))));
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Button 1'),
+    value: heroButton1Text,
+    onChange: function onChange(value) {
+      return setAttributes({
+        heroButton1Text: value
+      });
+    },
+    withoutInteractiveFormatting: true,
+    className: "wp-block-button__link text text"
+  }))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__["withDispatch"])(function (dispatch) {
@@ -6970,7 +6984,8 @@ function save(_ref) {
       url = attributes.url,
       minHeight = attributes.minHeight,
       heroHeading = attributes.heroHeading,
-      heroText = attributes.heroText;
+      heroText = attributes.heroText,
+      heroButton1Text = attributes.heroButton1Text;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7012,6 +7027,8 @@ function save(_ref) {
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-cover__inner-container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "hero-content"
   }, heroHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
     className: "hero-heading",
@@ -7020,7 +7037,11 @@ function save(_ref) {
     tagName: "p",
     className: "hero-text",
     value: heroText
-  })));
+  }), heroButton1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    tagName: "a",
+    className: "wp-block-button__link text",
+    value: heroButton1Text
+  }))));
 }
 
 /***/ }),

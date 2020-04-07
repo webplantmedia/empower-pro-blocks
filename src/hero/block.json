@@ -47,6 +47,11 @@
 			"type": "array",
 			"source": "children",
 			"selector": ".hero-text"
+		},
+		"heroButton1Text": {
+			"type": "string",
+			"source": "html",
+			"selector": "a"
 		}
 	}
 }

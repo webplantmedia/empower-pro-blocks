@@ -37,6 +37,7 @@ export default function save( { attributes } ) {
 		minHeight,
 		heroHeading,
 		heroText,
+		heroButton1Text,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -98,20 +99,29 @@ export default function save( { attributes } ) {
 				/>
 			) }
 			<div className="wp-block-cover__inner-container">
-				{ heroHeading && (
-					<RichText.Content
-						tagName="h1"
-						className="hero-heading"
-						value={ heroHeading }
-					/>
-				) }
-				{ heroText && (
-					<RichText.Content
-						tagName="p"
-						className="hero-text"
-						value={ heroText }
-					/>
-				) }
+				<div className="hero-content">
+					{ heroHeading && (
+						<RichText.Content
+							tagName="h1"
+							className="hero-heading"
+							value={ heroHeading }
+						/>
+					) }
+					{ heroText && (
+						<RichText.Content
+							tagName="p"
+							className="hero-text"
+							value={ heroText }
+						/>
+					) }
+					{ heroButton1Text && (
+						<RichText.Content
+							tagName="a"
+							className="wp-block-button__link text"
+							value={ heroButton1Text }
+						/>
+					) }
+				</div>
 			</div>
 		</div>
 	);
