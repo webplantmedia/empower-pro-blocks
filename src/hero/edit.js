@@ -60,6 +60,7 @@ import {
 /**
  * Module Constants
  */
+const NEW_TAB_REL = 'noreferrer noopener';
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
 const INNER_BLOCKS_TEMPLATE = [
 	[
@@ -254,6 +255,7 @@ function URLPicker( {
 	keyLinkTarget,
 	toolbarButtonName,
 	toolbarButtonTitle,
+	rel,
 } ) {
 	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
 	const openLinkControl = () => {
@@ -274,7 +276,7 @@ function URLPicker( {
 					setAttributes( { [keyURL]: newURL } );
 
 					if ( opensInNewTab !== newOpensInNewTab ) {
-						onToggleOpenInNewTab( keyLinkTarget, newOpensInNewTab );
+						onToggleOpenInNewTab( keyLinkTarget, newOpensInNewTab, rel );
 					}
 				} }
 			/>
@@ -321,12 +323,15 @@ function CoverEdit( {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
+		button1Rel,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
+		button2Rel,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
+		button3Rel,
 	} = attributes;
 	const {
 		gradientClass,
@@ -351,11 +356,19 @@ function CoverEdit( {
 	);
 
 	const onToggleOpenInNewTab = useCallback(
-		( key, value ) => {
+		( key, value, rel ) => {
 			const newLinkTarget = value ? '_blank' : undefined;
+
+			let updatedRel = eval(rel);
+			if ( newLinkTarget && ! eval(rel) ) {
+				updatedRel = NEW_TAB_REL;
+			} else if ( ! newLinkTarget && eval(rel) === NEW_TAB_REL ) {
+				updatedRel = undefined;
+			}
 
 			setAttributes( {
 				[key]: newLinkTarget,
+				[rel]: updatedRel,
 			} );
 		},
 		[ setAttributes ]
@@ -618,6 +631,7 @@ function CoverEdit( {
 									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 									withoutInteractiveFormatting
 									className="wp-block-button__link button1"
+									rel={ button1Rel }
 								/>
 								<URLPicker
 									url={ button1URL }
@@ -629,6 +643,7 @@ function CoverEdit( {
 									keyLinkTarget="button1LinkTarget"
 									toolbarButtonName="link1"
 									toolbarButtonTitle={ __( 'Link 1' ) }
+									rel="button1Rel"
 								/>
 							</div>
 							<div class="button-wrapper">
@@ -638,6 +653,7 @@ function CoverEdit( {
 									onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 									withoutInteractiveFormatting
 									className="wp-block-button__link button2"
+									rel={ button2Rel }
 								/>
 								<URLPicker
 									url={ button2URL }
@@ -649,6 +665,7 @@ function CoverEdit( {
 									keyLinkTarget="button2LinkTarget"
 									toolbarButtonName="link2"
 									toolbarButtonTitle={ __( 'Link 2' ) }
+									rel="button2Rel"
 								/>
 							</div>
 							<div class="button-wrapper">
@@ -658,6 +675,7 @@ function CoverEdit( {
 									onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 									withoutInteractiveFormatting
 									className="wp-block-button__link button3"
+									rel={ button3Rel }
 								/>
 								<URLPicker
 									url={ button3URL }
@@ -669,6 +687,7 @@ function CoverEdit( {
 									keyLinkTarget="button3LinkTarget"
 									toolbarButtonName="link3"
 									toolbarButtonTitle={ __( 'Link 3' ) }
+									rel="button3Rel"
 								/>
 							</div>
 						</div>

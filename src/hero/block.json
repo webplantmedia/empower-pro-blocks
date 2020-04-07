@@ -65,6 +65,12 @@
 			"selector": "a.button1",
 			"attribute": "target"
 		},
+		"button1Rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button1",
+			"attribute": "rel"
+		},
 		"button2Text": {
 			"type": "string",
 			"source": "html",
@@ -82,6 +88,12 @@
 			"selector": "a.button2",
 			"attribute": "target"
 		},
+		"button2Rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button2",
+			"attribute": "rel"
+		},
 		"button3Text": {
 			"type": "string",
 			"source": "html",
@@ -98,7 +110,12 @@
 			"source": "attribute",
 			"selector": "a.button3",
 			"attribute": "target"
+		},
+		"button3Rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button3",
+			"attribute": "rel"
 		}
-
 	}
 }

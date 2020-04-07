@@ -40,12 +40,15 @@ export default function save( { attributes } ) {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
+		button1Rel,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
+		button2Rel,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
+		button3Rel,
 	} = attributes;
 	const overlayColorClass = getColorClassName(
 		'background-color',
@@ -130,6 +133,7 @@ export default function save( { attributes } ) {
 								value={ button1Text }
 								href={ button1URL }
 								target={ button1LinkTarget }
+								rel={ button1Rel }
 							/>
 						) }
 					</div>
@@ -141,6 +145,7 @@ export default function save( { attributes } ) {
 								value={ button2Text }
 								href={ button2URL }
 								target={ button2LinkTarget }
+								rel={ button2Rel }
 							/>
 						) }
 					</div>
@@ -152,6 +157,7 @@ export default function save( { attributes } ) {
 								value={ button3Text }
 								href={ button3URL }
 								target={ button3LinkTarget }
+								rel={ button3Rel }
 							/>
 						) }
 					</div>
