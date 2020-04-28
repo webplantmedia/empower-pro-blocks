@@ -3,13 +3,13 @@
 
 cd .
 
-product="leadership-pro-blocks"
+product="empower-pro-blocks"
 
 # remove any previous zip file.
 rm ${product}*.zip
 
 # grab version number and clean it
-version=$(grep "^Version: " ./leadership-pro-blocks.php | cut -f2 -d ":" | tr -d ' ' | tr -d '\n')
+version=$(grep "^Version: " ./empower-pro-blocks.php | cut -f2 -d ":" | tr -d ' ' | tr -d '\n')
 sanitizeversion=$(echo "$version" | tr . -)
 
 # change name and zip
