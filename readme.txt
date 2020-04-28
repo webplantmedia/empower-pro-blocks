@@ -21,6 +21,8 @@ https://make.wordpress.org/core/2020/02/28/new-wordpress-create-block-package-fo
 
 https://github.com/WordPress/gutenberg
 
+https://github.com/WordPress/gutenberg/tree/master/packages/block-library/src
+
 https://jeffreycarandang.com/create-gutenberg-block-plugin-wp-scripts-postcss-build/
 
 https://github.com/zgordon/gutenberg-course
