@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-// node .scripts/rename.js -o="Old Pro Blocks" -n="New Pro Blocks"
+// node .scripts/rename.js -o="Old-Name Pro Blocks" -n="New-Name Pro Blocks"
 
 // Dependencies.
 var fs   = require( 'fs' );

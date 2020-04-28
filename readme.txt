@@ -25,6 +25,13 @@ https://jeffreycarandang.com/create-gutenberg-block-plugin-wp-scripts-postcss-bu
 
 https://github.com/zgordon/gutenberg-course
 
+== Development ==
+
+1. For a new plugin, run: node .scripts/rename.js -o="Old-Name Pro Blocks" -n="New-Name Pro Blocks"
+2. `nvm use 13`
+3. `npm install`
+4. `npm start`
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
