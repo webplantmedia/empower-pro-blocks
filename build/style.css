@@ -222,5 +222,12 @@ section.wp-block-cover-image > h2,
   display: inline-block;
   position: relative; }
 
+.no-x-margin {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.widthFull {
+  width: 100%; }
+
 
 /*# sourceMappingURL=style.css.map*/

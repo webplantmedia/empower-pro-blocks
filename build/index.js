@@ -6448,6 +6448,8 @@ var ALLOWED_MEDIA_TYPES = ['image', 'video'];
 var INNER_BLOCKS_TEMPLATE = [['core/heading', {
   level: 1,
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading...')
+}], ['core/preheading', {
+  placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text before heading...')
 }], ['core/paragraph', {
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Paragraph...')
 }]];
@@ -6511,7 +6513,7 @@ var CoverHeightInput = Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["w
 var RESIZABLE_BOX_ENABLE_OPTION = {
   top: false,
   right: false,
-  bottom: true,
+  bottom: false,
   left: false,
   topRight: false,
   bottomRight: false,
@@ -6684,19 +6686,12 @@ function CoverEdit(_ref5) {
       minHeight = attributes.minHeight,
       url = attributes.url,
       heading = attributes.heading,
+      preheading = attributes.preheading,
       text = attributes.text,
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
-      button1Rel = attributes.button1Rel,
-      button2Text = attributes.button2Text,
-      button2URL = attributes.button2URL,
-      button2LinkTarget = attributes.button2LinkTarget,
-      button2Rel = attributes.button2Rel,
-      button3Text = attributes.button3Text,
-      button3URL = attributes.button3URL,
-      button3LinkTarget = attributes.button3LinkTarget,
-      button3Rel = attributes.button3Rel;
+      button1Rel = attributes.button1Rel;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -6908,6 +6903,16 @@ function CoverEdit(_ref5) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "hero-content"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
+    tagName: "h4",
+    className: "hero-text",
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Pre-Heading', 'wpm-lpb'),
+    onChange: function onChange(value) {
+      return setAttributes({
+        preheading: value
+      });
+    },
+    value: preheading
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h1",
     className: "hero-heading",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'wpm-lpb'),
@@ -6928,7 +6933,7 @@ function CoverEdit(_ref5) {
     },
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    class: "button-wrapper"
+    class: "button-wrapper wp-block-button aligncenter alternate-button-style"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 1'),
     value: button1Text,
@@ -6951,54 +6956,6 @@ function CoverEdit(_ref5) {
     toolbarButtonName: "link1",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1'),
     rel: "button1Rel"
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    class: "button-wrapper"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 2'),
-    value: button2Text,
-    onChange: function onChange(value) {
-      return setAttributes({
-        button2Text: value
-      });
-    },
-    withoutInteractiveFormatting: true,
-    className: "wp-block-button__link button2",
-    rel: button2Rel
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
-    url: button2URL,
-    setAttributes: setAttributes,
-    isSelected: isSelected,
-    opensInNewTab: button2LinkTarget === '_blank',
-    onToggleOpenInNewTab: onToggleOpenInNewTab,
-    keyURL: "button2URL",
-    keyLinkTarget: "button2LinkTarget",
-    toolbarButtonName: "link2",
-    toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 2'),
-    rel: "button2Rel"
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    class: "button-wrapper"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 3'),
-    value: button3Text,
-    onChange: function onChange(value) {
-      return setAttributes({
-        button3Text: value
-      });
-    },
-    withoutInteractiveFormatting: true,
-    className: "wp-block-button__link button3",
-    rel: button3Rel
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
-    url: button3URL,
-    setAttributes: setAttributes,
-    isSelected: isSelected,
-    opensInNewTab: button3LinkTarget === '_blank',
-    onToggleOpenInNewTab: onToggleOpenInNewTab,
-    keyURL: "button3URL",
-    keyLinkTarget: "button3LinkTarget",
-    toolbarButtonName: "link3",
-    toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 3'),
-    rel: "button3Rel"
   })))))));
 }
 
@@ -7126,19 +7083,12 @@ function save(_ref) {
       url = attributes.url,
       minHeight = attributes.minHeight,
       heading = attributes.heading,
+      preheading = attributes.preheading,
       text = attributes.text,
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
-      button1Rel = attributes.button1Rel,
-      button2Text = attributes.button2Text,
-      button2URL = attributes.button2URL,
-      button2LinkTarget = attributes.button2LinkTarget,
-      button2Rel = attributes.button2Rel,
-      button3Text = attributes.button3Text,
-      button3URL = attributes.button3URL,
-      button3LinkTarget = attributes.button3LinkTarget,
-      button3Rel = attributes.button3Rel;
+      button1Rel = attributes.button1Rel;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7162,9 +7112,11 @@ function save(_ref) {
     'has-background-dim': dimRatio !== 0,
     'has-parallax': hasParallax,
     'has-background-gradient': gradient || customGradient
-  }, gradientClass, !url && gradientClass));
+  }, gradientClass, !url && gradientClass), "hero-intro", "align-wide");
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: classes,
+    className: ({
+      classes: classes
+    }, "wp-block-cover alignfull hero-intro"),
     style: style
   }, url && (gradient || customGradient) && dimRatio !== 0 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
     "aria-hidden": "true",
@@ -7178,20 +7130,32 @@ function save(_ref) {
     muted: true,
     loop: true,
     src: url
+  }), _shared__WEBPACK_IMPORTED_MODULE_4__["IMAGE_BACKGROUND_TYPE"] === backgroundType && url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("image", {
+    className: "wp-block-cover__video-background no-x-margin alignwide",
+    autoPlay: true,
+    muted: true,
+    loop: true,
+    src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: "wp-block-cover__inner-container"
+    className: "wp-block-cover__inner-container hero-intro"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "hero-intro"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "hero-content"
-  }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, preheading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    tagName: "h4",
+    className: "hero-text has-text-align-center h4",
+    value: preheading
+  }), heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
-    className: "hero-heading",
+    className: "hero-heading has-text-align-center",
     value: heading
   }), text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "p",
-    className: "hero-text",
+    className: "hero-text has-text-align-center",
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    class: "button-wrapper"
+    class: "button-wrapper wp-block-button widthFull has-text-align-center alternate-button-style"
   }, button1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
     className: "wp-block-button__link button1",
@@ -7199,25 +7163,7 @@ function save(_ref) {
     href: button1URL,
     target: button1LinkTarget,
     rel: button1Rel
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    class: "button-wrapper"
-  }, button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
-    tagName: "a",
-    className: "wp-block-button__link button2",
-    value: button2Text,
-    href: button2URL,
-    target: button2LinkTarget,
-    rel: button2Rel
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    class: "button-wrapper"
-  }, button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
-    tagName: "a",
-    className: "wp-block-button__link button3",
-    value: button3Text,
-    href: button3URL,
-    target: button3LinkTarget,
-    rel: button3Rel
-  })))));
+  }))))));
 }
 
 /***/ }),
