@@ -210,13 +210,14 @@ function ResizableCover({
  * @param {?number} dimRatio     Transparency of the overlay color. If an image and
  *                               color are set, dimRatio is used to decide what is used
  *                               for background darkness checking purposes.
- * @param {?string} overlayColor String containing the overlay color value if one exists.
+ * @param {?string} overlayColor 
+ * @param {?String} buttonBackgroundColor containing the overlay color value if one exists.
  * @param {?Object} elementRef   If a media background is set, elementRef should contain a reference to a
  *                               dom element that renders that media.
  *
  * @return {boolean} True if the cover background is considered "dark" and false otherwise.
  */
-function useCoverIsDark(url, dimRatio = 50, overlayColor, elementRef) {
+function useCoverIsDark(url, dimRatio = 50, overlayColor, buttonBackgroundColor, elementRef) {
 	const [isDark, setIsDark] = useState(false);
 	useEffect(() => {
 		// If opacity is lower than 50 the dominant color is the image or video color,
@@ -234,12 +235,13 @@ function useCoverIsDark(url, dimRatio = 50, overlayColor, elementRef) {
 		// If opacity is greater than 50 the dominant color is the overlay color,
 		// so use that color for the dark mode computation.
 		if (dimRatio > 50 || !url) {
-			if (!overlayColor) {
+			if (!overlayColor || !buttonBackgroundColor) {
 				// If no overlay color exists the overlay color is black (isDark )
 				setIsDark(true);
 				return;
 			}
 			setIsDark(tinycolor(overlayColor).isDark());
+			setIsDark(tinycolor(buttonBackgroundColor).isDark());
 		}
 	}, [overlayColor, dimRatio > 50 || !url, setIsDark]);
 	useEffect(() => {
@@ -313,6 +315,8 @@ function CoverEdit({
 	noticeUI,
 	overlayColor,
 	setOverlayColor,
+	buttonBackgroundColor,
+	setButtonBackgroundColor,
 	toggleSelection,
 	noticeOperations,
 }) {
@@ -351,6 +355,7 @@ function CoverEdit({
 		url,
 		dimRatio,
 		overlayColor.color,
+		buttonBackgroundColor.color,
 		isDarkElement
 	);
 
@@ -384,6 +389,10 @@ function CoverEdit({
 		backgroundColor: overlayColor.color,
 		minHeight: temporaryMinHeight || minHeight,
 	};
+	const styleButton = {
+		backgroundColor: buttonBackgroundColor.color
+	}
+
 
 	if (gradientValue && !url) {
 		style.background = gradientValue;
@@ -394,7 +403,7 @@ function CoverEdit({
 			100}%`;
 	}
 
-	const hasBackground = !!(url || overlayColor.color || gradientValue);
+	const hasBackground = !!(url || overlayColor.color || buttonBackgroundColor.color || gradientValue);
 
 	const controls = (
 		<>
@@ -467,7 +476,7 @@ function CoverEdit({
 							/>
 						</PanelBody>
 						<PanelColorGradientSettings
-							title={__('Overlay')}
+							title={__('Background Color')}
 							initialOpen={true}
 							settings={[
 								{
@@ -475,7 +484,20 @@ function CoverEdit({
 									gradientValue,
 									onColorChange: setOverlayColor,
 									onGradientChange: setGradient,
-									label: __('Color'),
+									label: __('Background Color'),
+								},
+							]}
+						></PanelColorGradientSettings>
+						<PanelColorGradientSettings
+							title={__('Button Background Color')}
+							initialOpen={true}
+							settings={[
+								{
+									colorValue: buttonBackgroundColor.color,
+									gradientValue,
+									onColorChange: setButtonBackgroundColor,
+									onGradientChange: setGradient,
+									label: __('Button Color'),
 								},
 							]}
 						>
@@ -533,6 +555,12 @@ function CoverEdit({
 							onChange={setOverlayColor}
 							clearable={false}
 						/>
+						<ColorPalette
+							disableCustomColors={true}
+							value={buttonBackgroundColor.color}
+							onChange={setButtonBackgroundColor}
+							clearable={false}
+						/>
 					</div>
 				</MediaPlaceholder>
 			</>
@@ -546,6 +574,18 @@ function CoverEdit({
 		[overlayColor.class]: overlayColor.class,
 		'has-background-gradient': gradientValue,
 		[gradientClass]: !url && gradientClass,
+		marginLeft: 'calc(50 % - (50vw))',
+		marginRight: 'calc(50 % - (50vw))',
+		maxWidth: '1000%',
+		width: '100vw',
+		height: 'calc(100vh)',
+		clipPath: 'polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px))',
+	});
+
+	const buttonClasses = classnames(className, dimRatioToClass(dimRatio), {
+		'has-background-dim': dimRatio !== 0,
+		'has-background-gradient': gradientValue,
+		[overlayColor.class]: overlayColor.class,
 	});
 
 	return (
@@ -553,7 +593,7 @@ function CoverEdit({
 			{controls}
 			<ResizableCover
 				className={classnames(
-					'block-library-cover__resize-container',
+					'block-library-cover__resize-container no-x-padding',
 					{
 						'is-selected': isSelected,
 					}
@@ -603,7 +643,7 @@ function CoverEdit({
 						<div className="hero-content">
 							<RichText
 								tagName="h4"
-								className="hero-text"
+								className="hero-text alignfull textcenter"
 								placeholder={__('Pre-Heading', 'wpm-lpb')}
 								onChange={(value) =>
 									setAttributes({
@@ -614,7 +654,7 @@ function CoverEdit({
 							/>
 							<RichText
 								tagName="h1"
-								className="hero-heading"
+								className="hero-heading alignfull textcenter"
 								placeholder={__('Heading', 'wpm-lpb')}
 								onChange={(value) =>
 									setAttributes({
@@ -625,7 +665,7 @@ function CoverEdit({
 							/>
 							<RichText
 								tagName="p"
-								className="hero-text"
+								className="hero-text alignfull textcenter"
 								placeholder={__('Text', 'wpm-lpb')}
 								onChange={(value) =>
 									setAttributes({
@@ -634,27 +674,30 @@ function CoverEdit({
 								}
 								value={text}
 							/>
-							<div class="button-wrapper wp-block-button aligncenter alternate-button-style">
-								<RichText
-									placeholder={__('Button 1')}
-									value={button1Text}
-									onChange={(value) => setAttributes({ button1Text: value })}
-									withoutInteractiveFormatting
-									className="wp-block-button__link button1"
-									rel={button1Rel}
-								/>
-								<URLPicker
-									url={button1URL}
-									setAttributes={setAttributes}
-									isSelected={isSelected}
-									opensInNewTab={button1LinkTarget === '_blank'}
-									onToggleOpenInNewTab={onToggleOpenInNewTab}
-									keyURL="button1URL"
-									keyLinkTarget="button1LinkTarget"
-									toolbarButtonName="link1"
-									toolbarButtonTitle={__('Link 1')}
-									rel="button1Rel"
-								/>
+							<div className="container widthFull textcenter">
+								<div className={`button-wrapper wp-block-button aligncenter textcenter`}>
+									<RichText
+										placeholder={__('Button 1')}
+										value={button1Text}
+										onChange={(value) => setAttributes({ button1Text: value })}
+										withoutInteractiveFormatting
+										style={{ backgroundColor: buttonBackgroundColor.color }}
+										className={`wp-block-button__link button1`}
+										rel={button1Rel}
+									/>
+									<URLPicker
+										url={button1URL}
+										setAttributes={setAttributes}
+										isSelected={isSelected}
+										opensInNewTab={button1LinkTarget === '_blank'}
+										onToggleOpenInNewTab={onToggleOpenInNewTab}
+										keyURL="button1URL"
+										keyLinkTarget="button1LinkTarget"
+										toolbarButtonName="link1"
+										toolbarButtonTitle={__('Link 1')}
+										rel="button1Rel"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -672,7 +715,7 @@ export default compose([
 			toggleSelection,
 		};
 	}),
-	withColors({ overlayColor: 'background-color' }),
+	withColors({ overlayColor: 'background-color', buttonBackgroundColor: 'background-color' }),
 	withNotices,
 	withInstanceId,
 ])(CoverEdit);

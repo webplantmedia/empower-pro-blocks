@@ -6566,7 +6566,8 @@ function ResizableCover(_ref2) {
  * @param {?number} dimRatio     Transparency of the overlay color. If an image and
  *                               color are set, dimRatio is used to decide what is used
  *                               for background darkness checking purposes.
- * @param {?string} overlayColor String containing the overlay color value if one exists.
+ * @param {?string} overlayColor 
+ * @param {?String} buttonBackgroundColor containing the overlay color value if one exists.
  * @param {?Object} elementRef   If a media background is set, elementRef should contain a reference to a
  *                               dom element that renders that media.
  *
@@ -6577,7 +6578,8 @@ function ResizableCover(_ref2) {
 function useCoverIsDark(url) {
   var dimRatio = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
   var overlayColor = arguments.length > 2 ? arguments[2] : undefined;
-  var elementRef = arguments.length > 3 ? arguments[3] : undefined;
+  var buttonBackgroundColor = arguments.length > 3 ? arguments[3] : undefined;
+  var elementRef = arguments.length > 4 ? arguments[4] : undefined;
 
   var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState5, 2),
@@ -6597,13 +6599,14 @@ function useCoverIsDark(url) {
     // If opacity is greater than 50 the dominant color is the overlay color,
     // so use that color for the dark mode computation.
     if (dimRatio > 50 || !url) {
-      if (!overlayColor) {
+      if (!overlayColor || !buttonBackgroundColor) {
         // If no overlay color exists the overlay color is black (isDark )
         setIsDark(true);
         return;
       }
 
       setIsDark(tinycolor2__WEBPACK_IMPORTED_MODULE_5___default()(overlayColor).isDark());
+      setIsDark(tinycolor2__WEBPACK_IMPORTED_MODULE_5___default()(buttonBackgroundColor).isDark());
     }
   }, [overlayColor, dimRatio > 50 || !url, setIsDark]);
   Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
@@ -6676,6 +6679,8 @@ function CoverEdit(_ref5) {
       noticeUI = _ref5.noticeUI,
       overlayColor = _ref5.overlayColor,
       setOverlayColor = _ref5.setOverlayColor,
+      buttonBackgroundColor = _ref5.buttonBackgroundColor,
+      setButtonBackgroundColor = _ref5.setButtonBackgroundColor,
       toggleSelection = _ref5.toggleSelection,
       noticeOperations = _ref5.noticeOperations;
   var id = attributes.id,
@@ -6709,7 +6714,7 @@ function CoverEdit(_ref5) {
   };
 
   var isDarkElement = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useRef"])();
-  var isDark = useCoverIsDark(url, dimRatio, overlayColor.color, isDarkElement);
+  var isDark = useCoverIsDark(url, dimRatio, overlayColor.color, buttonBackgroundColor.color, isDarkElement);
   var onToggleOpenInNewTab = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (key, value, rel) {
     var _setAttributes2;
 
@@ -6738,6 +6743,10 @@ function CoverEdit(_ref5) {
     minHeight: temporaryMinHeight || minHeight
   });
 
+  var styleButton = {
+    backgroundColor: buttonBackgroundColor.color
+  };
+
   if (gradientValue && !url) {
     style.background = gradientValue;
   }
@@ -6746,7 +6755,7 @@ function CoverEdit(_ref5) {
     style.backgroundPosition = "".concat(focalPoint.x * 100, "% ").concat(focalPoint.y * 100, "%");
   }
 
-  var hasBackground = !!(url || overlayColor.color || gradientValue);
+  var hasBackground = !!(url || overlayColor.color || buttonBackgroundColor.color || gradientValue);
   var controls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["BlockControls"], null, hasBackground && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaReplaceFlow"], {
     mediaId: id,
     mediaURL: url,
@@ -6797,14 +6806,24 @@ function CoverEdit(_ref5) {
       });
     }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalPanelColorGradientSettings"], {
-    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Overlay'),
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background Color'),
     initialOpen: true,
     settings: [{
       colorValue: overlayColor.color,
       gradientValue: gradientValue,
       onColorChange: setOverlayColor,
       onGradientChange: setGradient,
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Color')
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background Color')
+    }]
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalPanelColorGradientSettings"], {
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button Background Color'),
+    initialOpen: true,
+    settings: [{
+      colorValue: buttonBackgroundColor.color,
+      gradientValue: gradientValue,
+      onColorChange: setButtonBackgroundColor,
+      onGradientChange: setGradient,
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button Color')
     }]
   }, !!url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background opacity'),
@@ -6849,6 +6868,11 @@ function CoverEdit(_ref5) {
       value: overlayColor.color,
       onChange: setOverlayColor,
       clearable: false
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["ColorPalette"], {
+      disableCustomColors: true,
+      value: buttonBackgroundColor.color,
+      onChange: setButtonBackgroundColor,
+      clearable: false
     }))));
   }
 
@@ -6856,9 +6880,13 @@ function CoverEdit(_ref5) {
     'is-dark-theme': isDark,
     'has-background-dim': dimRatio !== 0,
     'has-parallax': hasParallax
-  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, overlayColor.class, overlayColor.class), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-background-gradient', gradientValue), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, gradientClass, !url && gradientClass), _classnames));
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, overlayColor.class, overlayColor.class), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-background-gradient', gradientValue), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, gradientClass, !url && gradientClass), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "marginLeft", 'calc(50 % - (50vw))'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "marginRight", 'calc(50 % - (50vw))'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "maxWidth", '1000%'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "width", '100vw'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "height", 'calc(100vh)'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "clipPath", 'polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px))'), _classnames));
+  var buttonClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, Object(_shared__WEBPACK_IMPORTED_MODULE_13__["dimRatioToClass"])(dimRatio), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+    'has-background-dim': dimRatio !== 0,
+    'has-background-gradient': gradientValue
+  }, overlayColor.class, overlayColor.class));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ResizableCover, {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('block-library-cover__resize-container', {
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('block-library-cover__resize-container no-x-padding', {
       'is-selected': isSelected
     }),
     onResizeStart: function onResizeStart() {
@@ -6904,7 +6932,7 @@ function CoverEdit(_ref5) {
     className: "hero-content"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h4",
-    className: "hero-text",
+    className: "hero-text alignfull textcenter",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Pre-Heading', 'wpm-lpb'),
     onChange: function onChange(value) {
       return setAttributes({
@@ -6914,7 +6942,7 @@ function CoverEdit(_ref5) {
     value: preheading
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h1",
-    className: "hero-heading",
+    className: "hero-heading alignfull textcenter",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'wpm-lpb'),
     onChange: function onChange(value) {
       return setAttributes({
@@ -6924,7 +6952,7 @@ function CoverEdit(_ref5) {
     value: heading
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "p",
-    className: "hero-text",
+    className: "hero-text alignfull textcenter",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text', 'wpm-lpb'),
     onChange: function onChange(value) {
       return setAttributes({
@@ -6933,7 +6961,9 @@ function CoverEdit(_ref5) {
     },
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    class: "button-wrapper wp-block-button aligncenter alternate-button-style"
+    className: "container widthFull textcenter"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "button-wrapper wp-block-button aligncenter textcenter"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 1'),
     value: button1Text,
@@ -6943,6 +6973,9 @@ function CoverEdit(_ref5) {
       });
     },
     withoutInteractiveFormatting: true,
+    style: {
+      backgroundColor: buttonBackgroundColor.color
+    },
     className: "wp-block-button__link button1",
     rel: button1Rel
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
@@ -6956,7 +6989,7 @@ function CoverEdit(_ref5) {
     toolbarButtonName: "link1",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1'),
     rel: "button1Rel"
-  })))))));
+  }))))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_11__["withDispatch"])(function (dispatch) {
@@ -6967,7 +7000,8 @@ function CoverEdit(_ref5) {
     toggleSelection: toggleSelection
   };
 }), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["withColors"])({
-  overlayColor: 'background-color'
+  overlayColor: 'background-color',
+  buttonBackgroundColor: 'background-color'
 }), _wordpress_components__WEBPACK_IMPORTED_MODULE_6__["withNotices"], _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["withInstanceId"]])(CoverEdit));
 
 /***/ }),
@@ -7085,6 +7119,7 @@ function save(_ref) {
       heading = attributes.heading,
       preheading = attributes.preheading,
       text = attributes.text,
+      styleButton = attributes.styleButton,
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
@@ -7155,7 +7190,8 @@ function save(_ref) {
     className: "hero-text has-text-align-center",
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    class: "button-wrapper wp-block-button widthFull has-text-align-center alternate-button-style"
+    class: "button-wrapper wp-block-button widthFull has-text-align-center alternate-button-style",
+    style: styleButton
   }, button1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
     className: "wp-block-button__link button1",

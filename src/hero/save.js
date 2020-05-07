@@ -38,6 +38,7 @@ export default function save({ attributes }) {
 		heading,
 		preheading,
 		text,
+		styleButton,
 		button1Text,
 		button1URL,
 		button1LinkTarget,
@@ -138,7 +139,7 @@ export default function save({ attributes }) {
 								value={text}
 							/>
 						)}
-						<div class="button-wrapper wp-block-button widthFull has-text-align-center alternate-button-style">
+						<div class="button-wrapper wp-block-button widthFull has-text-align-center alternate-button-style" style={styleButton}>
 							{button1Text && (
 								<RichText.Content
 									tagName="a"

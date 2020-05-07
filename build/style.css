@@ -229,5 +229,12 @@ section.wp-block-cover-image > h2,
 .widthFull {
   width: 100%; }
 
+.no-x-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.textcenter {
+  text-align: center; }
+
 
 /*# sourceMappingURL=style.css.map*/
