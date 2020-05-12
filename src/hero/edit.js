@@ -61,19 +61,25 @@ import {
  * Module Constants
  */
 const NEW_TAB_REL = 'noreferrer noopener';
-const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
+const ALLOWED_MEDIA_TYPES = ['image', 'video'];
 const INNER_BLOCKS_TEMPLATE = [
 	[
 		'core/heading',
 		{
 			level: 1,
-			placeholder: __( 'Heading...' ),
+			placeholder: __('Heading...'),
+		},
+	],
+	[
+		'core/preheading',
+		{
+			placeholder: __('Text before heading...'),
 		},
 	],
 	[
 		'core/paragraph',
 		{
-			placeholder: __( 'Paragraph...' ),
+			placeholder: __('Paragraph...'),
 		},
 	],
 ];
@@ -87,13 +93,13 @@ const INNER_BLOCKS_BUTTONS_TEMPLATE = [
 			[
 				'core/button',
 				{
-					text: __( 'Link 1' ),
+					text: __('Link 1'),
 				},
 			],
 			[
 				'core/button',
 				{
-					text: __( 'Link 2' ),
+					text: __('Link 2'),
 				},
 			],
 		],
@@ -101,58 +107,58 @@ const INNER_BLOCKS_BUTTONS_TEMPLATE = [
 ];
 
 function retrieveFastAverageColor() {
-	if ( ! retrieveFastAverageColor.fastAverageColor ) {
+	if (!retrieveFastAverageColor.fastAverageColor) {
 		retrieveFastAverageColor.fastAverageColor = new FastAverageColor();
 	}
 	return retrieveFastAverageColor.fastAverageColor;
 }
 
-const CoverHeightInput = withInstanceId( function( {
+const CoverHeightInput = withInstanceId(function ({
 	value = '',
 	instanceId,
 	onChange,
-} ) {
-	const [ temporaryInput, setTemporaryInput ] = useState( null );
-	const inputId = `block-cover-height-input-${ instanceId }`;
+}) {
+	const [temporaryInput, setTemporaryInput] = useState(null);
+	const inputId = `block-cover-height-input-${instanceId}`;
 	return (
-		<BaseControl label={ __( 'Minimum height in pixels' ) } id={ inputId }>
+		<BaseControl label={__('Minimum height in pixels')} id={inputId}>
 			<input
 				type="number"
-				id={ inputId }
-				onChange={ ( event ) => {
+				id={inputId}
+				onChange={(event) => {
 					const unprocessedValue = event.target.value;
 					const inputValue =
 						unprocessedValue !== ''
-							? parseInt( event.target.value, 10 )
+							? parseInt(event.target.value, 10)
 							: undefined;
 					if (
-						( isNaN( inputValue ) ||
-							inputValue < COVER_MIN_HEIGHT ) &&
+						(isNaN(inputValue) ||
+							inputValue < COVER_MIN_HEIGHT) &&
 						inputValue !== undefined
 					) {
-						setTemporaryInput( event.target.value );
+						setTemporaryInput(event.target.value);
 						return;
 					}
-					setTemporaryInput( null );
-					onChange( inputValue );
-				} }
-				onBlur={ () => {
-					if ( temporaryInput !== null ) {
-						setTemporaryInput( null );
+					setTemporaryInput(null);
+					onChange(inputValue);
+				}}
+				onBlur={() => {
+					if (temporaryInput !== null) {
+						setTemporaryInput(null);
 					}
-				} }
-				value={ temporaryInput !== null ? temporaryInput : value }
-				min={ COVER_MIN_HEIGHT }
+				}}
+				value={temporaryInput !== null ? temporaryInput : value}
+				min={COVER_MIN_HEIGHT}
 				step="1"
 			/>
 		</BaseControl>
 	);
-} );
+});
 
 const RESIZABLE_BOX_ENABLE_OPTION = {
 	top: false,
 	right: false,
-	bottom: true,
+	bottom: false,
 	left: false,
 	topRight: false,
 	bottomRight: false,
@@ -160,38 +166,38 @@ const RESIZABLE_BOX_ENABLE_OPTION = {
 	topLeft: false,
 };
 
-function ResizableCover( {
+function ResizableCover({
 	className,
 	children,
 	onResizeStart,
 	onResize,
 	onResizeStop,
-} ) {
-	const [ isResizing, setIsResizing ] = useState( false );
+}) {
+	const [isResizing, setIsResizing] = useState(false);
 
 	return (
 		<ResizableBox
-			className={ classnames( className, {
+			className={classnames(className, {
 				'is-resizing': isResizing,
-			} ) }
-			enable={ RESIZABLE_BOX_ENABLE_OPTION }
-			onResizeStart={ ( event, direction, elt ) => {
-				onResizeStart( elt.clientHeight );
-				onResize( elt.clientHeight );
-			} }
-			onResize={ ( event, direction, elt ) => {
-				onResize( elt.clientHeight );
-				if ( ! isResizing ) {
-					setIsResizing( true );
+			})}
+			enable={RESIZABLE_BOX_ENABLE_OPTION}
+			onResizeStart={(event, direction, elt) => {
+				onResizeStart(elt.clientHeight);
+				onResize(elt.clientHeight);
+			}}
+			onResize={(event, direction, elt) => {
+				onResize(elt.clientHeight);
+				if (!isResizing) {
+					setIsResizing(true);
 				}
-			} }
-			onResizeStop={ ( event, direction, elt ) => {
-				onResizeStop( elt.clientHeight );
-				setIsResizing( false );
-			} }
-			minHeight={ COVER_MIN_HEIGHT }
+			}}
+			onResizeStop={(event, direction, elt) => {
+				onResizeStop(elt.clientHeight);
+				setIsResizing(false);
+			}}
+			minHeight={COVER_MIN_HEIGHT}
 		>
-			{ children }
+			{children}
 		</ResizableBox>
 	);
 }
@@ -204,48 +210,50 @@ function ResizableCover( {
  * @param {?number} dimRatio     Transparency of the overlay color. If an image and
  *                               color are set, dimRatio is used to decide what is used
  *                               for background darkness checking purposes.
- * @param {?string} overlayColor String containing the overlay color value if one exists.
+ * @param {?string} overlayColor 
+ * @param {?String} buttonBackgroundColor containing the overlay color value if one exists.
  * @param {?Object} elementRef   If a media background is set, elementRef should contain a reference to a
  *                               dom element that renders that media.
  *
  * @return {boolean} True if the cover background is considered "dark" and false otherwise.
  */
-function useCoverIsDark( url, dimRatio = 50, overlayColor, elementRef ) {
-	const [ isDark, setIsDark ] = useState( false );
-	useEffect( () => {
+function useCoverIsDark(url, dimRatio = 50, overlayColor, buttonBackgroundColor, elementRef) {
+	const [isDark, setIsDark] = useState(false);
+	useEffect(() => {
 		// If opacity is lower than 50 the dominant color is the image or video color,
 		// so use that color for the dark mode computation.
-		if ( url && dimRatio <= 50 && elementRef.current ) {
+		if (url && dimRatio <= 50 && elementRef.current) {
 			retrieveFastAverageColor().getColorAsync(
 				elementRef.current,
-				( color ) => {
-					setIsDark( color.isDark );
+				(color) => {
+					setIsDark(color.isDark);
 				}
 			);
 		}
-	}, [ url, url && dimRatio <= 50 && elementRef.current, setIsDark ] );
-	useEffect( () => {
+	}, [url, url && dimRatio <= 50 && elementRef.current, setIsDark]);
+	useEffect(() => {
 		// If opacity is greater than 50 the dominant color is the overlay color,
 		// so use that color for the dark mode computation.
-		if ( dimRatio > 50 || ! url ) {
-			if ( ! overlayColor ) {
+		if (dimRatio > 50 || !url) {
+			if (!overlayColor || !buttonBackgroundColor) {
 				// If no overlay color exists the overlay color is black (isDark )
-				setIsDark( true );
+				setIsDark(true);
 				return;
 			}
-			setIsDark( tinycolor( overlayColor ).isDark() );
+			setIsDark(tinycolor(overlayColor).isDark());
+			setIsDark(tinycolor(buttonBackgroundColor).isDark());
 		}
-	}, [ overlayColor, dimRatio > 50 || ! url, setIsDark ] );
-	useEffect( () => {
-		if ( ! url && ! overlayColor ) {
+	}, [overlayColor, dimRatio > 50 || !url, setIsDark]);
+	useEffect(() => {
+		if (!url && !overlayColor) {
 			// Reset isDark
-			setIsDark( false );
+			setIsDark(false);
 		}
-	}, [ ! url && ! overlayColor, setIsDark ] );
+	}, [!url && !overlayColor, setIsDark]);
 	return isDark;
 }
 
-function URLPicker( {
+function URLPicker({
 	isSelected,
 	url,
 	setAttributes,
@@ -256,29 +264,29 @@ function URLPicker( {
 	toolbarButtonName,
 	toolbarButtonTitle,
 	rel,
-} ) {
-	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
+}) {
+	const [isURLPickerOpen, setIsURLPickerOpen] = useState(false);
 	const openLinkControl = () => {
-		setIsURLPickerOpen( true );
+		setIsURLPickerOpen(true);
 	};
 	const linkControl = isURLPickerOpen && (
 		<Popover
 			position="bottom center"
-			onClose={ () => setIsURLPickerOpen( false ) }
+			onClose={() => setIsURLPickerOpen(false)}
 		>
 			<LinkControl
 				className="wp-block-navigation-link__inline-link-input"
-				value={ { url, opensInNewTab } }
-				onChange={ ( {
+				value={{ url, opensInNewTab }}
+				onChange={({
 					url: newURL = '',
 					opensInNewTab: newOpensInNewTab,
-				} ) => {
-					setAttributes( { [keyURL]: newURL } );
+				}) => {
+					setAttributes({ [keyURL]: newURL });
 
-					if ( opensInNewTab !== newOpensInNewTab ) {
-						onToggleOpenInNewTab( keyLinkTarget, newOpensInNewTab, rel );
+					if (opensInNewTab !== newOpensInNewTab) {
+						onToggleOpenInNewTab(keyLinkTarget, newOpensInNewTab, rel);
 					}
-				} }
+				}}
 			/>
 		</Popover>
 	);
@@ -287,19 +295,19 @@ function URLPicker( {
 			<BlockControls>
 				<ToolbarGroup>
 					<ToolbarButton
-						name={ toolbarButtonName }
-						icon={ link }
-						title={ toolbarButtonTitle }
-						onClick={ openLinkControl }
+						name={toolbarButtonName}
+						icon={link}
+						title={toolbarButtonTitle}
+						onClick={openLinkControl}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
-			{ linkControl }
+			{linkControl}
 		</>
 	);
 }
 
-function CoverEdit( {
+function CoverEdit({
 	attributes,
 	setAttributes,
 	isSelected,
@@ -307,9 +315,11 @@ function CoverEdit( {
 	noticeUI,
 	overlayColor,
 	setOverlayColor,
+	buttonBackgroundColor,
+	setButtonBackgroundColor,
 	toggleSelection,
 	noticeOperations,
-} ) {
+}) {
 	const {
 		id,
 		backgroundType,
@@ -319,32 +329,26 @@ function CoverEdit( {
 		minHeight,
 		url,
 		heading,
+		preheading,
 		text,
+		capText,
 		button1Text,
 		button1URL,
 		button1LinkTarget,
 		button1Rel,
-		button2Text,
-		button2URL,
-		button2LinkTarget,
-		button2Rel,
-		button3Text,
-		button3URL,
-		button3LinkTarget,
-		button3Rel,
 	} = attributes;
 	const {
 		gradientClass,
 		gradientValue,
 		setGradient,
 	} = __experimentalUseGradient();
-	const onSelectMedia = attributesFromMedia( setAttributes );
+	const onSelectMedia = attributesFromMedia(setAttributes);
 
 	const toggleParallax = () => {
-		setAttributes( {
-			hasParallax: ! hasParallax,
-			...( ! hasParallax ? { focalPoint: undefined } : {} ),
-		} );
+		setAttributes({
+			hasParallax: !hasParallax,
+			...(!hasParallax ? { focalPoint: undefined } : {}),
+		});
 	};
 
 	const isDarkElement = useRef();
@@ -352,187 +356,211 @@ function CoverEdit( {
 		url,
 		dimRatio,
 		overlayColor.color,
+		buttonBackgroundColor.color,
 		isDarkElement
 	);
 
 	const onToggleOpenInNewTab = useCallback(
-		( key, value, rel ) => {
+		(key, value, rel) => {
 			const newLinkTarget = value ? '_blank' : undefined;
 
 			let updatedRel = eval(rel);
-			if ( newLinkTarget && ! eval(rel) ) {
+			if (newLinkTarget && !eval(rel)) {
 				updatedRel = NEW_TAB_REL;
-			} else if ( ! newLinkTarget && eval(rel) === NEW_TAB_REL ) {
+			} else if (!newLinkTarget && eval(rel) === NEW_TAB_REL) {
 				updatedRel = undefined;
 			}
 
-			setAttributes( {
+			setAttributes({
 				[key]: newLinkTarget,
 				[rel]: updatedRel,
-			} );
+			});
 		},
-		[ setAttributes ]
+		[setAttributes]
 	);
 
-	const [ temporaryMinHeight, setTemporaryMinHeight ] = useState( null );
+	const [temporaryMinHeight, setTemporaryMinHeight] = useState(null);
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
 	const style = {
-		...( backgroundType === IMAGE_BACKGROUND_TYPE
-			? backgroundImageStyles( url )
-			: {} ),
+		...(backgroundType === IMAGE_BACKGROUND_TYPE
+			? backgroundImageStyles(url)
+			: {}),
 		backgroundColor: overlayColor.color,
 		minHeight: temporaryMinHeight || minHeight,
 	};
+	const styleButton = {
+		backgroundColor: buttonBackgroundColor.color
+	}
 
-	if ( gradientValue && ! url ) {
+
+	if (gradientValue && !url) {
 		style.background = gradientValue;
 	}
 
-	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
-			100 }%`;
+	if (focalPoint) {
+		style.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y *
+			100}%`;
 	}
 
-	const hasBackground = !! ( url || overlayColor.color || gradientValue );
+	const hasBackground = !!(url || overlayColor.color || buttonBackgroundColor.color || gradientValue);
 
 	const controls = (
 		<>
 			<BlockControls>
-				{ hasBackground && (
+				{hasBackground && (
 					<MediaReplaceFlow
-						mediaId={ id }
-						mediaURL={ url }
-						allowedTypes={ ALLOWED_MEDIA_TYPES }
+						mediaId={id}
+						mediaURL={url}
+						allowedTypes={ALLOWED_MEDIA_TYPES}
 						accept="image/*,video/*"
-						onSelect={ onSelectMedia }
+						onSelect={onSelectMedia}
 					/>
-				) }
+				)}
 			</BlockControls>
 			<InspectorControls>
-				{ !! url && (
-					<PanelBody title={ __( 'Media settings' ) }>
-						{ IMAGE_BACKGROUND_TYPE === backgroundType && (
+				{!!url && (
+					<PanelBody title={__('Media settings')}>
+						{IMAGE_BACKGROUND_TYPE === backgroundType && (
 							<ToggleControl
-								label={ __( 'Fixed background' ) }
-								checked={ hasParallax }
-								onChange={ toggleParallax }
+								label={__('Fixed background')}
+								checked={hasParallax}
+								onChange={toggleParallax}
 							/>
-						) }
-						{ IMAGE_BACKGROUND_TYPE === backgroundType &&
-							! hasParallax && (
+						)}
+						{IMAGE_BACKGROUND_TYPE === backgroundType &&
+							!hasParallax && (
 								<FocalPointPicker
-									label={ __( 'Focal point picker' ) }
-									url={ url }
-									value={ focalPoint }
-									onChange={ ( newFocalPoint ) =>
-										setAttributes( {
+									label={__('Focal point picker')}
+									url={url}
+									value={focalPoint}
+									onChange={(newFocalPoint) =>
+										setAttributes({
 											focalPoint: newFocalPoint,
-										} )
+										})
 									}
 								/>
-							) }
-						{ VIDEO_BACKGROUND_TYPE === backgroundType && (
-							<video autoPlay muted loop src={ url } />
-						) }
+							)}
+						{VIDEO_BACKGROUND_TYPE === backgroundType && (
+							<video autoPlay muted loop src={url} />
+						)}
 						<PanelRow>
 							<Button
 								isSecondary
 								isSmall
 								className="block-library-cover__reset-button"
-								onClick={ () =>
-									setAttributes( {
+								onClick={() =>
+									setAttributes({
 										url: undefined,
 										id: undefined,
 										backgroundType: undefined,
 										dimRatio: undefined,
 										focalPoint: undefined,
 										hasParallax: undefined,
-									} )
+									})
 								}
 							>
-								{ __( 'Clear Media' ) }
+								{__('Clear Media')}
 							</Button>
 						</PanelRow>
 					</PanelBody>
-				) }
-				{ hasBackground && (
+				)}
+				{hasBackground && (
 					<>
-						<PanelBody title={ __( 'Dimensions' ) }>
+						<PanelBody title={__('Dimensions')}>
 							<CoverHeightInput
-								value={ temporaryMinHeight || minHeight }
-								onChange={ ( newMinHeight ) =>
-									setAttributes( { minHeight: newMinHeight } )
+								value={temporaryMinHeight || minHeight}
+								onChange={(newMinHeight) =>
+									setAttributes({ minHeight: newMinHeight })
 								}
 							/>
 						</PanelBody>
 						<PanelColorGradientSettings
-							title={ __( 'Overlay' ) }
-							initialOpen={ true }
-							settings={ [
+							title={__('Background Color')}
+							initialOpen={true}
+							settings={[
 								{
 									colorValue: overlayColor.color,
 									gradientValue,
 									onColorChange: setOverlayColor,
 									onGradientChange: setGradient,
-									label: __( 'Color' ),
+									label: __('Background Color'),
 								},
-							] }
+							]}
+						></PanelColorGradientSettings>
+						<PanelColorGradientSettings
+							title={__('Button Background Color')}
+							initialOpen={true}
+							settings={[
+								{
+									colorValue: buttonBackgroundColor.color,
+									gradientValue,
+									onColorChange: setButtonBackgroundColor,
+									onGradientChange: setGradient,
+									label: __('Button Color'),
+								},
+							]}
 						>
-							{ !! url && (
+							{!!url && (
 								<RangeControl
-									label={ __( 'Background opacity' ) }
-									value={ dimRatio }
-									onChange={ ( newDimRation ) =>
-										setAttributes( {
+									label={__('Background opacity')}
+									value={dimRatio}
+									onChange={(newDimRation) =>
+										setAttributes({
 											dimRatio: newDimRation,
-										} )
+										})
 									}
-									min={ 0 }
-									max={ 100 }
-									step={ 10 }
+									min={0}
+									max={100}
+									step={10}
 									required
 								/>
-							) }
+							)}
 						</PanelColorGradientSettings>
 					</>
-				) }
+				)}
 			</InspectorControls>
 		</>
 	);
 
-	if ( ! hasBackground ) {
-		const placeholderIcon = <BlockIcon icon={ icon } />;
-		const label = __( 'Cover' );
+	if (!hasBackground) {
+		const placeholderIcon = <BlockIcon icon={icon} />;
+		const label = __('Cover');
 
 		return (
 			<>
-				{ controls }
+				{controls}
 				<MediaPlaceholder
-					icon={ placeholderIcon }
-					className={ className }
-					labels={ {
+					icon={placeholderIcon}
+					className={className}
+					labels={{
 						title: label,
 						instructions: __(
 							'Upload an image or video file, or pick one from your media library.'
 						),
-					} }
-					onSelect={ onSelectMedia }
+					}}
+					onSelect={onSelectMedia}
 					accept="image/*,video/*"
-					allowedTypes={ ALLOWED_MEDIA_TYPES }
-					notices={ noticeUI }
-					onError={ ( message ) => {
+					allowedTypes={ALLOWED_MEDIA_TYPES}
+					notices={noticeUI}
+					onError={(message) => {
 						removeAllNotices();
-						createErrorNotice( message );
-					} }
+						createErrorNotice(message);
+					}}
 				>
 					<div className="wp-block-cover__placeholder-background-options">
 						<ColorPalette
-							disableCustomColors={ true }
-							value={ overlayColor.color }
-							onChange={ setOverlayColor }
-							clearable={ false }
+							disableCustomColors={true}
+							value={overlayColor.color}
+							onChange={setOverlayColor}
+							clearable={false}
+						/>
+						<ColorPalette
+							disableCustomColors={true}
+							value={buttonBackgroundColor.color}
+							onChange={setButtonBackgroundColor}
+							clearable={false}
 						/>
 					</div>
 				</MediaPlaceholder>
@@ -540,156 +568,149 @@ function CoverEdit( {
 		);
 	}
 
-	const classes = classnames( className, dimRatioToClass( dimRatio ), {
+	const classes = classnames(className, dimRatioToClass(dimRatio), {
 		'is-dark-theme': isDark,
 		'has-background-dim': dimRatio !== 0,
 		'has-parallax': hasParallax,
-		[ overlayColor.class ]: overlayColor.class,
+		[overlayColor.class]: overlayColor.class,
 		'has-background-gradient': gradientValue,
-		[ gradientClass ]: ! url && gradientClass,
-	} );
+		[gradientClass]: !url && gradientClass,
+		marginLeft: 'calc(65 % - (50vw))',
+		marginRight: 'calc(50 % - (50vw))',
+		maxWidth: '200%',
+		width: '150vw',
+		height: 'calc(100vh)',
+		clipPath: 'polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px))',
+	});
+
+	const buttonClasses = classnames(className, dimRatioToClass(dimRatio), {
+		'has-background-dim': dimRatio !== 0,
+		'has-background-gradient': gradientValue,
+		[overlayColor.class]: overlayColor.class,
+	});
 
 	return (
 		<>
-			{ controls }
+			{controls}
 			<ResizableCover
-				className={ classnames(
-					'block-library-cover__resize-container',
+				className={classnames(
+					'block-library-cover__resize-container no-x-padding',
 					{
 						'is-selected': isSelected,
 					}
-				) }
-				onResizeStart={ () => toggleSelection( false ) }
-				onResize={ setTemporaryMinHeight }
-				onResizeStop={ ( newMinHeight ) => {
-					toggleSelection( true );
-					setAttributes( { minHeight: newMinHeight } );
-					setTemporaryMinHeight( null );
-				} }
+				)}
+				onResizeStart={() => toggleSelection(false)}
+				onResize={setTemporaryMinHeight}
+				onResizeStop={(newMinHeight) => {
+					toggleSelection(true);
+					setAttributes({ minHeight: newMinHeight });
+					setTemporaryMinHeight(null);
+				}}
 			>
-				<div data-url={ url } style={ style } className={ classes }>
-					{ IMAGE_BACKGROUND_TYPE === backgroundType && (
+				<div data-url={url} style={style} className={classes}>
+					{IMAGE_BACKGROUND_TYPE === backgroundType && (
 						// Used only to programmatically check if the image is dark or not
 						<img
-							ref={ isDarkElement }
+							ref={isDarkElement}
 							aria-hidden
 							alt=""
-							style={ {
+							style={{
 								display: 'none',
-							} }
-							src={ url }
+							}}
+							src={url}
 						/>
-					) }
-					{ url && gradientValue && dimRatio !== 0 && (
+					)}
+					{url && gradientValue && dimRatio !== 0 && (
 						<span
 							aria-hidden="true"
-							className={ classnames(
+							className={classnames(
 								'wp-block-cover__gradient-background',
 								gradientClass
-							) }
-							style={ { background: gradientValue } }
+							)}
+							style={{ background: gradientValue }}
 						/>
-					) }
-					{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+					)}
+					{VIDEO_BACKGROUND_TYPE === backgroundType && (
 						<video
-							ref={ isDarkElement }
+							ref={isDarkElement}
 							className="wp-block-cover__video-background"
 							autoPlay
 							muted
 							loop
-							src={ url }
+							src={url}
 						/>
-					) }
+					)}
 					<div className="wp-block-cover__inner-container">
 						<div className="hero-content">
 							<RichText
-								tagName="h1"
-								className="hero-heading"
-								placeholder={ __( 'Heading', 'wpm-lpb' ) }
-								onChange={ ( value ) =>
-									setAttributes( {
-										heading: value,
-									} )
+								tagName="h4"
+								className="hero-text alignfull textcenter"
+								placeholder={__('Pre-Heading', 'wpm-lpb')}
+								onChange={(value) =>
+									setAttributes({
+										preheading: value,
+									})
 								}
-								value={ heading }
+								value={preheading}
+							/>
+							<RichText
+								tagName="h1"
+								className="hero-heading alignfull textcenter"
+								placeholder={__('Heading', 'wpm-lpb')}
+								onChange={(value) =>
+									setAttributes({
+										heading: value,
+									})
+								}
+								value={heading}
 							/>
 							<RichText
 								tagName="p"
-								className="hero-text"
-								placeholder={ __( 'Text', 'wpm-lpb' ) }
-								onChange={ ( value ) =>
-									setAttributes( {
+								className="hero-text alignfull textcenter"
+								placeholder={__('Text', 'wpm-lpb')}
+								onChange={(value) =>
+									setAttributes({
 										text: value,
-									} )
+									})
 								}
-								value={ text }
+								value={text}
 							/>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 1' ) }
-									value={ button1Text }
-									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button1"
-									rel={ button1Rel }
-								/>
-								<URLPicker
-									url={ button1URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button1LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button1URL"
-									keyLinkTarget="button1LinkTarget"
-									toolbarButtonName="link1"
-									toolbarButtonTitle={ __( 'Link 1' ) }
-									rel="button1Rel"
-								/>
+							<div className="container widthFull textcenter">
+								<div className={`button-wrapper wp-block-button editor-button aligncenter textcenter`}>
+									<RichText
+										placeholder={__('Button 1')}
+										value={button1Text}
+										onChange={(value) => setAttributes({ button1Text: value })}
+										withoutInteractiveFormatting
+										style={{ backgroundColor: buttonBackgroundColor.color }}
+										className={`.wp-block-button__link button1`}
+										rel={button1Rel}
+									/>
+									<URLPicker
+										url={button1URL}
+										setAttributes={setAttributes}
+										isSelected={isSelected}
+										opensInNewTab={button1LinkTarget === '_blank'}
+										onToggleOpenInNewTab={onToggleOpenInNewTab}
+										keyURL="button1URL"
+										keyLinkTarget="button1LinkTarget"
+										toolbarButtonName="link1"
+										toolbarButtonTitle={__('Link 1')}
+										rel="button1Rel"
+									/>
+								</div>
 							</div>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 2' ) }
-									value={ button2Text }
-									onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button2"
-									rel={ button2Rel }
-								/>
-								<URLPicker
-									url={ button2URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button2LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button2URL"
-									keyLinkTarget="button2LinkTarget"
-									toolbarButtonName="link2"
-									toolbarButtonTitle={ __( 'Link 2' ) }
-									rel="button2Rel"
-								/>
-							</div>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 3' ) }
-									value={ button3Text }
-									onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button3"
-									rel={ button3Rel }
-								/>
-								<URLPicker
-									url={ button3URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button3LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button3URL"
-									keyLinkTarget="button3LinkTarget"
-									toolbarButtonName="link3"
-									toolbarButtonTitle={ __( 'Link 3' ) }
-									rel="button3Rel"
-								/>
-							</div>
+							<RichText
+								tagName="p"
+								className="caption caption-left"
+								placeholder={__('captionText', 'wpm-lpb')}
+								onChange={(value) =>
+									setAttributes({
+										capText: value,
+									})
+								}
+								value={capText}
+							/>
 						</div>
 					</div>
 				</div>
@@ -698,15 +719,15 @@ function CoverEdit( {
 	);
 }
 
-export default compose( [
-	withDispatch( ( dispatch ) => {
-		const { toggleSelection } = dispatch( 'core/block-editor' );
+export default compose([
+	withDispatch((dispatch) => {
+		const { toggleSelection } = dispatch('core/block-editor');
 
 		return {
 			toggleSelection,
 		};
-	} ),
-	withColors( { overlayColor: 'background-color' } ),
+	}),
+	withColors({ overlayColor: 'background-color', buttonBackgroundColor: 'background-color' }),
 	withNotices,
 	withInstanceId,
-] )( CoverEdit );
+])(CoverEdit);
