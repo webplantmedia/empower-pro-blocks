@@ -4,14 +4,12 @@
 	background-size: cover;
 	background-position: center center;
 	min-height: 430px;
-	height: 60vw !important;
+	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
-	clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
 
 	&.has-parallax {
 		background-attachment: fixed;
@@ -68,11 +66,6 @@
 		width: 100%;
 	}
 
-	&.alignfull{
-		max-width: 1000%;
-		width: 100%;
-	}
-
 	// Using flexbox without an assigned height property breaks vertical center alignment in IE11.
 	// Appending an empty ::after element tricks IE11 into giving the cover image an implicit height, which sidesteps this issue.
 	&::after {
@@ -116,7 +109,6 @@
 
 .wp-block-cover__video-background {
 	position: absolute;
-	filter: brightness(55%);
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
@@ -182,82 +174,4 @@ section.wp-block-cover-image > h2,
 .button-wrapper {
 	display: inline-block;
 	position: relative;
-}
-
-.no-x-margin{
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-}
-
-.preview-button{
-    padding: 14px 26px 14px 26px;
-}
-
-.caption{
-	max-width: 300px;
-}
-
-p.caption-left{
-	position: absolute;
-	top: 80%;
-	right: auto;
-	bottom: auto;
-	border-width: 0;
-	margin-bottom: 28px;
-
-	&::after,
-	&::before {
-		display: none;
-	}
-}
-
-
-
-.hero-heading{
-	max-width: 100%;
-}
-
-.hero-text{
-	max-width: 750px;
-	text-align: center ;
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-.caption-left {
-	right: auto;
-	left: 10%;
-	text-align: left;
-
-	&::before {
-		top: -75px;
-		right: auto;
-		left: 15px;
-
-		border-top: 3px solid #fff;
-		border-left: 2px solid #fff;
-		border-right-width: 0;
-		-moz-transform: skewY(-45deg);
-		-webkit-transform: skewY(-45deg);
-		transform: skewY(-45deg);
-	}
-
-	&::after {
-		top: -103px;
-		right: auto;
-		left: 60px;
-	}
-
-}
-
-.widthFull {
-	width: 100%;
-} 
-
-.no-x-padding {
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-}
-
-.textcenter {
-	text-align: center;
 }

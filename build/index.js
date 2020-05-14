@@ -6448,8 +6448,6 @@ var ALLOWED_MEDIA_TYPES = ['image', 'video'];
 var INNER_BLOCKS_TEMPLATE = [['core/heading', {
   level: 1,
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading...')
-}], ['core/preheading', {
-  placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text before heading...')
 }], ['core/paragraph', {
   placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Paragraph...')
 }]];
@@ -6513,7 +6511,7 @@ var CoverHeightInput = Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["w
 var RESIZABLE_BOX_ENABLE_OPTION = {
   top: false,
   right: false,
-  bottom: false,
+  bottom: true,
   left: false,
   topRight: false,
   bottomRight: false,
@@ -6566,8 +6564,7 @@ function ResizableCover(_ref2) {
  * @param {?number} dimRatio     Transparency of the overlay color. If an image and
  *                               color are set, dimRatio is used to decide what is used
  *                               for background darkness checking purposes.
- * @param {?string} overlayColor 
- * @param {?String} buttonBackgroundColor containing the overlay color value if one exists.
+ * @param {?string} overlayColor String containing the overlay color value if one exists.
  * @param {?Object} elementRef   If a media background is set, elementRef should contain a reference to a
  *                               dom element that renders that media.
  *
@@ -6578,8 +6575,7 @@ function ResizableCover(_ref2) {
 function useCoverIsDark(url) {
   var dimRatio = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
   var overlayColor = arguments.length > 2 ? arguments[2] : undefined;
-  var buttonBackgroundColor = arguments.length > 3 ? arguments[3] : undefined;
-  var elementRef = arguments.length > 4 ? arguments[4] : undefined;
+  var elementRef = arguments.length > 3 ? arguments[3] : undefined;
 
   var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState5, 2),
@@ -6599,14 +6595,13 @@ function useCoverIsDark(url) {
     // If opacity is greater than 50 the dominant color is the overlay color,
     // so use that color for the dark mode computation.
     if (dimRatio > 50 || !url) {
-      if (!overlayColor || !buttonBackgroundColor) {
+      if (!overlayColor) {
         // If no overlay color exists the overlay color is black (isDark )
         setIsDark(true);
         return;
       }
 
       setIsDark(tinycolor2__WEBPACK_IMPORTED_MODULE_5___default()(overlayColor).isDark());
-      setIsDark(tinycolor2__WEBPACK_IMPORTED_MODULE_5___default()(buttonBackgroundColor).isDark());
     }
   }, [overlayColor, dimRatio > 50 || !url, setIsDark]);
   Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
@@ -6679,8 +6674,6 @@ function CoverEdit(_ref5) {
       noticeUI = _ref5.noticeUI,
       overlayColor = _ref5.overlayColor,
       setOverlayColor = _ref5.setOverlayColor,
-      buttonBackgroundColor = _ref5.buttonBackgroundColor,
-      setButtonBackgroundColor = _ref5.setButtonBackgroundColor,
       toggleSelection = _ref5.toggleSelection,
       noticeOperations = _ref5.noticeOperations;
   var id = attributes.id,
@@ -6691,13 +6684,19 @@ function CoverEdit(_ref5) {
       minHeight = attributes.minHeight,
       url = attributes.url,
       heading = attributes.heading,
-      preheading = attributes.preheading,
       text = attributes.text,
-      capText = attributes.capText,
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
-      button1Rel = attributes.button1Rel;
+      button1Rel = attributes.button1Rel,
+      button2Text = attributes.button2Text,
+      button2URL = attributes.button2URL,
+      button2LinkTarget = attributes.button2LinkTarget,
+      button2Rel = attributes.button2Rel,
+      button3Text = attributes.button3Text,
+      button3URL = attributes.button3URL,
+      button3LinkTarget = attributes.button3LinkTarget,
+      button3Rel = attributes.button3Rel;
 
   var _experimentalUseGrad = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalUseGradient"])(),
       gradientClass = _experimentalUseGrad.gradientClass,
@@ -6715,7 +6714,7 @@ function CoverEdit(_ref5) {
   };
 
   var isDarkElement = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useRef"])();
-  var isDark = useCoverIsDark(url, dimRatio, overlayColor.color, buttonBackgroundColor.color, isDarkElement);
+  var isDark = useCoverIsDark(url, dimRatio, overlayColor.color, isDarkElement);
   var onToggleOpenInNewTab = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (key, value, rel) {
     var _setAttributes2;
 
@@ -6744,10 +6743,6 @@ function CoverEdit(_ref5) {
     minHeight: temporaryMinHeight || minHeight
   });
 
-  var styleButton = {
-    backgroundColor: buttonBackgroundColor.color
-  };
-
   if (gradientValue && !url) {
     style.background = gradientValue;
   }
@@ -6756,7 +6751,7 @@ function CoverEdit(_ref5) {
     style.backgroundPosition = "".concat(focalPoint.x * 100, "% ").concat(focalPoint.y * 100, "%");
   }
 
-  var hasBackground = !!(url || overlayColor.color || buttonBackgroundColor.color || gradientValue);
+  var hasBackground = !!(url || overlayColor.color || gradientValue);
   var controls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["BlockControls"], null, hasBackground && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaReplaceFlow"], {
     mediaId: id,
     mediaURL: url,
@@ -6807,24 +6802,14 @@ function CoverEdit(_ref5) {
       });
     }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalPanelColorGradientSettings"], {
-    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background Color'),
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Overlay'),
     initialOpen: true,
     settings: [{
       colorValue: overlayColor.color,
       gradientValue: gradientValue,
       onColorChange: setOverlayColor,
       onGradientChange: setGradient,
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background Color')
-    }]
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["__experimentalPanelColorGradientSettings"], {
-    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button Background Color'),
-    initialOpen: true,
-    settings: [{
-      colorValue: buttonBackgroundColor.color,
-      gradientValue: gradientValue,
-      onColorChange: setButtonBackgroundColor,
-      onGradientChange: setGradient,
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button Color')
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Color')
     }]
   }, !!url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Background opacity'),
@@ -6869,11 +6854,6 @@ function CoverEdit(_ref5) {
       value: overlayColor.color,
       onChange: setOverlayColor,
       clearable: false
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["ColorPalette"], {
-      disableCustomColors: true,
-      value: buttonBackgroundColor.color,
-      onChange: setButtonBackgroundColor,
-      clearable: false
     }))));
   }
 
@@ -6881,13 +6861,9 @@ function CoverEdit(_ref5) {
     'is-dark-theme': isDark,
     'has-background-dim': dimRatio !== 0,
     'has-parallax': hasParallax
-  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, overlayColor.class, overlayColor.class), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-background-gradient', gradientValue), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, gradientClass, !url && gradientClass), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "marginLeft", 'calc(65 % - (50vw))'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "marginRight", 'calc(50 % - (50vw))'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "maxWidth", '200%'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "width", '150vw'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "height", 'calc(100vh)'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "clipPath", 'polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px))'), _classnames));
-  var buttonClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, Object(_shared__WEBPACK_IMPORTED_MODULE_13__["dimRatioToClass"])(dimRatio), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-    'has-background-dim': dimRatio !== 0,
-    'has-background-gradient': gradientValue
-  }, overlayColor.class, overlayColor.class));
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, overlayColor.class, overlayColor.class), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-background-gradient', gradientValue), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, gradientClass, !url && gradientClass), _classnames));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ResizableCover, {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('block-library-cover__resize-container no-x-padding', {
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('block-library-cover__resize-container', {
       'is-selected': isSelected
     }),
     onResizeStart: function onResizeStart() {
@@ -6932,18 +6908,8 @@ function CoverEdit(_ref5) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "hero-content"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
-    tagName: "h4",
-    className: "hero-text alignfull textcenter",
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Pre-Heading', 'wpm-lpb'),
-    onChange: function onChange(value) {
-      return setAttributes({
-        preheading: value
-      });
-    },
-    value: preheading
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h1",
-    className: "hero-heading alignfull textcenter",
+    className: "hero-heading",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'wpm-lpb'),
     onChange: function onChange(value) {
       return setAttributes({
@@ -6953,7 +6919,7 @@ function CoverEdit(_ref5) {
     value: heading
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "p",
-    className: "hero-text alignfull textcenter",
+    className: "hero-text",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text', 'wpm-lpb'),
     onChange: function onChange(value) {
       return setAttributes({
@@ -6962,9 +6928,7 @@ function CoverEdit(_ref5) {
     },
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "container widthFull textcenter"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "button-wrapper wp-block-button editor-button aligncenter textcenter"
+    class: "button-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 1'),
     value: button1Text,
@@ -6974,10 +6938,7 @@ function CoverEdit(_ref5) {
       });
     },
     withoutInteractiveFormatting: true,
-    style: {
-      backgroundColor: buttonBackgroundColor.color
-    },
-    className: ".wp-block-button__link button1",
+    className: "wp-block-button__link button1",
     rel: button1Rel
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
     url: button1URL,
@@ -6990,17 +6951,55 @@ function CoverEdit(_ref5) {
     toolbarButtonName: "link1",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1'),
     rel: "button1Rel"
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
-    tagName: "p",
-    className: "caption caption-left",
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('captionText', 'wpm-lpb'),
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    class: "button-wrapper"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 2'),
+    value: button2Text,
     onChange: function onChange(value) {
       return setAttributes({
-        capText: value
+        button2Text: value
       });
     },
-    value: capText
-  }))))));
+    withoutInteractiveFormatting: true,
+    className: "wp-block-button__link button2",
+    rel: button2Rel
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
+    url: button2URL,
+    setAttributes: setAttributes,
+    isSelected: isSelected,
+    opensInNewTab: button2LinkTarget === '_blank',
+    onToggleOpenInNewTab: onToggleOpenInNewTab,
+    keyURL: "button2URL",
+    keyLinkTarget: "button2LinkTarget",
+    toolbarButtonName: "link2",
+    toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 2'),
+    rel: "button2Rel"
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    class: "button-wrapper"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 3'),
+    value: button3Text,
+    onChange: function onChange(value) {
+      return setAttributes({
+        button3Text: value
+      });
+    },
+    withoutInteractiveFormatting: true,
+    className: "wp-block-button__link button3",
+    rel: button3Rel
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(URLPicker, {
+    url: button3URL,
+    setAttributes: setAttributes,
+    isSelected: isSelected,
+    opensInNewTab: button3LinkTarget === '_blank',
+    onToggleOpenInNewTab: onToggleOpenInNewTab,
+    keyURL: "button3URL",
+    keyLinkTarget: "button3LinkTarget",
+    toolbarButtonName: "link3",
+    toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 3'),
+    rel: "button3Rel"
+  })))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_11__["withDispatch"])(function (dispatch) {
@@ -7011,8 +7010,7 @@ function CoverEdit(_ref5) {
     toggleSelection: toggleSelection
   };
 }), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["withColors"])({
-  overlayColor: 'background-color',
-  buttonBackgroundColor: 'background-color'
+  overlayColor: 'background-color'
 }), _wordpress_components__WEBPACK_IMPORTED_MODULE_6__["withNotices"], _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["withInstanceId"]])(CoverEdit));
 
 /***/ }),
@@ -7128,14 +7126,19 @@ function save(_ref) {
       url = attributes.url,
       minHeight = attributes.minHeight,
       heading = attributes.heading,
-      preheading = attributes.preheading,
       text = attributes.text,
-      capText = attributes.capText,
-      styleButton = attributes.styleButton,
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
-      button1Rel = attributes.button1Rel;
+      button1Rel = attributes.button1Rel,
+      button2Text = attributes.button2Text,
+      button2URL = attributes.button2URL,
+      button2LinkTarget = attributes.button2LinkTarget,
+      button2Rel = attributes.button2Rel,
+      button3Text = attributes.button3Text,
+      button3URL = attributes.button3URL,
+      button3LinkTarget = attributes.button3LinkTarget,
+      button3Rel = attributes.button3Rel;
   var overlayColorClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor);
 
   var gradientClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalGetGradientClass"])(gradient);
@@ -7159,11 +7162,9 @@ function save(_ref) {
     'has-background-dim': dimRatio !== 0,
     'has-parallax': hasParallax,
     'has-background-gradient': gradient || customGradient
-  }, gradientClass, !url && gradientClass), "hero-intro", "align-wide");
+  }, gradientClass, !url && gradientClass));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: ({
-      classes: classes
-    }, "wp-block-cover hero-intro"),
+    className: classes,
     style: style
   }, url && (gradient || customGradient) && dimRatio !== 0 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
     "aria-hidden": "true",
@@ -7177,44 +7178,45 @@ function save(_ref) {
     muted: true,
     loop: true,
     src: url
-  }), _shared__WEBPACK_IMPORTED_MODULE_4__["IMAGE_BACKGROUND_TYPE"] === backgroundType && url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("image", {
-    className: "wp-block-cover__video-background no-x-margin",
-    autoPlay: true,
-    muted: true,
-    loop: true,
-    src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: "wp-block-cover__inner-container hero-intro"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: "hero-intro"
+    className: "wp-block-cover__inner-container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "hero-content"
-  }, preheading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
-    tagName: "h4",
-    className: "hero-text has-text-align-center h4",
-    value: preheading
-  }), heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
-    className: "hero-heading has-text-align-center ",
+    className: "hero-heading",
     value: heading
   }), text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "p",
-    className: "hero-text has-text-align-center",
+    className: "hero-text",
     value: text
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    class: "button-wrapper wp-block-button widthFull has-text-align-center preview-button",
-    style: styleButton
+    class: "button-wrapper"
   }, button1Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
-    className: "wp-block-button__link button1 ",
+    className: "wp-block-button__link button1",
     value: button1Text,
     href: button1URL,
     target: button1LinkTarget,
     rel: button1Rel
-  })), text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
-    tagName: "p",
-    className: "caption caption-left",
-    value: capText
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-wrapper"
+  }, button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    tagName: "a",
+    className: "wp-block-button__link button2",
+    value: button2Text,
+    href: button2URL,
+    target: button2LinkTarget,
+    rel: button2Rel
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-wrapper"
+  }, button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    tagName: "a",
+    className: "wp-block-button__link button3",
+    value: button3Text,
+    href: button3URL,
+    target: button3LinkTarget,
+    rel: button3Rel
   })))));
 }
 

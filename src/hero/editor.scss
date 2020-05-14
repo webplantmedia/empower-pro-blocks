@@ -39,26 +39,7 @@
 	margin-left: auto;
 }
 
-.editor-button{
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    border-radius: 0;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 600;
-    letter-spacing: 0.0333em;
-    line-height: 1.25;
-    margin: 0;
-    opacity: 1;
-    padding: 16px 26px 16px 26px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: opacity 0.15s linear;}
 .block-library-cover__resize-container:not(.is-resizing) {
 	// Important is used to have higher specificity than the inline style set by re-resizable library.
 	height: auto !important;
-	clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
 }
