@@ -10,6 +10,7 @@ import tinycolor from 'tinycolor2';
  */
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import {
+	DropdownMenu,
 	BaseControl,
 	PanelBody,
 	Button,
@@ -28,7 +29,16 @@ import {
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
+    more,
+    arrowLeft,
+    arrowRight,
+    arrowUp,
+    arrowDown,
+} from '@wordpress/icons';
+import {
 	BlockControls,
+	AlignmentToolbar,
+	BlockAlignmentToolbar,
 	BlockIcon,
 	RichText,
 	InnerBlocks,
@@ -306,7 +316,6 @@ function URLPicker({
 		</>
 	);
 }
-
 function CoverEdit({
 	attributes,
 	setAttributes,
@@ -331,6 +340,9 @@ function CoverEdit({
 		heading,
 		preheading,
 		text,
+		heroContent="hero-content-center",
+		capAlignment = "Caption-box-align-left",
+		capContent = "caption caption-left",
 		capText,
 		button1Text,
 		button1URL,
@@ -466,6 +478,29 @@ function CoverEdit({
 						</PanelRow>
 					</PanelBody>
 				)}
+				{capText && (
+					<PanelBody title={__('Caption Settings')}>
+						<text className="editor-caption-alignment-text">
+						Select caption alignment	
+						</text>			
+						<DropdownMenu
+							icon={ more }
+							label="Select a direction"
+							controls={ [
+								{
+									title: 'Right',
+									icon: arrowRight,
+									onClick: () => setAlignRight(),
+								},
+								{
+									title: 'Left',
+									icon: arrowLeft,
+									onClick: () => setAlignLeft(),
+								},
+							] }
+						/>
+					</PanelBody>
+				)}
 				{hasBackground && (
 					<>
 						<PanelBody title={__('Dimensions')}>
@@ -476,19 +511,6 @@ function CoverEdit({
 								}
 							/>
 						</PanelBody>
-						<PanelColorGradientSettings
-							title={__('Background Color')}
-							initialOpen={true}
-							settings={[
-								{
-									colorValue: overlayColor.color,
-									gradientValue,
-									onColorChange: setOverlayColor,
-									onGradientChange: setGradient,
-									label: __('Background Color'),
-								},
-							]}
-						></PanelColorGradientSettings>
 						<PanelColorGradientSettings
 							title={__('Button Background Color')}
 							initialOpen={true}
@@ -519,6 +541,7 @@ function CoverEdit({
 							)}
 						</PanelColorGradientSettings>
 					</>
+					
 				)}
 			</InspectorControls>
 		</>
@@ -549,23 +572,29 @@ function CoverEdit({
 						createErrorNotice(message);
 					}}
 				>
-					<div className="wp-block-cover__placeholder-background-options">
-						<ColorPalette
-							disableCustomColors={true}
-							value={overlayColor.color}
-							onChange={setOverlayColor}
-							clearable={false}
-						/>
-						<ColorPalette
-							disableCustomColors={true}
-							value={buttonBackgroundColor.color}
-							onChange={setButtonBackgroundColor}
-							clearable={false}
-						/>
-					</div>
 				</MediaPlaceholder>
 			</>
 		);
+	}
+
+	function setAlignRight() {
+		setAttributes({
+			capAlignment: "Caption-box-align-right",
+		})
+		captionBox.className = "Caption-box-align-right";
+		setAttributes({
+			capContent: "caption caption-right",
+		})
+	}
+
+	function setAlignLeft() {
+		setAttributes({
+			capAlignment: "Caption-box-align-left",
+		})
+		captionBox.className = "Caption-box-align-left";
+		setAttributes({
+			capContent: "caption caption-left",
+		})
 	}
 
 	const classes = classnames(className, dimRatioToClass(dimRatio), {
@@ -641,7 +670,7 @@ function CoverEdit({
 						/>
 					)}
 					<div className="wp-block-cover__inner-container">
-						<div className="hero-content">
+						<div className={heroContent}>
 							<RichText
 								tagName="h4"
 								className="hero-text alignfull textcenter"
@@ -676,14 +705,14 @@ function CoverEdit({
 								value={text}
 							/>
 							<div className="container widthFull textcenter">
-								<div className={`button-wrapper wp-block-button editor-button aligncenter textcenter`}>
+								<div className={`button-wrapper wp-block-button aligncenter textcenter`}>
 									<RichText
 										placeholder={__('Button 1')}
 										value={button1Text}
 										onChange={(value) => setAttributes({ button1Text: value })}
 										withoutInteractiveFormatting
 										style={{ backgroundColor: buttonBackgroundColor.color }}
-										className={`.wp-block-button__link button1`}
+										className={`rich-text block-editor-rich-text__editable wp-block-button__link`}
 										rel={button1Rel}
 									/>
 									<URLPicker
@@ -700,17 +729,20 @@ function CoverEdit({
 									/>
 								</div>
 							</div>
-							<RichText
-								tagName="p"
-								className="caption caption-left"
-								placeholder={__('captionText', 'wpm-lpb')}
-								onChange={(value) =>
-									setAttributes({
-										capText: value,
-									})
-								}
-								value={capText}
-							/>
+							<div id="captionBox" className={capAlignment} >
+								<RichText
+									tagName="p"
+									id="captionSetter"
+									className={capContent}
+									placeholder={__('captionText', 'wpm-lpb')}
+									onChange={(value) =>
+										setAttributes({
+											capText: value,
+										})
+									}
+									value={capText}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -38,6 +38,8 @@ export default function save({ attributes }) {
 		heading,
 		preheading,
 		text,
+		capAlignment,
+		capContent,
 		capText,
 		styleButton,
 		button1Text,
@@ -80,7 +82,7 @@ export default function save({ attributes }) {
 		"hero-intro",
 		"align-wide"
 	);
-
+	
 	return (
 		<div className={{ classes }, "wp-block-cover hero-intro"} style={style}>
 			{url && (gradient || customGradient) && dimRatio !== 0 && (
@@ -129,7 +131,7 @@ export default function save({ attributes }) {
 						{heading && (
 							<RichText.Content
 								tagName="h1"
-								className="hero-heading has-text-align-center " 
+								className="hero-heading has-text-align-center typewriter " 
 								value={heading}
 							/>
 						)}
@@ -140,11 +142,11 @@ export default function save({ attributes }) {
 								value={text}
 							/>
 						)}
-						<div class="button-wrapper wp-block-button widthFull has-text-align-center preview-button" style={styleButton}>
+						<div class="button-wrapper wp-block-button widthFull has-text-align-center" style={styleButton}>
 							{button1Text && (
 								<RichText.Content
 									tagName="a"
-									className="wp-block-button__link button1 "
+									className="wp-block-button__link button1"
 									value={button1Text}
 									href={button1URL}
 									target={button1LinkTarget}
@@ -152,13 +154,15 @@ export default function save({ attributes }) {
 								/>
 							)}
 						</div>
-						{text && (
-							<RichText.Content
-								tagName="p"
-								className="caption caption-left"
-								value={capText}
-							/>
-						)}
+						<div className={capAlignment}>
+							{capText && (
+								<RichText.Content
+									tagName="p"
+									className={capContent}
+									value={capText}
+								/>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>

@@ -8,6 +8,14 @@
 		"id": {
 			"type": "number"
 		},
+		"alignment": {
+            "type": "string",
+            "default": "wide"
+        },
+		"blockAlignment": {
+            "type": "string",
+            "default": "wide"
+        },
 		"hasParallax": {
 			"type": "boolean",
 			"default": false
@@ -43,10 +51,23 @@
 			"source": "children",
 			"selector": ".hero-heading"
 		},
+		"heading2": {
+			"type": "array",
+			"source": "children",
+			"selector": ".hero-heading"
+		},
 		"text": {
 			"type": "array",
 			"source": "children",
 			"selector": ".hero-text"
+		},
+		"capText": {
+			"type": "array",
+			"source": "children",
+			"selector": ".caption"
+		},
+		"capContent":{
+			"type": "string"
 		},
 		"button1Text": {
 			"type": "string",
