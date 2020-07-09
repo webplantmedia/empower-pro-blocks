@@ -68,7 +68,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 800px; }
   .wp-block-empower-pro-blocks-hero.has-parallax {
     background-attachment: fixed; }
     @supports (-webkit-overflow-scrolling: touch) {
