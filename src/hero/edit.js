@@ -88,12 +88,14 @@ const INNER_BLOCKS_BUTTONS_TEMPLATE = [
 				'core/button',
 				{
 					text: __( 'Link 1' ),
+					className: 'text',
 				},
 			],
 			[
 				'core/button',
 				{
 					text: __( 'Link 2' ),
+					className: 'text',
 				},
 			],
 		],
@@ -552,21 +554,6 @@ function CoverEdit( {
 	return (
 		<>
 			{ controls }
-			<ResizableCover
-				className={ classnames(
-					'block-library-cover__resize-container',
-					{
-						'is-selected': isSelected,
-					}
-				) }
-				onResizeStart={ () => toggleSelection( false ) }
-				onResize={ setTemporaryMinHeight }
-				onResizeStop={ ( newMinHeight ) => {
-					toggleSelection( true );
-					setAttributes( { minHeight: newMinHeight } );
-					setTemporaryMinHeight( null );
-				} }
-			>
 				<div data-url={ url } style={ style } className={ classes }>
 					{ IMAGE_BACKGROUND_TYPE === backgroundType && (
 						// Used only to programmatically check if the image is dark or not
@@ -689,11 +676,17 @@ function CoverEdit( {
 									toolbarButtonTitle={ __( 'Link 3' ) }
 									rel="button3Rel"
 								/>
+								<InnerBlocks
+									__experimentalTagName="div"
+									__experimentalPassedProps={ {
+										className: 'wp-block-cover__inner-container',
+									} }
+									template={ INNER_BLOCKS_BUTTONS_TEMPLATE }
+								/>
 							</div>
 						</div>
 					</div>
 				</div>
-			</ResizableCover>
 		</>
 	);
 }

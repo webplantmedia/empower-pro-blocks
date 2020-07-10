@@ -25,23 +25,6 @@ export const settings = {
 		align: true,
 		html: false,
 	},
-	example: {
-		attributes: {
-			customOverlayColor: '#065174',
-			dimRatio: 40,
-			url: 'https://s.w.org/images/core/5.3/Windbuchencom.jpg',
-		},
-		innerBlocks: [
-			{
-				name: 'core/paragraph',
-				attributes: {
-					customFontSize: 48,
-					content: __( '<strong>Snow Patrol</strong>' ),
-					align: 'center',
-				},
-			},
-		],
-	},
 	save,
 	edit,
 };

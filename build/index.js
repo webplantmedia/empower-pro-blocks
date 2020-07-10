@@ -6454,9 +6454,11 @@ var INNER_BLOCKS_TEMPLATE = [['core/heading', {
 var INNER_BLOCKS_BUTTONS_TEMPLATE = [['core/buttons', {
   className: 'testing'
 }, [['core/button', {
-  text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1')
+  text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 1'),
+  className: 'text'
 }], ['core/button', {
-  text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 2')
+  text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 2'),
+  className: 'text'
 }]]]];
 
 function retrieveFastAverageColor() {
@@ -6862,22 +6864,7 @@ function CoverEdit(_ref5) {
     'has-background-dim': dimRatio !== 0,
     'has-parallax': hasParallax
   }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, overlayColor.class, overlayColor.class), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-background-gradient', gradientValue), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, gradientClass, !url && gradientClass), _classnames));
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ResizableCover, {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('block-library-cover__resize-container', {
-      'is-selected': isSelected
-    }),
-    onResizeStart: function onResizeStart() {
-      return toggleSelection(false);
-    },
-    onResize: setTemporaryMinHeight,
-    onResizeStop: function onResizeStop(newMinHeight) {
-      toggleSelection(true);
-      setAttributes({
-        minHeight: newMinHeight
-      });
-      setTemporaryMinHeight(null);
-    }
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     "data-url": url,
     style: style,
     className: classes
@@ -6999,7 +6986,13 @@ function CoverEdit(_ref5) {
     toolbarButtonName: "link3",
     toolbarButtonTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link 3'),
     rel: "button3Rel"
-  })))))));
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["InnerBlocks"], {
+    __experimentalTagName: "div",
+    __experimentalPassedProps: {
+      className: 'wp-block-cover__inner-container'
+    },
+    template: INNER_BLOCKS_BUTTONS_TEMPLATE
+  }))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_11__["withDispatch"])(function (dispatch) {
@@ -7055,21 +7048,6 @@ var settings = {
   supports: {
     align: true,
     html: false
-  },
-  example: {
-    attributes: {
-      customOverlayColor: '#065174',
-      dimRatio: 40,
-      url: 'https://s.w.org/images/core/5.3/Windbuchencom.jpg'
-    },
-    innerBlocks: [{
-      name: 'core/paragraph',
-      attributes: {
-        customFontSize: 48,
-        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('<strong>Snow Patrol</strong>'),
-        align: 'center'
-      }
-    }]
   },
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"],
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
