@@ -1,2 +1,6 @@
 @import "variables";
 @import "hero/editor";
+
+.url-input-inspector-field input {
+	max-width: 100% !important;
+}
