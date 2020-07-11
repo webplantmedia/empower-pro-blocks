@@ -40,7 +40,7 @@ import {
 	__experimentalUseGradient,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	__experimentalLinkControl as LinkControl,
-	URLInput,
+	URLInputButton,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
@@ -417,10 +417,6 @@ function CoverEdit( {
 						value={ button1Text }
 						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 					/>
-					<URLInput
-						value={ button1URL }
-						onChange={ value => setAttributes( { button1URL: value } ) }
-					/>
 					<ToggleControl
 						label={ __( 'Link Target' ) }
 						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
@@ -546,6 +542,10 @@ function CoverEdit( {
 										onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 										withoutInteractiveFormatting
 										className="wp-block-button__link button1"
+									/>
+									<URLInputButton
+										url={ button1URL }
+										onChange={ value => setAttributes( { button1URL: value } ) }
 									/>
 								</div>
 							</div>

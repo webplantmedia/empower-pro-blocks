@@ -6737,13 +6737,6 @@ function CoverEdit(_ref2) {
         button1Text: value
       });
     }
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["URLInput"], {
-    value: button1URL,
-    onChange: function onChange(value) {
-      return setAttributes({
-        button1URL: value
-      });
-    }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__["ToggleControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Link Target'),
     onChange: function onChange(value) {
@@ -6857,6 +6850,13 @@ function CoverEdit(_ref2) {
     },
     withoutInteractiveFormatting: true,
     className: "wp-block-button__link button1"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["URLInputButton"], {
+    url: button1URL,
+    onChange: function onChange(value) {
+      return setAttributes({
+        button1URL: value
+      });
+    }
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     class: "gray-bottom-bar"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
