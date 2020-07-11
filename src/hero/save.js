@@ -125,41 +125,44 @@ export default function save( { attributes } ) {
 							value={ text }
 						/>
 					) }
-					<div class="button-wrapper">
-						{ button1Text && (
-							<RichText.Content
-								tagName="a"
-								className="wp-block-button__link button1"
-								value={ button1Text }
-								href={ button1URL }
-								target={ button1LinkTarget }
-								rel={ button1Rel }
-							/>
-						) }
+					<div class="wp-block-buttons">
+						<div class="wp-block-button text">
+							{ button1Text && (
+								<RichText.Content
+									tagName="a"
+									className="wp-block-button__link button1"
+									value={ button1Text }
+									href={ button1URL }
+									target={ button1LinkTarget }
+								/>
+							) }
+						</div>
 					</div>
-					<div class="button-wrapper">
-						{ button2Text && (
-							<RichText.Content
-								tagName="a"
-								className="wp-block-button__link button2"
-								value={ button2Text }
-								href={ button2URL }
-								target={ button2LinkTarget }
-								rel={ button2Rel }
-							/>
-						) }
+					<div class="wp-block-buttons">
+						<div class="wp-block-button text">
+							{ button2Text && (
+								<RichText.Content
+									tagName="a"
+									className="wp-block-button__link button2"
+									value={ button2Text }
+									href={ button2URL }
+									target={ button2LinkTarget }
+								/>
+							) }
+						</div>
 					</div>
-					<div class="button-wrapper">
-						{ button3Text && (
-							<RichText.Content
-								tagName="a"
-								className="wp-block-button__link button3"
-								value={ button3Text }
-								href={ button3URL }
-								target={ button3LinkTarget }
-								rel={ button3Rel }
-							/>
-						) }
+					<div class="wp-block-buttons">
+						<div class="wp-block-button text">
+							{ button3Text && (
+								<RichText.Content
+									tagName="a"
+									className="wp-block-button__link button3"
+									value={ button3Text }
+									href={ button3URL }
+									target={ button3LinkTarget }
+								/>
+							) }
+						</div>
 					</div>
 				</div>
 			</div>

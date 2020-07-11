@@ -57,35 +57,6 @@
 /**
  * Border radii.
  */
-.wp-block-empower-pro-blocks-hero.components-placeholder h2 {
-  color: inherit; }
-
-.wp-block-empower-pro-blocks-hero .block-editor-block-list__layout {
-  width: 100%; }
-
-.wp-block-empower-pro-blocks-hero .block-editor-block-list__block {
-  color: #f8f9f9; }
-
-.wp-block-empower-pro-blocks-hero .wp-block-cover__inner-container {
-  text-align: left; }
-
-.wp-block-empower-pro-blocks-hero .wp-block-cover__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout {
-  margin-left: 0;
-  margin-right: 0; }
-
-.wp-block-empower-pro-blocks-hero .wp-block-cover__placeholder-background-options {
-  width: 100%; }
-
-[data-align="left"] .wp-block-empower-pro-blocks-hero,
-[data-align="right"] .wp-block-empower-pro-blocks-hero {
-  max-width: 290px;
-  width: 100%; }
-
-.block-library-cover__reset-button {
-  margin-left: auto; }
-
-.block-library-cover__resize-container:not(.is-resizing) {
-  height: auto !important; }
 
 
 /*# sourceMappingURL=editor.css.map*/

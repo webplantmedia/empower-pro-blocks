@@ -40,6 +40,7 @@ import {
 	__experimentalUseGradient,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	__experimentalLinkControl as LinkControl,
+	URLInput,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
@@ -76,12 +77,27 @@ const INNER_BLOCKS_TEMPLATE = [
 			placeholder: __( 'Paragraph...' ),
 		},
 	],
+	[
+		'core/buttons',
+		{
+			className: 'testing',
+		},
+		[
+			[
+				'core/button',
+				{
+					text: __( 'Link 1' ),
+					className: 'text',
+				},
+			],
+		],
+	],
 ];
 const INNER_BLOCKS_BUTTONS_TEMPLATE = [
 	[
 		'core/buttons',
 		{
-			className: 'testing',
+			className: 'testing2',
 		},
 		[
 			[
@@ -108,48 +124,6 @@ function retrieveFastAverageColor() {
 	}
 	return retrieveFastAverageColor.fastAverageColor;
 }
-
-const CoverHeightInput = withInstanceId( function( {
-	value = '',
-	instanceId,
-	onChange,
-} ) {
-	const [ temporaryInput, setTemporaryInput ] = useState( null );
-	const inputId = `block-cover-height-input-${ instanceId }`;
-	return (
-		<BaseControl label={ __( 'Minimum height in pixels' ) } id={ inputId }>
-			<input
-				type="number"
-				id={ inputId }
-				onChange={ ( event ) => {
-					const unprocessedValue = event.target.value;
-					const inputValue =
-						unprocessedValue !== ''
-							? parseInt( event.target.value, 10 )
-							: undefined;
-					if (
-						( isNaN( inputValue ) ||
-							inputValue < COVER_MIN_HEIGHT ) &&
-						inputValue !== undefined
-					) {
-						setTemporaryInput( event.target.value );
-						return;
-					}
-					setTemporaryInput( null );
-					onChange( inputValue );
-				} }
-				onBlur={ () => {
-					if ( temporaryInput !== null ) {
-						setTemporaryInput( null );
-					}
-				} }
-				value={ temporaryInput !== null ? temporaryInput : value }
-				min={ COVER_MIN_HEIGHT }
-				step="1"
-			/>
-		</BaseControl>
-	);
-} );
 
 const RESIZABLE_BOX_ENABLE_OPTION = {
 	top: false,
@@ -247,60 +221,6 @@ function useCoverIsDark( url, dimRatio = 50, overlayColor, elementRef ) {
 	return isDark;
 }
 
-function URLPicker( {
-	isSelected,
-	url,
-	setAttributes,
-	opensInNewTab,
-	onToggleOpenInNewTab,
-	keyURL,
-	keyLinkTarget,
-	toolbarButtonName,
-	toolbarButtonTitle,
-	rel,
-} ) {
-	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
-	const openLinkControl = () => {
-		setIsURLPickerOpen( true );
-	};
-	const linkControl = isURLPickerOpen && (
-		<Popover
-			position="bottom center"
-			onClose={ () => setIsURLPickerOpen( false ) }
-		>
-			<LinkControl
-				className="wp-block-navigation-link__inline-link-input"
-				value={ { url, opensInNewTab } }
-				onChange={ ( {
-					url: newURL = '',
-					opensInNewTab: newOpensInNewTab,
-				} ) => {
-					setAttributes( { [keyURL]: newURL } );
-
-					if ( opensInNewTab !== newOpensInNewTab ) {
-						onToggleOpenInNewTab( keyLinkTarget, newOpensInNewTab, rel );
-					}
-				} }
-			/>
-		</Popover>
-	);
-	return (
-		<>
-			<BlockControls>
-				<ToolbarGroup>
-					<ToolbarButton
-						name={ toolbarButtonName }
-						icon={ link }
-						title={ toolbarButtonTitle }
-						onClick={ openLinkControl }
-					/>
-				</ToolbarGroup>
-			</BlockControls>
-			{ linkControl }
-		</>
-	);
-}
-
 function CoverEdit( {
 	attributes,
 	setAttributes,
@@ -325,15 +245,12 @@ function CoverEdit( {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
-		button1Rel,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
-		button2Rel,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
-		button3Rel,
 	} = attributes;
 	const {
 		gradientClass,
@@ -399,6 +316,8 @@ function CoverEdit( {
 
 	const hasBackground = !! ( url || overlayColor.color || gradientValue );
 
+	const opensInNewTab1 = button1LinkTarget === '_blank';
+
 	const controls = (
 		<>
 			<BlockControls>
@@ -461,14 +380,6 @@ function CoverEdit( {
 				) }
 				{ hasBackground && (
 					<>
-						<PanelBody title={ __( 'Dimensions' ) }>
-							<CoverHeightInput
-								value={ temporaryMinHeight || minHeight }
-								onChange={ ( newMinHeight ) =>
-									setAttributes( { minHeight: newMinHeight } )
-								}
-							/>
-						</PanelBody>
 						<PanelColorGradientSettings
 							title={ __( 'Overlay' ) }
 							initialOpen={ true }
@@ -500,6 +411,22 @@ function CoverEdit( {
 						</PanelColorGradientSettings>
 					</>
 				) }
+				<PanelBody title={ __( 'Call to Action Button' ) }>
+					<TextControl
+						label={ __( 'Text' ) }
+						value={ button1Text }
+						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+					/>
+					<URLInput
+						value={ button1URL }
+						onChange={ value => setAttributes( { button1URL: value } ) }
+					/>
+					<ToggleControl
+						label={ __( 'Link Target' ) }
+						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
+						checked={ button1LinkTarget === '_blank' }
+					/>
+				</PanelBody>
 			</InspectorControls>
 		</>
 	);
@@ -611,78 +538,40 @@ function CoverEdit( {
 								}
 								value={ text }
 							/>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 1' ) }
-									value={ button1Text }
-									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button1"
-									rel={ button1Rel }
-								/>
-								<URLPicker
-									url={ button1URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button1LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button1URL"
-									keyLinkTarget="button1LinkTarget"
-									toolbarButtonName="link1"
-									toolbarButtonTitle={ __( 'Link 1' ) }
-									rel="button1Rel"
-								/>
+							<div class="wp-block-buttons">
+								<div class="wp-block-button text">
+									<RichText
+										placeholder={ __( 'Button 1' ) }
+										value={ button1Text }
+										onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+										withoutInteractiveFormatting
+										className="wp-block-button__link button1"
+									/>
+								</div>
 							</div>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 2' ) }
-									value={ button2Text }
-									onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button2"
-									rel={ button2Rel }
-								/>
-								<URLPicker
-									url={ button2URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button2LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button2URL"
-									keyLinkTarget="button2LinkTarget"
-									toolbarButtonName="link2"
-									toolbarButtonTitle={ __( 'Link 2' ) }
-									rel="button2Rel"
-								/>
-							</div>
-							<div class="button-wrapper">
-								<RichText
-									placeholder={ __( 'Button 3' ) }
-									value={ button3Text }
-									onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-									withoutInteractiveFormatting
-									className="wp-block-button__link button3"
-									rel={ button3Rel }
-								/>
-								<URLPicker
-									url={ button3URL }
-									setAttributes={ setAttributes }
-									isSelected={ isSelected }
-									opensInNewTab={ button3LinkTarget === '_blank' }
-									onToggleOpenInNewTab={ onToggleOpenInNewTab }
-									keyURL="button3URL"
-									keyLinkTarget="button3LinkTarget"
-									toolbarButtonName="link3"
-									toolbarButtonTitle={ __( 'Link 3' ) }
-									rel="button3Rel"
-								/>
-								<InnerBlocks
-									__experimentalTagName="div"
-									__experimentalPassedProps={ {
-										className: 'wp-block-cover__inner-container',
-									} }
-									template={ INNER_BLOCKS_BUTTONS_TEMPLATE }
-								/>
+							<div class="gray-bottom-bar">
+								<div class="wp-block-buttons">
+									<div class="wp-block-button text icon">
+										<RichText
+											placeholder={ __( 'Button 2' ) }
+											value={ button2Text }
+											onChange={ ( value ) => setAttributes( { button2Text: value } ) }
+											withoutInteractiveFormatting
+											className="wp-block-button__link button2"
+										/>
+									</div>
+								</div>
+								<div class="wp-block-buttons">
+									<div class="wp-block-button text icon">
+										<RichText
+											placeholder={ __( 'Button 3' ) }
+											value={ button3Text }
+											onChange={ ( value ) => setAttributes( { button3Text: value } ) }
+											withoutInteractiveFormatting
+											className="wp-block-button__link button3"
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
