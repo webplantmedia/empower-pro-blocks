@@ -1,7 +1,7 @@
 {
 	"name": "empower-pro-blocks",
 	"version": "0.1.0",
-	"description": "Custom blocks for Leadership Pro theme.",
+	"description": "Custom blocks for Empower Pro Blocks theme.",
 	"author": "Web Plant Media",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Empower Pro Blocks
- * Description:     Custom blocks for Leadership Pro theme.
+ * Description:     Custom blocks for Empower Pro Blocks theme.
  * Version:         0.1.1
  * Author:          Web Plant Media
  * License:         GPL-2.0-or-later
@@ -61,4 +61,4 @@ add_action( 'init', 'wpm_epb_empower_pro_blocks_block_init' );
 
 require_once plugin_dir_path( __FILE__ ) . 'lib/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
-require_once plugin_dir_path( __FILE__ ) . 'lib/class-leadership-pro-upgrade.php';
+require_once plugin_dir_path( __FILE__ ) . 'lib/class-empower-pro-blocks-upgrade.php';

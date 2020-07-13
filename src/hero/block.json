@@ -82,7 +82,7 @@
 		"text": {
 			"type": "string",
 			"source": "html",
-			"default": "Develop your employees with our award-winning leadership programs and immersive business simulations.",
+			"default": "Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.",
 			"selector": ".hero-text"
 		},
 		"button1Text": {
