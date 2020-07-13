@@ -61,4 +61,4 @@ add_action( 'init', 'wpm_epb_empower_pro_blocks_block_init' );
 
 require_once plugin_dir_path( __FILE__ ) . 'lib/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
-require_once plugin_dir_path( __FILE__ ) . 'lib/class-upgrade.php';
+require_once plugin_dir_path( __FILE__ ) . 'lib/class-leadership-pro-upgrade.php';
