@@ -17,7 +17,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
-function wpm_lpb_empower_pro_blocks_block_init() {
+function wpm_epb_empower_pro_blocks_block_init() {
 	$dir = dirname( __FILE__ );
 
 	$script_asset_path = "$dir/build/index.asset.php";
@@ -57,4 +57,8 @@ function wpm_lpb_empower_pro_blocks_block_init() {
 		'style'         => 'wpm-epb-empower-pro-blocks-block',
 	) );
 }
-add_action( 'init', 'wpm_lpb_empower_pro_blocks_block_init' );
+add_action( 'init', 'wpm_epb_empower_pro_blocks_block_init' );
+
+require_once plugin_dir_path( __FILE__ ) . 'lib/functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
+require_once plugin_dir_path( __FILE__ ) . 'lib/class-upgrade.php';

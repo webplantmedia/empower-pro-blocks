@@ -1,0 +1,6 @@
+button.customize-partial-edit-shortcut-button {
+	border-color: white !important;
+}
+button.customize-partial-edit-shortcut-button::after {
+	display: none;
+}
