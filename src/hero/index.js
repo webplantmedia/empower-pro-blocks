@@ -22,7 +22,7 @@ export const settings = {
 	),
 	icon,
 	supports: {
-		align: true,
+		align: ["full"],
 		html: false,
 	},
 	save,

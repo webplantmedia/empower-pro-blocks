@@ -90,7 +90,7 @@ export default function save( { attributes } ) {
 				<span
 					aria-hidden="true"
 					className={ classnames(
-						'wp-block-cover__gradient-background',
+						'wp-block-hero__gradient-background',
 						gradientClass
 					) }
 					style={
@@ -102,14 +102,14 @@ export default function save( { attributes } ) {
 			) }
 			{ VIDEO_BACKGROUND_TYPE === backgroundType && url && (
 				<video
-					className="wp-block-cover__video-background"
+					className="wp-block-hero__video-background"
 					autoPlay
 					muted
 					loop
 					src={ url }
 				/>
 			) }
-			<div className="wp-block-cover__inner-container">
+			<div className="wp-block-hero__inner-container">
 				<div className="hero-content">
 					{ heading && (
 						<RichText.Content

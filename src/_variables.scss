@@ -3,3 +3,166 @@
 // @import "breakpoints";
 // @import "mixins";
 // @import "colors";
+
+$color_one: #4a4f9b;
+$color_two: #d2414b;
+$gray_text_color: #888;
+$light_gray_text_color: #ccc;
+$lightest_gray_text_color: #f5f5f5;
+$body_background_color: #fff;
+$body_background_color_two: #f5f5f5;
+$heading_color: #333;
+$heading_color_hover: #444;
+$nav_color: #8e8e8e;
+$text_color: #777777;
+$text_color_hover: #444;
+$dark_text_color: #222;
+$border_color: #eeeeee;
+$form_border_color: #dcdadd;
+$table_border_color: $border_color;
+$anchor_color: #606771;
+$quote_color: $heading_color;
+
+$body_font_family: "Source Sans Pro", sans-serif;
+$body_font_size_tiny: 13px;
+$body_font_size_xsmall: 14px;
+$body_font_size_small: 16px;
+$body_font_size: 18px;
+$body_font_size_large: 20px;
+$body_font_size_larger: 24px;
+$body_font_size_huge: 50px;
+$body_font_size_huge_desktop: 40px;
+$body_font_size_huge_ipad: 28px;
+$body_font_letter_spacing: normal;
+$body_font_line_height: 1.5;
+$body_font_weight: 400;
+$body_font_weight_bold: 700;
+
+$label_letter_spacing: 1px;
+
+$title_font_family: "Source Sans Pro", sans-serif;
+$title_font_size: 16px;
+$title_font_letter_spacing: normal;
+$title_font_weight: 700;
+$title_font_style: normal;
+$title_font_text_transform: uppercase;
+$title_font_letter_spacing: 5px;
+$description_font_letter_spacing: 3px;
+$description_font_size: 12px;
+
+$heading_font_family: "Source Sans Pro", sans-serif;
+$heading_font_line_height: 1.2;
+$heading_font_letter_spacing: normal;
+$heading_font_weight: 300;
+$heading_font_weight_bold: 400;
+$heading_font_weight_light: 300;
+$heading_font_h4_weight: 400;
+$heading_font_h4_letter_spacing: 2px;
+$heading_font_style: normal;
+$heading_font_text_transform: none;
+$heading_font_size_hero_title: 80px;
+$hero_font_line_height: 1.05;
+$hero_font_letter_spacing: 2px;
+$heading_font_size_slider_title: 30px;
+$heading_font_size_h1: 78px;
+$heading_font_size_h2: 60px;
+$heading_font_size_h3: 30px;
+$heading_font_size_h4: 20px;
+$heading_font_size_h4_tiny: 16px;
+$heading_font_size_h4_tiny_letter_spacing: 0;
+$heading_font_size_h5: 18px;
+$heading_font_size_h6: 20px;
+$heading_font_style_h6: italic;
+
+$heading_font_size_h1_desktop: 64px;
+$heading_font_size_h1_ipad: 48px;
+$heading_font_size_h1_tablet: 36px;
+
+$heading_font_size_h2_ipad: 40px;
+$heading_font_size_h3_ipad: 22px;
+$heading_font_size_h4_ipad: 18px;
+$heading_font_size_h5_ipad: 16px;
+$heading_font_size_h6_ipad: 20px;
+
+$entry_meta_font_family: "Source Sans Pro", sans-serif;
+$entry_meta_font_weight: 400;
+$entry_meta_font_size: $body_font_size_tiny;
+$entry_meta_font_line_height: 1.3;
+$entry_meta_font_letter_spacing: normal;
+$entry_meta_font_style: normal;
+
+$quote_font_family: "Source Sans Pro", sans-serif;
+$quote_font_line_height: 1.2;
+$quote_font_letter_spacing: normal;
+$quote_font_weight: 400;
+$quote_font_style: normal;
+$quote_font_size: 30px;
+$quote_font_size_large: 38px;
+$quote_cite_font_size: 20px;
+$quote_cite_font_size_large: 24px;
+$quote_cite_font_style: italic;
+$quote_cite_font_weight: 300;
+
+$button_font_family: "Source Sans Pro", sans-serif;
+$button_font_letter_spacing: 2px;
+$button_font_weight: 400;
+$button_font_style: normal;
+$button_font_size: 14px;
+$button_font_text_transform: uppercase;
+$button_font_text_decoration: none;
+$button_font_line_height: 1;
+$button_font_text_color: #333333;
+$button_radius: 99em;
+
+$nav_font_family: "Source Sans Pro", sans-serif;
+$nav_font_size: 14px;
+$nav_font_weight: 400;
+$nav_font_weight_bold: 600;
+$nav_font_line_height: 1;
+$nav_font_letter_spacing: 2px;
+$nav_font_text_transform: uppercase;
+$nav_font_style: normal;
+$nav_height: 94px;
+
+$border_radius_large: 50px;
+$border_radius_medium: 14px;
+$border_radius: 4px;
+$form_border_radius: 4px;
+$border_width: 0;
+$form_border_width: 1px;
+$table_border_width: 1px;
+$form_input_height: 49px;
+
+$tiny_mobile_width: 320px;
+$small_mobile_width: 500px;
+$mobile_width: 600px;
+$tablet_width: 860px;
+$ipad_width: 1023px;
+$desktop_width: 1200px;
+$wide_width: 1360px;
+$sticky_admin_bar_width: 782px;
+$fixed_admin_bar_width: 600px;
+
+$tiny_mobile_width_1: $tiny_mobile_width + 1;
+$small_mobile_width_1: $small_mobile_width + 1;
+$mobile_width_1: $mobile_width + 1;
+$tablet_width_1: $tablet_width + 1;
+$ipad_width_1: $ipad_width + 1;
+$desktop_width_1: $desktop_width + 1;
+$wide_width_1: $wide_width + 1;
+$sticky_admin_bar_width_1: $sticky_admin_bar_width + 1;
+$fixed_admin_bar_width_1: $fixed_admin_bar_width + 1;
+
+$content_max_width_full: 1120px;
+$content_max_width_wide: 1100px;
+$content_max_width_desktop: 960px;
+$content_max_width_ipad: 800px;
+$content_max_width_tablet: 640px;
+$content_width: 750px;
+$content_outer_width: 800px;
+
+$slider_arrow_size: 40px;
+$slider_pagination_size: 14px;
+
+$margin_bottom: 40px;
+$margin_bottom_mobile: 30px;

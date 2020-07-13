@@ -2,6 +2,14 @@
 	"name": "empower-pro-blocks/hero",
 	"category": "layout",
 	"attributes": {
+		"typewriterSearch": {
+			"type": "string",
+			"default": "with Impact"
+		},
+		"typewriterReplace": {
+			"type": "string",
+			"default": "that Engages\nwith Results"
+		},
 		"url": {
 			"type": "string"
 		},
@@ -16,10 +24,37 @@
 			"type": "number",
 			"default": 50
 		},
+		"leftPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"rightPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
 		"overlayColor": {
 			"type": "string"
 		},
 		"customOverlayColor": {
+			"type": "string"
+		},
+		"heroColor": {
+			"type": "string"
+		},
+		"customHeroColor": {
+			"type": "string"
+		},
+		"leftPillColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"customLeftPillColor": {
+			"type": "string"
+		},
+		"rightPillColor": {
+			"type": "string"
+		},
+		"customRightPillColor": {
 			"type": "string"
 		},
 		"backgroundType": {
@@ -39,18 +74,21 @@
 			"type": "string"
 		},
 		"heading": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
+			"default": "Leadership Development with Impact",
 			"selector": ".hero-heading"
 		},
 		"text": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
+			"default": "Develop your employees with our award-winning leadership programs and immersive business simulations.",
 			"selector": ".hero-text"
 		},
 		"button1Text": {
 			"type": "string",
 			"source": "html",
+			"default": "About Us",
 			"selector": "a.button1"
 		},
 		"button1URL": {
@@ -68,6 +106,7 @@
 		"button2Text": {
 			"type": "string",
 			"source": "html",
+			"default": "<i class=\"ion-stop mr-4\"></i>Our Programs",
 			"selector": "a.button2"
 		},
 		"button2URL": {
@@ -85,6 +124,7 @@
 		"button3Text": {
 			"type": "string",
 			"source": "html",
+			"default": "<i class=\"ion-play mr-4\"></i>Our Simulations",
 			"selector": "a.button3"
 		},
 		"button3URL": {
@@ -98,6 +138,10 @@
 			"source": "attribute",
 			"selector": "a.button3",
 			"attribute": "target"
+		},
+		"align": {
+			  "type": "string",
+			  "default": "full"
 		}
 	}
 }
