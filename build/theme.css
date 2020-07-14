@@ -818,7 +818,14 @@ body .select2-choice {
   box-shadow: none;
   line-height: 1.5;
   padding-right: 2.5em;
-  white-space: nowrap; }
+  white-space: nowrap;
+  background-image: url("$path.$ext"); }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+    select,
+    body div.wpforms-container-full .wpforms-form select,
+    body .select2-container .select2-selection--single,
+    body .select2-choice {
+      background-image: url("$path-2x.$ext"); } }
 
 body .select2-container--default .select2-selection--single .select2-selection__placeholder,
 body .select2-results__option,

@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/theme.scss");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/woocommerce.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/theme.scss":
-/*!************************!*\
-  !*** ./src/theme.scss ***!
-  \************************/
+/***/ "./src/woocommerce.scss":
+/*!******************************!*\
+  !*** ./src/woocommerce.scss ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -98,4 +98,4 @@
 /***/ })
 
 /******/ });
-//# sourceMappingURL=theme.js.map
+//# sourceMappingURL=woocommerce.js.map

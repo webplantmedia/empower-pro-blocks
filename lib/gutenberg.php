@@ -95,7 +95,7 @@ function empower_pro_blocks_custom_gutenberg_css() {
 
 	wp_enqueue_style(
 		'empower-pro-blocks-gutenberg',
-		get_stylesheet_directory_uri() . '/css/style-blocks.css',
+		EMPOWER_PRO_BLOCKS_DIR . '/build/style.css',
 		array( 'empower-pro-blocks-main' ),
 		EMPOWER_PRO_BLOCKS_VERSION
 	);

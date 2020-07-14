@@ -13,6 +13,7 @@ module.exports = {
 		style: path.resolve( process.cwd(), 'src', 'style.scss' ),
 		editor: path.resolve( process.cwd(), 'src', 'editor.scss' ),
 		theme: path.resolve( process.cwd(), 'src', 'theme.scss' ),
+		woocommerce: path.resolve( process.cwd(), 'src', 'woocommerce.scss' ),
 	},
 	optimization: {
 		...defaultConfig.optimization,
@@ -33,6 +34,12 @@ module.exports = {
 				theme: {
 					name: 'theme',
 					test: /theme\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				woocommerce: {
+					name: 'woocommerce',
+					test: /woocommerce\.(sc|sa|c)ss$/,
 					chunks: 'all',
 					enforce: true,
 				},

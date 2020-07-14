@@ -14,8 +14,10 @@
 function empower_pro_blocks_defines() {
 	$plugin_data = get_file_data(__FILE__, array('Version' => 'Version'), false);
 	$plugin_version = $plugin_data['Version'];
+	$dir = plugin_dir_path( __FILE__ );
 
 	define( 'EMPOWER_PRO_BLOCKS_VERSION', $plugin_version );
+	define( 'EMPOWER_PRO_BLOCKS_DIR', $dir );
 
 }
 add_action( 'init', 'empower_pro_blocks_defines' );
@@ -72,6 +74,10 @@ require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/class-empower-pro-blocks-upgrade.php';
 
+// Includes Customizer CSS.
+require_once plugin_dir_path( __FILE__ ) . 'css/theme-inline-styles.php';
+
+
 add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
 /**
  * Adds Gutenberg opt-in features and styling.
@@ -88,3 +94,23 @@ function empower_pro_blocks_gutenberg_support() {
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'lib/shortcodes.php';
+
+if ( leadership_pro_is_woocommerce_activated() ) {
+
+	// Adds WooCommerce support.
+	require_once CHILD_DIR . '/lib/woocommerce/woocommerce-setup.php';
+
+	// Includes the Customizer CSS for the WooCommerce plugin.
+	require_once CHILD_DIR . '/css/woocommerce-inline-styles.php';
+
+	// Includes notice to install Genesis Connect for WooCommerce.
+	require_once CHILD_DIR . '/lib/woocommerce/woocommerce-notice.php';
+
+}
+
+if ( leadership_pro_is_soliloquy_activated() ) {
+
+	// Load soliloquy functions.
+	require_once CHILD_DIR . '/lib/soliloquy/soliloquy-setup.php';
+
+}

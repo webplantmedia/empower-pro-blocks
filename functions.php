@@ -91,6 +91,27 @@ function empower_pro_blocks_compact( $input ) {
 	return $input;
 }
 
+/**
+ * Query WooCommerce activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+
+/**
+ * Query Soliloquy activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_soliloquy_activated() {
+	return class_exists( 'Soliloquy_Lite' ) ? true : false;
+}
 
 global $empower_pro_blocks_appearance;
 $empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
