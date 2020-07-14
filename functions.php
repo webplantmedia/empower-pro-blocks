@@ -77,5 +77,20 @@ function empower_pro_blocks_get_config( $config ) {
 
 }
 
+/**
+ * Compact css.
+ *
+ * @since 1.01
+ *
+ * @param string $input Text to compact.
+ * @return $input
+ */
+function empower_pro_blocks_compact( $input ) {
+	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
+
+	return $input;
+}
+
+
 global $empower_pro_blocks_appearance;
 $empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
