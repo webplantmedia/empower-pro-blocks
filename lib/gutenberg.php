@@ -8,17 +8,6 @@
  * @link    https://webplantmedia.com/
  */
 
-add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_enqueue_gutenberg_frontend_styles' );
-/**
- * Enqueues Gutenberg front-end styles.
- *
- * @since 1.1.0
- */
-function empower_pro_blocks_enqueue_gutenberg_frontend_styles() {
-
-
-}
-
 // Add support for editor styles.
 // add_theme_support( 'editor-styles' );
 
@@ -80,28 +69,4 @@ function empower_pro_blocks_custom_gutenberg_admin_css() {
 
 	wp_add_inline_style( 'empower-pro-blocks-gutenberg-fonts', $css );
 
-}
-
-add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_custom_gutenberg_css' );
-/**
- * Output front-end inline styles for `editor-color-palette` colors.
- *
- * These colors can be changed in the Customizer, so CSS is set dynamically.
- *
- * @since 1.1.0
- */
-function empower_pro_blocks_custom_gutenberg_css() {
-	global $empower_pro_blocks_appearance;
-
-	wp_enqueue_style(
-		'empower-pro-blocks-gutenberg',
-		EMPOWER_PRO_BLOCKS_DIR . '/build/style.css',
-		array( 'empower-pro-blocks-main' ),
-		EMPOWER_PRO_BLOCKS_VERSION
-	);
-
-	$css = empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );
-	$css .= empower_pro_blocks_get_gutenberg_button_css( $empower_pro_blocks_appearance );
-
-	wp_add_inline_style( 'empower-pro-blocks-main', $css );
 }

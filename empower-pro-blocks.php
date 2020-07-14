@@ -67,15 +67,56 @@ function empower_pro_blocks_block_init() {
 		'editor_style'  => 'empower-pro-blocks-editor',
 		'style'         => 'empower-pro-blocks',
 	) );
+
+	$css = empower_pro_blocks_get_css( $empower_pro_blocks_appearance );
+	$css .= empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );
+	$css .= empower_pro_blocks_get_gutenberg_button_css( $empower_pro_blocks_appearance );
+
+	wp_add_inline_style( 'empower-pro-blocks', $css );
+
+	wp_enqueue_style( 'leadership-pro-main', $dir . 'build/theme.css', array(), EMPOWER_PRO_BLOCKS_VERSION );
+
+	wp_enqueue_style( 'leadership-pro-fonts', $appearance['fonts-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
+
+	if ( ! has_custom_logo() || is_customize_preview() ) {
+		wp_enqueue_style( 'leadership-pro-title-font', $appearance['title-font-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
+	}
+
+	/* wp_enqueue_style( 'dashicons' ); */
+
+	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
+	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), EMPOWER_PRO_BLOCKS_VERSION, true );
+
+	wp_enqueue_script( 'leadership-pro-theme-js', $dir . 'js/theme.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+
+	wp_enqueue_script( 'leadership-pro-scroll-js', $dir . 'js/scroll.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+
+	wp_enqueue_script( 'leadership-pro-typewriter-js', $dir . 'js/typewriter.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+
+	wp_enqueue_script( 'leadership-pro-dropdown-menu-js', $dir . 'js/dropdown-menu.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+
 }
 add_action( 'init', 'empower_pro_blocks_block_init' );
 
-require_once plugin_dir_path( __FILE__ ) . 'functions.php';
-require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
-require_once plugin_dir_path( __FILE__ ) . 'lib/class-empower-pro-blocks-upgrade.php';
+add_action( 'wp_enqueue_scripts', 'leadership_pro_enqueue_scripts_styles', 9 );
+/**
+ * Enqueues scripts and styles.
+ *
+ * @since 1.0.0
+ */
+function leadership_pro_enqueue_scripts_styles() {
+
+	$appearance = genesis_get_config( 'appearance' );
+
+}
+
+
+require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
 
 // Includes Customizer CSS.
-require_once plugin_dir_path( __FILE__ ) . 'css/theme-inline-styles.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';
 
 
 add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
@@ -88,29 +129,29 @@ add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
  */
 function empower_pro_blocks_gutenberg_support() {
 	// Add inline style for gutenberg blocks.
-	require_once plugin_dir_path( __FILE__ ) . 'css/gutenberg-inline-styles.php';
-	require_once plugin_dir_path( __FILE__ ) . 'css/gutenberg-inline-button-styles.php';
-	require_once plugin_dir_path( __FILE__ ) . 'lib/gutenberg.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/gutenberg.php';
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'lib/shortcodes.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
 
 if ( empower_pro_blocks_is_woocommerce_activated() ) {
 
 	// Adds WooCommerce support.
-	require_once CHILD_DIR . '/lib/woocommerce/woocommerce-setup.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/woocommerce/woocommerce-setup.php';
 
 	// Includes the Customizer CSS for the WooCommerce plugin.
-	require_once CHILD_DIR . '/css/woocommerce-inline-styles.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'css/woocommerce-inline-styles.php';
 
 	// Includes notice to install Genesis Connect for WooCommerce.
-	require_once CHILD_DIR . '/lib/woocommerce/woocommerce-notice.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/woocommerce/woocommerce-notice.php';
 
 }
 
 if ( empower_pro_blocks_is_soliloquy_activated() ) {
 
 	// Load soliloquy functions.
-	require_once CHILD_DIR . '/lib/soliloquy/soliloquy-setup.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/soliloquy/soliloquy-setup.php';
 
 }
