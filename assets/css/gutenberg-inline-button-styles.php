@@ -1,10 +1,10 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
  * Adds front-end inline styles for the custom Gutenberg color palette.
  *
- * @package Leadership Pro
+ * @package Empower Pro Blocks
  * @author  Web Plant Media
  * @license GPL-2.0-or-later
  * @link    https://webplantmedia.com/
@@ -17,7 +17,7 @@
  *
  * @return string
  */
-function leadership_pro_get_gutenberg_button_css( $appearance ) {
+function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 	$css = '';
 
 	$primary_color = '%1$s';
@@ -223,7 +223,7 @@ function leadership_pro_get_gutenberg_button_css( $appearance ) {
 		$appearance['eighth-bright-color']
 	);
 
-	$css = leadership_pro_compact( $css );
+	$css = empower_pro_blocks_compact( $css );
 
 	return $css;
 }
