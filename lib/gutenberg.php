@@ -36,7 +36,6 @@ add_theme_support( 'responsive-embeds' );
 
 // Get appearance config array.
 global $empower_pro_blocks_appearance;
-$empower_pro_blocks_appearance = genesis_get_config( 'appearance' );
 
 // Adds support for editor font sizes.
 add_theme_support( 'editor-font-sizes', $empower_pro_blocks_appearance['editor-font-sizes'] );
@@ -75,10 +74,10 @@ function empower_pro_blocks_custom_gutenberg_admin_css() {
 		'empower-pro-blocks-gutenberg-fonts',
 		$empower_pro_blocks_appearance['fonts-url'],
 		array(),
-		CHILD_THEME_VERSION
+		EMPOWER_PRO_BLOCKS_VERSION
 	);
 
-	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 
 	$css = empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );
 	$css .= empower_pro_blocks_get_gutenberg_button_css( $empower_pro_blocks_appearance );
@@ -102,7 +101,7 @@ function empower_pro_blocks_custom_gutenberg_css() {
 		'empower-pro-blocks-gutenberg',
 		get_stylesheet_directory_uri() . '/css/style-blocks.css',
 		array( 'empower-pro-blocks-main' ),
-		CHILD_THEME_VERSION
+		EMPOWER_PRO_BLOCKS_VERSION
 	);
 
 	$css = empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );

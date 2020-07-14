@@ -11,6 +11,15 @@
  * @package         empower-pro-blocks
  */
 
+function empower_pro_blocks_defines() {
+	$plugin_data = get_file_data(__FILE__, array('Version' => 'Version'), false);
+	$plugin_version = $plugin_data['Version'];
+
+	define( 'EMPOWER_PRO_BLOCKS_VERSION', $plugin_version );
+
+}
+add_action( 'init', 'empower_pro_blocks_defines' );
+
 /**
  * Registers all block assets so that they can be enqueued through the block editor
  * in the corresponding context.
