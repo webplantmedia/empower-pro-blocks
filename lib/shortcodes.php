@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This defines the shortcodes functions for use in the Leadership Pro Theme.
+ * This defines the shortcodes functions for use in the Empower Pro Blocks Theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 /**
@@ -15,18 +15,18 @@
  *
  * @since  0.9.4
  */
-function leadership_pro_shortcode( $atts, $content ) {
-	$args = shortcode_atts( leadership_pro_get_default_args(), $atts );
-	return leadership_pro_get_recent_posts( $args );
+function empower_pro_blocks_shortcode( $atts, $content ) {
+	$args = shortcode_atts( empower_pro_blocks_get_default_args(), $atts );
+	return empower_pro_blocks_get_recent_posts( $args );
 }
-add_shortcode( 'leadership_pro_blog', 'leadership_pro_shortcode' );
+add_shortcode( 'empower_pro_blocks_blog', 'empower_pro_blocks_shortcode' );
 
 /**
  * Display list of tags for widget.
  *
  * @since  0.9.9.1
  */
-function leadership_pro_tags_list() {
+function empower_pro_blocks_tags_list() {
 
 	// Arguments
 	$args = array(
@@ -34,7 +34,7 @@ function leadership_pro_tags_list() {
 	);
 
 	// Allow dev to filter the arguments
-	$args = apply_filters( 'leadership_pro_tags_list_args', $args );
+	$args = apply_filters( 'empower_pro_blocks_tags_list_args', $args );
 
 	// Get the tags
 	$tags = get_terms( 'post_tag', $args );
@@ -47,7 +47,7 @@ function leadership_pro_tags_list() {
  *
  * @since  0.9.9.1
  */
-function leadership_pro_cats_list() {
+function empower_pro_blocks_cats_list() {
 
 	// Arguments
 	$args = array(
@@ -55,7 +55,7 @@ function leadership_pro_cats_list() {
 	);
 
 	// Allow dev to filter the arguments
-	$args = apply_filters( 'leadership_pro_cats_list_args', $args );
+	$args = apply_filters( 'empower_pro_blocks_cats_list_args', $args );
 
 	// Get the cats
 	$cats = get_terms( 'category', $args );
@@ -68,10 +68,10 @@ function leadership_pro_cats_list() {
  *
  * @since  0.9.4
  */
-function leadership_pro_get_default_args() {
+function empower_pro_blocks_get_default_args() {
 
 	$defaults = array(
-		'title'             => esc_attr__( 'Recent Posts', 'leadership-pro' ),
+		'title'             => esc_attr__( 'Recent Posts', 'empower-pro-blocks' ),
 		'title_url'         => '',
 
 		'limit'            => 3,
@@ -109,7 +109,7 @@ function leadership_pro_get_default_args() {
 	);
 
 	// Allow plugins/themes developer to filter the default arguments.
-	return apply_filters( 'leadership_pro_default_args', $defaults );
+	return apply_filters( 'empower_pro_blocks_default_args', $defaults );
 
 }
 
@@ -118,8 +118,8 @@ function leadership_pro_get_default_args() {
  *
  * @since  0.9.4
  */
-function leadership_pro_recent_posts( $args = array() ) {
-	echo leadership_pro_get_recent_posts( $args );
+function empower_pro_blocks_recent_posts( $args = array() ) {
+	echo empower_pro_blocks_get_recent_posts( $args );
 }
 
 /**
@@ -129,19 +129,19 @@ function leadership_pro_recent_posts( $args = array() ) {
  * @param  array  $args
  * @return string|array The HTML for the random posts.
  */
-function leadership_pro_get_recent_posts( $args = array() ) {
+function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 	// Set up a default, empty variable.
 	$html = '';
 
 	// Merge the input arguments and the defaults.
-	$args = wp_parse_args( $args, leadership_pro_get_default_args() );
+	$args = wp_parse_args( $args, empower_pro_blocks_get_default_args() );
 
 	// Extract the array to allow easy use of variables.
 	extract( $args );
 
 	// Allow devs to hook in stuff before the loop.
-	do_action( 'leadership_pro_before_loop' );
+	do_action( 'empower_pro_blocks_before_loop' );
 
 	// If the default style is disabled then use the custom css if it's not empty.
 	if ( $args['styles_default'] === false && ! empty( $args['css'] ) ) {
@@ -149,7 +149,7 @@ function leadership_pro_get_recent_posts( $args = array() ) {
 	}
 
 	// Get the posts query.
-	$posts = leadership_pro_get_posts( $args );
+	$posts = empower_pro_blocks_get_posts( $args );
 
 	if ( $posts->have_posts() ) :
 
@@ -172,7 +172,7 @@ function leadership_pro_get_recent_posts( $args = array() ) {
 							// Check if post has post thumbnail.
 							if ( has_post_thumbnail() ) :
 								$html .= '<a class="entry-image-link" href="' . esc_url( get_permalink() ) . '"  rel="bookmark">';
-									$html .= '<div class="leadership-pro-featured-image">';
+									$html .= '<div class="empower-pro-blocks-featured-image">';
 									if ( $img_url ) :
 										$html .= '<img class="' . esc_attr( $args['thumb_align'] ) . ' post-image entry-image" src="' . esc_url( $img_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
 									else :
@@ -190,7 +190,7 @@ function leadership_pro_get_recent_posts( $args = array() ) {
 							// Display default image.
 							elseif ( ! empty( $args['thumb_default'] ) ) :
 								$html .= '<a class="entry-image-link" href="' . esc_url( get_permalink() ) . '"  rel="bookmark">';
-									$html .= '<div class="leadership-pro-featured-image">';
+									$html .= '<div class="empower-pro-blocks-featured-image">';
 										$html .= sprintf( '<img class="%1$s blog-thumb blog-default-thumb" src="%2$s" alt="%3$s" width="%4$s" height="%5$s">',
 											esc_attr( $args['thumb_align'] ),
 											esc_url( $args['thumb_default'] ),
@@ -245,7 +245,7 @@ function leadership_pro_get_recent_posts( $args = array() ) {
 
 							if ( $args['excerpt'] ) :
 								$html .= '<div class="entry-content">';
-								$html .= '<p>'.wp_trim_words( apply_filters( 'leadership_pro_excerpt', get_the_excerpt() ), $args['length'], '&hellip;' ).'</p>';
+								$html .= '<p>'.wp_trim_words( apply_filters( 'empower_pro_blocks_excerpt', get_the_excerpt() ), $args['length'], '&hellip;' ).'</p>';
 								$html .= '</div>';
 							endif;
 
@@ -269,10 +269,10 @@ function leadership_pro_get_recent_posts( $args = array() ) {
 	wp_reset_postdata();
 
 	// Allow devs to hook in stuff after the loop.
-	do_action( 'leadership_pro_after_loop' );
+	do_action( 'empower_pro_blocks_after_loop' );
 
 	// Return the  posts markup.
-	return wp_kses_post( $args['before'] ) . apply_filters( 'leadership_pro_markup', $html ) . wp_kses_post( $args['after'] );
+	return wp_kses_post( $args['before'] ) . apply_filters( 'empower_pro_blocks_markup', $html ) . wp_kses_post( $args['after'] );
 
 }
 
@@ -283,7 +283,7 @@ function leadership_pro_get_recent_posts( $args = array() ) {
  * @param  array  $args
  * @return array
  */
-function leadership_pro_get_posts( $args = array() ) {
+function empower_pro_blocks_get_posts( $args = array() ) {
 
 	// Query arguments.
 	$query = array(
@@ -342,7 +342,7 @@ function leadership_pro_get_posts( $args = array() ) {
 	}
 
 	// Allow plugins/themes developer to filter the default query.
-	$query = apply_filters( 'leadership_pro_default_query_arguments', $query );
+	$query = apply_filters( 'empower_pro_blocks_default_query_arguments', $query );
 
 	// Perform the query.
 	$posts = new WP_Query( $query );
