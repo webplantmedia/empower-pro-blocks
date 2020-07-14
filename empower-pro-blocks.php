@@ -71,3 +71,19 @@ add_action( 'init', 'empower_pro_blocks_block_init' );
 require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/class-empower-pro-blocks-upgrade.php';
+
+add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
+/**
+ * Adds Gutenberg opt-in features and styling.
+ *
+ * Allows plugins to remove support if required.
+ *
+ * @since 1.1.0
+ */
+function empower_pro_blocks_gutenberg_support() {
+	// Add inline style for gutenberg blocks.
+	require_once plugin_dir_path( __FILE__ ) . 'assets/css/gutenberg-inline-styles.php';
+	require_once plugin_dir_path( __FILE__ ) . 'assets/css/gutenberg-inline-button-styles.php';
+	require_once plugin_dir_path( __FILE__ ) . 'lib/gutenberg.php';
+}
+

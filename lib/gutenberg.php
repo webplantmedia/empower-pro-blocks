@@ -43,10 +43,6 @@ add_theme_support( 'editor-font-sizes', $empower_pro_blocks_appearance['editor-f
 // Adds support for editor color palette.
 add_theme_support( 'editor-color-palette', $empower_pro_blocks_appearance['editor-color-palette'] );
 
-// Add inline style for gutenberg blocks.
-require_once get_stylesheet_directory() . '/css/gutenberg-inline-styles.php';
-require_once get_stylesheet_directory() . '/css/gutenberg-inline-button-styles.php';
-
 add_action( 'after_setup_theme', 'empower_pro_blocks_content_width', 0 );
 /**
  * Set content width to match the “wide” Gutenberg block width.
