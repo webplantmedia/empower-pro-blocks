@@ -95,7 +95,7 @@ function empower_pro_blocks_gutenberg_support() {
 
 require_once plugin_dir_path( __FILE__ ) . 'lib/shortcodes.php';
 
-if ( leadership_pro_is_woocommerce_activated() ) {
+if ( empower_pro_blocks_is_woocommerce_activated() ) {
 
 	// Adds WooCommerce support.
 	require_once CHILD_DIR . '/lib/woocommerce/woocommerce-setup.php';
@@ -108,7 +108,7 @@ if ( leadership_pro_is_woocommerce_activated() ) {
 
 }
 
-if ( leadership_pro_is_soliloquy_activated() ) {
+if ( empower_pro_blocks_is_soliloquy_activated() ) {
 
 	// Load soliloquy functions.
 	require_once CHILD_DIR . '/lib/soliloquy/soliloquy-setup.php';

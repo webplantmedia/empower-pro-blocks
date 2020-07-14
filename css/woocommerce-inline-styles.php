@@ -1,22 +1,22 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This file adds the WooCommerce styles and the custom CSS to the Leadership Pro Theme's custom WooCommerce stylesheet.
+ * This file adds the WooCommerce styles and the custom CSS to the Empower Pro Blocks Theme's custom WooCommerce stylesheet.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-add_action( 'wp_enqueue_scripts', 'leadership_pro_woocommerce_css' );
+add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_woocommerce_css' );
 /**
  * Adds the themes's custom CSS to the WooCommerce stylesheet.
  *
  * @since 1.0.0
  */
-function leadership_pro_woocommerce_css() {
+function empower_pro_blocks_woocommerce_css() {
 
 	$appearance = genesis_get_config( 'appearance' );
 
@@ -30,8 +30,8 @@ function leadership_pro_woocommerce_css() {
 		html .woocommerce-MyAccount-navigation ul li.is-active > a,
 		html .woocommerce div.product p.price,
 		html .woocommerce div.product span.price,
-		html #leadership-pro-cart-menu-item .sub-menu .widget_shopping_cart_content ul.cart_list li > a:focus,
-		html #leadership-pro-cart-menu-item .sub-menu .widget_shopping_cart_content ul.cart_list li > a:hover,
+		html #empower-pro-blocks-cart-menu-item .sub-menu .widget_shopping_cart_content ul.cart_list li > a:focus,
+		html #empower-pro-blocks-cart-menu-item .sub-menu .widget_shopping_cart_content ul.cart_list li > a:hover,
 		html .cart-menu .cart_dropdown_link:hover,
 		html .cart-menu .cart_dropdown_link:focus,
 		html .woocommerce ul.products li.product h3:hover,
@@ -187,9 +187,9 @@ function leadership_pro_woocommerce_css() {
 	);
 
 	if ( $woo_css ) {
-		$woo_css = leadership_pro_compact( $woo_css );
+		$woo_css = empower_pro_blocks_compact( $woo_css );
 
-		wp_add_inline_style( 'leadership-pro-woocommerce-styles', $woo_css );
+		wp_add_inline_style( 'empower-pro-blocks-woocommerce-styles', $woo_css );
 	}
 
 }

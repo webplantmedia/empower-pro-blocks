@@ -5,19 +5,19 @@
  *
  * @author Web Plant Media
  * @license GPL-2.0+
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  */
 
 jQuery( document ).on(
 	'click',
-	'.leadership-pro-woocommerce-notice .notice-dismiss',
+	'.empower-pro-blocks-woocommerce-notice .notice-dismiss',
 	function() {
 
 		jQuery.ajax(
 			{
 				url: ajaxurl,
 				data: {
-					action: 'leadership_pro_dismiss_woocommerce_notice'
+					action: 'empower_pro_blocks_dismiss_woocommerce_notice'
 				}
 			}
 		);

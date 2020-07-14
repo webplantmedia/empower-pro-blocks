@@ -98,7 +98,7 @@ function empower_pro_blocks_compact( $input ) {
  *
  * @return bool
  */
-function leadership_pro_is_woocommerce_activated() {
+function empower_pro_blocks_is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 
@@ -109,7 +109,7 @@ function leadership_pro_is_woocommerce_activated() {
  *
  * @return bool
  */
-function leadership_pro_is_soliloquy_activated() {
+function empower_pro_blocks_is_soliloquy_activated() {
 	return class_exists( 'Soliloquy_Lite' ) ? true : false;
 }
 

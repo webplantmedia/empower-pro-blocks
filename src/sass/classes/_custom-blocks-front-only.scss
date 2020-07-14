@@ -84,7 +84,7 @@
 	z-index: -1;
 }
 
-.leadership-pro-page-title .full-width-image figcaption,
+.empower-pro-blocks-page-title .full-width-image figcaption,
 .footer-cta-image .widget-wrap figcaption.wp-caption-text,
 .sticky-scroll .wp-block-image.caption figcaption,
 html .wp-block-cover p.caption {
@@ -145,7 +145,7 @@ html .wp-block-cover p.caption {
 	// text-shadow: 1px 1px $text_color;
 }
 
-html .leadership-pro-page-title .full-width-image figcaption,
+html .empower-pro-blocks-page-title .full-width-image figcaption,
 html .sticky-scroll .wp-block-image.caption-left figcaption,
 html .wp-block-cover p.caption.caption-left {
 	right: auto;
@@ -174,14 +174,14 @@ html .wp-block-cover p.caption.caption-left {
 }
 
 @media screen and ( max-width: $tablet_width ) {
-	html .leadership-pro-page-title .full-width-image figcaption,
+	html .empower-pro-blocks-page-title .full-width-image figcaption,
 	html .footer-cta-image .widget-wrap figcaption.wp-caption-text,
 	html .sticky-scroll .wp-block-image figcaption,
 	html .sticky-scroll .wp-block-image.caption-left figcaption {
 		max-width: 90%;
 	}
 
-	html .leadership-pro-page-title .full-width-image figcaption,
+	html .empower-pro-blocks-page-title .full-width-image figcaption,
 	html .footer-cta-image .widget-wrap figcaption.wp-caption-text {
 		&::before {
 			top: -45px;
@@ -196,7 +196,7 @@ html .wp-block-cover p.caption.caption-left {
 		}
 	}
 
-	html .leadership-pro-page-title .full-width-image figcaption {
+	html .empower-pro-blocks-page-title .full-width-image figcaption {
 		&::before {
 			left: 15px;
 			right: auto;

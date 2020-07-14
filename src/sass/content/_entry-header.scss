@@ -41,14 +41,14 @@
 }
 
 /* Entry Title */
-.leadership-pro-page-title {
+.empower-pro-blocks-page-title {
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-color: $body_background_color;
 }
 
 .genesis-title-hidden {
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		display: none;
 	}
 }
@@ -65,13 +65,13 @@ h1.entry-title {
 	text-align: center;
 }
 
-.leadership-pro-page-title .archive-description .archive-title + *,
-.leadership-pro-page-title .entry-header .entry-title + * {
+.empower-pro-blocks-page-title .archive-description .archive-title + *,
+.empower-pro-blocks-page-title .entry-header .entry-title + * {
 	margin-top: $margin_bottom;
 }
 
-.leadership-pro-page-title .archive-description,
-.leadership-pro-page-title .entry-header {
+.empower-pro-blocks-page-title .archive-description,
+.empower-pro-blocks-page-title .entry-header {
 	// margin-bottom: 40px;
 }
 
@@ -137,12 +137,12 @@ h4 a:hover,
 		margin: 0 60px $margin_bottom 60px;
 	}
 
-	.leadership-pro-page-title .archive-description,
-	.leadership-pro-page-title .entry-header {
+	.empower-pro-blocks-page-title .archive-description,
+	.empower-pro-blocks-page-title .entry-header {
 		// margin-bottom: 60px;
 	}
 
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		padding-top: 60px;
 		padding-bottom: 60px;
 	}
@@ -156,12 +156,12 @@ h4 a:hover,
 		margin: 0 0 20px 0;
 	}
 
-	.leadership-pro-page-title .archive-description,
-	.leadership-pro-page-title .entry-header {
+	.empower-pro-blocks-page-title .archive-description,
+	.empower-pro-blocks-page-title .entry-header {
 		// margin-bottom: 50px;
 	}
 
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		padding-bottom: 50px;
 	}
 }

@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This file adds the required CSS to the front end to the Leadership Pro Theme.
+ * This file adds the required CSS to the front end to the Empower Pro Blocks Theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 /**
@@ -16,7 +16,7 @@
  *
  * @since 1.0.0
  */
-function leadership_pro_get_css( $appearance ) {
+function empower_pro_blocks_get_css( $appearance ) {
 
 	$css = '';
 
@@ -460,7 +460,7 @@ function leadership_pro_get_css( $appearance ) {
 	$css = $css . $css2;
 
 	if ( $css ) {
-		$css = leadership_pro_compact( $css );
+		$css = empower_pro_blocks_compact( $css );
 	}
 
 	return $css;

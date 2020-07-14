@@ -1,5 +1,5 @@
 .has-featured-image {
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		position: relative;
 		height: 100vh;
 		min-height: 500px;
@@ -100,7 +100,7 @@
 }
 
 .has-featured-image.admin-bar {
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		$height: 32px;
 		height: calc((100vh) - #{$height});
 
@@ -158,7 +158,7 @@
 }
 
 .full-width-image img,
-.leadership-pro-featured-image img,
+.empower-pro-blocks-featured-image img,
 .portfolio-featured-image img {
-	// filter: url('#leadership-pro-overlay');
+	// filter: url('#empower-pro-blocks-overlay');
 }

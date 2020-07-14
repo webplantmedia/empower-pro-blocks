@@ -7,7 +7,7 @@
 	}
 }
 
-#leadership-pro-cart-menu-item {
+#empower-pro-blocks-cart-menu-item {
 	.cart_dropdown_link {
 		padding: 34px 10px 8px 10px;
 		float: right;
@@ -176,11 +176,11 @@
 }
 
 @media only screen and (max-width: $ipad_width) {
-	#leadership-pro-cart-menu-item .cart_dropdown_link {
+	#empower-pro-blocks-cart-menu-item .cart_dropdown_link {
 		padding: 9px 0;
 	}
 
-	#leadership-pro-cart-menu-item .sub-menu {
+	#empower-pro-blocks-cart-menu-item .sub-menu {
 		// display: block;
 		position: static;
 		width: 100%;
@@ -190,7 +190,7 @@
 }
 
 @media only screen and (max-width: $mobile_width) {
-	#leadership-pro-cart-menu-item #menu-cart-dropdown.sub-menu .widget_shopping_cart_content .buttons {
+	#empower-pro-blocks-cart-menu-item #menu-cart-dropdown.sub-menu .widget_shopping_cart_content .buttons {
 		a {
 			margin: 0;
 			width: 100%;

@@ -1,7 +1,7 @@
 /***
  * This script adds general functionality to theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author Web Plant Media
  * @version 1.1.3
  * @license GPL-2.0+

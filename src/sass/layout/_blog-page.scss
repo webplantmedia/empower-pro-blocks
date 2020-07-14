@@ -43,7 +43,7 @@
 		background-color: $body_background_color_two;
 	}
 
-	.leadership-pro-page-title {
+	.empower-pro-blocks-page-title {
 		background-color: $body_background_color_two;
 	}
 
@@ -199,14 +199,14 @@
 		}
 
 		@media only screen and ( min-width: $ipad_width_1 ) {
-			.leadership-pro-page-title > .wrap {
+			.empower-pro-blocks-page-title > .wrap {
 				margin-left: 0;
 				margin-right: 50px;
 				padding-left: 50px;
 			}
 
-			.leadership-pro-page-title > .wrap .archive-description,
-			.leadership-pro-page-title > .wrap .archive-title {
+			.empower-pro-blocks-page-title > .wrap .archive-description,
+			.empower-pro-blocks-page-title > .wrap .archive-title {
 				text-align: left;
 				margin-left: 0;
 				margin-right: 0;

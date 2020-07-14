@@ -1,7 +1,7 @@
 /***
  * This script adds general functionality to theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author Web Plant Media
  * @version 1.1.3
  * @license GPL-2.0+
@@ -12,7 +12,7 @@
 	'use strict';
 
 	// Search Menu Item.
-	var $searchMenuItem         = $( '#leadership-pro-post-search-menu-item' );
+	var $searchMenuItem         = $( '#empower-pro-blocks-post-search-menu-item' );
 	var $searchMenuDropdown     = $( '#post-search-dropdown' );
 	var $searchMenuDropdownMenu = $( '#post-search-dropdown .menu' );
 	var $window                 = $( window );

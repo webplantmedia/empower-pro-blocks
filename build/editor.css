@@ -767,7 +767,7 @@ table.wp-block-table {
 
 /* Custom Blocks
 --------------------------------------------- */
-.leadership-pro-page-title .full-width-image figcaption,
+.empower-pro-blocks-page-title .full-width-image figcaption,
 .footer-cta-image .widget-wrap figcaption.wp-caption-text,
 .sticky-scroll .wp-block-image.caption figcaption,
 .wp-block-cover .caption {
@@ -2861,12 +2861,12 @@ p.has-huge-font-size {
   margin-bottom: 50px; }
 
 /* Entry Title */
-.leadership-pro-page-title {
+.empower-pro-blocks-page-title {
   padding-top: 80px;
   padding-bottom: 80px;
   background-color: #fff; }
 
-.genesis-title-hidden .leadership-pro-page-title {
+.genesis-title-hidden .empower-pro-blocks-page-title {
   display: none; }
 
 .author-box-title {
@@ -2879,8 +2879,8 @@ h1.entry-title {
   margin: 0 80px 0 80px;
   text-align: center; }
 
-.leadership-pro-page-title .archive-description .archive-title + *,
-.leadership-pro-page-title .entry-header .entry-title + * {
+.empower-pro-blocks-page-title .archive-description .archive-title + *,
+.empower-pro-blocks-page-title .entry-header .entry-title + * {
   margin-top: 40px; }
 
 .single-books h1.entry-title {
@@ -2925,7 +2925,7 @@ h4 a,
   .archive-title,
   h1.entry-title {
     margin: 0 60px 40px 60px; }
-  .leadership-pro-page-title {
+  .empower-pro-blocks-page-title {
     padding-top: 60px;
     padding-bottom: 60px; } }
 
@@ -2934,7 +2934,7 @@ h4 a,
   .archive-title,
   h1.entry-title {
     margin: 0 0 20px 0; }
-  .leadership-pro-page-title {
+  .empower-pro-blocks-page-title {
     padding-bottom: 50px; } }
 
 @media only screen and (max-width: 600px) {

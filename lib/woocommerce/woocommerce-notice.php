@@ -1,22 +1,22 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This file adds the Genesis Connect for WooCommerce notice to the Leadership Pro Theme.
+ * This file adds the Genesis Connect for WooCommerce notice to the Empower Pro Blocks Theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-add_action( 'admin_print_styles', 'leadership_pro_remove_woocommerce_notice' );
+add_action( 'admin_print_styles', 'empower_pro_blocks_remove_woocommerce_notice' );
 /**
  * Removes the default WooCommerce Notice.
  *
  * @since 1.0.0
  */
-function leadership_pro_remove_woocommerce_notice() {
+function empower_pro_blocks_remove_woocommerce_notice() {
 
 	// If below version WooCommerce 2.3.0, exits early.
 	if ( ! class_exists( 'WC_Admin_Notices' ) ) {
@@ -27,14 +27,14 @@ function leadership_pro_remove_woocommerce_notice() {
 
 }
 
-add_action( 'admin_notices', 'leadership_pro_woocommerce_theme_notice' );
+add_action( 'admin_notices', 'empower_pro_blocks_woocommerce_theme_notice' );
 /**
  * Adds a prompt to activate Genesis Connect for WooCommerce
  * if WooCommerce is active but Genesis Connect is not.
  *
  * @since 1.0.0
  */
-function leadership_pro_woocommerce_theme_notice() {
+function empower_pro_blocks_woocommerce_theme_notice() {
 
 	// If WooCommerce isn't active or Genesis Connect is active, exits early.
 	if ( ! class_exists( 'WooCommerce' ) || function_exists( 'gencwooc_setup' ) ) {
@@ -47,12 +47,12 @@ function leadership_pro_woocommerce_theme_notice() {
 	}
 
 	// If message dismissed, exits early.
-	if ( get_user_option( 'leadership_pro_woocommerce_message_dismissed', get_current_user_id() ) ) {
+	if ( get_user_option( 'empower_pro_blocks_woocommerce_message_dismissed', get_current_user_id() ) ) {
 		return;
 	}
 
 	/* translators: %s: child theme name */
-	$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'leadership-pro' ), esc_html( CHILD_THEME_NAME ) );
+	$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'empower-pro-blocks' ), esc_html( CHILD_THEME_NAME ) );
 
 	if ( current_user_can( 'install_plugins' ) ) {
 		$plugin_slug  = 'genesis-connect-woocommerce';
@@ -69,65 +69,65 @@ function leadership_pro_woocommerce_theme_notice() {
 				),
 				'install-plugin_' . $plugin_slug
 			),
-			__( 'install and activate Genesis Connect for WooCommerce', 'leadership-pro' )
+			__( 'install and activate Genesis Connect for WooCommerce', 'empower-pro-blocks' )
 		);
 
 		/* translators: 1: plugin install prompt presented as link, 2: child theme name */
-		$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'leadership-pro' ), $install_link, esc_html( CHILD_THEME_NAME ) );
+		$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'empower-pro-blocks' ), $install_link, esc_html( CHILD_THEME_NAME ) );
 	}
 
-	echo '<div class="notice notice-info is-dismissible leadership-pro-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
+	echo '<div class="notice notice-info is-dismissible empower-pro-blocks-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
 
 }
 
-add_action( 'wp_ajax_leadership_pro_dismiss_woocommerce_notice', 'leadership_pro_dismiss_woocommerce_notice' );
+add_action( 'wp_ajax_empower_pro_blocks_dismiss_woocommerce_notice', 'empower_pro_blocks_dismiss_woocommerce_notice' );
 /**
  * Adds option to dismiss Genesis Connect for Woocommerce plugin install prompt.
  *
  * @since 1.0.0
  */
-function leadership_pro_dismiss_woocommerce_notice() {
+function empower_pro_blocks_dismiss_woocommerce_notice() {
 
-	update_user_option( get_current_user_id(), 'leadership_pro_woocommerce_message_dismissed', 1 );
+	update_user_option( get_current_user_id(), 'empower_pro_blocks_woocommerce_message_dismissed', 1 );
 
 }
 
-add_action( 'admin_enqueue_scripts', 'leadership_pro_notice_script' );
+add_action( 'admin_enqueue_scripts', 'empower_pro_blocks_notice_script' );
 /**
  * Enqueues script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal.
  *
  * @since 1.0.0
  */
-function leadership_pro_notice_script() {
+function empower_pro_blocks_notice_script() {
 
-	wp_enqueue_script( 'leadership_pro_notice_script', EMPOWER_PRO_BLOCKS_DIR . 'js/notice-update.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'empower_pro_blocks_notice_script', EMPOWER_PRO_BLOCKS_DIR . 'js/notice-update.js', array( 'jquery' ), '1.0', true );
 
 }
 
-add_action( 'switch_theme', 'leadership_pro_reset_woocommerce_notice', 10, 2 );
+add_action( 'switch_theme', 'empower_pro_blocks_reset_woocommerce_notice', 10, 2 );
 /**
  * Clears the Genesis Connect for WooCommerce plugin install prompt on theme change.
  *
  * @since 1.0.0
  */
-function leadership_pro_reset_woocommerce_notice() {
+function empower_pro_blocks_reset_woocommerce_notice() {
 
 	global $wpdb;
 
 	$args = array(
-		'meta_key'   => $wpdb->prefix . 'leadership_pro_woocommerce_message_dismissed',
+		'meta_key'   => $wpdb->prefix . 'empower_pro_blocks_woocommerce_message_dismissed',
 		'meta_value' => 1,
 	);
 
 	$users = get_users( $args );
 
 	foreach ( $users as $user ) {
-		delete_user_option( $user->ID, 'leadership_pro_woocommerce_message_dismissed' );
+		delete_user_option( $user->ID, 'empower_pro_blocks_woocommerce_message_dismissed' );
 	}
 
 }
 
-add_action( 'deactivated_plugin', 'leadership_pro_reset_woocommerce_notice_on_deactivation', 10, 2 );
+add_action( 'deactivated_plugin', 'empower_pro_blocks_reset_woocommerce_notice_on_deactivation', 10, 2 );
 /**
  * Clears the Genesis Connect for WooCommerce plugin prompt on deactivation.
  *
@@ -137,13 +137,13 @@ add_action( 'deactivated_plugin', 'leadership_pro_reset_woocommerce_notice_on_de
  * @param bool   $network_deactivating Whether the plugin is deactivated for all sites in the network.
  *                                     or just the current site. Multisite only. Default false.
  */
-function leadership_pro_reset_woocommerce_notice_on_deactivation( $plugin, $network_deactivating ) {
+function empower_pro_blocks_reset_woocommerce_notice_on_deactivation( $plugin, $network_deactivating ) {
 
 	// Conditional checks to see if we're deactivating WooCommerce or Genesis Connect for WooCommerce.
 	if ( 'woocommerce/woocommerce.php' !== $plugin && 'genesis-connect-woocommerce/genesis-connect-woocommerce.php' !== $plugin ) {
 		return;
 	}
 
-	leadership_pro_reset_woocommerce_notice();
+	empower_pro_blocks_reset_woocommerce_notice();
 
 }

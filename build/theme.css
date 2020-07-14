@@ -1482,11 +1482,11 @@ th:first-child {
 .blog .site-header {
   background-color: #f5f5f5; }
 
-.search:not(.woocommerce) .leadership-pro-page-title,
-.page-template-page_blog .leadership-pro-page-title,
-.alternate-background-color .leadership-pro-page-title,
-.archive:not(.woocommerce) .leadership-pro-page-title,
-.blog .leadership-pro-page-title {
+.search:not(.woocommerce) .empower-pro-blocks-page-title,
+.page-template-page_blog .empower-pro-blocks-page-title,
+.alternate-background-color .empower-pro-blocks-page-title,
+.archive:not(.woocommerce) .empower-pro-blocks-page-title,
+.blog .empower-pro-blocks-page-title {
   background-color: #f5f5f5; }
 
 .search:not(.woocommerce) .site-inner,
@@ -1686,31 +1686,31 @@ th:first-child {
       margin-bottom: 12%; } }
 
 @media only screen and (min-width: 1024px) {
-  .search.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap, .search.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap,
-  .page-template-page_blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap,
-  .page-template-page_blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap,
-  .archive.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap,
-  .archive.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap,
-  .blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap,
-  .blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap {
+  .search.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap, .search.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap,
+  .page-template-page_blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap,
+  .page-template-page_blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap,
+  .archive.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap,
+  .archive.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap,
+  .blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap,
+  .blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap {
     margin-left: 0;
     margin-right: 50px;
     padding-left: 50px; }
-  .search.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap .archive-description,
-  .search.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap .archive-title, .search.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap .archive-description,
-  .search.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap .archive-title,
-  .page-template-page_blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap .archive-description,
-  .page-template-page_blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap .archive-title,
-  .page-template-page_blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap .archive-description,
-  .page-template-page_blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap .archive-title,
-  .archive.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap .archive-description,
-  .archive.half-width-entries:not(.woocommerce).content-sidebar .leadership-pro-page-title > .wrap .archive-title,
-  .archive.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap .archive-description,
-  .archive.half-width-entries:not(.woocommerce).sidebar-content .leadership-pro-page-title > .wrap .archive-title,
-  .blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap .archive-description,
-  .blog.half-width-entries.content-sidebar .leadership-pro-page-title > .wrap .archive-title,
-  .blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap .archive-description,
-  .blog.half-width-entries.sidebar-content .leadership-pro-page-title > .wrap .archive-title {
+  .search.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap .archive-description,
+  .search.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap .archive-title, .search.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap .archive-description,
+  .search.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap .archive-title,
+  .page-template-page_blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap .archive-description,
+  .page-template-page_blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap .archive-title,
+  .page-template-page_blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap .archive-description,
+  .page-template-page_blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap .archive-title,
+  .archive.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap .archive-description,
+  .archive.half-width-entries:not(.woocommerce).content-sidebar .empower-pro-blocks-page-title > .wrap .archive-title,
+  .archive.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap .archive-description,
+  .archive.half-width-entries:not(.woocommerce).sidebar-content .empower-pro-blocks-page-title > .wrap .archive-title,
+  .blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap .archive-description,
+  .blog.half-width-entries.content-sidebar .empower-pro-blocks-page-title > .wrap .archive-title,
+  .blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap .archive-description,
+  .blog.half-width-entries.sidebar-content .empower-pro-blocks-page-title > .wrap .archive-title {
     text-align: left;
     margin-left: 0;
     margin-right: 0; }
@@ -2186,7 +2186,7 @@ html .pricing-table img {
 
 /* Custom Blocks
 --------------------------------------------- */
-.leadership-pro-page-title .full-width-image figcaption,
+.empower-pro-blocks-page-title .full-width-image figcaption,
 .footer-cta-image .widget-wrap figcaption.wp-caption-text,
 .sticky-scroll .wp-block-image.caption figcaption,
 .wp-block-cover .caption {
@@ -2926,7 +2926,7 @@ ul.ul-li-med-space > li {
   bottom: 0;
   z-index: -1; }
 
-.leadership-pro-page-title .full-width-image figcaption,
+.empower-pro-blocks-page-title .full-width-image figcaption,
 .footer-cta-image .widget-wrap figcaption.wp-caption-text,
 .sticky-scroll .wp-block-image.caption figcaption,
 html .wp-block-cover p.caption {
@@ -2942,7 +2942,7 @@ html .wp-block-cover p.caption {
   color: #fff;
   font-weight: 700;
   z-index: 1; }
-  .leadership-pro-page-title .full-width-image figcaption::before,
+  .empower-pro-blocks-page-title .full-width-image figcaption::before,
   .footer-cta-image .widget-wrap figcaption.wp-caption-text::before,
   .sticky-scroll .wp-block-image.caption figcaption::before,
   html .wp-block-cover p.caption::before {
@@ -2955,7 +2955,7 @@ html .wp-block-cover p.caption {
     border-top: 3px solid #fff;
     border-right: 2px solid #fff;
     transform: skewY(45deg); }
-  .leadership-pro-page-title .full-width-image figcaption::after,
+  .empower-pro-blocks-page-title .full-width-image figcaption::after,
   .footer-cta-image .widget-wrap figcaption.wp-caption-text::after,
   .sticky-scroll .wp-block-image.caption figcaption::after,
   html .wp-block-cover p.caption::after {
@@ -2978,13 +2978,13 @@ html .wp-block-cover p.caption {
   background-color: #000;
   opacity: 0.3; }
 
-html .leadership-pro-page-title .full-width-image figcaption,
+html .empower-pro-blocks-page-title .full-width-image figcaption,
 html .sticky-scroll .wp-block-image.caption-left figcaption,
 html .wp-block-cover p.caption.caption-left {
   right: auto;
   left: 5%;
   text-align: left; }
-  html .leadership-pro-page-title .full-width-image figcaption::before,
+  html .empower-pro-blocks-page-title .full-width-image figcaption::before,
   html .sticky-scroll .wp-block-image.caption-left figcaption::before,
   html .wp-block-cover p.caption.caption-left::before {
     top: -75px;
@@ -2994,7 +2994,7 @@ html .wp-block-cover p.caption.caption-left {
     border-left: 2px solid #fff;
     border-right-width: 0;
     transform: skewY(-45deg); }
-  html .leadership-pro-page-title .full-width-image figcaption::after,
+  html .empower-pro-blocks-page-title .full-width-image figcaption::after,
   html .sticky-scroll .wp-block-image.caption-left figcaption::after,
   html .wp-block-cover p.caption.caption-left::after {
     top: -103px;
@@ -3002,25 +3002,25 @@ html .wp-block-cover p.caption.caption-left {
     left: 60px; }
 
 @media screen and (max-width: 860px) {
-  html .leadership-pro-page-title .full-width-image figcaption,
+  html .empower-pro-blocks-page-title .full-width-image figcaption,
   html .footer-cta-image .widget-wrap figcaption.wp-caption-text,
   html .sticky-scroll .wp-block-image figcaption,
   html .sticky-scroll .wp-block-image.caption-left figcaption {
     max-width: 90%; }
-  html .leadership-pro-page-title .full-width-image figcaption::before,
+  html .empower-pro-blocks-page-title .full-width-image figcaption::before,
   html .footer-cta-image .widget-wrap figcaption.wp-caption-text::before {
     top: -45px;
     right: 15px;
     height: 30px;
     width: 30px; }
-  html .leadership-pro-page-title .full-width-image figcaption::after,
+  html .empower-pro-blocks-page-title .full-width-image figcaption::after,
   html .footer-cta-image .widget-wrap figcaption.wp-caption-text::after {
     top: -63px;
     right: 40px; }
-  html .leadership-pro-page-title .full-width-image figcaption::before {
+  html .empower-pro-blocks-page-title .full-width-image figcaption::before {
     left: 15px;
     right: auto; }
-  html .leadership-pro-page-title .full-width-image figcaption::after {
+  html .empower-pro-blocks-page-title .full-width-image figcaption::after {
     left: 40px;
     right: auto; }
   html .wp-block-cover p.caption.caption-left,
@@ -6550,8 +6550,8 @@ body:not(.wp-custom-logo) .site-title {
 			.site-title a,
 			.site-title a:focus,
 			.site-title a:hover,
-			#leadership-pro-cart-menu-item .cart_dropdown_link,
-			#leadership-pro-post-search-menu-item .post_search_link,
+			#empower-pro-blocks-cart-menu-item .cart_dropdown_link,
+			#empower-pro-blocks-post-search-menu-item .post_search_link,
 			.nav-primary .genesis-nav-menu > li:hover > a,
 			.nav-primary .genesis-nav-menu > li > a:focus,
 			.nav-primary .genesis-nav-menu > li > a:hover,
@@ -8387,15 +8387,15 @@ body:not(.wp-custom-logo) .site-title {
       padding-top: 10px;
       padding-bottom: 10px; } }
 
-#leadership-pro-post-search-menu-item .post_search_link {
+#empower-pro-blocks-post-search-menu-item .post_search_link {
   padding: 34px 10px 8px 10px;
   float: right;
   color: #8e8e8e; }
   @media only screen and (min-width: 1024px) {
-    #leadership-pro-post-search-menu-item .post_search_link {
+    #empower-pro-blocks-post-search-menu-item .post_search_link {
       height: 94px; } }
 
-#leadership-pro-post-search-menu-item i::before {
+#empower-pro-blocks-post-search-menu-item i::before {
   font-size: 26px; }
 
 /* Site Content
@@ -8536,7 +8536,7 @@ body:not(.wp-custom-logo) .site-title {
 
 /* Featured Image
 --------------------------------------------- */
-.has-featured-image .leadership-pro-page-title {
+.has-featured-image .empower-pro-blocks-page-title {
   position: relative;
   height: 100vh;
   min-height: 500px;
@@ -8545,20 +8545,20 @@ body:not(.wp-custom-logo) .site-title {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px)); }
   @media screen and (max-width: 860px) {
-    .has-featured-image .leadership-pro-page-title {
+    .has-featured-image .empower-pro-blocks-page-title {
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
       clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px)); } }
   @media screen and (max-width: 1023px) {
-    .has-featured-image .leadership-pro-page-title {
+    .has-featured-image .empower-pro-blocks-page-title {
       height: calc((100vh) - 94px);
       margin-bottom: 80px; } }
   @media screen and (max-width: 600px) {
-    .has-featured-image .leadership-pro-page-title {
+    .has-featured-image .empower-pro-blocks-page-title {
       margin-bottom: 60px; } }
-  .has-featured-image .leadership-pro-page-title > .wrap {
+  .has-featured-image .empower-pro-blocks-page-title > .wrap {
     height: 100%;
     position: relative; }
-  .has-featured-image .leadership-pro-page-title .inner-container {
+  .has-featured-image .empower-pro-blocks-page-title .inner-container {
     z-index: 1;
     height: 100%;
     width: 100%;
@@ -8566,23 +8566,23 @@ body:not(.wp-custom-logo) .site-title {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-header,
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-meta {
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-header,
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta {
       position: relative;
       z-index: 1;
       top: -8%; }
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-meta * {
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta * {
       color: #fff; }
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-meta > * {
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta > * {
       opacity: 0.8; }
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-meta > img {
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta > img {
       opacity: 1;
       border: 2px solid rgba(255, 255, 255, 0.8); }
-    .has-featured-image .leadership-pro-page-title .inner-container .entry-title {
+    .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-title {
       color: #fff;
       margin-bottom: 0;
       align-items: center; }
-  .has-featured-image .leadership-pro-page-title .full-width-image {
+  .has-featured-image .empower-pro-blocks-page-title .full-width-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -8590,7 +8590,7 @@ body:not(.wp-custom-logo) .site-title {
     bottom: 0;
     display: block;
     z-index: 0; }
-    .has-featured-image .leadership-pro-page-title .full-width-image img {
+    .has-featured-image .empower-pro-blocks-page-title .full-width-image img {
       vertical-align: top;
       height: 100%;
       width: 100%;
@@ -8601,7 +8601,7 @@ body:not(.wp-custom-logo) .site-title {
       position: absolute;
       top: 0;
       left: 0; }
-    .has-featured-image .leadership-pro-page-title .full-width-image::after {
+    .has-featured-image .empower-pro-blocks-page-title .full-width-image::after {
       content: "";
       position: absolute;
       top: 0;
@@ -8611,13 +8611,13 @@ body:not(.wp-custom-logo) .site-title {
       background-color: #000;
       opacity: 0.4; }
 
-.has-featured-image.admin-bar .leadership-pro-page-title {
+.has-featured-image.admin-bar .empower-pro-blocks-page-title {
   height: calc((100vh) - 32px); }
   @media screen and (max-width: 1023px) {
-    .has-featured-image.admin-bar .leadership-pro-page-title {
+    .has-featured-image.admin-bar .empower-pro-blocks-page-title {
       height: calc((100vh) - 126px); } }
   @media screen and (max-width: 782px) {
-    .has-featured-image.admin-bar .leadership-pro-page-title {
+    .has-featured-image.admin-bar .empower-pro-blocks-page-title {
       height: calc((100vh) - 140px); } }
 
 .full-width-image {
