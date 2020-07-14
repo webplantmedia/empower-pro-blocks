@@ -74,12 +74,12 @@ function empower_pro_blocks_block_init() {
 
 	wp_add_inline_style( 'empower-pro-blocks', $css );
 
-	wp_enqueue_style( 'leadership-pro-main', $dir . 'build/theme.css', array(), EMPOWER_PRO_BLOCKS_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-main', $dir . 'build/theme.css', array(), EMPOWER_PRO_BLOCKS_VERSION );
 
-	wp_enqueue_style( 'leadership-pro-fonts', $appearance['fonts-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-fonts', $appearance['fonts-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 
 	if ( ! has_custom_logo() || is_customize_preview() ) {
-		wp_enqueue_style( 'leadership-pro-title-font', $appearance['title-font-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
+		wp_enqueue_style( 'empower-pro-blocks-title-font', $appearance['title-font-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 	}
 
 	/* wp_enqueue_style( 'dashicons' ); */
@@ -87,24 +87,24 @@ function empower_pro_blocks_block_init() {
 	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), EMPOWER_PRO_BLOCKS_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-theme-js', $dir . 'js/theme.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-theme-js', $dir . 'js/theme.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-scroll-js', $dir . 'js/scroll.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-scroll-js', $dir . 'js/scroll.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-typewriter-js', $dir . 'js/typewriter.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-typewriter-js', $dir . 'js/typewriter.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-dropdown-menu-js', $dir . 'js/dropdown-menu.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-dropdown-menu-js', $dir . 'js/dropdown-menu.js', array( 'jquery' ), EMPOWER_PRO_BLOCKS_VERSION, true );
 
 }
 add_action( 'init', 'empower_pro_blocks_block_init' );
 
-add_action( 'wp_enqueue_scripts', 'leadership_pro_enqueue_scripts_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_enqueue_scripts_styles', 9 );
 /**
  * Enqueues scripts and styles.
  *
  * @since 1.0.0
  */
-function leadership_pro_enqueue_scripts_styles() {
+function empower_pro_blocks_enqueue_scripts_styles() {
 
 	$appearance = genesis_get_config( 'appearance' );
 
