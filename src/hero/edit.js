@@ -618,7 +618,7 @@ function HeroEdit( {
 									<RichText
 										tagName="h1"
 										className="hero-heading"
-										placeholder={ __( 'Heading', 'wpm-epb' ) }
+										placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 										onChange={ ( value ) =>
 											setAttributes( {
 												heading: value,
@@ -629,7 +629,7 @@ function HeroEdit( {
 									<RichText
 										tagName="p"
 										className="hero-text"
-										placeholder={ __( 'Text', 'wpm-epb' ) }
+										placeholder={ __( 'Text', 'empower-pro-blocks' ) }
 										onChange={ ( value ) =>
 											setAttributes( {
 												text: value,

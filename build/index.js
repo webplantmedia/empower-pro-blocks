@@ -7595,7 +7595,7 @@ function HeroEdit(_ref2) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h1",
     className: "hero-heading",
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'wpm-epb'),
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'empower-pro-blocks'),
     onChange: function onChange(value) {
       return setAttributes({
         heading: value
@@ -7605,7 +7605,7 @@ function HeroEdit(_ref2) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "p",
     className: "hero-text",
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text', 'wpm-epb'),
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text', 'empower-pro-blocks'),
     onChange: function onChange(value) {
       return setAttributes({
         text: value

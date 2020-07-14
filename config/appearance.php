@@ -5,7 +5,7 @@
  * @package wpm_epb_empower_pro_blocks
  * @author  Web Plant Media
  * @license GPL-2.0-or-later
- * @link    https://webplantmedia.com/product/wpm-epb/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 $wpm_epb_empower_pro_blocks_default_colors = array(
@@ -143,111 +143,111 @@ return array(
 	// Editor.
 	'editor-color-palette'         => array(
 		array(
-			'name'  => __( 'Primary color', 'wpm-epb' ),
+			'name'  => __( 'Primary color', 'empower-pro-blocks' ),
 			'slug'  => 'primary',
 			'color' => $wpm_epb_empower_pro_blocks_primary_color,
 		),
 		array(
-			'name'  => __( 'Secondary color', 'wpm-epb' ),
+			'name'  => __( 'Secondary color', 'empower-pro-blocks' ),
 			'slug'  => 'secondary',
 			'color' => $wpm_epb_empower_pro_blocks_secondary_color,
 		),
 		array(
-			'name'  => __( 'Third color', 'wpm-epb' ),
+			'name'  => __( 'Third color', 'empower-pro-blocks' ),
 			'slug'  => 'third',
 			'color' => $wpm_epb_empower_pro_blocks_third_color,
 		),
 		array(
-			'name'  => __( 'Fourth color', 'wpm-epb' ),
+			'name'  => __( 'Fourth color', 'empower-pro-blocks' ),
 			'slug'  => 'fourth',
 			'color' => $wpm_epb_empower_pro_blocks_fourth_color,
 		),
 		array(
-			'name'  => __( 'Fifth color', 'wpm-epb' ),
+			'name'  => __( 'Fifth color', 'empower-pro-blocks' ),
 			'slug'  => 'fifth',
 			'color' => $wpm_epb_empower_pro_blocks_fifth_color,
 		),
 		array(
-			'name'  => __( 'Sixth color', 'wpm-epb' ),
+			'name'  => __( 'Sixth color', 'empower-pro-blocks' ),
 			'slug'  => 'sixth',
 			'color' => $wpm_epb_empower_pro_blocks_sixth_color,
 		),
 		array(
-			'name'  => __( 'Seventh color', 'wpm-epb' ),
+			'name'  => __( 'Seventh color', 'empower-pro-blocks' ),
 			'slug'  => 'seventh',
 			'color' => $wpm_epb_empower_pro_blocks_seventh_color,
 		),
 		array(
-			'name'  => __( 'Eighth color', 'wpm-epb' ),
+			'name'  => __( 'Eighth color', 'empower-pro-blocks' ),
 			'slug'  => 'eighth',
 			'color' => $wpm_epb_empower_pro_blocks_eighth_color,
 		),
 		array(
-			'name'  => __( 'Default Text color', 'wpm-epb' ),
+			'name'  => __( 'Default Text color', 'empower-pro-blocks' ),
 			'slug'  => 'default-text',
 			'color' => $wpm_epb_empower_pro_blocks_text_color,
 		),
 		array(
-			'name'  => __( 'Dark Text color', 'wpm-epb' ),
+			'name'  => __( 'Dark Text color', 'empower-pro-blocks' ),
 			'slug'  => 'dark-text',
 			'color' => $wpm_epb_empower_pro_blocks_dark_text_color,
 		),
 		array(
-			'name'  => __( 'White color', 'wpm-epb' ),
+			'name'  => __( 'White color', 'empower-pro-blocks' ),
 			'slug'  => 'white',
 			'color' => '#ffffff',
 		),
 		array(
-			'name'  => __( 'Alternate Background color', 'wpm-epb' ),
+			'name'  => __( 'Alternate Background color', 'empower-pro-blocks' ),
 			'slug'  => 'alternate-background',
 			'color' => $wpm_epb_empower_pro_blocks_alt_background_color,
 		),
 		array(
-			'name'  => __( 'Border color', 'wpm-epb' ),
+			'name'  => __( 'Border color', 'empower-pro-blocks' ),
 			'slug'  => 'border',
 			'color' => $wpm_epb_empower_pro_blocks_border_color,
 		),
 	),
 	'editor-font-sizes'            => array(
 		array(
-			'name'      => __( 'Tiny', 'wpm-epb' ),
-			'shortName' => __( 'T', 'wpm-epb' ),
+			'name'      => __( 'Tiny', 'empower-pro-blocks' ),
+			'shortName' => __( 'T', 'empower-pro-blocks' ),
 			'size'      => 13,
 			'slug'      => 'tiny',
 		),
 		array(
-			'name'      => __( 'X Small', 'wpm-epb' ),
-			'shortName' => __( 'XS', 'wpm-epb' ),
+			'name'      => __( 'X Small', 'empower-pro-blocks' ),
+			'shortName' => __( 'XS', 'empower-pro-blocks' ),
 			'size'      => 14,
 			'slug'      => 'xsmall',
 		),
 		array(
-			'name'      => __( 'Small', 'wpm-epb' ),
-			'shortName' => __( 'S', 'wpm-epb' ),
+			'name'      => __( 'Small', 'empower-pro-blocks' ),
+			'shortName' => __( 'S', 'empower-pro-blocks' ),
 			'size'      => 16,
 			'slug'      => 'small',
 		),
 		array(
-			'name'      => __( 'Normal', 'wpm-epb' ),
-			'shortName' => __( 'M', 'wpm-epb' ),
+			'name'      => __( 'Normal', 'empower-pro-blocks' ),
+			'shortName' => __( 'M', 'empower-pro-blocks' ),
 			'size'      => 18,
 			'slug'      => 'normal',
 		),
 		array(
-			'name'      => __( 'Large', 'wpm-epb' ),
-			'shortName' => __( 'L', 'wpm-epb' ),
+			'name'      => __( 'Large', 'empower-pro-blocks' ),
+			'shortName' => __( 'L', 'empower-pro-blocks' ),
 			'size'      => 20,
 			'slug'      => 'large',
 		),
 		array(
-			'name'      => __( 'Larger', 'wpm-epb' ),
-			'shortName' => __( 'XL', 'wpm-epb' ),
+			'name'      => __( 'Larger', 'empower-pro-blocks' ),
+			'shortName' => __( 'XL', 'empower-pro-blocks' ),
 			'size'      => 24,
 			'slug'      => 'larger',
 		),
 		array(
-			'name'      => __( 'Huge', 'wpm-epb' ),
-			'shortName' => __( 'H', 'wpm-epb' ),
+			'name'      => __( 'Huge', 'empower-pro-blocks' ),
+			'shortName' => __( 'H', 'empower-pro-blocks' ),
 			'size'      => 50,
 			'slug'      => 'huge',
 		),
