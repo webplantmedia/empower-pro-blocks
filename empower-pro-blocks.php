@@ -23,7 +23,7 @@ function empower_pro_blocks_block_init() {
 	$script_asset_path = "$dir/build/index.asset.php";
 	if ( ! file_exists( $script_asset_path ) ) {
 		throw new Error(
-			'You need to run `npm start` or `npm run build` for the "empower-pro-blocks/empower-pro-blocks" block first.'
+			'You need to run `npm start` or `npm run build` for the "wpm-epb/empower-pro-blocks" block first.'
 		);
 	}
 	$index_js     = 'build/index.js';
@@ -59,6 +59,6 @@ function empower_pro_blocks_block_init() {
 }
 add_action( 'init', 'empower_pro_blocks_block_init' );
 
-require_once plugin_dir_path( __FILE__ ) . 'lib/functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/customize.php';
 require_once plugin_dir_path( __FILE__ ) . 'lib/class-empower-pro-blocks-upgrade.php';

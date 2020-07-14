@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Calculates if white or black would contrast more with the provided color.
  *
@@ -66,7 +65,7 @@ function empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
  */
 function empower_pro_blocks_get_config( $config ) {
 
-	$child_file  = sprintf( '%s/config/%s.php', plugin_dir_path( __FILE__ ), $config );
+	$child_file  = sprintf( '%sconfig/%s.php', plugin_dir_path( __FILE__ ), $config );
 
 	$data = [];
 
