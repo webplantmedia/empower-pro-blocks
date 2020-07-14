@@ -87,3 +87,4 @@ function empower_pro_blocks_gutenberg_support() {
 	require_once plugin_dir_path( __FILE__ ) . 'lib/gutenberg.php';
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'lib/shortcodes.php';
