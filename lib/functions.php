@@ -8,7 +8,7 @@
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
  */
-function wpm_epb_empower_pro_blocks_color_contrast( $color ) {
+function empower_pro_blocks_color_contrast( $color ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 
@@ -32,7 +32,7 @@ function wpm_epb_empower_pro_blocks_color_contrast( $color ) {
  * @param int    $adjust_percent The amount to reduce or increase brightness by.
  * @return string Hex code for the adjusted color brightness.
  */
-function wpm_epb_empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
+function empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
 
 	$hex_code = ltrim( $hex_code, '#' );
 
@@ -64,7 +64,7 @@ function wpm_epb_empower_pro_blocks_color_brightness( $hex_code, $adjust_percent
  * @param string $config The config file to look for (not including .php file extension).
  * @return array The config data.
  */
-function wpm_epb_empower_pro_blocks_get_config( $config ) {
+function empower_pro_blocks_get_config( $config ) {
 
 	$child_file  = sprintf( '%s/config/%s.php', plugin_dir_path( __FILE__ ), $config );
 
@@ -78,5 +78,5 @@ function wpm_epb_empower_pro_blocks_get_config( $config ) {
 
 }
 
-global $wpm_epb_empower_pro_blocks_appearance;
-$wpm_epb_empower_pro_blocks_appearance = wpm_epb_empower_pro_blocks_get_config( 'appearance' );
+global $empower_pro_blocks_appearance;
+$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
