@@ -1,0 +1,30 @@
+.widget-area .simple-social-icons .widget-wrap ul li {
+	// margin: 0 !important;
+}
+
+.simple-social-icons ul li a {
+	// padding: 0 !important;
+	vertical-align: middle;
+	position: relative;
+	color: $text_color;
+	float: left;
+}
+
+.social-icons {
+	.simple-social-icons ul li {
+		position: relative;
+		// top: -1px;
+	}
+}
+
+.simple-social-icons ul.aligncenter li {
+	margin: 0 3px 6px 3px !important;
+}
+
+.simple-social-icons ul.alignleft li {
+	margin: 0 6px 6px 0 !important;
+}
+
+.simple-social-icons ul.alignright li {
+	margin: 0 0 6px 6px !important;
+}

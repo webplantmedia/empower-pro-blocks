@@ -1,0 +1,87 @@
+/* Category Block */
+.entry-content .wp-block-categories,
+.entry-content .wp-block-categories ol,
+.entry-content .wp-block-categories ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.entry-content .wp-block-categories li {
+	list-style-type: none;
+}
+
+.entry-content .wp-block-categories.aligncenter {
+	text-align: center;
+}
+
+.entry-content .wp-block-categories-list.alignfull {
+	padding: 0 30px;
+}
+
+/* Latest Posts Block */
+.entry-content .wp-block-latest-posts {
+	clear: both;
+	margin-left: 0;
+
+	time {
+		color: $gray_text_color;
+	}
+}
+
+.entry-content .wp-block-latest-posts li {
+	list-style-type: none;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid $border_color;
+	padding-left: 15px;
+	position: relative;
+
+	&::before {
+		content: "\f3d3";
+		@include ionicon;
+		position: absolute;
+		left: 0;
+		top: 5px;
+	}
+
+	&:last-child {
+		border-bottom-width: 0;
+	}
+}
+
+.entry-content .wp-block-latest-posts.aligncenter {
+	text-align: center;
+}
+
+.entry-content .wp-block-latest-posts.alignfull {
+	padding: 0 30px;
+}
+
+/* Other Blocks */
+.wp-block-preformatted,
+.wp-block-verse {
+	font-size: 16px;
+}
+
+.wp-block-preformatted {
+	white-space: pre-wrap;
+}
+
+hr.wp-block-separator {
+	border: none;
+	border-bottom: 2px solid #eee;
+	margin: 1.65em auto;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100px;
+}
+
+.wp-block-audio audio {
+	display: inline-block;
+	width: 100%;
+}
+
+.entry-content .wp-block-gallery {
+	margin-left: 0;
+}

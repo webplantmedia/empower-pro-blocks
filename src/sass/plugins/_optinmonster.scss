@@ -1,0 +1,48 @@
+.Campaign {
+	.Campaign__innerWrapper {
+		> button {
+			&::after {
+				display: none;
+			}
+		}
+
+		div.wpforms-container-full .wpforms-form .wpforms-field {
+			padding: 10px 0 !important;
+		}
+
+		div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+			padding: 10px 0 0 0 !important;
+		}
+
+		div.wpforms-container-full .wpforms-form .wpforms-five-sixths,
+		div.wpforms-container-full .wpforms-form .wpforms-four-sixths,
+		div.wpforms-container-full .wpforms-form .wpforms-four-fifths,
+		div.wpforms-container-full .wpforms-form .wpforms-one-fifth,
+		div.wpforms-container-full .wpforms-form .wpforms-one-fourth,
+		div.wpforms-container-full .wpforms-form .wpforms-one-half,
+		div.wpforms-container-full .wpforms-form .wpforms-one-sixth,
+		div.wpforms-container-full .wpforms-form .wpforms-one-third,
+		div.wpforms-container-full .wpforms-form .wpforms-three-fourths,
+		div.wpforms-container-full .wpforms-form .wpforms-three-fifths,
+		div.wpforms-container-full .wpforms-form .wpforms-three-sixths,
+		div.wpforms-container-full .wpforms-form .wpforms-two-fourths,
+		div.wpforms-container-full .wpforms-form .wpforms-two-fifths,
+		div.wpforms-container-full .wpforms-form .wpforms-two-sixths,
+		div.wpforms-container-full .wpforms-form .wpforms-two-thirds {
+			margin-left: 4% !important;
+		}
+
+		div.wpforms-container-full .wpforms-form .wpforms-first {
+			margin-left: 0 !important;
+		}
+
+		div.wpforms-container-full .wpforms-confirmation-container-full {
+			line-height: $body_font_line_height !important;
+		}
+
+		div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
+			margin-left: 0.5em !important;
+			vertical-align: middle !important;
+		}
+	}
+}

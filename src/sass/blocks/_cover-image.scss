@@ -1,0 +1,65 @@
+.page.full-width-content .entry-content .wp-block-cover.alignfull,
+.single.full-width-content .entry-content .wp-block-cover.alignfull {
+	// width: 1200px;
+}
+
+.entry-content .wp-block-cover .wp-block-cover-text {
+	// font-size: 56px;
+}
+
+.wp-block-cover-image .wp-block-subhead,
+.wp-block-cover-image h1,
+.wp-block-cover-image h2,
+.wp-block-cover-image h3,
+.wp-block-cover-image h4,
+.wp-block-cover-image h5,
+.wp-block-cover-image h6,
+.wp-block-cover-image p,
+.wp-block-cover .wp-block-subhead,
+.wp-block-cover h1,
+.wp-block-cover h2,
+.wp-block-cover h3,
+.wp-block-cover h4,
+.wp-block-cover h5,
+.wp-block-cover h6 {
+	padding-top: 0;
+}
+
+.wp-block-cover .h1 {
+	padding: 0;
+}
+
+.wp-block-cover-image .h4,
+.wp-block-cover .h4,
+.wp-block-cover-image h4,
+.wp-block-cover h4 {
+	letter-spacing: 10px !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
+}
+
+.wp-block-cover-image .wp-block-subhead,
+.wp-block-cover-image h1,
+.wp-block-cover-image h2,
+.wp-block-cover-image h3,
+.wp-block-cover-image h4,
+.wp-block-cover-image h5,
+.wp-block-cover-image h6,
+.wp-block-cover-image p,
+.wp-block-cover .wp-block-subhead,
+.wp-block-cover h1,
+.wp-block-cover h2,
+.wp-block-cover h3,
+.wp-block-cover h4,
+.wp-block-cover h5,
+.wp-block-cover h6,
+.wp-block-cover p {
+	max-width: $content_width;
+	margin-left: auto;
+	margin-right: auto;
+	color: #fff !important;
+}
+
+.ab-block-container.hero-section .has-background-dim {
+	opacity: 1;
+}

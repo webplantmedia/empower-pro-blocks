@@ -1,0 +1,136 @@
+.post-search-menu {
+	float: left;
+	position: relative;
+	margin-left: 30px;
+
+	@media only screen and (max-width: $ipad_width) {
+		display: none;
+	}
+}
+
+.post_search_form_content form select,
+.post_search_form_content form input[type="search"] {
+	color: $text_color;
+	font-family: $body_font_family;
+	font-size: $body_font_size - 2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: $body_font_weight;
+	border-width: $form_border_width;
+	border-color: $form_border_color;
+	letter-spacing: $body_font_letter_spacing;
+	padding: 13px 16px 11px;
+	line-height: $button_font_line_height;
+}
+
+.post_search_form_content .widget {
+	margin: 0;
+}
+
+#post-search-dropdown {
+	clear: both;
+	float: left;
+	width: 100%;
+
+	.menu {
+		display: none;
+		margin: 20px 0 20px 0;
+
+		@media only screen and (max-width: $ipad_width) {
+			display: block;
+		}
+	}
+
+	@media only screen and (max-width: $ipad_width) {
+		display: none;
+	}
+}
+
+#post-search-dropdown {
+	.search-form,
+	.woocommerce-product-search {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.search-form .search-form-input,
+	.woocommerce-product-search .search-field {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.search-form [type="submit"],
+	.woocommerce-product-search [type="submit"] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+.genesis-responsive-menu {
+	.search-form,
+	.woocommerce-product-search {
+		overflow: hidden;
+		width: 100%;
+		margin: 0;
+	}
+
+	.search-form [type="submit"],
+	.woocommerce-product-search [type="submit"] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+// .single-docs,
+.search {
+	#post-search-dropdown,
+	#post-search-dropdown .menu {
+		display: block;
+	}
+}
+
+.post-search-item {
+	clear: both;
+	// padding-bottom: 20px;
+
+	@media only screen and (max-width: $ipad_width) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	@media only screen and (min-width: ( $ipad_width + 1 ) ) {
+		// padding-left: 16px;
+		// padding-right: 16px;
+	}
+}
+
+#leadership-pro-post-search-menu-item {
+	.post_search_link {
+		padding: 34px 10px 8px 10px;
+		float: right;
+		color: $nav_color;
+
+		&:hover,
+		&:focus {
+			// color: $color_one;
+		}
+
+		@media only screen and (min-width: ( $ipad_width + 1 ) ) {
+			height: $nav_height;
+		}
+	}
+
+	i::before {
+		font-size: 26px;
+	}
+}

@@ -1,0 +1,10 @@
+.blog-shortcode .blog-shortcode-loop-container .entry.entry-image-featured-image .entry-image,
+.search .content .entry.entry-image-featured-image .entry-image,
+.archive .content .entry.entry-image-featured-image .entry-image,
+.blog .content .entry.entry-image-featured-image .entry-image,
+.half-width-entries .content .entry.entry-image-featured-image .entry-image,
+.page-template-page_blog .content .entry.entry-image-featured-image .entry-image {
+	display: block;
+	width: 100%;
+	margin: 0;
+}

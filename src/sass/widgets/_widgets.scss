@@ -1,0 +1,55 @@
+.widget {
+	margin-bottom: 20px;
+	word-wrap: break-word;
+}
+
+// .widget p:last-child,
+// .widget-area .widget:last-of-type {
+.widget .textwidget > *:last-child,
+.widget-wrap > *:last-child,
+.widget-area .widget:last-of-type,
+.widget ul > li:last-of-type {
+	margin-bottom: 0;
+}
+
+.widget ul > li {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+
+.widget ul > li:last-of-type {
+	padding-bottom: 0;
+}
+
+.widget ol > li {
+	list-style-position: inside;
+	list-style-type: decimal;
+	padding-left: 20px;
+	text-indent: -20px;
+}
+
+.widget li li {
+	border: 0;
+	margin-left: $margin_bottom;
+}
+
+.widget li ul {
+	padding-top: 10px;
+}
+
+.widget_calendar table {
+	width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+	text-align: center;
+}
+
+.widget_media_image {
+	.wp-caption-text {
+		margin-top: 7px;
+		font-weight: $body_font_weight;
+		text-align: left;
+	}
+}

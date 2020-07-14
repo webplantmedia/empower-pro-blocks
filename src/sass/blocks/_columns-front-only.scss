@@ -1,0 +1,32 @@
+/* Columns */
+.wp-block-columns {
+	.wp-block-column {
+		> i {
+			text-align: center;
+
+			&::before {
+				color: $light_gray_text_color;
+				display: block;
+				font-size: 70px;
+				margin-bottom: 40px;
+
+				@media only screen and ( max-width: ( $tablet_width ) ) {
+					font-size: 50px;
+					margin-bottom: $margin_bottom;
+				}
+			}
+		}
+	}
+
+	&.has-2-columns,
+	&.has-3-columns {
+		.wp-block-column:not(:last-child) {
+			margin-right: 40px;
+		}
+
+		.wp-block-column:not(:first-child) {
+			margin-left: 40px;
+		}
+
+	}
+}

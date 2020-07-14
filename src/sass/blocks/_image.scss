@@ -1,0 +1,13 @@
+/* Figcaption */
+.wp-block-image {
+	margin-bottom: 30px;
+
+	figcaption {
+		color: $gray_text_color;
+		font-size: $body_font_size - 2;
+		font-style: italic;
+		margin-bottom: 0;
+		margin-top: 10px;
+		text-align: center;
+	}
+}

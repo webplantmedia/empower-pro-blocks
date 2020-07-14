@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1366 440" style="enable-background:new 0 0 1366 440;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#EDBA10;}
+	.st1{opacity:2.000000e-02;enable-background:new    ;}
+</style>
+<rect class="st0" width="1366" height="440"/>
+<g transform="translate(1366 1208) rotate(180)">
+	<path class="st1" d="M0,1208l783-440H0V1208z"/>
+	<path class="st1" d="M1366,1208L583,768h783V1208z"/>
+	<path class="st1" d="M0,1156l683-388H0V1156z"/>
+	<path class="st1" d="M1366,1156L683,768h683V1156z"/>
+</g>
+<text transform="matrix(1 0 0 1 1103.2461 495.3848)" style="font-family:'MyriadPro-Regular'; font-size:12px;">Lorem ipsum</text>
+</svg>

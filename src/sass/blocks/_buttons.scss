@@ -1,0 +1,101 @@
+.wp-block-button.hero-button {
+	margin-bottom: 0;
+	z-index: 10;
+}
+
+.wp-block-button.hero-button .wp-block-button__link {
+	font-size: $button_font_size + 0;
+	letter-spacing: $button_font_letter_spacing;
+	line-height: $button_font_line_height;
+	padding: 40px 50px 40px 50px;
+	text-align: left;
+	z-index: 2;
+	// box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+
+	&:focus,
+	&:hover {
+		// box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+	}
+
+	@media only screen and (max-width: $mobile_width) {
+		line-height: 1.2;
+		padding: 20px 30px;
+		text-align: center;
+		font-size: $button_font_size;
+	}
+}
+
+.wp-block-button.wide-button {
+	display: block;
+	margin-bottom: 10px;
+
+	.wp-block-button__link {
+		display: block;
+	}
+}
+
+.wp-block-button.small .wp-block-button__link {
+	font-size: $button_font_size - 2;
+	padding: 9px 20px;
+}
+
+.wp-block-button.large .wp-block-button__link {
+	font-size: $button_font_size + 0;
+	padding: 24px;
+}
+
+.wp-block-button.icon-text .wp-block-button__link,
+.wp-block-button.text .wp-block-button__link {
+	@include button-text;
+}
+
+.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wp-block-button .added_to_cart,
+.wp-block-button .wp-block-button__link {
+	@include button;
+}
+
+.wp-block-button.icon.text .wp-block-button__link {
+	&::before {
+		@include ionicon();
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+.wp-block-button.text .wp-block-button__link:focus,
+.wp-block-button.text .wp-block-button__link:hover {
+	box-shadow: none;
+	transform: none;
+	border-radius: 0;
+}
+
+.wp-block-button.text.link .wp-block-button__link {
+}
+
+.wp-block-button.text.link .wp-block-button__link::after {
+	display: none;
+}
+
+.wp-block-button.alignright,
+.wp-block-button.alignleft {
+	float: none;
+	display: block;
+}
+
+.wp-block-button.aligncenter {
+	.wp-block-button__link {
+		&::after {
+			width: 25%;
+			margin: 0 auto;
+			right: 0;
+			left: 0;
+		}
+	}
+}
+
+div.wp-block-buttons .wp-block-button {
+	margin: 0;
+	margin-right: 20px;
+}

@@ -1,0 +1,26 @@
+.avatar {
+	float: left;
+	border-radius: 99em;
+}
+
+.author-box .avatar,
+.alignleft .avatar {
+	margin-right: 56px;
+
+	@media only screen and (max-width: $mobile_width ) {
+		float: none;
+		display: block;
+		margin: 0 auto 20px auto;
+	}
+}
+
+.alignright .avatar {
+	margin-left: 56px;
+}
+
+.comment .avatar {
+	margin: 6px 0;
+	border-radius: 99em;
+	position: absolute;
+	left: 0;
+}

@@ -1,0 +1,35 @@
+.message {
+	background-color: #111;
+	padding: 25px 30px;
+}
+
+.message,
+.message a {
+	color: #fff;
+}
+
+.message a:focus,
+.message a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.message.blue {
+	background-color: #0059b3;
+}
+
+.message.green {
+	background-color: #008758;
+}
+
+.message.orange {
+	background-color: #cc4b00;
+}
+
+.message.primary {
+	// background-color: $color_one;
+}
+
+.message.secondary {
+	// background-color: $color_two;
+}

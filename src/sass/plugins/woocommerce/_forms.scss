@@ -1,0 +1,106 @@
+.woocommerce #reviews #comment {
+	height: 150px;
+}
+
+.woocommerce div.product form.cart div.quantity {
+	margin-right: 0;
+}
+
+.woocommerce .quantity .qty {
+	font-size: $body_font_size;
+	line-height: $body_font_line_height;
+	margin-right: 0;
+	padding: 12px 10px 12px;
+	width: 70px;
+	border-right-width: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.woocommerce-cart .woocommerce .woocommerce-cart-form table.shop_table.cart .actions {
+	input[type="text"],
+	button[type="submit"] {
+		font-size: $body_font_size_xsmall;
+		line-height: 1;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		height: 51px;
+	}
+}
+
+.woocommerce.single-product div.product form.cart {
+	.quantity + .button,
+	.qty {
+		font-size: $body_font_size_xsmall;
+		line-height: $button_font_line_height;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		height: 51px;
+	}
+
+	.qty:focus {
+		border-color: $form_border_color;
+	}
+}
+
+.woocommerce div.product-type-grouped.product .quantity .qty {
+	border-radius: $border_radius;
+	padding: 0 10px;
+	border-width: 1px;
+}
+
+.woocommerce .shop_table .quantity .qty {
+	border-radius: 0;
+	border-width: 0;
+	background-color: transparent;
+}
+
+.woocommerce form .form-row {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+	line-height: $body_font_line_height;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text,
+#add_payment_method table.cart td.actions .coupon .input-text {
+	border-color: $form_border_color;
+	// padding: 5px 20px;
+	width: 150px;
+}
+
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.woocommerce form.register,
+.woocommerce form .form-row .select2-container {
+	// .woocommerce form .form-row.woocommerce-validated input.input-text,
+	// .woocommerce form .form-row.woocommerce-validated select,
+	// .woocommerce form .form-row.woocommerce-validated .select2-container {
+	border-color: $border_color;
+	border-radius: 0;
+	// border-width: 3px;
+	border-width: 0;
+	padding: 0;
+}
+
+.woocommerce-cart table.cart input,
+.woocommerce-checkout table.cart input,
+#add_payment_method table.cart input {
+	vertical-align: top;
+}
+
+.woocommerce .coupon {
+	line-height: $button_font_line_height;
+}
+
+.woocommerce .coupon .input-text {
+	height: 48px;
+}
+
+.woocommerce fieldset {
+	margin-bottom: 20px;
+}

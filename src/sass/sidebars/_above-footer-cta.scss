@@ -1,0 +1,135 @@
+.above-footer-cta {
+	padding: 0;
+	// margin-bottom: 80px;
+
+	.flexible-widgets .wrap {
+		padding: 0;
+	}
+}
+
+.above-footer-cta .widget.widget_text {
+	// background-color: #fff;
+	max-width: 900px;
+	padding: 0 80px;
+	position: relative;
+	z-index: 10;
+	display: block;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.above-footer-cta .widget-title,
+.above-footer-cta h4 {
+	color: $heading_color !important;
+	font-size: $heading_font_size_h1 - 10;
+	font-weight: $heading_font_weight;
+	text-transform: $heading_font_text_transform;
+	margin-bottom: 40px;
+
+	@media only screen and (max-width: $ipad_width) {
+		font-size: $heading_font_size_h1 - 26;
+	}
+
+	@media only screen and (max-width: $tablet_width) {
+		font-size: $heading_font_size_h1 - 26;
+	}
+}
+
+.above-footer-cta .widget-full.widget-area {
+	text-align: center;
+}
+
+.footer-cta-image.full-width-image {
+	float: left;
+	padding: 0;
+	width: 100%;
+
+	&::after {
+		background-color: $body_background_color_two;
+	}
+}
+
+.footer-cta-image {
+	.widget-wrap {
+		.wp-caption {
+			position: relative; /* For caption style. */
+		}
+
+		> p,
+		.wp-caption-text,
+		.widget-title {
+			display: none;
+		}
+	}
+
+	.widget {
+		margin: 0;
+	}
+}
+
+.above-footer-cta .flexible-widgets .widget:last-of-type {
+	// margin-bottom: 40px;
+}
+
+@media only screen and (min-width: ( $ipad_width + 1 ) ) {
+	.above-footer-cta {
+		.enews-widget {
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+	}
+}
+
+@media only screen and (min-width: ( $tablet_width + 1 ) ) {
+	.above-footer-cta {
+		.enews-widget {
+			form {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+
+				> * {
+					height: $form_input_height;
+					margin: 0;
+				}
+
+				> input + input,
+				> input + label + input {
+					margin-left: 6px;
+				}
+
+				> input:not([type="submit"]) {
+					min-width: 0;
+				}
+
+				input[type="submit"] {
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad_width) {
+	.above-footer-cta .widget.widget_text {
+		padding: 0 5%;
+	}
+
+}
+
+@media only screen and (max-width: $tablet_width) {
+	.above-footer-cta {
+		// margin-top: 40px;
+		text-align: center;
+	}
+
+}
+
+@media only screen and (max-width: $mobile_width) {
+	.above-footer-cta .widget.widget_text {
+		padding: 0;
+	}
+
+}

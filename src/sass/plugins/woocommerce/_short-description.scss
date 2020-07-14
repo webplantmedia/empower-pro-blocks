@@ -1,0 +1,23 @@
+.woocommerce-product-details__short-description ol,
+.woocommerce-product-details__short-description ul {
+	margin-bottom: $margin_bottom;
+	margin-left: 40px;
+}
+
+.woocommerce-product-details__short-description ol > li {
+	list-style-type: decimal;
+}
+
+.woocommerce-product-details__short-description ul > li {
+	list-style-type: disc;
+}
+
+.woocommerce-product-details__short-description ol ol,
+.woocommerce-product-details__short-description ul ul {
+	margin-bottom: 0;
+}
+
+.woocommerce-product-details__short-description code {
+	background-color: $nav_color;
+	color: $form_border_color;
+}

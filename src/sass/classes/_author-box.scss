@@ -1,0 +1,33 @@
+.after-entry,
+.author-box {
+	background-color: #fff;
+	font-size: 18px;
+	// font-size: 1.8rem;
+	margin-bottom: 40px;
+	padding: 60px 0;
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.author-box {
+	.author-box-title,
+	.author-box-content {
+		overflow: hidden;
+	}
+
+	.author-box-title {
+
+		@media only screen and (max-width: $mobile_width ) {
+			text-align: center;
+		}
+	}
+
+	p {
+		font-size: 18px;
+	}
+}
+
+.author-box p:last-child {
+	margin-bottom: 0;
+}

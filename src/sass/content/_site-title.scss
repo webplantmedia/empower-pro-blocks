@@ -1,0 +1,113 @@
+.title-area {
+	max-width: 100%;
+	display: block;
+	text-align: center;
+
+	a {
+		padding: 0;
+	}
+}
+
+.wp-custom-logo .title-area {
+	.custom-logo-link {
+		vertical-align: top;
+		padding: 0;
+
+		img {
+			vertical-align: top;
+			display: block;
+			// height: $nav_height;
+			width: auto;
+		}
+	}
+}
+
+.title-area .site-title a:hover {
+	// border-bottom: 3px solid $color_one;
+	// color: $color_one;
+}
+
+.header-image .title-area {
+	margin: 0 auto;
+	max-width: 300px;
+	padding: 0;
+}
+
+.site-title {
+	font-family: $body_font_family;
+	font-size: 16px;
+	// font-size: 1.6rem;
+	font-weight: 700;
+	letter-spacing: 5px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	// margin-bottom: 10px;
+}
+
+body:not(.wp-custom-logo) .site-title {
+	font-family: $title_font_family;
+	font-size: $title_font_size;
+	letter-spacing: $title_font_letter_spacing;
+	font-weight: $title_font_weight;
+	font-style: $title_font_style;
+	text-transform: $title_font_text_transform;
+
+	@media only screen and (max-width: $tablet_width) {
+		// font-size: $title_font_size * 0.8;
+	}
+
+	@media only screen and (max-width: $mobile_width) {
+		// font-size: $title_font_size * 0.6;
+	}
+}
+
+.site-title a,
+.site-title a:focus,
+.site-title a:hover {
+	color: $nav_color;
+	text-decoration: none;
+}
+
+.site-description {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	font-size: $description_font_size;
+	// font-size: 1.6rem;
+	font-weight: 400;
+	height: 1px;
+	line-height: $body_font_line_height;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	color: $gray_text_color;
+	letter-spacing: $description_font_letter_spacing;
+	margin-bottom: 0;
+
+	@media only screen and (max-width: $mobile_width) {
+		font-size: $description_font_size - 1;
+	}
+}
+
+.custom-logo {
+	display: block;
+}
+
+.wp-custom-logo .site-description,
+.wp-custom-logo .site-title {
+	display: block;
+	text-indent: -9999px;
+	position: absolute;
+}
+
+.wp-custom-logo .title-area > a {
+	width: 100%;
+	display: inline-block;
+}
+
+@media only screen and (max-width: $small_mobile_width) {
+	.site-title a {
+		// float: none;
+	}
+
+}

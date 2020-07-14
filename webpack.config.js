@@ -12,6 +12,7 @@ module.exports = {
 		index: path.resolve( process.cwd(), 'src', 'index.js' ),
 		style: path.resolve( process.cwd(), 'src', 'style.scss' ),
 		editor: path.resolve( process.cwd(), 'src', 'editor.scss' ),
+		theme: path.resolve( process.cwd(), 'src', 'theme.scss' ),
 	},
 	optimization: {
 		...defaultConfig.optimization,
@@ -26,6 +27,12 @@ module.exports = {
 				style: {
 					name: 'style',
 					test: /style\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				theme: {
+					name: 'theme',
+					test: /theme\.(sc|sa|c)ss$/,
 					chunks: 'all',
 					enforce: true,
 				},

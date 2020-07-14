@@ -1,0 +1,23 @@
+.entry-content .wp-block-columns {
+	margin-bottom: $margin_bottom;
+}
+
+.entry-content .wp-block-columns.alignfull {
+	padding: 0 30px;
+}
+
+@media only screen and (max-width: $ipad_width ) {
+	#genesis-content .wp-block-columns {
+		display: block;
+	}
+
+	#genesis-content .wp-block-columns .wp-block-column {
+		margin: 0;
+		flex: 1;
+	}
+
+	#genesis-content .wp-block-columns {
+		margin-bottom: 60px;
+	}
+
+}

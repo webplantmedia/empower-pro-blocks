@@ -1,0 +1,21 @@
+.woocommerce-cart #payment ul.payment_methods li,
+.woocommerce-checkout #payment ul.payment_methods li,
+#add_payment_method #payment ul.payment_methods li {
+	list-style-type: none;
+}
+
+.woocommerce-cart #payment div.form-row,
+.woocommerce-checkout #payment div.form-row,
+#add_payment_method #payment div.form-row {
+	margin-bottom: 0;
+}
+
+#customer_details {
+	margin-bottom: $margin_bottom;
+}
+
+#stripe-card-element.wc-stripe-elements-field {
+	border: 1px solid $border_color;
+	border-radius: 99em;
+	padding: 13px 16px 11px;
+}

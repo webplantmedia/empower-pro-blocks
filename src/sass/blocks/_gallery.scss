@@ -1,0 +1,14 @@
+.wp-block-gallery .blocks-gallery-image figure figcaption,
+.wp-block-gallery .blocks-gallery-item figure figcaption {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1) 60%, transparent);
+}
+
+.wp-block-gallery {
+	.blocks-gallery-grid {
+		margin: 0;
+
+		li::before {
+			display: none;
+		}
+	}
+}

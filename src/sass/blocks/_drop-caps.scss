@@ -1,0 +1,9 @@
+.entry-content p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 7.8em;
+	margin: 0.07em 0.08em 0 -0.08em;
+}
+
+.entry-content p.has-larger-font-size.has-drop-cap:not(:focus)::first-letter,
+.entry-content p.has-small-font-size.has-drop-cap:not(:focus)::first-letter {
+	margin-right: 0.01em;
+}

@@ -1,0 +1,68 @@
+/* Font Sizes */
+.has-tiny-font-size {
+	font-size: $body_font_size_tiny;
+}
+
+.has-small-font-size {
+	font-size: $body_font_size_small;
+}
+
+.has-xsmall-font-size {
+	font-size: $body_font_size_xsmall;
+}
+
+.has-regular-font-size {
+	font-size: $body_font_size;
+}
+
+.has-large-font-size {
+	font-size: $body_font_size_large;
+
+	@media only screen and (max-width: $ipad_width) {
+		font-size: $body_font_size_large - 2;
+	}
+}
+
+.has-larger-font-size {
+	font-size: $body_font_size_larger;
+
+	@media only screen and (max-width: $ipad_width) {
+		font-size: $body_font_size_larger - 4;
+	}
+}
+
+/* Background Color */
+.entry-content p.has-background {
+	padding: 25px 30px;
+}
+
+.entry-content p.has-background.box-shadow {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.entry-content p.has-background.light-text a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.entry-content p.has-background.light-text a:focus,
+.entry-content p.has-background.light-text a:hover {
+	text-decoration: none;
+}
+
+.entry-content p.has-background a,
+.entry-content p.has-text-color a {
+	color: inherit;
+}
+
+.entry-content p.has-background a:focus,
+.entry-content p.has-background a:hover,
+.entry-content p.has-text-color a:focus,
+.entry-content p.has-text-color a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+.all-caps {
+	text-transform: uppercase;
+}

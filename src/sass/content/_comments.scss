@@ -1,0 +1,162 @@
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	background-color: #fff;
+	font-size: $body_font_size_small;
+}
+
+.entry-pings {
+	padding: 60px 60px 32px;
+}
+
+.entry-comments {
+	margin-top: 60px;
+}
+
+.comment-respond,
+.entry-comments {
+	margin: 60px auto;
+	max-width: $content_width;
+}
+
+.comment-respond .logged-in-as {
+	font-size: $body_font_size_xsmall;
+
+	a {
+		color: $text_color;
+
+		&:hover {
+			color: $text_color_hover;
+		}
+	}
+}
+
+.comment-list .comment-respond {
+	padding: 60px 0 0 0;
+}
+
+.comment-list li.comment {
+	margin-top: 70px;
+	padding: 0;
+}
+
+.comment-list li.comment {
+	> article {
+		position: relative;
+		padding-left: 61px;
+	}
+}
+
+.comment-list .children {
+	border-left: 1px solid $border_color;
+	padding-left: 58px; // 61-3
+
+	.children {
+		border-left-width: 0;
+		padding-left: 61px;
+	}
+
+	@media only screen and (max-width: $tablet_width ) {
+		padding-left: 20px;
+
+		.children {
+			padding-left: 0;
+		}
+	}
+}
+
+.comment-header {
+	line-height: $body_font_line_height;
+	margin-bottom: $margin_bottom;
+}
+
+.comment-author .says {
+	display: none;
+}
+
+.comment-author,
+.comment-author-link {
+	font-weight: 700;
+	letter-spacing: $nav_font_letter_spacing;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $text_color;
+	font-size: $body_font_size_xsmall;
+}
+
+.comment-author-link {
+	&:hover,
+	&:focus {
+		color: $text_color_hover;
+	}
+}
+
+.comment-edit-link,
+.comment-meta,
+.comment-meta a {
+	color: $gray_text_color;
+	font-size: $body_font_size_tiny;
+	font-weight: 400;
+	// font-style: italic;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $text_color;
+	}
+}
+
+.comment-header {
+	.comment-edit-link::before {
+		content: "\005C";
+		// margin: 0 10px 0 10px;
+		margin: 0 5px 0 1px;
+		font-weight: 400;
+		vertical-align: baseline;
+	}
+
+	.comment-edit-link,
+	.comment-meta {
+		display: inline-block;
+	}
+}
+
+.comment-content {
+	clear: both;
+}
+
+.comment-content,
+.comment-reply {
+	margin-left: -61px;
+}
+
+.comment-content ul > li {
+	list-style-type: disc;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%;
+
+	@media only screen and (max-width: $tablet_width ) {
+		width: 100%;
+	}
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.comment-respond input[type="checkbox"] + label {
+	display: inline;
+}
+
+.comment-header p {
+	margin-bottom: 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}

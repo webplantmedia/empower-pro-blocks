@@ -1,0 +1,120 @@
+.sidebar .widget_mc4wp_form_widget .widget-title,
+.sidebar .enews-widget .widget-title {
+	// margin-bottom: 10px;
+}
+
+.widget_mc4wp_form_widget .subscribe,
+.enews-widget form {
+	position: relative;
+}
+
+.sidebar .widget.widget_mc4wp_form_widget,
+.sidebar .widget.enews-widget {
+	text-align: left;
+}
+
+.footer-widgets .widget.widget_mc4wp_form_widget,
+.footer-widgets .widget.enews-widget {
+	form {
+		// text-align: center;
+	}
+}
+
+.single .sidebar .widget.widget_mc4wp_form_widget,
+.single .sidebar .widget.enews-widget {
+	border-width: 0;
+}
+
+.has-featured-image .sidebar .widget.enews-widget {
+	// nothing.
+}
+
+.sidebar .widget_mc4wp_form_widget input:hover,
+.sidebar .enews-widget input:hover,
+.sidebar .widget_mc4wp_form_widget input:focus,
+.sidebar .enews-widget input:focus {
+	// border: 1px solid #fff;
+}
+
+.sidebar .widget_mc4wp_form_widget input[type="submit"],
+.sidebar .enews-widget input[type="submit"] {
+	color: #fff;
+}
+
+.sidebar .widget_mc4wp_form_widget input:focus[type="submit"],
+.sidebar .widget_mc4wp_form_widget input:hover[type="submit"],
+.sidebar .enews-widget input:focus[type="submit"],
+.sidebar .enews-widget input:hover[type="submit"] {
+	// background-color: #fff;
+	// color: $nav_color;
+}
+
+.widget_mc4wp_form_widget input,
+.enews-widget input {
+	margin-bottom: 10px;
+}
+
+.sidebar .widget_mc4wp_form_widget input,
+.sidebar .enews-widget input {
+	text-align: left;
+	// margin-bottom: 6px;
+}
+
+.widget.widget_mc4wp_form_widget input,
+.widget.enews-widget input {
+	box-shadow: none;
+}
+
+.widget_mc4wp_form_widget .subscribe input[type="submit"],
+.enews-widget input[type="submit"] {
+	text-align: left;
+	transform: none;
+
+	@media only screen and (min-width: ( $tablet_width + 1 ) ) {
+		bottom: 4px;
+		position: absolute;
+		right: 4px;
+		padding: 13px 20px 14px;
+		width: auto;
+	}
+}
+
+.sidebar .widget_mc4wp_form_widget input[type="submit"],
+.sidebar .enews-widget input[type="submit"] {
+	// padding: 17px 20px;
+}
+
+.widget_mc4wp_form_widget input[type="submit"]:hover,
+.enews-widget input[type="submit"]:hover {
+	color: #fff;
+}
+
+.sidebar .widget_mc4wp_form_widget input[type="submit"],
+.sidebar .enews-widget input[type="submit"] {
+	// bottom: auto;
+	// margin: 0;
+	// position: relative;
+	// right: auto;
+	// width: 100%;
+}
+
+.widget_mc4wp_form_widget form + p,
+.enews form + p {
+	margin-top: 24px;
+}
+
+.widget_mc4wp_form_widget form p:not(.text) {
+	margin: 0;
+}
+
+.widget_mc4wp_form_widget form label {
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+@media only screen and (max-width: $ipad_width) {
+	.sidebar .widget.enews-widget {
+		border-width: 0;
+	}
+
+}

@@ -1,0 +1,25 @@
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	vertical-align: top; /* removes space from bottom in container block. */
+}
+
+img.box-shadow {
+	box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.07);
+}
+
+img.box-shadow.with-padding {
+	padding: 10px;
+}
+
+figure {
+	margin: 0;
+}

@@ -1,0 +1,40 @@
+.breadcrumb {
+	margin: 0 auto $margin_bottom auto;
+	max-width: 1200px;
+	padding: 0 0 0 0;
+	text-align: left;
+	color: $gray_text_color;
+	font-size: $body_font_size_tiny;
+
+	> li,
+	> span {
+		display: inline;
+	}
+
+	a {
+		border-bottom-color: $border_color;
+		font-weight: 700;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $border_color;
+			color: $text_color;
+			box-shadow: none;
+		}
+	}
+}
+
+.full-width-content .breadcrumb {
+	text-align: center;
+}
+
+.single-post.full-width-content .breadcrumb {
+	max-width: 750px;
+	// text-align: left;
+}
+
+.sidebar-content .breadcrumb,
+.content-sidebar .breadcrumb {
+	text-align: left;
+}

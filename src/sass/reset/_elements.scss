@@ -1,0 +1,76 @@
+body {
+	background-color: #fff;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	// -webkit-transition: all 0.1s ease-in-out;
+	// -moz-transition: all 0.1s ease-in-out;
+	// -ms-transition: all 0.1s ease-in-out;
+	// -o-transition: all 0.1s ease-in-out;
+	// transition: all 0.1s ease-in-out;
+	transition: all 0.4s;
+}
+
+textarea,
+input[type="text"],
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+a {
+	// color: $color_two;
+	text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+	// color: $text_color;
+	// border-color: $text_color;
+}
+
+p {
+	margin: 0 0 $margin_bottom;
+	padding: 0;
+}
+
+address {
+	margin: 0 0 $margin_bottom;
+	padding: 0;
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid $form_border_color;
+	clear: both;
+	margin: 1em 0;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+em,
+i {
+	// no style
+}
+
+mark {
+	background: #ddd;
+	color: #000;
+}

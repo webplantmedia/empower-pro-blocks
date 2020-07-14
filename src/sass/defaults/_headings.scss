@@ -1,0 +1,91 @@
+// .wp-block-atomic-blocks-ab-cta.image-link .ab-button,
+html .ab-block-testimonial .ab-testimonial-name,
+#genesis-content .pro-portfolio .entry-header .entry-title,
+#genesis-content .wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single h3,
+.soliloquy-caption h2,
+html .ab-block-profile .ab-profile-name,
+html .ab-block-post-grid header .ab-block-post-grid-title,
+html .ab-post-grid-items .ab-block-post-grid-text h2,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include heading;
+}
+
+.wp-block-cover .wp-block-cover__inner-container .h1,
+.wp-block-cover .wp-block-cover__inner-container h1,
+.archive-description .entry-title,
+.archive-title,
+.entry-title,
+.h1,
+h1 {
+	@include h1;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h2,
+// .wp-block-atomic-blocks-ab-cta.image-link .ab-button,
+.soliloquy-caption h2,
+html .ab-block-profile .ab-profile-name,
+html .ab-block-post-grid header h2.ab-block-post-grid-title,
+html .ab-post-grid-items .ab-block-post-grid-text h2,
+h2.entry-title,
+.h2,
+h2 {
+	@include h2;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h3,
+#genesis-content .wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single h3,
+#genesis-content .pro-portfolio .entry-header .entry-title,
+html .ab-block-post-grid header h3.ab-block-post-grid-title,
+.h3,
+h3 {
+	@include h3;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h4,
+html .ab-block-testimonial .ab-testimonial-name,
+html .ab-block-post-grid header h4.ab-block-post-grid-title,
+.h4,
+h4 {
+	@include h4;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h5,
+html .ab-block-post-grid header h5.ab-block-post-grid-title,
+.h5,
+h5 {
+	@include h5;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h6,
+html .ab-block-post-grid header h6.ab-block-post-grid-title,
+.h6,
+h6 {
+	@include h6;
+}
+
+.intro {
+	font-family: $body_font_family;
+	font-size: $body_font_size + 4;
+	letter-spacing: -0.025;
+}
+
+p.has-huge-font-size,
+.large-text {
+	@include large-text;
+}
+
+p.has-huge-font-size {
+	margin-bottom: 40px;
+}
+

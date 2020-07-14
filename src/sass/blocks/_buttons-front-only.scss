@@ -1,0 +1,13 @@
+.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wp-block-button .added_to_cart,
+.wp-block-button .wp-block-button__link,
+.wp-block-button.hero-button,
+.ab-button.ab-button-size-extralarge,
+input[type="submit"].ab-button.ab-button-size-extralarge,
+.wp-block-button.hero-button .wp-block-button__link {
+	position: relative; /* Effects block button in editor */
+}
+div.wp-block-buttons .wp-block-button {
+	&:last-child {
+		margin-right: 0;
+	}
+}

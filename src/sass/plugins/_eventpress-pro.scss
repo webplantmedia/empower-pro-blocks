@@ -1,0 +1,149 @@
+.entry-image-link {
+
+	@include object-fit();
+}
+
+.more-events {
+	margin-top: 40px;
+	text-align: center;
+
+	&.past-events {
+		margin-top: 80px;
+	}
+}
+
+.event-container {
+	.entry-meta,
+	.entry-read-more,
+	.entry-title {
+		text-align: center !important;
+	}
+
+	.entry-meta {
+		margin-bottom: 0;
+	}
+
+	.entry-read-more {
+		margin-top: auto;
+	}
+
+	.entry-content {
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			// text-align: left !important;
+		}
+	}
+
+	.event-item {
+		flex-grow: 0;
+		display: flex;
+		flex-flow: column;
+
+		.entry-title {
+			font-size: $heading_font_size_h3;
+
+			@media only screen and (max-width: $ipad_width) {
+				font-size: $heading_font_size_h3_ipad;
+			}
+		}
+	}
+}
+
+.event-container.event-cols-3 .event-container-inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 30px 30px;
+
+	.event-item {
+		.entry-title {
+			font-size: $heading_font_size_h4;
+		}
+	}
+
+	@media only screen and (max-width: $ipad_width) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media only screen and (max-width: $tablet_width) {
+		display: block;
+	}
+}
+
+.event-container.event-style-list {
+	.event-container-inner {
+		display: block;
+	}
+
+	.event-container-inner .entry {
+		box-shadow: none;
+	}
+
+	.entry-header,
+	.entry-meta,
+	.entry-title {
+		text-align: left !important;
+		margin: 0 !important;
+	}
+
+	.entry-content,
+	.entry-header {
+		padding-left: 68px !important;
+	}
+
+	.event-container-inner .entry {
+		margin-bottom: $margin_bottom;
+		min-height: 48px;
+	}
+
+	.pic {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 48px;
+		height: 48px;
+
+		a {
+			padding: 0;
+			overflow: visible;
+			height: auto;
+			display: block;
+
+			img {
+				position: static;
+				width: 48px;
+				height: 48px;
+				border-radius: 99em;
+			}
+		}
+	}
+
+	.entry-title {
+		color: $text_color;
+		font-family: $body_font_family;
+		font-size: $body_font_size_small;
+		font-weight: $body_font_weight_bold;
+		letter-spacing: $body_font_letter_spacing;
+		line-height: $body_font_line_height;
+		text-transform: none;
+	}
+}
+
+.single-event {
+	.entry-content {
+		.share-after {
+			text-align: center;
+
+			> *:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.breadcrumb {
+		display: none;
+	}
+}

@@ -1,0 +1,10 @@
+// Landing Page
+@media only screen and ( max-width: $ipad_width ) {
+	.landing-page .ab-is-responsive-column.ab-layout-column-wrap {
+		display: block;
+	}
+}
+
+.landing-page .nav-mobile-cta:not(.nav-custom-mobile-cta) {
+	display: none;
+}

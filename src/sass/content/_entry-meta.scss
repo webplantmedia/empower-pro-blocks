@@ -1,0 +1,153 @@
+.entry-meta {
+	text-align: center;
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-author,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a,
+p.entry-meta,
+p.entry-meta i,
+.entry-meta .entry-comments-link a,
+.entry-meta a.entry-author-link {
+	font-size: $entry_meta_font_size;
+	margin-bottom: 50px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: $entry_meta_font_letter_spacing;
+	font-style: $entry_meta_font_style;
+	color: $gray_text_color;
+}
+
+.entry-meta a.entry-author-link,
+.entry-meta .entry-time,
+.entry-meta .post-edit-link,
+.entry-meta .entry-comments-link a,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline time,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a {
+	color: $gray_text_color;
+	font-family: $entry_meta_font_family;
+	line-height: $entry_meta_font_line_height;
+	letter-spacing: $entry_meta_font_letter_spacing;
+	font-size: $entry_meta_font_size;
+	font-style: $entry_meta_font_style;
+	font-weight: $entry_meta_font_weight;
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-author {
+	margin-bottom: 0;
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a,
+.entry-meta a {
+	border-bottom-color: $border_color;
+	// color: $color_one;
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a:focus,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline a:hover,
+.entry-meta a:focus,
+.entry-meta a:hover,
+a.entry-author-link:focus,
+a.entry-author-link:hover {
+	border-bottom: 2px solid $border_color;
+	color: $text_color;
+	box-shadow: none;
+	transition: none;
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-byline,
+.entry-header .entry-meta {
+	text-align: left;
+}
+
+.entry-header .entry-meta {
+	margin-bottom: 24px;
+}
+
+.portfolio .entry-header .entry-meta {
+	font-size: $body_font_size_xsmall;
+	letter-spacing: 1.6px;
+	margin-bottom: 4px;
+	text-transform: uppercase;
+}
+
+.entry-footer .entry-meta {
+	color: $gray_text_color;
+	padding: 0 8.75%;
+	text-align: center;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+	// font-style: italic;
+
+	a {
+		font-style: normal;
+	}
+}
+
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-author:not(:last-child)::after,
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-date:not(:last-child)::after,
+.entry-comments-link::before {
+	content: "\005C";
+	color: $gray_text_color;
+	// margin: 0 10px 0 10px;
+	margin: 0 5px 0 5px;
+	font-weight: 400;
+	vertical-align: baseline;
+}
+
+.entry-meta .entry-comments-link::before {
+	margin: 0 5px 0 1px;
+	color: $gray_text_color;
+}
+
+.entry-meta a {
+	color: $gray_text_color;
+	font-weight: $entry_meta_font_weight;
+	text-decoration: none;
+}
+
+.portfolio .entry-header .entry-meta a {
+	// color: $color_one;
+}
+
+.entry-meta .avatar {
+	border-radius: 50%;
+	float: none;
+	margin: -7px 12px -12px 0;
+	max-height: 36px;
+	width: auto;
+}
+
+.ab-post-grid-items .ab-block-post-grid-author,
+.ab-post-grid-items .ab-block-post-grid-date {
+	font-weight: 700;
+	margin: 0;
+}
+
+.single-books .book-author {
+	color: $gray_text_color;
+	font-size: $body_font_size_tiny;
+	font-style: italic;
+	margin-bottom: 0;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+.single-books .book-author .book-author-link {
+	font-style: normal;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@media only screen and (max-width: $ipad_width) {
+	.single .entry-footer .entry-meta {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}

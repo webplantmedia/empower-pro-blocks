@@ -1,0 +1,187 @@
+/* Wide Align */
+.hero-title {
+
+	@media only screen and ( min-width: ( $ipad_width + 1 ) ) {
+		margin-left: calc(-960px / 2 + 100% / 2);
+		margin-right: calc(-960px / 2 + 100% / 2);
+		min-width: 960px;
+		max-width: 100%;
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+blockquote.wp-block-quote.hero-quote {
+	@media only screen and ( min-width: ( $tablet_width + 1 ) ) {
+		margin-left: calc(#{-$content_max_width_ipad} / 2 + 100% / 2);
+		margin-right: calc(#{-$content_max_width_ipad} / 2 + 100% / 2);
+		min-width: $content_max_width_ipad;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	@media only screen and ( min-width: ( $ipad_width + 1 ) ) {
+		margin-left: calc(#{-($content_max_width_ipad + 50)} / 2 + 100% / 2);
+		margin-right: calc(#{-($content_max_width_ipad + 50)} / 2 + 100% / 2);
+		min-width: ($content_max_width_ipad + 50);
+		max-width: 100%;
+		width: 100%;
+	}
+
+	@media only screen and ( min-width: ( $desktop_width + 1 ) ) {
+		margin-left: calc(#{-($content_max_width_desktop + 50)} / 2 + 100% / 2);
+		margin-right: calc(#{-($content_max_width_desktop + 50)} / 2 + 100% / 2);
+		min-width: ($content_max_width_desktop + 50);
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+/* Block Image */
+.page-template-template-blocks.full-width-content blockquote.wp-block-quote + .wp-block-image.alignfull {
+	margin-top: -70px;
+
+	@media only screen and (max-width: $tablet_width) {
+		margin-top: -$margin_bottom;
+	}
+}
+
+.above-footer-cta + .footer-gray-line,
+.above-footer-cta + .full-width-image.footer-cta-image,
+.wp-block-button.hero-button + .wp-block-image {
+
+	@media only screen and (max-width: 2800px) {
+		margin-top: -155px;
+	}
+
+	@media only screen and (max-width: 2200px) {
+		margin-top: -140px;
+	}
+
+	@media only screen and (max-width: 1800px) {
+		margin-top: -125px;
+	}
+
+	@media only screen and (max-width: $wide_width) {
+		margin-top: -105px;
+	}
+
+	@media only screen and (max-width: $ipad_width) {
+		margin-top: -90px;
+	}
+
+	@media only screen and (max-width: $tablet_width) {
+		margin-top: -75px;
+	}
+
+	@media only screen and (max-width: $mobile_width) {
+		margin-top: -45px;
+	}
+
+}
+
+.full-width-content .wp-block-image.alignfull {
+	figcaption {
+		display: block;
+		text-indent: -9999px;
+		position: absolute;
+	}
+}
+
+/* Columns */
+#genesis-content .soliloquy-container,
+.full-width-content #genesis-content .alignwide {
+	margin-left: calc(#{-$content_max_width_full} / 2 + 100% / 2);
+	margin-right: calc(#{-$content_max_width_full} / 2 + 100% / 2);
+	min-width: $content_max_width_full;
+	max-width: 100%;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+
+	@media only screen and (max-width: $wide_width ) {
+		margin-left: calc(#{-$content_max_width_wide} / 2 + 100% / 2);
+		margin-right: calc(#{-$content_max_width_wide} / 2 + 100% / 2);
+		min-width: $content_max_width_wide;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	@media only screen and ( max-width: $desktop_width ) {
+		margin-left: calc(#{-$content_max_width_desktop} / 2 + 100% / 2);
+		margin-right: calc(#{-$content_max_width_desktop} / 2 + 100% / 2);
+		min-width: $content_max_width_desktop;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	@media only screen and ( max-width: $ipad_width ) {
+		margin-left: calc(#{-$content_max_width_ipad} / 2 + 100% / 2);
+		margin-right: calc(#{-$content_max_width_ipad} / 2 + 100% / 2);
+		min-width: $content_max_width_ipad;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	@media only screen and ( max-width: $tablet_width ) {
+		padding-left: 6%;
+		padding-right: 6%;
+		margin-left: calc(50% - (50vw));
+		margin-right: calc(50% - (50vw));
+		max-width: 1000%;
+		min-width: 0;
+		width: 100vw;
+	}
+
+	@media only screen and ( max-width: $mobile_width ) {
+		// padding-left: 0;
+		// padding-left: 0;
+		// margin-left: auto;
+		// margin-right: auto;
+		// min-width: 0;
+		// max-width: 100%;
+		// width: 100%;
+	}
+}
+
+.wp-block-atomic-blocks-ab-container .ab-container-content {
+
+	@media only screen and ( max-width: ( $desktop_width + 100 ) ) {
+		// max-width: $content_max_width_wide !important;
+	}
+
+	@media only screen and ( max-width: $desktop_width ) {
+		// max-width: $content_max_width_desktop !important;
+	}
+
+	@media only screen and ( max-width: $ipad_width ) {
+		// max-width: $content_max_width_ipad !important;
+	}
+
+	@media only screen and ( max-width: $tablet_width ) {
+		// max-width: $content_max_width_tablet !important;
+	}
+}
+
+@media only screen and ( max-width: $tablet_width ) {
+	.wp-block-atomic-blocks-ab-container {
+		// padding-left: 5% !important;
+		// padding-right: 5% !important;
+	}
+}
+
+@media only screen and (max-width: $ipad_width) {
+	.full-width-image {
+		// margin-left: 0;
+		// margin-right: 0;
+		// margin-top: 0;
+		// width: 100%;
+		border-radius: 0;
+
+		img {
+			border-radius: 0;
+		}
+	}
+
+}

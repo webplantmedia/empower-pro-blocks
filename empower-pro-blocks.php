@@ -82,8 +82,8 @@ add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
  */
 function empower_pro_blocks_gutenberg_support() {
 	// Add inline style for gutenberg blocks.
-	require_once plugin_dir_path( __FILE__ ) . 'assets/css/gutenberg-inline-styles.php';
-	require_once plugin_dir_path( __FILE__ ) . 'assets/css/gutenberg-inline-button-styles.php';
+	require_once plugin_dir_path( __FILE__ ) . 'css/gutenberg-inline-styles.php';
+	require_once plugin_dir_path( __FILE__ ) . 'css/gutenberg-inline-button-styles.php';
 	require_once plugin_dir_path( __FILE__ ) . 'lib/gutenberg.php';
 }
 

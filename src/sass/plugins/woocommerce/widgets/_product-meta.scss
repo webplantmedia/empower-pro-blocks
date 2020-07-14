@@ -1,0 +1,30 @@
+.product_meta {
+	color: $gray_text_color;
+	font-size: 14px;
+	// font-size: 1.4rem;
+
+	a {
+		font-weight: $entry_meta_font_style;
+		text-decoration: none;
+		border-color: $border_color;
+		color: $gray_text_color;
+
+		&:hover {
+			border-bottom: 1px solid $border_color;
+			color: $text_color;
+		}
+	}
+
+	> span + span {
+		&::before {
+			content: "\005C";
+			margin: 0 5px 0 1px;
+		}
+
+	}
+}
+
+.woocommerce.full-width-content .breadcrumb {
+	text-align: left;
+	margin-bottom: 20px;
+}

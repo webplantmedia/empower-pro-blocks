@@ -1,0 +1,17 @@
+// Accordion
+.ab-block-accordion {
+	.ab-accordion-title {
+		cursor: pointer;
+		outline: 0;
+	}
+}
+
+@media only screen and ( max-width: $ipad_width ) {
+	.ab-block-layout-column-gap-10,
+	.ab-block-layout-column-gap-9,
+	.ab-block-layout-column-gap-8,
+	.ab-block-layout-column-gap-7,
+	.ab-block-layout-column-gap-6 {
+		grid-gap: 0 5em;
+	}
+}

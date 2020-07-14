@@ -1,0 +1,79 @@
+.genesis-pro-portfolio.third-width-entries .content .genesis-loop-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 60px 60px;
+
+	@media only screen and (max-width: $desktop_width) {
+		grid-gap: 45px 45px;
+	}
+
+	@media only screen and (max-width: $tablet_width) {
+		grid-gap: 40px 40px;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media only screen and (max-width: $mobile_width) {
+		display: block;
+	}
+
+	.entry {
+		margin: 0;
+		width: auto;
+
+		@media only screen and (max-width: $mobile_width) {
+			margin-bottom: 12%;
+			width: 100%;
+		}
+	}
+}
+
+.genesis-pro-portfolio .content .entry.pro-portfolio {
+	text-align: left;
+	padding: 0;
+	// margin-right: 5%;
+	// margin-bottom: 5%;
+	// width: 30%;
+
+	.entry-content {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&:nth-of-type(3n+3) {
+		margin-right: 0;
+	}
+
+	.portfolio-featured-image {
+		img {
+			vertical-align: top;
+		}
+	}
+
+	&:hover {
+		// -webkit-transform: translateY(-5px);
+		// -moz-transform: translateY(-5px);
+		// transform: translateY(-5px);
+	}
+}
+
+.content .entry.pro-portfolio .entry-header {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 99;
+
+	.entry-title-link {
+		margin: 0;
+		padding: 30px 8.75% 30px;
+		display: block;
+	}
+}
+
+#genesis-content.content .entry.pro-portfolio .entry-header {
+	margin: 0;
+}
+
+#genesis-content.content .pro-portfolio .entry-header h2.entry-title {
+	margin: 0;
+}

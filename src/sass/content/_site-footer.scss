@@ -1,0 +1,133 @@
+.footer-widgets {
+	> .wrap {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		border-bottom: 1px solid $border_color;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+
+		> .wp-block-group .wp-block-group__inner-container {
+			> * {
+				margin-bottom: 0;
+			}
+
+			> *:first-child {
+				margin-top: 0 !important;
+			}
+
+			> *:last-child {
+				margin-bottom: 0 !important;
+			}
+
+			a {
+				text-decoration: none;
+				color: $anchor_color;
+			}
+
+			ul {
+				margin-left: 0;
+
+				li {
+					list-style-type: none;
+					
+					&::before {
+						display: none;
+					}
+				}
+			}
+
+			.footer-title {
+				margin-top: 60px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+#footer .wp-block-group[class*='group-columns-'] {
+	> .wp-block-group__inner-container {
+		@media only screen and ( max-width: $ipad_width ) {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 60px 60px;
+		}
+		@media only screen and ( max-width: $tablet_width ) {
+			grid-template-columns: 1fr;
+			grid-gap: 60px 60px;
+		}
+	}
+}
+
+.site-footer {
+	font-size: $body_font_size_xsmall;
+	line-height: $body_font_line_height;
+	// background-color: $body_background_color_two;
+	clear: both;
+	padding: 60px 0 60px 0;
+	text-align: left;
+}
+
+.site-inner + .site-footer {
+	// background-color: $body_background_color;
+}
+
+.site-footer p {
+	margin-bottom: 0;
+}
+
+.site-footer a {
+	color: $gray_text_color;
+	text-decoration: none;
+}
+
+.above-footer-image .widget_media_image .wp-caption {
+	width: auto !important;
+}
+
+.site-footer .wrap {
+	display: flex;
+	align-items: center;
+
+	@media only screen and ( max-width: $ipad_width ) {
+		flex-direction: column;
+
+		> * {
+			width: 100%;
+			text-align: center !important;
+			margin-bottom: 30px;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	> * {
+		flex-grow: 1;
+	}
+
+	.social-icons {
+		text-align: right;
+
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 20px;
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+				padding-right: 10px;
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
