@@ -1,3 +1,20 @@
+/* Regular content width. */
+/* 750px + 30px to match paragraph width on front-end and editor. */
+.wp-block {
+	max-width: $content_width;
+}
+
+/* Width of "wide" blocks */
+
+/* 860px + 30px so wide images match width in front-end and editor. */
+.wp-block[data-align="wide"] {
+	max-width: $content_max_width_full;
+}
+
+.wp-block[data-align="full"] {
+	max-width: none;
+}
+
 /* URL inspector field in sidebar */
 .url-input-inspector-field input {
 	max-width: 100% !important;

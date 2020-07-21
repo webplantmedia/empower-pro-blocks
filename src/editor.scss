@@ -3,6 +3,10 @@
 @import "mixins";
 @import "variables";
 
+/* Classes
+--------------------------------------------- */
+@import "sass/classes/tailwind";
+
 /* Editor
 --------------------------------------------- */
 @import "sass/defaults/typography-editor.scss";

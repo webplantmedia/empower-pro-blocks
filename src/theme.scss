@@ -1,6 +1,15 @@
 @import "mixins";
 @import "variables";
 
+/* Blocks Front Only
+--------------------------------------------- */
+@import "sass/blocks/media-text-front-only";
+@import "sass/blocks/buttons-front-only";
+@import "sass/blocks/alignment-front-only";
+@import "sass/blocks/columns-front-only";
+@import "sass/blocks/cover-image-front-only";
+@import "sass/blocks/widget-blocks";
+
 /* Titles
 --------------------------------------------- */
 @import "sass/content/entry-header";

@@ -14,6 +14,11 @@ html .editor-styles-wrapper {
 		@include heading;
 	}
 
+	.editor-post-title__block .editor-post-title__input {
+		@include heading;
+		@include h1;
+	}
+
 	.wp-block-cover .wp-block-cover__inner-container .h1,
 	.wp-block-cover .wp-block-cover__inner-container h1,
 	.archive-description .entry-title,
