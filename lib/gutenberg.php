@@ -88,7 +88,8 @@ add_action( 'enqueue_block_assets', 'empower_pro_blocks_custom_gutenberg_css' );
 function empower_pro_blocks_enqueue_scripts() {
 	global $empower_pro_blocks_appearance;
 
-	wp_enqueue_style( 'empower-pro-blocks-theme', EMPOWER_PRO_BLOCKS_URL . 'build/theme.css', array( 'empower-pro-blocks-main' ), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/style.css" ) );
+	wp_enqueue_style( 'empower-pro-blocks-theme', EMPOWER_PRO_BLOCKS_URL . 'build/theme.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/theme.css" ) );
+
 	$css = empower_pro_blocks_get_css( $empower_pro_blocks_appearance );
 	wp_add_inline_style( 'empower-pro-blocks-theme', $css );
 
