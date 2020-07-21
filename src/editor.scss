@@ -3,6 +3,10 @@
 @import "mixins";
 @import "variables";
 
+/* Editor
+--------------------------------------------- */
+@import "sass/editor/gutenberg-editor.scss";
+
 /* Custom Blocks
 --------------------------------------------- */
 @import "hero/editor";

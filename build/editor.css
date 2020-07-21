@@ -1,4 +1,10 @@
 /* Gutenberg block editor styles */
+/* Editor
+--------------------------------------------- */
+/* URL inspector field in sidebar */
+.url-input-inspector-field input {
+  max-width: 100% !important; }
+
 /* Custom Blocks
 --------------------------------------------- */
 .wp-block-empower-pro-blocks-hero {
