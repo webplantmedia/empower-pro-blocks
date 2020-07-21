@@ -1,0 +1,72 @@
+html .editor-styles-wrapper {
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include heading;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container .h1,
+	.wp-block-cover .wp-block-cover__inner-container h1,
+	.archive-description .entry-title,
+	.archive-title,
+	.entry-title,
+	.h1,
+	h1 {
+		@include h1;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container h2,
+	h2.entry-title,
+	.h2,
+	h2 {
+		@include h2;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container h3,
+	.h3,
+	h3 {
+		@include h3;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container h4,
+	.h4,
+	h4 {
+		@include h4;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container h5,
+	.h5,
+	h5 {
+		@include h5;
+	}
+
+	.wp-block-cover .wp-block-cover__inner-container h6,
+	.h6,
+	h6 {
+		@include h6;
+	}
+
+	.intro {
+		font-family: $body_font_family;
+		font-size: $body_font_size + 4;
+		letter-spacing: -0.025;
+	}
+
+	p.has-huge-font-size,
+	.large-text {
+		@include large-text;
+	}
+
+	p.has-huge-font-size {
+		margin-bottom: 40px;
+	}
+}
