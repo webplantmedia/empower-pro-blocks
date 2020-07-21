@@ -22,26 +22,55 @@ $empower_pro_blocks_default_colors = array(
 $empower_pro_blocks_primary_color              = get_theme_mod( 'empower_pro_blocks_primary_color', $empower_pro_blocks_default_colors['primary'] );
 $empower_pro_blocks_primary_color_brightness   = empower_pro_blocks_color_brightness( $empower_pro_blocks_primary_color, 0.15 );
 $empower_pro_blocks_primary_color_contrast     = empower_pro_blocks_color_contrast( $empower_pro_blocks_primary_color );
+
 $empower_pro_blocks_secondary_color            = get_theme_mod( 'empower_pro_blocks_secondary_color', $empower_pro_blocks_default_colors['secondary'] );
 $empower_pro_blocks_secondary_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_secondary_color, 0.15 );
 $empower_pro_blocks_secondary_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_secondary_color );
+
 $empower_pro_blocks_third_color                = get_theme_mod( 'empower_pro_blocks_third_color', $empower_pro_blocks_default_colors['third'] );
 $empower_pro_blocks_third_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_third_color, 0.15 );
-$empower_pro_blocks_fourth_color               = get_theme_mod( 'empower_pro_blocks_fourth_color', $empower_pro_blocks_default_colors['fourth'] );
-$empower_pro_blocks_fourth_color_brightness    = empower_pro_blocks_color_brightness( $empower_pro_blocks_fourth_color, 0.15 );
-$empower_pro_blocks_fifth_color                = get_theme_mod( 'empower_pro_blocks_fifth_color', $empower_pro_blocks_default_colors['fifth'] );
-$empower_pro_blocks_fifth_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_fifth_color, 0.15 );
-$empower_pro_blocks_sixth_color                = get_theme_mod( 'empower_pro_blocks_sixth_color', $empower_pro_blocks_default_colors['sixth'] );
-$empower_pro_blocks_sixth_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_sixth_color, 0.15 );
-$empower_pro_blocks_seventh_color                = get_theme_mod( 'empower_pro_blocks_seventh_color', $empower_pro_blocks_default_colors['seventh'] );
-$empower_pro_blocks_seventh_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_seventh_color, 0.15 );
-$empower_pro_blocks_eighth_color                = get_theme_mod( 'empower_pro_blocks_eighth_color', $empower_pro_blocks_default_colors['eighth'] );
-$empower_pro_blocks_eighth_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_eighth_color, 0.15 );
-$empower_pro_blocks_text_color                 = '#222222';
-$empower_pro_blocks_text_color_brightness      = empower_pro_blocks_color_brightness( $empower_pro_blocks_text_color, 0.15 );
-$empower_pro_blocks_dark_text_color            = '#000000';
-$empower_pro_blocks_alt_background_color       = '#f7f7f7';
-$empower_pro_blocks_border_color               = '#edecee';
+$empower_pro_blocks_third_color_contrast       = empower_pro_blocks_color_contrast( $empower_pro_blocks_third_color );
+
+$empower_pro_blocks_fourth_color            = get_theme_mod( 'empower_pro_blocks_fourth_color', $empower_pro_blocks_default_colors['fourth'] );
+$empower_pro_blocks_fourth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_fourth_color, 0.15 );
+$empower_pro_blocks_fourth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_fourth_color );
+
+$empower_pro_blocks_fifth_color            = get_theme_mod( 'empower_pro_blocks_fifth_color', $empower_pro_blocks_default_colors['fifth'] );
+$empower_pro_blocks_fifth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_fifth_color, 0.15 );
+$empower_pro_blocks_fifth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_fifth_color );
+
+$empower_pro_blocks_sixth_color            = get_theme_mod( 'empower_pro_blocks_sixth_color', $empower_pro_blocks_default_colors['sixth'] );
+$empower_pro_blocks_sixth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_sixth_color, 0.15 );
+$empower_pro_blocks_sixth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_sixth_color );
+
+$empower_pro_blocks_seventh_color            = get_theme_mod( 'empower_pro_blocks_seventh_color', $empower_pro_blocks_default_colors['seventh'] );
+$empower_pro_blocks_seventh_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_seventh_color, 0.15 );
+$empower_pro_blocks_seventh_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_seventh_color, 0.15 );
+
+$empower_pro_blocks_eighth_color            = get_theme_mod( 'empower_pro_blocks_eighth_color', $empower_pro_blocks_default_colors['eighth'] );
+$empower_pro_blocks_eighth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_eighth_color, 0.15 );
+$empower_pro_blocks_eighth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_eighth_color );
+
+$empower_pro_blocks_text_color            = '#222222';
+$empower_pro_blocks_text_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_text_color, 0.15 );
+$empower_pro_blocks_text_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_text_color );
+
+$empower_pro_blocks_darktext_color            = '#000000';
+$empower_pro_blocks_darktext_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_darktext_color, 0.15 );
+$empower_pro_blocks_darktext_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_darktext_color );
+
+$empower_pro_blocks_altbackground_color            = '#f7f7f7';
+$empower_pro_blocks_altbackground_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_altbackground_color, 0.15 );
+$empower_pro_blocks_altbackground_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_altbackground_color );
+
+$empower_pro_blocks_border_color            = '#edecee';
+$empower_pro_blocks_border_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_border_color, 0.15 );
+$empower_pro_blocks_border_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_border_color );
+
+$empower_pro_blocks_white_color            = '#ffffff';
+$empower_pro_blocks_white_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_white_color, 0.15 );
+$empower_pro_blocks_white_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_white_color );
+
 $empower_pro_blocks_logo_sticky                = get_theme_mod( 'empower_pro_blocks_logo_sticky', '' );
 $empower_pro_blocks_logo_width                 = get_theme_mod( 'empower_pro_blocks_logo_width', 150 );
 $empower_pro_blocks_logo_top_spacing           = get_theme_mod( 'empower_pro_blocks_logo_top_spacing', 10 );
@@ -79,25 +108,57 @@ return array(
 	'primary-color'                => $empower_pro_blocks_primary_color,
 	'primary-bright-color'         => $empower_pro_blocks_primary_color_brightness,
 	'primary-contrast-color'       => $empower_pro_blocks_primary_color_contrast,
+
 	'secondary-color'              => $empower_pro_blocks_secondary_color,
 	'secondary-bright-color'       => $empower_pro_blocks_secondary_color_brightness,
 	'secondary-contrast-color'     => $empower_pro_blocks_secondary_color_contrast,
-	'third-color'                  => $empower_pro_blocks_third_color,
-	'third-bright-color'           => $empower_pro_blocks_third_color_brightness,
-	'fourth-color'                 => $empower_pro_blocks_fourth_color,
-	'fourth-bright-color'          => $empower_pro_blocks_fourth_color_brightness,
-	'fifth-color'                  => $empower_pro_blocks_fifth_color,
-	'fifth-bright-color'           => $empower_pro_blocks_fifth_color_brightness,
-	'sixth-color'                  => $empower_pro_blocks_sixth_color,
-	'sixth-bright-color'           => $empower_pro_blocks_sixth_color_brightness,
-	'seventh-color'                => $empower_pro_blocks_seventh_color,
-	'seventh-bright-color'         => $empower_pro_blocks_seventh_color_brightness,
-	'eighth-color'                 => $empower_pro_blocks_eighth_color,
-	'eighth-bright-color'          => $empower_pro_blocks_eighth_color_brightness,
-	'dark-text-color'              => $empower_pro_blocks_dark_text_color,
-	'text-color'                   => $empower_pro_blocks_text_color,
-	'alt-background-color'         => $empower_pro_blocks_alt_background_color,
+
+	'third-color'          => $empower_pro_blocks_third_color,
+	'third-bright-color'   => $empower_pro_blocks_third_color_brightness,
+	'third-contrast-color' => $empower_pro_blocks_third_color_contrast,
+
+	'fourth-color'          => $empower_pro_blocks_fourth_color,
+	'fourth-bright-color'   => $empower_pro_blocks_fourth_color_brightness,
+	'fourth-contrast-color' => $empower_pro_blocks_fourth_color_contrast,
+
+	'fifth-color'          => $empower_pro_blocks_fifth_color,
+	'fifth-bright-color'   => $empower_pro_blocks_fifth_color_brightness,
+	'fifth-contrast-color' => $empower_pro_blocks_fifth_color_contrast,
+
+	'sixth-color'          => $empower_pro_blocks_sixth_color,
+	'sixth-bright-color'   => $empower_pro_blocks_sixth_color_brightness,
+	'sixth-contrast-color' => $empower_pro_blocks_sixth_color_contrast,
+
+	'seventh-color'          => $empower_pro_blocks_seventh_color,
+	'seventh-bright-color'   => $empower_pro_blocks_seventh_color_brightness,
+	'seventh-contrast-color' => $empower_pro_blocks_seventh_color_contrast,
+
+	'eighth-color'          => $empower_pro_blocks_eighth_color,
+	'eighth-bright-color'   => $empower_pro_blocks_eighth_color_brightness,
+	'eighth-contrast-color' => $empower_pro_blocks_eighth_color_contrast,
+
+	'text-color'          => $empower_pro_blocks_text_color,
+	'text-bright-color'   => $empower_pro_blocks_text_color_brightness,
+	'text-contrast-color' => $empower_pro_blocks_text_color_contrast,
+
+	'darktext-color'          => $empower_pro_blocks_darktext_color,
+	'darktext-bright-color'   => $empower_pro_blocks_darktext_color_brightness,
+	'darktext-contrast-color' => $empower_pro_blocks_darktext_color_contrast,
+
+	'altbackground-color'          => $empower_pro_blocks_altbackground_color,
+	'altbackground-bright-color'   => $empower_pro_blocks_altbackground_color_brightness,
+	'altbackground-contrast-color' => $empower_pro_blocks_altbackground_color_contrast,
+
+	'border-color'          => $empower_pro_blocks_border_color,
+	'border-bright-color'   => $empower_pro_blocks_border_color_brightness,
+	'border-contrast-color' => $empower_pro_blocks_border_color_contrast,
+
+	'white-color'          => $empower_pro_blocks_border_color,
+	'white-bright-color'   => $empower_pro_blocks_border_color_brightness,
+	'white-contrast-color' => $empower_pro_blocks_border_color_contrast,
+
 	'default-colors'               => $empower_pro_blocks_default_colors,
+
 	// Logo.
 	'logo-sticky'                  => $empower_pro_blocks_logo_sticky,
 	'logo-width'                   => $empower_pro_blocks_logo_width,
@@ -183,24 +244,24 @@ return array(
 			'color' => $empower_pro_blocks_eighth_color,
 		),
 		array(
-			'name'  => __( 'Default Text color', 'empower-pro-blocks' ),
-			'slug'  => 'default-text',
+			'name'  => __( 'Text color', 'empower-pro-blocks' ),
+			'slug'  => 'text',
 			'color' => $empower_pro_blocks_text_color,
 		),
 		array(
 			'name'  => __( 'Dark Text color', 'empower-pro-blocks' ),
-			'slug'  => 'dark-text',
-			'color' => $empower_pro_blocks_dark_text_color,
+			'slug'  => 'darktext',
+			'color' => $empower_pro_blocks_darktext_color,
 		),
 		array(
 			'name'  => __( 'White color', 'empower-pro-blocks' ),
 			'slug'  => 'white',
-			'color' => '#ffffff',
+			'color' => $empower_pro_blocks_white_color,
 		),
 		array(
 			'name'  => __( 'Alternate Background color', 'empower-pro-blocks' ),
-			'slug'  => 'alternate-background',
-			'color' => $empower_pro_blocks_alt_background_color,
+			'slug'  => 'altbackground',
+			'color' => $empower_pro_blocks_altbackground_color,
 		),
 		array(
 			'name'  => __( 'Border color', 'empower-pro-blocks' ),

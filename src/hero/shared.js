@@ -9,7 +9,7 @@ export function dimRatioToClass( ratio ) {
 		return 'has-background-dim-0';
 	}
 
-	return ratio === 50 || ! ratio
+	return ! ratio
 		? null
 		: 'has-background-dim-' + 10 * Math.round( ratio / 10 );
 }

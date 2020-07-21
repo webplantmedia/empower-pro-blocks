@@ -26,25 +26,48 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 	$secondary_color = '%4$s';
 	$secondary_bright_color = '%5$s';
 	$secondary_contrast_color = '%6$s';
-	$dark_text_color = '%7$s';
-	$alt_background_color = '%8$s';
-	$third_color = '%9$s';
-	$third_bright_color = '%10$s';
-	$fourth_color = '%11$s';
-	$fourth_bright_color = '%12$s';
+	$third_color = '%7$s';
+	$third_bright_color = '%8$s';
+	$third_contrast_color = '%9$s';
+	$fourth_color = '%10$s';
+	$fourth_bright_color = '%11$s';
+	$fourth_contrast_color = '%12$s';
 	$fifth_color = '%13$s';
 	$fifth_bright_color = '%14$s';
-	$sixth_color = '%15$s';
-	$sixth_bright_color = '%16$s';
-	$seventh_color = '%17$s';
-	$seventh_bright_color = '%18$s';
-	$eighth_color = '%19$s';
-	$eighth_bright_color = '%20$s';
+	$fifth_contrast_color = '%15$s';
+	$sixth_color = '%16$s';
+	$sixth_bright_color = '%17$s';
+	$sixth_contrast_color = '%18$s';
+	$seventh_color = '%19$s';
+	$seventh_bright_color = '%20$s';
+	$seventh_contrast_color = '%21$s';
+	$eighth_color = '%22$s';
+	$eighth_bright_color = '%23$s';
+	$eighth_contrast_color = '%24$s';
+	$text_color = '%25$s';
+	$text_bright_color = '%26$s';
+	$text_contrast_color = '%27$s';
+	$darktext_color = '%28$s';
+	$darktext_bright_color = '%29$s';
+	$darktext_contrast_color = '%30$s';
+	$altbackground_color = '%31$s';
+	$altbackground_bright_color = '%32$s';
+	$altbackground_contrast_color = '%33$s';
+	$border_color = '%34$s';
+	$border_bright_color = '%35$s';
+	$border_contrast_color = '%36$s';
+	$white_color = '%37$s';
+	$white_bright_color = '%38$s';
+	$white_contrast_color = '%39$s';
 
-	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth' );
+
+	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
 
 	foreach ( $colors as $color ) {
 		$css .= "
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content {
+				border-color: ${ $color . '_color' } !important;
+			}
 			html .wp-block-group.callout.has-$color-background-color {
 				border-color: ${ $color . '_color' };
 			}
@@ -184,7 +207,6 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			color: $primary_contrast_color;
 		}
 
-
 		html .ab-block-container.hover-icons > .ab-container-inside > .ab-container-content .ab-container-content a,
 		html .ab-block-container.hover-icons > .ab-container-inside > .ab-container-content .ab-container-content i::before,
 		html .wp-block-columns .wp-block-column > i::before,
@@ -298,7 +320,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 		}
 
 		html .has-alternate-background-background-color {
-			background-color: $alt_background_color;
+			background-color: $altbackground_color;
 		}
 		html .hero-content > .wp-block-group__inner-container {
 			border-color: $secondary_color !important;
@@ -310,23 +332,54 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 		$appearance['primary-color'],
 		$appearance['primary-bright-color'],
 		$appearance['primary-contrast-color'],
+
 		$appearance['secondary-color'],
 		$appearance['secondary-bright-color'],
 		$appearance['secondary-contrast-color'],
-		$appearance['dark-text-color'],
-		$appearance['alt-background-color'],
+
 		$appearance['third-color'],
 		$appearance['third-bright-color'],
+		$appearance['third-contrast-color'],
+
 		$appearance['fourth-color'],
 		$appearance['fourth-bright-color'],
+		$appearance['fourth-contrast-color'],
+
 		$appearance['fifth-color'],
 		$appearance['fifth-bright-color'],
+		$appearance['fifth-contrast-color'],
+
 		$appearance['sixth-color'],
 		$appearance['sixth-bright-color'],
+		$appearance['sixth-contrast-color'],
+
 		$appearance['seventh-color'],
 		$appearance['seventh-bright-color'],
+		$appearance['seventh-contrast-color'],
+
 		$appearance['eighth-color'],
-		$appearance['eighth-bright-color']
+		$appearance['eighth-bright-color'],
+		$appearance['eighth-contrast-color'],
+
+		$appearance['text-color'],
+		$appearance['text-bright-color'],
+		$appearance['text-contrast-color'],
+
+		$appearance['darktext-color'],
+		$appearance['darktext-bright-color'],
+		$appearance['darktext-contrast-color'],
+
+		$appearance['altbackground-color'],
+		$appearance['altbackground-bright-color'],
+		$appearance['altbackground-contrast-color'],
+
+		$appearance['border-color'],
+		$appearance['border-bright-color'],
+		$appearance['border-contrast-color'],
+
+		$appearance['white-color'],
+		$appearance['white-bright-color'],
+		$appearance['white-contrast-color'],
 	);
 
 	$css = empower_pro_blocks_compact( $css );

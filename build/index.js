@@ -7006,10 +7006,6 @@ function HeroEdit(_ref) {
 
   var style = _objectSpread({}, backgroundType === _shared__WEBPACK_IMPORTED_MODULE_12__["IMAGE_BACKGROUND_TYPE"] ? Object(_shared__WEBPACK_IMPORTED_MODULE_12__["backgroundImageStyles"])(url) : {});
 
-  var overlayStyle = {
-    backgroundColor: overlayColor.color
-  };
-
   if (focalPoint) {
     style.backgroundPosition = "".concat(focalPoint.x * 100, "% ").concat(focalPoint.y * 100, "%");
   }
@@ -7072,6 +7068,7 @@ function HeroEdit(_ref) {
     settings: [{
       colorValue: overlayColor.color,
       onColorChange: setOverlayColor,
+      disableCustomColors: true,
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Color')
     }]
   }, !!url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
@@ -7092,6 +7089,7 @@ function HeroEdit(_ref) {
     settings: [{
       colorValue: heroColor.color,
       onColorChange: setHeroColor,
+      disableCustomColors: true,
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Color')
     }]
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalPanelColorGradientSettings"], {
@@ -7100,6 +7098,7 @@ function HeroEdit(_ref) {
     settings: [{
       colorValue: leftPillColor.color,
       onColorChange: setLeftPillColor,
+      disableCustomColors: true,
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Color')
     }]
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
@@ -7120,6 +7119,7 @@ function HeroEdit(_ref) {
     settings: [{
       colorValue: rightPillColor.color,
       onColorChange: setRightPillColor,
+      disableCustomColors: true,
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Color')
     }]
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
@@ -7246,12 +7246,10 @@ function HeroEdit(_ref) {
     },
     checked: button3LinkTarget === '_blank'
   }))));
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, {
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
     'has-parallax': hasParallax
-  });
-  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', Object(_shared__WEBPACK_IMPORTED_MODULE_12__["dimRatioToClass"])(dimRatio), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-    'has-background-dim': dimRatio !== 100
-  }, overlayColor.class, overlayColor.class));
+  }, heroColor.class, heroColor.class));
+  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_12__["dimRatioToClass"])(dimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, overlayColor.class, overlayColor.class));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-hero__outer-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -7277,7 +7275,6 @@ function HeroEdit(_ref) {
     loop: true,
     src: url
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    style: overlayStyle,
     className: overlayClasses
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "hero-content"
@@ -7617,7 +7614,7 @@ function dimRatioToClass(ratio) {
     return 'has-background-dim-0';
   }
 
-  return ratio === 50 || !ratio ? null : 'has-background-dim-' + 10 * Math.round(ratio / 10);
+  return !ratio ? null : 'has-background-dim-' + 10 * Math.round(ratio / 10);
 }
 function attributesFromMedia(setAttributes) {
   return function (media) {

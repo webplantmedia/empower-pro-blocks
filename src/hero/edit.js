@@ -122,10 +122,6 @@ function HeroEdit( {
 			: {} ),
 	};
 
-	const overlayStyle = {
-		backgroundColor: overlayColor.color,
-	};
-
 	if ( focalPoint ) {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
@@ -146,65 +142,65 @@ function HeroEdit( {
 				/>
 			</BlockControls>
 			<InspectorControls>
-					<PanelBody title={ __( 'Media settings' ) } >
+				<PanelBody title={ __( 'Media settings' ) } >
+					<PanelRow>
+						<MediaUpload
+							id={ id }
+							allowedTypes={ ALLOWED_MEDIA_TYPES }
+							onSelect={ onSelectMedia }
+							render={ ( { open } ) => (
+								<Button onClick={ open } isSecondary={ true }>
+									Select Background Image	
+								</Button>
+							) }
+						/>
+					</PanelRow>
+					{ !! url && (
 						<PanelRow>
-							<MediaUpload
-								id={ id }
-								allowedTypes={ ALLOWED_MEDIA_TYPES }
-								onSelect={ onSelectMedia }
-								render={ ( { open } ) => (
-									<Button onClick={ open } isSecondary={ true }>
-										Select Background Image	
-									</Button>
-								) }
+							<Button
+								isSecondary
+								className=""
+								onClick={ () =>
+									setAttributes( {
+										url: undefined,
+										id: undefined,
+										backgroundType: undefined,
+										dimRatio: undefined,
+										focalPoint: undefined,
+										hasParallax: undefined,
+									} )
+								}
+							>
+								{ __( 'Clear Media' ) }
+							</Button>
+						</PanelRow>
+					) }
+					{ url && IMAGE_BACKGROUND_TYPE === backgroundType && (
+						<PanelRow>
+							<ToggleControl
+								label={ __( 'Fixed background' ) }
+								checked={ hasParallax }
+								onChange={ toggleParallax }
 							/>
 						</PanelRow>
-						{ !! url && (
-							<PanelRow>
-								<Button
-									isSecondary
-									className=""
-									onClick={ () =>
-										setAttributes( {
-											url: undefined,
-											id: undefined,
-											backgroundType: undefined,
-											dimRatio: undefined,
-											focalPoint: undefined,
-											hasParallax: undefined,
-										} )
-									}
-								>
-									{ __( 'Clear Media' ) }
-								</Button>
-							</PanelRow>
+					) }
+					{ url && IMAGE_BACKGROUND_TYPE === backgroundType &&
+						! hasParallax && (
+							<FocalPointPicker
+								label={ __( 'Focal point picker' ) }
+								url={ url }
+								value={ focalPoint }
+								onChange={ ( newFocalPoint ) =>
+									setAttributes( {
+										focalPoint: newFocalPoint,
+									} )
+								}
+							/>
 						) }
-						{ url && IMAGE_BACKGROUND_TYPE === backgroundType && (
-							<PanelRow>
-								<ToggleControl
-									label={ __( 'Fixed background' ) }
-									checked={ hasParallax }
-									onChange={ toggleParallax }
-								/>
-							</PanelRow>
-						) }
-						{ url && IMAGE_BACKGROUND_TYPE === backgroundType &&
-							! hasParallax && (
-								<FocalPointPicker
-									label={ __( 'Focal point picker' ) }
-									url={ url }
-									value={ focalPoint }
-									onChange={ ( newFocalPoint ) =>
-										setAttributes( {
-											focalPoint: newFocalPoint,
-										} )
-									}
-								/>
-							) }
-						{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
-							<video autoPlay muted loop src={ url } />
-						) }
-					</PanelBody>
+					{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
+						<video autoPlay muted loop src={ url } />
+					) }
+				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Overlay' ) }
 					initialOpen={ true }
@@ -212,6 +208,7 @@ function HeroEdit( {
 						{
 							colorValue: overlayColor.color,
 							onColorChange: setOverlayColor,
+							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
 					] }
@@ -239,6 +236,7 @@ function HeroEdit( {
 						{
 							colorValue: heroColor.color,
 							onColorChange: setHeroColor,
+							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
 					] }
@@ -251,6 +249,7 @@ function HeroEdit( {
 						{
 							colorValue: leftPillColor.color,
 							onColorChange: setLeftPillColor,
+							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
 					] }
@@ -276,6 +275,7 @@ function HeroEdit( {
 						{
 							colorValue: rightPillColor.color,
 							onColorChange: setRightPillColor,
+							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
 					] }
@@ -368,12 +368,14 @@ function HeroEdit( {
 
 	const classes = classnames( className, {
 		'has-parallax': hasParallax,
+		[ heroColor.class ]: heroColor.class,
 	} );
 
-	const overlayClasses = classnames( 'overlay-color', dimRatioToClass( dimRatio ), {
-		'has-background-dim': dimRatio !== 100,
-		[ overlayColor.class ]: overlayColor.class,
-	} );
+	const overlayClasses = classnames( 
+		'overlay-color', 
+		url ? dimRatioToClass( dimRatio ) : {}, 
+		{ [ overlayColor.class ]: overlayColor.class, }
+	);
 
 	return (
 		<>
@@ -402,7 +404,7 @@ function HeroEdit( {
 										src={ url }
 									/>
 								) }
-								<div style={ overlayStyle } className={ overlayClasses }>
+								<div className={ overlayClasses }>
 								</div>
 							</div>
 							<div className="hero-content">
