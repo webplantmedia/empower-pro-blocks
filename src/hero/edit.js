@@ -40,7 +40,6 @@ import {
 	MediaReplaceFlow,
 	withColors,
 	ColorPalette,
-	__experimentalUseGradient,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	__experimentalLinkControl as LinkControl,
 	URLInput,
@@ -56,7 +55,6 @@ import {
 	attributesFromMedia,
 	IMAGE_BACKGROUND_TYPE,
 	VIDEO_BACKGROUND_TYPE,
-	COVER_MIN_HEIGHT,
 	backgroundImageStyles,
 	dimRatioToClass,
 } from './shared';
@@ -64,165 +62,7 @@ import {
 /**
  * Module Constants
  */
-const NEW_TAB_REL = 'noreferrer noopener';
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
-const INNER_BLOCKS_TEMPLATE = [
-	[
-		'core/heading',
-		{
-			level: 1,
-			placeholder: __( 'Heading...' ),
-		},
-	],
-	[
-		'core/paragraph',
-		{
-			placeholder: __( 'Paragraph...' ),
-		},
-	],
-	[
-		'core/buttons',
-		{
-			className: 'testing',
-		},
-		[
-			[
-				'core/button',
-				{
-					text: __( 'Link 1' ),
-					className: 'text',
-				},
-			],
-		],
-	],
-];
-const INNER_BLOCKS_BUTTONS_TEMPLATE = [
-	[
-		'core/buttons',
-		{
-			className: 'testing2',
-		},
-		[
-			[
-				'core/button',
-				{
-					text: __( 'Link 1' ),
-					className: 'text',
-				},
-			],
-			[
-				'core/button',
-				{
-					text: __( 'Link 2' ),
-					className: 'text',
-				},
-			],
-		],
-	],
-];
-
-function retrieveFastAverageColor() {
-	if ( ! retrieveFastAverageColor.fastAverageColor ) {
-		retrieveFastAverageColor.fastAverageColor = new FastAverageColor();
-	}
-	return retrieveFastAverageColor.fastAverageColor;
-}
-
-const RESIZABLE_BOX_ENABLE_OPTION = {
-	top: false,
-	right: false,
-	bottom: true,
-	left: false,
-	topRight: false,
-	bottomRight: false,
-	bottomLeft: false,
-	topLeft: false,
-};
-
-function ResizableCover( {
-	className,
-	children,
-	onResizeStart,
-	onResize,
-	onResizeStop,
-} ) {
-	const [ isResizing, setIsResizing ] = useState( false );
-
-	return (
-		<ResizableBox
-			className={ classnames( className, {
-				'is-resizing': isResizing,
-			} ) }
-			enable={ RESIZABLE_BOX_ENABLE_OPTION }
-			onResizeStart={ ( event, direction, elt ) => {
-				onResizeStart( elt.clientHeight );
-				onResize( elt.clientHeight );
-			} }
-			onResize={ ( event, direction, elt ) => {
-				onResize( elt.clientHeight );
-				if ( ! isResizing ) {
-					setIsResizing( true );
-				}
-			} }
-			onResizeStop={ ( event, direction, elt ) => {
-				onResizeStop( elt.clientHeight );
-				setIsResizing( false );
-			} }
-			minHeight={ COVER_MIN_HEIGHT }
-		>
-			{ children }
-		</ResizableBox>
-	);
-}
-
-/**
- * useCoverIsDark is a hook that returns a boolean variable specifying if the cover
- * background is dark or not.
- *
- * @param {?string} url          Url of the media background.
- * @param {?number} dimRatio     Transparency of the overlay color. If an image and
- *                               color are set, dimRatio is used to decide what is used
- *                               for background darkness checking purposes.
- * @param {?string} overlayColor String containing the overlay color value if one exists.
- * @param {?Object} elementRef   If a media background is set, elementRef should contain a reference to a
- *                               dom element that renders that media.
- *
- * @return {boolean} True if the cover background is considered "dark" and false otherwise.
- */
-function useCoverIsDark( url, dimRatio = 50, overlayColor, elementRef ) {
-	const [ isDark, setIsDark ] = useState( false );
-	useEffect( () => {
-		// If opacity is lower than 50 the dominant color is the image or video color,
-		// so use that color for the dark mode computation.
-		if ( url && dimRatio <= 50 && elementRef.current ) {
-			retrieveFastAverageColor().getColorAsync(
-				elementRef.current,
-				( color ) => {
-					setIsDark( color.isDark );
-				}
-			);
-		}
-	}, [ url, url && dimRatio <= 50 && elementRef.current, setIsDark ] );
-	useEffect( () => {
-		// If opacity is greater than 50 the dominant color is the overlay color,
-		// so use that color for the dark mode computation.
-		if ( dimRatio > 50 || ! url ) {
-			if ( ! overlayColor ) {
-				// If no overlay color exists the overlay color is black (isDark )
-				setIsDark( true );
-				return;
-			}
-			setIsDark( tinycolor( overlayColor ).isDark() );
-		}
-	}, [ overlayColor, dimRatio > 50 || ! url, setIsDark ] );
-	useEffect( () => {
-		if ( ! url && ! overlayColor ) {
-			// Reset isDark
-			setIsDark( false );
-		}
-	}, [ ! url && ! overlayColor, setIsDark ] );
-	return isDark;
-}
 
 function HeroEdit( {
 	attributes,
@@ -265,11 +105,6 @@ function HeroEdit( {
 		button3URL,
 		button3LinkTarget,
 	} = attributes;
-	const {
-		gradientClass,
-		gradientValue,
-		setGradient,
-	} = __experimentalUseGradient();
 	const onSelectMedia = attributesFromMedia( setAttributes );
 
 	const toggleParallax = () => {
@@ -279,57 +114,24 @@ function HeroEdit( {
 		} );
 	};
 
-	const isDarkElement = useRef();
-	const isDark = useCoverIsDark(
-		url,
-		dimRatio,
-		overlayColor.color,
-		isDarkElement
-	);
-
-	const onToggleOpenInNewTab = useCallback(
-		( key, value, rel ) => {
-			const newLinkTarget = value ? '_blank' : undefined;
-
-			let updatedRel = eval(rel);
-			if ( newLinkTarget && ! eval(rel) ) {
-				updatedRel = NEW_TAB_REL;
-			} else if ( ! newLinkTarget && eval(rel) === NEW_TAB_REL ) {
-				updatedRel = undefined;
-			}
-
-			setAttributes( {
-				[key]: newLinkTarget,
-				[rel]: updatedRel,
-			} );
-		},
-		[ setAttributes ]
-	);
-
-	const [ temporaryMinHeight, setTemporaryMinHeight ] = useState( null );
-
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
 	const style = {
 		...( backgroundType === IMAGE_BACKGROUND_TYPE
 			? backgroundImageStyles( url )
 			: {} ),
-		backgroundColor: overlayColor.color,
-		minHeight: temporaryMinHeight || minHeight,
 	};
 
-	if ( gradientValue && ! url ) {
-		style.background = gradientValue;
-	}
+	const overlayStyle = {
+		backgroundColor: overlayColor.color,
+	};
 
 	if ( focalPoint ) {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
 	}
 
-	const hasBackground = !! ( url || overlayColor.color || gradientValue );
-
-	const opensInNewTab1 = button1LinkTarget === '_blank';
+	const hasBackground = !! ( url || overlayColor.color );
 
 	const controls = (
 		<>
@@ -519,7 +321,7 @@ function HeroEdit( {
 						autoFocus= { false }
 					/>
 					<ToggleControl
-						label={ __( 'Link Target' ) }
+						label={ __( 'Open in new tab' ) }
 						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
 						checked={ button1LinkTarget === '_blank' }
 					/>
@@ -537,7 +339,7 @@ function HeroEdit( {
 						autoFocus= { false }
 					/>
 					<ToggleControl
-						label={ __( 'Link Target' ) }
+						label={ __( 'Open in new tab' ) }
 						onChange={ ( value ) => setAttributes( value ? { button2LinkTarget: '_blank' } : { button2LinkTarget: undefined } ) }
 						checked={ button2LinkTarget === '_blank' }
 					/>
@@ -555,7 +357,7 @@ function HeroEdit( {
 						autoFocus= { false }
 					/>
 					<ToggleControl
-						label={ __( 'Link Target' ) }
+						label={ __( 'Open in new tab' ) }
 						onChange={ ( value ) => setAttributes( value ? { button3LinkTarget: '_blank' } : { button3LinkTarget: undefined } ) }
 						checked={ button3LinkTarget === '_blank' }
 					/>
@@ -564,13 +366,13 @@ function HeroEdit( {
 		</>
 	);
 
-	const classes = classnames( className, dimRatioToClass( dimRatio ), {
-		'is-dark-theme': isDark,
-		'has-background-dim': dimRatio !== 0,
+	const classes = classnames( className, {
 		'has-parallax': hasParallax,
+	} );
+
+	const overlayClasses = classnames( 'overlay-color', dimRatioToClass( dimRatio ), {
+		'has-background-dim': dimRatio !== 100,
 		[ overlayColor.class ]: overlayColor.class,
-		'has-background-gradient': gradientValue,
-		[ gradientClass ]: ! url && gradientClass,
 	} );
 
 	return (
@@ -583,7 +385,6 @@ function HeroEdit( {
 								{ IMAGE_BACKGROUND_TYPE === backgroundType && (
 									// Used only to programmatically check if the image is dark or not
 									<img
-										ref={ isDarkElement }
 										aria-hidden
 										alt=""
 										style={ {
@@ -592,19 +393,8 @@ function HeroEdit( {
 										src={ url }
 									/>
 								) }
-								{ url && gradientValue && dimRatio !== 0 && (
-									<span
-										aria-hidden="true"
-										className={ classnames(
-											'wp-block-hero__gradient-background',
-											gradientClass
-										) }
-										style={ { background: gradientValue } }
-									/>
-								) }
 								{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 									<video
-										ref={ isDarkElement }
 										className="wp-block-hero__video-background"
 										autoPlay
 										muted
@@ -612,6 +402,8 @@ function HeroEdit( {
 										src={ url }
 									/>
 								) }
+								<div style={ overlayStyle } className={ overlayClasses }>
+								</div>
 							</div>
 							<div className="hero-content">
 								<div className="wp-block-hero__inner-content">

@@ -691,6 +691,36 @@ table.wp-block-table {
       display: flex;
       justify-content: center;
       align-items: center; }
+    .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim {
+        opacity: 0.50; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-0 {
+        opacity: 0; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-10 {
+        opacity: 0.1; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-20 {
+        opacity: 0.2; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-30 {
+        opacity: 0.3; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-40 {
+        opacity: 0.4; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-50 {
+        opacity: 0.5; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-60 {
+        opacity: 0.6; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-70 {
+        opacity: 0.7; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-80 {
+        opacity: 0.8; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-90 {
+        opacity: 0.9; }
+      .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .overlay-color.has-background-dim-100 {
+        opacity: 1; }
     .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container > .hero-content {
       width: 100%;
       margin-bottom: -77px; }
