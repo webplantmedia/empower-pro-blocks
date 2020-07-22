@@ -334,20 +334,6 @@ blockquote.wp-block-quote.is-style-large cite,
   .wp-block-button .wp-block-button__link:hover {
     transform: translateY(-2px); }
 
-.wp-block-button.icon.text .wp-block-button__link::before {
-  display: inline-block;
-  font-family: Ionicons !important;
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-feature-settings: normal;
-  font-variant: normal;
-  text-transform: none;
-  text-rendering: auto;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 .wp-block-button.icon.text .wp-block-button__link::after {
   display: none; }
 

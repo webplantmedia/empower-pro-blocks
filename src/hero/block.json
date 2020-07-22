@@ -41,9 +41,6 @@
 		"heroColor": {
 			"type": "string"
 		},
-		"customHeroColor": {
-			"type": "string"
-		},
 		"leftPillColor": {
 			"type": "string",
 			"default": "primary"
@@ -63,15 +60,6 @@
 		},
 		"focalPoint": {
 			"type": "object"
-		},
-		"minHeight": {
-			"type": "number"
-		},
-		"gradient": {
-			"type": "string"
-		},
-		"customGradient": {
-			"type": "string"
 		},
 		"heading": {
 			"type": "string",
@@ -121,10 +109,16 @@
 			"selector": "a.button2",
 			"attribute": "target"
 		},
+		"button3Icon": {
+			"type": "string",
+			"source": "html",
+			"default": "<ion-icon name=\"play\"></ion-icon>",
+			"selector": ".button3-icon"
+		},
 		"button3Text": {
 			"type": "string",
 			"source": "html",
-			"default": "<i class=\"ion-play mr-4\"></i>Our Simulations",
+			"default": "Our Simulations",
 			"selector": "a.button3"
 		},
 		"button3URL": {
@@ -138,10 +132,6 @@
 			"source": "attribute",
 			"selector": "a.button3",
 			"attribute": "target"
-		},
-		"align": {
-			  "type": "string",
-			  "default": "full"
 		}
 	}
 }

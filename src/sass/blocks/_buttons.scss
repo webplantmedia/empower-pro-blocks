@@ -56,7 +56,7 @@
 
 .wp-block-button.icon.text .wp-block-button__link {
 	&::before {
-		@include ionicon();
+		// @include ionicon();
 	}
 
 	&::after {

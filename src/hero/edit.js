@@ -89,7 +89,6 @@ function HeroEdit( {
 		rightPillDimRatio,
 		focalPoint,
 		hasParallax,
-		minHeight,
 		url,
 		heading,
 		text,
@@ -101,6 +100,7 @@ function HeroEdit( {
 		button2Text,
 		button2URL,
 		button2LinkTarget,
+		button3Icon,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
@@ -126,8 +126,6 @@ function HeroEdit( {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
 	}
-
-	const hasBackground = !! ( url || overlayColor.color );
 
 	const controls = (
 		<>
@@ -346,6 +344,11 @@ function HeroEdit( {
 				</PanelBody>
 				<PanelBody title={ __( 'Secondary Button 2' ) } initialOpen={ true }>
 					<TextControl
+						label={ __( 'Icon' ) }
+						value={ button3Icon }
+						onChange={ ( value ) => setAttributes( { button3Icon: value } ) }
+					/>
+					<TextControl
 						label={ __( 'Text' ) }
 						value={ button3Text }
 						onChange={ ( value ) => setAttributes( { button3Text: value } ) }
@@ -377,110 +380,130 @@ function HeroEdit( {
 		{ [ overlayColor.class ]: overlayColor.class, }
 	);
 
+	const leftPillClasses = classnames( 
+		'above-fold-background',
+		'glide',
+		'glide-left',
+		'glide-down',
+		{ [ leftPillColor.class ]: leftPillColor.class },
+	);
+
+	const rightPillClasses = classnames( 
+		'top-right-background',
+		'glide',
+		'glide-right',
+		'glide-down',
+		{ [ rightPillColor.class ]: rightPillColor.class },
+	);
+
 	return (
 		<>
 			{ controls }
-				<div className="wp-block-hero__outer-wrapper">
-					<div className={ classes }>
-						<div className="wp-block-hero__inner-container">
-							<div data-url={ url } style={ style } className="wp-block-hero__background-image">
-								{ IMAGE_BACKGROUND_TYPE === backgroundType && (
-									// Used only to programmatically check if the image is dark or not
-									<img
-										aria-hidden
-										alt=""
-										style={ {
-											display: 'none',
-										} }
-										src={ url }
-									/>
-								) }
-								{ VIDEO_BACKGROUND_TYPE === backgroundType && (
-									<video
-										className="wp-block-hero__video-background"
-										autoPlay
-										muted
-										loop
-										src={ url }
-									/>
-								) }
-								<div className={ overlayClasses }>
-								</div>
+			<div className="wp-block-hero__outer-wrapper">
+				<div className={ classes }>
+					<div className="wp-block-hero__inner-container">
+						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
+							{ IMAGE_BACKGROUND_TYPE === backgroundType && (
+								// Used only to programmatically check if the image is dark or not
+								<img
+									aria-hidden
+									alt=""
+									style={ {
+										display: 'none',
+									} }
+									src={ url }
+								/>
+							) }
+							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+								<video
+									className="wp-block-hero__video-background"
+									autoPlay
+									muted
+									loop
+									src={ url }
+								/>
+							) }
+							<div className={ overlayClasses }>
 							</div>
-							<div className="hero-content">
-								<div className="wp-block-hero__inner-content">
-									<RichText
-										tagName="h1"
-										className="hero-heading"
-										placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
-										onChange={ ( value ) =>
-											setAttributes( {
-												heading: value,
-											} )
-										}
-										value={ heading }
-									/>
-									<RichText
-										tagName="p"
-										className="hero-text"
-										placeholder={ __( 'Text', 'empower-pro-blocks' ) }
-										onChange={ ( value ) =>
-											setAttributes( {
-												text: value,
-											} )
-										}
-										value={ text }
-									/>
+						</div>
+						<div className="hero-content">
+							<div className="wp-block-hero__inner-content">
+								<RichText
+									tagName="h1"
+									className="hero-heading"
+									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
+									onChange={ ( value ) =>
+										setAttributes( {
+											heading: value,
+										} )
+									}
+									value={ heading }
+								/>
+								<RichText
+									tagName="p"
+									className="hero-text"
+									placeholder={ __( 'Text', 'empower-pro-blocks' ) }
+									onChange={ ( value ) =>
+										setAttributes( {
+											text: value,
+										} )
+									}
+									value={ text }
+								/>
+								<div class="wp-block-buttons">
+									<div class="wp-block-button text">
+										<RichText
+											placeholder={ __( 'Button 1' ) }
+											value={ button1Text }
+											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+											withoutInteractiveFormatting
+											className="wp-block-button__link button1"
+										/>
+									</div>
+								</div>
+								<div class="gray-bottom-bar">
 									<div class="wp-block-buttons">
-										<div class="wp-block-button text">
+										<div class="wp-block-button text icon">
 											<RichText
-												placeholder={ __( 'Button 1' ) }
-												value={ button1Text }
-												onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+												placeholder={ __( 'Button 2' ) }
+												value={ button2Text }
+												onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 												withoutInteractiveFormatting
-												className="wp-block-button__link button1"
+												className="wp-block-button__link button2"
 											/>
 										</div>
 									</div>
-									<div class="gray-bottom-bar">
-										<div class="wp-block-buttons">
-											<div class="wp-block-button text icon">
-												<RichText
-													placeholder={ __( 'Button 2' ) }
-													value={ button2Text }
-													onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-													withoutInteractiveFormatting
-													className="wp-block-button__link button2"
-												/>
-											</div>
-										</div>
-										<div class="wp-block-buttons">
-											<div class="wp-block-button text icon">
-												<RichText
-													placeholder={ __( 'Button 3' ) }
-													value={ button3Text }
-													onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-													withoutInteractiveFormatting
-													className="wp-block-button__link button3"
-												/>
-											</div>
+									<div class="wp-block-buttons">
+										<div class="wp-block-button text icon">
+											<RichText.Content
+												value={ button3Icon }
+												className="button3-icon"
+											/>
+											<RichText
+												placeholder={ __( 'Button 3' ) }
+												value={ button3Text }
+												onChange={ ( value ) => setAttributes( { button3Text: value } ) }
+												withoutInteractiveFormatting
+												className="wp-block-button__link button3"
+											/>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="above-fold-background glide glide-left glide-down">
-								<svg x="0px" y="0px" width="631px" height="789px" viewBox="0 0 631 789">
-									<path fill="#ED5652" d="M63.7,763.5C-2.9,718-20,627.2,25.4,560.5l339-496.8C409.9-2.9,500.7-20,567.3,25.5 c66.6,45.5,83.7,136.4,38.2,203l-339,496.8C221.1,791.9,130.3,809,63.7,763.5"/>
-								</svg>
-							</div>
+						</div>
+						<div className={ leftPillClasses }>
+							<svg x="0px" y="0px" width="631px" height="789px" viewBox="0 0 631 789">
+								<path fill="#ED5652" d="M63.7,763.5C-2.9,718-20,627.2,25.4,560.5l339-496.8C409.9-2.9,500.7-20,567.3,25.5 c66.6,45.5,83.7,136.4,38.2,203l-339,496.8C221.1,791.9,130.3,809,63.7,763.5"/>
+							</svg>
 						</div>
 					</div>
-					<div class="top-right-background glide glide-right glide-down">
-						<svg x="0px" y="0px" width="573px" height="716px" viewBox="0 0 573 716">
-							<path fill="#FF7226" d="M515.2,692.9c60.5-41.3,76-123.8,34.7-184.2L242.1,57.8c-41.3-60.5-123.8-76-184.2-34.7 c-60.5,41.3-76,123.8-34.7,184.2l307.8,450.8C372.2,718.6,454.7,734.2,515.2,692.9"/>
-						</svg>
-					</div>
 				</div>
+				<div className={ rightPillClasses }>
+					<svg x="0px" y="0px" width="573px" height="716px" viewBox="0 0 573 716">
+						<path fill="#FF7226" d="M515.2,692.9c60.5-41.3,76-123.8,34.7-184.2L242.1,57.8c-41.3-60.5-123.8-76-184.2-34.7 c-60.5,41.3-76,123.8-34.7,184.2l307.8,450.8C372.2,718.6,454.7,734.2,515.2,692.9"/>
+					</svg>
+				</div>
+			</div>
 		</>
 	);
 }
