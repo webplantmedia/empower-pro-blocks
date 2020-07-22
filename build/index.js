@@ -6881,7 +6881,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development with Impact\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"<i class=\\\"ion-stop mr-4\\\"></i>Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\",\"default\":\"primary\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development with Impact\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button2-icon\",\"attribute\":\"name\",\"default\":\"stop\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
 
 /***/ }),
 
@@ -6984,6 +6984,7 @@ function HeroEdit(_ref) {
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
+      button2Icon = attributes.button2Icon,
       button2Text = attributes.button2Text,
       button2URL = attributes.button2URL,
       button2LinkTarget = attributes.button2LinkTarget,
@@ -7190,6 +7191,14 @@ function HeroEdit(_ref) {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Secondary Button 1'),
     initialOpen: true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Icon'),
+    value: button2Icon,
+    onChange: function onChange(value) {
+      return setAttributes({
+        button2Icon: value
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Text'),
     value: button2Text,
     onChange: function onChange(value) {
@@ -7331,7 +7340,10 @@ function HeroEdit(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
+    class: "button-icon-before button2-icon",
+    name: button2Icon
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Button 2'),
     value: button2Text,
     onChange: function onChange(value) {
@@ -7499,6 +7511,7 @@ function save(_ref) {
       button1Text = attributes.button1Text,
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
+      button2Icon = attributes.button2Icon,
       button2Text = attributes.button2Text,
       button2URL = attributes.button2URL,
       button2LinkTarget = attributes.button2LinkTarget,
@@ -7580,7 +7593,10 @@ function save(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, button2Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
+    class: "button-icon-before button2-icon",
+    name: button2Icon
+  }), button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
     className: "wp-block-button__link button2",
     value: button2Text,

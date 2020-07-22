@@ -85,6 +85,7 @@ function HeroEdit( {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
+		button2Icon,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
@@ -320,6 +321,11 @@ function HeroEdit( {
 				</PanelBody>
 				<PanelBody title={ __( 'Secondary Button 1' ) } initialOpen={ true }>
 					<TextControl
+						label={ __( 'Icon' ) }
+						value={ button2Icon }
+						onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
+					/>
+					<TextControl
 						label={ __( 'Text' ) }
 						value={ button2Text }
 						onChange={ ( value ) => setAttributes( { button2Text: value } ) }
@@ -460,6 +466,7 @@ function HeroEdit( {
 								<div class="gray-bottom-bar">
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
+											<ion-icon class="button-icon-before button2-icon" name={ button2Icon }></ion-icon>
 											<RichText
 												placeholder={ __( 'Button 2' ) }
 												value={ button2Text }

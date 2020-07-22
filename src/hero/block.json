@@ -39,7 +39,8 @@
 			"type": "string"
 		},
 		"heroColor": {
-			"type": "string"
+			"type": "string",
+			"default": "primary"
 		},
 		"leftPillColor": {
 			"type": "string",
@@ -91,10 +92,17 @@
 			"selector": "a.button1",
 			"attribute": "target"
 		},
+		"button2Icon": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".button2-icon",
+			"attribute": "name",
+			"default": "stop"
+		},
 		"button2Text": {
 			"type": "string",
 			"source": "html",
-			"default": "<i class=\"ion-stop mr-4\"></i>Our Programs",
+			"default": "Our Programs",
 			"selector": "a.button2"
 		},
 		"button2URL": {

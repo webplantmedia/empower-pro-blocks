@@ -34,6 +34,7 @@ export default function save( { attributes } ) {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
+		button2Icon,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
@@ -151,6 +152,9 @@ export default function save( { attributes } ) {
 							<div class="gray-bottom-bar">
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
+										{ button2Icon && (
+											<ion-icon class="button-icon-before button2-icon" name={ button2Icon }></ion-icon>
+										) }
 										{ button2Text && (
 											<RichText.Content
 												tagName="a"
