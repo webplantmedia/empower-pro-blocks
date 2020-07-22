@@ -7072,7 +7072,19 @@ function HeroEdit(_ref) {
       disableCustomColors: true,
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Color')
     }]
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalPanelColorGradientSettings"], {
+  }, !!url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Overlay Opacity'),
+    value: dimRatio,
+    onChange: function onChange(value) {
+      return setAttributes({
+        dimRatio: value
+      });
+    },
+    min: 0,
+    max: 100,
+    step: 10,
+    required: true
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["__experimentalPanelColorGradientSettings"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Hero Color'),
     initialOpen: true,
     settings: [{
@@ -7095,7 +7107,7 @@ function HeroEdit(_ref) {
     value: leftPillDimRatio,
     onChange: function onChange(value) {
       return setAttributes({
-        dimRatio: value
+        leftPillDimRatio: value
       });
     },
     min: 0,
@@ -7116,7 +7128,7 @@ function HeroEdit(_ref) {
     value: rightPillDimRatio,
     onChange: function onChange(value) {
       return setAttributes({
-        dimRatio: value
+        rightPillDimRatio: value
       });
     },
     min: 0,
@@ -7379,7 +7391,7 @@ function HeroEdit(_ref) {
     toggleSelection: toggleSelection
   };
 }), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["withColors"])({
-  overlayColor: 'background-color',
+  overlayColor: 'overlay-color',
   heroColor: 'hero-color',
   leftPillColor: 'left-pill-color',
   rightPillColor: 'right-pill-color'
@@ -7477,7 +7489,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function save(_ref) {
   var attributes = _ref.attributes;
   var backgroundType = attributes.backgroundType,
-      dimRatio = attributes.dimRatio,
       focalPoint = attributes.focalPoint,
       hasParallax = attributes.hasParallax,
       url = attributes.url,
@@ -7499,6 +7510,7 @@ function save(_ref) {
       overlayColor = attributes.overlayColor,
       leftPillColor = attributes.leftPillColor,
       rightPillColor = attributes.rightPillColor,
+      dimRatio = attributes.dimRatio,
       leftPillDimRatio = attributes.leftPillDimRatio,
       rightPillDimRatio = attributes.rightPillDimRatio;
 
@@ -7511,7 +7523,7 @@ function save(_ref) {
   var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()({
     'has-parallax': hasParallax
   }, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('hero-color', heroColor));
-  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor));
+  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('overlay-color', overlayColor));
   var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('left-pill-color', leftPillColor));
   var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('right-pill-color', rightPillColor));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -7645,7 +7657,7 @@ function backgroundImageStyles(url) {
 }
 function dimRatioToClass(ratio) {
   if (ratio === 0) {
-    return 'has-background-dim-0';
+    return 'has-background-dim-value-0';
   }
 
   return !ratio ? null : 'has-background-dim-value-' + 10 * Math.round(ratio / 10);

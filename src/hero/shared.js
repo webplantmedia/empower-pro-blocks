@@ -6,7 +6,7 @@ export function backgroundImageStyles( url ) {
 
 export function dimRatioToClass( ratio ) {
 	if ( ratio === 0 ) {
-		return 'has-background-dim-0';
+		return 'has-background-dim-value-0';
 	}
 
 	return ! ratio

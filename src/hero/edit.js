@@ -201,6 +201,21 @@ function HeroEdit( {
 						},
 					] }
 				>
+					{ !! url && (
+						<RangeControl
+							label={ __( 'Overlay Opacity' ) }
+							value={ dimRatio }
+							onChange={ ( value ) =>
+								setAttributes( {
+									dimRatio: value,
+								} )
+							}
+							min={ 0 }
+							max={ 100 }
+							step={ 10 }
+							required
+						/>
+					) }
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Hero Color' ) }
@@ -233,7 +248,7 @@ function HeroEdit( {
 							value={ leftPillDimRatio }
 							onChange={ ( value ) =>
 								setAttributes( {
-									dimRatio: value,
+									leftPillDimRatio: value,
 								} )
 							}
 							min={ 0 }
@@ -261,7 +276,7 @@ function HeroEdit( {
 							value={ rightPillDimRatio }
 							onChange={ ( value ) =>
 								setAttributes( {
-									dimRatio: value,
+									rightPillDimRatio: value,
 								} )
 							}
 							min={ 0 }
@@ -494,7 +509,7 @@ export default compose( [
 			toggleSelection,
 		};
 	} ),
-	withColors( { overlayColor: 'background-color', heroColor: 'hero-color', leftPillColor: 'left-pill-color', rightPillColor: 'right-pill-color' } ),
+	withColors( { overlayColor: 'overlay-color', heroColor: 'hero-color', leftPillColor: 'left-pill-color', rightPillColor: 'right-pill-color' } ),
 	withNotices,
 	withInstanceId,
 ] )( HeroEdit );

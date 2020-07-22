@@ -24,7 +24,6 @@ import {
 export default function save( { attributes } ) {
 	const {
 		backgroundType,
-		dimRatio,
 		focalPoint,
 		hasParallax,
 		url,
@@ -46,6 +45,7 @@ export default function save( { attributes } ) {
 		overlayColor,
 		leftPillColor,
 		rightPillColor,
+		dimRatio,
 		leftPillDimRatio,
 		rightPillDimRatio,
 	} = attributes;
@@ -69,7 +69,7 @@ export default function save( { attributes } ) {
 	const overlayClasses = classnames( 
 		'overlay-color', 
 		url ? dimRatioToClass( dimRatio ) : {}, 
-		getColorClassName( 'background-color', overlayColor ),
+		getColorClassName( 'overlay-color', overlayColor ),
 	);
 
 	const leftPillClasses = classnames( 

@@ -65,6 +65,9 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 
 	foreach ( $colors as $color ) {
 		$css .= "
+			html .has-$color-overlay-color {
+				background-color: ${ $color . '_color' } !important;
+			}
 			html .wp-block-hero__outer-wrapper .has-$color-right-pill-color svg path,
 			html .wp-block-empower-pro-blocks-hero .has-$color-left-pill-color svg path {
 				fill: ${ $color . '_color' } !important;
