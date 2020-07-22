@@ -4,6 +4,11 @@
 @import "variables";
 @import "sass/blocks/global";
 
+/* Classes
+--------------------------------------------- */
+@import "sass/classes/tailwind";
+@import "sass/classes/tailwind-front-only";
+
 /* Content
 --------------------------------------------- */
 @import "sass/blocks/quote";

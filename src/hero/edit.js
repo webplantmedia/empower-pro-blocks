@@ -152,6 +152,8 @@ function HeroEdit( {
 										id: undefined,
 										backgroundType: undefined,
 										dimRatio: undefined,
+										leftPillDimRatio: undefined,
+										rightPillDimRatio: undefined,
 										focalPoint: undefined,
 										hasParallax: undefined,
 									} )
@@ -199,21 +201,6 @@ function HeroEdit( {
 						},
 					] }
 				>
-					{ !! url && (
-						<RangeControl
-							label={ __( 'Background opacity' ) }
-							value={ dimRatio }
-							onChange={ ( value ) =>
-								setAttributes( {
-									dimRatio: value,
-								} )
-							}
-							min={ 0 }
-							max={ 100 }
-							step={ 10 }
-							required
-						/>
-					) }
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Hero Color' ) }
@@ -240,19 +227,21 @@ function HeroEdit( {
 						},
 					] }
 				>
-					<RangeControl
-						label={ __( 'Opacity' ) }
-						value={ leftPillDimRatio }
-						onChange={ ( value ) =>
-							setAttributes( {
-								dimRatio: value,
-							} )
-						}
-						min={ 0 }
-						max={ 100 }
-						step={ 10 }
-						required
-					/>
+					{ !! url && (
+						<RangeControl
+							label={ __( 'Opacity' ) }
+							value={ leftPillDimRatio }
+							onChange={ ( value ) =>
+								setAttributes( {
+									dimRatio: value,
+								} )
+							}
+							min={ 0 }
+							max={ 100 }
+							step={ 10 }
+							required
+						/>
+					) }
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Right Pill Color' ) }
@@ -266,19 +255,21 @@ function HeroEdit( {
 						},
 					] }
 				>
-					<RangeControl
-						label={ __( 'Opacity' ) }
-						value={ rightPillDimRatio }
-						onChange={ ( value ) =>
-							setAttributes( {
-								dimRatio: value,
-							} )
-						}
-						min={ 0 }
-						max={ 100 }
-						step={ 10 }
-						required
-					/>
+					{ !! url && (
+						<RangeControl
+							label={ __( 'Opacity' ) }
+							value={ rightPillDimRatio }
+							onChange={ ( value ) =>
+								setAttributes( {
+									dimRatio: value,
+								} )
+							}
+							min={ 0 }
+							max={ 100 }
+							step={ 10 }
+							required
+						/>
+					) }
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Heading' ) } initialOpen={ true }>
 					<TextControl
@@ -373,7 +364,7 @@ function HeroEdit( {
 		'glide',
 		'glide-left',
 		'glide-down',
-		dimRatioToClass( leftPillDimRatio ),
+		url ? dimRatioToClass( leftPillDimRatio ) : {},
 		{ [ leftPillColor.class ]: leftPillColor.class },
 	);
 
@@ -382,7 +373,7 @@ function HeroEdit( {
 		'glide',
 		'glide-right',
 		'glide-down',
-		dimRatioToClass( rightPillDimRatio ),
+		url ? dimRatioToClass( rightPillDimRatio ) : {},
 		{ [ rightPillColor.class ]: rightPillColor.class },
 	);
 

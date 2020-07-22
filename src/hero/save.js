@@ -77,7 +77,7 @@ export default function save( { attributes } ) {
 		'glide',
 		'glide-left',
 		'glide-down',
-		dimRatioToClass( leftPillDimRatio ),
+		url ? dimRatioToClass( leftPillDimRatio ) : {},
 		getColorClassName( 'left-pill-color', leftPillColor ),
 	);
 
@@ -86,7 +86,7 @@ export default function save( { attributes } ) {
 		'glide',
 		'glide-right',
 		'glide-down',
-		dimRatioToClass( rightPillDimRatio ),
+		url ? dimRatioToClass( rightPillDimRatio ) : {},
 		getColorClassName( 'right-pill-color', rightPillColor ),
 	);
 
