@@ -251,7 +251,7 @@ function HeroEdit( {
 									leftPillDimRatio: value,
 								} )
 							}
-							min={ 0 }
+							min={ 10 }
 							max={ 100 }
 							step={ 10 }
 							required
@@ -279,7 +279,7 @@ function HeroEdit( {
 									rightPillDimRatio: value,
 								} )
 							}
-							min={ 0 }
+							min={ 10 }
 							max={ 100 }
 							step={ 10 }
 							required

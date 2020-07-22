@@ -7110,7 +7110,7 @@ function HeroEdit(_ref) {
         leftPillDimRatio: value
       });
     },
-    min: 0,
+    min: 10,
     max: 100,
     step: 10,
     required: true
@@ -7131,7 +7131,7 @@ function HeroEdit(_ref) {
         rightPillDimRatio: value
       });
     },
-    min: 0,
+    min: 10,
     max: 100,
     step: 10,
     required: true
