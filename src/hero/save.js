@@ -46,6 +46,8 @@ export default function save( { attributes } ) {
 		overlayColor,
 		leftPillColor,
 		rightPillColor,
+		leftPillDimRatio,
+		rightPillDimRatio,
 	} = attributes;
 
 	const style = {

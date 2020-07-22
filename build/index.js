@@ -7508,7 +7508,9 @@ function save(_ref) {
       heroColor = attributes.heroColor,
       overlayColor = attributes.overlayColor,
       leftPillColor = attributes.leftPillColor,
-      rightPillColor = attributes.rightPillColor;
+      rightPillColor = attributes.rightPillColor,
+      leftPillDimRatio = attributes.leftPillDimRatio,
+      rightPillDimRatio = attributes.rightPillDimRatio;
 
   var style = _objectSpread({}, backgroundType === _shared__WEBPACK_IMPORTED_MODULE_4__["IMAGE_BACKGROUND_TYPE"] ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["backgroundImageStyles"])(url) : {});
 
