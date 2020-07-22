@@ -133,6 +133,10 @@
 			"source": "attribute",
 			"selector": "a.button3",
 			"attribute": "target"
+		},
+		"align": {
+			  "type": "string",
+			  "default": "full"
 		}
 	}
 }
