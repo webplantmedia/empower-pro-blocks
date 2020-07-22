@@ -1,4 +1,37 @@
 /* Gutenberg block editor styles */
+.has-background-dim-value-0 {
+  opacity: 0; }
+
+.has-background-dim-value-10 {
+  opacity: 0.1; }
+
+.has-background-dim-value-20 {
+  opacity: 0.2; }
+
+.has-background-dim-value-30 {
+  opacity: 0.3; }
+
+.has-background-dim-value-40 {
+  opacity: 0.4; }
+
+.has-background-dim-value-50 {
+  opacity: 0.5; }
+
+.has-background-dim-value-60 {
+  opacity: 0.6; }
+
+.has-background-dim-value-70 {
+  opacity: 0.7; }
+
+.has-background-dim-value-80 {
+  opacity: 0.8; }
+
+.has-background-dim-value-90 {
+  opacity: 0.9; }
+
+.has-background-dim-value-100 {
+  opacity: 1; }
+
 /* Classes
 --------------------------------------------- */
 .mr-0 {

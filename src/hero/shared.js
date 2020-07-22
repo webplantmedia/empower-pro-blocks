@@ -11,7 +11,7 @@ export function dimRatioToClass( ratio ) {
 
 	return ! ratio
 		? null
-		: 'has-background-dim-' + 10 * Math.round( ratio / 10 );
+		: 'has-background-dim-value-' + 10 * Math.round( ratio / 10 );
 }
 
 export function attributesFromMedia( setAttributes ) {

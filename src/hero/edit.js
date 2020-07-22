@@ -10,38 +10,26 @@ import tinycolor from 'tinycolor2';
  */
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import {
-	BaseControl,
 	PanelBody,
 	Button,
 	FocalPointPicker,
 	PanelRow,
 	RangeControl,
-	ResizableBox,
 	ToggleControl,
 	TextControl,
 	TextareaControl,
 	withNotices,
-	KeyboardShortcuts,
-	ToolbarButton,
-	ToolbarGroup,
-	Icon,
-	Popover,
 } from '@wordpress/components';
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
 	BlockControls,
-	BlockIcon,
 	RichText,
-	InnerBlocks,
 	InspectorControls,
-	MediaPlaceholder,
 	MediaUpload,
 	MediaReplaceFlow,
 	withColors,
-	ColorPalette,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
-	__experimentalLinkControl as LinkControl,
 	URLInput,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
@@ -188,9 +176,9 @@ function HeroEdit( {
 								label={ __( 'Focal point picker' ) }
 								url={ url }
 								value={ focalPoint }
-								onChange={ ( newFocalPoint ) =>
+								onChange={ ( value ) =>
 									setAttributes( {
-										focalPoint: newFocalPoint,
+										focalPoint: value,
 									} )
 								}
 							/>
@@ -215,9 +203,9 @@ function HeroEdit( {
 						<RangeControl
 							label={ __( 'Background opacity' ) }
 							value={ dimRatio }
-							onChange={ ( newDimRatio ) =>
+							onChange={ ( value ) =>
 								setAttributes( {
-									dimRatio: newDimRatio,
+									dimRatio: value,
 								} )
 							}
 							min={ 0 }
@@ -255,9 +243,9 @@ function HeroEdit( {
 					<RangeControl
 						label={ __( 'Opacity' ) }
 						value={ leftPillDimRatio }
-						onChange={ ( newLeftPillDimRatio ) =>
+						onChange={ ( value ) =>
 							setAttributes( {
-								dimRatio: newLeftPillDimRatio,
+								dimRatio: value,
 							} )
 						}
 						min={ 0 }
@@ -281,9 +269,9 @@ function HeroEdit( {
 					<RangeControl
 						label={ __( 'Opacity' ) }
 						value={ rightPillDimRatio }
-						onChange={ ( newRightPillDimRatio ) =>
+						onChange={ ( value ) =>
 							setAttributes( {
-								dimRatio: newRightPillDimRatio,
+								dimRatio: value,
 							} )
 						}
 						min={ 0 }
@@ -385,6 +373,7 @@ function HeroEdit( {
 		'glide',
 		'glide-left',
 		'glide-down',
+		dimRatioToClass( leftPillDimRatio ),
 		{ [ leftPillColor.class ]: leftPillColor.class },
 	);
 
@@ -393,6 +382,7 @@ function HeroEdit( {
 		'glide',
 		'glide-right',
 		'glide-down',
+		dimRatioToClass( rightPillDimRatio ),
 		{ [ rightPillColor.class ]: rightPillColor.class },
 	);
 
@@ -475,10 +465,7 @@ function HeroEdit( {
 									</div>
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
-											<RichText.Content
-												value={ button3Icon }
-												className="button3-icon"
-											/>
+											<ion-icon class="button-icon-before button3-icon" name={ button3Icon }></ion-icon>
 											<RichText
 												placeholder={ __( 'Button 3' ) }
 												value={ button3Text }

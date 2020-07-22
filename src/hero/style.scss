@@ -93,18 +93,6 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-
-			&.has-background-dim {
-				opacity: 0.50;
-			}
-			&.has-background-dim-0 {
-				opacity: 0;
-			}
-			@for $i from 1 through 10 {
-				&.has-background-dim-#{$i}0 {
-					opacity: $i/10;
-				}
-			}
 		}
 
 		@media screen and ( min-width: $ipad_width_1 ) {
@@ -141,6 +129,15 @@
 				display: flex;
 
 				.wp-block-button {
+
+					&.text.icon {
+						display: flex;
+						align-items: center;
+					}
+
+					.button-icon-before {
+						margin-right: 4px;
+					}
 				}
 
 				&.wp-block-buttons .wp-block-button {

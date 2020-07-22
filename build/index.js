@@ -6881,7 +6881,7 @@ else {}
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development with Impact\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"<i class=\\\"ion-stop mr-4\\\"></i>Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"<ion-icon name=\\\"play\\\"></ion-icon>\",\"selector\":\".button3-icon\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development with Impact\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"<i class=\\\"ion-stop mr-4\\\"></i>Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"}}}");
 
 /***/ }),
 
@@ -7051,9 +7051,9 @@ function HeroEdit(_ref) {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Focal point picker'),
     url: url,
     value: focalPoint,
-    onChange: function onChange(newFocalPoint) {
+    onChange: function onChange(value) {
       return setAttributes({
-        focalPoint: newFocalPoint
+        focalPoint: value
       });
     }
   }), url && _shared__WEBPACK_IMPORTED_MODULE_12__["VIDEO_BACKGROUND_TYPE"] === backgroundType && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("video", {
@@ -7073,9 +7073,9 @@ function HeroEdit(_ref) {
   }, !!url && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Background opacity'),
     value: dimRatio,
-    onChange: function onChange(newDimRatio) {
+    onChange: function onChange(value) {
       return setAttributes({
-        dimRatio: newDimRatio
+        dimRatio: value
       });
     },
     min: 0,
@@ -7103,9 +7103,9 @@ function HeroEdit(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Opacity'),
     value: leftPillDimRatio,
-    onChange: function onChange(newLeftPillDimRatio) {
+    onChange: function onChange(value) {
       return setAttributes({
-        dimRatio: newLeftPillDimRatio
+        dimRatio: value
       });
     },
     min: 0,
@@ -7124,9 +7124,9 @@ function HeroEdit(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Opacity'),
     value: rightPillDimRatio,
-    onChange: function onChange(newRightPillDimRatio) {
+    onChange: function onChange(value) {
       return setAttributes({
-        dimRatio: newRightPillDimRatio
+        dimRatio: value
       });
     },
     min: 0,
@@ -7257,8 +7257,8 @@ function HeroEdit(_ref) {
     'has-parallax': hasParallax
   }, heroColor.class, heroColor.class));
   var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_12__["dimRatioToClass"])(dimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, overlayColor.class, overlayColor.class));
-  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, leftPillColor.class, leftPillColor.class));
-  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, rightPillColor.class, rightPillColor.class));
+  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', Object(_shared__WEBPACK_IMPORTED_MODULE_12__["dimRatioToClass"])(leftPillDimRatio), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, leftPillColor.class, leftPillColor.class));
+  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', Object(_shared__WEBPACK_IMPORTED_MODULE_12__["dimRatioToClass"])(rightPillDimRatio), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, rightPillColor.class, rightPillColor.class));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-hero__outer-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -7343,9 +7343,9 @@ function HeroEdit(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"].Content, {
-    value: button3Icon,
-    className: "button3-icon"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
+    class: "button-icon-before button3-icon",
+    name: button3Icon
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Button 3'),
     value: button3Text,
@@ -7504,7 +7504,11 @@ function save(_ref) {
       button3Icon = attributes.button3Icon,
       button3Text = attributes.button3Text,
       button3URL = attributes.button3URL,
-      button3LinkTarget = attributes.button3LinkTarget;
+      button3LinkTarget = attributes.button3LinkTarget,
+      heroColor = attributes.heroColor,
+      overlayColor = attributes.overlayColor,
+      leftPillColor = attributes.leftPillColor,
+      rightPillColor = attributes.rightPillColor;
 
   var style = _objectSpread({}, backgroundType === _shared__WEBPACK_IMPORTED_MODULE_4__["IMAGE_BACKGROUND_TYPE"] ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["backgroundImageStyles"])(url) : {});
 
@@ -7512,12 +7516,12 @@ function save(_ref) {
     style.backgroundPosition = "".concat(focalPoint.x * 100, "% ").concat(focalPoint.y * 100, "%");
   }
 
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()({
     'has-parallax': hasParallax
-  }, heroColor.class, heroColor.class));
-  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, overlayColor.class, overlayColor.class));
-  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, leftPillColor.class, leftPillColor.class));
-  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, rightPillColor.class, rightPillColor.class));
+  }, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('hero-color', heroColor));
+  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('background-color', overlayColor));
+  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(leftPillDimRatio), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('left-pill-color', leftPillColor));
+  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(rightPillDimRatio), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('right-pill-color', rightPillColor));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-hero__outer-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -7582,9 +7586,9 @@ function save(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
-    value: button3Icon,
-    className: "button3-icon"
+  }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
+    class: "button-icon-before button3-icon",
+    name: button3Icon
   }), button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
     className: "wp-block-button__link button3",
@@ -7652,7 +7656,7 @@ function dimRatioToClass(ratio) {
     return 'has-background-dim-0';
   }
 
-  return !ratio ? null : 'has-background-dim-' + 10 * Math.round(ratio / 10);
+  return !ratio ? null : 'has-background-dim-value-' + 10 * Math.round(ratio / 10);
 }
 function attributesFromMedia(setAttributes) {
   return function (media) {

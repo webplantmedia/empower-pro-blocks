@@ -8,6 +8,7 @@ import classnames from 'classnames';
  */
 import {
 	RichText,
+	getColorClassName,
 } from '@wordpress/block-editor';
 
 /**
@@ -41,6 +42,10 @@ export default function save( { attributes } ) {
 		button3Text,
 		button3URL,
 		button3LinkTarget,
+		heroColor,
+		overlayColor,
+		leftPillColor,
+		rightPillColor,
 	} = attributes;
 
 	const style = {
@@ -54,15 +59,15 @@ export default function save( { attributes } ) {
 			100 }%`;
 	}
 
-	const classes = classnames( {
-		'has-parallax': hasParallax,
-		[ heroColor.class ]: heroColor.class,
-	} );
+	const classes = classnames(
+		{ 'has-parallax': hasParallax },
+		getColorClassName( 'hero-color', heroColor ),
+	);
 
 	const overlayClasses = classnames( 
 		'overlay-color', 
 		url ? dimRatioToClass( dimRatio ) : {}, 
-		{ [ overlayColor.class ]: overlayColor.class, }
+		getColorClassName( 'background-color', overlayColor ),
 	);
 
 	const leftPillClasses = classnames( 
@@ -70,7 +75,8 @@ export default function save( { attributes } ) {
 		'glide',
 		'glide-left',
 		'glide-down',
-		{ [ leftPillColor.class ]: leftPillColor.class },
+		dimRatioToClass( leftPillDimRatio ),
+		getColorClassName( 'left-pill-color', leftPillColor ),
 	);
 
 	const rightPillClasses = classnames( 
@@ -78,7 +84,8 @@ export default function save( { attributes } ) {
 		'glide',
 		'glide-right',
 		'glide-down',
-		{ [ rightPillColor.class ]: rightPillColor.class },
+		dimRatioToClass( rightPillDimRatio ),
+		getColorClassName( 'right-pill-color', rightPillColor ),
 	);
 
 
@@ -156,10 +163,7 @@ export default function save( { attributes } ) {
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
 										{ button3Icon && (
-											<RichText.Content
-												value={ button3Icon }
-												className="button3-icon"
-											/>
+											<ion-icon class="button-icon-before button3-icon" name={ button3Icon }></ion-icon>
 										) }
 										{ button3Text && (
 											<RichText.Content

@@ -111,9 +111,10 @@
 		},
 		"button3Icon": {
 			"type": "string",
-			"source": "html",
-			"default": "<ion-icon name=\"play\"></ion-icon>",
-			"selector": ".button3-icon"
+			"source": "attribute",
+			"selector": ".button3-icon",
+			"attribute": "name",
+			"default": "play"
 		},
 		"button3Text": {
 			"type": "string",
