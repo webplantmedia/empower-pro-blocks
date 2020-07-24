@@ -327,7 +327,7 @@ function HeroEdit( {
 				</PanelBody>
 				<PanelBody title={ __( 'Secondary Button 1' ) } initialOpen={ true }>
 					<Fragment>
-						<p className="components-base-control__label">{__( "Icon" )}</p>
+						<p className="">{__( "Icon" )}</p>
 						<FontIconPicker
 							icons={svg_icons}
 							renderFunc= {renderSVG}
@@ -356,11 +356,18 @@ function HeroEdit( {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Secondary Button 2' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Icon' ) }
-						value={ button3Icon }
-						onChange={ ( value ) => setAttributes( { button3Icon: value } ) }
-					/>
+					<Fragment>
+						<p className="">{__( "Icon" )}</p>
+						<FontIconPicker
+							icons={svg_icons}
+							renderFunc= {renderSVG}
+							theme="default"
+							value={button3Icon}
+							onChange={ ( value ) => setAttributes( { button3Icon: value } ) }
+							isMulti={false}
+							noSelectedPlaceholder= { __( "Select Icon" ) }
+						/>
+					</Fragment>
 					<TextControl
 						label={ __( 'Text' ) }
 						value={ button3Text }
@@ -491,7 +498,7 @@ function HeroEdit( {
 									</div>
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
-											<ion-icon class="button-icon-before button3-icon" name={ button3Icon }></ion-icon>
+											<div class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
 											<RichText
 												placeholder={ __( 'Button 3' ) }
 												value={ button3Text }

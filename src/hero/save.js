@@ -171,7 +171,7 @@ export default function save( { attributes } ) {
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
 										{ button3Icon && (
-											<ion-icon class="button-icon-before button3-icon" name={ button3Icon }></ion-icon>
+											<div class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
 										) }
 										{ button3Text && (
 											<RichText.Content

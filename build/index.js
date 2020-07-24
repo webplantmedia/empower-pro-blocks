@@ -8796,7 +8796,7 @@ function HeroEdit(_ref) {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Secondary Button 1'),
     initialOpen: true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
-    className: "components-base-control__label"
+    className: ""
   }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])("Icon")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_4___default.a, {
     icons: svg_icons,
     renderFunc: _dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"],
@@ -8839,15 +8839,21 @@ function HeroEdit(_ref) {
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Secondary Button 2'),
     initialOpen: true
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon'),
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
+    className: ""
+  }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])("Icon")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    icons: svg_icons,
+    renderFunc: _dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"],
+    theme: "default",
     value: button3Icon,
     onChange: function onChange(value) {
       return setAttributes({
         button3Icon: value
       });
-    }
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+    },
+    isMulti: false,
+    noSelectedPlaceholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])("Select Icon")
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text'),
     value: button3Text,
     onChange: function onChange(value) {
@@ -8967,10 +8973,9 @@ function HeroEdit(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
-    class: "button-icon-before button3-icon",
-    name: button3Icon
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-before button3-icon"
+  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"])(button3Icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 3'),
     value: button3Text,
     onChange: function onChange(value) {
@@ -9217,10 +9222,9 @@ function save(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ion-icon", {
-    class: "button-icon-before button3-icon",
-    name: button3Icon
-  }), button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+  }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-before button3-icon"
+  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(button3Icon)), button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
     className: "wp-block-button__link button3",
     value: button3Text,

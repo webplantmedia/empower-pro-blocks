@@ -64,16 +64,8 @@ function empower_pro_blocks_custom_gutenberg_admin_css() {
 	$script_asset = require( $script_asset_path );
 	wp_enqueue_script( 'empower-pro-blocks-editor', EMPOWER_PRO_BLOCKS_URL . 'build/index.js', $script_asset['dependencies'], $script_asset['version'] );
 	wp_enqueue_style( 'empower-pro-blocks-editor', EMPOWER_PRO_BLOCKS_URL . 'build/editor.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/editor.css" ) );
-
-	// add_action( 'admin_head', 'empower_pro_blocks_custom_gutenberg_admin_head' );
-
 }
 add_action( 'enqueue_block_editor_assets', 'empower_pro_blocks_custom_gutenberg_admin_css' );
-
-// function empower_pro_blocks_custom_gutenberg_admin_head() {
-	// echo '<script type="module" src="http://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>';
-	// echo '<script nomodule="" src="http://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>';
-// }
 
 function empower_pro_blocks_custom_gutenberg_css() {
 	global $empower_pro_blocks_appearance;
