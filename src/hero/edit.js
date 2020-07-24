@@ -2,13 +2,11 @@
  * External dependencies
  */
 import classnames from 'classnames';
-import FastAverageColor from 'fast-average-color';
-import tinycolor from 'tinycolor2';
 
 /**
  * WordPress dependencies
  */
-import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
+// import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import {
 	PanelBody,
 	Button,
@@ -19,6 +17,7 @@ import {
 	TextControl,
 	TextareaControl,
 	withNotices,
+	Autocomplete,
 } from '@wordpress/components';
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
@@ -115,6 +114,8 @@ function HeroEdit( {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
 	}
+
+	const iconHelpLink = "Click <a href=\"https://ionicons.com/\">here</a> for Complete list of icons";
 
 	const controls = (
 		<>
@@ -324,6 +325,7 @@ function HeroEdit( {
 						label={ __( 'Icon' ) }
 						value={ button2Icon }
 						onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
+						help={ iconHelpLink }
 					/>
 					<TextControl
 						label={ __( 'Text' ) }
