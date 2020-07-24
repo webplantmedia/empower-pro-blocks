@@ -64,6 +64,9 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 
 	foreach ( $colors as $color ) {
 		$css .= "
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text svg {
+				fill: ${ $color . '_color' } !important;
+			}
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text ion-icon,
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text i,
 			html .wp-block-button.text.icon .wp-block-button__link.has-$color-background-color i {
@@ -173,6 +176,10 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 		html .wp-block-button.is-style-outline .wp-block-button__link.has-secondary-background-color:hover {
 			border-color: $secondary_bright_color;
 			color: $secondary_bright_color;
+		}
+
+		html .wp-block-button.text.icon svg {
+			fill: $primary_color;
 		}
 
 		html .wp-block-button.text.icon ion-icon,

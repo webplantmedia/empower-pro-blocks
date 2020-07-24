@@ -11,6 +11,8 @@ import {
 	getColorClassName,
 } from '@wordpress/block-editor';
 
+import renderSVG from "../../dist/blocks/renderIcon"
+
 /**
  * Internal dependencies
  */
@@ -153,7 +155,7 @@ export default function save( { attributes } ) {
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
 										{ button2Icon && (
-											<ion-icon class="button-icon-before button2-icon" name={ button2Icon }></ion-icon>
+											<div class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
 										) }
 										{ button2Text && (
 											<RichText.Content

@@ -7,6 +7,7 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 // import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
+import { Fragment } from '@wordpress/element';
 import {
 	PanelBody,
 	Button,
@@ -17,8 +18,12 @@ import {
 	TextControl,
 	TextareaControl,
 	withNotices,
-	Autocomplete,
 } from '@wordpress/components';
+
+import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
+import EPIcon from "../../dist/blocks/Icon.json"
+import renderSVG from "../../dist/blocks/renderIcon"
+
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
@@ -50,6 +55,8 @@ import {
  * Module Constants
  */
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
+
+let svg_icons = Object.keys( EPIcon )
 
 function HeroEdit( {
 	attributes,
@@ -114,8 +121,6 @@ function HeroEdit( {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
 	}
-
-	const iconHelpLink = "Click <a href=\"https://ionicons.com/\">here</a> for Complete list of icons";
 
 	const controls = (
 		<>
@@ -321,12 +326,18 @@ function HeroEdit( {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Secondary Button 1' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Icon' ) }
-						value={ button2Icon }
-						onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
-						help={ iconHelpLink }
-					/>
+					<Fragment>
+						<p className="components-base-control__label">{__( "Icon" )}</p>
+						<FontIconPicker
+							icons={svg_icons}
+							renderFunc= {renderSVG}
+							theme="default"
+							value={button2Icon}
+							onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
+							isMulti={false}
+							noSelectedPlaceholder= { __( "Select Icon" ) }
+						/>
+					</Fragment>
 					<TextControl
 						label={ __( 'Text' ) }
 						value={ button2Text }
@@ -468,7 +479,7 @@ function HeroEdit( {
 								<div class="gray-bottom-bar">
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
-											<ion-icon class="button-icon-before button2-icon" name={ button2Icon }></ion-icon>
+											<div class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
 											<RichText
 												placeholder={ __( 'Button 2' ) }
 												value={ button2Text }
