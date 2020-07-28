@@ -124,7 +124,8 @@ function HeroEdit( {
 
 	const replaceHeading = (h, ts, tr) => {
 		let newHeading = h.replace( /<span.*?>|<\/span>/g, '' );
-		newHeading = newHeading.replace( ts, '<span class="typewriter">'+ts+'</span>' );
+		let newTR = tr.replace(/(\r\n|\n|\r)/gm,"|");
+		newHeading = newHeading.replace( ts, '<span class="typewriter" data-replace="'+newTR+'">'+ts+'</span>' );
 
 		return newHeading;
 	}
@@ -427,8 +428,9 @@ function HeroEdit( {
 		</>
 	);
 
-	const classes = classnames( className, {
-		'has-parallax': hasParallax,
+	const classes = classnames( className, 
+		'wp-block-hero__outer-wrapper',
+		{ 'has-parallax': hasParallax,
 		[ heroColor.class ]: heroColor.class,
 	} );
 
@@ -459,8 +461,8 @@ function HeroEdit( {
 	return (
 		<>
 			{ controls }
-			<div className="wp-block-hero__outer-wrapper">
-				<div className={ classes }>
+			<div className={ classes }>
+				<div className="wp-block-hero__inner-wrap">
 					<div className="wp-block-hero__inner-container">
 						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
 							{ VIDEO_BACKGROUND_TYPE === backgroundType && (

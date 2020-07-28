@@ -65,6 +65,7 @@ export default function save( { attributes } ) {
 	}
 
 	const classes = classnames(
+		'wp-block-hero__outer-wrapper',
 		{ 'has-parallax': hasParallax },
 		getColorClassName( 'hero-color', heroColor ),
 	);
@@ -95,8 +96,8 @@ export default function save( { attributes } ) {
 
 
 	return (
-		<div className="wp-block-hero__outer-wrapper">
-			<div className={ classes }>
+		<div className={ classes }>
+			<div className="wp-block-hero__inner-wrap">
 				<div className="wp-block-hero__inner-container">
 					<div data-url={ url } style={ style } className="wp-block-hero__background-image">
 						{ VIDEO_BACKGROUND_TYPE === backgroundType && (
