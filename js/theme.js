@@ -182,6 +182,18 @@
 
 	$( document ).ready(
 		function() {
+			var $typewriter = $(".wp-block-empower-pro-blocks-hero .typewriter");
+			var replace = $typewriter.data('replace');
+			console.log(replace);
+				// .empowerProBlocksTypewriter({
+			  // search: "with Impact",
+			  // replace: ["that Engages","with Results"]
+			// });
+		}
+	);
+
+	$( document ).ready(
+		function() {
 			$( '.filtering' ).on(
 				'click',
 				'div, span',
