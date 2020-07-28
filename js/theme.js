@@ -182,13 +182,19 @@
 
 	$( document ).ready(
 		function() {
-			var $typewriter = $(".wp-block-empower-pro-blocks-hero .typewriter");
-			var replace = $typewriter.data('replace');
-			console.log(replace);
-				// .empowerProBlocksTypewriter({
-			  // search: "with Impact",
-			  // replace: ["that Engages","with Results"]
-			// });
+			var $h1 = $(".wp-block-empower-pro-blocks-hero h1.typewriter");
+			var $search = $h1.children( 'span.typewriter' );
+			var replace = $search.data('replace');
+			if ( replace ) {
+				var replace = replace.split('|');
+				var search = $search.text();
+				if ( Array.isArray(replace) && replace.length && search.length ) {
+					$h1.empowerProBlocksTypewriter({
+						search: search,
+						replace: replace, 
+					});
+				}
+			}
 		}
 	);
 

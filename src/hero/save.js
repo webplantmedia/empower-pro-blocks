@@ -117,7 +117,7 @@ export default function save( { attributes } ) {
 							{ heading && (
 								<RichText.Content
 									tagName="h1"
-									className="hero-heading"
+									className="hero-heading typewriter"
 									value={ heading }
 								/>
 							) }

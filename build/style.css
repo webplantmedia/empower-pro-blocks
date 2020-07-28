@@ -1915,7 +1915,7 @@ table.wp-block-table {
   position: absolute;
   top: -340px;
   z-index: 100;
-  right: -260px; }
+  right: -320px; }
   @media only screen and (max-width: 1023px) {
     .top-right-background {
       display: none; } }

@@ -481,7 +481,7 @@ function HeroEdit( {
 							<div className="wp-block-hero__inner-content">
 								<RichText
 									tagName="h1"
-									className="hero-heading"
+									className="hero-heading typewriter"
 									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 									onChange={ onHeadingChange }
 									value={ heading }

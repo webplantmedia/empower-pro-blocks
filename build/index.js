@@ -8928,7 +8928,7 @@ function HeroEdit(_ref) {
     className: "wp-block-hero__inner-content"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "h1",
-    className: "hero-heading",
+    className: "hero-heading typewriter",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'empower-pro-blocks'),
     onChange: onHeadingChange,
     value: heading,
@@ -9190,7 +9190,7 @@ function save(_ref) {
     className: "wp-block-hero__inner-content"
   }, heading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "h1",
-    className: "hero-heading",
+    className: "hero-heading typewriter",
     value: heading
   }), text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "p",
