@@ -7,7 +7,7 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 // import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
-import { Fragment } from '@wordpress/element';
+import { useCallback, Fragment } from '@wordpress/element';
 import {
 	PanelBody,
 	Button,
@@ -121,6 +121,44 @@ function HeroEdit( {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
 			100 }%`;
 	}
+
+	const replaceHeading = (h, ts, tr) => {
+		let newHeading = h.replace( /<span.*?>|<\/span>/g, '' );
+		newHeading = newHeading.replace( ts, '<span class="typewriter">'+ts+'</span>' );
+
+		return newHeading;
+	}
+
+	const updateHeading = (h, ts, tr, setAttributes ) => {
+		const newHeading = replaceHeading( h, ts, tr );
+
+		setAttributes( {
+			typewriterSearch: ts,
+			typewriterReplace: tr,
+			heading: newHeading,
+		} );
+	};
+
+	const onTypewriterSearchChange = useCallback(
+		( typewriterSearch ) => {
+			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
+		},
+		[ heading, typewriterReplace, setAttributes ]
+	);
+
+	const onTypewriterReplaceChange = useCallback(
+		( typewriterReplace ) => {
+			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
+		},
+		[ heading, typewriterSearch, setAttributes ]
+	);
+
+	const onHeadingChange = useCallback(
+		( heading ) => {
+			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
+		},
+		[ typewriterSearch, typewriterReplace, setAttributes ]
+	);
 
 	const controls = (
 		<>
@@ -298,13 +336,13 @@ function HeroEdit( {
 						label={ __( 'Typewriter Search' ) }
 						help="phrase to search and replace with a typewriter effect."
 						value={ typewriterSearch }
-						onChange={ ( value ) => setAttributes( { typewriterSearch: value } ) }
+						onChange={ onTypewriterSearchChange }
 					/>
 					<TextareaControl
 						label={ __( 'Typewriter Replace' ) }
 						help="Put each replacement phrase on its own line."
 						value={ typewriterReplace }
-						onChange={ ( value ) => setAttributes( { typewriterReplace: value } ) }
+						onChange={ onTypewriterReplaceChange }
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Call to Action Button' ) } initialOpen={ true }>
@@ -425,17 +463,6 @@ function HeroEdit( {
 				<div className={ classes }>
 					<div className="wp-block-hero__inner-container">
 						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
-							{ IMAGE_BACKGROUND_TYPE === backgroundType && (
-								// Used only to programmatically check if the image is dark or not
-								<img
-									aria-hidden
-									alt=""
-									style={ {
-										display: 'none',
-									} }
-									src={ url }
-								/>
-							) }
 							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 								<video
 									className="wp-block-hero__video-background"
@@ -454,12 +481,9 @@ function HeroEdit( {
 									tagName="h1"
 									className="hero-heading"
 									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
-									onChange={ ( value ) =>
-										setAttributes( {
-											heading: value,
-										} )
-									}
+									onChange={ onHeadingChange }
 									value={ heading }
+									formattingControls={ [] }
 								/>
 								<RichText
 									tagName="p"
@@ -471,6 +495,7 @@ function HeroEdit( {
 										} )
 									}
 									value={ text }
+									formattingControls={ [] }
 								/>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text">
@@ -480,6 +505,7 @@ function HeroEdit( {
 											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 											withoutInteractiveFormatting
 											className="wp-block-button__link button1"
+											formattingControls={ [] }
 										/>
 									</div>
 								</div>
@@ -493,6 +519,7 @@ function HeroEdit( {
 												onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 												withoutInteractiveFormatting
 												className="wp-block-button__link button2"
+												formattingControls={ [] }
 											/>
 										</div>
 									</div>
@@ -505,6 +532,7 @@ function HeroEdit( {
 												onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 												withoutInteractiveFormatting
 												className="wp-block-button__link button3"
+												formattingControls={ [] }
 											/>
 										</div>
 									</div>

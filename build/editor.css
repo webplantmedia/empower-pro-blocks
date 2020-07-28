@@ -279,12 +279,14 @@ html .editor-styles-wrapper p.has-huge-font-size {
 
 /* Custom Blocks
 --------------------------------------------- */
-.wp-block-empower-pro-blocks-hero {
-  margin-bottom: 120px; }
-
 .wp-block-hero__outer-wrapper {
   overflow: hidden;
   position: relative; }
+
+.wp-block-empower-pro-blocks-hero {
+  margin-bottom: 120px; }
+  .wp-block-empower-pro-blocks-hero .typewriter {
+    background-color: #cccccc; }
 
 
 /*# sourceMappingURL=editor.css.map*/

@@ -8481,7 +8481,7 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\",\"default\":\"primary\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development with Impact\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button2-icon\",\"attribute\":\"name\",\"default\":\"stop\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\",\"default\":\"primary\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development <span class=\\\"typewriter\\\" data-replace=\\\"that Engages|with Results\\\">with Impact</span>\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button2-icon\",\"attribute\":\"name\",\"default\":\"stop\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
 
 /***/ }),
 
@@ -8616,6 +8616,30 @@ function HeroEdit(_ref) {
     style.backgroundPosition = "".concat(focalPoint.x * 100, "% ").concat(focalPoint.y * 100, "%");
   }
 
+  var replaceHeading = function replaceHeading(h, ts, tr) {
+    var newHeading = h.replace(/<span.*?>|<\/span>/g, '');
+    newHeading = newHeading.replace(ts, '<span class="typewriter">' + ts + '</span>');
+    return newHeading;
+  };
+
+  var updateHeading = function updateHeading(h, ts, tr, setAttributes) {
+    var newHeading = replaceHeading(h, ts, tr);
+    setAttributes({
+      typewriterSearch: ts,
+      typewriterReplace: tr,
+      heading: newHeading
+    });
+  };
+
+  var onTypewriterSearchChange = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (typewriterSearch) {
+    updateHeading(heading, typewriterSearch, typewriterReplace, setAttributes);
+  }, [heading, typewriterReplace, setAttributes]);
+  var onTypewriterReplaceChange = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (typewriterReplace) {
+    updateHeading(heading, typewriterSearch, typewriterReplace, setAttributes);
+  }, [heading, typewriterSearch, setAttributes]);
+  var onHeadingChange = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (heading) {
+    updateHeading(heading, typewriterSearch, typewriterReplace, setAttributes);
+  }, [typewriterSearch, typewriterReplace, setAttributes]);
   var controls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["BlockControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["MediaReplaceFlow"], {
     mediaId: id,
     mediaURL: url,
@@ -8748,20 +8772,12 @@ function HeroEdit(_ref) {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Typewriter Search'),
     help: "phrase to search and replace with a typewriter effect.",
     value: typewriterSearch,
-    onChange: function onChange(value) {
-      return setAttributes({
-        typewriterSearch: value
-      });
-    }
+    onChange: onTypewriterSearchChange
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextareaControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Typewriter Replace'),
     help: "Put each replacement phrase on its own line.",
     value: typewriterReplace,
-    onChange: function onChange(value) {
-      return setAttributes({
-        typewriterReplace: value
-      });
-    }
+    onChange: onTypewriterReplaceChange
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Call to Action Button'),
     initialOpen: true
@@ -8897,15 +8913,7 @@ function HeroEdit(_ref) {
     "data-url": url,
     style: style,
     className: "wp-block-hero__background-image"
-  }, _shared__WEBPACK_IMPORTED_MODULE_13__["IMAGE_BACKGROUND_TYPE"] === backgroundType && // Used only to programmatically check if the image is dark or not
-  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
-    "aria-hidden": true,
-    alt: "",
-    style: {
-      display: 'none'
-    },
-    src: url
-  }), _shared__WEBPACK_IMPORTED_MODULE_13__["VIDEO_BACKGROUND_TYPE"] === backgroundType && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("video", {
+  }, _shared__WEBPACK_IMPORTED_MODULE_13__["VIDEO_BACKGROUND_TYPE"] === backgroundType && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("video", {
     className: "wp-block-hero__video-background",
     autoPlay: true,
     muted: true,
@@ -8921,12 +8929,9 @@ function HeroEdit(_ref) {
     tagName: "h1",
     className: "hero-heading",
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Heading', 'empower-pro-blocks'),
-    onChange: function onChange(value) {
-      return setAttributes({
-        heading: value
-      });
-    },
-    value: heading
+    onChange: onHeadingChange,
+    value: heading,
+    formattingControls: []
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     tagName: "p",
     className: "hero-text",
@@ -8936,7 +8941,8 @@ function HeroEdit(_ref) {
         text: value
       });
     },
-    value: text
+    value: text,
+    formattingControls: []
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -8950,7 +8956,8 @@ function HeroEdit(_ref) {
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link button1"
+    className: "wp-block-button__link button1",
+    formattingControls: []
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "gray-bottom-bar"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -8968,7 +8975,8 @@ function HeroEdit(_ref) {
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link button2"
+    className: "wp-block-button__link button2",
+    formattingControls: []
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -8984,7 +8992,8 @@ function HeroEdit(_ref) {
       });
     },
     withoutInteractiveFormatting: true,
-    className: "wp-block-button__link button3"
+    className: "wp-block-button__link button3",
+    formattingControls: []
   })))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: leftPillClasses
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("svg", {
@@ -9166,15 +9175,7 @@ function save(_ref) {
     "data-url": url,
     style: style,
     className: "wp-block-hero__background-image"
-  }, _shared__WEBPACK_IMPORTED_MODULE_5__["IMAGE_BACKGROUND_TYPE"] === backgroundType && // Used only to programmatically check if the image is dark or not
-  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
-    "aria-hidden": true,
-    alt: "",
-    style: {
-      display: 'none'
-    },
-    src: url
-  }), _shared__WEBPACK_IMPORTED_MODULE_5__["VIDEO_BACKGROUND_TYPE"] === backgroundType && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("video", {
+  }, _shared__WEBPACK_IMPORTED_MODULE_5__["VIDEO_BACKGROUND_TYPE"] === backgroundType && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("video", {
     className: "wp-block-hero__video-background",
     autoPlay: true,
     muted: true,

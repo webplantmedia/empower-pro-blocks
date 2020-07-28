@@ -65,7 +65,7 @@
 		"heading": {
 			"type": "string",
 			"source": "html",
-			"default": "Leadership Development with Impact",
+			"default": "Leadership Development <span class=\"typewriter\" data-replace=\"that Engages|with Results\">with Impact</span>",
 			"selector": ".hero-heading"
 		},
 		"text": {

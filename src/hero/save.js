@@ -99,17 +99,6 @@ export default function save( { attributes } ) {
 			<div className={ classes }>
 				<div className="wp-block-hero__inner-container">
 					<div data-url={ url } style={ style } className="wp-block-hero__background-image">
-						{ IMAGE_BACKGROUND_TYPE === backgroundType && (
-							// Used only to programmatically check if the image is dark or not
-							<img
-								aria-hidden
-								alt=""
-								style={ {
-									display: 'none',
-								} }
-								src={ url }
-							/>
-						) }
 						{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 							<video
 								className="wp-block-hero__video-background"
