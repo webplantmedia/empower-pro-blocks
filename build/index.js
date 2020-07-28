@@ -130,8 +130,8 @@ function parseSVG(svg) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icon */ "./dist/blocks/Icon.json");
-var _Icon__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./Icon */ "./dist/blocks/Icon.json", 1);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon */ "./dist/blocks/Icon.json");
+var _Icon__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./Icon */ "./dist/blocks/Icon.json", 1);
 /* harmony import */ var _parseIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parseIcon */ "./dist/blocks/parseIcon.js");
 
 
@@ -145,7 +145,7 @@ var _Icon__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_requir
 
 function renderSVG(svg) {
   svg = Object(_parseIcon__WEBPACK_IMPORTED_MODULE_2__["default"])(svg);
-  var fontAwesome = _Icon__WEBPACK_IMPORTED_MODULE_3__[svg];
+  var fontAwesome = _Icon__WEBPACK_IMPORTED_MODULE_1__[svg];
 
   if ("undefined" != typeof fontAwesome) {
     var viewbox_array = fontAwesome["svg"].hasOwnProperty("brands") ? fontAwesome["svg"]["brands"]["viewBox"] : fontAwesome["svg"]["solid"]["viewBox"];

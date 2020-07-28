@@ -72,8 +72,8 @@ $empower_pro_blocks_white_brightness = empower_pro_blocks_color_brightness( $emp
 $empower_pro_blocks_white_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_white_color );
 
 $empower_pro_blocks_logo_sticky                = get_theme_mod( 'empower_pro_blocks_logo_sticky', '' );
-$empower_pro_blocks_logo_width                 = get_theme_mod( 'empower_pro_blocks_logo_width', 150 );
-$empower_pro_blocks_logo_top_spacing           = get_theme_mod( 'empower_pro_blocks_logo_top_spacing', 10 );
+$empower_pro_blocks_logo_width                 = get_theme_mod( 'empower_pro_blocks_logo_width', 270 );
+$empower_pro_blocks_logo_top_spacing           = get_theme_mod( 'empower_pro_blocks_logo_top_spacing', 20 );
 $empower_pro_blocks_logo_bottom_spacing        = get_theme_mod( 'empower_pro_blocks_logo_bottom_spacing', 10 );
 $empower_pro_blocks_shop_post_menu_search      = get_theme_mod( 'empower_pro_blocks_shop_post_menu_search', 0 );
 $empower_pro_blocks_shop_hide_menu_cart        = get_theme_mod( 'empower_pro_blocks_shop_hide_menu_cart', 0 );
