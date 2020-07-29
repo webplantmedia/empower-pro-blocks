@@ -16,11 +16,10 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Hero' ),
+	title: __( 'Icon Text' ),
 	icon,
 	category: 'abilitie-blocks',
 	supports: {
-		align: ["full"],
 		html: false,
 	},
 	save,

@@ -12,6 +12,7 @@ import {
  * Internal dependencies
  */
 import * as hero from './hero';
+import * as icontext from './icontext';
 
 /**
  * Function to register an individual block.
