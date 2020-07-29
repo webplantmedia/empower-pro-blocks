@@ -1,5 +1,14 @@
 .wp-block-empower-pro-blocks-icontext {
 	.wp-block-icontext__inner-wrap {
 		display: flex;
+		align-items: center;
+	}
+	.button-icon-before {
+		width: 46px;
+		padding-right: 8px;
+	}
+
+	.icon-text {
+		margin-bottom: 0;
 	}
 }

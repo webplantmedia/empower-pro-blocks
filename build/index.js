@@ -9370,7 +9370,7 @@ function attributesFromMedia(setAttributes) {
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\"icon-text\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\".icon-text\"}}}");
 
 /***/ }),
 
