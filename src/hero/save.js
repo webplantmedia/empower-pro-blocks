@@ -27,7 +27,6 @@ export default function save( { attributes } ) {
 	const {
 		backgroundType,
 		focalPoint,
-		hasParallax,
 		url,
 		heading,
 		text,
@@ -68,7 +67,6 @@ export default function save( { attributes } ) {
 
 	const classes = classnames(
 		'wp-block-hero__outer-wrapper',
-		{ 'has-parallax': hasParallax },
 		getColorClassName( 'hero-color', heroColor ),
 	);
 

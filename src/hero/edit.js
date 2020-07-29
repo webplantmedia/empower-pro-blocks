@@ -213,6 +213,7 @@ function HeroEdit( {
 								} )
 							}
 						/>
+					}
 					{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
 						<video autoPlay muted loop src={ url } />
 					) }
