@@ -8,7 +8,8 @@
 // @import "sass/blocks/alignment-front-only";
 // @import "sass/blocks/columns-front-only";
 // @import "sass/blocks/cover-image-front-only";
-@import "sass/blocks/widget-blocks";
+// @import "sass/blocks/atomic-blocks-front-only";
+// @import "sass/classes/tailwind-front-only";
 
 /* Titles
 --------------------------------------------- */
@@ -17,15 +18,6 @@
 /* Entry Meta
 --------------------------------------------- */
 @import "sass/content/entry-meta";
-
-/* Atomic Blocks
---------------------------------------------- */
-@import "sass/blocks/atomic-blocks";
-// @import "sass/blocks/atomic-blocks-front-only";
-
-/* WooCommerce Blocks
---------------------------------------------- */
-@import "sass/blocks/woo-blocks";
 
 /* HTML5 Reset
 ---------------------------------------------------------------------------- */
@@ -36,7 +28,7 @@
 
 /* Elements
 --------------------------------------------- */
-// @import "sass/reset/elements-front-only";
+@import "sass/reset/elements-front-only";
 @import "sass/reset/elements";
 
 
@@ -50,7 +42,7 @@
 
 /* Animation
 --------------------------------------------- */
-// @import "sass/reset/animation-front-only";
+@import "sass/reset/animation-front-only";
 
 
 /* Defaults
@@ -139,13 +131,7 @@
 /* Custom Blocks
 --------------------------------------------- */
 @import "sass/classes/custom-blocks";
-// @import "sass/classes/custom-blocks-front-only";
-
-/* TailWindCSS
---------------------------------------------- */
-@import "sass/classes/tailwind";
-// @import "sass/classes/tailwind-front-only";
-
+@import "sass/classes/custom-blocks-front-only";
 
 /* Widgets
 ---------------------------------------------------------------------------- */
