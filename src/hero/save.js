@@ -37,10 +37,12 @@ export default function save( { attributes } ) {
 		button1URL,
 		button1LinkTarget,
 		button2Icon,
+		button2IconSize,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
 		button3Icon,
+		button3IconSize,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
@@ -94,6 +96,12 @@ export default function save( { attributes } ) {
 		getColorClassName( 'right-pill-color', rightPillColor ),
 	);
 
+	const button2Style = {
+		...( button2IconSize ? { width: button2IconSize+"px" } : {} ),
+	};
+	const button3Style = {
+		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
+	};
 
 	return (
 		<div className={ classes }>
@@ -145,7 +153,7 @@ export default function save( { attributes } ) {
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
 										{ button2Icon && (
-											<div class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
+											<div style={ button2Style } class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
 										) }
 										{ button2Text && (
 											<RichText.Content
@@ -161,7 +169,7 @@ export default function save( { attributes } ) {
 								<div class="wp-block-buttons">
 									<div class="wp-block-button text icon">
 										{ button3Icon && (
-											<div class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
+											<div style={ button3Style } class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
 										) }
 										{ button3Text && (
 											<RichText.Content

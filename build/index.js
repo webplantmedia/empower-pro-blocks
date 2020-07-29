@@ -8481,7 +8481,7 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\",\"default\":\"primary\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development <span class=\\\"typewriter\\\" data-replace=\\\"that Engages|with Results\\\">with Impact</span>\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button2-icon\",\"attribute\":\"name\",\"default\":\"stop\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/hero\",\"category\":\"layout\",\"attributes\":{\"typewriterSearch\":{\"type\":\"string\",\"default\":\"with Impact\"},\"typewriterReplace\":{\"type\":\"string\",\"default\":\"that Engages\\nwith Results\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"hasParallax\":{\"type\":\"boolean\",\"default\":false},\"dimRatio\":{\"type\":\"number\",\"default\":50},\"leftPillDimRatio\":{\"type\":\"number\",\"default\":50},\"rightPillDimRatio\":{\"type\":\"number\",\"default\":50},\"overlayColor\":{\"type\":\"string\"},\"customOverlayColor\":{\"type\":\"string\"},\"heroColor\":{\"type\":\"string\",\"default\":\"primary\"},\"leftPillColor\":{\"type\":\"string\",\"default\":\"primary\"},\"customLeftPillColor\":{\"type\":\"string\"},\"rightPillColor\":{\"type\":\"string\"},\"customRightPillColor\":{\"type\":\"string\"},\"backgroundType\":{\"type\":\"string\",\"default\":\"image\"},\"focalPoint\":{\"type\":\"object\"},\"heading\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Leadership Development <span class=\\\"typewriter\\\" data-replace=\\\"that Engages|with Results\\\">with Impact</span>\",\"selector\":\".hero-heading\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.\",\"selector\":\".hero-text\"},\"button1Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"About Us\",\"selector\":\"a.button1\"},\"button1URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"href\"},\"button1LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button1\",\"attribute\":\"target\"},\"button2Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button2-icon\",\"attribute\":\"name\",\"default\":\"stop\"},\"button2IconSize\":{\"type\":\"number\",\"default\":\"\"},\"button2Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Programs\",\"selector\":\"a.button2\"},\"button2URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"href\"},\"button2LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button2\",\"attribute\":\"target\"},\"button3Icon\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\".button3-icon\",\"attribute\":\"name\",\"default\":\"play\"},\"button3IconSize\":{\"type\":\"number\",\"default\":\"\"},\"button3Text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"Our Simulations\",\"selector\":\"a.button3\"},\"button3URL\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"href\"},\"button3LinkTarget\":{\"type\":\"string\",\"source\":\"attribute\",\"selector\":\"a.button3\",\"attribute\":\"target\"},\"align\":{\"type\":\"string\",\"default\":\"full\"}}}");
 
 /***/ }),
 
@@ -8590,10 +8590,12 @@ function HeroEdit(_ref) {
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
       button2Icon = attributes.button2Icon,
+      button2IconSize = attributes.button2IconSize,
       button2Text = attributes.button2Text,
       button2URL = attributes.button2URL,
       button2LinkTarget = attributes.button2LinkTarget,
       button3Icon = attributes.button3Icon,
+      button3IconSize = attributes.button3IconSize,
       button3Text = attributes.button3Text,
       button3URL = attributes.button3URL,
       button3LinkTarget = attributes.button3LinkTarget;
@@ -8826,7 +8828,18 @@ function HeroEdit(_ref) {
     },
     isMulti: false,
     noSelectedPlaceholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])("Select Icon")
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon Size'),
+    value: button2IconSize,
+    onChange: function onChange(value) {
+      return setAttributes({
+        button2IconSize: value
+      });
+    },
+    min: 7,
+    max: 30,
+    step: 1
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text'),
     value: button2Text,
     onChange: function onChange(value) {
@@ -8870,7 +8883,18 @@ function HeroEdit(_ref) {
     },
     isMulti: false,
     noSelectedPlaceholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])("Select Icon")
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon Size'),
+    value: button3IconSize,
+    onChange: function onChange(value) {
+      return setAttributes({
+        button3IconSize: value
+      });
+    },
+    min: 7,
+    max: 30,
+    step: 1
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text'),
     value: button3Text,
     onChange: function onChange(value) {
@@ -8904,6 +8928,15 @@ function HeroEdit(_ref) {
   var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_13__["dimRatioToClass"])(dimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, overlayColor.class, overlayColor.class));
   var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_13__["dimRatioToClass"])(leftPillDimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, leftPillColor.class, leftPillColor.class));
   var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_13__["dimRatioToClass"])(rightPillDimRatio) : {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, rightPillColor.class, rightPillColor.class));
+
+  var button2Style = _objectSpread({}, button2IconSize ? {
+    width: button2IconSize + "px"
+  } : {});
+
+  var button3Style = _objectSpread({}, button3IconSize ? {
+    width: button3IconSize + "px"
+  } : {});
+
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: classes
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -8965,7 +8998,8 @@ function HeroEdit(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }, button2Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    style: button2Style,
     class: "button-icon-before button2-icon"
   }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"])(button2Icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 2'),
@@ -8982,7 +9016,8 @@ function HeroEdit(_ref) {
     class: "wp-block-buttons"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    style: button3Style,
     class: "button-icon-before button3-icon"
   }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"])(button3Icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Button 3'),
@@ -9139,10 +9174,12 @@ function save(_ref) {
       button1URL = attributes.button1URL,
       button1LinkTarget = attributes.button1LinkTarget,
       button2Icon = attributes.button2Icon,
+      button2IconSize = attributes.button2IconSize,
       button2Text = attributes.button2Text,
       button2URL = attributes.button2URL,
       button2LinkTarget = attributes.button2LinkTarget,
       button3Icon = attributes.button3Icon,
+      button3IconSize = attributes.button3IconSize,
       button3Text = attributes.button3Text,
       button3URL = attributes.button3URL,
       button3LinkTarget = attributes.button3LinkTarget,
@@ -9166,6 +9203,15 @@ function save(_ref) {
   var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('overlay-color', overlayColor));
   var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('left-pill-color', leftPillColor));
   var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('right-pill-color', rightPillColor));
+
+  var button2Style = _objectSpread({}, button2IconSize ? {
+    width: button2IconSize + "px"
+  } : {});
+
+  var button3Style = _objectSpread({}, button3IconSize ? {
+    width: button3IconSize + "px"
+  } : {});
+
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: classes
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -9213,6 +9259,7 @@ function save(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
   }, button2Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    style: button2Style,
     class: "button-icon-before button2-icon"
   }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(button2Icon)), button2Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",
@@ -9225,6 +9272,7 @@ function save(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-button text icon"
   }, button3Icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    style: button3Style,
     class: "button-icon-before button3-icon"
   }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(button3Icon)), button3Text && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "a",

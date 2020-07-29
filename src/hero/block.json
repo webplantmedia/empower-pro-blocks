@@ -99,6 +99,10 @@
 			"attribute": "name",
 			"default": "stop"
 		},
+		"button2IconSize": {
+			"type": "number",
+			"default": ""
+		},
 		"button2Text": {
 			"type": "string",
 			"source": "html",
@@ -123,6 +127,10 @@
 			"selector": ".button3-icon",
 			"attribute": "name",
 			"default": "play"
+		},
+		"button3IconSize": {
+			"type": "number",
+			"default": ""
 		},
 		"button3Text": {
 			"type": "string",

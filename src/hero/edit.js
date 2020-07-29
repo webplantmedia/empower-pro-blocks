@@ -92,10 +92,12 @@ function HeroEdit( {
 		button1URL,
 		button1LinkTarget,
 		button2Icon,
+		button2IconSize,
 		button2Text,
 		button2URL,
 		button2LinkTarget,
 		button3Icon,
+		button3IconSize,
 		button3Text,
 		button3URL,
 		button3LinkTarget,
@@ -377,6 +379,18 @@ function HeroEdit( {
 							noSelectedPlaceholder= { __( "Select Icon" ) }
 						/>
 					</Fragment>
+					<RangeControl
+						label={ __( 'Icon Size' ) }
+						value={ button2IconSize }
+						onChange={ ( value ) =>
+							setAttributes( {
+								button2IconSize: value,
+							} )
+						}
+						min={ 7 }
+						max={ 30 }
+						step={ 1 }
+					/>
 					<TextControl
 						label={ __( 'Text' ) }
 						value={ button2Text }
@@ -407,6 +421,18 @@ function HeroEdit( {
 							noSelectedPlaceholder= { __( "Select Icon" ) }
 						/>
 					</Fragment>
+					<RangeControl
+						label={ __( 'Icon Size' ) }
+						value={ button3IconSize }
+						onChange={ ( value ) =>
+							setAttributes( {
+								button3IconSize: value,
+							} )
+						}
+						min={ 7 }
+						max={ 30 }
+						step={ 1 }
+					/>
 					<TextControl
 						label={ __( 'Text' ) }
 						value={ button3Text }
@@ -457,6 +483,13 @@ function HeroEdit( {
 		url ? dimRatioToClass( rightPillDimRatio ) : {},
 		{ [ rightPillColor.class ]: rightPillColor.class },
 	);
+
+	const button2Style = {
+		...( button2IconSize ? { width: button2IconSize+"px" } : {} ),
+	};
+	const button3Style = {
+		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
+	};
 
 	return (
 		<>
@@ -514,7 +547,9 @@ function HeroEdit( {
 								<div class="gray-bottom-bar">
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
-											<div class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
+											{ button2Icon && (
+												<div style={ button2Style } class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
+											) }
 											<RichText
 												placeholder={ __( 'Button 2' ) }
 												value={ button2Text }
@@ -527,7 +562,9 @@ function HeroEdit( {
 									</div>
 									<div class="wp-block-buttons">
 										<div class="wp-block-button text icon">
-											<div class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
+											{ button3Icon && (
+												<div style={ button3Style } class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
+											) }
 											<RichText
 												placeholder={ __( 'Button 3' ) }
 												value={ button3Text }
