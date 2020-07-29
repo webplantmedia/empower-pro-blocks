@@ -16,10 +16,6 @@
 		"id": {
 			"type": "number"
 		},
-		"hasParallax": {
-			"type": "boolean",
-			"default": false
-		},
 		"dimRatio": {
 			"type": "number",
 			"default": 50

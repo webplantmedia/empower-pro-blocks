@@ -82,7 +82,6 @@ function HeroEdit( {
 		leftPillDimRatio,
 		rightPillDimRatio,
 		focalPoint,
-		hasParallax,
 		url,
 		heading,
 		text,
@@ -103,13 +102,6 @@ function HeroEdit( {
 		button3LinkTarget,
 	} = attributes;
 	const onSelectMedia = attributesFromMedia( setAttributes );
-
-	const toggleParallax = () => {
-		setAttributes( {
-			hasParallax: ! hasParallax,
-			...( ! hasParallax ? { focalPoint: undefined } : {} ),
-		} );
-	};
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
@@ -203,7 +195,6 @@ function HeroEdit( {
 										leftPillDimRatio: undefined,
 										rightPillDimRatio: undefined,
 										focalPoint: undefined,
-										hasParallax: undefined,
 									} )
 								}
 							>
@@ -211,28 +202,17 @@ function HeroEdit( {
 							</Button>
 						</PanelRow>
 					) }
-					{ url && IMAGE_BACKGROUND_TYPE === backgroundType && (
-						<PanelRow>
-							<ToggleControl
-								label={ __( 'Fixed background' ) }
-								checked={ hasParallax }
-								onChange={ toggleParallax }
-							/>
-						</PanelRow>
-					) }
 					{ url && IMAGE_BACKGROUND_TYPE === backgroundType &&
-						! hasParallax && (
-							<FocalPointPicker
-								label={ __( 'Focal point picker' ) }
-								url={ url }
-								value={ focalPoint }
-								onChange={ ( value ) =>
-									setAttributes( {
-										focalPoint: value,
-									} )
-								}
-							/>
-						) }
+						<FocalPointPicker
+							label={ __( 'Focal point picker' ) }
+							url={ url }
+							value={ focalPoint }
+							onChange={ ( value ) =>
+								setAttributes( {
+									focalPoint: value,
+								} )
+							}
+						/>
 					{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
 						<video autoPlay muted loop src={ url } />
 					) }
@@ -456,9 +436,10 @@ function HeroEdit( {
 
 	const classes = classnames( className, 
 		'wp-block-hero__outer-wrapper',
-		{ 'has-parallax': hasParallax,
-		[ heroColor.class ]: heroColor.class,
-	} );
+		{ 
+			[ heroColor.class ]: heroColor.class,
+		}
+	);
 
 	const overlayClasses = classnames( 
 		'overlay-color', 
