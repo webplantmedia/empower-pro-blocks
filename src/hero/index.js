@@ -21,6 +21,7 @@ export const settings = {
 		'Add an image or video with a text overlay — great for headers.'
 	),
 	icon,
+	category: 'abilitie-blocks',
 	supports: {
 		align: ["full"],
 		html: false,

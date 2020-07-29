@@ -23,7 +23,6 @@ function empower_pro_blocks_defines() {
 }
 add_action( 'init', 'empower_pro_blocks_defines' );
 
-
 require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
