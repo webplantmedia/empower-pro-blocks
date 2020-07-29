@@ -38,7 +38,7 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
-import { cover as icon, link } from '@wordpress/icons';
+// import { cover as icon, link } from '@wordpress/icons';
 
 /**
  * Internal dependencies

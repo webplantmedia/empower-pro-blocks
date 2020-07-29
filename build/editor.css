@@ -283,10 +283,8 @@ html .editor-styles-wrapper p.has-huge-font-size {
   overflow: hidden;
   position: relative; }
 
-.wp-block-empower-pro-blocks-hero {
-  padding-bottom: 154px; }
-  .wp-block-empower-pro-blocks-hero span.typewriter {
-    background-color: #cccccc; }
+.wp-block-empower-pro-blocks-hero span.typewriter {
+  background-color: #cccccc; }
 
 
 /*# sourceMappingURL=editor.css.map*/

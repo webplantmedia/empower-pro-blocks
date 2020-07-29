@@ -18,7 +18,6 @@ export { metadata, name };
 export const settings = {
 	title: __( 'Hero' ),
 	icon,
-	category: 'abilitie-blocks',
 	supports: {
 		align: ["full"],
 		html: false,

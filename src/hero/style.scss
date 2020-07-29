@@ -1,4 +1,6 @@
 .wp-block-empower-pro-blocks-hero {
+	padding-bottom: 77px * 2;
+
 	.wp-block-hero__inner-container {
 		& .wp-block-subhead,
 		& h1,
@@ -297,8 +299,7 @@
 }
 
 .admin-bar {
-	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-wrap .wp-block-hero__inner-container,
-	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-wrap {
+	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-wrap .wp-block-hero__inner-container {
 		$height: $nav_height + 32px + 77px;
 		height: calc((100vh) - #{$height});
 

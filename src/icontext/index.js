@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { cover as icon } from '@wordpress/icons';
+import { formatListBullets as icon } from '@wordpress/icons';
 
 /**
  * Internal dependencies

@@ -36,4 +36,5 @@ const registerBlock = ( block ) => {
 	// in various contexts — like the inserter and auto-complete components.
 	// Register all remaining core blocks.
 	hero,
+	icontext,
 ].forEach( registerBlock );

@@ -1,154 +1,20 @@
 {
-	"name": "empower-pro-blocks/hero",
-	"category": "layout",
+	"name": "empower-pro-blocks/icontext",
+	"category": "abilitie-blocks",
 	"attributes": {
-		"typewriterSearch": {
+		"icon": {
 			"type": "string",
-			"default": "with Impact"
+			"default": "home"
 		},
-		"typewriterReplace": {
-			"type": "string",
-			"default": "that Engages\nwith Results"
-		},
-		"url": {
-			"type": "string"
-		},
-		"id": {
-			"type": "number"
-		},
-		"dimRatio": {
+		"iconSize": {
 			"type": "number",
-			"default": 50
-		},
-		"leftPillDimRatio": {
-			"type": "number",
-			"default": 50
-		},
-		"rightPillDimRatio": {
-			"type": "number",
-			"default": 50
-		},
-		"overlayColor": {
-			"type": "string"
-		},
-		"customOverlayColor": {
-			"type": "string"
-		},
-		"heroColor": {
-			"type": "string",
-			"default": "primary"
-		},
-		"leftPillColor": {
-			"type": "string",
-			"default": "primary"
-		},
-		"customLeftPillColor": {
-			"type": "string"
-		},
-		"rightPillColor": {
-			"type": "string"
-		},
-		"customRightPillColor": {
-			"type": "string"
-		},
-		"backgroundType": {
-			"type": "string",
-			"default": "image"
-		},
-		"focalPoint": {
-			"type": "object"
-		},
-		"heading": {
-			"type": "string",
-			"source": "html",
-			"default": "Leadership Development <span class=\"typewriter\" data-replace=\"that Engages|with Results\">with Impact</span>",
-			"selector": ".hero-heading"
+			"default": ""
 		},
 		"text": {
 			"type": "string",
 			"source": "html",
-			"default": "Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.",
-			"selector": ".hero-text"
-		},
-		"button1Text": {
-			"type": "string",
-			"source": "html",
-			"default": "About Us",
-			"selector": "a.button1"
-		},
-		"button1URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "href"
-		},
-		"button1LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "target"
-		},
-		"button2Icon": {
-			"type": "string",
-			"source": "attribute",
-			"selector": ".button2-icon",
-			"attribute": "name",
-			"default": "stop"
-		},
-		"button2IconSize": {
-			"type": "number",
-			"default": ""
-		},
-		"button2Text": {
-			"type": "string",
-			"source": "html",
-			"default": "Our Programs",
-			"selector": "a.button2"
-		},
-		"button2URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "href"
-		},
-		"button2LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "target"
-		},
-		"button3Icon": {
-			"type": "string",
-			"source": "attribute",
-			"selector": ".button3-icon",
-			"attribute": "name",
-			"default": "play"
-		},
-		"button3IconSize": {
-			"type": "number",
-			"default": ""
-		},
-		"button3Text": {
-			"type": "string",
-			"source": "html",
-			"default": "Our Simulations",
-			"selector": "a.button3"
-		},
-		"button3URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "href"
-		},
-		"button3LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "target"
-		},
-		"align": {
-			"type": "string",
-			"default": "full"
+			"default": "201 W 5th Street, Suite 1100, Austin, TX 78701",
+			"selector": "icon-text"
 		}
 	}
 }

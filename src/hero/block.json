@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/hero",
-	"category": "layout",
+	"category": "abilitie-blocks",
 	"attributes": {
 		"typewriterSearch": {
 			"type": "string",
@@ -90,9 +90,6 @@
 		},
 		"button2Icon": {
 			"type": "string",
-			"source": "attribute",
-			"selector": ".button2-icon",
-			"attribute": "name",
 			"default": "stop"
 		},
 		"button2IconSize": {
@@ -119,9 +116,6 @@
 		},
 		"button3Icon": {
 			"type": "string",
-			"source": "attribute",
-			"selector": ".button3-icon",
-			"attribute": "name",
 			"default": "play"
 		},
 		"button3IconSize": {
