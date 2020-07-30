@@ -444,6 +444,10 @@ h6 {
 	.blocks-gallery-item img {
 		max-height: 80px;
 	}
+
+	.blocks-gallery-item figure {
+		justify-content: center;
+	}
 }
 
 .wp-block-gallery.brands .blocks-gallery-grid {

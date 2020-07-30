@@ -17,6 +17,8 @@ export default function save( { attributes } ) {
 	const {
 		icon,
 		iconSize,
+		topOffset,
+		iconSpacing,
 		text,
 		fontSize,
 		customFontSize,
@@ -28,6 +30,8 @@ export default function save( { attributes } ) {
 
 	const iconStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
+		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
+		...( iconSpacing ? { paddingRight: iconSpacing+"px" } : {} ),
 	};
 
 	const fontSizeClass = getFontSizeClass( fontSize );

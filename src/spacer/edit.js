@@ -70,7 +70,7 @@ const RSpacerEdit = ( {
 				} }
 			/>
 			<InspectorControls>
-				<PanelBody title={ __( 'Responsive Spacer settings' ) }>
+				<PanelBody title={ __( 'Responsive spacer settings' ) }>
 					<RangeControl
 						label={ __( 'Height in pixels' ) }
 						min={ MIN_SPACER_HEIGHT }

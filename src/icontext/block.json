@@ -10,6 +10,14 @@
 			"type": "number",
 			"default": ""
 		},
+		"topOffset": {
+			"type": "number",
+			"default": ""
+		},
+		"iconSpacing": {
+			"type": "number",
+			"default": ""
+		},
 		"text": {
 			"type": "string",
 			"source": "html",

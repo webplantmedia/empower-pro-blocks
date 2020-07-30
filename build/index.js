@@ -9370,7 +9370,7 @@ function attributesFromMedia(setAttributes) {
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\".icon-text\"},\"fontSize\":{\"type\":\"string\"},\"customFontSize\":{\"type\":\"number\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"topOffset\":{\"type\":\"number\",\"default\":\"\"},\"iconSpacing\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\".icon-text\"},\"fontSize\":{\"type\":\"string\"},\"customFontSize\":{\"type\":\"number\"}}}");
 
 /***/ }),
 
@@ -9446,6 +9446,8 @@ function IconTextBlock(_ref) {
       setFontSize = _ref.setFontSize;
   var icon = attributes.icon,
       iconSize = attributes.iconSize,
+      topOffset = attributes.topOffset,
+      iconSpacing = attributes.iconSpacing,
       text = attributes.text;
   var controls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text settings')
@@ -9480,11 +9482,37 @@ function IconTextBlock(_ref) {
     min: 7,
     max: 50,
     step: 1
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon Top Offset'),
+    value: topOffset,
+    onChange: function onChange(value) {
+      return setAttributes({
+        topOffset: value
+      });
+    },
+    min: -30,
+    max: 30,
+    step: 1
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon Spacing'),
+    value: iconSpacing,
+    onChange: function onChange(value) {
+      return setAttributes({
+        iconSpacing: value
+      });
+    },
+    min: 0,
+    max: 40,
+    step: 1
   }))));
   var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, 'wp-block-icontext__outer-wrapper');
 
-  var iconStyle = _objectSpread({}, iconSize ? {
+  var iconStyle = _objectSpread(_objectSpread(_objectSpread({}, iconSize ? {
     width: iconSize + "px"
+  } : {}), topOffset ? {
+    marginTop: topOffset + "px"
+  } : {}), iconSpacing ? {
+    paddingRight: iconSpacing + "px"
   } : {});
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, controls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -9600,13 +9628,19 @@ function save(_ref) {
   var attributes = _ref.attributes;
   var icon = attributes.icon,
       iconSize = attributes.iconSize,
+      topOffset = attributes.topOffset,
+      iconSpacing = attributes.iconSpacing,
       text = attributes.text,
       fontSize = attributes.fontSize,
       customFontSize = attributes.customFontSize;
   var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()('wp-block-icontext__outer-wrapper');
 
-  var iconStyle = _objectSpread({}, iconSize ? {
+  var iconStyle = _objectSpread(_objectSpread(_objectSpread({}, iconSize ? {
     width: iconSize + "px"
+  } : {}), topOffset ? {
+    marginTop: topOffset + "px"
+  } : {}), iconSpacing ? {
+    paddingRight: iconSpacing + "px"
   } : {});
 
   var fontSizeClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getFontSizeClass"])(fontSize);
@@ -9799,7 +9833,7 @@ var RSpacerEdit = function RSpacerEdit(_ref) {
       updateHeight(spacerHeight);
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelBody"], {
-    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Responsive Spacer settings')
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Responsive spacer settings')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Height in pixels'),
     min: MIN_SPACER_HEIGHT,

@@ -45,6 +45,8 @@ function IconTextBlock( {
 	const {
 		icon,
 		iconSize,
+		topOffset,
+		iconSpacing,
 		text,
 	} = attributes;
 
@@ -82,6 +84,30 @@ function IconTextBlock( {
 						max={ 50 }
 						step={ 1 }
 					/>
+					<RangeControl
+						label={ __( 'Icon Top Offset' ) }
+						value={ topOffset }
+						onChange={ ( value ) =>
+							setAttributes( {
+								topOffset: value,
+							} )
+						}
+						min={ -30 }
+						max={ 30 }
+						step={ 1 }
+					/>
+					<RangeControl
+						label={ __( 'Icon Spacing' ) }
+						value={ iconSpacing }
+						onChange={ ( value ) =>
+							setAttributes( {
+								iconSpacing: value,
+							} )
+						}
+						min={ 0 }
+						max={ 40 }
+						step={ 1 }
+					/>
 				</PanelBody>
 			</InspectorControls>
 		</>
@@ -93,6 +119,8 @@ function IconTextBlock( {
 
 	const iconStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
+		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
+		...( iconSpacing ? { paddingRight: iconSpacing+"px" } : {} ),
 	};
 
 	return (
