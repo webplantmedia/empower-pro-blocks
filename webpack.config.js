@@ -88,6 +88,9 @@ module.exports = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: ! production,
+							sassOptions: {
+								outputStyle: 'compressed',
+							},
 						},
 					},
 				],

@@ -1,30 +1,30 @@
 /* Gutenberg block styles */
 
-@import "mixins";
-@import "variables";
-@import "sass/blocks/global";
+@import "_mixins";
+@import "_variables";
+@import "sass/blocks/_global";
 
 /* Classes
 --------------------------------------------- */
-@import "sass/classes/tailwind";
+@import "sass/classes/_tailwind";
 
 /* Content
 --------------------------------------------- */
-@import "sass/blocks/quote";
-@import "sass/blocks/hero";
-@import "sass/blocks/gallery";
-@import "sass/blocks/media-text";
-@import "sass/blocks/buttons";
-@import "sass/blocks/paragraph";
-@import "sass/blocks/drop-caps";
-@import "sass/blocks/alignment";
-@import "sass/blocks/columns";
-@import "sass/blocks/cover-image";
-@import "sass/blocks/tables";
-@import "sass/blocks/image";
-@import "sass/blocks/atomic-blocks";
-@import "sass/blocks/woo-blocks";
-@import "sass/blocks/widget-blocks";
+@import "sass/blocks/_quote";
+@import "sass/blocks/_hero";
+@import "sass/blocks/_gallery";
+@import "sass/blocks/_media-text";
+@import "sass/blocks/_buttons";
+@import "sass/blocks/_paragraph";
+@import "sass/blocks/_drop-caps";
+@import "sass/blocks/_alignment";
+@import "sass/blocks/_columns";
+@import "sass/blocks/_cover-image";
+@import "sass/blocks/_tables";
+@import "sass/blocks/_image";
+@import "sass/blocks/_atomic-blocks";
+@import "sass/blocks/_woo-blocks";
+@import "sass/blocks/_widget-blocks";
 
 /* Blocks
 --------------------------------------------- */
