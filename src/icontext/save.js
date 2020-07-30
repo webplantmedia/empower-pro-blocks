@@ -8,6 +8,7 @@ import classnames from 'classnames';
  */
 import {
 	RichText,
+	getFontSizeClass,
 } from '@wordpress/block-editor';
 
 import renderSVG from "../../dist/blocks/renderIcon"
@@ -17,6 +18,8 @@ export default function save( { attributes } ) {
 		icon,
 		iconSize,
 		text,
+		fontSize,
+		customFontSize,
 	} = attributes;
 
 	const classes = classnames(
@@ -27,6 +30,16 @@ export default function save( { attributes } ) {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
 	};
 
+	const fontSizeClass = getFontSizeClass( fontSize );
+
+	const styles = {
+		fontSize: fontSizeClass ? undefined : customFontSize,
+	};
+
+	const className = classnames( 'icon-text', {
+		[ fontSizeClass ]: fontSizeClass,
+	} );
+
 	return (
 		<div className={ classes }>
 			<div className="wp-block-icontext__inner-wrap">
@@ -36,7 +49,8 @@ export default function save( { attributes } ) {
 				<RichText.Content
 					tagName="p"
 					value={ text }
-					className="icon-text"
+					className={ className ? className : undefined }
+					style={ styles }
 				/>
 			</div>
 		</div>

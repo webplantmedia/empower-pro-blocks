@@ -9370,7 +9370,7 @@ function attributesFromMedia(setAttributes) {
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\".icon-text\"}}}");
+module.exports = JSON.parse("{\"name\":\"empower-pro-blocks/icontext\",\"category\":\"abilitie-blocks\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"home\"},\"iconSize\":{\"type\":\"number\",\"default\":\"\"},\"text\":{\"type\":\"string\",\"source\":\"html\",\"default\":\"201 W 5th Street, Suite 1100, Austin, TX 78701\",\"selector\":\".icon-text\"},\"fontSize\":{\"type\":\"string\"},\"customFontSize\":{\"type\":\"number\"}}}");
 
 /***/ }),
 
@@ -9434,20 +9434,25 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var svg_icons = Object.keys(_dist_blocks_Icon_json__WEBPACK_IMPORTED_MODULE_5__);
 
-function IconTextEdit(_ref) {
+function IconTextBlock(_ref) {
+  var _createElement;
+
   var attributes = _ref.attributes,
       setAttributes = _ref.setAttributes,
       isSelected = _ref.isSelected,
       className = _ref.className,
-      noticeUI = _ref.noticeUI,
       toggleSelection = _ref.toggleSelection,
-      noticeOperations = _ref.noticeOperations;
+      fontSize = _ref.fontSize,
+      setFontSize = _ref.setFontSize;
   var icon = attributes.icon,
       iconSize = attributes.iconSize,
       text = attributes.text;
-  var removeAllNotices = noticeOperations.removeAllNotices,
-      createErrorNotice = noticeOperations.createErrorNotice;
   var controls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text settings')
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["FontSizePicker"], {
+    value: fontSize.size,
+    onChange: setFontSize
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Icon Text'),
     initialOpen: true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
@@ -9473,7 +9478,7 @@ function IconTextEdit(_ref) {
       });
     },
     min: 7,
-    max: 30,
+    max: 50,
     step: 1
   }))));
   var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, 'wp-block-icontext__outer-wrapper');
@@ -9489,8 +9494,7 @@ function IconTextEdit(_ref) {
   }, icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     style: iconStyle,
     class: "button-icon-before"
-  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"])(icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], {
-    tagName: "p",
+  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_6__["default"])(icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["RichText"], (_createElement = {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Text'),
     value: text,
     onChange: function onChange(value) {
@@ -9499,18 +9503,15 @@ function IconTextEdit(_ref) {
       });
     },
     withoutInteractiveFormatting: true,
-    className: "icon-text"
-  }))));
+    className: "icon-text",
+    tagName: "p"
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_createElement, "className", classnames__WEBPACK_IMPORTED_MODULE_2___default()('icon-text', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontSize.class, fontSize.class))), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_createElement, "style", {
+    fontSize: fontSize.size ? fontSize.size + 'px' : undefined
+  }), _createElement)))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_11__["withDispatch"])(function (dispatch) {
-  var _dispatch = dispatch('core/block-editor'),
-      toggleSelection = _dispatch.toggleSelection;
-
-  return {
-    toggleSelection: toggleSelection
-  };
-}), _wordpress_components__WEBPACK_IMPORTED_MODULE_3__["withNotices"], _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["withInstanceId"]])(IconTextEdit));
+var IconTextEdit = Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__["compose"])([Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_9__["withFontSizes"])('fontSize')])(IconTextBlock);
+/* harmony default export */ __webpack_exports__["default"] = (IconTextEdit);
 
 /***/ }),
 
@@ -9600,13 +9601,20 @@ function save(_ref) {
   var attributes = _ref.attributes;
   var icon = attributes.icon,
       iconSize = attributes.iconSize,
-      text = attributes.text;
+      text = attributes.text,
+      fontSize = attributes.fontSize,
+      customFontSize = attributes.customFontSize;
   var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()('wp-block-icontext__outer-wrapper');
 
   var iconStyle = _objectSpread({}, iconSize ? {
     width: iconSize + "px"
   } : {});
 
+  var fontSizeClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getFontSizeClass"])(fontSize);
+  var styles = {
+    fontSize: fontSizeClass ? undefined : customFontSize
+  };
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()('icon-text', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontSizeClass, fontSizeClass));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: classes
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -9617,7 +9625,8 @@ function save(_ref) {
   }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(icon)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: "p",
     value: text,
-    className: "icon-text"
+    className: className ? className : undefined,
+    style: styles
   })));
 }
 

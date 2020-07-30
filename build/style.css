@@ -2320,10 +2320,13 @@ hr.wp-block-separator {
 
 .wp-block-empower-pro-blocks-icontext .button-icon-before {
   width: 46px;
-  padding-right: 8px; }
+  padding-right: 8px;
+  display: flex;
+  align-items: center; }
 
 .wp-block-empower-pro-blocks-icontext .icon-text {
-  margin-bottom: 0; }
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
 
 
 /*# sourceMappingURL=style.css.map*/

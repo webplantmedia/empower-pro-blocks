@@ -21,22 +21,26 @@ import renderSVG from "../../dist/blocks/renderIcon"
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
-	RichText,
+	AlignmentToolbar,
+	BlockControls,
+	FontSizePicker,
 	InspectorControls,
+	withFontSizes,
+	RichText,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
 
 let svg_icons = Object.keys( EPIcon )
 
-function IconTextEdit( {
+function IconTextBlock( {
 	attributes,
 	setAttributes,
 	isSelected,
 	className,
-	noticeUI,
 	toggleSelection,
-	noticeOperations,
+	fontSize,
+	setFontSize,
 } ) {
 	const {
 		icon,
@@ -44,11 +48,15 @@ function IconTextEdit( {
 		text,
 	} = attributes;
 
-	const { removeAllNotices, createErrorNotice } = noticeOperations;
-
 	const controls = (
 		<>
 			<InspectorControls>
+				<PanelBody title={ __( 'Text settings' ) }>
+					<FontSizePicker
+						value={ fontSize.size }
+						onChange={ setFontSize }
+					/>
+				</PanelBody>
 				<PanelBody title={ __( 'Icon Text' ) } initialOpen={ true }>
 					<Fragment>
 						<p className="">{__( "Icon" )}</p>
@@ -71,7 +79,7 @@ function IconTextEdit( {
 							} )
 						}
 						min={ 7 }
-						max={ 30 }
+						max={ 50 }
 						step={ 1 }
 					/>
 				</PanelBody>
@@ -96,12 +104,20 @@ function IconTextEdit( {
 						<div style={ iconStyle } class="button-icon-before">{ renderSVG(icon) }</div>
 					) }
 					<RichText
-						tagName="p"
 						placeholder={ __( 'Text' ) }
 						value={ text }
 						onChange={ ( value ) => setAttributes( { text: value } ) }
 						withoutInteractiveFormatting
 						className="icon-text"
+						tagName="p"
+						className={ classnames( 'icon-text', {
+							[ fontSize.class ]: fontSize.class,
+						} ) }
+						style={ {
+							fontSize: fontSize.size
+								? fontSize.size + 'px'
+								: undefined,
+						} }
 					/>
 				</div>
 			</div>
@@ -109,14 +125,8 @@ function IconTextEdit( {
 	);
 }
 
-export default compose( [
-	withDispatch( ( dispatch ) => {
-		const { toggleSelection } = dispatch( 'core/block-editor' );
+const IconTextEdit = compose( [ withFontSizes( 'fontSize' ) ] )(
+	IconTextBlock
+);
 
-		return {
-			toggleSelection,
-		};
-	} ),
-	withNotices,
-	withInstanceId,
-] )( IconTextEdit );
+export default IconTextEdit;
