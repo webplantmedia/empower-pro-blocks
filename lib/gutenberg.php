@@ -73,7 +73,7 @@ function empower_pro_blocks_custom_gutenberg_css() {
 	wp_enqueue_style( 'empower-pro-blocks-gutenberg-fonts', $empower_pro_blocks_appearance['fonts-url'], array(), EMPOWER_PRO_BLOCKS_VERSION);
 	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 
-	wp_enqueue_style( 'empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'build/style.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/style.css" ) );
+	wp_enqueue_style( 'empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'build/blocks.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/blocks.css" ) );
 
 	$css = empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );
 	$css .= empower_pro_blocks_get_gutenberg_button_css( $empower_pro_blocks_appearance );
