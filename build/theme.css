@@ -7908,6 +7908,9 @@ body:not(.wp-custom-logo) .site-title {
     .footer-widgets > .wrap {
       padding-top: 60px;
       padding-bottom: 60px; } }
+  .footer-widgets > .wrap .wp-block-latest-posts li {
+    padding-left: 0;
+    padding-right: 15px; }
   .footer-widgets > .wrap > .wp-block-group .wp-block-group__inner-container > * {
     margin-bottom: 0; }
   .footer-widgets > .wrap > .wp-block-group .wp-block-group__inner-container > *:first-child {
