@@ -4,6 +4,11 @@
 import classnames from 'classnames';
 
 /**
+ * Internal dependencies
+ */
+import HeadingToolbar from './heading-toolbar';
+
+/**
  * WordPress dependencies
  */
 // import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
@@ -11,6 +16,7 @@ import { useCallback, Fragment } from '@wordpress/element';
 import {
 	PanelBody,
 	RangeControl,
+	ToggleControl,
 	withNotices,
 } from '@wordpress/components';
 
@@ -22,6 +28,7 @@ import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
 	AlignmentToolbar,
+	BlockVerticalAlignmentToolbar,
 	BlockControls,
 	FontSizePicker,
 	InspectorControls,
@@ -48,11 +55,43 @@ function IconTextBlock( {
 		topOffset,
 		iconSpacing,
 		text,
+		heading,
+		hasHeading,
+		verticalAlignment,
+		level,
 	} = attributes;
+
+	const onVerticalAlignmentChange = ( alignment ) => {
+		setAttributes( { verticalAlignment: alignment } );
+	};
 
 	const controls = (
 		<>
+			<BlockControls>
+				<BlockVerticalAlignmentToolbar
+					onChange={ onVerticalAlignmentChange }
+					value={ verticalAlignment }
+				/>
+			</BlockControls>
 			<InspectorControls>
+				<PanelBody title={ __( 'Heading settings' ) }>
+					<ToggleControl
+						label={ __( 'Display heading' ) }
+						onChange={ ( value ) => setAttributes( value ? { hasHeading: true } : { hasHeading: false } ) }
+						checked={ hasHeading === true }
+					/>
+					{ hasHeading && (
+						<HeadingToolbar
+							isCollapsed={ false }
+							minLevel={ 2 }
+							maxLevel={ 7 }
+							selectedLevel={ level }
+							onChange={ ( value ) =>
+								setAttributes( { level: value } )
+							}
+						/>
+					) }
+				</PanelBody>
 				<PanelBody title={ __( 'Text settings' ) }>
 					<FontSizePicker
 						value={ fontSize.size }
@@ -115,6 +154,7 @@ function IconTextBlock( {
 
 	const classes = classnames( className, 
 		'wp-block-icontext__outer-wrapper',
+		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 	);
 
 	const iconStyle = {
@@ -122,6 +162,8 @@ function IconTextBlock( {
 		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
 		...( iconSpacing ? { paddingRight: iconSpacing+"px" } : {} ),
 	};
+
+	const tagName = 'h' + level;
 
 	return (
 		<>
@@ -131,22 +173,33 @@ function IconTextBlock( {
 					{ icon && (
 						<div style={ iconStyle } class="button-icon-before">{ renderSVG(icon) }</div>
 					) }
-					<RichText
-						placeholder={ __( 'Text' ) }
-						value={ text }
-						onChange={ ( value ) => setAttributes( { text: value } ) }
-						withoutInteractiveFormatting
-						className="icon-text"
-						tagName="p"
-						className={ classnames( 'icon-text', {
-							[ fontSize.class ]: fontSize.class,
-						} ) }
-						style={ {
-							fontSize: fontSize.size
-								? fontSize.size + 'px'
-								: undefined,
-						} }
-					/>
+					<div class="wp-block-icontext__text-wrap">
+						{ hasHeading && (
+							<RichText
+								placeholder={ __( 'Start writing' ) }
+								value={ heading }
+								onChange={ ( value ) => setAttributes( { heading: value } ) }
+								withoutInteractiveFormatting
+								className="icon-heading"
+								tagName={ tagName }
+							/>
+						) }
+						<RichText
+							placeholder={ __( 'Start writing' ) }
+							value={ text }
+							onChange={ ( value ) => setAttributes( { text: value } ) }
+							withoutInteractiveFormatting
+							tagName="p"
+							className={ classnames( 'icon-text', {
+								[ fontSize.class ]: fontSize.class,
+							} ) }
+							style={ {
+								fontSize: fontSize.size
+									? fontSize.size + 'px'
+									: undefined,
+							} }
+						/>
+					</div>
 				</div>
 			</div>
 		</>

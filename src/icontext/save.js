@@ -21,12 +21,19 @@ export default function save( { attributes } ) {
 		iconSpacing,
 		text,
 		fontSize,
+		hasHeading,
+		level,
+		heading,
+		verticalAlignment,
 		customFontSize,
 	} = attributes;
 
 	const classes = classnames(
 		'wp-block-icontext__outer-wrapper',
+		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 	);
+
+	const tagName = 'h' + level;
 
 	const iconStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
@@ -50,12 +57,22 @@ export default function save( { attributes } ) {
 				{ icon && (
 					<div style={ iconStyle } class="button-icon-before">{ renderSVG(icon) }</div>
 				) }
-				<RichText.Content
-					tagName="p"
-					value={ text }
-					className={ className ? className : undefined }
-					style={ styles }
-				/>
+				<div class="wp-block-icontext__text-wrap">
+					{ hasHeading && (
+						<RichText.Content
+							tagName={ tagName }
+							value={ heading }
+							className="icon-heading"
+							style={ styles }
+						/>
+					) }
+					<RichText.Content
+						tagName="p"
+						value={ text }
+						className={ className ? className : undefined }
+						style={ styles }
+					/>
+				</div>
 			</div>
 		</div>
 	);

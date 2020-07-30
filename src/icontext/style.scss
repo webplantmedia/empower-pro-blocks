@@ -6,9 +6,29 @@
 		display: flex;
 		align-items: flex-start;
 	}
+
+	&.is-vertically-aligned-bottom {
+		.wp-block-icontext__inner-wrap {
+			align-items: flex-end;
+		}
+	}
+
+	&.is-vertically-aligned-top {
+		.wp-block-icontext__inner-wrap {
+			align-items: flex-start;
+		}
+	}
+
+	&.is-vertically-aligned-center {
+		.wp-block-icontext__inner-wrap {
+			align-items: center;
+		}
+	}
+
 	.button-icon-before {
-		width: 46px;
+		width: 18px;
 		padding-right: 15px;
+		margin-top: 5px;
 		display: flex;
 		align-items: center;
 		box-sizing: content-box;
