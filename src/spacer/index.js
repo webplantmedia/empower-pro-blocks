@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { formatListBullets as icon } from '@wordpress/icons';
+import { resizeCornerNE as icon } from '@wordpress/icons';
 
 /**
  * Internal dependencies
@@ -16,11 +16,8 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Icon Text' ),
+	title: __( 'Responsive Spacer' ),
 	icon,
-	supports: {
-		html: false,
-	},
-	save,
 	edit,
+	save,
 };

@@ -13,6 +13,7 @@ import {
  */
 import * as hero from './hero';
 import * as icontext from './icontext';
+import * as spacer from './spacer';
 
 /**
  * Function to register an individual block.
@@ -37,4 +38,5 @@ const registerBlock = ( block ) => {
 	// Register all remaining core blocks.
 	hero,
 	icontext,
+	spacer,
 ].forEach( registerBlock );

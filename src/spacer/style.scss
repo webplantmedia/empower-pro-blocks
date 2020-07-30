@@ -1,0 +1,11 @@
+.wp-block-spacer {
+	clear: both;
+}
+@media screen and ( max-width: $mobile_width ) {
+	@for $i from 0 through 500 {
+		$x: $i * 10;
+		.mobile-height-#{$x} {
+			height: #{$x}px !important;
+		}
+	}
+}

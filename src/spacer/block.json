@@ -1,0 +1,14 @@
+{
+	"name": "empower-pro-blocks/spacer",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"height": {
+			"type": "number",
+			"default": 100
+		},
+		"mobileHeight": {
+			"type": "number",
+			"default": 70
+		}
+	}
+}
