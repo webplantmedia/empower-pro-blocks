@@ -5,10 +5,13 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry,
-		style: path.resolve( process.cwd(), 'src', 'blocks.scss' ),
+		blocks: path.resolve( process.cwd(), 'src', 'blocks.scss' ),
 		editor: path.resolve( process.cwd(), 'src', 'editor.scss' ),
 		theme: path.resolve( process.cwd(), 'src', 'theme.scss' ),
 		woocommerce: path.resolve( process.cwd(), 'src', 'woocommerce.scss' ),
+	},
+	output: {
+		path: path.resolve( process.cwd(), 'build' ),
 	},
 	optimization: {
 		...defaultConfig.optimization,
