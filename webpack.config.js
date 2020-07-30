@@ -11,10 +11,40 @@ module.exports = {
 		woocommerce: path.resolve( process.cwd(), 'src', 'woocommerce.scss' ),
 	},
 	output: {
+		filename: '[name].js',
 		path: path.resolve( process.cwd(), 'build' ),
 	},
 	optimization: {
 		...defaultConfig.optimization,
+		splitChunks: {
+			cacheGroups: {
+				editor: {
+					name: 'editor',
+					test: /editor\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				blocks: {
+					name: 'blocks',
+					test: /blocks\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				theme: {
+					name: 'theme',
+					test: /theme\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				woocommerce: {
+					name: 'woocommerce',
+					test: /woocommerce\.(sc|sa|c)ss$/,
+					chunks: 'all',
+					enforce: true,
+				},
+				default: false,
+			},
+		},
 	},
 	module: {
 		...defaultConfig.module,
