@@ -1644,6 +1644,16 @@ $sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 .wp-block-group.callout {
 	transition: all 0.15s linear;
 
+	.wp-block-group__inner-container {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.wp-block-buttons {
+			margin-top: auto;
+		}
+	}
+
 	&:hover {
 		-webkit-transform: translateY(-2px);
 		transform: translateY(-2px);

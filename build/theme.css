@@ -3690,6 +3690,12 @@ table.wp-block-table.program-guide {
 
 .wp-block-group.callout {
   transition: all 0.15s linear; }
+  .wp-block-group.callout .wp-block-group__inner-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+    .wp-block-group.callout .wp-block-group__inner-container .wp-block-buttons {
+      margin-top: auto; }
   .wp-block-group.callout:hover {
     transform: translateY(-2px);
     box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.15); }
