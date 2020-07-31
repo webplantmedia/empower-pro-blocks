@@ -3882,6 +3882,9 @@ table.wp-block-table.program-guide {
         top: 3px;
         right: 0;
         width: 600px; }
+        @media only screen and (max-width: 1023px) {
+          .wp-block-group.media-cover > .wp-block-group__inner-container .video-player .wp-block-group__inner-container .wp-block-image {
+            width: 100%; } }
         .wp-block-group.media-cover > .wp-block-group__inner-container .video-player .wp-block-group__inner-container .wp-block-image img {
           border-top-left-radius: 4px;
           border-top-right-radius: 4px; }

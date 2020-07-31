@@ -1931,6 +1931,10 @@ $sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 				top: 3px;
 				right: 0;
 				width: 600px;
+
+				@media only screen and ( max-width: $ipad_width ) {
+					width: 100%;
+				}
 				
 				img {
 					border-top-left-radius: $border_radius;
