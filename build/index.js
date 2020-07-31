@@ -9792,7 +9792,7 @@ function IconTextBlock(_ref) {
       });
     },
     min: 0,
-    max: 50,
+    max: 250,
     step: 1
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_10__["__experimentalPanelColorGradientSettings"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_11__["__"])('Icon Color'),
@@ -9808,12 +9808,14 @@ function IconTextBlock(_ref) {
   var headingClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('icon-heading', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, headingColor.class, headingColor.class));
   var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('button-icon-before', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, 'is-image-icon', 'image' === imageIcon), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, iconColor.class, iconColor.class));
 
-  var iconStyle = _objectSpread(_objectSpread(_objectSpread({}, iconSize ? {
+  var iconStyle = _objectSpread({}, undefined !== iconSpacing ? {
+    flexBasis: iconSpacing + "px"
+  } : {});
+
+  var iconInnerStyle = _objectSpread(_objectSpread({}, iconSize ? {
     width: iconSize + "px"
   } : {}), topOffset ? {
     marginTop: topOffset + "px"
-  } : {}), iconSpacing ? {
-    paddingRight: iconSpacing + "px"
   } : {});
 
   var tagName = 'h' + level;
@@ -9824,12 +9826,18 @@ function IconTextBlock(_ref) {
   }, "icon" === imageIcon && icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     style: iconStyle,
     class: iconClasses
-  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_7__["default"])(icon)), "image" === imageIcon && image && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-inner",
+    style: iconInnerStyle
+  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_7__["default"])(icon))), "image" === imageIcon && image && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     style: iconStyle,
     class: iconClasses
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-inner",
+    style: iconInnerStyle
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
     src: image.url
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-icontext__text-wrap"
   }, hasHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_10__["RichText"], {
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_11__["__"])('Start writing'),
@@ -9839,7 +9847,6 @@ function IconTextBlock(_ref) {
         heading: value
       });
     },
-    withoutInteractiveFormatting: true,
     className: headingClasses,
     tagName: tagName
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_10__["RichText"], {
@@ -9850,7 +9857,6 @@ function IconTextBlock(_ref) {
         text: value
       });
     },
-    withoutInteractiveFormatting: true,
     tagName: "p",
     className: classnames__WEBPACK_IMPORTED_MODULE_2___default()('icon-text', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontSize.class, fontSize.class)),
     style: {
@@ -10136,12 +10142,14 @@ function save(_ref) {
   var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('button-icon-before', _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, 'is-image-icon', 'image' === imageIcon), Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('icon-color', iconColor));
   var tagName = 'h' + level;
 
-  var iconStyle = _objectSpread(_objectSpread(_objectSpread({}, iconSize ? {
+  var iconStyle = _objectSpread({}, undefined !== iconSpacing ? {
+    flexBasis: iconSpacing + "px"
+  } : {});
+
+  var iconInnerStyle = _objectSpread(_objectSpread({}, iconSize ? {
     width: iconSize + "px"
   } : {}), topOffset ? {
     marginTop: topOffset + "px"
-  } : {}), iconSpacing ? {
-    paddingRight: iconSpacing + "px"
   } : {});
 
   var fontSizeClass = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getFontSizeClass"])(fontSize);
@@ -10156,12 +10164,18 @@ function save(_ref) {
   }, "icon" === imageIcon && icon && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     style: iconStyle,
     class: iconClasses
-  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(icon)), "image" === imageIcon && image && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-inner",
+    style: iconInnerStyle
+  }, Object(_dist_blocks_renderIcon__WEBPACK_IMPORTED_MODULE_4__["default"])(icon))), "image" === imageIcon && image && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     style: iconStyle,
     class: iconClasses
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    class: "button-icon-inner",
+    style: iconInnerStyle
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
     src: image.url
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "wp-block-icontext__text-wrap"
   }, hasHeading && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
     tagName: tagName,

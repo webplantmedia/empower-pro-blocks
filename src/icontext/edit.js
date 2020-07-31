@@ -221,7 +221,7 @@ function IconTextBlock( {
 							} )
 						}
 						min={ 0 }
-						max={ 50 }
+						max={ 250 }
 						step={ 1 }
 					/>
 				</PanelBody>
@@ -259,9 +259,12 @@ function IconTextBlock( {
 	);
 
 	const iconStyle = {
+		...( undefined !== iconSpacing ? { flexBasis: iconSpacing+"px" } : {} ),
+	};
+
+	const iconInnerStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
 		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
-		...( iconSpacing ? { paddingRight: iconSpacing+"px" } : {} ),
 	};
 
 	const tagName = 'h' + level;
@@ -273,11 +276,13 @@ function IconTextBlock( {
 				<div className="wp-block-icontext__inner-wrap">
 
 					{ "icon" === imageIcon && icon && (
-						<div style={ iconStyle } class={ iconClasses }>{ renderSVG(icon) }</div>
+						<div style={ iconStyle } class={ iconClasses }>
+							<div class="button-icon-inner" style={ iconInnerStyle }>{ renderSVG(icon) }</div>
+						</div>
 					) }
 					{ "image" === imageIcon && image && (
 						<div style={ iconStyle } class={ iconClasses }>
-							<img src={image.url} />
+							<div class="button-icon-inner" style={ iconInnerStyle }><img src={image.url} /></div>
 						</div>
 					) }
 					<div class="wp-block-icontext__text-wrap">
@@ -286,7 +291,6 @@ function IconTextBlock( {
 								placeholder={ __( 'Start writing' ) }
 								value={ heading }
 								onChange={ ( value ) => setAttributes( { heading: value } ) }
-								withoutInteractiveFormatting
 								className={ headingClasses }
 								tagName={ tagName }
 							/>
@@ -295,7 +299,6 @@ function IconTextBlock( {
 							placeholder={ __( 'Start writing' ) }
 							value={ text }
 							onChange={ ( value ) => setAttributes( { text: value } ) }
-							withoutInteractiveFormatting
 							tagName="p"
 							className={ classnames( 'icon-text', {
 								[ fontSize.class ]: fontSize.class,

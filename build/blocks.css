@@ -2331,12 +2331,14 @@ hr.wp-block-separator {
   align-items: center; }
 
 .wp-block-empower-pro-blocks-icontext .button-icon-before {
-  width: 18px;
-  padding-right: 15px;
-  margin-top: 0;
+  flex: 0 0 30px;
   display: flex;
   align-items: center;
   box-sizing: content-box; }
+  .wp-block-empower-pro-blocks-icontext .button-icon-before .button-icon-inner {
+    width: 18px; }
+  .wp-block-empower-pro-blocks-icontext .button-icon-before.is-image-icon {
+    margin-top: 0; }
   .wp-block-empower-pro-blocks-icontext .button-icon-before svg {
     fill: #777777; }
 

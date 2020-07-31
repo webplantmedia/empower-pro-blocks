@@ -30,12 +30,18 @@
 	}
 
 	.button-icon-before {
-		width: 18px;
-		padding-right: 15px;
-		margin-top: 0;
+		flex: 0 0 30px;
 		display: flex;
 		align-items: center;
 		box-sizing: content-box;
+
+		.button-icon-inner {
+			width: 18px;
+		}
+
+		&.is-image-icon {
+			margin-top: 0;
+		}
 
 		svg {
 			fill: $text_color;
