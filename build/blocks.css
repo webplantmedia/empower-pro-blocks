@@ -2432,6 +2432,8 @@ h6.elegant {
   display: block; }
   .wp-block-gallery.brands .blocks-gallery-item img {
     max-height: 80px; }
+  .wp-block-gallery.brands .blocks-gallery-item figure {
+    justify-content: center; }
 
 .wp-block-gallery.brands .blocks-gallery-grid {
   flex-wrap: wrap;
