@@ -3335,7 +3335,7 @@ table.wp-block-table.program-guide {
       background-color: #f5f5f5;
       border-radius: 99em;
       position: absolute; }
-      table.wp-block-table.program-guide tbody td i.p1, table.wp-block-table.program-guide tbody td i.p2, table.wp-block-table.program-guide tbody td i.p3 {
+      table.wp-block-table.program-guide tbody td i.p1, table.wp-block-table.program-guide tbody td i.p2, table.wp-block-table.program-guide tbody td i.p3, table.wp-block-table.program-guide tbody td i.p4 {
         opacity: 0;
         z-index: 1; }
       table.wp-block-table.program-guide tbody td i.active {
@@ -3802,9 +3802,9 @@ table.wp-block-table.program-guide {
   display: grid;
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
-  grid-gap: 60px 60px;
-  -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px 40px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   transition: all 0.2s;
   position: -webkit-sticky;

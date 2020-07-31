@@ -16,7 +16,8 @@ $empower_pro_blocks_default_colors = array(
 	'fifth' => '#42b97c',
 	'sixth' => '#942940',
 	'seventh' => '#176e99',
-	'eighth' => '#ffb433',
+	// 'eighth' => '#ffb433',
+	'eighth' => '#ffcc2a',
 );
 
 $empower_pro_blocks_primary_color              = get_theme_mod( 'empower_pro_blocks_primary_color', $empower_pro_blocks_default_colors['primary'] );

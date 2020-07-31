@@ -1189,7 +1189,8 @@ table.wp-block-table.program-guide {
 
 				&.p1,
 				&.p2,
-				&.p3 {
+				&.p3,
+				&.p4 {
 					opacity: 0;
 					// left: -9999em;
 					z-index: 1;
@@ -1810,8 +1811,8 @@ $sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 .table-player {
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-gap: 60px 60px;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px 40px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	justify-content: center;
 	transition: all 0.2s;
 	position: -webkit-sticky;
