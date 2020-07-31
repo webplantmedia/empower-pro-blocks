@@ -444,10 +444,6 @@ h6 {
 	.blocks-gallery-item img {
 		max-height: 80px;
 	}
-
-	.blocks-gallery-item figure {
-		justify-content: center;
-	}
 }
 
 .wp-block-gallery.brands .blocks-gallery-grid {
@@ -679,6 +675,62 @@ ul.highlight,
 	&.plain {
 		border-top-width: 0;
 		border-radius: 0;
+	}
+}
+
+// Cover Blocks Hero Intro
+.wp-block-group.hero-intro > .wp-block-group__inner-container {
+	& .wp-block-subhead,
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		color: $heading_color !important;
+		font-size: 48px;
+
+		@media screen and ( max-width: $tablet_width ) {
+			font-size: 38px;
+		}
+	}
+
+	& p {
+		color: $text_color !important;
+	}
+
+	.hero-content {
+		background-color: transparent !important;
+	}
+
+	.hero-content > .wp-block-group__inner-container {
+		border-top: 14px solid $border_color;
+		max-width: 600px;
+		width: 100%;
+		background-color: $body_background_color;
+		padding: 30px 0;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		border-radius: $border_radius;
+		border-top-left-radius: $border_radius_medium;
+		border-top-right-radius: $border_radius_medium;
+
+		@media screen and ( min-width: $ipad_width_1 ) {
+			> *,
+			> .h1,
+			> h1,
+			> div,
+			> p {
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+		}
+
+	}
+
+	.hero-content .wp-block-image {
+		text-align: right;
+		margin-bottom: 0;
+		display: block;
 	}
 }
 
