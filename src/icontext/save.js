@@ -20,6 +20,7 @@ export default function save( { attributes } ) {
 		iconSize,
 		topOffset,
 		iconSpacing,
+		marginBottom,
 		text,
 		fontSize,
 		hasHeading,
@@ -52,7 +53,11 @@ export default function save( { attributes } ) {
 	const tagName = 'h' + level;
 
 	const iconStyle = {
-		...( undefined !== iconSpacing ? { flexBasis: iconSpacing+"px" } : {} ),
+		...( iconSpacing || iconSpacing === 0 ? { flexBasis: iconSpacing+"px" } : {} ),
+	};
+
+	const containerStyle = {
+		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
 	};
 
 	const iconInnerStyle = {
@@ -71,7 +76,7 @@ export default function save( { attributes } ) {
 	} );
 
 	return (
-		<div className={ classes }>
+		<div style={ containerStyle } className={ classes }>
 			<div className="wp-block-icontext__inner-wrap">
 				{ "icon" === imageIcon && icon && (
 					<div style={ iconStyle } class={ iconClasses }>

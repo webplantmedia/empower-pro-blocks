@@ -64,6 +64,7 @@ function IconTextBlock( {
 		iconSize,
 		topOffset,
 		iconSpacing,
+		marginBottom,
 		text,
 		heading,
 		hasHeading,
@@ -143,7 +144,7 @@ function IconTextBlock( {
 						onChange={ setFontSize }
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Icon Text' ) } initialOpen={ true }>
+				<PanelBody title={ __( 'Icon' ) } initialOpen={ true }>
 					<SelectControl
 						label={ __( "Image / Icon" ) }
 						value={ imageIcon }
@@ -224,6 +225,18 @@ function IconTextBlock( {
 						max={ 250 }
 						step={ 1 }
 					/>
+					<RangeControl
+						label={ __( 'Margin Bottom' ) }
+						value={ marginBottom }
+						onChange={ ( value ) =>
+							setAttributes( {
+								marginBottom: value,
+							} )
+						}
+						min={ 0 }
+						max={ 150 }
+						step={ 1 }
+					/>
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Icon Color' ) }
@@ -259,7 +272,11 @@ function IconTextBlock( {
 	);
 
 	const iconStyle = {
-		...( undefined !== iconSpacing ? { flexBasis: iconSpacing+"px" } : {} ),
+		...( iconSpacing || iconSpacing === 0 ? { flexBasis: iconSpacing+"px" } : {} ),
+	};
+
+	const containerStyle = {
+		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
 	};
 
 	const iconInnerStyle = {
@@ -272,7 +289,7 @@ function IconTextBlock( {
 	return (
 		<>
 			{ controls }
-			<div className={ classes }>
+			<div style={ containerStyle } className={ classes }>
 				<div className="wp-block-icontext__inner-wrap">
 
 					{ "icon" === imageIcon && icon && (

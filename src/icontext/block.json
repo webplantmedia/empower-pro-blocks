@@ -10,6 +10,10 @@
 			"type": "number",
 			"default": ""
 		},
+		"marginBottom": {
+			"type": "number",
+			"default": ""
+		},
 		"topOffset": {
 			"type": "number",
 			"default": ""
