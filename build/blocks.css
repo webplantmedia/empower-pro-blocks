@@ -2894,8 +2894,7 @@ ul.ul-li-med-space > li {
           align-items: center; }
         .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container > .hero-content > .wp-block-hero__inner-content .gray-bottom-bar .wp-block-button .button-icon-before {
           margin-right: 6px;
-          width: 11px;
-          display: flex; }
+          width: 11px; }
         .wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container > .hero-content > .wp-block-hero__inner-content .gray-bottom-bar.wp-block-buttons .wp-block-button {
           margin-right: 30px; }
         @media screen and (max-width: 600px) {
