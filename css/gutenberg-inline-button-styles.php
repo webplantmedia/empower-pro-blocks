@@ -124,19 +124,6 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			color: $primary_contrast_color;
 		}
 
-		html .wp-block-button .wp-block-button__link.has-primary-background-color {
-			border-color: $primary_color;
-			background-color: $primary_color;
-			color: $primary_contrast_color;
-		}
-
-		html .wp-block-button .wp-block-button__link.has-primary-background-color:hover,
-		html .wp-block-button .wp-block-button__link.has-primary-background-color:focus {
-			border-color: $primary_bright_color !important;
-			background-color: $primary_bright_color !important;
-			color: $primary_contrast_color;
-		}
-
 		html .wp-block-button.is-style-outline .wp-block-button__link.has-secondary-background-color,
 		html .wp-block-button.is-style-outline .wp-block-button__link.has-primary-background-color,
 		html .wp-block-button.is-style-outline .wp-block-button__link {
