@@ -202,6 +202,9 @@ function HeroEdit( {
 							</Button>
 						</PanelRow>
 					) }
+					{ !! url && (
+						<hr />
+					) }
 					{ url && IMAGE_BACKGROUND_TYPE === backgroundType &&
 						<FocalPointPicker
 							label={ __( 'Focal point picker' ) }

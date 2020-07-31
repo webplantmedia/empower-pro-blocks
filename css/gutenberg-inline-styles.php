@@ -68,6 +68,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .has-$color-overlay-color {
 				background-color: ${ $color . '_color' } !important;
 			}
+			html .button-icon-before.has-$color-icon-color svg path,
 			html .wp-block-hero__outer-wrapper .has-$color-right-pill-color svg path,
 			html .wp-block-empower-pro-blocks-hero .has-$color-left-pill-color svg path {
 				fill: ${ $color . '_color' } !important;
@@ -84,6 +85,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .has-$color-background-color {
 				background-color: ${ $color . '_color' } !important;
 			}
+			html .icon-heading.has-$color-heading-color,
 			html .has-text-color.has-$color-color {
 				color: ${ $color . '_color' };
 			}

@@ -9,6 +9,7 @@ import classnames from 'classnames';
 import {
 	RichText,
 	getFontSizeClass,
+	getColorClassName,
 } from '@wordpress/block-editor';
 
 import renderSVG from "../../dist/blocks/renderIcon"
@@ -25,12 +26,27 @@ export default function save( { attributes } ) {
 		level,
 		heading,
 		verticalAlignment,
+		headingColor,
+		iconColor,
+		image,
+		imageIcon,
 		customFontSize,
 	} = attributes;
 
 	const classes = classnames(
 		'wp-block-icontext__outer-wrapper',
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
+	);
+
+	const headingClasses = classnames(
+		'icon-heading',
+		getColorClassName( 'heading-color', headingColor ),
+	);
+
+	const iconClasses = classnames(
+		'button-icon-before',
+		{ [ 'is-image-icon' ]: 'image' === imageIcon },
+		getColorClassName( 'icon-color', iconColor ),
 	);
 
 	const tagName = 'h' + level;
@@ -54,15 +70,20 @@ export default function save( { attributes } ) {
 	return (
 		<div className={ classes }>
 			<div className="wp-block-icontext__inner-wrap">
-				{ icon && (
-					<div style={ iconStyle } class="button-icon-before">{ renderSVG(icon) }</div>
+				{ "icon" === imageIcon && icon && (
+					<div style={ iconStyle } class={ iconClasses }>{ renderSVG(icon) }</div>
+				) }
+				{ "image" === imageIcon && image && (
+					<div style={ iconStyle } class={ iconClasses }>
+						<img src={image.url} />
+					</div>
 				) }
 				<div class="wp-block-icontext__text-wrap">
 					{ hasHeading && (
 						<RichText.Content
 							tagName={ tagName }
 							value={ heading }
-							className="icon-heading"
+							className={ headingClasses }
 							style={ styles }
 						/>
 					) }

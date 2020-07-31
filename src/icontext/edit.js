@@ -15,8 +15,11 @@ import HeadingToolbar from './heading-toolbar';
 import { useCallback, Fragment } from '@wordpress/element';
 import {
 	PanelBody,
+	PanelRow,
+	Button,
 	RangeControl,
 	ToggleControl,
+	SelectControl,
 	withNotices,
 } from '@wordpress/components';
 
@@ -33,6 +36,9 @@ import {
 	FontSizePicker,
 	InspectorControls,
 	withFontSizes,
+	MediaUpload,
+	withColors,
+	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	RichText,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
@@ -48,6 +54,10 @@ function IconTextBlock( {
 	toggleSelection,
 	fontSize,
 	setFontSize,
+	headingColor,
+	setHeadingColor,
+	iconColor,
+	setIconColor,
 } ) {
 	const {
 		icon,
@@ -59,10 +69,30 @@ function IconTextBlock( {
 		hasHeading,
 		verticalAlignment,
 		level,
+		image,
+		imageIcon,
 	} = attributes;
 
 	const onVerticalAlignmentChange = ( alignment ) => {
 		setAttributes( { verticalAlignment: alignment } );
+	};
+
+	const onRemoveImage = () => {
+		setAttributes( { image: null } )
+	}
+
+	const onSelectImage = ( media ) => {
+
+		if ( ! media || ! media.url ) {
+			setAttributes( { image: null } )
+			return
+		}
+
+		if ( ! media.type || "image" != media.type ) {
+			return
+		}
+
+		setAttributes( { image: media } )
 	};
 
 	const controls = (
@@ -92,6 +122,21 @@ function IconTextBlock( {
 						/>
 					) }
 				</PanelBody>
+				{ hasHeading && (
+					<PanelColorGradientSettings
+						title={ __( 'Heading' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: headingColor.color,
+								onColorChange: setHeadingColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				) }
 				<PanelBody title={ __( 'Text settings' ) }>
 					<FontSizePicker
 						value={ fontSize.size }
@@ -99,18 +144,50 @@ function IconTextBlock( {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Icon Text' ) } initialOpen={ true }>
-					<Fragment>
-						<p className="">{__( "Icon" )}</p>
-						<FontIconPicker
-							icons={svg_icons}
-							renderFunc= {renderSVG}
-							theme="default"
-							value={icon}
-							onChange={ ( value ) => setAttributes( { icon: value } ) }
-							isMulti={false}
-							noSelectedPlaceholder= { __( "Select Icon" ) }
-						/>
-					</Fragment>
+					<SelectControl
+						label={ __( "Image / Icon" ) }
+						value={ imageIcon }
+						options={ [
+							{ value: "icon", label: __( "Icon" ) },
+							{ value: "image", label: __( "Image" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { imageIcon: value } ) }
+					/>
+					{ "icon" === imageIcon &&
+						<Fragment>
+							<p className="">{__( "Icon" )}</p>
+							<FontIconPicker
+								icons={svg_icons}
+								renderFunc= {renderSVG}
+								theme="default"
+								value={icon}
+								onChange={ ( value ) => setAttributes( { icon: value } ) }
+								isMulti={false}
+								noSelectedPlaceholder= { __( "Select Icon" ) }
+							/>
+						</Fragment>
+					}
+					{ "image" === imageIcon &&
+						<Fragment>
+							<MediaUpload
+								title={ __( "Select Image" ) }
+								onSelect={ onSelectImage }
+								allowedTypes={ [ "image" ] }
+								value={ image }
+								render={ ( { open } ) => (
+									<Button isDefault onClick={ open }>
+										{ ! image ? __( "Select Image" ) : __( "Replace image" ) }
+									</Button>
+								) }
+							/>
+							{ image &&
+								( <Button isDefault className="" onClick={ onRemoveImage } isLink isDestructive>
+									{ __( "Remove Image" ) }
+								</Button> )
+							}
+						</Fragment>
+					}
+					<hr />
 					<RangeControl
 						label={ __( 'Icon Size' ) }
 						value={ iconSize }
@@ -120,7 +197,7 @@ function IconTextBlock( {
 							} )
 						}
 						min={ 7 }
-						max={ 50 }
+						max={ 150 }
 						step={ 1 }
 					/>
 					<RangeControl
@@ -131,8 +208,8 @@ function IconTextBlock( {
 								topOffset: value,
 							} )
 						}
-						min={ -30 }
-						max={ 30 }
+						min={ -50 }
+						max={ 50 }
 						step={ 1 }
 					/>
 					<RangeControl
@@ -144,10 +221,23 @@ function IconTextBlock( {
 							} )
 						}
 						min={ 0 }
-						max={ 40 }
+						max={ 50 }
 						step={ 1 }
 					/>
 				</PanelBody>
+				<PanelColorGradientSettings
+					title={ __( 'Icon Color' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: iconColor.color,
+							onColorChange: setIconColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+				</PanelColorGradientSettings>
 			</InspectorControls>
 		</>
 	);
@@ -155,6 +245,17 @@ function IconTextBlock( {
 	const classes = classnames( className, 
 		'wp-block-icontext__outer-wrapper',
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
+	);
+
+	const headingClasses = classnames( 
+		'icon-heading', 
+		{ [ headingColor.class ]: headingColor.class, }
+	);
+
+	const iconClasses = classnames( 
+		'button-icon-before', 
+		{ [ 'is-image-icon' ]: 'image' === imageIcon },
+		{ [ iconColor.class ]: iconColor.class, }
 	);
 
 	const iconStyle = {
@@ -170,8 +271,14 @@ function IconTextBlock( {
 			{ controls }
 			<div className={ classes }>
 				<div className="wp-block-icontext__inner-wrap">
-					{ icon && (
-						<div style={ iconStyle } class="button-icon-before">{ renderSVG(icon) }</div>
+
+					{ "icon" === imageIcon && icon && (
+						<div style={ iconStyle } class={ iconClasses }>{ renderSVG(icon) }</div>
+					) }
+					{ "image" === imageIcon && image && (
+						<div style={ iconStyle } class={ iconClasses }>
+							<img src={image.url} />
+						</div>
 					) }
 					<div class="wp-block-icontext__text-wrap">
 						{ hasHeading && (
@@ -180,7 +287,7 @@ function IconTextBlock( {
 								value={ heading }
 								onChange={ ( value ) => setAttributes( { heading: value } ) }
 								withoutInteractiveFormatting
-								className="icon-heading"
+								className={ headingClasses }
 								tagName={ tagName }
 							/>
 						) }
@@ -206,8 +313,9 @@ function IconTextBlock( {
 	);
 }
 
-const IconTextEdit = compose( [ withFontSizes( 'fontSize' ) ] )(
-	IconTextBlock
-);
+const IconTextEdit = compose( [
+	withFontSizes( 'fontSize' ),
+	withColors( { headingColor: 'heading-color', iconColor: 'icon-color' } ),
+] )( IconTextBlock );
 
 export default IconTextEdit;

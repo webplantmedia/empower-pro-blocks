@@ -273,6 +273,9 @@ html .editor-styles-wrapper p.has-huge-font-size {
 .wp-block[data-align="full"] {
   max-width: none; }
 
+.block-editor-block-inspector .components-button + .components-button {
+  margin-left: 10px; }
+
 /* URL inspector field in sidebar */
 .url-input-inspector-field input {
   max-width: 100% !important; }

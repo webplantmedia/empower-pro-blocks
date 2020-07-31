@@ -2311,6 +2311,9 @@ hr.wp-block-separator {
     .top-right-background {
       display: none; } }
 
+.wp-block-empower-pro-blocks-icontext .wp-block-icontext__text-wrap {
+  width: 100%; }
+
 .wp-block-empower-pro-blocks-icontext + .wp-block-empower-pro-blocks-icontext {
   margin-top: 10px; }
 
@@ -2330,7 +2333,7 @@ hr.wp-block-separator {
 .wp-block-empower-pro-blocks-icontext .button-icon-before {
   width: 18px;
   padding-right: 15px;
-  margin-top: 5px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   box-sizing: content-box; }

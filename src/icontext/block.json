@@ -35,11 +35,24 @@
 			"type": "boolean",
 			"default": false
 		},
+		"imageIcon": {
+			"type": "string",
+			"default": "icon"
+		},
+		"image": {
+			"type": "object"
+		},
 		"heading": {
 			"type": "string",
 			"source": "html",
 			"default": "",
 			"selector": ".icon-heading"
+		},
+		"headingColor": {
+			"type": "string"
+		},
+		"iconColor": {
+			"type": "string"
 		},
 		"verticalAlignment": {
 			"type": "string"

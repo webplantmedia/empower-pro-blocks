@@ -51,11 +51,11 @@ $empower_pro_blocks_eighth_color            = get_theme_mod( 'empower_pro_blocks
 $empower_pro_blocks_eighth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_eighth_color, 0.15 );
 $empower_pro_blocks_eighth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_eighth_color );
 
-$empower_pro_blocks_text_color            = '#222222';
+$empower_pro_blocks_text_color            = '#777777';
 $empower_pro_blocks_text_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_text_color, 0.15 );
 $empower_pro_blocks_text_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_text_color );
 
-$empower_pro_blocks_darktext_color            = '#000000';
+$empower_pro_blocks_darktext_color            = '#222222';
 $empower_pro_blocks_darktext_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_darktext_color, 0.15 );
 $empower_pro_blocks_darktext_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_darktext_color );
 
