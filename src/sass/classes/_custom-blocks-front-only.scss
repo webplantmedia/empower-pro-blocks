@@ -921,6 +921,11 @@ table.wp-block-table.pricing-guide {
 	@media screen and ( max-width: $tablet_width ) {
 		tr td:first-child {
 			width: 27%;
+
+			@media screen and ( max-width: $tablet_width ) {
+				width: 45%;
+			}
+
 			div {
 				left: 0;
 				transform: rotate(-90deg) translateY(100%);
@@ -1153,6 +1158,27 @@ table.wp-block-table.program-guide {
 
 			&:first-child {
 				padding-left: 0;
+				position: relative;
+				padding-left: 50px;
+
+				@media screen and ( max-width: $tablet_width ) {
+					padding-left: 0;
+					padding-right: 10px;
+				}
+
+				span.abilitie-icon {
+					position: absolute;
+					margin: 0;
+					left: 0px;
+					width: 28px;
+
+					@media screen and ( max-width: $tablet_width ) {
+						position: relative;
+						// display: none;
+						width: 14px;
+						height: 20px;
+					}
+				}
 
 				&::before {
 					display: none;
@@ -1161,7 +1187,7 @@ table.wp-block-table.program-guide {
 
 			@media screen and ( max-width: $tablet_width ) {
 				p {
-					display: none;
+					font-size: $body_font_size_tiny;
 				}
 			}
 
