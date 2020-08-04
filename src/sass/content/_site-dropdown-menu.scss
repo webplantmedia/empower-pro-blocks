@@ -1624,7 +1624,7 @@
 	background-image: url(../images/triangles-icon-blue.svg);
 }
 .abilitie-icon-6 {
-	background-image: url(../images/immersion.svg);
+	background-image: url(../images/invited-hex.svg);
 }
 .abilitie-icon-7 {
 	background-image: url(../images/immersion-2.svg);
@@ -1659,10 +1659,12 @@
 	.globalNav .linkContainer .icon-hover.abilitie-icon-8,
 	.globalNav .linkContainer:hover .abilitie-icon-8,
 	.globalNav .linkContainer .icon-hover.abilitie-icon-7,
-	.globalNav .linkContainer:hover .abilitie-icon-7,
+	.globalNav .linkContainer:hover .abilitie-icon-7 {
+		background-image: url(../images/immersion-gray.svg);
+	}
 	.globalNav .linkContainer .icon-hover.abilitie-icon-6,
 	.globalNav .linkContainer:hover .abilitie-icon-6 {
-		background-image: url(../images/immersion-gray.svg);
+		background-image: url(../images/invited-hex-hover.svg);
 	}
 }
 .globalNav .linkContainer:hover .svg-icon {

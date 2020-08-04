@@ -1171,7 +1171,7 @@ h6 b {
 .entry-title,
 .h1,
 h1 {
-	font-size: 78px;
+	font-size: 62px;
 	text-transform: none;
 	letter-spacing: normal;
 	margin-bottom: 40px;
@@ -1339,6 +1339,7 @@ iframe,
 object,
 video {
 	border-width: 0;
+	margin-bottom: 40px;
 }
 
 embed,
@@ -1348,7 +1349,6 @@ object,
 video,
 .wp-caption {
 	max-width: 100%;
-	margin-bottom: 40px;
 }
 
 img {
@@ -3016,7 +3016,7 @@ img.alignright,
 	letter-spacing: normal;
 	color: #333;
 	font-style: normal;
-	font-size: 78px;
+	font-size: 62px;
 	display: block;
 	margin: 10px 0;
 }
@@ -9817,7 +9817,7 @@ body:not(.wp-custom-logo) .site-title {
 }
 
 .abilitie-icon-6 {
-	background-image: url(../images/immersion.svg);
+	background-image: url(../images/invited-hex.svg);
 }
 
 .abilitie-icon-7 {
@@ -9856,10 +9856,12 @@ body:not(.wp-custom-logo) .site-title {
 	.globalNav .linkContainer .icon-hover.abilitie-icon-8,
 	.globalNav .linkContainer:hover .abilitie-icon-8,
 	.globalNav .linkContainer .icon-hover.abilitie-icon-7,
-	.globalNav .linkContainer:hover .abilitie-icon-7,
+	.globalNav .linkContainer:hover .abilitie-icon-7 {
+		background-image: url(../images/immersion-gray.svg);
+	}
 	.globalNav .linkContainer .icon-hover.abilitie-icon-6,
 	.globalNav .linkContainer:hover .abilitie-icon-6 {
-		background-image: url(../images/immersion-gray.svg);
+		background-image: url(../images/invited-hex-hover.svg);
 	}
 }
 
@@ -10231,7 +10233,7 @@ body:not(.wp-custom-logo) .site-title {
 .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta {
 	position: relative;
 	z-index: 1;
-	top: -8%;
+	top: -4%;
 }
 
 .has-featured-image .empower-pro-blocks-page-title .inner-container .entry-meta * {

@@ -3,6 +3,7 @@ iframe,
 object,
 video {
 	border-width: 0;
+	margin-bottom: $margin_bottom;
 }
 
 embed,
@@ -12,7 +13,6 @@ object,
 video,
 .wp-caption {
 	max-width: 100%;
-	margin-bottom: $margin_bottom;
 }
 
 img {
