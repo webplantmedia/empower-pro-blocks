@@ -960,7 +960,7 @@ table.wp-block-table.pricing-guide {
 		}
 
 		tfoot {
-			display: none;
+			// display: none;
 
 			td {
 				text-align: right !important;
@@ -1212,6 +1212,10 @@ table.wp-block-table.program-guide {
 				background-color: #f5f5f5;
 				border-radius: 99em;
 				position: absolute;
+
+				@media screen and ( max-width: $tablet_width ) {
+					// margin-left: -20px;
+				}
 
 				&.p1,
 				&.p2,
@@ -1971,8 +1975,8 @@ $sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 		display: block;
 		
 		> div {
-			margin-bottom: $margin_bottom_mobile;
-			padding: 30px 20px;
+			margin-bottom: 20px;
+			padding: 20px 20px;
 		}
 	}
 }
