@@ -3657,6 +3657,16 @@ ul.ul-li-med-space > li {
 	/* xclip */
 }
 
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .wp-block-subhead,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h1,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h2,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h3,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h4,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h5,
+.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h6 {
+	font-size: 48px;
+}
+
 @media screen and (max-width: 860px) {
 	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container .wp-block-subhead,
 	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-container h1,
