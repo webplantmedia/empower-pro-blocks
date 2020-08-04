@@ -18,7 +18,7 @@
 function empower_pro_blocks_featured_image() {
 
 	$featured_image = '';
-	$appearance     = genesis_get_config( 'appearance' );
+	$appearance     = empower_pro_blocks_get_config( 'appearance' );
 
 	if ( is_404() && ! $appearance['page-image'] ) {
 		return;
@@ -87,7 +87,7 @@ function empower_pro_blocks_featured_image() {
  */
 function empower_pro_blocks_has_featured_image( $classes ) {
 
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	if ( ! empower_pro_blocks_has_post_thumbnail() ) {
 		return $classes;

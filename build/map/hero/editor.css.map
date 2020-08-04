@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../hero/editor.css",
+	"sources": [
+		"../../../src/hero/editor.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,6BAA6B,CAAC;CAC7B,QAAQ,EAAE,MAAM;CAChB,QAAQ,EAAE,QAAQ;CAClB;;AAED,AAAA,iCAAiC,CAAC;CACjC,cAAc,EAAE,KAAS;CAKzB;;AAND,AAGC,iCAHgC,CAGhC,IAAI,AAAA,WAAW,CAAC;CACf,gBAAgB,EAAE,OAAO;CACzB"
+}
