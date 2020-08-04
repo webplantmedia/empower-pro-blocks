@@ -1,16 +1,16 @@
 .has-featured-image {
 	.empower-pro-blocks-page-title {
 		position: relative;
-		height: 100vh;
+		height: calc((100vh) - #{$nav_height});
 		min-height: 500px;
 		margin-bottom: 100px;
 		padding: 0;
-		-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
-		clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
+		// -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
+		// clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 60px), 50% 100%, 0% calc(100% - 60px));
 
 		@media screen and ( max-width: $tablet_width ) {
-			-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
-			clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
+			// -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
+			// clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 50% 100%, 0% calc(100% - 40px));
 		}
 
 		@media screen and ( max-width: $ipad_width ) {
@@ -101,7 +101,7 @@
 
 .has-featured-image.admin-bar {
 	.empower-pro-blocks-page-title {
-		$height: 32px;
+		$height: $nav_height + 32;
 		height: calc((100vh) - #{$height});
 
 		@media screen and ( max-width: $ipad_width ) {
