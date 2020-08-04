@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
  * Adjust featured images.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 /**
@@ -15,7 +15,7 @@
  *
  * @since 1.0.0
  */
-function leadership_pro_featured_image() {
+function empower_pro_blocks_featured_image() {
 
 	$featured_image = '';
 	$appearance     = genesis_get_config( 'appearance' );
@@ -40,7 +40,7 @@ function leadership_pro_featured_image() {
 		return;
 	}
 
-	$image_id = leadership_pro_get_post_thumbnail_id();
+	$image_id = empower_pro_blocks_get_post_thumbnail_id();
 	$class    = '';
 
 	if ( $image_id ) {
@@ -52,7 +52,7 @@ function leadership_pro_featured_image() {
 				'context' => '',
 				'attr'    => array(
 					'alt'   => $image_alt,
-					'class' => 'leadership-pro-single-image post-image',
+					'class' => 'empower-pro-blocks-single-image post-image',
 				),
 			)
 		);
@@ -69,7 +69,7 @@ function leadership_pro_featured_image() {
 		echo wp_kses_post( $html );
 	}
 
-	$button_html = genesis_get_custom_field( 'leadership_pro_featured_button' );
+	$button_html = genesis_get_custom_field( 'empower_pro_blocks_featured_button' );
 
 	if ( $button_html ) {
 		echo wp_kses_post( $button_html );
@@ -85,11 +85,11 @@ function leadership_pro_featured_image() {
  * @param array $classes Original body classes.
  * @return array Modified body classes.
  */
-function leadership_pro_has_featured_image( $classes ) {
+function empower_pro_blocks_has_featured_image( $classes ) {
 
 	$appearance = genesis_get_config( 'appearance' );
 
-	if ( ! leadership_pro_has_post_thumbnail() ) {
+	if ( ! empower_pro_blocks_has_post_thumbnail() ) {
 		return $classes;
 	}
 
@@ -121,8 +121,8 @@ function leadership_pro_has_featured_image( $classes ) {
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
 
-add_filter( 'genesis_get_image', 'leadership_pro_wrap_featured_images', 10, 2 );
-add_filter( 'genesis_markup_entry-image-link_content', 'leadership_pro_wrap_featured_images', 10, 2 );
+add_filter( 'genesis_get_image', 'empower_pro_blocks_wrap_featured_images', 10, 2 );
+add_filter( 'genesis_markup_entry-image-link_content', 'empower_pro_blocks_wrap_featured_images', 10, 2 );
 /**
  * Adds a wrapper to featured images output by Genesis Featured Post,
  * Genesis Featured Page, and Genesis Portfolio widgets, as well as
@@ -136,7 +136,7 @@ add_filter( 'genesis_markup_entry-image-link_content', 'leadership_pro_wrap_feat
  * @param array  $args The arguments passed to genesis_get_image.
  * @return string The new HTML output including the wrapper div.
  */
-function leadership_pro_wrap_featured_images( $output, $args ) {
+function empower_pro_blocks_wrap_featured_images( $output, $args ) {
 
 	if ( strpos( $output, '<img' ) === false ) {
 		return $output;
@@ -146,7 +146,7 @@ function leadership_pro_wrap_featured_images( $output, $args ) {
 	$is_post_or_page_widget = in_array( $args['context'], array( 'featured-post-widget', 'featured-page-widget' ), true );
 
 	if ( $is_archive_thumbnail || $is_post_or_page_widget ) {
-		$output = sprintf( '<div class="leadership-pro-featured-image">%s</div>', $output );
+		$output = sprintf( '<div class="empower-pro-blocks-featured-image">%s</div>', $output );
 	}
 
 	return $output;
