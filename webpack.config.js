@@ -50,10 +50,6 @@ const config = {
 	mode,
 	entry: {
 		index: path.resolve( process.cwd(), 'src', 'index.js' ),
-		blocks: path.resolve( process.cwd(), 'src', 'blocks.scss' ),
-		editor: path.resolve( process.cwd(), 'src', 'editor.scss' ),
-		theme: path.resolve( process.cwd(), 'src', 'theme.scss' ),
-		woocommerce: path.resolve( process.cwd(), 'src', 'woocommerce.scss' ),
 	},
 	output: {
 		filename: '[name].js',
@@ -70,30 +66,6 @@ const config = {
 			mode === 'production' && ! process.env.WP_BUNDLE_ANALYZER,
 		splitChunks: {
 			cacheGroups: {
-				editor: {
-					name: 'editor',
-					test: /editor\.(sc|sa|c)ss$/,
-					chunks: 'all',
-					enforce: true,
-				},
-				blocks: {
-					name: 'blocks',
-					test: /blocks\.(sc|sa|c)ss$/,
-					chunks: 'all',
-					enforce: true,
-				},
-				theme: {
-					name: 'theme',
-					test: /theme\.(sc|sa|c)ss$/,
-					chunks: 'all',
-					enforce: true,
-				},
-				woocommerce: {
-					name: 'woocommerce',
-					test: /woocommerce\.(sc|sa|c)ss$/,
-					chunks: 'all',
-					enforce: true,
-				},
 				default: false,
 			},
 		},
@@ -146,22 +118,6 @@ const config = {
 				test: /\.svg$/,
 				use: [ '@svgr/webpack', 'url-loader' ],
 			},
-			{
-				test: /\.css$/,
-				use: cssLoaders,
-			},
-			{
-				test: /\.(sc|sa)ss$/,
-				use: [
-					...cssLoaders,
-					{
-						loader: require.resolve( 'sass-loader' ),
-						options: {
-							sourceMap: ! isProduction,
-						},
-					},
-				],
-			},
 		],
 	},
 	plugins: [
@@ -171,12 +127,6 @@ const config = {
 		// The WP_BUNDLE_ANALYZER global variable enables a utility that represents
 		// bundle content as a convenient interactive zoomable treemap.
 		process.env.WP_BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
-		// MiniCSSExtractPlugin to extract the CSS thats gets imported into JavaScript.
-		new MiniCSSExtractPlugin( { esModule: false, filename: '[name].css' } ),
-		// MiniCSSExtractPlugin creates JavaScript assets for CSS that are
-		// obsolete and should be removed. Related webpack issue:
-		// https://github.com/webpack-contrib/mini-css-extract-plugin/issues/85
-		new FixStyleWebpackPlugin(),
 		// WP_LIVE_RELOAD_PORT global variable changes port on which live reload
 		// works when running watch mode.
 		! isProduction &&
@@ -192,17 +142,5 @@ const config = {
 		children: false,
 	},
 };
-
-if ( ! isProduction ) {
-	// WP_DEVTOOL global variable controls how source maps are generated.
-	// See: https://webpack.js.org/configuration/devtool/#devtool.
-	config.devtool = process.env.WP_DEVTOOL || 'source-map';
-	config.module.rules.unshift( {
-		test: /\.js$/,
-		exclude: [ /node_modules/ ],
-		use: require.resolve( 'source-map-loader' ),
-		enforce: 'pre',
-	} );
-}
 
 module.exports = config;
