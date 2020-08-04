@@ -1336,11 +1336,19 @@ p.has-huge-font-size {
 --------------------------------------------- */
 embed,
 iframe,
+object,
+video {
+	border-width: 0;
+}
+
+embed,
+iframe,
 img,
 object,
 video,
 .wp-caption {
 	max-width: 100%;
+	margin-bottom: 40px;
 }
 
 img {
