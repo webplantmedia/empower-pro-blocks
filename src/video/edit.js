@@ -60,6 +60,7 @@ const INNER_BLOCKS_TEMPLATE = [
 			content: "Join over 40 leading global organizations utilizing our solutions today",
 			level: 3,
 			textColor: 'white',
+			className: "mb-0",
 		},
 	],
 	[

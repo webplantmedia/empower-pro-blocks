@@ -5633,6 +5633,7 @@ ul.ul-li-med-space > li {
 	width: 600px;
 	margin-top: 18px;
 	min-height: 300px;
+	margin-bottom: 0;
 }
 
 .wp-block-empower-pro-blocks-video .video-player .wp-block-group__inner-container .wp-block-video video {
