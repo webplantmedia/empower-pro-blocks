@@ -69,7 +69,7 @@ export default function save( { attributes } ) {
 							<path d="M0,0c0,0,0,390.3,0,605.2C0,2067,396.3,1317,1278.8,1365.7c579.4,27.2,549.3-491.5,1242-734.3 c211-82,210.6-631.4,210.6-631.4L0,0z"/>
 						</svg>
 					</div>
-					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />;
+					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 					<div class="wp-block-group block-wrap group-columns-2">
 						<div class="wp-block-group__inner-container">
 							<div class="wp-block-group white-form-fields">
@@ -103,7 +103,7 @@ export default function save( { attributes } ) {
 							</div>
 						</div>
 					</div>
-					<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />;
+					<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
 				</div>
 			</div>
 		</div>
