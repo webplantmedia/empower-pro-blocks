@@ -1,0 +1,107 @@
+.wp-block-empower-pro-blocks-video {
+	position: relative;
+	overflow: hidden;
+
+	.wp-block-group.block-wrap.group-columns-2 {
+		> .wp-block-group__inner-container {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-gap: 60px 60px;
+			grid-template-columns: 1fr 1fr;
+			align-items: start;
+			justify-content: center;
+
+			@media only screen and ( max-width: $ipad_width ) {
+				display: block;
+			}
+		}
+	}
+
+	.wp-block-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		vertical-align: top;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+
+	.background-image {
+		position: absolute;
+		bottom: -0px;
+		left: 50%;
+		margin-left: -980px;
+		width: 2732px;
+		max-width: 2732px;
+		z-index: -1;
+	}
+
+	.video-player {
+		position: relative;
+		display: block;
+
+		.wp-block-group__inner-container {
+			border-radius: $border_radius;
+			background-color: $body_background_color;
+			box-shadow: 6px 32px 36px rgba(0,0,0,.2);
+			overflow: hidden;
+
+			@media only screen and ( min-width: $ipad_width_1 ) {
+				position: absolute;
+				width: 600px;
+				left: 50px;
+				top: 0;
+				overflow: visible;
+			}
+
+			.wp-block-image {
+				position: absolute;
+				top: 3px;
+				right: 0;
+				width: 600px;
+
+				@media only screen and ( max-width: $ipad_width ) {
+					width: 100%;
+				}
+				
+				img {
+					border-top-left-radius: $border_radius;
+					border-top-right-radius: $border_radius;
+				}
+			}
+			.wp-block-video {
+				position: relative;
+				width: 600px;
+				margin-top: 18px;
+
+				video {
+					vertical-align: top;
+					border-bottom-left-radius: $border_radius;
+					border-bottom-right-radius: $border_radius;
+				}
+			}
+
+			.video-logos {
+				position: absolute;
+				width: 300px;
+				min-width: 300px;
+				left: -69px;
+				top: -130px;
+			}
+
+			.video-logos-bottom {
+				position: absolute;
+				width: 700px;
+				min-width: 700px;
+				left: -69px;
+				top: 210px;
+				z-index: -1;
+			}
+		}
+	}
+}
