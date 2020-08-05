@@ -41,7 +41,7 @@ const RSpacerEdit = ( {
 					'block-library-spacer__resize-container',
 					{
 						'is-selected': isSelected,
-						[ 'mobile-height-' + attributes.mobileHeight ]: attributes.mobileHeight,
+						[ 'mobile-height-' + attributes.mobileHeight ]: attributes.mobileHeight !== '',
 					}
 				) }
 				size={ {

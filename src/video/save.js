@@ -50,23 +50,23 @@ export default function save( { attributes } ) {
 	);
 
 	const topHeightClassName = classnames( {
-		[ 'mobile-height-' + topMobileHeight ]: topMobileHeight,
+		[ 'mobile-height-' + topMobileHeight ]: topMobileHeight !== '',
 	} );
 
 	const bottomHeightClassName = classnames( {
-		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight,
+		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight !== '',
 	} );
 
 	const columnOneClassName = classnames(
 		'wp-block-group',
 		'white-form-fields',
-		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing, }
+		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing !== '', }
 	);
 
 	const columnTwoClassName = classnames(
 		'wp-block-group',
 		'video-player',
-		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing, }
+		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing !== '', }
 	);
 
 	const topVideoImageUrl = empower_pro_blocks.plugins_url + topVideoImage;
