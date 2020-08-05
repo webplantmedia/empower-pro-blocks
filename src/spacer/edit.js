@@ -12,7 +12,7 @@ import { PanelBody, ResizableBox, RangeControl } from '@wordpress/components';
 import { compose, withInstanceId } from '@wordpress/compose';
 import { withDispatch } from '@wordpress/data';
 
-const MIN_SPACER_HEIGHT = 20;
+const MIN_SPACER_HEIGHT = 0;
 const MAX_SPACER_HEIGHT = 500;
 
 const RSpacerEdit = ( {
@@ -47,7 +47,7 @@ const RSpacerEdit = ( {
 				size={ {
 					height,
 				} }
-				minHeight={ MIN_SPACER_HEIGHT }
+				minHeight={ 20 }
 				enable={ {
 					top: false,
 					right: false,

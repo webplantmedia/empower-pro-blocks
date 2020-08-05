@@ -2087,11 +2087,6 @@ th:first-child {
 	position: relative;
 }
 
-.block-wrap {
-	margin: 0 auto;
-	max-width: 1120px;
-}
-
 .content-sidebar-wrap,
 .wrap {
 	margin: 0 auto;

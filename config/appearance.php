@@ -69,7 +69,7 @@ $empower_pro_blocks_border_color_brightness = empower_pro_blocks_color_brightnes
 $empower_pro_blocks_border_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_border_color );
 
 $empower_pro_blocks_white_color            = '#ffffff';
-$empower_pro_blocks_white_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_white_color, 0.15 );
+$empower_pro_blocks_white_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_white_color, 0.15 );
 $empower_pro_blocks_white_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_white_color );
 
 $empower_pro_blocks_logo_sticky                = get_theme_mod( 'empower_pro_blocks_logo_sticky', '' );
@@ -153,9 +153,9 @@ return array(
 	'border-bright-color'   => $empower_pro_blocks_border_color_brightness,
 	'border-contrast-color' => $empower_pro_blocks_border_color_contrast,
 
-	'white-color'          => $empower_pro_blocks_border_color,
-	'white-bright-color'   => $empower_pro_blocks_border_color_brightness,
-	'white-contrast-color' => $empower_pro_blocks_border_color_contrast,
+	'white-color'          => $empower_pro_blocks_white_color,
+	'white-bright-color'   => $empower_pro_blocks_white_color_brightness,
+	'white-contrast-color' => $empower_pro_blocks_white_color_contrast,
 
 	'default-colors'               => $empower_pro_blocks_default_colors,
 

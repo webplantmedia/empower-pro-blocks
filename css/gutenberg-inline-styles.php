@@ -23,43 +23,54 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 	$primary_color = '%1$s';
 	$primary_bright_color = '%2$s';
 	$primary_contrast_color = '%3$s';
+
 	$secondary_color = '%4$s';
 	$secondary_bright_color = '%5$s';
 	$secondary_contrast_color = '%6$s';
+
 	$third_color = '%7$s';
 	$third_bright_color = '%8$s';
 	$third_contrast_color = '%9$s';
+
 	$fourth_color = '%10$s';
 	$fourth_bright_color = '%11$s';
 	$fourth_contrast_color = '%12$s';
+
 	$fifth_color = '%13$s';
 	$fifth_bright_color = '%14$s';
 	$fifth_contrast_color = '%15$s';
+
 	$sixth_color = '%16$s';
 	$sixth_bright_color = '%17$s';
 	$sixth_contrast_color = '%18$s';
+
 	$seventh_color = '%19$s';
 	$seventh_bright_color = '%20$s';
 	$seventh_contrast_color = '%21$s';
+
 	$eighth_color = '%22$s';
 	$eighth_bright_color = '%23$s';
 	$eighth_contrast_color = '%24$s';
+
 	$text_color = '%25$s';
 	$text_bright_color = '%26$s';
 	$text_contrast_color = '%27$s';
+
 	$darktext_color = '%28$s';
 	$darktext_bright_color = '%29$s';
 	$darktext_contrast_color = '%30$s';
+
 	$altbackground_color = '%31$s';
 	$altbackground_bright_color = '%32$s';
 	$altbackground_contrast_color = '%33$s';
+
 	$border_color = '%34$s';
 	$border_bright_color = '%35$s';
 	$border_contrast_color = '%36$s';
+
 	$white_color = '%37$s';
 	$white_bright_color = '%38$s';
 	$white_contrast_color = '%39$s';
-
 
 	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
 
@@ -68,6 +79,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .has-$color-overlay-color {
 				background-color: ${ $color . '_color' } !important;
 			}
+			html .has-$color-svg-fill-color svg path,
 			html .button-icon-before.has-$color-icon-color svg path,
 			html .wp-block-hero__outer-wrapper .has-$color-right-pill-color svg path,
 			html .wp-block-empower-pro-blocks-hero .has-$color-left-pill-color svg path {

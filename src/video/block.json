@@ -2,148 +2,47 @@
 	"name": "empower-pro-blocks/video",
 	"category": "abilitie-blocks",
 	"attributes": {
-		"typewriterSearch": {
-			"type": "string",
-			"default": "with Impact"
-		},
-		"typewriterReplace": {
-			"type": "string",
-			"default": "that Engages\nwith Results"
-		},
 		"url": {
 			"type": "string"
 		},
 		"id": {
 			"type": "number"
 		},
-		"dimRatio": {
-			"type": "number",
-			"default": 50
-		},
-		"leftPillDimRatio": {
-			"type": "number",
-			"default": 50
-		},
-		"rightPillDimRatio": {
-			"type": "number",
-			"default": 50
-		},
-		"overlayColor": {
-			"type": "string"
-		},
-		"customOverlayColor": {
-			"type": "string"
-		},
-		"heroColor": {
-			"type": "string",
-			"default": "primary"
-		},
-		"leftPillColor": {
-			"type": "string",
-			"default": "primary"
-		},
-		"customLeftPillColor": {
-			"type": "string"
-		},
 		"backgroundImageColor": {
 			"type": "string",
 			"default": "secondary"
 		},
-		"customRightPillColor": {
-			"type": "string"
-		},
-		"backgroundType": {
-			"type": "string",
-			"default": "image"
-		},
-		"focalPoint": {
-			"type": "object"
-		},
-		"heading": {
-			"type": "string",
-			"source": "html",
-			"default": "Leadership Development <span class=\"typewriter\" data-replace=\"that Engages|with Results\">with Impact</span>",
-			"selector": ".hero-heading"
-		},
-		"text": {
-			"type": "string",
-			"source": "html",
-			"default": "Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.",
-			"selector": ".hero-text"
-		},
-		"button1Text": {
-			"type": "string",
-			"source": "html",
-			"default": "About Us",
-			"selector": "a.button1"
-		},
-		"button1URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "href"
-		},
-		"button1LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "target"
-		},
-		"button2Icon": {
-			"type": "string",
-			"default": "stop"
-		},
-		"button2IconSize": {
-			"type": "number",
-			"default": ""
-		},
-		"button2Text": {
-			"type": "string",
-			"source": "html",
-			"default": "Our Programs",
-			"selector": "a.button2"
-		},
-		"button2URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "href"
-		},
-		"button2LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "target"
-		},
-		"button3Icon": {
-			"type": "string",
-			"default": "play"
-		},
-		"button3IconSize": {
-			"type": "number",
-			"default": ""
-		},
-		"button3Text": {
-			"type": "string",
-			"source": "html",
-			"default": "Our Simulations",
-			"selector": "a.button3"
-		},
-		"button3URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "href"
-		},
-		"button3LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "target"
-		},
 		"align": {
 			"type": "string",
 			"default": "full"
+		},
+		"topHeight": {
+			"type": "number",
+			"default": 200
+		},
+		"topMobileHeight": {
+			"type": "number",
+			"default": 100 
+		},
+		"bottomHeight": {
+			"type": "number",
+			"default": 300
+		},
+		"bottomMobileHeight": {
+			"type": "number",
+			"default": 140 
+		},
+		"topVideoImage": {
+			"type": "string",
+			"default": "/images/browser-ui-top.svg"
+		},
+		"topVideoLogos": {
+			"type": "string",
+			"default": "/images/hero-video-logos1.svg"
+		},
+		"bottomVideoLogos": {
+			"type": "string",
+			"default": "/images/SalesLoft.svg"
 		}
 	}
 }

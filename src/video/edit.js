@@ -11,12 +11,9 @@ import { useCallback, Fragment } from '@wordpress/element';
 import {
 	PanelBody,
 	Button,
-	FocalPointPicker,
 	PanelRow,
 	RangeControl,
-	ToggleControl,
 	TextControl,
-	TextareaControl,
 	withNotices,
 } from '@wordpress/components';
 
@@ -32,9 +29,9 @@ import {
 	InspectorControls,
 	MediaUpload,
 	MediaReplaceFlow,
+	InnerBlocks,
 	withColors,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
-	URLInput,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { withDispatch } from '@wordpress/data';
@@ -56,20 +53,39 @@ import {
  */
 const ALLOWED_MEDIA_TYPES = [ 'video' ];
 
-let svg_icons = Object.keys( EPIcon )
+const INNER_BLOCKS_TEMPLATE = [
+	[
+		'core/heading',
+		{
+			content: "Join over 40 leading global organizations utilizing our solutions today",
+			level: 3,
+			textColor: 'white',
+		},
+	],
+	[
+		'empower-pro-blocks/spacer',
+		{
+			height: 40,
+			mobileHeight: 20,
+		},
+	],
+	[
+		'core/shortcode',
+		{
+			text: '[wpforms id="71" title="false" description="false"]',
+		},
+	],
+];
 
-function HeroEdit( {
+const MIN_SPACER_HEIGHT = 0;
+const MAX_SPACER_HEIGHT = 500;
+
+function VideoEdit( {
 	attributes,
 	setAttributes,
 	isSelected,
 	className,
 	noticeUI,
-	overlayColor,
-	setOverlayColor,
-	heroColor,
-	setHeroColor,
-	leftPillColor,
-	setLeftPillColor,
 	backgroundImageColor,
 	setBackgroundImageColor,
 	toggleSelection,
@@ -77,83 +93,43 @@ function HeroEdit( {
 } ) {
 	const {
 		id,
-		backgroundType,
-		dimRatio,
-		leftPillDimRatio,
-		rightPillDimRatio,
-		focalPoint,
 		url,
-		heading,
-		text,
-		typewriterSearch,
-		typewriterReplace,
-		button1Text,
-		button1URL,
-		button1LinkTarget,
-		button2Icon,
-		button2IconSize,
-		button2Text,
-		button2URL,
-		button2LinkTarget,
-		button3Icon,
-		button3IconSize,
-		button3Text,
-		button3URL,
-		button3LinkTarget,
+		topVideoImage,
+		topVideoLogos,
+		bottomVideoLogos,
+		topHeight,
+		topMobileHeight,
+		bottomHeight,
+		bottomMobileHeight,
 	} = attributes;
+
+	const updateTopHeight = ( value ) => {
+		setAttributes( {
+			topHeight: value,
+		} );
+	};
+	const updateTopMobileHeight = ( value ) => {
+		setAttributes( {
+			topMobileHeight: value,
+		} );
+	};
+	const updateBottomHeight = ( value ) => {
+		setAttributes( {
+			bottomHeight: value,
+		} );
+	};
+	const updateBottomMobileHeight = ( value ) => {
+		setAttributes( {
+			bottomMobileHeight: value,
+		} );
+	};
+
 	const onSelectMedia = attributesFromMedia( setAttributes );
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
 	const style = {
-		...( backgroundType === IMAGE_BACKGROUND_TYPE
-			? backgroundImageStyles( url )
-			: {} ),
 	};
-
-	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
-			100 }%`;
-	}
-
-	const replaceHeading = (h, ts, tr) => {
-		let newHeading = h.replace( /<span.*?>|<\/span>/g, '' );
-		let newTR = tr.replace(/(\r\n|\n|\r)/gm,"|");
-		newHeading = newHeading.replace( ts, '<span class="typewriter" data-replace="'+newTR+'">'+ts+'</span>' );
-
-		return newHeading;
-	}
-
-	const updateHeading = (h, ts, tr, setAttributes ) => {
-		const newHeading = replaceHeading( h, ts, tr );
-
-		setAttributes( {
-			typewriterSearch: ts,
-			typewriterReplace: tr,
-			heading: newHeading,
-		} );
-	};
-
-	const onTypewriterSearchChange = useCallback(
-		( typewriterSearch ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ heading, typewriterReplace, setAttributes ]
-	);
-
-	const onTypewriterReplaceChange = useCallback(
-		( typewriterReplace ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ heading, typewriterSearch, setAttributes ]
-	);
-
-	const onHeadingChange = useCallback(
-		( heading ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ typewriterSearch, typewriterReplace, setAttributes ]
-	);
 
 	const controls = (
 		<>
@@ -176,7 +152,7 @@ function HeroEdit( {
 							onSelect={ onSelectMedia }
 							render={ ( { open } ) => (
 								<Button onClick={ open } isSecondary={ true }>
-									Select Background Image	
+									Select Video	
 								</Button>
 							) }
 						/>
@@ -190,11 +166,6 @@ function HeroEdit( {
 									setAttributes( {
 										url: undefined,
 										id: undefined,
-										backgroundType: undefined,
-										dimRatio: undefined,
-										leftPillDimRatio: undefined,
-										rightPillDimRatio: undefined,
-										focalPoint: undefined,
 									} )
 								}
 							>
@@ -210,76 +181,7 @@ function HeroEdit( {
 					) }
 				</PanelBody>
 				<PanelColorGradientSettings
-					title={ __( 'Overlay' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: overlayColor.color,
-							onColorChange: setOverlayColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-					{ !! url && (
-						<RangeControl
-							label={ __( 'Overlay Opacity' ) }
-							value={ dimRatio }
-							onChange={ ( value ) =>
-								setAttributes( {
-									dimRatio: value,
-								} )
-							}
-							min={ 0 }
-							max={ 100 }
-							step={ 10 }
-							required
-						/>
-					) }
-				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
-					title={ __( 'Hero Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: heroColor.color,
-							onColorChange: setHeroColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
-					title={ __( 'Left Pill Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: leftPillColor.color,
-							onColorChange: setLeftPillColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-					{ !! url && (
-						<RangeControl
-							label={ __( 'Opacity' ) }
-							value={ leftPillDimRatio }
-							onChange={ ( value ) =>
-								setAttributes( {
-									leftPillDimRatio: value,
-								} )
-							}
-							min={ 10 }
-							max={ 100 }
-							step={ 10 }
-							required
-						/>
-					) }
-				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
-					title={ __( 'Right Pill Color' ) }
+					title={ __( 'Background Color' ) }
 					initialOpen={ true }
 					settings={ [
 						{
@@ -290,136 +192,45 @@ function HeroEdit( {
 						},
 					] }
 				>
-					{ !! url && (
-						<RangeControl
-							label={ __( 'Opacity' ) }
-							value={ rightPillDimRatio }
-							onChange={ ( value ) =>
-								setAttributes( {
-									rightPillDimRatio: value,
-								} )
-							}
-							min={ 10 }
-							max={ 100 }
-							step={ 10 }
-							required
-						/>
-					) }
 				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Heading' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Typewriter Search' ) }
-						help="phrase to search and replace with a typewriter effect."
-						value={ typewriterSearch }
-						onChange={ onTypewriterSearchChange }
-					/>
-					<TextareaControl
-						label={ __( 'Typewriter Replace' ) }
-						help="Put each replacement phrase on its own line."
-						value={ typewriterReplace }
-						onChange={ onTypewriterReplaceChange }
-					/>
-				</PanelBody>
-				<PanelBody title={ __( 'Call to Action Button' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button1Text }
-						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-					/>
-					<URLInput
-						value={ button1URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button1URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
-						checked={ button1LinkTarget === '_blank' }
-					/>
-				</PanelBody>
-				<PanelBody title={ __( 'Secondary Button 1' ) } initialOpen={ true }>
-					<Fragment>
-						<p className="">{__( "Icon" )}</p>
-						<FontIconPicker
-							icons={svg_icons}
-							renderFunc= {renderSVG}
-							theme="default"
-							value={button2Icon}
-							onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
-							isMulti={false}
-							noSelectedPlaceholder= { __( "Select Icon" ) }
-						/>
-					</Fragment>
+				<PanelBody title={ __( 'Top Spacing' ) }>
 					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ button2IconSize }
-						onChange={ ( value ) =>
-							setAttributes( {
-								button2IconSize: value,
-							} )
-						}
-						min={ 7 }
-						max={ 30 }
-						step={ 1 }
+						label={ __( 'Height in pixels' ) }
+						min={ MIN_SPACER_HEIGHT }
+						max={ Math.max( MAX_SPACER_HEIGHT, topHeight ) }
+						separatorType={ 'none' }
+						value={ topHeight }
+						onChange={ updateTopHeight }
+						step={ 10 }
 					/>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button2Text }
-						onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-					/>
-					<URLInput
-						value={ button2URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button2URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button2LinkTarget: '_blank' } : { button2LinkTarget: undefined } ) }
-						checked={ button2LinkTarget === '_blank' }
+					<RangeControl
+						label={ __( 'Mobile height in pixels' ) }
+						min={ MIN_SPACER_HEIGHT }
+						max={ Math.max( MAX_SPACER_HEIGHT, topMobileHeight ) }
+						separatorType={ 'none' }
+						value={ topMobileHeight }
+						onChange={ updateTopMobileHeight }
+						step={ 10 }
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Secondary Button 2' ) } initialOpen={ true }>
-					<Fragment>
-						<p className="">{__( "Icon" )}</p>
-						<FontIconPicker
-							icons={svg_icons}
-							renderFunc= {renderSVG}
-							theme="default"
-							value={button3Icon}
-							onChange={ ( value ) => setAttributes( { button3Icon: value } ) }
-							isMulti={false}
-							noSelectedPlaceholder= { __( "Select Icon" ) }
-						/>
-					</Fragment>
+				<PanelBody title={ __( 'Bottom Spacing' ) }>
 					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ button3IconSize }
-						onChange={ ( value ) =>
-							setAttributes( {
-								button3IconSize: value,
-							} )
-						}
-						min={ 7 }
-						max={ 30 }
-						step={ 1 }
+						label={ __( 'Height in pixels' ) }
+						min={ MIN_SPACER_HEIGHT }
+						max={ Math.max( MAX_SPACER_HEIGHT, bottomHeight ) }
+						separatorType={ 'none' }
+						value={ bottomHeight }
+						onChange={ updateBottomHeight }
+						step={ 10 }
 					/>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button3Text }
-						onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-					/>
-					<URLInput
-						value={ button3URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button3URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button3LinkTarget: '_blank' } : { button3LinkTarget: undefined } ) }
-						checked={ button3LinkTarget === '_blank' }
+					<RangeControl
+						label={ __( 'Mobile height in pixels' ) }
+						min={ MIN_SPACER_HEIGHT }
+						max={ Math.max( MAX_SPACER_HEIGHT, bottomMobileHeight ) }
+						separatorType={ 'none' }
+						value={ bottomMobileHeight }
+						onChange={ updateBottomMobileHeight }
+						step={ 10 }
 					/>
 				</PanelBody>
 			</InspectorControls>
@@ -427,25 +238,6 @@ function HeroEdit( {
 	);
 
 	const classes = classnames( className, 
-		'wp-block-hero__outer-wrapper',
-		{ 
-			[ heroColor.class ]: heroColor.class,
-		}
-	);
-
-	const overlayClasses = classnames( 
-		'overlay-color', 
-		url ? dimRatioToClass( dimRatio ) : {}, 
-		{ [ overlayColor.class ]: overlayColor.class, }
-	);
-
-	const leftPillClasses = classnames( 
-		'above-fold-background',
-		'glide',
-		'glide-left',
-		'glide-down',
-		url ? dimRatioToClass( leftPillDimRatio ) : {},
-		{ [ leftPillColor.class ]: leftPillColor.class },
 	);
 
 	const backgroundClasses = classnames( 
@@ -453,58 +245,65 @@ function HeroEdit( {
 		{ [ backgroundImageColor.class ]: backgroundImageColor.class },
 	);
 
-	const button2Style = {
-		...( button2IconSize ? { width: button2IconSize+"px" } : {} ),
-	};
-	const button3Style = {
-		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
-	};
+	const topHeightClassName = classnames( {
+		[ 'mobile-height-' + topMobileHeight ]: topMobileHeight,
+	} );
+
+	const bottomHeightClassName = classnames( {
+		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight,
+	} );
+
+	const topVideoImageUrl = empower_pro_blocks.plugins_url + topVideoImage;
+	const topVideoLogosUrl = empower_pro_blocks.plugins_url + topVideoLogos;
+	const bottomVideoLogosUrl = empower_pro_blocks.plugins_url + bottomVideoLogos;
 
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
-				<div class="wp-block-group__inner-container">
-					<div className={ backgroundClasses }>
-						<svg x="0px" y="0px" width="2731.4px" height="1515.4px" viewBox="0 0 2731.4 1515.4">
-							<path d="M0,0c0,0,0,390.3,0,605.2C0,2067,396.3,1317,1278.8,1365.7c579.4,27.2,549.3-491.5,1242-734.3 c211-82,210.6-631.4,210.6-631.4L0,0z"/>
-						</svg>
-					</div>
-					<div class="wp-block-empower-pro-blocks-spacer mobile-height-100" style="height:200px" aria-hidden="true"></div>
-					<div class="wp-block-group block-wrap group-columns-2">
-						<div class="wp-block-group__inner-container">
-							<div class="wp-block-group white-form-fields">
-								<div class="wp-block-group__inner-container">
-									<h3 class="has-text-align-left white-text mb-0">Join over 40 leading global organizations utilizing our solutions today</h3>
-									<div class="wp-block-empower-pro-blocks-spacer mobile-height-200" style="height:200px" aria-hidden="true"></div>
+				<div class="wp-block-group">
+					<div class="wp-block-group__inner-container">
+						<div className={ backgroundClasses }>
+							<svg x="0px" y="0px" width="2731.4px" height="1515.4px" viewBox="0 0 2731.4 1515.4">
+								<path d="M0,0c0,0,0,390.3,0,605.2C0,2067,396.3,1317,1278.8,1365.7c579.4,27.2,549.3-491.5,1242-734.3 c211-82,210.6-631.4,210.6-631.4L0,0z"/>
+							</svg>
+						</div>
+						<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />;
+						<div class="wp-block-group block-wrap group-columns-2">
+							<div class="wp-block-group__inner-container">
+								<div class="wp-block-group white-form-fields">
+									<div class="wp-block-group__inner-container">
+										<InnerBlocks template={ INNER_BLOCKS_TEMPLATE } />
+									</div>
 								</div>
-							</div>
-							<div style="height:100px" aria-hidden="true" class="wp-block-spacer mobile-show"></div>
-							<div class="wp-block-group video-player">
-								<div class="wp-block-group__inner-container">
-									<figure class="wp-block-image size-full">
-										<img src="../browser-ui-top.svg" alt="" class="wp-image-73" />
-									</figure>
-									<figure class="wp-block-video">
-										<video
-											className="wp-block-hero__video-background"
-											autoPlay
-											muted
-											loop
-											src={ url }
-										/>
-									</figure>
-									<figure class="wp-block-image size-large video-logos">
-										<img src="../hero-video-logos1.svg" alt="" class="wp-image-62" />
-									</figure>
-									<figure class="wp-block-image size-large video-logos-bottom">
-										<img src="../hero-video-logos-bottom.svg" alt="" class="wp-image-63" />
-									</figure>
+								<div class="wp-block-group video-player">
+									<div class="wp-block-group__inner-container">
+										<figure class="wp-block-image size-full">
+											<img src={ topVideoImageUrl } alt="" class="" />
+										</figure>
+										<figure class="wp-block-video">
+											{ url && (
+												<video
+													className="wp-block-hero__video-background"
+													autoPlay
+													muted
+													loop
+													src={ url }
+												/>
+											) }
+										</figure>
+										<figure class="wp-block-image size-large video-logos">
+											<img src={ topVideoLogosUrl } alt="" class="" />
+										</figure>
+										<figure class="wp-block-image size-large video-logos-bottom">
+											<img src={ bottomVideoLogosUrl } alt="" class="" />
+										</figure>
+									</div>
 								</div>
 							</div>
 						</div>
+						<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />;
 					</div>
-					<div class="wp-block-empower-pro-blocks-spacer mobile-height-140" style="height:300px" aria-hidden="true"></div>
 				</div>
 			</div>
 		</>
@@ -519,7 +318,7 @@ export default compose( [
 			toggleSelection,
 		};
 	} ),
-	withColors( { overlayColor: 'overlay-color', heroColor: 'hero-color', leftPillColor: 'left-pill-color', backgroundImageColor: 'right-pill-color' } ),
+	withColors( { backgroundImageColor: 'svg-fill-color' } ),
 	withNotices,
 	withInstanceId,
-] )( HeroEdit );
+] )( VideoEdit );

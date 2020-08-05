@@ -7,3 +7,8 @@
 		opacity: $i/10;
 	}
 }
+
+.block-wrap {
+	margin: 0 auto;
+	max-width: $content_max_width_full;
+}
