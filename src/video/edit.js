@@ -483,10 +483,9 @@ function HeroEdit( {
 							<div class="wp-block-group video-player">
 								<div class="wp-block-group__inner-container">
 									<figure class="wp-block-image size-full">
-										<img src="../browser-ui-top.svg" alt="" class="wp-image-73">
+										<img src="../browser-ui-top.svg" alt="" class="wp-image-73" />
 									</figure>
 									<figure class="wp-block-video">
-										<video autoplay="" loop="" muted="" src="https://1c126ibo0f-flywheel.netdna-ssl.com/wp-content/themes/mini-monarch/img/HomePageAnimations_Long.mp4" playsinline=""></video>
 										<video
 											className="wp-block-hero__video-background"
 											autoPlay
@@ -496,10 +495,10 @@ function HeroEdit( {
 										/>
 									</figure>
 									<figure class="wp-block-image size-large video-logos">
-										<img src="../hero-video-logos1.svg" alt="" class="wp-image-62">
+										<img src="../hero-video-logos1.svg" alt="" class="wp-image-62" />
 									</figure>
 									<figure class="wp-block-image size-large video-logos-bottom">
-										<img src="../hero-video-logos-bottom.svg" alt="" class="wp-image-63">
+										<img src="../hero-video-logos-bottom.svg" alt="" class="wp-image-63" />
 									</figure>
 								</div>
 							</div>
