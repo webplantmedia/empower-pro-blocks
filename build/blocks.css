@@ -7044,6 +7044,7 @@ ul.ul-li-med-space > li {
 		display: flex;
 		flex-direction: column-reverse;
 		grid-gap: 0 !important;
+		align-items: center;
 	}
 }
 

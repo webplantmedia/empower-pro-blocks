@@ -22,7 +22,7 @@
 		},
 		"topMobileHeight": {
 			"type": "number",
-			"default": 100 
+			"default": 150 
 		},
 		"bottomHeight": {
 			"type": "number",
@@ -34,7 +34,7 @@
 		},
 		"mobileColumnSpacing": {
 			"type": "number",
-			"default": 210
+			"default": 140
 		},
 		"topVideoImage": {
 			"type": "string",
