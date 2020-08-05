@@ -26,6 +26,34 @@
 	}
 }
 
+@for $i from 5 through 50 {
+	$x: $i * 10;
+	.mr-#{$x} {
+		margin-right: #{$x}px !important;
+	}
+	.ml-#{$x} {
+		margin-left: #{$x}px !important;
+	}
+	.mt-#{$x} {
+		margin-top: #{$x}px !important;
+	}
+	.mb-#{$x} {
+		margin-bottom: #{$x}px !important;
+	}
+	.pr-#{$x} {
+		padding-right: #{$x}px !important;
+	}
+	.pl-#{$x} {
+		padding-left: #{$x}px !important;
+	}
+	.pt-#{$x} {
+		padding-top: #{$x}px !important;
+	}
+	.pb-#{$x} {
+		padding-bottom: #{$x}px !important;
+	}
+}
+
 .mx-auto {
 	margin-left: auto !important;
 	margin-right: auto !important;

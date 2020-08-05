@@ -32,6 +32,10 @@
 			"type": "number",
 			"default": 140 
 		},
+		"mobileColumnSpacing": {
+			"type": "number",
+			"default": 210
+		},
 		"topVideoImage": {
 			"type": "string",
 			"default": "/images/browser-ui-top.svg"

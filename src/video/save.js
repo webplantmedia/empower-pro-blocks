@@ -35,6 +35,7 @@ export default function save( { attributes } ) {
 		topMobileHeight,
 		bottomHeight,
 		bottomMobileHeight,
+		mobileColumnSpacing,
 	} = attributes;
 
 	const style = {
@@ -56,6 +57,18 @@ export default function save( { attributes } ) {
 		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight,
 	} );
 
+	const columnOneClassName = classnames(
+		'wp-block-group',
+		'white-form-fields',
+		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing, }
+	);
+
+	const columnTwoClassName = classnames(
+		'wp-block-group',
+		'video-player',
+		{ [ 'mb-' + mobileColumnSpacing ]: mobileColumnSpacing, }
+	);
+
 	const topVideoImageUrl = empower_pro_blocks.plugins_url + topVideoImage;
 	const topVideoLogosUrl = empower_pro_blocks.plugins_url + topVideoLogos;
 	const bottomVideoLogosUrl = empower_pro_blocks.plugins_url + bottomVideoLogos;
@@ -72,12 +85,12 @@ export default function save( { attributes } ) {
 					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 					<div class="wp-block-group block-wrap group-columns-2">
 						<div class="wp-block-group__inner-container">
-							<div class="wp-block-group white-form-fields">
+							<div className={ columnOneClassName }>
 								<div class="wp-block-group__inner-container">
 									<InnerBlocks.Content />
 								</div>
 							</div>
-							<div class="wp-block-group video-player">
+							<div class={ columnTwoClassName }>
 								<div class="wp-block-group__inner-container">
 									<figure class="wp-block-image size-full">
 										<img src={ topVideoImageUrl } alt="" class="" />
@@ -93,12 +106,12 @@ export default function save( { attributes } ) {
 											/>
 										) }
 									</figure>
-									<figure class="wp-block-image size-large video-logos">
+									<div class="wp-block-image size-large video-logos">
 										<img src={ topVideoLogosUrl } alt="" class="" />
-									</figure>
-									<figure class="wp-block-image size-large video-logos-bottom">
+									</div>
+									<div class="wp-block-image size-large video-logos-bottom">
 										<img src={ bottomVideoLogosUrl } alt="" class="" />
-									</figure>
+									</div>
 								</div>
 							</div>
 						</div>
