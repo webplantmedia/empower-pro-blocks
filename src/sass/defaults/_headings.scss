@@ -15,22 +15,22 @@ h6 {
 
 .wp-block-cover .wp-block-cover__inner-container .h1,
 .wp-block-cover .wp-block-cover__inner-container h1,
-.archive-description .entry-title,
-.archive-title,
-.entry-title,
+.archive-description h1.entry-title,
+h1.archive-title,
+h1.entry-title,
 .h1,
 h1 {
 	@include h1;
 }
 
 .wp-block-cover .wp-block-cover__inner-container h2,
-h2.entry-title,
 .h2,
 h2 {
 	@include h2;
 }
 
 .wp-block-cover .wp-block-cover__inner-container h3,
+h2.entry-title,
 .h3,
 h3 {
 	@include h3;

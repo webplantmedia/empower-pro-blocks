@@ -1166,9 +1166,9 @@ h6 b {
 
 .wp-block-cover .wp-block-cover__inner-container .h1,
 .wp-block-cover .wp-block-cover__inner-container h1,
-.archive-description .entry-title,
-.archive-title,
-.entry-title,
+.archive-description h1.entry-title,
+h1.archive-title,
+h1.entry-title,
 .h1,
 h1 {
 	font-size: 62px;
@@ -1180,9 +1180,9 @@ h1 {
 @media only screen and (max-width: 1200px) {
 	.wp-block-cover .wp-block-cover__inner-container .h1,
 	.wp-block-cover .wp-block-cover__inner-container h1,
-	.archive-description .entry-title,
-	.archive-title,
-	.entry-title,
+	.archive-description h1.entry-title,
+	h1.archive-title,
+	h1.entry-title,
 	.h1,
 	h1 {
 		font-size: 64px;
@@ -1192,9 +1192,9 @@ h1 {
 @media only screen and (max-width: 1023px) {
 	.wp-block-cover .wp-block-cover__inner-container .h1,
 	.wp-block-cover .wp-block-cover__inner-container h1,
-	.archive-description .entry-title,
-	.archive-title,
-	.entry-title,
+	.archive-description h1.entry-title,
+	h1.archive-title,
+	h1.entry-title,
 	.h1,
 	h1 {
 		font-size: 48px;
@@ -1204,9 +1204,9 @@ h1 {
 @media only screen and (max-width: 860px) {
 	.wp-block-cover .wp-block-cover__inner-container .h1,
 	.wp-block-cover .wp-block-cover__inner-container h1,
-	.archive-description .entry-title,
-	.archive-title,
-	.entry-title,
+	.archive-description h1.entry-title,
+	h1.archive-title,
+	h1.entry-title,
 	.h1,
 	h1 {
 		font-size: 36px;
@@ -1214,7 +1214,6 @@ h1 {
 }
 
 .wp-block-cover .wp-block-cover__inner-container h2,
-h2.entry-title,
 .h2,
 h2 {
 	font-size: 60px;
@@ -1223,7 +1222,6 @@ h2 {
 
 @media only screen and (max-width: 1023px) {
 	.wp-block-cover .wp-block-cover__inner-container h2,
-	h2.entry-title,
 	.h2,
 	h2 {
 		font-size: 40px;
@@ -1231,6 +1229,7 @@ h2 {
 }
 
 .wp-block-cover .wp-block-cover__inner-container h3,
+h2.entry-title,
 .h3,
 h3 {
 	font-size: 30px;
@@ -1239,6 +1238,7 @@ h3 {
 
 @media only screen and (max-width: 1023px) {
 	.wp-block-cover .wp-block-cover__inner-container h3,
+	h2.entry-title,
 	.h3,
 	h3 {
 		font-size: 22px;
@@ -2345,7 +2345,7 @@ th:first-child {
 	padding: 0 8.75%;
 	margin-left: 0;
 	margin-right: 0;
-	margin-bottom: 50px;
+	margin-bottom: 70px;
 	max-width: none;
 }
 
@@ -2387,6 +2387,22 @@ th:first-child {
 .archive:not(.woocommerce) .content .entry-read-more,
 .blog .content .entry-read-more {
 	margin-top: auto;
+}
+
+.blog-shortcode .blog-shortcode-loop-container .entry-footer,
+.event-container .event-container-inner .entry-footer,
+.search:not(.woocommerce) .content .entry-footer,
+.archive:not(.woocommerce) .content .entry-footer,
+.blog .content .entry-footer {
+	margin-top: auto;
+}
+
+.blog-shortcode .blog-shortcode-loop-container .entry-footer .entry-meta,
+.event-container .event-container-inner .entry-footer .entry-meta,
+.search:not(.woocommerce) .content .entry-footer .entry-meta,
+.archive:not(.woocommerce) .content .entry-footer .entry-meta,
+.blog .content .entry-footer .entry-meta {
+	margin-bottom: 0;
 }
 
 .blog-shortcode .blog-shortcode-loop-container .entry-image,

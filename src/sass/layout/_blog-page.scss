@@ -102,7 +102,7 @@
 		padding: 0 8.75%;
 		margin-left: 0;
 		margin-right: 0;
-		margin-bottom: 50px;
+		margin-bottom: 70px;
 		max-width: none;
 	}
 
@@ -130,6 +130,11 @@
 	}
 
 	.entry-footer {
+		margin-top: auto;
+
+		.entry-meta {
+			margin-bottom: 0;
+		}
 	}
 
 	.entry-image {
