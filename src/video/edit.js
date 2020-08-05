@@ -181,12 +181,6 @@ function VideoEdit( {
 							</Button>
 						</PanelRow>
 					) }
-					{ !! url && (
-						<hr />
-					) }
-					{ url && (
-						<video autoPlay muted loop src={ url } />
-					) }
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Background Color' ) }
