@@ -12,6 +12,7 @@ import {
  * Internal dependencies
  */
 import * as hero from './hero';
+import * as hero2 from './hero2';
 import * as icontext from './icontext';
 import * as spacer from './spacer';
 import * as video from './video';
@@ -38,6 +39,7 @@ const registerBlock = ( block ) => {
 	// in various contexts — like the inserter and auto-complete components.
 	// Register all remaining core blocks.
 	hero,
+	hero2,
 	icontext,
 	spacer,
 	video,
