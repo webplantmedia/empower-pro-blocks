@@ -24,8 +24,11 @@
 	.pb-#{$x} {
 		padding-bottom: #{$x}px !important;
 	}
+}
 
-	@media screen and ( max-width: $ipad_width ) {
+@media screen and ( max-width: $ipad_width ) {
+	@for $i from 0 through 40 {
+		$x: $i * 2;
 		.md\:mr-#{$x} {
 			margin-right: #{$x}px !important;
 		}
@@ -51,8 +54,11 @@
 			padding-bottom: #{$x}px !important;
 		}
 	}
+}
 
-	@media screen and ( max-width: $mobile_width ) {
+@media screen and ( max-width: $mobile_width ) {
+	@for $i from 0 through 40 {
+		$x: $i * 2;
 		.sm\:mr-#{$x} {
 			margin-right: #{$x}px !important;
 		}
@@ -106,8 +112,11 @@
 	.pb-#{$x} {
 		padding-bottom: #{$x}px !important;
 	}
+}
 
-	@media screen and ( max-width: $ipad_width ) {
+@media screen and ( max-width: $ipad_width ) {
+	@for $i from 5 through 50 {
+		$x: $i * 10;
 		.md\:mr-#{$x} {
 			margin-right: #{$x}px !important;
 		}
@@ -133,8 +142,11 @@
 			padding-bottom: #{$x}px !important;
 		}
 	}
+}
 
-	@media screen and ( max-width: $mobile_width ) {
+@media screen and ( max-width: $mobile_width ) {
+	@for $i from 5 through 50 {
+		$x: $i * 10;
 		.sm\:mr-#{$x} {
 			margin-right: #{$x}px !important;
 		}
