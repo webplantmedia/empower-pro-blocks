@@ -24,6 +24,60 @@
 	.pb-#{$x} {
 		padding-bottom: #{$x}px !important;
 	}
+
+	@media screen and ( max-width: $ipad_width ) {
+		.md\:mr-#{$x} {
+			margin-right: #{$x}px !important;
+		}
+		.md\:ml-#{$x} {
+			margin-left: #{$x}px !important;
+		}
+		.md\:mt-#{$x} {
+			margin-top: #{$x}px !important;
+		}
+		.md\:mb-#{$x} {
+			margin-bottom: #{$x}px !important;
+		}
+		.md\:pr-#{$x} {
+			padding-right: #{$x}px !important;
+		}
+		.md\:pl-#{$x} {
+			padding-left: #{$x}px !important;
+		}
+		.md\:pt-#{$x} {
+			padding-top: #{$x}px !important;
+		}
+		.md\:pb-#{$x} {
+			padding-bottom: #{$x}px !important;
+		}
+	}
+
+	@media screen and ( max-width: $mobile_width ) {
+		.sm\:mr-#{$x} {
+			margin-right: #{$x}px !important;
+		}
+		.sm\:ml-#{$x} {
+			margin-left: #{$x}px !important;
+		}
+		.sm\:mt-#{$x} {
+			margin-top: #{$x}px !important;
+		}
+		.sm\:mb-#{$x} {
+			margin-bottom: #{$x}px !important;
+		}
+		.sm\:pr-#{$x} {
+			padding-right: #{$x}px !important;
+		}
+		.sm\:pl-#{$x} {
+			padding-left: #{$x}px !important;
+		}
+		.sm\:pt-#{$x} {
+			padding-top: #{$x}px !important;
+		}
+		.sm\:pb-#{$x} {
+			padding-bottom: #{$x}px !important;
+		}
+	}
 }
 
 @for $i from 5 through 50 {
@@ -51,6 +105,60 @@
 	}
 	.pb-#{$x} {
 		padding-bottom: #{$x}px !important;
+	}
+
+	@media screen and ( max-width: $ipad_width ) {
+		.md\:mr-#{$x} {
+			margin-right: #{$x}px !important;
+		}
+		.md\:ml-#{$x} {
+			margin-left: #{$x}px !important;
+		}
+		.md\:mt-#{$x} {
+			margin-top: #{$x}px !important;
+		}
+		.md\:mb-#{$x} {
+			margin-bottom: #{$x}px !important;
+		}
+		.md\:pr-#{$x} {
+			padding-right: #{$x}px !important;
+		}
+		.md\:pl-#{$x} {
+			padding-left: #{$x}px !important;
+		}
+		.md\:pt-#{$x} {
+			padding-top: #{$x}px !important;
+		}
+		.md\:pb-#{$x} {
+			padding-bottom: #{$x}px !important;
+		}
+	}
+
+	@media screen and ( max-width: $mobile_width ) {
+		.sm\:mr-#{$x} {
+			margin-right: #{$x}px !important;
+		}
+		.sm\:ml-#{$x} {
+			margin-left: #{$x}px !important;
+		}
+		.sm\:mt-#{$x} {
+			margin-top: #{$x}px !important;
+		}
+		.sm\:mb-#{$x} {
+			margin-bottom: #{$x}px !important;
+		}
+		.sm\:pr-#{$x} {
+			padding-right: #{$x}px !important;
+		}
+		.sm\:pl-#{$x} {
+			padding-left: #{$x}px !important;
+		}
+		.sm\:pt-#{$x} {
+			padding-top: #{$x}px !important;
+		}
+		.sm\:pb-#{$x} {
+			padding-bottom: #{$x}px !important;
+		}
 	}
 }
 

@@ -11,8 +11,8 @@
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start & npm run compile & npm run sass",
-		"compile": "node-sass --output-style expanded --indent-width 1 --indent-type tab --source-map build/map src/blocks.scss --output build & node-sass --output-style expanded --indent-width 1 --indent-type tab --source-map build/map src/theme.scss --output build & node-sass --output-style expanded --indent-width 1 --indent-type tab --source-map build/map src/editor.scss --output build & node-sass --output-style expanded --indent-width 1 --indent-type tab --source-map build/map src/woocommerce.scss --output build",
-		"sass": "node-sass --output-style expanded --indent-width 1 --indent-type tab --source-map build/map --watch src --output build",
+		"compile": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/blocks.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/theme.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/editor.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/woocommerce.scss --output build",
+		"sass": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map --watch src --output build",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
