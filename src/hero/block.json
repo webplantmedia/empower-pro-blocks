@@ -31,9 +31,6 @@
 		"overlayColor": {
 			"type": "string"
 		},
-		"customOverlayColor": {
-			"type": "string"
-		},
 		"heroColor": {
 			"type": "string",
 			"default": "primary"
@@ -42,13 +39,7 @@
 			"type": "string",
 			"default": "primary"
 		},
-		"customLeftPillColor": {
-			"type": "string"
-		},
 		"rightPillColor": {
-			"type": "string"
-		},
-		"customRightPillColor": {
 			"type": "string"
 		},
 		"backgroundType": {

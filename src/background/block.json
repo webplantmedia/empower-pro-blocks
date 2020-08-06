@@ -1,0 +1,28 @@
+{
+	"name": "empower-pro-blocks/background",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"backgroundColor": {
+			"type": "string"
+		},
+		"leftPillColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"leftPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"rightPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"rightPillColor": {
+			"type": "string"
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	}
+}
