@@ -16,7 +16,6 @@ $empower_pro_blocks_default_colors = array(
 	'fifth' => '#42b97c',
 	'sixth' => '#942940',
 	'seventh' => '#176e99',
-	// 'eighth' => '#ffb433',
 	'eighth' => '#ffcc2a',
 );
 
