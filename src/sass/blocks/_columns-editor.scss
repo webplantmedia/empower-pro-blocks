@@ -1,0 +1,17 @@
+@media screen and ( min-width: $ipad_width_1 ) {
+	@for $i from 0 through 20 {
+		$x: $i * 10;
+		.wp-block-columns.columns-gap-#{$x} > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"]:not(:first-child) {
+			margin-left: #{$x}px !important;
+		}
+	}
+}
+
+@media screen and ( max-width: $ipad_width ) {
+	@for $i from 0 through 20 {
+		$x: $i * 10;
+		.wp-block-columns.md\:columns-gap-#{$x} > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="core/column"]:not(:first-child) {
+			margin-bottom: #{$x}px !important;
+		}
+	}
+}

@@ -21,3 +21,21 @@
 	}
 
 }
+
+@media screen and ( min-width: $ipad_width_1 ) {
+	@for $i from 0 through 20 {
+		$x: $i * 10;
+		.columns-gap-#{$x} .wp-block-column:not(:first-child) {
+			margin-left: #{$x}px !important;
+		}
+	}
+}
+
+@media screen and ( max-width: $ipad_width ) {
+	@for $i from 0 through 20 {
+		$x: $i * 10;
+		.md\:columns-gap-#{$x} .wp-block-column:not(:last-child) {
+			margin-bottom: #{$x}px !important;
+		}
+	}
+}
