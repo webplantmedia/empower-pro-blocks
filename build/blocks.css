@@ -5877,6 +5877,12 @@ ul.ul-li-med-space > li {
 	width: 18px;
 }
 
+@media screen and (max-width: 600px) {
+	.wp-block-empower-pro-blocks-icontext .button-icon-before .button-icon-inner {
+		height: auto !important;
+	}
+}
+
 .wp-block-empower-pro-blocks-icontext .button-icon-before.is-image-icon {
 	margin-top: 0;
 }

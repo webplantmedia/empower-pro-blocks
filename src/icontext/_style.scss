@@ -39,6 +39,10 @@
 
 		.button-icon-inner {
 			width: 18px;
+
+			@media screen and ( max-width: $mobile_width ) {
+				height: auto !important;
+			}
 		}
 
 		&.is-image-icon {
