@@ -83,12 +83,12 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .button-icon-before.has-$color-icon-color svg path,
 			html .wp-block-hero2__outer-wrapper .has-$color-right-pill-color svg path,
 			html .wp-block-hero__outer-wrapper .has-$color-right-pill-color svg path,
-			html .wp-block-empower-pro-blocks-hero2 .has-$color-left-pill-color svg path {
+			html .wp-block-empower-pro-blocks-hero2 .has-$color-left-pill-color svg path,
 			html .wp-block-empower-pro-blocks-hero .has-$color-left-pill-color svg path {
 				fill: ${ $color . '_color' } !important;
 			}
-			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content {
-			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content {
+			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content,
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content {
 				border-color: ${ $color . '_color' } !important;
 			}
 			html .wp-block-group.callout.has-$color-background-color {

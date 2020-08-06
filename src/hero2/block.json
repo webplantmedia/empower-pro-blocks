@@ -2,18 +2,20 @@
 	"name": "empower-pro-blocks/hero2",
 	"category": "abilitie-blocks",
 	"attributes": {
-		"typewriterSearch": {
-			"type": "string",
-			"default": ""
-		},
-		"typewriterReplace": {
-			"type": "string",
-			"default": ""
-		},
 		"url": {
 			"type": "string"
 		},
 		"id": {
+			"type": "number"
+		},
+		"grayscale": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconUrl": {
+			"type": "string"
+		},
+		"iconId": {
 			"type": "number"
 		},
 		"dimRatio": {
@@ -61,84 +63,32 @@
 		"heading": {
 			"type": "string",
 			"source": "html",
-			"default": "Leadership Development <span class=\"typewriter\" data-replace=\"that Engages|with Results\">with Impact</span>",
-			"selector": ".hero-heading"
+			"default": "Immersion Mini-MBA",
+			"selector": ".hero2-heading"
 		},
 		"text": {
 			"type": "string",
 			"source": "html",
-			"default": "Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.",
-			"selector": ".hero-text"
+			"default": "Abilitie’s Immersion mini-MBA provides the management and leadership skills necessary to thrive in today’s fast-paced global business environment.",
+			"selector": ".hero2-text"
 		},
 		"button1Text": {
 			"type": "string",
 			"source": "html",
-			"default": "About Us",
-			"selector": "a.button1"
-		},
-		"button1URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "href"
-		},
-		"button1LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "target"
-		},
-		"button2Icon": {
-			"type": "string",
-			"default": "stop"
-		},
-		"button2IconSize": {
-			"type": "number",
-			"default": ""
+			"default": "Business Acumen",
+			"selector": ".button1"
 		},
 		"button2Text": {
 			"type": "string",
 			"source": "html",
-			"default": "Our Programs",
-			"selector": "a.button2"
-		},
-		"button2URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "href"
-		},
-		"button2LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button2",
-			"attribute": "target"
-		},
-		"button3Icon": {
-			"type": "string",
-			"default": "play"
-		},
-		"button3IconSize": {
-			"type": "number",
-			"default": ""
+			"default": "Leadership",
+			"selector": ".button2"
 		},
 		"button3Text": {
 			"type": "string",
 			"source": "html",
-			"default": "Our Simulations",
-			"selector": "a.button3"
-		},
-		"button3URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "href"
-		},
-		"button3LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button3",
-			"attribute": "target"
+			"default": "Strategy",
+			"selector": ".button3"
 		},
 		"align": {
 			"type": "string",

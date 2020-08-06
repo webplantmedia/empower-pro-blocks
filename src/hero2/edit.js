@@ -20,10 +20,6 @@ import {
 	withNotices,
 } from '@wordpress/components';
 
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
-import EPIcon from "../../dist/blocks/Icon.json"
-import renderSVG from "../../dist/blocks/renderIcon"
-
 import { compose, withInstanceId } from '@wordpress/compose';
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
@@ -45,6 +41,7 @@ import { withDispatch } from '@wordpress/data';
  */
 import {
 	attributesFromMedia,
+	attributesFromIconMedia,
 	IMAGE_BACKGROUND_TYPE,
 	VIDEO_BACKGROUND_TYPE,
 	backgroundImageStyles,
@@ -55,8 +52,6 @@ import {
  * Module Constants
  */
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
-
-let svg_icons = Object.keys( EPIcon )
 
 function HeroEdit( {
 	attributes,
@@ -77,31 +72,24 @@ function HeroEdit( {
 } ) {
 	const {
 		id,
+		iconId,
 		backgroundType,
 		dimRatio,
 		leftPillDimRatio,
 		rightPillDimRatio,
 		focalPoint,
 		url,
+		iconUrl,
 		heading,
 		text,
-		typewriterSearch,
-		typewriterReplace,
 		button1Text,
-		button1URL,
-		button1LinkTarget,
-		button2Icon,
-		button2IconSize,
 		button2Text,
-		button2URL,
-		button2LinkTarget,
-		button3Icon,
-		button3IconSize,
 		button3Text,
-		button3URL,
-		button3LinkTarget,
+		grayscale,
 	} = attributes;
+
 	const onSelectMedia = attributesFromMedia( setAttributes );
+	const onSelectIconMedia = attributesFromIconMedia( setAttributes );
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
@@ -112,48 +100,8 @@ function HeroEdit( {
 	};
 
 	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
-			100 }%`;
+		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
 	}
-
-	const replaceHeading = (h, ts, tr) => {
-		let newHeading = h.replace( /<span.*?>|<\/span>/g, '' );
-		let newTR = tr.replace(/(\r\n|\n|\r)/gm,"|");
-		newHeading = newHeading.replace( ts, '<span class="typewriter" data-replace="'+newTR+'">'+ts+'</span>' );
-
-		return newHeading;
-	}
-
-	const updateHeading = (h, ts, tr, setAttributes ) => {
-		const newHeading = replaceHeading( h, ts, tr );
-
-		setAttributes( {
-			typewriterSearch: ts,
-			typewriterReplace: tr,
-			heading: newHeading,
-		} );
-	};
-
-	const onTypewriterSearchChange = useCallback(
-		( typewriterSearch ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ heading, typewriterReplace, setAttributes ]
-	);
-
-	const onTypewriterReplaceChange = useCallback(
-		( typewriterReplace ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ heading, typewriterSearch, setAttributes ]
-	);
-
-	const onHeadingChange = useCallback(
-		( heading ) => {
-			updateHeading( heading, typewriterSearch, typewriterReplace, setAttributes );
-		},
-		[ typewriterSearch, typewriterReplace, setAttributes ]
-	);
 
 	const controls = (
 		<>
@@ -205,6 +153,13 @@ function HeroEdit( {
 					{ !! url && (
 						<hr />
 					) }
+					{ !! url && (
+						<ToggleControl
+							label={ __( 'Grayscale' ) }
+							onChange={ ( value ) => setAttributes( value ? { grayscale: true } : { grayscale: false } ) }
+							checked={ grayscale === true }
+						/>
+					) }
 					{ url && IMAGE_BACKGROUND_TYPE === backgroundType &&
 						<FocalPointPicker
 							label={ __( 'Focal point picker' ) }
@@ -219,6 +174,36 @@ function HeroEdit( {
 					}
 					{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
 						<video autoPlay muted loop src={ url } />
+					) }
+				</PanelBody>
+				<PanelBody title={ __( 'Icon settings' ) } >
+					<PanelRow>
+						<MediaUpload
+							id={ iconId }
+							allowedTypes={ [ 'image' ] }
+							onSelect={ onSelectIconMedia }
+							render={ ( { open } ) => (
+								<Button onClick={ open } isSecondary={ true }>
+									Select Icon Image	
+								</Button>
+							) }
+						/>
+					</PanelRow>
+					{ !! iconUrl && (
+						<PanelRow>
+							<Button
+								isSecondary
+								className=""
+								onClick={ () =>
+									setAttributes( {
+										iconUrl: undefined,
+										iconId: undefined,
+									} )
+								}
+							>
+								{ __( 'Clear Icon' ) }
+							</Button>
+						</PanelRow>
 					) }
 				</PanelBody>
 				<PanelColorGradientSettings
@@ -318,20 +303,6 @@ function HeroEdit( {
 						/>
 					) }
 				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Heading' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Typewriter Search' ) }
-						help="phrase to search and replace with a typewriter effect."
-						value={ typewriterSearch }
-						onChange={ onTypewriterSearchChange }
-					/>
-					<TextareaControl
-						label={ __( 'Typewriter Replace' ) }
-						help="Put each replacement phrase on its own line."
-						value={ typewriterReplace }
-						onChange={ onTypewriterReplaceChange }
-					/>
-				</PanelBody>
 			</InspectorControls>
 		</>
 	);
@@ -341,6 +312,11 @@ function HeroEdit( {
 		{ 
 			[ heroColor.class ]: heroColor.class,
 		}
+	);
+
+	const backgroundImageClasses = classnames(
+		'wp-block-hero2__background-image',
+		grayscale ? 'grayscale' : {}
 	);
 
 	const overlayClasses = classnames( 
@@ -367,20 +343,13 @@ function HeroEdit( {
 		{ [ rightPillColor.class ]: rightPillColor.class },
 	);
 
-	const button2Style = {
-		...( button2IconSize ? { width: button2IconSize+"px" } : {} ),
-	};
-	const button3Style = {
-		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
-	};
-
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
 				<div className="wp-block-hero2__inner-wrap">
 					<div className="wp-block-hero2__inner-container">
-						<div data-url={ url } style={ style } className="wp-block-hero2__background-image">
+						<div data-url={ url } style={ style } className={ backgroundImageClasses }>
 							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 								<video
 									className="wp-block-hero2__video-background"
@@ -395,6 +364,11 @@ function HeroEdit( {
 						</div>
 						<div className="hero2-content">
 							<div className="wp-block-hero2__inner-content">
+								{ iconUrl && (
+									<figure class="wp-block-image size-large">
+										<img src={ iconUrl } alt="" class="" />
+									</figure>
+								) }
 								<div class="hero2-tags">
 									<RichText
 										tagName="span"
@@ -426,9 +400,9 @@ function HeroEdit( {
 								</div>
 								<RichText
 									tagName="h1"
-									className="hero2-heading typewriter"
+									className="hero2-heading mb-20"
 									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
-									onChange={ onHeadingChange }
+									onChange={ ( value ) => setAttributes( { heading: value } ) }
 									value={ heading }
 									formattingControls={ [] }
 								/>

@@ -5549,6 +5549,15 @@ ul.ul-li-med-space > li {
 	align-items: center;
 }
 
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .wp-block-hero2__background-image.grayscale {
+	filter: grayscale(100%);
+	transition: all 0.4s;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .wp-block-hero2__background-image.grayscale:hover {
+	filter: none;
+}
+
 .wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .overlay-color {
 	position: absolute;
 	top: 0;
@@ -5744,6 +5753,17 @@ ul.ul-li-med-space > li {
 .wp-block-empower-pro-blocks-hero2 .cd-headline b.is-visible {
 	opacity: 1;
 	font-weight: 300;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-content .wp-block-image {
+	text-align: right;
+	margin-bottom: 0;
+	display: block;
+	margin-top: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-content .wp-block-image > * {
+	max-height: 90px;
 }
 
 .wp-block-empower-pro-blocks-hero2 .hero2-tags {

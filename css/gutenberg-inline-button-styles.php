@@ -64,6 +64,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 
 	foreach ( $colors as $color ) {
 		$css .= "
+			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content .wp-block-button.text svg,
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text svg {
 				fill: ${ $color . '_color' } !important;
 			}
@@ -97,10 +98,11 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			html .wp-block-button.text .wp-block-button__link.has-$color-background-color:hover::after {
 				background-color: ${ $color . '_bright_color' } !important;
 			}
-			html .has-$color-color .hero-tags span,
+			html .has-$color-hero2-color .hero2-tags span,
+			html .has-$color-color .hero-tags span {
 				color: ${ $color . '_color' } !important;
 			}
-			html .has-$color-color .hero-tags span::after,
+			html .has-$color-color .hero-tags span::after {
 				background-color: ${ $color . '_color' } !important;
 			}
 			html .wp-block-button.active .wp-block-button__link.has-$color-background-color {

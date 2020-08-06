@@ -51,3 +51,17 @@ export function attributesFromMedia( setAttributes ) {
 		} );
 	};
 }
+
+export function attributesFromIconMedia( setAttributes ) {
+	return ( media ) => {
+		if ( ! media || ! media.url ) {
+			setAttributes( { iconUrl: undefined, iconId: undefined } );
+			return;
+		}
+
+		setAttributes( {
+			iconUrl: media.url,
+			iconId: media.id,
+		} );
+	};
+}

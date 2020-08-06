@@ -87,6 +87,14 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			&.grayscale {
+				filter: grayscale(100%);
+				@include animation-all;
+				&:hover {
+					filter: none;
+				}
+			}
 		}
 
 		.overlay-color {
@@ -294,6 +302,17 @@
 		opacity: 1;
 		font-weight: $heading_font_weight;
 		// padding-right: 4px;
+	}
+
+	.hero2-content .wp-block-image {
+		text-align: right;
+		margin-bottom: 0;
+		display: block;
+		margin-top: 0;
+
+		> * {
+			max-height: 90px;
+		}
 	}
 
 	.hero2-tags {
