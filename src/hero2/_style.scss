@@ -1,7 +1,7 @@
-.wp-block-empower-pro-blocks-hero {
+.wp-block-empower-pro-blocks-hero2 {
 	// padding-bottom: 77px * 2;
 
-	.wp-block-hero__inner-container {
+	.wp-block-hero2__inner-container {
 		& .wp-block-subhead,
 		& h1,
 		& h2,
@@ -21,11 +21,11 @@
 			color: $text_color !important;
 		}
 
-		.hero-content {
+		.hero2-content {
 			background-color: transparent !important;
 		}
 
-		.hero-content > .wp-block-hero__inner-content {
+		.hero2-content > .wp-block-hero2__inner-content {
 			border-top: 14px solid $border_color;
 			max-width: 600px;
 			width: 100%;
@@ -49,14 +49,14 @@
 
 		}
 
-		.hero-content .wp-block-image {
+		.hero2-content .wp-block-image {
 			text-align: right;
 			margin-bottom: 0;
 			display: block;
 		}
 	}
 
-	.wp-block-hero__inner-container {
+	.wp-block-hero2__inner-container {
 		$height: $nav_height + 77;
 		height: calc((100vh) - #{$height});
 		min-height: 450px;
@@ -70,7 +70,7 @@
 		overflow: visible;
 		position: relative;
 
-		> .wp-block-hero__background-image {
+		> .wp-block-hero2__background-image {
 			margin: 0;
 			position: absolute;
 			top: 0;
@@ -100,7 +100,7 @@
 		@media screen and ( min-width: $ipad_width_1 ) {
 		}
 
-		> .hero-content {
+		> .hero2-content {
 			width: 100%;
 			margin-bottom: -77px;
 
@@ -109,11 +109,11 @@
 			}
 		}
 
-		> .hero-content {
+		> .hero2-content {
 			display: flex;
 		}
 
-		> .hero-content > .wp-block-hero__inner-content {
+		> .hero2-content > .wp-block-hero2__inner-content {
 			margin-left: 50px;
 			margin-right: 50px;
 			z-index: 60;
@@ -203,7 +203,7 @@
 		}
 	}
 
-	.wp-block-hero__inner-wrap {
+	.wp-block-hero2__inner-wrap {
 		max-width: 100%;
 		position: relative;
 	}
@@ -296,10 +296,46 @@
 		// padding-right: 4px;
 	}
 
+	.hero2-tags {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 26px;
+		margin-bottom: 20px;
+		@include button-font;
+
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		span::after {
+			content: " ";
+			width: 1px;
+			height: 11px;
+			background-color: $text_color;
+			color: $text_color;
+			margin-left: 11px;
+			margin-right: 13px;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			top: -1px;
+		}
+
+		span:last-child::after {
+			margin: 0;
+			display: none;
+		}
+	}
+
+
 }
 
 .admin-bar {
-	.wp-block-empower-pro-blocks-hero .wp-block-hero__inner-wrap .wp-block-hero__inner-container {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-wrap .wp-block-hero2__inner-container {
 		$height: $nav_height + 32px + 77px;
 		height: calc((100vh) - #{$height});
 

@@ -4,11 +4,11 @@
 	"attributes": {
 		"typewriterSearch": {
 			"type": "string",
-			"default": "with Impact"
+			"default": ""
 		},
 		"typewriterReplace": {
 			"type": "string",
-			"default": "that Engages\nwith Results"
+			"default": ""
 		},
 		"url": {
 			"type": "string"

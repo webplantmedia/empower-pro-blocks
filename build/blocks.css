@@ -5453,6 +5453,371 @@ ul.ul-li-med-space > li {
 	}
 }
 
+.wp-block-empower-pro-blocks-hero2 {
+	/* xclip */
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .wp-block-subhead,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h1,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h2,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h3,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h4,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h5,
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h6 {
+	font-size: 48px;
+}
+
+@media screen and (max-width: 860px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .wp-block-subhead,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h1,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h2,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h3,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h4,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h5,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container h6 {
+		font-size: 38px;
+	}
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container p {
+	color: #777777 !important;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content {
+	background-color: transparent !important;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content {
+	border-top: 14px solid #eeeeee;
+	max-width: 600px;
+	width: 100%;
+	background-color: #fff;
+	padding: 30px 0;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content > *,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content > .h1,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content > h1,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content > div,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content > .wp-block-hero2__inner-content > p {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .hero2-content .wp-block-image {
+	text-align: right;
+	margin-bottom: 0;
+	display: block;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container {
+	height: calc((100vh) - 171px);
+	min-height: 450px;
+	max-height: 650px;
+	z-index: 1;
+	top: 0;
+	transition: none;
+	display: flex;
+	align-items: flex-end;
+	justify-content: start;
+	overflow: visible;
+	position: relative;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .wp-block-hero2__background-image {
+	margin: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	background-color: #000;
+	background-size: cover;
+	background-position: 50%;
+	min-height: 430px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container .overlay-color {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content {
+	width: 100%;
+	margin-bottom: -77px;
+}
+
+@media screen and (max-width: 600px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content {
+		margin-bottom: -114px;
+	}
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content {
+	display: flex;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content {
+	margin-left: 50px;
+	margin-right: 50px;
+	z-index: 60;
+	position: relative;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar {
+	background-color: #f5f5f5;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	margin: 30px 0 -30px 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 77px;
+	display: flex;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar .wp-block-button.text.icon {
+	display: flex;
+	align-items: center;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar .wp-block-button .button-icon-before {
+	margin-right: 6px;
+	width: 11px;
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar.wp-block-buttons .wp-block-button {
+	margin-right: 30px;
+}
+
+@media screen and (max-width: 600px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar {
+		display: block;
+	}
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar.wp-block-buttons .wp-block-button {
+		display: block;
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content .gray-bottom-bar {
+		height: 114px;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content {
+		margin-top: 0;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content > *,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content > .h1,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content > h1,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content > div,
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container > .hero2-content > .wp-block-hero2__inner-content > p {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container {
+		height: 500px;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container {
+		height: 550px !important;
+		min-height: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-container {
+		height: 550px !important;
+		min-height: 0;
+	}
+}
+
+.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-wrap {
+	max-width: 100%;
+	position: relative;
+}
+
+.wp-block-empower-pro-blocks-hero2 h1,
+.wp-block-empower-pro-blocks-hero2 .h1 {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-words-wrapper {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-words-wrapper b {
+	position: absolute;
+	white-space: nowrap;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-words-wrapper b.is-visible {
+	position: relative;
+	display: inline-block;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.clip span {
+	display: inline-block;
+	padding: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.clip .typewriter {
+	display: block;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.clip .cd-words-wrapper {
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.clip .cd-words-wrapper::after {
+	/* line */
+	content: "";
+	position: absolute;
+	top: 10%;
+	right: 0;
+	width: 2px;
+	height: 80%;
+	margin-left: 0;
+	background-color: #eeeeee;
+	opacity: 0.5;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border-radius: 99em;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.is-mobile.clip .cd-words-wrapper::after {
+	opacity: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.is-mobile .cd-words-wrapper {
+	width: auto !important;
+	overflow: hidden;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.is-mobile .cd-words-wrapper b.is-visible {
+	padding-right: 0;
+	display: none;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.is-mobile .cd-words-wrapper b.original-text {
+	display: inline-block !important;
+	position: static;
+	opacity: 1;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline.clip b {
+	opacity: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .cd-headline b.is-visible {
+	opacity: 1;
+	font-weight: 300;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-tags {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 26px;
+	margin-bottom: 20px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	line-height: 1.5;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-tags span {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-tags span::after {
+	content: " ";
+	width: 1px;
+	height: 11px;
+	background-color: #777777;
+	color: #777777;
+	margin-left: 11px;
+	margin-right: 13px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+
+.wp-block-empower-pro-blocks-hero2 .hero2-tags span:last-child::after {
+	margin: 0;
+	display: none;
+}
+
+.admin-bar .wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-wrap .wp-block-hero2__inner-container {
+	height: calc((100vh) - 203px);
+}
+
+.above-fold-background {
+	position: absolute;
+	bottom: -320px;
+	z-index: 50;
+	left: -320px;
+}
+
+@media only screen and (max-width: 1023px) {
+	.above-fold-background {
+		display: none;
+	}
+}
+
+.top-right-background {
+	position: absolute;
+	top: -340px;
+	z-index: 100;
+	right: -260px;
+}
+
+@media only screen and (max-width: 1023px) {
+	.top-right-background {
+		display: none;
+	}
+}
+
 .wp-block-empower-pro-blocks-icontext .wp-block-icontext__text-wrap {
 	width: 100%;
 }

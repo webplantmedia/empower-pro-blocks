@@ -66,8 +66,8 @@ export default function save( { attributes } ) {
 	}
 
 	const classes = classnames(
-		'wp-block-hero__outer-wrapper',
-		getColorClassName( 'hero-color', heroColor ),
+		'wp-block-hero2__outer-wrapper',
+		getColorClassName( 'hero2-color', heroColor ),
 	);
 
 	const overlayClasses = classnames( 
@@ -103,12 +103,12 @@ export default function save( { attributes } ) {
 
 	return (
 		<div className={ classes }>
-			<div className="wp-block-hero__inner-wrap">
-				<div className="wp-block-hero__inner-container">
-					<div data-url={ url } style={ style } className="wp-block-hero__background-image">
+			<div className="wp-block-hero2__inner-wrap">
+				<div className="wp-block-hero2__inner-container">
+					<div data-url={ url } style={ style } className="wp-block-hero2__background-image">
 						{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 							<video
-								className="wp-block-hero__video-background"
+								className="wp-block-hero2__video-background"
 								autoPlay
 								muted
 								loop
@@ -118,19 +118,19 @@ export default function save( { attributes } ) {
 						<div className={ overlayClasses }>
 						</div>
 					</div>
-					<div className="hero-content">
-						<div className="wp-block-hero__inner-content">
+					<div className="hero2-content">
+						<div className="wp-block-hero2__inner-content">
 							{ heading && (
 								<RichText.Content
 									tagName="h1"
-									className="hero-heading typewriter"
+									className="hero2-heading typewriter"
 									value={ heading }
 								/>
 							) }
 							{ text && (
 								<RichText.Content
 									tagName="p"
-									className="hero-text"
+									className="hero2-text"
 									value={ text }
 								/>
 							) }

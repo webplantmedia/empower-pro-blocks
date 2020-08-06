@@ -3285,4 +3285,17 @@ label.wp-block-uagb-blockquote__via-label svg {
 	background-color: #cccccc;
 }
 
+.wp-block-hero2__outer-wrapper {
+	overflow: hidden;
+	position: relative;
+}
+
+.wp-block-empower-pro-blocks-hero2 {
+	padding-bottom: 107px;
+}
+
+.wp-block-empower-pro-blocks-hero2 span.typewriter {
+	background-color: #cccccc;
+}
+
 /*# sourceMappingURL=map/editor.css.map */

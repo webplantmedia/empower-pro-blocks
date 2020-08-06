@@ -332,114 +332,12 @@ function HeroEdit( {
 						onChange={ onTypewriterReplaceChange }
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Call to Action Button' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button1Text }
-						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-					/>
-					<URLInput
-						value={ button1URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button1URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
-						checked={ button1LinkTarget === '_blank' }
-					/>
-				</PanelBody>
-				<PanelBody title={ __( 'Secondary Button 1' ) } initialOpen={ true }>
-					<Fragment>
-						<p className="">{__( "Icon" )}</p>
-						<FontIconPicker
-							icons={svg_icons}
-							renderFunc= {renderSVG}
-							theme="default"
-							value={button2Icon}
-							onChange={ ( value ) => setAttributes( { button2Icon: value } ) }
-							isMulti={false}
-							noSelectedPlaceholder= { __( "Select Icon" ) }
-						/>
-					</Fragment>
-					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ button2IconSize }
-						onChange={ ( value ) =>
-							setAttributes( {
-								button2IconSize: value,
-							} )
-						}
-						min={ 7 }
-						max={ 30 }
-						step={ 1 }
-					/>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button2Text }
-						onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-					/>
-					<URLInput
-						value={ button2URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button2URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button2LinkTarget: '_blank' } : { button2LinkTarget: undefined } ) }
-						checked={ button2LinkTarget === '_blank' }
-					/>
-				</PanelBody>
-				<PanelBody title={ __( 'Secondary Button 2' ) } initialOpen={ true }>
-					<Fragment>
-						<p className="">{__( "Icon" )}</p>
-						<FontIconPicker
-							icons={svg_icons}
-							renderFunc= {renderSVG}
-							theme="default"
-							value={button3Icon}
-							onChange={ ( value ) => setAttributes( { button3Icon: value } ) }
-							isMulti={false}
-							noSelectedPlaceholder= { __( "Select Icon" ) }
-						/>
-					</Fragment>
-					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ button3IconSize }
-						onChange={ ( value ) =>
-							setAttributes( {
-								button3IconSize: value,
-							} )
-						}
-						min={ 7 }
-						max={ 30 }
-						step={ 1 }
-					/>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button3Text }
-						onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-					/>
-					<URLInput
-						value={ button3URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button3URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button3LinkTarget: '_blank' } : { button3LinkTarget: undefined } ) }
-						checked={ button3LinkTarget === '_blank' }
-					/>
-				</PanelBody>
 			</InspectorControls>
 		</>
 	);
 
 	const classes = classnames( className, 
-		'wp-block-hero__outer-wrapper',
+		'wp-block-hero2__outer-wrapper',
 		{ 
 			[ heroColor.class ]: heroColor.class,
 		}
@@ -480,12 +378,12 @@ function HeroEdit( {
 		<>
 			{ controls }
 			<div className={ classes }>
-				<div className="wp-block-hero__inner-wrap">
-					<div className="wp-block-hero__inner-container">
-						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
+				<div className="wp-block-hero2__inner-wrap">
+					<div className="wp-block-hero2__inner-container">
+						<div data-url={ url } style={ style } className="wp-block-hero2__background-image">
 							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
 								<video
-									className="wp-block-hero__video-background"
+									className="wp-block-hero2__video-background"
 									autoPlay
 									muted
 									loop
@@ -495,11 +393,40 @@ function HeroEdit( {
 							<div className={ overlayClasses }>
 							</div>
 						</div>
-						<div className="hero-content">
-							<div className="wp-block-hero__inner-content">
+						<div className="hero2-content">
+							<div className="wp-block-hero2__inner-content">
+								<div class="hero2-tags">
+									<RichText
+										tagName="span"
+										placeholder={ __( 'Button 1' ) }
+										value={ button1Text }
+										onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+										withoutInteractiveFormatting
+										className=""
+										formattingControls={ [] }
+									/>
+									<RichText
+										tagName="span"
+										placeholder={ __( 'Button 2' ) }
+										value={ button2Text }
+										onChange={ ( value ) => setAttributes( { button2Text: value } ) }
+										withoutInteractiveFormatting
+										className=""
+										formattingControls={ [] }
+									/>
+									<RichText
+										tagName="span"
+										placeholder={ __( 'Button 3' ) }
+										value={ button3Text }
+										onChange={ ( value ) => setAttributes( { button3Text: value } ) }
+										withoutInteractiveFormatting
+										className=""
+										formattingControls={ [] }
+									/>
+								</div>
 								<RichText
 									tagName="h1"
-									className="hero-heading typewriter"
+									className="hero2-heading typewriter"
 									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 									onChange={ onHeadingChange }
 									value={ heading }
@@ -507,7 +434,7 @@ function HeroEdit( {
 								/>
 								<RichText
 									tagName="p"
-									className="hero-text"
+									className="hero2-text"
 									placeholder={ __( 'Text', 'empower-pro-blocks' ) }
 									onChange={ ( value ) =>
 										setAttributes( {
@@ -517,50 +444,6 @@ function HeroEdit( {
 									value={ text }
 									formattingControls={ [] }
 								/>
-								<div class="wp-block-buttons">
-									<div class="wp-block-button text">
-										<RichText
-											placeholder={ __( 'Button 1' ) }
-											value={ button1Text }
-											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-											withoutInteractiveFormatting
-											className="wp-block-button__link button1"
-											formattingControls={ [] }
-										/>
-									</div>
-								</div>
-								<div class="gray-bottom-bar">
-									<div class="wp-block-buttons">
-										<div class="wp-block-button text icon">
-											{ button2Icon && (
-												<div style={ button2Style } class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
-											) }
-											<RichText
-												placeholder={ __( 'Button 2' ) }
-												value={ button2Text }
-												onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-												withoutInteractiveFormatting
-												className="wp-block-button__link button2"
-												formattingControls={ [] }
-											/>
-										</div>
-									</div>
-									<div class="wp-block-buttons">
-										<div class="wp-block-button text icon">
-											{ button3Icon && (
-												<div style={ button3Style } class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
-											) }
-											<RichText
-												placeholder={ __( 'Button 3' ) }
-												value={ button3Text }
-												onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-												withoutInteractiveFormatting
-												className="wp-block-button__link button3"
-												formattingControls={ [] }
-											/>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div className={ leftPillClasses }>
@@ -588,7 +471,7 @@ export default compose( [
 			toggleSelection,
 		};
 	} ),
-	withColors( { overlayColor: 'overlay-color', heroColor: 'hero-color', leftPillColor: 'left-pill-color', rightPillColor: 'right-pill-color' } ),
+	withColors( { overlayColor: 'overlay-color', heroColor: 'hero2-color', leftPillColor: 'left-pill-color', rightPillColor: 'right-pill-color' } ),
 	withNotices,
 	withInstanceId,
 ] )( HeroEdit );
