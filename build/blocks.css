@@ -5881,6 +5881,32 @@ ul.ul-li-med-space > li {
 	margin-top: 0;
 }
 
+.wp-block-empower-pro-blocks-icontext .button-icon-before.grayscale {
+	filter: grayscale(100%);
+	transition: all 0.4s;
+}
+
+.wp-block-empower-pro-blocks-icontext .button-icon-before.grayscale:hover {
+	filter: none;
+}
+
+.wp-block-empower-pro-blocks-icontext .button-icon-before.image-style-hex svg,
+.wp-block-empower-pro-blocks-icontext .button-icon-before.image-style-hex img {
+	-webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+	clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.wp-block-empower-pro-blocks-icontext .button-icon-before.image-style-circle svg,
+.wp-block-empower-pro-blocks-icontext .button-icon-before.image-style-circle img {
+	border-radius: 99em;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
 .wp-block-empower-pro-blocks-icontext .button-icon-before svg {
 	fill: #777777;
 }

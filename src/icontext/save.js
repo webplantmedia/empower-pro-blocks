@@ -30,6 +30,8 @@ export default function save( { attributes } ) {
 		headingColor,
 		iconColor,
 		image,
+		imageStyle,
+		grayscale,
 		imageIcon,
 		customFontSize,
 	} = attributes;
@@ -46,6 +48,8 @@ export default function save( { attributes } ) {
 
 	const iconClasses = classnames(
 		'button-icon-before',
+		grayscale ? 'grayscale' : {},
+		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		getColorClassName( 'icon-color', iconColor ),
 	);
@@ -62,6 +66,7 @@ export default function save( { attributes } ) {
 
 	const iconInnerStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
+		...( imageStyle ? { height: iconSize+"px" } : {} ),
 		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
 	};
 

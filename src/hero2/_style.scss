@@ -89,11 +89,7 @@
 			align-items: center;
 
 			&.grayscale {
-				filter: grayscale(100%);
-				@include animation-all;
-				&:hover {
-					filter: none;
-				}
+				@include grayscale;
 			}
 		}
 

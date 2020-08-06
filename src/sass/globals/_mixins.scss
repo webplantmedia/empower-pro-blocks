@@ -487,3 +487,27 @@
 		font-size: $body_font_size;
 	}
 }
+
+@mixin grayscale() {
+	filter: grayscale(100%);
+	@include animation-all;
+
+	&:hover {
+		filter: none;
+	}
+}
+
+@mixin hex-crop() {
+	-webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+	clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin circle-crop() {
+	border-radius: 99em;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}

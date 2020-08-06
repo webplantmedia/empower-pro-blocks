@@ -71,6 +71,8 @@ function IconTextBlock( {
 		verticalAlignment,
 		level,
 		image,
+		imageStyle,
+		grayscale,
 		imageIcon,
 	} = attributes;
 
@@ -186,9 +188,25 @@ function IconTextBlock( {
 									{ __( "Remove Image" ) }
 								</Button> )
 							}
+							<hr />
+							<SelectControl
+								label={ __( "Image Style" ) }
+								value={ imageStyle }
+								options={ [
+									{ value: "", label: __( "None" ) },
+									{ value: "circle", label: __( "Circle" ) },
+									{ value: "hex", label: __( "Hex" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
+							/>
+							<ToggleControl
+								label={ __( 'Grayscale' ) }
+								onChange={ ( value ) => setAttributes( value ? { grayscale: true } : { grayscale: false } ) }
+								checked={ grayscale === true }
+							/>
+							<hr />
 						</Fragment>
 					}
-					<hr />
 					<RangeControl
 						label={ __( 'Icon Size' ) }
 						value={ iconSize }
@@ -267,6 +285,8 @@ function IconTextBlock( {
 
 	const iconClasses = classnames( 
 		'button-icon-before', 
+		grayscale ? 'grayscale' : {},
+		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		{ [ iconColor.class ]: iconColor.class, }
 	);
@@ -281,6 +301,7 @@ function IconTextBlock( {
 
 	const iconInnerStyle = {
 		...( iconSize ? { width: iconSize+"px" } : {} ),
+		...( imageStyle ? { height: iconSize+"px" } : {} ),
 		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
 	};
 

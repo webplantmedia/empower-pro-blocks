@@ -35,6 +35,13 @@
 		"fontSize": {
 			"type": "string"
 		},
+		"grayscale": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageStyle": {
+			"type": "string"
+		},
 		"hasHeading": {
 			"type": "boolean",
 			"default": false

@@ -45,6 +45,20 @@
 			margin-top: 0;
 		}
 
+		&.grayscale {
+			@include grayscale;
+		}
+
+		&.image-style-hex svg,
+		&.image-style-hex img {
+			@include hex-crop;
+		}
+
+		&.image-style-circle svg,
+		&.image-style-circle img {
+			@include circle-crop;
+		}
+
 		svg {
 			fill: $text_color;
 		}
