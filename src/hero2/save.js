@@ -100,8 +100,8 @@ export default function save( { attributes } ) {
 								src={ url }
 							/>
 						) }
-						<div className={ overlayClasses }>
-						</div>
+					</div>
+					<div className={ overlayClasses }>
 					</div>
 					<div className="hero2-content">
 						<div className="wp-block-hero2__inner-content">
