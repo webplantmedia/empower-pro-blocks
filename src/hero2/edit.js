@@ -376,7 +376,7 @@ function HeroEdit( {
 										value={ button1Text }
 										onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 										withoutInteractiveFormatting
-										className=""
+										className="button1"
 										formattingControls={ [] }
 									/>
 									<RichText
@@ -385,7 +385,7 @@ function HeroEdit( {
 										value={ button2Text }
 										onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 										withoutInteractiveFormatting
-										className=""
+										className="button2"
 										formattingControls={ [] }
 									/>
 									<RichText
@@ -394,7 +394,7 @@ function HeroEdit( {
 										value={ button3Text }
 										onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 										withoutInteractiveFormatting
-										className=""
+										className="button3"
 										formattingControls={ [] }
 									/>
 								</div>

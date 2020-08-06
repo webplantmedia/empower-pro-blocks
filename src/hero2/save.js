@@ -114,17 +114,17 @@ export default function save( { attributes } ) {
 								<RichText.Content
 									tagName="span"
 									value={ button1Text }
-									className=""
+									className="button1"
 								/>
 								<RichText.Content
 									tagName="span"
 									value={ button2Text }
-									className=""
+									className="button2"
 								/>
 								<RichText.Content
 									tagName="span"
 									value={ button3Text }
-									className=""
+									className="button3"
 								/>
 							</div>
 							<RichText.Content
