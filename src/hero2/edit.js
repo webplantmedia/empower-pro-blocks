@@ -47,6 +47,8 @@ import {
 	backgroundImageStyles,
 	dimRatioToClass,
 } from './shared';
+import svgleftpill from '../svg/leftpill';
+import svgrightpill from '../svg/rightpill';
 
 /**
  * Module Constants
@@ -421,16 +423,12 @@ function HeroEdit( {
 							</div>
 						</div>
 						<div className={ leftPillClasses }>
-							<svg x="0px" y="0px" width="631px" height="789px" viewBox="0 0 631 789">
-								<path fill="#ED5652" d="M63.7,763.5C-2.9,718-20,627.2,25.4,560.5l339-496.8C409.9-2.9,500.7-20,567.3,25.5 c66.6,45.5,83.7,136.4,38.2,203l-339,496.8C221.1,791.9,130.3,809,63.7,763.5"/>
-							</svg>
+							{ svgleftpill }
 						</div>
 					</div>
 				</div>
 				<div className={ rightPillClasses }>
-					<svg x="0px" y="0px" width="573px" height="716px" viewBox="0 0 573 716">
-						<path fill="#FF7226" d="M515.2,692.9c60.5-41.3,76-123.8,34.7-184.2L242.1,57.8c-41.3-60.5-123.8-76-184.2-34.7 c-60.5,41.3-76,123.8-34.7,184.2l307.8,450.8C372.2,718.6,454.7,734.2,515.2,692.9"/>
-					</svg>
+					{ svgrightpill }
 				</div>
 			</div>
 		</>

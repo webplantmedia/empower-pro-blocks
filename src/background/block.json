@@ -9,8 +9,17 @@
 			"type": "boolean",
 			"default": false
 		},
+		"drawLineTop": {
+			"type": "number"
+		},
+		"leftPillTop": {
+			"type": "number"
+		},
 		"leftPillColor": {
 			"type": "string"
+		},
+		"rightPillTop": {
+			"type": "number"
 		},
 		"rightPillColor": {
 			"type": "string"
