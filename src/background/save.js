@@ -14,8 +14,8 @@ import { InnerBlocks, getColorClassName } from '@wordpress/block-editor';
 import {
 	dimRatioToClass,
 } from './shared';
-import svgline from '../svg/line';
-import svgrightpill from '../svg/rightpill';
+import svgline from '../../dist/svg/line';
+import svgrightpill from '../../dist/svg/rightpill';
 
 export default function save( { attributes } ) {
 	const {

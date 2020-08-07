@@ -20,8 +20,8 @@ import {
 	backgroundImageStyles,
 	dimRatioToClass,
 } from './shared';
-import svgleftpill from '../svg/leftpill';
-import svgrightpill from '../svg/rightpill';
+import svgleftpill from '../../dist/svg/leftpill';
+import svgrightpill from '../../dist/svg/rightpill';
 
 export default function save( { attributes } ) {
 	const {

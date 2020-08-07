@@ -35,8 +35,8 @@ import { useRef } from '@wordpress/element';
 import {
 	dimRatioToClass,
 } from './shared';
-import svgline from '../svg/line';
-import svgrightpill from '../svg/rightpill';
+import svgline from '../../dist/svg/line';
+import svgrightpill from '../../dist/svg/rightpill';
 
 const MIN_SPACER_HEIGHT = 0;
 const MAX_SPACER_HEIGHT = 500;
