@@ -1,0 +1,116 @@
+.wp-block-empower-pro-blocks-background {
+	position: relative;
+
+	.above-fold-background {
+		position: absolute;
+		bottom: -320px;
+		z-index: 50;
+		left: -320px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.below-fold-background {
+		position: absolute;
+		top: 610px;
+		z-index: 0;
+		right: -260px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.below-fold-background-2 {
+		position: absolute;
+		top: -240px;
+		z-index: 0;
+		left: -250px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.below-fold-background-3 {
+		margin-top: -85px;
+		position: absolute;
+		z-index: 0;
+		left: auto;
+		left: calc(50% + 100px);
+		width: 700px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.below-fold-background-4 {
+		position: absolute;
+		top: 80px;
+		z-index: 0;
+		right: -360px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.below-fold-background-5 {
+		position: absolute;
+		top: -100px;
+		z-index: 0;
+		right: -280px;
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+	.block-wrap {
+		position: relative;
+		z-index: 60;
+	}
+
+	.draw-line {
+		position: absolute;
+		left: 40%;
+		top: -430px;
+		height: 862px;
+		width: 1581px;
+		max-width: 1581px;
+		pointer-events: none;
+
+		.wp-block-image {
+			transition: 1.5s width ease;
+			width: 0;
+			float: right;
+			overflow: hidden;
+			height: 100%;
+			position: absolute;
+			left: auto;
+			right: 0;
+			top: 0;
+
+			> img {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1581px;
+				max-width: 1581px;
+				// opacity: 0.1;
+			}
+		}
+
+		&.draw-line-animate .wp-block-image {
+			width: 100%;
+		}
+
+		@media only screen and ( max-width: $ipad_width ) {
+			display: none;
+		}
+	}
+
+}
