@@ -27,7 +27,7 @@ export default function save( { attributes } ) {
 		<div className={ classes }>
 			<div className="wp-block-filter__inner-wrap">
 				<div class="filtering" data-container=".our-statements">
-					<div data-filter=".our-mission">
+					<div data-filter=".filter1">
 						<span class="plus"></span>
 						<RichText.Content
 							tagName="span"
@@ -35,7 +35,7 @@ export default function save( { attributes } ) {
 							className="button1"
 						/>
 					</div>
-					<div data-filter=".our-vision">
+					<div data-filter=".filter2">
 						<span class="plus"></span>
 						<RichText.Content
 							tagName="span"
@@ -43,7 +43,7 @@ export default function save( { attributes } ) {
 							className="button2"
 						/>
 					</div>
-					<div data-filter=".our-values">
+					<div data-filter=".filter3">
 						<span class="plus"></span>
 						<RichText.Content
 							tagName="span"

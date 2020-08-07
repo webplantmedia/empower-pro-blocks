@@ -1,4 +1,31 @@
 .wp-block-empower-pro-blocks-filter {
+	// Filter
+	.filtering + .wp-block-group > .wp-block-group__inner-container {
+		position: relative;
+
+		> .wp-block-empower-pro-blocks-column {
+			// visibility: hidden;
+			// transition: all .4s;
+			// opacity: 0;
+			position: absolute;
+			display: none;
+			// height: 100vh;
+			// overflow: hidden;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			&.active {
+				// visibility: visible;
+				display: block;
+				// opacity: 1;
+				position: relative;
+				// height: auto;
+				// overflow: visible;
+			}
+		}
+	}
+
 	.filtering > span,
 	.filtering > div {
 		@include button;
@@ -113,4 +140,42 @@
 			}
 		}
 	}
+
+	@media screen and ( min-width: $ipad_width_1 ) {
+		.filtering-heading {
+			margin-bottom: 100px;
+			position: relative;
+
+			.filtering {
+				position: absolute;
+				top: 50%;
+				margin-top: -12px;
+				right: 0;
+				background-color: $body_background_color;
+			}
+
+			.elegant {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.filtering.block-buttons {
+		display: block !important;
+
+		.wp-block-button {
+			padding: 0;
+			margin-bottom: 14px;
+			text-align: left;
+			display: block !important;
+			box-shadow: none !important;
+			cursor: default;
+			height: auto !important;
+			overflow: hidden !important;
+			padding: 0 !important;
+			opacity: 1 !important;
+			border-radius: 0 !important;
+		}
+	}
+
 }
