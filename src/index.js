@@ -20,6 +20,7 @@ import * as video from './video';
 import * as background from './background';
 import * as filter from './filter';
 import * as column from './column';
+import * as grid from './grid';
 
 /**
  * Function to register an individual block.
@@ -50,4 +51,5 @@ const registerBlock = ( block ) => {
 	background,
 	filter,
 	column,
+	grid,
 ].forEach( registerBlock );
