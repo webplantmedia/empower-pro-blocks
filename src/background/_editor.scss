@@ -2,4 +2,10 @@
 	// padding-top: 20px;
 	// padding-bottom: 20px;
 	overflow: hidden;
+
+	.draw-line {
+		.wp-block-image {
+			width: 100% !important;
+		}
+	}
 }

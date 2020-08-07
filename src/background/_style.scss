@@ -14,7 +14,8 @@
 
 	.below-fold-background {
 		position: absolute;
-		top: 610px;
+		top: auto;
+		bottom: -500px;
 		z-index: 0;
 		right: -260px;
 
@@ -94,7 +95,7 @@
 			right: 0;
 			top: 0;
 
-			> img {
+			> svg {
 				position: absolute;
 				top: 0;
 				right: 0;

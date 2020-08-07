@@ -5,6 +5,10 @@
 		"backgroundColor": {
 			"type": "string"
 		},
+		"drawLine": {
+			"type": "boolean",
+			"default": false
+		},
 		"leftPillColor": {
 			"type": "string"
 		},
