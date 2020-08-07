@@ -437,9 +437,7 @@ button.small,
 input[type="button"].small,
 input[type="reset"].small,
 input[type="submit"].small {
-	font-size: $button_font_size - 2;
-	letter-spacing: $button_font_letter_spacing;
-	padding: 9px 20px;
+	@include button-small;
 }
 
 .table-player > div,

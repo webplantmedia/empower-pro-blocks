@@ -1,0 +1,24 @@
+{
+	"name": "empower-pro-blocks/filter",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"button1Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Mission",
+			"selector": ".button1"
+		},
+		"button2Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Vision",
+			"selector": ".button2"
+		},
+		"button3Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Values",
+			"selector": ".button3"
+		}
+	}
+}

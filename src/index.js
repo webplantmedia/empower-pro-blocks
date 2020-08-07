@@ -18,6 +18,7 @@ import * as icontext from './icontext';
 import * as spacer from './spacer';
 import * as video from './video';
 import * as background from './background';
+import * as filter from './filter';
 
 /**
  * Function to register an individual block.
@@ -46,4 +47,5 @@ const registerBlock = ( block ) => {
 	spacer,
 	video,
 	background,
+	filter,
 ].forEach( registerBlock );
