@@ -64,6 +64,8 @@ function BackgroundEdit( {
 		leftPillTop,
 		rightPillTop,
 		drawLineTop,
+		topSlant,
+		bottomSlant,
 	} = attributes;
 
 	const updateTopHeight = ( value ) => {
@@ -120,6 +122,18 @@ function BackgroundEdit( {
 						min={ -1500 }
 						max={ 1500 }
 						step={ 10 }
+					/>
+				</PanelBody>
+				<PanelBody title={ __( 'Slants' ) } initialOpen={ true }>
+					<ToggleControl
+						label={ __( 'Display Top Slant' ) }
+						onChange={ ( value ) => setAttributes( value ? { topSlant: true } : { topSlant: false } ) }
+						checked={ topSlant === true }
+					/>
+					<ToggleControl
+						label={ __( 'Display Bottom Slant' ) }
+						onChange={ ( value ) => setAttributes( value ? { bottomSlant: true } : { bottomSlant: false } ) }
+						checked={ bottomSlant === true }
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
@@ -242,7 +256,13 @@ function BackgroundEdit( {
 		</>
 	);
 
-	const classes = classnames( className, 
+	const classes = classnames( className, {
+		[ 'display-top-slant' ]: topSlant,
+		[ 'display-bottom-slant' ]: bottomSlant,
+	} );
+
+	const innerClasses = classnames(
+		"wp-block-background__inner-container",
 		{ [ backgroundColor.class ]: backgroundColor.class, }
 	);
 
@@ -289,7 +309,7 @@ function BackgroundEdit( {
 						</figure>
 					</div>
 				) }
-				<div className="wp-block-background__inner-container">
+				<div className={ innerClasses }>
 					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 					<div className="block-wrap">
 						<InnerBlocks

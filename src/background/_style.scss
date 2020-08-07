@@ -15,7 +15,7 @@
 	.below-fold-background {
 		position: absolute;
 		top: 610px;
-		z-index: 0;
+		z-index: 1;
 		right: -260px;
 
 		@media only screen and ( max-width: $ipad_width ) {
@@ -26,7 +26,7 @@
 	.below-fold-background-2 {
 		position: absolute;
 		top: -240px;
-		z-index: 0;
+		z-index: 1;
 		left: -250px;
 
 		@media only screen and ( max-width: $ipad_width ) {
@@ -37,7 +37,7 @@
 	.below-fold-background-3 {
 		margin-top: -85px;
 		position: absolute;
-		z-index: 0;
+		z-index: 1;
 		left: auto;
 		left: calc(50% + 100px);
 		width: 700px;
@@ -50,7 +50,7 @@
 	.below-fold-background-4 {
 		position: absolute;
 		top: 80px;
-		z-index: 0;
+		z-index: 1;
 		right: -360px;
 
 		@media only screen and ( max-width: $ipad_width ) {
@@ -61,7 +61,7 @@
 	.below-fold-background-5 {
 		position: absolute;
 		top: -100px;
-		z-index: 0;
+		z-index: 1;
 		right: -280px;
 
 		@media only screen and ( max-width: $ipad_width ) {
@@ -82,6 +82,7 @@
 		width: 1581px;
 		max-width: 1581px;
 		pointer-events: none;
+		z-index: 1;
 
 		.wp-block-image {
 			transition: 1.5s width ease;
@@ -113,4 +114,32 @@
 		}
 	}
 
+	// slant
+	&.display-top-slant .wp-block-background__inner-container {
+		-webkit-clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
+		clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
+
+		@media only screen and ( max-width: $ipad_width ) {
+			-webkit-clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+			clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+		}
+		@media only screen and ( max-width: $mobile_width ) {
+			-webkit-clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+			clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+		}
+	}
+
+	&.display-bottom-slant .wp-block-background__inner-container {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
+
+		@media only screen and ( max-width: $ipad_width ) {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 100px ), 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 100px ), 0 100%);
+		}
+		@media only screen and ( max-width: $mobile_width ) {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 60px ), 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 60px ), 0 100%);
+		}
+	}
 }

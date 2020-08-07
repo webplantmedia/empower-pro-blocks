@@ -32,6 +32,8 @@ export default function save( { attributes } ) {
 		leftPillTop,
 		rightPillTop,
 		drawLineTop,
+		topSlant,
+		bottomSlant,
 	} = attributes;
 
 	const backgroundClass = getColorClassName(
@@ -48,9 +50,16 @@ export default function save( { attributes } ) {
 		dimRatioToClass( leftPillDimRatio ),
 		getColorClassName( 'svg-fill-color', leftPillColor ),
 	);
-	const className = classnames( backgroundClass, {
-		'has-background': backgroundColor,
+
+	const className = classnames( {
+		[ 'display-top-slant' ]: topSlant,
+		[ 'display-bottom-slant' ]: bottomSlant,
 	} );
+
+	const innerClasses = classnames(
+		backgroundClass, 
+		"wp-block-background__inner-container",
+	);
 
 	const topHeightClassName = classnames( {
 		[ 'mobile-height-' + topMobileHeight ]: topMobileHeight !== '',
@@ -81,23 +90,23 @@ export default function save( { attributes } ) {
 					</figure>
 				</div>
 			) }
-			<div className="wp-block-background__inner-container">
+			<div className={ innerClasses }>
 				<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 				<div className="block-wrap">
 					<InnerBlocks.Content />
 				</div>
 				<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
-				{ leftPillColor && (
-					<div className={ leftPillClasses } style={ leftPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
-				{ rightPillColor && (
-					<div className={ rightPillClasses } style={ rightPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
 			</div>
+			{ leftPillColor && (
+				<div className={ leftPillClasses } style={ leftPillStyle }>
+					{ svgrightpill }
+				</div>
+			) }
+			{ rightPillColor && (
+				<div className={ rightPillClasses } style={ rightPillStyle }>
+					{ svgrightpill }
+				</div>
+			) }
 		</div>
 	);
 }
