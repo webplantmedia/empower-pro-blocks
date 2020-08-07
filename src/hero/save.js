@@ -137,7 +137,7 @@ export default function save( { attributes } ) {
 								/>
 							) }
 							<div class="wp-block-buttons">
-								<div class="wp-block-button text">
+								<div class="wp-block-button is-style-text">
 									{ button1Text && (
 										<RichText.Content
 											tagName="a"
@@ -151,7 +151,7 @@ export default function save( { attributes } ) {
 							</div>
 							<div class="gray-bottom-bar">
 								<div class="wp-block-buttons">
-									<div class="wp-block-button text icon">
+									<div class="wp-block-button is-style-text icon">
 										{ button2Icon && (
 											<div style={ button2Style } class="button-icon-before button2-icon">{ renderSVG(button2Icon) }</div>
 										) }
@@ -167,7 +167,7 @@ export default function save( { attributes } ) {
 									</div>
 								</div>
 								<div class="wp-block-buttons">
-									<div class="wp-block-button text icon">
+									<div class="wp-block-button is-style-text icon">
 										{ button3Icon && (
 											<div style={ button3Style } class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
 										) }

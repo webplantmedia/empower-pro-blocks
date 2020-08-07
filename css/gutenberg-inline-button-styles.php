@@ -64,38 +64,38 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 
 	foreach ( $colors as $color ) {
 		$css .= "
-			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content .wp-block-button.text svg,
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text svg {
+			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content .wp-block-button.is-style-text svg,
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text svg {
 				fill: ${ $color . '_color' } !important;
 			}
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text ion-icon,
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text i,
-			html .wp-block-button.text.icon .wp-block-button__link.has-$color-background-color i {
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text ion-icon,
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text i,
+			html .wp-block-button.is-style-text.icon .wp-block-button__link.has-$color-background-color i {
 				color: ${ $color . '_color' } !important;
 			}
 
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color {
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color {
 				border-color: ${ $color . '_color' };
 				background-color: transparent !important;
 			}
 
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text .wp-block-button__link:hover,
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text .wp-block-button__link:focus,
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color:hover,
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color:focus {
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link:hover,
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link:focus,
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color:hover,
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color:focus {
 				color: ${ $color . '_bright_color' };
 				background-color: transparent !important;
 			}
 
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text .wp-block-button__link::after,
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color::after {
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link::after,
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color::after {
 				background-color: ${ $color . '_color' } !important;
 			}
 
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text .wp-block-button__link:hover::after,
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.text .wp-block-button__link:focus::after,
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color:focus::after,
-			html .wp-block-button.text .wp-block-button__link.has-$color-background-color:hover::after {
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link:hover::after,
+			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link:focus::after,
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color:focus::after,
+			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color:hover::after {
 				background-color: ${ $color . '_bright_color' } !important;
 			}
 			html .has-$color-hero2-color .hero2-tags span,
@@ -113,14 +113,14 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 
 	$css .= "
 
-		html .wp-block-button:not(.text) .wp-block-button__link:not(.has-background):not(.has-text-color) {
+		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color) {
 			border-color: $primary_color;
 			background-color: $primary_color;
 			color: $primary_contrast_color;
 		}
 
-		html .wp-block-button:not(.text) .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
-		html .wp-block-button:not(.text) .wp-block-button__link:not(.has-background):not(.has-text-color):focus {
+		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color):focus {
 			border-color: $primary_bright_color;
 			background-color: $primary_bright_color;
 			color: $primary_contrast_color;
@@ -154,28 +154,28 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			color: $secondary_bright_color;
 		}
 
-		html .wp-block-button.text.icon svg {
+		html .wp-block-button.is-style-text.icon svg {
 			fill: $primary_color;
 		}
 
-		html .wp-block-button.text.icon ion-icon,
-		html .wp-block-button.text.icon i {
+		html .wp-block-button.is-style-text.icon ion-icon,
+		html .wp-block-button.is-style-text.icon i {
 			color: $primary_color;
 		}
 
-		html .wp-block-button.text .wp-block-button__link {
+		html .wp-block-button.is-style-text .wp-block-button__link {
 			background-color: transparent !important;
 		}
 
-		html .wp-block-button.text .wp-block-button__link:hover {
+		html .wp-block-button.is-style-text .wp-block-button__link:hover {
 			color: $primary_bright_color;
 		}
 
-		html .wp-block-button.text .wp-block-button__link::after {
+		html .wp-block-button.is-style-text .wp-block-button__link::after {
 			background-color: $primary_color !important;
 		}
 
-		html .wp-block-button.text .wp-block-button__link:hover::after {
+		html .wp-block-button.is-style-text .wp-block-button__link:hover::after {
 			background-color: $primary_bright_color !important;
 		}
 
