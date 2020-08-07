@@ -364,6 +364,12 @@
 	font-style: $button_font_style;
 }
 
+@mixin button-outline() {
+	background-color: transparent !important;
+	border: 2px solid $border_color;
+	color: $button_font_text_color;
+}
+
 @mixin button-text() {
 	font-family: $button_font_family;
 	font-size: $button_font_size;

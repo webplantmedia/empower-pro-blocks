@@ -48,7 +48,7 @@ textarea {
 	input,
 	select,
 	textarea {
-		border-color: #fff !imoprtant;
+		border-color: #fff !important;
 	}
 }
 
@@ -461,13 +461,13 @@ input[type="submit"].large {
 }
 
 a.more-link,
-.soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text,
+.soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.is-style-text,
 .comment-reply-link,
-a.button.text,
-button.text,
-input[type="button"].text,
-input[type="reset"].text,
-input[type="submit"].text,
+a.button.is-style-text,
+button.is-style-text,
+input[type="button"].is-style-text,
+input[type="reset"].is-style-text,
+input[type="submit"].is-style-text,
 .lost_password a,
 .view-all-portfolio a {
 	@include button-text;

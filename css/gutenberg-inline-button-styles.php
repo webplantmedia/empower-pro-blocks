@@ -44,9 +44,9 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 	$eighth_color = '%22$s';
 	$eighth_bright_color = '%23$s';
 	$eighth_contrast_color = '%24$s';
-	$text_color = '%25$s';
-	$text_bright_color = '%26$s';
-	$text_contrast_color = '%27$s';
+	$bodytext_color = '%25$s';
+	$bodytext_bright_color = '%26$s';
+	$bodytext_contrast_color = '%27$s';
 	$darktext_color = '%28$s';
 	$darktext_bright_color = '%29$s';
 	$darktext_contrast_color = '%30$s';
@@ -60,7 +60,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 	$white_bright_color = '%38$s';
 	$white_contrast_color = '%39$s';
 
-	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
+	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'bodytext', 'darktext', 'altbackground', 'border', 'white' );
 
 	foreach ( $colors as $color ) {
 		$css .= "
@@ -70,12 +70,21 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			}
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text ion-icon,
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text i,
+			html .wp-block-button .wp-block-button__link.has-text-color.has-$color-color,
 			html .wp-block-button.is-style-text.icon .wp-block-button__link.has-$color-background-color i {
 				color: ${ $color . '_color' } !important;
 			}
 
+			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color,
 			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color {
 				border-color: ${ $color . '_color' };
+				background-color: transparent !important;
+			}
+
+			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color:hover,
+			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color:active {
+				border-color: ${ $color . '_bright_color' } !important;
+				color: ${ $color . '_bright_color' } !important;
 				background-color: transparent !important;
 			}
 
@@ -87,7 +96,13 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 				background-color: transparent !important;
 			}
 
+			html .wp-block-button .wp-block-button__link.has-$color-background-color:hover,
+			html .wp-block-button .wp-block-button__link.has-$color-background-color:focus {
+				background-color: ${ $color . '_bright_color' } !important;
+			}
+
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link::after,
+			html .wp-block-button .wp-block-button__link.has-$color-background-color,
 			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color::after {
 				background-color: ${ $color . '_color' } !important;
 			}
@@ -110,110 +125,6 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			}
 		";
 	}
-
-	$css .= "
-
-		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color) {
-			border-color: $primary_color;
-			background-color: $primary_color;
-			color: $primary_contrast_color;
-		}
-
-		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
-		html .wp-block-button:not(.is-style-text) .wp-block-button__link:not(.has-background):not(.has-text-color):focus {
-			border-color: $primary_bright_color;
-			background-color: $primary_bright_color;
-			color: $primary_contrast_color;
-		}
-
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-secondary-background-color,
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-primary-background-color,
-		html .wp-block-button.is-style-outline .wp-block-button__link {
-			background-color: transparent !important;
-		}
-
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-primary-background-color,
-		html .wp-block-button.is-style-outline .wp-block-button__link {
-			border-color: $primary_color;
-			color: $primary_color;
-		}
-
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-primary-background-color:hover,
-		html .wp-block-button.is-style-outline .wp-block-button__link:hover {
-			border-color: $primary_bright_color;
-			color: $primary_bright_color;
-		}
-
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-secondary-background-color {
-			border-color: $secondary_color;
-			color: $secondary_color;
-		}
-
-		html .wp-block-button.is-style-outline .wp-block-button__link.has-secondary-background-color:hover {
-			border-color: $secondary_bright_color;
-			color: $secondary_bright_color;
-		}
-
-		html .wp-block-button.is-style-text.icon svg {
-			fill: $primary_color;
-		}
-
-		html .wp-block-button.is-style-text.icon ion-icon,
-		html .wp-block-button.is-style-text.icon i {
-			color: $primary_color;
-		}
-
-		html .wp-block-button.is-style-text .wp-block-button__link {
-			background-color: transparent !important;
-		}
-
-		html .wp-block-button.is-style-text .wp-block-button__link:hover {
-			color: $primary_bright_color;
-		}
-
-		html .wp-block-button.is-style-text .wp-block-button__link::after {
-			background-color: $primary_color !important;
-		}
-
-		html .wp-block-button.is-style-text .wp-block-button__link:hover::after {
-			background-color: $primary_bright_color !important;
-		}
-
-		html .wp-block-button .wp-block-button__link.has-primary-background-color.has-secondary-color {
-			color: $secondary_color;
-		}
-
-		html .wp-block-button .wp-block-button__link.has-secondary-background-color.has-primary-color {
-			color: $primary_color;
-		}
-
-		html .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-background {
-			border-color: transparent;
-		}
-
-		html .has-white-background-color,
-		html .wp-block-button .wp-block-button__link.has-white-background-color {
-			background-color: #fff !important;
-			color: $darktext_color !important;
-		}
-
-		html .has-dark-text-color,
-		html .wp-block-button .wp-block-button__link.has-dark-text-color {
-			color: $darktext_color;
-		}
-
-		html .wp-block-button .wp-block-button__link:focus,
-		html .wp-block-button .wp-block-button__link:hover {
-			color: $secondary_bright_color;
-		}
-
-		html .wp-block-button.link .wp-block-button__link {
-			color: $secondary_color;
-		}
-		html .hero-links .wp-block-button::after {
-			background-color: $secondary_color !important;
-		}
-	";
 
 	$css = sprintf(
 		$css,
@@ -249,9 +160,9 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 		$appearance['eighth-bright-color'],
 		$appearance['eighth-contrast-color'],
 
-		$appearance['text-color'],
-		$appearance['text-bright-color'],
-		$appearance['text-contrast-color'],
+		$appearance['bodytext-color'],
+		$appearance['bodytext-bright-color'],
+		$appearance['bodytext-contrast-color'],
 
 		$appearance['darktext-color'],
 		$appearance['darktext-bright-color'],

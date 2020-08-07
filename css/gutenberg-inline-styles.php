@@ -52,9 +52,9 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 	$eighth_bright_color = '%23$s';
 	$eighth_contrast_color = '%24$s';
 
-	$text_color = '%25$s';
-	$text_bright_color = '%26$s';
-	$text_contrast_color = '%27$s';
+	$bodytext_color = '%25$s';
+	$bodytext_bright_color = '%26$s';
+	$bodytext_contrast_color = '%27$s';
 
 	$darktext_color = '%28$s';
 	$darktext_bright_color = '%29$s';
@@ -72,7 +72,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 	$white_bright_color = '%38$s';
 	$white_contrast_color = '%39$s';
 
-	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
+	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'bodytext', 'darktext', 'altbackground', 'border', 'white' );
 
 	foreach ( $colors as $color ) {
 		$css .= "
@@ -386,9 +386,9 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 		$appearance['eighth-bright-color'],
 		$appearance['eighth-contrast-color'],
 
-		$appearance['text-color'],
-		$appearance['text-bright-color'],
-		$appearance['text-contrast-color'],
+		$appearance['bodytext-color'],
+		$appearance['bodytext-bright-color'],
+		$appearance['bodytext-contrast-color'],
 
 		$appearance['darktext-color'],
 		$appearance['darktext-bright-color'],

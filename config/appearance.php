@@ -136,9 +136,9 @@ return array(
 	'eighth-bright-color'   => $empower_pro_blocks_eighth_color_brightness,
 	'eighth-contrast-color' => $empower_pro_blocks_eighth_color_contrast,
 
-	'text-color'          => $empower_pro_blocks_text_color,
-	'text-bright-color'   => $empower_pro_blocks_text_color_brightness,
-	'text-contrast-color' => $empower_pro_blocks_text_color_contrast,
+	'bodytext-color'          => $empower_pro_blocks_text_color,
+	'bodytext-bright-color'   => $empower_pro_blocks_text_color_brightness,
+	'bodytext-contrast-color' => $empower_pro_blocks_text_color_contrast,
 
 	'darktext-color'          => $empower_pro_blocks_darktext_color,
 	'darktext-bright-color'   => $empower_pro_blocks_darktext_color_brightness,
@@ -243,8 +243,8 @@ return array(
 			'color' => $empower_pro_blocks_eighth_color,
 		),
 		array(
-			'name'  => __( 'Text color', 'empower-pro-blocks' ),
-			'slug'  => 'text',
+			'name'  => __( 'Default Text color', 'empower-pro-blocks' ),
+			'slug'  => 'defaulttext',
 			'color' => $empower_pro_blocks_text_color,
 		),
 		array(
