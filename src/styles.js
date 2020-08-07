@@ -37,3 +37,7 @@ registerBlockStyle( 'core/quote' , {
 	name: 'hide-quote',
 	label: __( 'Hide Quote' ),
 } );
+registerBlockStyle( 'core/gallery' , {
+	name: 'brands',
+	label: __( 'Brands' ),
+} );
