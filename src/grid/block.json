@@ -2,9 +2,11 @@
 	"name": "empower-pro-blocks/grid",
 	"category": "abilitie-blocks",
 	"attributes": {
-		"tagName": {
-			"type": "string",
-			"default": "div"
+		"columns": {
+			"type": "string"
+		},
+		"spacing": {
+			"type": "number"
 		}
 	},
 	"supports": {

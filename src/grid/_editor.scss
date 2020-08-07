@@ -1,0 +1,107 @@
+.wp-block-empower-pro-blocks-grid {
+}
+
+.wp-block-empower-pro-blocks-grid {
+	// grid Block Columns
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		grid-template-columns: 1fr 1fr;
+
+		> .wp-block {
+			width: 100%;
+			border: 4px dashed #eeeeee;
+			padding: 0 20px;
+			margin: 0;
+		}
+	}
+
+	&.grid-columns-4 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
+
+	&.grid-columns-3 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	&.grid-columns-7-3 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 7fr 3fr;
+		}
+	}
+
+	&.grid-columns-6-4 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 6fr 4fr;
+		}
+	}
+
+	&.grid-columns-3-7 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 3fr 7fr;
+		}
+	}
+
+	&.grid-columns-5-5 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&.grid-columns-4-6 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 4fr 6fr;
+		}
+	}
+
+	&.grid-columns-25-35-20-20 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			grid-template-columns: 25fr 35fr 20fr 20fr;
+		}
+	}
+
+	&.items-center {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			align-items: center;
+		}
+	}
+
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-gap: 60px 60px;
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		@media only screen and ( max-width: $ipad_width ) {
+			grid-template-columns: 1fr 1fr !important;
+			grid-gap: 60px 60px !important;
+		}
+
+		@media only screen and ( max-width: $tablet_width ) {
+			grid-template-columns: 1fr !important;
+			grid-gap: 60px 60px !important;
+		}
+	}
+
+	$sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
+	@each $size in $sizes {
+		&.grid-gap-#{$size} {
+			> .block-editor-inner-blocks > .block-editor-block-list__layout {
+				grid-gap: #{$size}px #{$size}px !important;
+			}
+		}
+
+		&.r-grid-gap-#{$size} {
+			> .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@media only screen and ( max-width: $ipad_width ) {
+					grid-gap: #{$size}px #{$size}px !important;
+				}
+			}
+		}
+	}
+}
