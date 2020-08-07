@@ -9,6 +9,7 @@ import classnames from 'classnames';
 import {
 	RichText,
 	getColorClassName,
+	InnerBlocks,
 } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
@@ -49,6 +50,11 @@ export default function save( { attributes } ) {
 							value={ button3Text }
 							className="button3"
 						/>
+					</div>
+				</div>
+				<div className="wp-block-group our-statements">
+					<div className="wp-block-group__inner-container">
+						<InnerBlocks.Content />
 					</div>
 				</div>
 			</div>

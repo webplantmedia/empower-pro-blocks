@@ -34,6 +34,27 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
+const INNER_BLOCKS_TEMPLATE = [
+	[
+		'empower-pro-blocks/column',
+		{
+			className: "filter1",
+		},
+	],
+	[
+		'empower-pro-blocks/column',
+		{
+			className: "filter2",
+		},
+	],
+	[
+		'empower-pro-blocks/column',
+		{
+			className: "filter3",
+		},
+	],
+];
+
 function FilterEdit( {
 	attributes,
 	setAttributes,
@@ -69,7 +90,7 @@ function FilterEdit( {
 			<div className={ classes }>
 				<div className="wp-block-filter__inner-wrap">
 					<div class="filtering" data-container=".our-statements">
-						<div data-filter=".our-mission">
+						<div data-filter=".filter1">
 							<span class="plus"></span>
 							<RichText
 								tagName="span"
@@ -81,7 +102,7 @@ function FilterEdit( {
 								formattingControls={ [] }
 							/>
 						</div>
-						<div data-filter=".our-vision">
+						<div data-filter=".filter2">
 							<span class="plus"></span>
 							<RichText
 								tagName="span"
@@ -93,7 +114,7 @@ function FilterEdit( {
 								formattingControls={ [] }
 							/>
 						</div>
-						<div data-filter=".our-values">
+						<div data-filter=".filter3">
 							<span class="plus"></span>
 							<RichText
 								tagName="span"
@@ -106,16 +127,10 @@ function FilterEdit( {
 							/>
 						</div>
 					</div>
-					<div className="block-wrap">
-						<InnerBlocks
-							renderAppender={
-								hasInnerBlocks
-									? undefined
-									: () => (
-											<InnerBlocks.ButtonBlockAppender />
-									  )
-							}
-						/>
+					<div className="wp-block-group our-statements">
+						<div className="wp-block-group__inner-container">
+							<InnerBlocks template={ INNER_BLOCKS_TEMPLATE } templateLock="insert" />
+						</div>
 					</div>
 				</div>
 			</div>

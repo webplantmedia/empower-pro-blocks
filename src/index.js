@@ -19,6 +19,7 @@ import * as spacer from './spacer';
 import * as video from './video';
 import * as background from './background';
 import * as filter from './filter';
+import * as column from './column';
 
 /**
  * Function to register an individual block.
@@ -48,4 +49,5 @@ const registerBlock = ( block ) => {
 	video,
 	background,
 	filter,
+	column,
 ].forEach( registerBlock );

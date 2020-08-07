@@ -1,0 +1,15 @@
+{
+	"name": "empower-pro-blocks/column",
+	"category": "abilitie-blocks",
+	"parent": [
+		"empower-pro-blocks/filter"
+	],
+	"attributes": {
+	},
+	"supports": {
+		"anchor": true,
+		"reusable": false,
+		"html": false,
+		"lightBlockWrapper": true
+	}
+}
