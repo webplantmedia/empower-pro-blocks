@@ -5,13 +5,8 @@
 		"backgroundColor": {
 			"type": "string"
 		},
-		"topSlant": {
-			"type": "boolean",
-			"default": false
-		},
-		"bottomSlant": {
-			"type": "boolean",
-			"default": false
+		"slant": {
+			"type": "string"
 		},
 		"drawLine": {
 			"type": "boolean",

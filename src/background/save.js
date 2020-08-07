@@ -32,8 +32,7 @@ export default function save( { attributes } ) {
 		leftPillTop,
 		rightPillTop,
 		drawLineTop,
-		topSlant,
-		bottomSlant,
+		slant,
 	} = attributes;
 
 	const backgroundClass = getColorClassName(
@@ -52,8 +51,7 @@ export default function save( { attributes } ) {
 	);
 
 	const className = classnames( {
-		[ 'display-top-slant' ]: topSlant,
-		[ 'display-bottom-slant' ]: bottomSlant,
+		[ 'display-' + slant + '-slant' ]: slant !== "",
 	} );
 
 	const innerClasses = classnames(
@@ -96,17 +94,17 @@ export default function save( { attributes } ) {
 					<InnerBlocks.Content />
 				</div>
 				<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
+				{ leftPillColor && (
+					<div className={ leftPillClasses } style={ leftPillStyle }>
+						{ svgrightpill }
+					</div>
+				) }
+				{ rightPillColor && (
+					<div className={ rightPillClasses } style={ rightPillStyle }>
+						{ svgrightpill }
+					</div>
+				) }
 			</div>
-			{ leftPillColor && (
-				<div className={ leftPillClasses } style={ leftPillStyle }>
-					{ svgrightpill }
-				</div>
-			) }
-			{ rightPillColor && (
-				<div className={ rightPillClasses } style={ rightPillStyle }>
-					{ svgrightpill }
-				</div>
-			) }
 		</div>
 	);
 }

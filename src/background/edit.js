@@ -17,6 +17,7 @@ import {
 	ToggleControl,
 	TextControl,
 	TextareaControl,
+	SelectControl,
 	withNotices,
 } from '@wordpress/components';
 import {
@@ -64,8 +65,7 @@ function BackgroundEdit( {
 		leftPillTop,
 		rightPillTop,
 		drawLineTop,
-		topSlant,
-		bottomSlant,
+		slant,
 	} = attributes;
 
 	const updateTopHeight = ( value ) => {
@@ -125,15 +125,15 @@ function BackgroundEdit( {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Slants' ) } initialOpen={ true }>
-					<ToggleControl
-						label={ __( 'Display Top Slant' ) }
-						onChange={ ( value ) => setAttributes( value ? { topSlant: true } : { topSlant: false } ) }
-						checked={ topSlant === true }
-					/>
-					<ToggleControl
-						label={ __( 'Display Bottom Slant' ) }
-						onChange={ ( value ) => setAttributes( value ? { bottomSlant: true } : { bottomSlant: false } ) }
-						checked={ bottomSlant === true }
+					<SelectControl
+						label={ __( "Display" ) }
+						value={ slant }
+						options={ [
+							{ value: "", label: __( "None" ) },
+							{ value: "top", label: __( "Top Slant" ) },
+							{ value: "bottom", label: __( "Bottom Slant" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { slant: value } ) }
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
@@ -257,8 +257,7 @@ function BackgroundEdit( {
 	);
 
 	const classes = classnames( className, {
-		[ 'display-top-slant' ]: topSlant,
-		[ 'display-bottom-slant' ]: bottomSlant,
+		[ 'display-' + slant + '-slant' ]: slant !== "",
 	} );
 
 	const innerClasses = classnames(
@@ -323,17 +322,17 @@ function BackgroundEdit( {
 						/>
 					</div>
 					<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
+					{ leftPillColor.class && (
+						<div className={ leftPillClasses } style={ leftPillStyle }>
+							{ svgrightpill }
+						</div>
+					) }
+					{ rightPillColor.class && (
+						<div className={ rightPillClasses } style={ rightPillStyle }>
+							{ svgrightpill }
+						</div>
+					) }
 				</div>
-				{ leftPillColor.class && (
-					<div className={ leftPillClasses } style={ leftPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
-				{ rightPillColor.class && (
-					<div className={ rightPillClasses } style={ rightPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
 			</div>
 		</>
 	);
