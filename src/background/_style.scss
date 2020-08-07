@@ -1,6 +1,14 @@
 .wp-block-empower-pro-blocks-background {
 	position: relative;
 
+	.wp-block-background__color-container {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
 	.above-fold-background {
 		position: absolute;
 		bottom: -320px;
@@ -115,7 +123,7 @@
 	}
 
 	// slant
-	&.display-top-slant .wp-block-background__inner-container {
+	&.display-top-slant .wp-block-background__color-container {
 		-webkit-clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
 		clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
 
@@ -129,7 +137,7 @@
 		}
 	}
 
-	&.display-bottom-slant .wp-block-background__inner-container {
+	&.display-bottom-slant .wp-block-background__color-container {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
 

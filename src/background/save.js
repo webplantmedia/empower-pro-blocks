@@ -55,8 +55,12 @@ export default function save( { attributes } ) {
 	} );
 
 	const innerClasses = classnames(
-		backgroundClass, 
 		"wp-block-background__inner-container",
+	);
+
+	const backgroundClasses = classnames(
+		backgroundClass, 
+		"wp-block-background__color-container",
 	);
 
 	const topHeightClassName = classnames( {
@@ -88,22 +92,23 @@ export default function save( { attributes } ) {
 					</figure>
 				</div>
 			) }
+			{ leftPillColor && (
+				<div className={ leftPillClasses } style={ leftPillStyle }>
+					{ svgrightpill }
+				</div>
+			) }
+			{ rightPillColor && (
+				<div className={ rightPillClasses } style={ rightPillStyle }>
+					{ svgrightpill }
+				</div>
+			) }
+			<div className={ backgroundClasses } />
 			<div className={ innerClasses }>
 				<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 				<div className="block-wrap">
 					<InnerBlocks.Content />
 				</div>
 				<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
-				{ leftPillColor && (
-					<div className={ leftPillClasses } style={ leftPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
-				{ rightPillColor && (
-					<div className={ rightPillClasses } style={ rightPillStyle }>
-						{ svgrightpill }
-					</div>
-				) }
 			</div>
 		</div>
 	);

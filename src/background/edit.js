@@ -262,6 +262,10 @@ function BackgroundEdit( {
 
 	const innerClasses = classnames(
 		"wp-block-background__inner-container",
+	);
+
+	const backgroundClasses = classnames(
+		"wp-block-background__color-container",
 		{ [ backgroundColor.class ]: backgroundColor.class, }
 	);
 
@@ -308,6 +312,17 @@ function BackgroundEdit( {
 						</figure>
 					</div>
 				) }
+				{ leftPillColor.class && (
+					<div className={ leftPillClasses } style={ leftPillStyle }>
+						{ svgrightpill }
+					</div>
+				) }
+				{ rightPillColor.class && (
+					<div className={ rightPillClasses } style={ rightPillStyle }>
+						{ svgrightpill }
+					</div>
+				) }
+				<div className={ backgroundClasses } />
 				<div className={ innerClasses }>
 					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 					<div className="block-wrap">
@@ -322,16 +337,6 @@ function BackgroundEdit( {
 						/>
 					</div>
 					<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
-					{ leftPillColor.class && (
-						<div className={ leftPillClasses } style={ leftPillStyle }>
-							{ svgrightpill }
-						</div>
-					) }
-					{ rightPillColor.class && (
-						<div className={ rightPillClasses } style={ rightPillStyle }>
-							{ svgrightpill }
-						</div>
-					) }
 				</div>
 			</div>
 		</>
