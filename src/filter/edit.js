@@ -28,6 +28,7 @@ import {
 	MediaUpload,
 	MediaReplaceFlow,
 	withColors,
+	InnerBlocks,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	URLInput,
 } from '@wordpress/block-editor';
@@ -36,6 +37,7 @@ import { __ } from '@wordpress/i18n';
 function FilterEdit( {
 	attributes,
 	setAttributes,
+	hasInnerBlocks,
 	isSelected,
 	className,
 	noticeUI,
@@ -103,6 +105,17 @@ function FilterEdit( {
 								formattingControls={ [] }
 							/>
 						</div>
+					</div>
+					<div className="block-wrap">
+						<InnerBlocks
+							renderAppender={
+								hasInnerBlocks
+									? undefined
+									: () => (
+											<InnerBlocks.ButtonBlockAppender />
+									  )
+							}
+						/>
 					</div>
 				</div>
 			</div>
