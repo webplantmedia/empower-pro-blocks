@@ -29,6 +29,9 @@ export default function save( { attributes } ) {
 		leftPillDimRatio,
 		rightPillDimRatio,
 		drawLine,
+		leftPillTop,
+		rightPillTop,
+		drawLineTop,
 	} = attributes;
 
 	const backgroundClass = getColorClassName(
@@ -57,11 +60,22 @@ export default function save( { attributes } ) {
 		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight !== '',
 	} );
 
+	const leftPillStyle = {
+		...( leftPillTop || leftPillTop === 0 ? { top: leftPillTop+"px" } : {} ),
+	};
+
+	const rightPillStyle = {
+		...( rightPillTop || rightPillTop === 0 ? { top: rightPillTop+"px" } : {} ),
+	};
+
+	const drawLineStyle = {
+		...( drawLineTop || drawLineTop === 0 ? { top: drawLineTop+"px" } : {} ),
+	};
 
 	return (
 		<div className={ className }>
 			{ drawLine && (
-				<div className="wp-block-group draw-line">
+				<div className="wp-block-group draw-line" style={ drawLineStyle }>
 					<figure class="wp-block-image size-full">
 						{ svgline }
 					</figure>
@@ -74,12 +88,12 @@ export default function save( { attributes } ) {
 				</div>
 				<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
 				{ leftPillColor && (
-					<div className={ leftPillClasses }>
+					<div className={ leftPillClasses } style={ leftPillStyle }>
 						{ svgrightpill }
 					</div>
 				) }
 				{ rightPillColor && (
-					<div className={ rightPillClasses }>
+					<div className={ rightPillClasses } style={ rightPillStyle }>
 						{ svgrightpill }
 					</div>
 				) }

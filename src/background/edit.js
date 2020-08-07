@@ -61,6 +61,9 @@ function BackgroundEdit( {
 		bottomHeight,
 		bottomMobileHeight,
 		drawLine,
+		leftPillTop,
+		rightPillTop,
+		drawLineTop,
 	} = attributes;
 
 	const updateTopHeight = ( value ) => {
@@ -106,9 +109,21 @@ function BackgroundEdit( {
 						onChange={ ( value ) => setAttributes( value ? { drawLine: true } : { drawLine: false } ) }
 						checked={ drawLine === true }
 					/>
+					<RangeControl
+						label={ __( 'Top Position' ) }
+						value={ drawLineTop }
+						onChange={ ( value ) =>
+							setAttributes( {
+								drawLineTop: value,
+							} )
+						}
+						min={ -1500 }
+						max={ 1500 }
+						step={ 10 }
+					/>
 				</PanelBody>
 				<PanelColorGradientSettings
-					title={ __( 'Left Pill Color' ) }
+					title={ __( 'Left Pill' ) }
 					initialOpen={ true }
 					settings={ [
 						{
@@ -132,9 +147,21 @@ function BackgroundEdit( {
 						step={ 10 }
 						required
 					/>
+					<RangeControl
+						label={ __( 'Top Position' ) }
+						value={ leftPillTop }
+						onChange={ ( value ) =>
+							setAttributes( {
+								leftPillTop: value,
+							} )
+						}
+						min={ -1500 }
+						max={ 1500 }
+						step={ 10 }
+					/>
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
-					title={ __( 'Right Pill Color' ) }
+					title={ __( 'Right Pill' ) }
 					initialOpen={ true }
 					settings={ [
 						{
@@ -157,6 +184,18 @@ function BackgroundEdit( {
 						max={ 100 }
 						step={ 10 }
 						required
+					/>
+					<RangeControl
+						label={ __( 'Top Position' ) }
+						value={ rightPillTop }
+						onChange={ ( value ) =>
+							setAttributes( {
+								rightPillTop: value,
+							} )
+						}
+						min={ -1500 }
+						max={ 1500 }
+						step={ 10 }
 					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Top Spacing' ) }>
@@ -227,12 +266,24 @@ function BackgroundEdit( {
 		[ 'mobile-height-' + bottomMobileHeight ]: bottomMobileHeight !== '',
 	} );
 
+	const leftPillStyle = {
+		...( leftPillTop || leftPillTop === 0 ? { top: leftPillTop+"px" } : {} ),
+	};
+
+	const rightPillStyle = {
+		...( rightPillTop || rightPillTop === 0 ? { top: rightPillTop+"px" } : {} ),
+	};
+
+	const drawLineStyle = {
+		...( drawLineTop || drawLineTop === 0 ? { top: drawLineTop+"px" } : {} ),
+	};
+
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
 				{ drawLine && (
-					<div className="wp-block-group draw-line">
+					<div className="wp-block-group draw-line" style={ drawLineStyle }>
 						<figure class="wp-block-image size-full">
 							{ svgline }
 						</figure>
@@ -254,12 +305,12 @@ function BackgroundEdit( {
 					<div className={ bottomHeightClassName } style={ { height: bottomHeight } } aria-hidden />
 				</div>
 				{ leftPillColor.class && (
-					<div className={ leftPillClasses }>
+					<div className={ leftPillClasses } style={ leftPillStyle }>
 						{ svgrightpill }
 					</div>
 				) }
 				{ rightPillColor.class && (
-					<div className={ rightPillClasses }>
+					<div className={ rightPillClasses } style={ rightPillStyle }>
 						{ svgrightpill }
 					</div>
 				) }
