@@ -56,6 +56,8 @@ function IconTextBlock( {
 	setFontSize,
 	headingColor,
 	setHeadingColor,
+	textColor,
+	setTextColor,
 	iconColor,
 	setIconColor,
 } ) {
@@ -107,27 +109,16 @@ function IconTextBlock( {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Heading settings' ) }>
+				<PanelBody title={ __( 'Heading' ) }>
 					<ToggleControl
 						label={ __( 'Display heading' ) }
 						onChange={ ( value ) => setAttributes( value ? { hasHeading: true } : { hasHeading: false } ) }
 						checked={ hasHeading === true }
 					/>
-					{ hasHeading && (
-						<HeadingToolbar
-							isCollapsed={ false }
-							minLevel={ 2 }
-							maxLevel={ 7 }
-							selectedLevel={ level }
-							onChange={ ( value ) =>
-								setAttributes( { level: value } )
-							}
-						/>
-					) }
 				</PanelBody>
 				{ hasHeading && (
 					<PanelColorGradientSettings
-						title={ __( 'Heading' ) }
+						title={ __( 'Heading settings' ) }
 						initialOpen={ true }
 						settings={ [
 							{
@@ -138,14 +129,34 @@ function IconTextBlock( {
 							},
 						] }
 					>
+						<HeadingToolbar
+							isCollapsed={ false }
+							minLevel={ 2 }
+							maxLevel={ 7 }
+							selectedLevel={ level }
+							onChange={ ( value ) =>
+								setAttributes( { level: value } )
+							}
+						/>
 					</PanelColorGradientSettings>
 				) }
-				<PanelBody title={ __( 'Text settings' ) }>
+				<PanelColorGradientSettings
+					title={ __( 'Text Settings' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: textColor.color,
+							onColorChange: setTextColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
 					<FontSizePicker
 						value={ fontSize.size }
 						onChange={ setFontSize }
 					/>
-				</PanelBody>
+				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Icon' ) } initialOpen={ true }>
 					<SelectControl
 						label={ __( "Image / Icon" ) }
@@ -340,6 +351,8 @@ function IconTextBlock( {
 							tagName="p"
 							className={ classnames( 'icon-text', {
 								[ fontSize.class ]: fontSize.class,
+								[ textColor.class ]: textColor.class,
+								[ 'has-text-color' ]: textColor.class,
 							} ) }
 							style={ {
 								fontSize: fontSize.size
@@ -356,7 +369,7 @@ function IconTextBlock( {
 
 const IconTextEdit = compose( [
 	withFontSizes( 'fontSize' ),
-	withColors( { headingColor: 'heading-color', iconColor: 'icon-color' } ),
+	withColors( { headingColor: 'heading-color', textColor: 'text-color', iconColor: 'icon-color' } ),
 ] )( IconTextBlock );
 
 export default IconTextEdit;

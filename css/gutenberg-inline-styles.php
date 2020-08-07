@@ -101,10 +101,10 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 				background-color: ${ $color . '_color' } !important;
 			}
 			html .icon-heading.has-$color-heading-color,
-			html .has-text-color.has-$color-color {
+			html .has-text-color.has-$color-text-color {
 				color: ${ $color . '_color' };
 			}
-			html .has-text-color.has-$color-color:hover,
+			html .has-text-color.has-$color-text-color:hover,
 			html .has-text-hover-color.has-$color-color:hover {
 				color: ${ $color . '_bright_color' };
 			}

@@ -28,6 +28,7 @@ export default function save( { attributes } ) {
 		heading,
 		verticalAlignment,
 		headingColor,
+		textColor,
 		iconColor,
 		image,
 		imageStyle,
@@ -76,9 +77,13 @@ export default function save( { attributes } ) {
 		fontSize: fontSizeClass ? undefined : customFontSize,
 	};
 
-	const className = classnames( 'icon-text', {
-		[ fontSizeClass ]: fontSizeClass,
-	} );
+	const textColorClassName = getColorClassName( 'text-color', textColor );
+
+	const className = classnames( 'icon-text',
+		textColorClassName, 
+		{ [ "has-text-color" ]: textColorClassName },
+		{ [ fontSizeClass ]: fontSizeClass, }
+	);
 
 	return (
 		<div style={ containerStyle } className={ classes }>
