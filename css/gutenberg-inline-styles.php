@@ -102,11 +102,11 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			}
 			html .icon-heading.has-$color-heading-color,
 			html .has-text-color.has-$color-text-color {
-				color: ${ $color . '_color' };
+				color: ${ $color . '_color' } !important;
 			}
 			html .has-text-color.has-$color-text-color:hover,
 			html .has-text-hover-color.has-$color-color:hover {
-				color: ${ $color . '_bright_color' };
+				color: ${ $color . '_bright_color' } !important;
 			}
 			html .our-programs.color-scheme-$color .program-guide tbody td i {
 				background-color: ${ $color . '_color' } !important;
@@ -137,6 +137,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .table-player .active.color-scheme-$color .pill {
 				background-color: #fff !important;
 			}
+			html .wp-block-empower-pro-blocks-card.has-$color-card-color .wp-block-card__inner-content,
 			html .hero2-content.has-$color-background-color > .wp-block-group__inner-container,
 			html .hero-content.has-$color-background-color > .wp-block-group__inner-container {
 				border-color: ${ $color . '_color' } !important;

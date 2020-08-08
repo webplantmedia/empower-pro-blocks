@@ -1,0 +1,32 @@
+.wp-block-empower-pro-blocks-card {
+	.wp-block-card__inner-content {
+		& p {
+			color: $text_color !important;
+		}
+
+		border-top: 14px solid $border_color;
+		width: 100%;
+		background-color: $body_background_color;
+		padding: 30px 0;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		border-radius: $border_radius;
+		border-top-left-radius: $border_radius_medium;
+		border-top-right-radius: $border_radius_medium;
+
+		@media screen and ( min-width: $ipad_width_1 ) {
+			> *,
+			> .h1,
+			> h1,
+			> div,
+			> p {
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+		}
+		.wp-block-image {
+			text-align: right;
+			margin-bottom: 0;
+			display: block;
+		}
+	}
+}

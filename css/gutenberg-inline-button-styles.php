@@ -101,6 +101,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 				background-color: ${ $color . '_bright_color' } !important;
 			}
 
+			html .wp-block-empower-pro-blocks-card.has-$color-card-color .wp-block-button.is-style-text .wp-block-button__link::after,
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text .wp-block-button__link::after,
 			html .wp-block-button .wp-block-button__link.has-$color-background-color,
 			html .wp-block-button.is-style-text .wp-block-button__link.has-$color-background-color::after {

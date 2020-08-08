@@ -1,0 +1,93 @@
+{
+	"name": "empower-pro-blocks/card",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"typewriterSearch": {
+			"type": "string",
+			"default": "with Impact"
+		},
+		"typewriterReplace": {
+			"type": "string",
+			"default": "that Engages\nwith Results"
+		},
+		"url": {
+			"type": "string"
+		},
+		"id": {
+			"type": "number"
+		},
+		"dimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"leftPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"rightPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"overlayColor": {
+			"type": "string"
+		},
+		"cardColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"leftPillColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"rightPillColor": {
+			"type": "string"
+		},
+		"backgroundType": {
+			"type": "string",
+			"default": "image"
+		},
+		"focalPoint": {
+			"type": "object"
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"default": "Mini-MBAs",
+			"selector": ".card-heading"
+		},
+		"fontSize": {
+			"type": "string"
+		},
+		"level": {
+			"type": "number",
+			"default": 4
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"default": "Provides the management and leadership skills necessary to thrive in today’s fast-paced global business environment.",
+			"selector": ".card-text"
+		},
+		"button1Text": {
+			"type": "string",
+			"source": "html",
+			"default": "About Us",
+			"selector": ".button1"
+		},
+		"button1URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button1",
+			"attribute": "href"
+		},
+		"button1LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".button1",
+			"attribute": "target"
+		}
+	}
+}
