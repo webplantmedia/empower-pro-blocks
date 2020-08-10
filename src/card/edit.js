@@ -247,7 +247,6 @@ function CardEdit( {
 									placeholder={ __( 'Button 1' ) }
 									value={ button1Text }
 									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-									withoutInteractiveFormatting
 									className="wp-block-button__link button1"
 									formattingControls={ [] }
 								/>

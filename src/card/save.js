@@ -65,25 +65,31 @@ export default function save( { attributes } ) {
 							<img src={url} />
 						</div>
 					) }
-					<RichText
+					<RichText.Content
 						className="card-heading"
 						value={ heading }
 						tagName={ tagName }
 					/>
-					<RichText
+					<RichText.Content
 						tagName="p"
 						value={ text }
 						className={ pClasses }
 						style={ pStyles }
 					/>
-					<div class="wp-block-buttons">
-						<div class="wp-block-button is-style-text">
-							<RichText
-								value={ button1Text }
-								className="wp-block-button__link button1"
-							/>
+					{ button1Text && (
+						<div class="wp-block-buttons">
+							<div class="wp-block-button is-style-text">
+								<RichText.Content
+									tagName="a"
+									value={ button1Text }
+									className="wp-block-button__link button1"
+									value={ button1Text }
+									href={ button1URL }
+									target={ button1LinkTarget }
+								/>
+							</div>
 						</div>
-					</div>
+					) }
 				</div>
 			</div>
 		</div>
