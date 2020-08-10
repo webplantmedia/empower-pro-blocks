@@ -1,6 +1,6 @@
 .wp-block-empower-pro-blocks-grid {
-	border: 2px dashed #eeeeee;
-	padding: 10px;
+	border: 1px dashed $admin_border_color;
+	padding: 20px;
 }
 
 .wp-block-empower-pro-blocks-grid {
@@ -10,8 +10,8 @@
 
 		> .wp-block {
 			width: 100%;
-			border: 2px dashed #eeeeee;
-			padding: 10px;
+			border: 1px dashed $admin_border_color;
+			padding: 20px;
 			margin: 0;
 		}
 	}

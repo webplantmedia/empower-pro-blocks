@@ -10,7 +10,7 @@
 
 html .wp-block[data-type="core/group"] {
 	> .wp-block-group {
-		border: 2px dashed #eeeeee !important;
+		border: 1px dashed $admin_border_color !important;
 		padding: 10px !important;
 	}
 }

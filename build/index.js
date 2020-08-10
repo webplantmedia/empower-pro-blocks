@@ -2742,7 +2742,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! exports provided: name, category, parent, attributes, supports, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/column\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"parent\\\":[\\\"empower-pro-blocks/filter\\\"],\\\"attributes\\\":{},\\\"supports\\\":{\\\"anchor\\\":true,\\\"reusable\\\":false,\\\"html\\\":false,\\\"lightBlockWrapper\\\":true}}\");\n\n//# sourceURL=webpack:///./src/column/block.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/column\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"parent\\\":[\\\"empower-pro-blocks/filter\\\",\\\"empower-pro-blocks/grid\\\"],\\\"attributes\\\":{},\\\"supports\\\":{\\\"anchor\\\":true,\\\"reusable\\\":false,\\\"html\\\":false,\\\"lightBlockWrapper\\\":true}}\");\n\n//# sourceURL=webpack:///./src/column/block.json?");
 
 /***/ }),
 
