@@ -1,0 +1,10 @@
+[data-align="center"] .wp-block-button {
+	.wp-block-button__link {
+		&::after {
+			width: 25%;
+			margin: 0 auto;
+			right: 0;
+			left: 0;
+		}
+	}
+}
