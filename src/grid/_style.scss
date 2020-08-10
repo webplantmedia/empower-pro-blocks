@@ -2,26 +2,40 @@
 	&.is-vertically-aligned-bottom {
 		.wp-block-grid__inner-container {
 			align-items: flex-end;
+
+			> * {
+				height: auto;
+			}
 		}
 	}
 
 	&.is-vertically-aligned-top {
 		.wp-block-grid__inner-container {
 			align-items: flex-start;
+
+			> * {
+				height: auto;
+			}
 		}
 	}
 
 	&.is-vertically-aligned-center {
 		.wp-block-grid__inner-container {
 			align-items: center;
+
+			> * {
+				height: auto;
+			}
 		}
 	}
+
 	// grid Block Columns
 	> .wp-block-grid__inner-container {
 		grid-template-columns: 1fr 1fr;
 
 		> * {
 			margin: 0 !important;
+			height: 100%;
 		}
 	}
 

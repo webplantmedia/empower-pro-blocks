@@ -4,34 +4,46 @@
 }
 
 .wp-block-empower-pro-blocks-grid {
-
-	&.is-vertically-aligned-bottom {
-		.block-editor-block-list__layout {
-			align-items: flex-end;
-		}
-	}
-
-	&.is-vertically-aligned-top {
-		.block-editor-block-list__layout {
-			align-items: flex-start;
-		}
-	}
-
-	&.is-vertically-aligned-center {
-		.block-editor-block-list__layout {
-			align-items: center;
-		}
-	}
-
 	// grid Block Columns
 	> .block-editor-inner-blocks > .block-editor-block-list__layout {
 		grid-template-columns: 1fr 1fr;
 
-		> .wp-block {
+		> * {
 			width: 100%;
 			border: 1px dashed $admin_border_color;
 			padding: 20px;
 			margin: 0;
+			height: 100%;
+		}
+	}
+
+	&.is-vertically-aligned-bottom {
+		.block-editor-inner-blocks .block-editor-block-list__layout {
+			align-items: flex-end;
+
+			> * {
+				height: auto;
+			}
+		}
+	}
+
+	&.is-vertically-aligned-top {
+		.block-editor-inner-blocks .block-editor-block-list__layout {
+			align-items: flex-start;
+
+			> * {
+				height: auto;
+			}
+		}
+	}
+
+	&.is-vertically-aligned-center {
+		.block-editor-inner-blocks .block-editor-block-list__layout {
+			align-items: center;
+
+			> * {
+				height: auto;
+			}
 		}
 	}
 

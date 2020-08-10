@@ -18,6 +18,12 @@
 		flex-direction: column;
 		height: 100%;
 
+		&:hover {
+			-webkit-transform: translateY(-2px);
+			transform: translateY(-2px);
+			@include box-shadow-hover;
+		}
+
 		.wp-block-buttons {
 			margin-top: auto;
 		}
@@ -56,11 +62,5 @@
 				margin-right: auto;
 			}
 		}
-	}
-
-	&:hover {
-		-webkit-transform: translateY(-2px);
-		transform: translateY(-2px);
-		@include box-shadow-hover;
 	}
 }
