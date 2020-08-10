@@ -8,6 +8,13 @@
     color: $light_gray_text_color;
 }
 
+html .wp-block[data-type="core/group"] {
+	> .wp-block-group {
+		border: 2px dashed #eeeeee !important;
+		padding: 10px !important;
+	}
+}
+
 /* Width of "wide" blocks */
 
 /* 860px + 30px so wide images match width in front-end and editor. */
