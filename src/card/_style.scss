@@ -1,5 +1,11 @@
 .wp-block-empower-pro-blocks-card {
-	transition: all 0.15s linear;
+	width: 100%;
+	height: 100%;
+
+	.card-content {
+		width: 100%;
+		height: 100%;
+	}
 
 	.wp-block-card__inner-content {
 		& p {
@@ -8,6 +14,7 @@
 
 		border-top: 14px solid $border_color;
 		width: 100%;
+		height: 100%;
 		background-color: $body_background_color;
 		padding: 60px 30px;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -16,7 +23,7 @@
 		border-top-right-radius: $border_radius_medium;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		transition: all 0.15s linear;
 
 		&:hover {
 			-webkit-transform: translateY(-2px);
