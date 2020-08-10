@@ -1,4 +1,6 @@
 .wp-block-empower-pro-blocks-card {
+	transition: all 0.15s linear;
+
 	.wp-block-card__inner-content {
 		& p {
 			color: $text_color !important;
@@ -12,6 +14,13 @@
 		border-radius: $border_radius;
 		border-top-left-radius: $border_radius_medium;
 		border-top-right-radius: $border_radius_medium;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.wp-block-buttons {
+			margin-top: auto;
+		}
 
 		.wp-block-image {
 			text-align: left;
@@ -28,9 +37,26 @@
 			margin-bottom: $margin_bottom;
 		}
 
-		&.plain {
+	}
+
+	&.is-plain-style {
+		.wp-block-card__inner-content {
 			border-top-width: 0;
 			border-radius: 0;
+			text-align: center;
 		}
+
+		.wp-block-image {
+			> * {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	&:hover {
+		-webkit-transform: translateY(-2px);
+		transform: translateY(-2px);
+		@include box-shadow-hover;
 	}
 }

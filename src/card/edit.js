@@ -19,6 +19,7 @@ import {
 	Button,
 	PanelRow,
 	ToggleControl,
+	SelectControl,
 	TextControl,
 } from '@wordpress/components';
 
@@ -61,6 +62,7 @@ function CardEdit( {
 		heading,
 		level,
 		text,
+		cardStyle,
 		button1Text,
 		button1URL,
 		button1LinkTarget,
@@ -137,6 +139,17 @@ function CardEdit( {
 					] }
 				>
 				</PanelColorGradientSettings>
+				<PanelBody title={ __( 'Card Style' ) } initialOpen={ true }>
+					<SelectControl
+						label={ __( "Style" ) }
+						value={ cardStyle }
+						options={ [
+							{ value: "", label: __( "Default" ) },
+							{ value: "plain", label: __( "Plain" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
+					/>
+				</PanelBody>
 				<PanelBody title={ __( 'Heading' ) } initialOpen={ true }>
 					<HeadingToolbar
 						isCollapsed={ false }
@@ -189,7 +202,8 @@ function CardEdit( {
 
 	const classes = classnames( className, 
 		'wp-block-card__outer-wrapper',
-		{ 
+		'plain' === cardStyle ? 'is-plain-style' : {},
+		{
 			[ cardColor.class ]: cardColor.class,
 		}
 	);

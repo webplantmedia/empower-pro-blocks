@@ -58,6 +58,9 @@
 		"fontSize": {
 			"type": "string"
 		},
+		"cardStyle": {
+			"type": "string"
+		},
 		"customFontSize": {
 			"type": "number"
 		},

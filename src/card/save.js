@@ -32,11 +32,13 @@ export default function save( { attributes } ) {
 		button1URL,
 		button1LinkTarget,
 		cardColor,
+		cardStyle,
 		textColor,
 	} = attributes;
 
 	const classes = classnames(
 		'wp-block-card__outer-wrapper',
+		'plain' === cardStyle ? 'is-plain-style' : {},
 		getColorClassName( 'card-color', cardColor ),
 	);
 
