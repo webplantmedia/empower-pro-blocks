@@ -1,0 +1,9 @@
+// is-style-profiles
+.wp-block-gallery.is-style-profiles {
+	.blocks-gallery-item {
+		figcaption {
+			transform: none !important;
+			opacity: 1 !important;
+		}
+	}
+}

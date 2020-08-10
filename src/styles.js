@@ -49,6 +49,11 @@ registerBlockStyle( 'core/gallery' , {
 	label: __( 'Brands' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/gallery' , {
+	name: 'profiles',
+	label: __( 'Profiles' ),
+	isDefault: false,
+} );
 registerBlockStyle( 'core/button' , {
 	name: 'text',
 	label: __( 'Text' ),
