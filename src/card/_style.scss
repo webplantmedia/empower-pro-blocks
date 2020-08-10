@@ -37,6 +37,10 @@
 			margin-bottom: $margin_bottom;
 		}
 
+		> *:last-child {
+			margin-bottom: 0;
+		}
+
 	}
 
 	&.is-plain-style {

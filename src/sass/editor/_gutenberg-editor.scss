@@ -4,6 +4,10 @@
 	max-width: $content_width;
 }
 
+.wp-block-button:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
+    color: $light_gray_text_color;
+}
+
 /* Width of "wide" blocks */
 
 /* 860px + 30px so wide images match width in front-end and editor. */
