@@ -5,6 +5,9 @@
 		"columns": {
 			"type": "string"
 		},
+		"verticalAlignment": {
+			"type": "string"
+		},
 		"spacing": {
 			"type": "number"
 		}

@@ -21,7 +21,10 @@ import {
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import {
+	AlignmentToolbar,
+	BlockVerticalAlignmentToolbar,
 	InnerBlocks,
+	BlockControls,
 	InspectorControls,
 } from '@wordpress/block-editor';
 
@@ -35,9 +38,21 @@ function GridEdit( {
 		columns,
 		spacing,
 		rspacing,
+		verticalAlignment,
 	} = attributes;
+
+	const onVerticalAlignmentChange = ( alignment ) => {
+		setAttributes( { verticalAlignment: alignment } );
+	};
+
 	const controls = (
 		<>
+			<BlockControls>
+				<BlockVerticalAlignmentToolbar
+					onChange={ onVerticalAlignmentChange }
+					value={ verticalAlignment }
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={ __( 'Grid Settings' ) } initialOpen={ true }>
 					<SelectControl
@@ -94,6 +109,7 @@ function GridEdit( {
 
 	const classes = classnames( className,
 		columns ? 'grid-columns-' + columns : {},
+		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 		spacing || spacing === 0 ? 'grid-gap-' + spacing : {},
 		rspacing || rspacing === 0 ? 'r-grid-gap-' + rspacing : {},
 	);

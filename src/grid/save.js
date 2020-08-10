@@ -13,10 +13,12 @@ export default function save( { attributes } ) {
 		columns,
 		spacing,
 		rspacing,
+		verticalAlignment,
 	} = attributes;
 
 	const classes = classnames(
 		columns ? 'grid-columns-' + columns : {},
+		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 		spacing || spacing === 0 ? 'grid-gap-' + spacing : {},
 		rspacing || rspacing === 0 ? 'r-grid-gap-' + rspacing : {},
 	);
