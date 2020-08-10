@@ -70,6 +70,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			}
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text ion-icon,
 			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content .wp-block-button.is-style-text i,
+			html .has-text-color.has-$color-color,
 			html .wp-block-button .wp-block-button__link.has-text-color.has-$color-color,
 			html .wp-block-button.is-style-text.icon .wp-block-button__link.has-$color-background-color i {
 				color: ${ $color . '_color' } !important;
