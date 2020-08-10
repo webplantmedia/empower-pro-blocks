@@ -200,7 +200,7 @@ function CardEdit( {
 		[ 'has-text-color' ]: textColor.class,
 	} );
 
-	const pStyle = {
+	const pStyles = {
 		fontSize: fontSize.size
 			? fontSize.size + 'px'
 			: undefined,
