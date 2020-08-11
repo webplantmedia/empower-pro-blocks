@@ -25,6 +25,10 @@
 		flex-direction: column;
 		transition: all 0.15s linear;
 
+		.card-heading {
+			margin-bottom: 15px;
+		}
+
 		&:hover {
 			-webkit-transform: translateY(-2px);
 			transform: translateY(-2px);
