@@ -474,43 +474,6 @@ h6 {
 	}
 }
 
-// Quote Icon Styles
-.is-style-white-quote::before,
-.quote-icon-white-color::before {
-	background-image: url(../images/quote-white.svg) !important;
-}
-.is-style-white-quote::after,
-.quote-icon-white-color::after {
-	color: #fff !important;
-	opacity: 0.2 !important;
-}
-
-.is-style-purple-quote::before,
-.quote-icon-purple-color::before {
-	background-image: url(../images/quote-purple.svg) !important;
-}
-
-.is-style-green-quote::before,
-.quote-icon-green-color::before {
-	background-image: url(../images/quote-green.svg) !important;
-}
-
-.is-style-yellow-quote::before {
-	background-image: url(../images/quote-yellow.svg) !important;
-}
-
-.is-style-blue-quote::before {
-	background-image: url(../images/quote-blue.svg) !important;
-}
-.is-style-burgundy-quote::before {
-	background-image: url(../images/quote-burgundy.svg) !important;
-}
-
-.is-style-hide-quote::before,
-.hide-quote-icon::before {
-	display: none !important;
-}
-
 // Group Block
 .block-content-wrap {
 	// padding: 0 8.75% 60px;
