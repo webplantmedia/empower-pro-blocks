@@ -75,6 +75,9 @@
 			"type": "number",
 			"default": 4
 		},
+		"headerColor": {
+			"type": "string"
+		},
 		"textColor": {
 			"type": "string"
 		},

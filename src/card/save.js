@@ -36,6 +36,8 @@ export default function save( { attributes } ) {
 		imageStyle,
 		imageHeight,
 		textColor,
+		headingColor,
+		backgroundColor,
 	} = attributes;
 
 	const classes = classnames(
@@ -49,6 +51,14 @@ export default function save( { attributes } ) {
 	const pStyles = {
 		fontSize: fontSizeClass ? undefined : customFontSize,
 	};
+
+	const headingColorClassName = getColorClassName( 'text-color', headingColor );
+
+	const hClasses = classnames(
+		'card-heading',
+		textColorClassName, 
+		{ [ "has-text-color" ]: textColorClassName },
+	);
 
 	const textColorClassName = getColorClassName( 'text-color', textColor );
 
@@ -75,18 +85,25 @@ export default function save( { attributes } ) {
 		imageHeight ? 'custom-height' : {}, 
 	);
 
+	const backgroundColorClassName = getColorClassName( 'background-color', backgroundColor );
+
+	const innerClasses = classnames(
+		'wp-block-card__inner-content',
+		backgroundColorClassName, 
+		{ [ "has-background-color" ]: backgroundColorClassName },
+	);
 
 	return (
 		<div className={ classes }>
 			<div className="card-content">
-				<div className="wp-block-card__inner-content">
+				<div className={ innerClasses }>
 					{ url && (
 						<div style={ imageStyleRules } class={ imageClasses }>
 							<img src={url} style={ imageStyleInnerRules }/>
 						</div>
 					) }
 					<RichText.Content
-						className="card-heading"
+						className={ hClasses }
 						value={ heading }
 						tagName={ tagName }
 					/>

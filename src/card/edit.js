@@ -56,6 +56,10 @@ function CardEdit( {
 	setFontSize,
 	textColor,
 	setTextColor,
+	headingColor,
+	setHeadingColor,
+	backgroundColor,
+	setBackgroundColor,
 } ) {
 	const {
 		id,
@@ -152,6 +156,19 @@ function CardEdit( {
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
+					title={ __( 'Background Color' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: backgroundColor.color,
+							onColorChange: setBackgroundColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+				</PanelColorGradientSettings>
+				<PanelColorGradientSettings
 					title={ __( 'Card Color' ) }
 					initialOpen={ true }
 					settings={ [
@@ -175,7 +192,18 @@ function CardEdit( {
 						onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Heading' ) } initialOpen={ true }>
+				<PanelColorGradientSettings
+					title={ __( 'Heading' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: headingColor.color,
+							onColorChange: setHeadingColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
 					<HeadingToolbar
 						isCollapsed={ false }
 						minLevel={ 2 }
@@ -185,7 +213,7 @@ function CardEdit( {
 							setAttributes( { level: value } )
 						}
 					/>
-				</PanelBody>
+				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Text Settings' ) }
 					initialOpen={ true }
@@ -233,6 +261,11 @@ function CardEdit( {
 		}
 	);
 
+	const hClasses = classnames( 'card-heading', {
+		[ headingColor.class ]: headingColor.class,
+		[ 'has-text-color' ]: headingColor.class,
+	} );
+
 	const pClasses = classnames( 'card-text', {
 		[ fontSize.class ]: fontSize.class,
 		[ textColor.class ]: textColor.class,
@@ -260,19 +293,24 @@ function CardEdit( {
 		imageHeight ? 'custom-height' : {}, 
 	);
 
+	const innerClasses = classnames( 'wp-block-card__inner-content', {
+		[ backgroundColor.class ]: backgroundColor.class,
+		[ 'has-background-color' ]: backgroundColor.class,
+	} );
+
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
 				<div className="card-content">
-					<div className="wp-block-card__inner-content">
+					<div className={ innerClasses }>
 						{ url && (
 							<div style={ imageStyleRules } class={ imageClasses }>
 								<img src={url} style={ imageStyleInnerRules }/>
 							</div>
 						) }
 						<RichText
-							className="card-heading"
+							className={ hClasses }
 							placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 							onChange={ ( value ) =>
 								setAttributes( {
@@ -315,5 +353,5 @@ function CardEdit( {
 
 export default compose( [
 	withFontSizes( 'fontSize' ),
-	withColors( { cardColor: 'card-color', textColor: 'text-color' } ),
+	withColors( { cardColor: 'card-color', headingColor: 'text-color', textColor: 'text-color', backgroundColor: 'background-color' } ),
 ] )( CardEdit );
