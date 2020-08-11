@@ -22,6 +22,7 @@ import * as filter from './filter';
 import * as column from './column';
 import * as grid from './grid';
 import * as card from './card';
+import * as profile from './profile';
 
 /**
  * Function to register an individual block.
@@ -54,4 +55,5 @@ const registerBlock = ( block ) => {
 	column,
 	grid,
 	card,
+	profile,
 ].forEach( registerBlock );

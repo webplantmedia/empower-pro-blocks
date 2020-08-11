@@ -1,5 +1,5 @@
 {
-	"name": "empower-pro-blocks/card",
+	"name": "empower-pro-blocks/profile",
 	"category": "abilitie-blocks",
 	"attributes": {
 		"url": {
@@ -41,7 +41,7 @@
 		"backgroundColor": {
 			"type": "string"
 		},
-		"headingColor": {
+		"headerColor": {
 			"type": "string"
 		},
 		"textColor": {
