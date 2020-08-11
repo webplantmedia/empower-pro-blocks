@@ -500,12 +500,14 @@
 	}
 }
 
-@mixin grayscale() {
+@mixin grayscale( $hover: true ) {
 	filter: grayscale(100%);
 	@include animation-all;
 
-	&:hover {
-		filter: none;
+	@if $hover {
+		&:hover {
+			filter: none;
+		}
 	}
 }
 

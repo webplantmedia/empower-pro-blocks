@@ -39,6 +39,7 @@ export default function save( { attributes } ) {
 		overlayColor,
 		leftPillColor,
 		rightPillColor,
+		showContent,
 		dimRatio,
 		leftPillDimRatio,
 		rightPillDimRatio,
@@ -57,6 +58,7 @@ export default function save( { attributes } ) {
 	const classes = classnames(
 		'wp-block-hero2__outer-wrapper',
 		getColorClassName( 'hero2-color', heroColor ),
+		showContent ? {} : 'hero-content-hidden',
 	);
 
 	const backgroundImageClasses = classnames(
@@ -105,42 +107,44 @@ export default function save( { attributes } ) {
 					</div>
 					<div className={ overlayClasses }>
 					</div>
-					<div className="hero2-content">
-						<div className="wp-block-hero2__inner-content">
-							{ iconUrl && (
-								<figure class="wp-block-image size-large">
-									<img src={ iconUrl } alt="" class="" />
-								</figure>
-							) }
-							<div class="hero2-tags">
+					{ showContent && (
+						<div className="hero2-content">
+							<div className="wp-block-hero2__inner-content">
+								{ iconUrl && (
+									<figure class="wp-block-image size-large">
+										<img src={ iconUrl } alt="" class="" />
+									</figure>
+								) }
+								<div class="hero2-tags">
+									<RichText.Content
+										tagName="span"
+										value={ button1Text }
+										className="button1"
+									/>
+									<RichText.Content
+										tagName="span"
+										value={ button2Text }
+										className="button2"
+									/>
+									<RichText.Content
+										tagName="span"
+										value={ button3Text }
+										className="button3"
+									/>
+								</div>
 								<RichText.Content
-									tagName="span"
-									value={ button1Text }
-									className="button1"
+									tagName="h1"
+									className="hero2-heading mb-20"
+									value={ heading }
 								/>
 								<RichText.Content
-									tagName="span"
-									value={ button2Text }
-									className="button2"
-								/>
-								<RichText.Content
-									tagName="span"
-									value={ button3Text }
-									className="button3"
+									tagName="p"
+									className="hero2-text"
+									value={ text }
 								/>
 							</div>
-							<RichText.Content
-								tagName="h1"
-								className="hero2-heading mb-20"
-								value={ heading }
-							/>
-							<RichText.Content
-								tagName="p"
-								className="hero2-text"
-								value={ text }
-							/>
 						</div>
-					</div>
+					) }
 					<div className={ leftPillClasses }>
 						{ svgleftpill }
 					</div>

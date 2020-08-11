@@ -81,7 +81,7 @@
 			background-color: #000;
 			background-size: cover;
 			background-position: 50%;
-			min-height: 430px;
+			// min-height: 430px;
 			height: 100%;
 			width: 100%;
 			display: flex;
@@ -89,7 +89,7 @@
 			align-items: center;
 
 			&.grayscale {
-				@include grayscale;
+				@include grayscale($hover:false);
 			}
 		}
 
@@ -346,6 +346,23 @@
 		}
 	}
 
+	&.hero-content-hidden {
+		.wp-block-hero2__inner-container {
+			@media screen and ( max-height: 600px ) {
+				height: 400px;
+			}
+
+			@media screen and ( max-width: $ipad_width ) {
+				height: 350px !important;
+				min-height: 0;
+			}
+
+			@media screen and ( max-width: $mobile_width ) {
+				height: 350px !important;
+				min-height: 0;
+			}
+		}
+	}
 
 }
 

@@ -80,6 +80,7 @@ function HeroEdit( {
 		leftPillDimRatio,
 		rightPillDimRatio,
 		focalPoint,
+		showContent,
 		url,
 		iconUrl,
 		heading,
@@ -178,36 +179,45 @@ function HeroEdit( {
 						<video autoPlay muted loop src={ url } />
 					) }
 				</PanelBody>
-				<PanelBody title={ __( 'Icon settings' ) } >
-					<PanelRow>
-						<MediaUpload
-							id={ iconId }
-							allowedTypes={ [ 'image' ] }
-							onSelect={ onSelectIconMedia }
-							render={ ( { open } ) => (
-								<Button onClick={ open } isSecondary={ true }>
-									Select Icon Image	
-								</Button>
-							) }
-						/>
-					</PanelRow>
-					{ !! iconUrl && (
-						<PanelRow>
-							<Button
-								isSecondary
-								className=""
-								onClick={ () =>
-									setAttributes( {
-										iconUrl: undefined,
-										iconId: undefined,
-									} )
-								}
-							>
-								{ __( 'Clear Icon' ) }
-							</Button>
-						</PanelRow>
-					) }
+				<PanelBody title={ __( 'Hero Content' ) } >
+					<ToggleControl
+						label={ __( 'Show Content' ) }
+						onChange={ ( value ) => setAttributes( value ? { showContent: true } : { showContent: false } ) }
+						checked={ showContent === true }
+					/>
 				</PanelBody>
+				{ showContent && (
+					<PanelBody title={ __( 'Icon settings' ) } >
+						<PanelRow>
+							<MediaUpload
+								id={ iconId }
+								allowedTypes={ [ 'image' ] }
+								onSelect={ onSelectIconMedia }
+								render={ ( { open } ) => (
+									<Button onClick={ open } isSecondary={ true }>
+										Select Icon Image	
+									</Button>
+								) }
+							/>
+						</PanelRow>
+						{ !! iconUrl && (
+							<PanelRow>
+								<Button
+									isSecondary
+									className=""
+									onClick={ () =>
+										setAttributes( {
+											iconUrl: undefined,
+											iconId: undefined,
+										} )
+									}
+								>
+									{ __( 'Clear Icon' ) }
+								</Button>
+							</PanelRow>
+						) }
+					</PanelBody>
+				) }
 				<PanelColorGradientSettings
 					title={ __( 'Overlay' ) }
 					initialOpen={ true }
@@ -311,6 +321,7 @@ function HeroEdit( {
 
 	const classes = classnames( className, 
 		'wp-block-hero2__outer-wrapper',
+		showContent ? {} : 'hero-content-hidden',
 		{ 
 			[ heroColor.class ]: heroColor.class,
 		}
@@ -364,64 +375,66 @@ function HeroEdit( {
 						</div>
 						<div className={ overlayClasses }>
 						</div>
-						<div className="hero2-content">
-							<div className="wp-block-hero2__inner-content">
-								{ iconUrl && (
-									<figure class="wp-block-image size-large">
-										<img src={ iconUrl } alt="" class="" />
-									</figure>
-								) }
-								<div class="hero2-tags">
+						{ showContent && (
+							<div className="hero2-content">
+								<div className="wp-block-hero2__inner-content">
+									{ iconUrl && (
+										<figure class="wp-block-image size-large">
+											<img src={ iconUrl } alt="" class="" />
+										</figure>
+									) }
+									<div class="hero2-tags">
+										<RichText
+											tagName="span"
+											placeholder={ __( 'Button 1' ) }
+											value={ button1Text }
+											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+											withoutInteractiveFormatting
+											className="button1"
+											formattingControls={ [] }
+										/>
+										<RichText
+											tagName="span"
+											placeholder={ __( 'Button 2' ) }
+											value={ button2Text }
+											onChange={ ( value ) => setAttributes( { button2Text: value } ) }
+											withoutInteractiveFormatting
+											className="button2"
+											formattingControls={ [] }
+										/>
+										<RichText
+											tagName="span"
+											placeholder={ __( 'Button 3' ) }
+											value={ button3Text }
+											onChange={ ( value ) => setAttributes( { button3Text: value } ) }
+											withoutInteractiveFormatting
+											className="button3"
+											formattingControls={ [] }
+										/>
+									</div>
 									<RichText
-										tagName="span"
-										placeholder={ __( 'Button 1' ) }
-										value={ button1Text }
-										onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-										withoutInteractiveFormatting
-										className="button1"
+										tagName="h1"
+										className="hero2-heading mb-20"
+										placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
+										onChange={ ( value ) => setAttributes( { heading: value } ) }
+										value={ heading }
 										formattingControls={ [] }
 									/>
 									<RichText
-										tagName="span"
-										placeholder={ __( 'Button 2' ) }
-										value={ button2Text }
-										onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-										withoutInteractiveFormatting
-										className="button2"
-										formattingControls={ [] }
-									/>
-									<RichText
-										tagName="span"
-										placeholder={ __( 'Button 3' ) }
-										value={ button3Text }
-										onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-										withoutInteractiveFormatting
-										className="button3"
+										tagName="p"
+										className="hero2-text"
+										placeholder={ __( 'Text', 'empower-pro-blocks' ) }
+										onChange={ ( value ) =>
+											setAttributes( {
+												text: value,
+											} )
+										}
+										value={ text }
 										formattingControls={ [] }
 									/>
 								</div>
-								<RichText
-									tagName="h1"
-									className="hero2-heading mb-20"
-									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
-									onChange={ ( value ) => setAttributes( { heading: value } ) }
-									value={ heading }
-									formattingControls={ [] }
-								/>
-								<RichText
-									tagName="p"
-									className="hero2-text"
-									placeholder={ __( 'Text', 'empower-pro-blocks' ) }
-									onChange={ ( value ) =>
-										setAttributes( {
-											text: value,
-										} )
-									}
-									value={ text }
-									formattingControls={ [] }
-								/>
 							</div>
-						</div>
+						) }
 						<div className={ leftPillClasses }>
 							{ svgleftpill }
 						</div>

@@ -8,6 +8,10 @@
 		"id": {
 			"type": "number"
 		},
+		"showContent": {
+			"type": "boolean",
+			"default": true
+		},
 		"grayscale": {
 			"type": "boolean",
 			"default": true
