@@ -68,7 +68,7 @@ blockquote::after {
 	font-size: 140px;
 	height: 0;
 	left: 0px;
-	top: 40px;
+	top: 0px;
 	z-index: -1;
 	position: absolute;
 	font-style: normal;
@@ -178,7 +178,7 @@ blockquote.wp-block-quote.is-style-large cite,
 	blockquote.wp-block-quote::after,
 	blockquote::after {
 		left: 0;
-		top: 50px;
+		top: 0;
 		font-size: 120px;
 	}
 
@@ -238,7 +238,7 @@ blockquote.wp-block-quote.is-style-large cite,
 	background-image: url(../images/quote-burgundy.svg) !important;
 }
 
-.is-style-hide-quote::after,
+// .is-style-hide-quote::after,
 .is-style-hide-quote::before,
 .hide-quote-icon::before {
 	display: none !important;
