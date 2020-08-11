@@ -38,6 +38,7 @@ export default function save( { attributes } ) {
 		textColor,
 		headingColor,
 		backgroundColor,
+		align,
 	} = attributes;
 
 	const classes = classnames(
@@ -56,8 +57,9 @@ export default function save( { attributes } ) {
 
 	const hClasses = classnames(
 		'card-heading',
-		textColorClassName, 
-		{ [ "has-text-color" ]: textColorClassName },
+		headingColorClassName, 
+		{ [ "has-text-color" ]: headingColorClassName },
+		{ [ `has-text-align-${ align }` ]: align, },
 	);
 
 	const textColorClassName = getColorClassName( 'text-color', textColor );
@@ -65,7 +67,8 @@ export default function save( { attributes } ) {
 	const pClasses = classnames( 'card-text',
 		textColorClassName, 
 		{ [ "has-text-color" ]: textColorClassName },
-		{ [ fontSizeClass ]: fontSizeClass, }
+		{ [ fontSizeClass ]: fontSizeClass, },
+		{ [ `has-text-align-${ align }` ]: align, },
 	);
 
 	const tagName = 'h' + level;

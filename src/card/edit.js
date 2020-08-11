@@ -26,6 +26,7 @@ import {
 
 import { compose, withInstanceId } from '@wordpress/compose';
 import {
+	AlignmentToolbar,
 	BlockControls,
 	RichText,
 	InspectorControls,
@@ -73,6 +74,7 @@ function CardEdit( {
 		button1Text,
 		button1URL,
 		button1LinkTarget,
+		align,
 	} = attributes;
 
 	const tagName = 'h' + level;
@@ -92,6 +94,12 @@ function CardEdit( {
 						} )
 					}
 					name="Icon"
+				/>
+				<AlignmentToolbar
+					value={ align }
+					onChange={ ( value ) =>
+						setAttributes( { align: value } )
+					}
 				/>
 			</BlockControls>
 			<InspectorControls>
@@ -266,12 +274,14 @@ function CardEdit( {
 	const hClasses = classnames( 'card-heading', {
 		[ headingColor.class ]: headingColor.class,
 		[ 'has-text-color' ]: headingColor.class,
+		[ `has-text-align-${ align }` ]: align,
 	} );
 
 	const pClasses = classnames( 'card-text', {
 		[ fontSize.class ]: fontSize.class,
 		[ textColor.class ]: textColor.class,
 		[ 'has-text-color' ]: textColor.class,
+		[ `has-text-align-${ align }` ]: align,
 	} );
 
 	const pStyles = {

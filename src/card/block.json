@@ -53,6 +53,9 @@
 			"default": "Provides the management and leadership skills necessary to thrive in today’s fast-paced global business environment.",
 			"selector": ".card-text"
 		},
+		"align": {
+			"type": "string"
+		},
 		"button1Text": {
 			"type": "string",
 			"source": "html",
