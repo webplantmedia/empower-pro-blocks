@@ -349,7 +349,8 @@
 	&.hero-content-hidden {
 		.wp-block-hero2__inner-container {
 			@media screen and ( max-height: 600px ) {
-				height: 400px;
+				height: 350px !important;
+				min-height: 0;
 			}
 
 			@media screen and ( max-width: $ipad_width ) {
