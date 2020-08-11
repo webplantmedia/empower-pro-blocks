@@ -52,8 +52,8 @@ export default function save( { attributes } ) {
 
 	const hClasses = classnames(
 		'profile-heading',
-		textColorClassName, 
-		{ [ "has-text-color" ]: textColorClassName },
+		headingColorClassName, 
+		{ [ "has-text-color" ]: headingColorClassName },
 	);
 
 	const textColorClassName = getColorClassName( 'text-color', textColor );
