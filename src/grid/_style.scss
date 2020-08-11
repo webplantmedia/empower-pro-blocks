@@ -115,6 +115,23 @@
 		}
 	}
 
+	&.grid-columns-4--3--2--1 {
+		> .wp-block-grid__inner-container {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
+			@media only screen and ( max-width: $ipad_width ) {
+				grid-template-columns: 1fr 1fr 1fr !important;
+			}
+			@media only screen and ( max-width: $tablet_width ) {
+				grid-template-columns: 1fr 1fr !important;
+			}
+			@media only screen and ( max-width: $mobile_width ) {
+				grid-template-columns: 1fr !important;
+			}
+		}
+	}
+
+
 	$sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 	@each $size in $sizes {
 		&.grid-gap-#{$size} {

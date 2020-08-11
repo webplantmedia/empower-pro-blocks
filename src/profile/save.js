@@ -99,12 +99,14 @@ export default function save( { attributes } ) {
 						value={ heading }
 						tagName={ tagName }
 					/>
-					<RichText.Content
-						tagName="p"
-						value={ text }
-						className={ pClasses }
-						style={ pStyles }
-					/>
+					{ text && (
+						<RichText.Content
+							tagName="p"
+							value={ text }
+							className={ pClasses }
+							style={ pStyles }
+						/>
+					) }
 				</div>
 			</div>
 		</div>
