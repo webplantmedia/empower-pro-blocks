@@ -38,17 +38,12 @@ export default function save( { attributes } ) {
 		textColor,
 		headingColor,
 		backgroundColor,
-		slantBackgroundColor,
 	} = attributes;
-
-	const slantBackgroundColorClassName = getColorClassName( 'background-color', slantBackgroundColor );
 
 	const classes = classnames(
 		'wp-block-card__outer-wrapper',
 		'plain' === cardStyle ? 'is-plain-style' : {},
 		getColorClassName( 'card-color', cardColor ),
-		slantBackgroundColorClassName, 
-		{ [ "has-background-color" ]: slantBackgroundColorClassName },
 	);
 
 	const fontSizeClass = getFontSizeClass( fontSize );

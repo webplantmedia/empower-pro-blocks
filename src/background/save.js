@@ -33,7 +33,10 @@ export default function save( { attributes } ) {
 		rightPillTop,
 		drawLineTop,
 		slant,
+		slantBackgroundColor,
 	} = attributes;
+
+	const slantBackgroundColorClassName = getColorClassName( 'background-color', slantBackgroundColor );
 
 	const backgroundClass = getColorClassName(
 		'background-color',
@@ -50,9 +53,11 @@ export default function save( { attributes } ) {
 		getColorClassName( 'svg-fill-color', leftPillColor ),
 	);
 
-	const className = classnames( {
-		[ 'display-' + slant + '-slant' ]: slant !== "",
-	} );
+	const classes = classnames( 
+		slantBackgroundColorClassName, 
+		{ [ "has-background-color" ]: slantBackgroundColorClassName },
+		{ [ 'display-' + slant + '-slant' ]: slant !== "", },
+	);
 
 	const innerClasses = classnames(
 		"wp-block-background__inner-container",
@@ -84,7 +89,7 @@ export default function save( { attributes } ) {
 	};
 
 	return (
-		<div className={ className }>
+		<div className={ classes }>
 			{ drawLine && (
 				<div className="wp-block-group draw-line" style={ drawLineStyle }>
 					<figure class="wp-block-image size-full">
