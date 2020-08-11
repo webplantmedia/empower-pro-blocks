@@ -31,8 +31,8 @@ export default function save( { attributes } ) {
 		customFontSize,
 		button1URL,
 		button1LinkTarget,
-		cardColor,
-		cardStyle,
+		profileColor,
+		profileStyle,
 		imageStyle,
 		imageHeight,
 		textColor,
@@ -41,9 +41,9 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const classes = classnames(
-		'wp-block-card__outer-wrapper',
-		'plain' === cardStyle ? 'is-plain-style' : {},
-		getColorClassName( 'card-color', cardColor ),
+		'wp-block-profile__outer-wrapper',
+		'plain' === profileStyle ? 'is-plain-style' : {},
+		getColorClassName( 'profile-color', profileColor ),
 	);
 
 	const fontSizeClass = getFontSizeClass( fontSize );
@@ -55,14 +55,14 @@ export default function save( { attributes } ) {
 	const headingColorClassName = getColorClassName( 'text-color', headingColor );
 
 	const hClasses = classnames(
-		'card-heading',
+		'profile-heading',
 		textColorClassName, 
 		{ [ "has-text-color" ]: textColorClassName },
 	);
 
 	const textColorClassName = getColorClassName( 'text-color', textColor );
 
-	const pClasses = classnames( 'card-text',
+	const pClasses = classnames( 'profile-text',
 		textColorClassName, 
 		{ [ "has-text-color" ]: textColorClassName },
 		{ [ fontSizeClass ]: fontSizeClass, }
@@ -88,14 +88,14 @@ export default function save( { attributes } ) {
 	const backgroundColorClassName = getColorClassName( 'background-color', backgroundColor );
 
 	const innerClasses = classnames(
-		'wp-block-card__inner-content',
+		'wp-block-profile__inner-content',
 		backgroundColorClassName, 
 		{ [ "has-background-color" ]: backgroundColorClassName },
 	);
 
 	return (
 		<div className={ classes }>
-			<div className="card-content">
+			<div className="profile-content">
 				<div className={ innerClasses }>
 					{ url && (
 						<div style={ imageStyleRules } class={ imageClasses }>

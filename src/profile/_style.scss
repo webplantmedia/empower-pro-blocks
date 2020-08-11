@@ -1,13 +1,13 @@
-.wp-block-empower-pro-blocks-card {
+.wp-block-empower-pro-blocks-profile {
 	width: 100%;
 	height: 100%;
 
-	.card-content {
+	.profile-content {
 		width: 100%;
 		height: 100%;
 	}
 
-	.wp-block-card__inner-content {
+	.wp-block-profile__inner-content {
 		& p {
 			color: $text_color !important;
 		}
@@ -25,7 +25,7 @@
 		flex-direction: column;
 		transition: all 0.15s linear;
 
-		.card-heading {
+		.profile-heading {
 			margin-bottom: 15px;
 		}
 
@@ -84,7 +84,7 @@
 	}
 
 	&.is-plain-style {
-		.wp-block-card__inner-content {
+		.wp-block-profile__inner-content {
 			border-top-width: 0;
 			border-radius: 0;
 			text-align: center;

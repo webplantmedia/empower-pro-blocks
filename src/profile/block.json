@@ -15,7 +15,7 @@
 			"type": "number",
 			"default": ""
 		},
-		"cardColor": {
+		"profileColor": {
 			"type": "string",
 			"default": "primary"
 		},
@@ -23,12 +23,12 @@
 			"type": "string",
 			"source": "html",
 			"default": "Mini-MBAs",
-			"selector": ".card-heading"
+			"selector": ".profile-heading"
 		},
 		"fontSize": {
 			"type": "string"
 		},
-		"cardStyle": {
+		"profileStyle": {
 			"type": "string"
 		},
 		"customFontSize": {
@@ -51,7 +51,7 @@
 			"type": "string",
 			"source": "html",
 			"default": "Provides the management and leadership skills necessary to thrive in today’s fast-paced global business environment.",
-			"selector": ".card-text"
+			"selector": ".profile-text"
 		},
 		"button1Text": {
 			"type": "string",

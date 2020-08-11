@@ -45,13 +45,13 @@ import { __ } from '@wordpress/i18n';
  */
 const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
-function CardEdit( {
+function ProfileEdit( {
 	attributes,
 	setAttributes,
 	isSelected,
 	className,
-	cardColor,
-	setCardColor,
+	profileColor,
+	setProfileColor,
 	fontSize,
 	setFontSize,
 	textColor,
@@ -67,7 +67,7 @@ function CardEdit( {
 		heading,
 		level,
 		text,
-		cardStyle,
+		profileStyle,
 		imageStyle,
 		imageHeight,
 		button1Text,
@@ -169,27 +169,26 @@ function CardEdit( {
 				>
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
-					title={ __( 'Card Color' ) }
+					title={ __( 'Profile Color' ) }
 					initialOpen={ true }
 					settings={ [
 						{
-							colorValue: cardColor.color,
-							onColorChange: setCardColor,
+							colorValue: profileColor.color,
+							onColorChange: setProfileColor,
 							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
 					] }
 				>
 				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Card Style' ) } initialOpen={ true }>
+				<PanelBody title={ __( 'Profile Style' ) } initialOpen={ true }>
 					<SelectControl
 						label={ __( "Style" ) }
-						value={ cardStyle }
+						value={ profileStyle }
 						options={ [
 							{ value: "", label: __( "Default" ) },
-							{ value: "plain", label: __( "Plain" ) },
 						] }
-						onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
+						onChange={ ( value ) => setAttributes( { profileStyle: value } ) }
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
@@ -254,19 +253,19 @@ function CardEdit( {
 	);
 
 	const classes = classnames( className, 
-		'wp-block-card__outer-wrapper',
-		'plain' === cardStyle ? 'is-plain-style' : {},
+		'wp-block-profile__outer-wrapper',
+		'plain' === profileStyle ? 'is-plain-style' : {},
 		{
-			[ cardColor.class ]: cardColor.class,
+			[ profileColor.class ]: profileColor.class,
 		}
 	);
 
-	const hClasses = classnames( 'card-heading', {
+	const hClasses = classnames( 'profile-heading', {
 		[ headingColor.class ]: headingColor.class,
 		[ 'has-text-color' ]: headingColor.class,
 	} );
 
-	const pClasses = classnames( 'card-text', {
+	const pClasses = classnames( 'profile-text', {
 		[ fontSize.class ]: fontSize.class,
 		[ textColor.class ]: textColor.class,
 		[ 'has-text-color' ]: textColor.class,
@@ -293,7 +292,7 @@ function CardEdit( {
 		imageHeight ? 'custom-height' : {}, 
 	);
 
-	const innerClasses = classnames( 'wp-block-card__inner-content', {
+	const innerClasses = classnames( 'wp-block-profile__inner-content', {
 		[ backgroundColor.class ]: backgroundColor.class,
 		[ 'has-background-color' ]: backgroundColor.class,
 	} );
@@ -302,7 +301,7 @@ function CardEdit( {
 		<>
 			{ controls }
 			<div className={ classes }>
-				<div className="card-content">
+				<div className="profile-content">
 					<div className={ innerClasses }>
 						{ url && (
 							<div style={ imageStyleRules } class={ imageClasses }>
@@ -353,5 +352,5 @@ function CardEdit( {
 
 export default compose( [
 	withFontSizes( 'fontSize' ),
-	withColors( { cardColor: 'card-color', headingColor: 'text-color', textColor: 'text-color', backgroundColor: 'background-color' } ),
-] )( CardEdit );
+	withColors( { profileColor: 'profile-color', headingColor: 'text-color', textColor: 'text-color', backgroundColor: 'background-color' } ),
+] )( ProfileEdit );
