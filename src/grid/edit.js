@@ -70,7 +70,7 @@ function GridEdit( {
 							{ value: "4-6", label: __( "4/6" ) },
 							{ value: "25-35-20-20", label: __( "25/35/20/20" ) },
 							{ value: "4--3--2--1", label: __( "4 > 3 > 2 > 1" ) },
-							{ value: "3-7--3-7--1--1", label: __( "3/7 > 3/7 > 1 > 1" ) },
+							{ value: "3-7--3-7--3-7--1", label: __( "3/7 > 3/7 > 3/7 > 1" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { columns: value } ) }
 					/>

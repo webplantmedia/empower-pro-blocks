@@ -139,7 +139,7 @@
 		}
 	}
 
-	&.grid-columns-3-7--3-7--1--1 {
+	&.grid-columns-3-7--3-7--3-7--1 {
 		> .block-editor-inner-blocks > .block-editor-block-list__layout {
 			grid-template-columns: 3fr 7fr;
 
@@ -147,7 +147,7 @@
 				grid-template-columns: 3fr 7fr;
 			}
 			@media only screen and ( max-width: $tablet_width ) {
-				grid-template-columns: 1fr;
+				grid-template-columns: 3fr 7fr;
 			}
 			@media only screen and ( max-width: $mobile_width ) {
 				grid-template-columns: 1fr;
