@@ -66,3 +66,9 @@
 .all-caps {
 	text-transform: uppercase;
 }
+
+.is-style-content-width {
+	max-width: $content_width !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}

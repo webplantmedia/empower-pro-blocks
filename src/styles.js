@@ -59,3 +59,13 @@ registerBlockStyle( 'core/button' , {
 	label: __( 'Text' ),
 	isDefault: true,
 } );
+registerBlockStyle( 'core/paragraph' , {
+	name: 'content-width',
+	label: __( 'Content Width' ),
+	isDefault: false,
+} );
+registerBlockStyle( 'core/heading' , {
+	name: 'content-width',
+	label: __( 'Content Width' ),
+	isDefault: false,
+} );
