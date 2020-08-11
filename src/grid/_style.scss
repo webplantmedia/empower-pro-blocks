@@ -124,7 +124,7 @@
 		}
 
 		&.r-grid-gap-#{$size} {
-			> .wp-block-grid__inner-container {
+			> div.wp-block-grid__inner-container {
 				@media only screen and ( max-width: $ipad_width ) {
 					grid-gap: #{$size}px #{$size}px !important;
 				}
