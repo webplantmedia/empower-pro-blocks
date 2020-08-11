@@ -16,6 +16,13 @@
 		"id": {
 			"type": "number"
 		},
+		"imageStyle": {
+			"type": "string"
+		},
+		"imageHeight": {
+			"type": "number",
+			"default": ""
+		},
 		"dimRatio": {
 			"type": "number",
 			"default": 50

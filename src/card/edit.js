@@ -19,6 +19,7 @@ import {
 	Button,
 	PanelRow,
 	ToggleControl,
+	RangeControl,
 	SelectControl,
 	TextControl,
 } from '@wordpress/components';
@@ -63,6 +64,8 @@ function CardEdit( {
 		level,
 		text,
 		cardStyle,
+		imageStyle,
+		imageHeight,
 		button1Text,
 		button1URL,
 		button1LinkTarget,
@@ -125,6 +128,28 @@ function CardEdit( {
 					{ !! url && (
 						<hr />
 					) }
+					<RangeControl
+						label={ __( 'Icon Size' ) }
+						value={ imageHeight }
+						onChange={ ( value ) =>
+							setAttributes( {
+								imageHeight: value,
+							} )
+						}
+						min={ 60 }
+						max={ 300 }
+						step={ 1 }
+					/>
+					<SelectControl
+						label={ __( "Image Style" ) }
+						value={ imageStyle }
+						options={ [
+							{ value: "", label: __( "None" ) },
+							{ value: "circle", label: __( "Circle" ) },
+							{ value: "hex", label: __( "Hex" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
+					/>
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Card Color' ) }
@@ -220,6 +245,21 @@ function CardEdit( {
 			: undefined,
 	};
 
+	const imageStyleRules = {
+		...( imageStyle && imageHeight ? { width: imageHeight+"px" } : {} ),
+		...( imageStyle && imageHeight ? { height: imageHeight+"px" } : {} ),
+	};
+
+	const imageStyleInnerRules = {
+		...( ! imageStyle && imageHeight ? { maxHeight: imageHeight+"px" } : {} ),
+	};
+
+	const imageClasses = classnames( 
+		'wp-block-image', 
+		imageStyle ? 'image-style-' + imageStyle : {}, 
+		imageHeight ? 'custom-height' : {}, 
+	);
+
 	return (
 		<>
 			{ controls }
@@ -227,8 +267,8 @@ function CardEdit( {
 				<div className="card-content">
 					<div className="wp-block-card__inner-content">
 						{ url && (
-							<div class="wp-block-image">
-								<img src={url} />
+							<div style={ imageStyleRules } class={ imageClasses }>
+								<img src={url} style={ imageStyleInnerRules }/>
 							</div>
 						) }
 						<RichText

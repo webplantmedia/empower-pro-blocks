@@ -33,6 +33,8 @@ export default function save( { attributes } ) {
 		button1LinkTarget,
 		cardColor,
 		cardStyle,
+		imageStyle,
+		imageHeight,
 		textColor,
 	} = attributes;
 
@@ -58,13 +60,29 @@ export default function save( { attributes } ) {
 
 	const tagName = 'h' + level;
 
+	const imageStyleRules = {
+		...( imageStyle && imageHeight ? { width: imageHeight+"px" } : {} ),
+		...( imageStyle && imageHeight ? { height: imageHeight+"px" } : {} ),
+	};
+
+	const imageStyleInnerRules = {
+		...( ! imageStyle && imageHeight ? { maxHeight: imageHeight+"px" } : {} ),
+	};
+
+	const imageClasses = classnames( 
+		'wp-block-image', 
+		imageStyle ? 'image-style-' + imageStyle : {}, 
+		imageHeight ? 'custom-height' : {}, 
+	);
+
+
 	return (
 		<div className={ classes }>
 			<div className="card-content">
 				<div className="wp-block-card__inner-content">
 					{ url && (
-						<div class="wp-block-image">
-							<img src={url} />
+						<div style={ imageStyleRules } class={ imageClasses }>
+							<img src={url} style={ imageStyleInnerRules }/>
 						</div>
 					) }
 					<RichText.Content

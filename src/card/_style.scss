@@ -37,17 +37,40 @@
 
 		.wp-block-image {
 			text-align: left;
-			margin-bottom: 0;
 			display: block;
 			display: flex;
-		}
-
-		.wp-block-image > * {
-			margin-bottom: 0;
-			max-height: 60px;
-		}
-		.wp-block-image {
 			margin-bottom: $margin_bottom;
+
+			> * {
+				margin-bottom: 0;
+				object-fit: cover;
+				max-height: 60px;
+			}
+
+			&.image-style-hex,
+			&.image-style-circle {
+				width: 60px;
+				height: 60px;
+
+				> * {
+					max-height: none;
+				}
+			}
+
+			&.image-style-hex {
+				svg,
+				img {
+					@include hex-crop;
+				}
+			}
+
+			&.image-style-circle {
+				svg,
+				img {
+					@include circle-crop;
+				}
+			}
+
 		}
 
 		> *:last-child {
@@ -64,10 +87,8 @@
 		}
 
 		.wp-block-image {
-			> * {
-				margin-left: auto;
-				margin-right: auto;
-			}
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }
