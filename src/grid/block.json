@@ -10,6 +10,15 @@
 		},
 		"spacing": {
 			"type": "number"
+		},
+		"rspacing": {
+			"type": "number"
+		},
+		"spacingRow": {
+			"type": "number"
+		},
+		"rspacingRow": {
+			"type": "number"
 		}
 	},
 	"supports": {

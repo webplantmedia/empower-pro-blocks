@@ -105,13 +105,13 @@
 		}
 
 		@media only screen and ( max-width: $ipad_width ) {
-			grid-template-columns: 1fr 1fr !important;
-			grid-gap: 60px 60px !important;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 60px 60px;
 		}
 
 		@media only screen and ( max-width: $tablet_width ) {
-			grid-template-columns: 1fr !important;
-			grid-gap: 60px 60px !important;
+			grid-template-columns: 1fr;
+			grid-gap: 60px 60px;
 		}
 	}
 
@@ -120,13 +120,13 @@
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 
 			@media only screen and ( max-width: $ipad_width ) {
-				grid-template-columns: 1fr 1fr 1fr !important;
+				grid-template-columns: 1fr 1fr 1fr;
 			}
 			@media only screen and ( max-width: $tablet_width ) {
-				grid-template-columns: 1fr 1fr !important;
+				grid-template-columns: 1fr 1fr;
 			}
 			@media only screen and ( max-width: $mobile_width ) {
-				grid-template-columns: 1fr !important;
+				grid-template-columns: 1fr;
 			}
 		}
 	}
@@ -136,14 +136,28 @@
 	@each $size in $sizes {
 		&.grid-gap-#{$size} {
 			> .wp-block-grid__inner-container {
-				grid-gap: #{$size}px #{$size}px !important;
+				grid-gap: #{$size}px #{$size}px;
 			}
 		}
 
 		&.r-grid-gap-#{$size} {
 			> div.wp-block-grid__inner-container {
 				@media only screen and ( max-width: $ipad_width ) {
-					grid-gap: #{$size}px #{$size}px !important;
+					grid-gap: #{$size}px #{$size}px;
+				}
+			}
+		}
+
+		&.grid-row-gap-#{$size} {
+			> .wp-block-grid__inner-container {
+				grid-row-gap: #{$size}px !important;
+			}
+		}
+
+		&.r-grid-row-gap-#{$size} {
+			> div.wp-block-grid__inner-container {
+				@media only screen and ( max-width: $ipad_width ) {
+					grid-row-gap: #{$size}px !important;
 				}
 			}
 		}

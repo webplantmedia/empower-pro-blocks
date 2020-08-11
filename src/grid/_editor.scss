@@ -111,13 +111,13 @@
 		}
 
 		@media only screen and ( max-width: $ipad_width ) {
-			grid-template-columns: 1fr 1fr !important;
-			grid-gap: 60px 60px !important;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 60px 60px;
 		}
 
 		@media only screen and ( max-width: $tablet_width ) {
-			grid-template-columns: 1fr !important;
-			grid-gap: 60px 60px !important;
+			grid-template-columns: 1fr;
+			grid-gap: 60px 60px;
 		}
 	}
 
@@ -126,13 +126,13 @@
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 
 			@media only screen and ( max-width: $ipad_width ) {
-				grid-template-columns: 1fr 1fr 1fr !important;
+				grid-template-columns: 1fr 1fr 1fr;
 			}
 			@media only screen and ( max-width: $tablet_width ) {
-				grid-template-columns: 1fr 1fr !important;
+				grid-template-columns: 1fr 1fr;
 			}
 			@media only screen and ( max-width: $mobile_width ) {
-				grid-template-columns: 1fr !important;
+				grid-template-columns: 1fr;
 			}
 		}
 	}
@@ -141,14 +141,28 @@
 	@each $size in $sizes {
 		&.grid-gap-#{$size} {
 			> .block-editor-inner-blocks > .block-editor-block-list__layout {
-				grid-gap: #{$size}px #{$size}px !important;
+				grid-gap: #{$size}px #{$size}px;
 			}
 		}
 
 		&.r-grid-gap-#{$size} {
-			> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			> div.block-editor-inner-blocks > .block-editor-block-list__layout {
 				@media only screen and ( max-width: $ipad_width ) {
-					grid-gap: #{$size}px #{$size}px !important;
+					grid-gap: #{$size}px #{$size}px;
+				}
+			}
+		}
+
+		&.grid-row-gap-#{$size} {
+			> .block-editor-inner-blocks > .block-editor-block-list__layout {
+				grid-row-gap: #{$size}px !important;
+			}
+		}
+
+		&.r-grid-row-gap-#{$size} {
+			> div.block-editor-inner-blocks > .block-editor-block-list__layout {
+				@media only screen and ( max-width: $ipad_width ) {
+					grid-row-gap: #{$size}px !important;
 				}
 			}
 		}

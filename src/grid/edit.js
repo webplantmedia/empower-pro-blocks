@@ -38,6 +38,8 @@ function GridEdit( {
 		columns,
 		spacing,
 		rspacing,
+		spacingRow,
+		rspacingRow,
 		verticalAlignment,
 	} = attributes;
 
@@ -84,11 +86,35 @@ function GridEdit( {
 						step={ 10 }
 					/>
 					<RangeControl
+						label={ __( 'Grid Row Spacing' ) }
+						value={ spacingRow }
+						onChange={ ( value ) =>
+							setAttributes( {
+								spacingRow: value,
+							} )
+						}
+						min={ 0 }
+						max={ 100 }
+						step={ 10 }
+					/>
+					<RangeControl
 						label={ __( 'Responsive Grid Spacing' ) }
 						value={ rspacing }
 						onChange={ ( value ) =>
 							setAttributes( {
 								rspacing: value,
+							} )
+						}
+						min={ 0 }
+						max={ 100 }
+						step={ 10 }
+					/>
+					<RangeControl
+						label={ __( 'Responsive Grid Row Spacing' ) }
+						value={ rspacingRow }
+						onChange={ ( value ) =>
+							setAttributes( {
+								rspacingRow: value,
 							} )
 						}
 						min={ 0 }
@@ -113,6 +139,8 @@ function GridEdit( {
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 		spacing || spacing === 0 ? 'grid-gap-' + spacing : {},
 		rspacing || rspacing === 0 ? 'r-grid-gap-' + rspacing : {},
+		spacingRow || spacingRow === 0 ? 'grid-row-gap-' + spacingRow : {},
+		rspacingRow || rspacingRow === 0 ? 'r-grid-row-gap-' + rspacingRow : {},
 	);
 
 	return (

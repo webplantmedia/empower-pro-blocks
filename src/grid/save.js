@@ -13,6 +13,8 @@ export default function save( { attributes } ) {
 		columns,
 		spacing,
 		rspacing,
+		spacingRow,
+		rspacingRow,
 		verticalAlignment,
 	} = attributes;
 
@@ -21,6 +23,8 @@ export default function save( { attributes } ) {
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
 		spacing || spacing === 0 ? 'grid-gap-' + spacing : {},
 		rspacing || rspacing === 0 ? 'r-grid-gap-' + rspacing : {},
+		spacingRow || spacingRow === 0 ? 'grid-row-gap-' + spacingRow : {},
+		rspacingRow || rspacingRow === 0 ? 'r-grid-row-gap-' + rspacingRow : {},
 	);
 
 	return (
