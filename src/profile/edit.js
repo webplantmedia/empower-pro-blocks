@@ -284,20 +284,18 @@ function ProfileEdit( {
 							formattingControls={ [] }
 							tagName={ tagName }
 						/>
-						{ text && (
-							<RichText
-								tagName="p"
-								placeholder={ __( 'Text', 'empower-pro-blocks' ) }
-								onChange={ ( value ) =>
-									setAttributes( {
-										text: value,
-									} )
-								}
-								value={ text }
-								className={ pClasses }
-								style={ pStyles }
-							/>
-						) }
+						<RichText
+							tagName="p"
+							placeholder={ __( 'Text', 'empower-pro-blocks' ) }
+							onChange={ ( value ) =>
+								setAttributes( {
+									text: value,
+								} )
+							}
+							value={ text }
+							className={ pClasses }
+							style={ pStyles }
+						/>
 					</div>
 				</div>
 			</div>
