@@ -64,12 +64,13 @@ function GridEdit( {
 							{ value: "", label: __( "2" ) },
 							{ value: "3", label: __( "3" ) },
 							{ value: "4", label: __( "4" ) },
-							{ value: "7-3", label: __( "7-3" ) },
-							{ value: "3-7", label: __( "3-7" ) },
-							{ value: "6-4", label: __( "6-4" ) },
-							{ value: "4-6", label: __( "4-6" ) },
-							{ value: "25-35-20-20", label: __( "25-35-20-20" ) },
+							{ value: "7-3", label: __( "7/3" ) },
+							{ value: "3-7", label: __( "3/7" ) },
+							{ value: "6-4", label: __( "6/4" ) },
+							{ value: "4-6", label: __( "4/6" ) },
+							{ value: "25-35-20-20", label: __( "25/35/20/20" ) },
 							{ value: "4--3--2--1", label: __( "4 > 3 > 2 > 1" ) },
+							{ value: "3-7--3-7--1--1", label: __( "3/7 > 3/7 > 1 > 1" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { columns: value } ) }
 					/>
