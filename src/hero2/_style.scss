@@ -30,11 +30,15 @@
 			max-width: 600px;
 			width: 100%;
 			background-color: $body_background_color;
-			padding: 30px 0;
+			padding: 30px 0 70px;
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 			border-radius: $border_radius;
 			border-top-left-radius: $border_radius_medium;
 			border-top-right-radius: $border_radius_medium;
+
+			@media screen and ( max-width: $mobile_width ) {
+				padding-bottom: 50px;
+			}
 
 			@media screen and ( min-width: $ipad_width_1 ) {
 				> *,
@@ -109,7 +113,7 @@
 			margin-bottom: -77px;
 
 			@media screen and ( max-width: $mobile_width ) {
-				margin-bottom: -114px;
+				// margin-bottom: -114px;
 			}
 		}
 
@@ -122,6 +126,10 @@
 			margin-right: 50px;
 			z-index: 60;
 			position: relative;
+
+			> *:last-child {
+				margin-bottom: 0;
+			}
 
 			// Gray bottom bar
 			.gray-bottom-bar {
