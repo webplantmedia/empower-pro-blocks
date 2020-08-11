@@ -246,19 +246,21 @@ function HeroEdit( {
 						/>
 					) }
 				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
-					title={ __( 'Hero Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: heroColor.color,
-							onColorChange: setHeroColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
+				{ showContent && (
+					<PanelColorGradientSettings
+						title={ __( 'Hero Color' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: heroColor.color,
+								onColorChange: setHeroColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				) }
 				<PanelColorGradientSettings
 					title={ __( 'Left Pill Color' ) }
 					initialOpen={ true }
