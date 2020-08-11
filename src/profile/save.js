@@ -26,18 +26,14 @@ export default function save( { attributes } ) {
 		heading,
 		level,
 		text,
-		button1Text,
 		fontSize,
 		customFontSize,
-		button1URL,
-		button1LinkTarget,
 		profileColor,
 		profileStyle,
 		imageStyle,
 		imageHeight,
 		textColor,
 		headingColor,
-		backgroundColor,
 	} = attributes;
 
 	const classes = classnames(
@@ -85,12 +81,8 @@ export default function save( { attributes } ) {
 		imageHeight ? 'custom-height' : {}, 
 	);
 
-	const backgroundColorClassName = getColorClassName( 'background-color', backgroundColor );
-
 	const innerClasses = classnames(
 		'wp-block-profile__inner-content',
-		backgroundColorClassName, 
-		{ [ "has-background-color" ]: backgroundColorClassName },
 	);
 
 	return (
@@ -113,20 +105,6 @@ export default function save( { attributes } ) {
 						className={ pClasses }
 						style={ pStyles }
 					/>
-					{ button1Text && (
-						<div class="wp-block-buttons">
-							<div class="wp-block-button is-style-text">
-								<RichText.Content
-									tagName="a"
-									value={ button1Text }
-									className="wp-block-button__link button1"
-									value={ button1Text }
-									href={ button1URL }
-									target={ button1LinkTarget }
-								/>
-							</div>
-						</div>
-					) }
 				</div>
 			</div>
 		</div>

@@ -9,7 +9,8 @@
 			"type": "number"
 		},
 		"imageStyle": {
-			"type": "string"
+			"type": "string",
+			"default": "circle"
 		},
 		"imageHeight": {
 			"type": "number",
@@ -26,7 +27,8 @@
 			"selector": ".profile-heading"
 		},
 		"fontSize": {
-			"type": "string"
+			"type": "string",
+			"default": "xsmall"
 		},
 		"profileStyle": {
 			"type": "string"
@@ -37,9 +39,6 @@
 		"level": {
 			"type": "number",
 			"default": 4
-		},
-		"backgroundColor": {
-			"type": "string"
 		},
 		"headerColor": {
 			"type": "string"
@@ -52,24 +51,6 @@
 			"source": "html",
 			"default": "Provides the management and leadership skills necessary to thrive in today’s fast-paced global business environment.",
 			"selector": ".profile-text"
-		},
-		"button1Text": {
-			"type": "string",
-			"source": "html",
-			"default": "About Us",
-			"selector": ".button1"
-		},
-		"button1URL": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a.button1",
-			"attribute": "href"
-		},
-		"button1LinkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": ".button1",
-			"attribute": "target"
 		}
 	}
 }

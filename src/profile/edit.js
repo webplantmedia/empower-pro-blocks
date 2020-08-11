@@ -58,8 +58,6 @@ function ProfileEdit( {
 	setTextColor,
 	headingColor,
 	setHeadingColor,
-	backgroundColor,
-	setBackgroundColor,
 } ) {
 	const {
 		id,
@@ -70,9 +68,6 @@ function ProfileEdit( {
 		profileStyle,
 		imageStyle,
 		imageHeight,
-		button1Text,
-		button1URL,
-		button1LinkTarget,
 	} = attributes;
 
 	const tagName = 'h' + level;
@@ -130,44 +125,33 @@ function ProfileEdit( {
 						</PanelRow>
 					) }
 					{ !! url && (
-						<hr />
+						<Fragment>
+							<hr />
+							<RangeControl
+								label={ __( 'Icon Size' ) }
+								value={ imageHeight }
+								onChange={ ( value ) =>
+									setAttributes( {
+										imageHeight: value,
+									} )
+								}
+								min={ 60 }
+								max={ 300 }
+								step={ 1 }
+							/>
+							<SelectControl
+								label={ __( "Image Style" ) }
+								value={ imageStyle }
+								options={ [
+									{ value: "", label: __( "None" ) },
+									{ value: "circle", label: __( "Circle" ) },
+									{ value: "hex", label: __( "Hex" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
+							/>
+						</Fragment>
 					) }
-					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ imageHeight }
-						onChange={ ( value ) =>
-							setAttributes( {
-								imageHeight: value,
-							} )
-						}
-						min={ 60 }
-						max={ 300 }
-						step={ 1 }
-					/>
-					<SelectControl
-						label={ __( "Image Style" ) }
-						value={ imageStyle }
-						options={ [
-							{ value: "", label: __( "None" ) },
-							{ value: "circle", label: __( "Circle" ) },
-							{ value: "hex", label: __( "Hex" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
-					/>
 				</PanelBody>
-				<PanelColorGradientSettings
-					title={ __( 'Background Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: backgroundColor.color,
-							onColorChange: setBackgroundColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Profile Color' ) }
 					initialOpen={ true }
@@ -230,24 +214,6 @@ function ProfileEdit( {
 						onChange={ setFontSize }
 					/>
 				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Call to Action Button' ) } initialOpen={ true }>
-					<TextControl
-						label={ __( 'Text' ) }
-						value={ button1Text }
-						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-					/>
-					<URLInput
-						value={ button1URL }
-						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button1URL: value } ) }
-						autoFocus= { false }
-					/>
-					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
-						checked={ button1LinkTarget === '_blank' }
-					/>
-				</PanelBody>
 			</InspectorControls>
 		</>
 	);
@@ -293,8 +259,6 @@ function ProfileEdit( {
 	);
 
 	const innerClasses = classnames( 'wp-block-profile__inner-content', {
-		[ backgroundColor.class ]: backgroundColor.class,
-		[ 'has-background-color' ]: backgroundColor.class,
 	} );
 
 	return (
@@ -332,17 +296,6 @@ function ProfileEdit( {
 							className={ pClasses }
 							style={ pStyles }
 						/>
-						<div class="wp-block-buttons">
-							<div class="wp-block-button is-style-text">
-								<RichText
-									placeholder={ __( 'Button 1' ) }
-									value={ button1Text }
-									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-									className="wp-block-button__link button1"
-									formattingControls={ [] }
-								/>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -352,5 +305,5 @@ function ProfileEdit( {
 
 export default compose( [
 	withFontSizes( 'fontSize' ),
-	withColors( { profileColor: 'profile-color', headingColor: 'text-color', textColor: 'text-color', backgroundColor: 'background-color' } ),
+	withColors( { profileColor: 'profile-color', headingColor: 'text-color', textColor: 'text-color' } ),
 ] )( ProfileEdit );

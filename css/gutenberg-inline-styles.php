@@ -142,6 +142,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .hero-content.has-$color-background-color > .wp-block-group__inner-container {
 				border-color: ${ $color . '_color' } !important;
 			}
+			html .wp-block-empower-pro-blocks-profile.has-$color-profile-color .profile-content .profile-heading::before,
 			html .hex.has-$color-background-color .blocks-gallery-item::after {
 				background-color: ${ $color . '_color' } !important;
 			}

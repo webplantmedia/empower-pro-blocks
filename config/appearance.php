@@ -243,8 +243,8 @@ return array(
 			'color' => $empower_pro_blocks_eighth_color,
 		),
 		array(
-			'name'  => __( 'Default Text color', 'empower-pro-blocks' ),
-			'slug'  => 'defaulttext',
+			'name'  => __( 'Body Text color', 'empower-pro-blocks' ),
+			'slug'  => 'bodytext',
 			'color' => $empower_pro_blocks_text_color,
 		),
 		array(

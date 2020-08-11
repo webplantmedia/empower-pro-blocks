@@ -130,30 +130,32 @@ function CardEdit( {
 						</PanelRow>
 					) }
 					{ !! url && (
-						<hr />
+						<Fragment>
+							<hr />
+							<RangeControl
+								label={ __( 'Icon Size' ) }
+								value={ imageHeight }
+								onChange={ ( value ) =>
+									setAttributes( {
+										imageHeight: value,
+									} )
+								}
+								min={ 60 }
+								max={ 300 }
+								step={ 1 }
+							/>
+							<SelectControl
+								label={ __( "Image Style" ) }
+								value={ imageStyle }
+								options={ [
+									{ value: "", label: __( "None" ) },
+									{ value: "circle", label: __( "Circle" ) },
+									{ value: "hex", label: __( "Hex" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
+							/>
+						</Fragment>
 					) }
-					<RangeControl
-						label={ __( 'Icon Size' ) }
-						value={ imageHeight }
-						onChange={ ( value ) =>
-							setAttributes( {
-								imageHeight: value,
-							} )
-						}
-						min={ 60 }
-						max={ 300 }
-						step={ 1 }
-					/>
-					<SelectControl
-						label={ __( "Image Style" ) }
-						value={ imageStyle }
-						options={ [
-							{ value: "", label: __( "None" ) },
-							{ value: "circle", label: __( "Circle" ) },
-							{ value: "hex", label: __( "Hex" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
-					/>
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Background Color' ) }
