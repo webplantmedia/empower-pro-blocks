@@ -1,0 +1,8 @@
+[data-align="wide"] .is-block-content .wp-block-group,
+[data-align="full"] .is-block-content .wp-block-group {
+	padding: 20px 60px;
+
+	.wp-block {
+		max-width: none;
+	}
+}
