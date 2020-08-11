@@ -51,7 +51,18 @@
 	}
 }
 
-.wp-block-gallery.is-style-brands .blocks-gallery-item {
+.wp-block-gallery.columns-6.is-style-brands .blocks-gallery-item {
+	width: calc((100% - 300px) / 6);
+	max-width: calc((100% - 300px) / 6);
+	margin-right: 50px;
+	margin-bottom: 50px;
+}
+
+.wp-block-gallery.columns-6.is-style-brands .blocks-gallery-item:nth-of-type(6n) {
+	margin-right: 0;
+}
+
+.wp-block-gallery.columns-5.is-style-brands .blocks-gallery-item {
 	width: calc((100% - 240px) / 5);
 	max-width: calc((100% - 240px) / 5);
 	margin-right: 60px;
@@ -63,8 +74,8 @@
 }
 
 .wp-block-gallery.columns-4.is-style-brands .blocks-gallery-item {
-	width: calc((100% - 180px) / 5);
-	max-width: calc((100% - 180px) / 5);
+	width: calc((100% - 180px) / 4);
+	max-width: calc((100% - 180px) / 4);
 	margin-right: 60px;
 	margin-bottom: 60px;
 }
