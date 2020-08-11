@@ -5,6 +5,9 @@
 		"backgroundColor": {
 			"type": "string"
 		},
+		"slantBackgroundColor": {
+			"type": "string"
+		},
 		"slant": {
 			"type": "string"
 		},

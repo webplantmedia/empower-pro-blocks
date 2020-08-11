@@ -45,6 +45,8 @@ function BackgroundEdit( {
 	attributes,
 	setAttributes,
 	hasInnerBlocks,
+	slantBackgroundColor,
+	setSlantBackgroundColor,
 	backgroundColor,
 	setBackgroundColor,
 	leftPillColor,
@@ -136,6 +138,21 @@ function BackgroundEdit( {
 						onChange={ ( value ) => setAttributes( { slant: value } ) }
 					/>
 				</PanelBody>
+				{ slant !== "" && (
+					<PanelColorGradientSettings
+						title={ __( 'Slant Background' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: slantBackgroundColor.color,
+								onColorChange: setSlantBackgroundColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				) }
 				<PanelColorGradientSettings
 					title={ __( 'Left Pill' ) }
 					initialOpen={ true }
@@ -256,9 +273,11 @@ function BackgroundEdit( {
 		</>
 	);
 
-	const classes = classnames( className, {
-		[ 'display-' + slant + '-slant' ]: slant !== "",
-	} );
+	const classes = classnames( className, 
+		{ [ slantBackgroundColor.class ]: slantBackgroundColor.class, },
+		{ [ 'has-background-color' ]: slantBackgroundColor.class, },
+		{ [ 'display-' + slant + '-slant' ]: slant !== "", }
+	);
 
 	const innerClasses = classnames(
 		"wp-block-background__inner-container",
@@ -266,6 +285,7 @@ function BackgroundEdit( {
 
 	const backgroundClasses = classnames(
 		"wp-block-background__color-container",
+		{ [ 'has-background-color' ]: backgroundColor.class, },
 		{ [ backgroundColor.class ]: backgroundColor.class, }
 	);
 
@@ -353,5 +373,5 @@ export default compose( [
 			hasInnerBlocks: !! ( block && block.innerBlocks.length ),
 		};
 	} ),
-	withColors( { backgroundColor: 'background-color', leftPillColor: 'svg-fill-color', rightPillColor: 'svg-fill-color' } ),
+	withColors( { slantBackgroundColor: 'background-color', backgroundColor: 'background-color', leftPillColor: 'svg-fill-color', rightPillColor: 'svg-fill-color' } ),
 ] )( BackgroundEdit );
