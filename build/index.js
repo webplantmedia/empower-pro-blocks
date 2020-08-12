@@ -2742,7 +2742,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! exports provided: name, category, parent, attributes, supports, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/column\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"parent\\\":[\\\"empower-pro-blocks/filter\\\",\\\"empower-pro-blocks/grid\\\"],\\\"attributes\\\":{},\\\"supports\\\":{\\\"anchor\\\":true,\\\"reusable\\\":false,\\\"html\\\":false,\\\"lightBlockWrapper\\\":true}}\");\n\n//# sourceURL=webpack:///./src/column/block.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/column\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"parent\\\":[\\\"empower-pro-blocks/filter\\\",\\\"empower-pro-blocks/grid\\\"],\\\"attributes\\\":{},\\\"supports\\\":{\\\"reusable\\\":false,\\\"html\\\":false}}\");\n\n//# sourceURL=webpack:///./src/column/block.json?");
 
 /***/ }),
 
@@ -2836,7 +2836,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! exports provided: name, category, attributes, supports, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/grid\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"attributes\\\":{\\\"columns\\\":{\\\"type\\\":\\\"string\\\"},\\\"verticalAlignment\\\":{\\\"type\\\":\\\"string\\\"},\\\"spacing\\\":{\\\"type\\\":\\\"number\\\"},\\\"rspacing\\\":{\\\"type\\\":\\\"number\\\"},\\\"spacingRow\\\":{\\\"type\\\":\\\"number\\\"},\\\"rspacingRow\\\":{\\\"type\\\":\\\"number\\\"}},\\\"supports\\\":{\\\"align\\\":[\\\"wide\\\",\\\"full\\\"],\\\"anchor\\\":true,\\\"html\\\":false,\\\"lightBlockWrapper\\\":true,\\\"__experimentalColor\\\":{\\\"gradients\\\":true,\\\"linkColor\\\":true}}}\");\n\n//# sourceURL=webpack:///./src/grid/block.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/grid\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"attributes\\\":{\\\"columns\\\":{\\\"type\\\":\\\"string\\\"},\\\"verticalAlignment\\\":{\\\"type\\\":\\\"string\\\"},\\\"spacing\\\":{\\\"type\\\":\\\"number\\\"},\\\"rspacing\\\":{\\\"type\\\":\\\"number\\\"},\\\"spacingRow\\\":{\\\"type\\\":\\\"number\\\"},\\\"rspacingRow\\\":{\\\"type\\\":\\\"number\\\"}},\\\"supports\\\":{\\\"align\\\":[\\\"wide\\\",\\\"full\\\"],\\\"html\\\":false}}\");\n\n//# sourceURL=webpack:///./src/grid/block.json?");
 
 /***/ }),
 

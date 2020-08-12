@@ -8,9 +8,7 @@
 	"attributes": {
 	},
 	"supports": {
-		"anchor": true,
 		"reusable": false,
-		"html": false,
-		"lightBlockWrapper": true
+		"html": false
 	}
 }

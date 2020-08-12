@@ -26,12 +26,6 @@
 			"wide",
 			"full"
 		],
-		"anchor": true,
-		"html": false,
-		"lightBlockWrapper": true,
-		"__experimentalColor": {
-			"gradients": true,
-			"linkColor": true
-		}
+		"html": false
 	}
 }
