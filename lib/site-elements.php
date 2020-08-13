@@ -33,7 +33,7 @@ function empower_pro_blocks_create_post_type() {
 		)
 	);
 
-	register_post_type( 'site-element', $args );
+	register_post_type( 'site_element', $args );
 
 }
 

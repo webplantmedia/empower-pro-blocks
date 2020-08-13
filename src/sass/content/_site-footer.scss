@@ -56,19 +56,6 @@
 	}
 }
 
-#footer .wp-block-group[class*='group-columns-'] {
-	> .wp-block-group__inner-container {
-		@media only screen and ( max-width: $ipad_width ) {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 60px 60px;
-		}
-		@media only screen and ( max-width: $tablet_width ) {
-			grid-template-columns: 1fr;
-			grid-gap: 60px 60px;
-		}
-	}
-}
-
 .site-footer {
 	font-size: $body_font_size_xsmall;
 	line-height: $body_font_line_height;
