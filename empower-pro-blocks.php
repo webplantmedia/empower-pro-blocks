@@ -27,6 +27,7 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
+
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/theme-defaults.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
@@ -35,7 +36,6 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';
-
 
 add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
 /**

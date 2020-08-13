@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Change default arguments for the dropdown menu script
  *
