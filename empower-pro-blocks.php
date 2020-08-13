@@ -23,11 +23,11 @@ function empower_pro_blocks_defines() {
 }
 add_action( 'init', 'empower_pro_blocks_defines' );
 
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/theme-defaults.php';
-require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
 
@@ -74,15 +74,16 @@ if ( empower_pro_blocks_is_soliloquy_activated() ) {
 
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/site-elements.php';
 
-function empower_pro_blocks_category( $categories, $post ) {
-	return array_merge(
-		array(
-			array(
-				'slug' => 'abilitie-blocks',
-				'title' => __( 'Abilitie Blocks', 'empower-pro-blocks' ),
-			),
-		),
-		$categories,
-	);
+add_action( 'wp_head', 'empower_pro_blocks_load_images' );
+/**
+ * Adjusts featured images.
+ *
+ * Defer loading until wp_head so that `get_theme_mod()` works for live previews in the Customizer.
+ *
+ * @since 1.0.0
+ */
+function empower_pro_blocks_load_images() {
+
+	require_once EMPOWER_PRO_BLOCKS_DIR . '/lib/images.php';
+
 }
-add_filter( 'block_categories', 'empower_pro_blocks_category', 10, 2);

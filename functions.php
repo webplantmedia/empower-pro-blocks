@@ -1,8 +1,5 @@
 <?php
 
-global $empower_pro_blocks_appearance;
-$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
-
 /**
  * Change default arguments for the dropdown menu script
  *
@@ -17,20 +14,6 @@ function empower_pro_blocks_superfish_args_url() {
 }
 add_filter( 'genesis_superfish_args_url', 'empower_pro_blocks_superfish_args_url', 99 );
 
-
-add_action( 'wp_head', 'empower_pro_blocks_load_images' );
-/**
- * Adjusts featured images.
- *
- * Defer loading until wp_head so that `get_theme_mod()` works for live previews in the Customizer.
- *
- * @since 1.0.0
- */
-function empower_pro_blocks_load_images() {
-
-	require_once CHILD_DIR . '/lib/images.php';
-
-}
 
 // Adds image sizes.
 add_image_size( 'header-image', 1600, 420, true );
@@ -192,23 +175,35 @@ function empower_pro_blocks_remove_customizer_settings( $config ) {
 
 }
 
-// Adds support for after entry widget.
-add_theme_support( 'genesis-after-entry-widget-area' );
+function empower_pro_blocks_init() {
+	// Adds support for after entry widget.
+	add_theme_support( 'genesis-after-entry-widget-area' );
 
-// Removes header right widget area.
-unregister_sidebar( 'header-right' );
+	// Removes header right widget area.
+	unregister_sidebar( 'header-right' );
 
-// Removes secondary sidebar.
-unregister_sidebar( 'sidebar-alt' );
+	// Removes secondary sidebar.
+	unregister_sidebar( 'sidebar-alt' );
 
-// Removes site layouts.
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
+	// Removes site layouts.
+	genesis_unregister_layout( 'content-sidebar-sidebar' );
+	genesis_unregister_layout( 'sidebar-content-sidebar' );
+	genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-// Removes output of primary navigation right extras.
-remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
-remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
+	// Removes output of primary navigation right extras.
+	remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
+	remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
+
+	genesis_register_sidebar(
+		array(
+			'id'          => 'social-icons',
+			'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
+			'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
+		)
+	);
+
+}
+add_action( 'init', 'empower_pro_blocks_init' );
 
 add_action( 'genesis_theme_settings_metaboxes', 'empower_pro_blocks_remove_genesis_metaboxes' );
 /**
@@ -244,7 +239,11 @@ function empower_pro_blocks_menu_atts( $atts, $item, $args ) {
 		if (substr($href, 0, 1) === '#') {
 			$data_dropdown = ltrim( $href, '#' );
 			$atts['data-dropdown'] = $data_dropdown;
-			$atts['class'] .= ' hasDropdown';
+			$class = 'hasDropdown';
+			if ( isset( $atts['class'] ) ) {
+				$class = " " . $atts['class'];
+			}
+			$atts['class'] = $class;
 		}
 	}
 
@@ -592,14 +591,6 @@ function empower_pro_blocks_cta_widget_area_class( $id ) {
 
 }
 
-genesis_register_sidebar(
-	array(
-		'id'          => 'social-icons',
-		'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
-		'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
-	)
-);
-
 add_action( 'genesis_before_footer', 'empower_pro_blocks_footer_widgets' );
 /**
  * Adds the flexible footer widget area.
@@ -899,3 +890,6 @@ function empower_pro_blocks_sticky_label() {
 		echo '<span class="sticky">' . wp_kses_post( __( 'Featured', 'empower-pro-blocks' ) ) . '</span>';
 	}
 }
+
+global $empower_pro_blocks_appearance;
+$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );

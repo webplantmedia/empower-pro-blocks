@@ -8,6 +8,19 @@
  * @link    https://webplantmedia.com/
  */
 
+function empower_pro_blocks_category( $categories, $post ) {
+	return array_merge(
+		array(
+			array(
+				'slug' => 'abilitie-blocks',
+				'title' => __( 'Abilitie Blocks', 'empower-pro-blocks' ),
+			),
+		),
+		$categories,
+	);
+}
+add_filter( 'block_categories', 'empower_pro_blocks_category', 10, 2);
+
 // Add support for editor styles.
 // add_theme_support( 'editor-styles' );
 

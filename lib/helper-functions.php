@@ -228,42 +228,6 @@ function empower_pro_blocks_get_post_thumbnail_id( $post_id = null ) {
 }
 
 /**
- * Compact css.
- *
- * @since 1.01
- *
- * @param string $input Text to compact.
- * @return $input
- */
-function empower_pro_blocks_compact( $input ) {
-	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
-
-	return $input;
-}
-
-/**
- * Query Soliloquy activation
- *
- * @since 1.01
- *
- * @return bool
- */
-function empower_pro_blocks_is_soliloquy_activated() {
-	return class_exists( 'Soliloquy_Lite' ) ? true : false;
-}
-
-/**
- * Query WooCommerce activation
- *
- * @since 1.01
- *
- * @return bool
- */
-function empower_pro_blocks_is_woocommerce_activated() {
-	return class_exists( 'woocommerce' ) ? true : false;
-}
-
-/**
  * Query WeDocs activation
  *
  * @since 1.01
@@ -306,7 +270,7 @@ function empower_pro_blocks_is_wedocs_home_page() {
  */
 function empower_pro_blocks_get_config( $config ) {
 
-	$child_file  = sprintf( '%sconfig/%s.php', plugin_dir_path( __FILE__ ), $config );
+	$child_file  = sprintf( '%sconfig/%s.php', EMPOWER_PRO_BLOCKS_DIR, $config );
 
 	$data = [];
 
