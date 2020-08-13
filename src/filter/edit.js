@@ -129,7 +129,10 @@ function FilterEdit( {
 					</div>
 					<div className="wp-block-group our-statements">
 						<div className="wp-block-group__inner-container">
-							<InnerBlocks template={ INNER_BLOCKS_TEMPLATE } templateLock="insert" />
+							<InnerBlocks 
+								template={ INNER_BLOCKS_TEMPLATE }
+								templateLock="insert"
+							/>
 						</div>
 					</div>
 				</div>
