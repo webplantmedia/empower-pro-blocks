@@ -104,7 +104,7 @@ function empower_pro_blocks_woocommerce_styles( $enqueue_styles ) {
 		'deps'    => array( 'empower-pro-blocks-main' ),
 		'media'   => 'screen',
 		'src'     => EMPOWER_PRO_BLOCKS_DIR . 'css/woocommerce-theme.css',
-		'version' => CHILD_THEME_VERSION,
+		'version' => EMPOWER_PRO_BLOCKS_VERSION,
 	);
 
 	return $enqueue_styles;

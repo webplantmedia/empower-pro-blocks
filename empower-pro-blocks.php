@@ -26,6 +26,10 @@ add_action( 'init', 'empower_pro_blocks_defines' );
 require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/theme-defaults.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
 
 // Includes Customizer CSS.
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';

@@ -1,0 +1,294 @@
+<?php
+/**
+ * Leadership Pro.
+ *
+ * This defines the helper functions for use in the Leadership Pro Theme.
+ *
+ * @package Leadership_Pro
+ * @author  Web Plant Media
+ * @license GPL-2.0+
+ * @link    https://webplantmedia.com/product/leadership-pro/
+ */
+
+/**
+ * Calculates if white or black would contrast more with the provided color.
+ *
+ * @since 1.0.0
+ *
+ * @param string $color A color in hex format.
+ * @return string The hex code for the most contrasting color: dark grey or white.
+ */
+function leadership_pro_color_contrast( $color ) {
+
+	$hexcolor = str_replace( '#', '', $color );
+
+	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
+	$green = hexdec( substr( $hexcolor, 2, 2 ) );
+	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+
+	$luminosity = ( ( $red * 0.1726 ) + ( $green * 0.1152 ) + ( $blue * 0.0722 ) );
+
+	return ( $luminosity > 100 ) ? '#222222' : '#ffffff';
+
+}
+
+/**
+ * Generates a lighter or darker color from a starting color.
+ * Used to generate complementary hover tints from user-chosen colors.
+ *
+ * @since 1.0.0
+ *
+ * @param string $hex_code A color in hex format.
+ * @param int    $adjust_percent The amount to reduce or increase brightness by.
+ * @return string Hex code for the adjusted color brightness.
+ */
+function leadership_pro_color_brightness( $hex_code, $adjust_percent ) {
+
+	$hex_code = ltrim( $hex_code, '#' );
+
+	if ( strlen( $hex_code ) === 3 ) {
+		$hex_code = $hex_code[0] . $hex_code[0] . $hex_code[1] . $hex_code[1] . $hex_code[2] . $hex_code[2];
+	}
+
+	$hex_code = array_map( 'hexdec', str_split( $hex_code, 2 ) );
+
+	foreach ( $hex_code as & $color ) {
+		$adjustable_limit = $adjust_percent < 0 ? $color : 255 - $color;
+		$adjust_amount    = ceil( $adjustable_limit * $adjust_percent );
+
+		$color = str_pad( dechex( $color + $adjust_amount ), 2, '0', STR_PAD_LEFT );
+	}
+
+	return '#' . implode( $hex_code );
+
+}
+
+/**
+ * Convert hex to RGBA
+ * Used to generate complementary drop shadows
+ *
+ * @since 1.0.0
+ *
+ * @param string $color A color in hex format.
+ * @param int    $alpha The amount to reduce or increase brightness by.
+ * @param bool   $array Whether to return an array. Used in images.php.
+ * @return string|array RGBA code for the adjusted color brightness.
+ */
+function leadership_pro_color_rgba( $color, $alpha, $array = false ) {
+
+	$hexcolor = str_replace( '#', '', $color );
+
+	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
+	$green = hexdec( substr( $hexcolor, 2, 2 ) );
+	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+
+	if ( $array ) {
+		return array(
+			'r' => $red,
+			'g' => $green,
+			'b' => $blue,
+			'a' => $alpha,
+		);
+	}
+
+	return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+
+}
+
+add_filter( 'body_class', 'leadership_pro_half_width_entry_class' );
+/**
+ * Defines the half width entries body class.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Current classes.
+ * @return array $classes Updated class array.
+ */
+function leadership_pro_half_width_entry_class( $classes ) {
+
+	$site_layout     = genesis_site_layout();
+	$content_archive = genesis_get_option( 'content_archive' );
+
+	if ( is_home() || is_date() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) {
+		if ( 'full' === $content_archive ) {
+			$classes[] = 'full-width-entries';
+		} elseif ( 'full-width-content' !== $site_layout ) { // Displaying sidebar.
+			$classes[] = 'half-width-entries';
+		} else {
+			$classes[] = 'half-width-entries';
+		}
+	} elseif ( is_post_type_archive( 'portfolio' ) ) {
+		$classes[] = 'third-width-entries';
+	} elseif ( is_tax( 'doc_tag' ) ) {
+		$classes[] = 'half-width-entries';
+	} elseif ( is_post_type_archive( 'event' ) ) {
+		$classes[] = 'half-width-entries';
+	}
+
+	if ( has_nav_menu( 'mobile-cta' ) ) {
+		$classes[] = 'has-mobile-cta';
+	}
+
+	return $classes;
+
+}
+
+add_filter( 'genesis_attr_entry', 'leadership_pro_entry_class', 10, 3 );
+/**
+ * Adds alignment post class.
+ *
+ * @since 1.0.0
+ *
+ * @param array $attributes Existing attributes for entry element.
+ * @param array $context The widget.
+ * @param array $args The attribute arguments.
+ * @return array Amended attributes for entry element.
+ */
+function leadership_pro_entry_class( $attributes, $context, $args ) {
+
+	$alignment = genesis_get_option( 'image_alignment' );
+	$thumbnail = genesis_get_option( 'content_archive_thumbnail' );
+	$size      = genesis_get_option( 'image_size' );
+
+	if ( ! empty( $alignment ) && ! empty( $thumbnail ) && ! isset( $args['params']['is_widget'] ) && ( is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) ) {
+		$attributes['class'] = $attributes['class'] . ' entry-image-' . $alignment . '';
+	}
+
+	if ( ! empty( $size ) && ! empty( $thumbnail ) && ! isset( $args['params']['is_widget'] ) && ( is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) ) {
+		$attributes['class'] = $attributes['class'] . ' entry-image-' . $size . '';
+	}
+
+	return $attributes;
+
+}
+
+/**
+ * Check if post has a thumbnail or fallback thumbnail.
+ *
+ * Like `has_post_thumbnail()` but returns true if the post has a featured
+ * image or an attached image, mirroring the behavior of `genesis_get_image()`.
+ *
+ * @since 1.0.0
+ *
+ * @param int    $post_id Optional. The post ID.
+ * @param string $size Optional. The thumbnail size.
+ * @return bool Whether the post has an image attached.
+ */
+function leadership_pro_has_post_thumbnail( $post_id = null, $size = 'full' ) {
+
+	if ( is_404() ) {
+		return false;
+	}
+
+	$featured_image_url = genesis_get_image(
+		array(
+			'post_id'  => $post_id,
+			'format'   => 'url',
+			'size'     => $size,
+			'fallback' => false,
+		)
+	);
+
+	return (bool) $featured_image_url;
+
+}
+
+/**
+ * Get post thumbnail ID or fallback image ID.
+ *
+ * Like `get_post_thumbnail_id()` but returns the ID of the first-attached
+ * image if the post has no featured image, mirroring the behavior of
+ * `genesis_get_image()`.
+ *
+ * @since 1.0.0
+ *
+ * @param int $post_id Optional. The post ID.
+ * @return int|string The thumbnail ID or an empty string.
+ */
+function leadership_pro_get_post_thumbnail_id( $post_id = null ) {
+
+	if ( is_404() ) {
+		return '';
+	}
+
+	$featured_image_url = genesis_get_image(
+		array(
+			'post_id'  => $post_id,
+			'format'   => 'url',
+			'fallback' => false,
+		)
+	);
+
+	if ( $featured_image_url ) {
+		return attachment_url_to_postid( $featured_image_url );
+	}
+
+	return '';
+
+}
+
+/**
+ * Compact css.
+ *
+ * @since 1.01
+ *
+ * @param string $input Text to compact.
+ * @return $input
+ */
+function leadership_pro_compact( $input ) {
+	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
+
+	return $input;
+}
+
+/**
+ * Query Soliloquy activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_soliloquy_activated() {
+	return class_exists( 'Soliloquy_Lite' ) ? true : false;
+}
+
+/**
+ * Query WooCommerce activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+
+/**
+ * Query WeDocs activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_wedocs_activated() {
+	return class_exists( 'WeDocs' ) ? true : false;
+}
+
+/**
+ * Query WeDocs is home page.
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function leadership_pro_is_wedocs_home_page() {
+	if ( function_exists( 'wedocs_get_option' ) ) {
+		$docs_home = intval( wedocs_get_option( 'docs_home', 'wedocs_settings' ) );
+		$post_id   = intval( get_the_ID() );
+		if ( $docs_home === $post_id ) {
+			return true;
+		}
+	}
+
+	return false;
+}
