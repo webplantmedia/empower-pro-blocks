@@ -8,17 +8,17 @@
  * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$empower_pro_blocks_image_1  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-1.jpg';
-$empower_pro_blocks_image_2  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-2.jpg';
-$empower_pro_blocks_image_3  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-3.jpg';
-$empower_pro_blocks_image_4  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-4.jpg';
-$empower_pro_blocks_image_5  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-5.jpg';
-$empower_pro_blocks_image_6  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-6.jpg';
-$empower_pro_blocks_image_7  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-7.jpg';
-$empower_pro_blocks_image_8  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-8.jpg';
-$empower_pro_blocks_image_9  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-9.jpg';
-$empower_pro_blocks_image_10 = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-10.jpg';
-$empower_pro_blocks_image_11 = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-11.jpg';
+$empower_pro_blocks_image_1  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-1.jpg';
+$empower_pro_blocks_image_2  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-2.jpg';
+$empower_pro_blocks_image_3  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-3.jpg';
+$empower_pro_blocks_image_4  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-4.jpg';
+$empower_pro_blocks_image_5  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-5.jpg';
+$empower_pro_blocks_image_6  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-6.jpg';
+$empower_pro_blocks_image_7  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-7.jpg';
+$empower_pro_blocks_image_8  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-8.jpg';
+$empower_pro_blocks_image_9  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-9.jpg';
+$empower_pro_blocks_image_10 = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-10.jpg';
+$empower_pro_blocks_image_11 = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-11.jpg';
 
 $empower_pro_blocks_content = <<<CONTENT
 <!-- wp:paragraph -->

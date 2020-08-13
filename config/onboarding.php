@@ -514,7 +514,7 @@ return array(
 					'link_target_blank' => false,
 					'image_title'       => '',
 					'attachment_id'     => 23,
-					'url'               => EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-10.jpg',
+					'url'               => EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-10.jpg',
 					'title'             => '',
 				),
 			),

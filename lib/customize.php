@@ -603,7 +603,7 @@ add_action( 'customize_preview_init', 'empower_pro_blocks_customize_preview_init
  * @return void
  */
 function empower_pro_blocks_customize_preview_init() {
-	wp_enqueue_style( 'empower-pro-blocks-customizer-style', EMPOWER_PRO_BLOCKS_URL . '/css/customize.css', array(), EMPOWER_PRO_BLOCKS_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-customizer-style', EMPOWER_PRO_BLOCKS_URL . 'css/customize.css', array(), EMPOWER_PRO_BLOCKS_VERSION );
 }
 
 /**

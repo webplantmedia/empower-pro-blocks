@@ -8,7 +8,7 @@
  * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$empower_pro_blocks_image_3  = EMPOWER_PRO_BLOCKS_URL . '/config/import/images/image-3.jpg';
+$empower_pro_blocks_image_3  = EMPOWER_PRO_BLOCKS_URL . 'config/import/images/image-3.jpg';
 $empower_pro_blocks_home_url = esc_url( home_url( '/' ) );
 
 $empower_pro_blocks_content = <<<CONTENT
