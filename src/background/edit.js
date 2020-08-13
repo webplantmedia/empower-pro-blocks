@@ -348,11 +348,7 @@ function BackgroundEdit( {
 					<div className="block-wrap">
 						<InnerBlocks
 							renderAppender={
-								hasInnerBlocks
-									? undefined
-									: () => (
-											<InnerBlocks.ButtonBlockAppender />
-									  )
+								() => ( <InnerBlocks.ButtonBlockAppender />)
 							}
 						/>
 					</div>
