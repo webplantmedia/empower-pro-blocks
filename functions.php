@@ -201,6 +201,10 @@ function empower_pro_blocks_init() {
 		)
 	);
 
+	// Repositions primary navigation menu.
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
 }
 add_action( 'init', 'empower_pro_blocks_init' );
 
@@ -225,10 +229,6 @@ function empower_pro_blocks_add_class( $attributes ) {
 	// $attributes['class'] = $attributes['class']. ' globalNav overlayActive dropdownActive';
 	return $attributes;
 }
-
-// Repositions primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 add_filter( 'nav_menu_link_attributes', 'empower_pro_blocks_menu_atts', 10, 3 );
 function empower_pro_blocks_menu_atts( $atts, $item, $args ) {
