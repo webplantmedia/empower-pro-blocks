@@ -1,25 +1,25 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$leadership_pro_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
-$leadership_pro_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
-$leadership_pro_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
-$leadership_pro_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
-$leadership_pro_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
-$leadership_pro_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
-$leadership_pro_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
-$leadership_pro_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
-$leadership_pro_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
-$leadership_pro_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
+$empower_pro_blocks_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
+$empower_pro_blocks_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
+$empower_pro_blocks_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
+$empower_pro_blocks_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
+$empower_pro_blocks_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
+$empower_pro_blocks_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
+$empower_pro_blocks_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
+$empower_pro_blocks_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
+$empower_pro_blocks_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
+$empower_pro_blocks_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
 
-$leadership_pro_content = <<<CONTENT
+$empower_pro_blocks_content = <<<CONTENT
 <!-- wp:heading {"align":"center","className":"hero-title"} -->
 <h2 style="text-align:center" class="hero-title">Advertise Your Services &amp; Products Like a Pro</h2>
 <!-- /wp:heading -->
@@ -29,7 +29,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2200,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_1" alt="" class="wp-image-2200"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_1" alt="" class="wp-image-2200"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:columns {"align":"wide","className":"hero-text-button"} -->
@@ -107,7 +107,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2235,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_2" alt="" class="wp-image-2235"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_2" alt="" class="wp-image-2235"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -123,7 +123,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:paragraph -->
 
 <!-- wp:media-text {"mediaId":2254,"mediaType":"image","isStackedOnMobile":true} -->
-<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="$leadership_pro_image_9" alt="" class="wp-image-2254"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="$empower_pro_blocks_image_9" alt="" class="wp-image-2254"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 <p>We are a small team of artisans from across the country that came together to share a common passion for specialty coffee. We are dedicated to:</p>
 <!-- /wp:paragraph -->
 
@@ -145,7 +145,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2222,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_3" alt="" class="wp-image-2222"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_3" alt="" class="wp-image-2222"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -171,7 +171,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2226,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_4" alt="" class="wp-image-2226"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_4" alt="" class="wp-image-2226"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -189,4 +189,4 @@ $leadership_pro_content = <<<CONTENT
 <!-- wp:atomic-blocks/ab-post-grid {"postsToShow":2,"align":"wide","readMoreText":"Continue Reading →"} /-->
 CONTENT;
 
-return $leadership_pro_content;
+return $empower_pro_blocks_content;

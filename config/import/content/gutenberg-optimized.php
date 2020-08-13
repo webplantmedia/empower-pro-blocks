@@ -1,26 +1,26 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$leadership_pro_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
-$leadership_pro_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
-$leadership_pro_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
-$leadership_pro_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
-$leadership_pro_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
-$leadership_pro_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
-$leadership_pro_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
-$leadership_pro_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
-$leadership_pro_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
-$leadership_pro_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
-$leadership_pro_image_11 = CHILD_URL . '/config/import/images/image-11.jpg';
+$empower_pro_blocks_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
+$empower_pro_blocks_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
+$empower_pro_blocks_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
+$empower_pro_blocks_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
+$empower_pro_blocks_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
+$empower_pro_blocks_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
+$empower_pro_blocks_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
+$empower_pro_blocks_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
+$empower_pro_blocks_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
+$empower_pro_blocks_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
+$empower_pro_blocks_image_11 = CHILD_URL . '/config/import/images/image-11.jpg';
 
-$leadership_pro_content = <<<CONTENT
+$empower_pro_blocks_content = <<<CONTENT
 <!-- wp:paragraph -->
 <p>This theme is optimized with support for special features of the Gutenberg editor. This includes wide and full-width content blocks, block styling, custom colors, custom font sizes, and back end editor styling that matches the front end of your site.</p>
 <!-- /wp:paragraph -->
@@ -30,7 +30,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":113,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_1" alt="" class="wp-image-113"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_1" alt="" class="wp-image-113"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -42,7 +42,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":26,"align":"wide"} -->
-<figure class="wp-block-image alignwide"><img src="$leadership_pro_image_2" alt="" class="wp-image-26"/></figure>
+<figure class="wp-block-image alignwide"><img src="$empower_pro_blocks_image_2" alt="" class="wp-image-26"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -50,7 +50,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:paragraph -->
 
 <!-- wp:gallery {"ids":["29","114"],"align":"wide"} -->
-<ul class="wp-block-gallery alignwide columns-2 is-cropped"><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_3" alt="" data-id="29" data-link="https://demo.webplantmedia.com/leadership-pro/homepage/stock-images-for-social-media-4/" class="wp-image-29"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_4" alt="" data-id="114" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=114" class="wp-image-114"/></figure></li></ul>
+<ul class="wp-block-gallery alignwide columns-2 is-cropped"><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_3" alt="" data-id="29" data-link="https://demo.webplantmedia.com/empower-pro-blocks/homepage/stock-images-for-social-media-4/" class="wp-image-29"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_4" alt="" data-id="114" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=114" class="wp-image-114"/></figure></li></ul>
 <!-- /wp:gallery -->
 
 <!-- wp:paragraph -->
@@ -58,7 +58,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:paragraph -->
 
 <!-- wp:gallery {"ids":["113","88","86","85","26","114","25","24"]} -->
-<ul class="wp-block-gallery columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_5" alt="" data-id="113" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=113" class="wp-image-113"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_6" alt="" data-id="88" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=88" class="wp-image-88"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_7" alt="" data-id="86" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=86" class="wp-image-86"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_8" alt="" data-id="85" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=85" class="wp-image-85"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_9" alt="" data-id="26" data-link="https://demo.webplantmedia.com/leadership-pro/stock-images-for-social-media-3/" class="wp-image-26"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_10" alt="" data-id="114" data-link="https://demo.webplantmedia.com/leadership-pro/?attachment_id=114" class="wp-image-114"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_11" alt="" data-id="25" data-link="https://demo.webplantmedia.com/leadership-pro/stock-images-for-social-media-2/" class="wp-image-25"/></figure></li><li class="blocks-gallery-item"><figure><img src="$leadership_pro_image_1" alt="" data-id="24" data-link="https://demo.webplantmedia.com/leadership-pro/stock-images-for-social-media/" class="wp-image-24"/></figure></li></ul>
+<ul class="wp-block-gallery columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_5" alt="" data-id="113" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=113" class="wp-image-113"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_6" alt="" data-id="88" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=88" class="wp-image-88"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_7" alt="" data-id="86" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=86" class="wp-image-86"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_8" alt="" data-id="85" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=85" class="wp-image-85"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_9" alt="" data-id="26" data-link="https://demo.webplantmedia.com/empower-pro-blocks/stock-images-for-social-media-3/" class="wp-image-26"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_10" alt="" data-id="114" data-link="https://demo.webplantmedia.com/empower-pro-blocks/?attachment_id=114" class="wp-image-114"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_11" alt="" data-id="25" data-link="https://demo.webplantmedia.com/empower-pro-blocks/stock-images-for-social-media-2/" class="wp-image-25"/></figure></li><li class="blocks-gallery-item"><figure><img src="$empower_pro_blocks_image_1" alt="" data-id="24" data-link="https://demo.webplantmedia.com/empower-pro-blocks/stock-images-for-social-media/" class="wp-image-24"/></figure></li></ul>
 <!-- /wp:gallery -->
 
 <!-- wp:heading -->
@@ -266,4 +266,4 @@ https://vimeo.com/296520382
 <!-- /wp:list -->
 CONTENT;
 
-return $leadership_pro_content;
+return $empower_pro_blocks_content;

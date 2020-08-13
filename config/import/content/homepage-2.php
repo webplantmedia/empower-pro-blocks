@@ -1,26 +1,26 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$leadership_pro_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
-$leadership_pro_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
-$leadership_pro_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
-$leadership_pro_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
-$leadership_pro_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
-$leadership_pro_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
-$leadership_pro_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
-$leadership_pro_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
-$leadership_pro_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
-$leadership_pro_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
-$leadership_pro_image_11 = CHILD_URL . '/config/import/images/image-11.jpg';
+$empower_pro_blocks_image_1  = CHILD_URL . '/config/import/images/image-1.jpg';
+$empower_pro_blocks_image_2  = CHILD_URL . '/config/import/images/image-2.jpg';
+$empower_pro_blocks_image_3  = CHILD_URL . '/config/import/images/image-3.jpg';
+$empower_pro_blocks_image_4  = CHILD_URL . '/config/import/images/image-4.jpg';
+$empower_pro_blocks_image_5  = CHILD_URL . '/config/import/images/image-5.jpg';
+$empower_pro_blocks_image_6  = CHILD_URL . '/config/import/images/image-6.jpg';
+$empower_pro_blocks_image_7  = CHILD_URL . '/config/import/images/image-7.jpg';
+$empower_pro_blocks_image_8  = CHILD_URL . '/config/import/images/image-8.jpg';
+$empower_pro_blocks_image_9  = CHILD_URL . '/config/import/images/image-9.jpg';
+$empower_pro_blocks_image_10 = CHILD_URL . '/config/import/images/image-10.jpg';
+$empower_pro_blocks_image_11 = CHILD_URL . '/config/import/images/image-11.jpg';
 
-$leadership_pro_content = <<<CONTENT
+$empower_pro_blocks_content = <<<CONTENT
 <!-- wp:spacer {"height":25} -->
 <div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -32,13 +32,13 @@ $leadership_pro_content = <<<CONTENT
 <!-- wp:atomic-blocks/ab-columns {"columns":3,"layout":"ab-3-col-equal","columnsGap":1,"align":"wide","marginTop":15} -->
 <div class="wp-block-atomic-blocks-ab-columns ab-layout-columns-3 ab-3-col-equal alignwide" style="margin-top:15px"><div class="ab-layout-column-wrap ab-block-layout-column-gap-1 ab-is-responsive-column"><!-- wp:atomic-blocks/ab-column -->
 <div class="wp-block-atomic-blocks-ab-column ab-block-layout-column"><div class="ab-block-layout-column-inner"><!-- wp:atomic-blocks/ab-cta {"buttonText":"Shop","buttonBackgroundColor":"#ffffff","buttonTextColor":"#464646","buttonShape":"ab-button-shape-square","imgID":132,"dimRatio":80,"className":"image-link"} -->
-<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/leadership-pro/wp-content/uploads/sites/2/2019/01/pexels-photo-1170659.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c">Hello</h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p>fadsfsdf</p><p>fdsfdsdf</p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">Shop</a></div></div>
+<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/empower-pro-blocks/wp-content/uploads/sites/2/2019/01/pexels-photo-1170659.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c">Hello</h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p>fadsfsdf</p><p>fdsfdsdf</p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">Shop</a></div></div>
 <!-- /wp:atomic-blocks/ab-cta --></div></div>
 <!-- /wp:atomic-blocks/ab-column -->
 
 <!-- wp:atomic-blocks/ab-column -->
 <div class="wp-block-atomic-blocks-ab-column ab-block-layout-column"><div class="ab-block-layout-column-inner"><!-- wp:atomic-blocks/ab-cta {"buttonText":"About","buttonBackgroundColor":"#ffffff","buttonTextColor":"#464646","buttonShape":"ab-button-shape-square","imgID":129,"dimRatio":80,"className":"image-link"} -->
-<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/leadership-pro/wp-content/uploads/sites/2/2019/01/pexels-photo-1207918.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c">Testing Heading</h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p></p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">About</a></div></div>
+<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/empower-pro-blocks/wp-content/uploads/sites/2/2019/01/pexels-photo-1207918.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c">Testing Heading</h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p></p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">About</a></div></div>
 <!-- /wp:atomic-blocks/ab-cta -->
 
 <!-- wp:paragraph -->
@@ -48,7 +48,7 @@ $leadership_pro_content = <<<CONTENT
 
 <!-- wp:atomic-blocks/ab-column -->
 <div class="wp-block-atomic-blocks-ab-column ab-block-layout-column"><div class="ab-block-layout-column-inner"><!-- wp:atomic-blocks/ab-cta {"buttonText":"Contact","buttonBackgroundColor":"#ffffff","buttonTextColor":"#464646","buttonShape":"ab-button-shape-square","imgID":131,"dimRatio":80,"className":"image-link"} -->
-<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/leadership-pro/wp-content/uploads/sites/2/2019/01/pexels-photo-312420.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c"></h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p></p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">Contact</a></div></div>
+<div style="text-align:center" class="wp-block-atomic-blocks-ab-cta image-link ab-block-cta"><div class="ab-cta-image-wrap"><img class="ab-cta-image has-background-dim-80 has-background-dim" src="http://demo.webplantmedia.com/empower-pro-blocks/wp-content/uploads/sites/2/2019/01/pexels-photo-312420.jpeg" alt=""/></div><div class="ab-cta-content"><h2 class="ab-cta-title ab-font-size-32" style="color:#32373c"></h2><div class="ab-cta-text ab-font-size-32" style="color:#32373c"><p></p></div></div><div class="ab-cta-button"><a href="#" target="_self" rel="noopener noreferrer" class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#464646;background-color:#ffffff">Contact</a></div></div>
 <!-- /wp:atomic-blocks/ab-cta --></div></div>
 <!-- /wp:atomic-blocks/ab-column --></div></div>
 <!-- /wp:atomic-blocks/ab-columns -->
@@ -132,7 +132,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2235,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_2" alt="" class="wp-image-2235"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_2" alt="" class="wp-image-2235"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -148,7 +148,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:paragraph -->
 
 <!-- wp:media-text {"mediaId":2254,"mediaType":"image","isStackedOnMobile":true} -->
-<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="$leadership_pro_image_9" alt="" class="wp-image-2254"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="$empower_pro_blocks_image_9" alt="" class="wp-image-2254"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 <p>We are a small team of artisans from across the country that came together to share a common passion for specialty coffee. We are dedicated to:</p>
 <!-- /wp:paragraph -->
 
@@ -170,7 +170,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2222,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_3" alt="" class="wp-image-2222"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_3" alt="" class="wp-image-2222"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -196,7 +196,7 @@ $leadership_pro_content = <<<CONTENT
 <!-- /wp:button -->
 
 <!-- wp:image {"id":2226,"align":"full"} -->
-<figure class="wp-block-image alignfull"><img src="$leadership_pro_image_4" alt="" class="wp-image-2226"/></figure>
+<figure class="wp-block-image alignfull"><img src="$empower_pro_blocks_image_4" alt="" class="wp-image-2226"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":40} -->
@@ -214,4 +214,4 @@ $leadership_pro_content = <<<CONTENT
 <!-- wp:atomic-blocks/ab-post-grid {"postsToShow":2,"align":"wide","readMoreText":"Continue Reading →"} /-->
 CONTENT;
 
-return $leadership_pro_content;
+return $empower_pro_blocks_content;

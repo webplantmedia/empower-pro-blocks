@@ -1,83 +1,83 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 return array(
 	'dependencies'     => array(
 		'plugins' => array(
 			array(
-				'name'       => __( 'Atomic Blocks', 'leadership-pro' ),
+				'name'       => __( 'Atomic Blocks', 'empower-pro-blocks' ),
 				'slug'       => 'atomic-blocks/atomicblocks.php',
 				'public_url' => 'https://atomicblocks.com/',
 			),
 			array(
-				'name'       => __( 'WooCommerce', 'leadership-pro' ),
+				'name'       => __( 'WooCommerce', 'empower-pro-blocks' ),
 				'slug'       => 'woocommerce/woocommerce.php',
 				'public_url' => 'https://wordpress.org/plugins/woocommerce/',
 			),
 			array(
-				'name'       => __( 'WooCommerce Admin', 'leadership-pro' ),
+				'name'       => __( 'WooCommerce Admin', 'empower-pro-blocks' ),
 				'slug'       => 'woocommerce-admin/woocommerce-admin.php',
 				'public_url' => 'https://wordpress.org/plugins/woocommerce-admin/',
 			),
 			array(
-				'name'       => __( 'WPForms Lite (Third Party)', 'leadership-pro' ),
+				'name'       => __( 'WPForms Lite (Third Party)', 'empower-pro-blocks' ),
 				'slug'       => 'wpforms-lite/wpforms.php',
 				'public_url' => 'https://wordpress.org/plugins/wpforms-lite/',
 			),
 			array(
-				'name'       => __( 'Genesis Connect for WooCommerce', 'leadership-pro' ),
+				'name'       => __( 'Genesis Connect for WooCommerce', 'empower-pro-blocks' ),
 				'slug'       => 'genesis-connect-woocommerce/genesis-connect-woocommerce.php',
 				'public_url' => 'https://wordpress.org/plugins/genesis-connect-woocommerce/',
 			),
 			array(
-				'name'       => __( 'WooCommerce Blocks', 'leadership-pro' ),
+				'name'       => __( 'WooCommerce Blocks', 'empower-pro-blocks' ),
 				'slug'       => 'woo-gutenberg-products-block/woocommerce-gutenberg-products-block.php',
 				'public_url' => 'https://wordpress.org/plugins/woo-gutenberg-products-block/',
 			),
 			array(
-				'name'       => __( 'Genesis Portfolio Pro', 'leadership-pro' ),
+				'name'       => __( 'Genesis Portfolio Pro', 'empower-pro-blocks' ),
 				'slug'       => 'genesis-portfolio-pro/genesis-portfolio-pro.php',
 				'public_url' => 'https://wordpress.org/plugins/genesis-portfolio-pro/',
 			),
 			array(
-				'name'       => __( 'Simple Social Icons', 'leadership-pro' ),
+				'name'       => __( 'Simple Social Icons', 'empower-pro-blocks' ),
 				'slug'       => 'simple-social-icons/simple-social-icons.php',
 				'public_url' => 'https://wordpress.org/plugins/simple-social-icons/',
 			),
 			array(
-				'name'       => __( 'Genesis eNews Extended (Third Party)', 'leadership-pro' ),
+				'name'       => __( 'Genesis eNews Extended (Third Party)', 'empower-pro-blocks' ),
 				'slug'       => 'genesis-enews-extended/plugin.php',
 				'public_url' => 'https://wordpress.org/plugins/genesis-enews-extended/',
 			),
 			array(
-				'name'       => __( 'Smash Balloon Social Photo Feed', 'leadership-pro' ),
+				'name'       => __( 'Smash Balloon Social Photo Feed', 'empower-pro-blocks' ),
 				'slug'       => 'instagram-feed/instagram-feed.php',
 				'public_url' => 'https://wordpress.org/plugins/instagram-feed/',
 			),
 			array(
-				'name'       => __( 'weDocs', 'leadership-pro' ),
+				'name'       => __( 'weDocs', 'empower-pro-blocks' ),
 				'slug'       => 'wedocs/wedocs.php',
 				'public_url' => 'https://wordpress.org/plugins/wedocs/',
 			),
 			array(
-				'name'       => __( 'Regenerate Thumbnails', 'leadership-pro' ),
+				'name'       => __( 'Regenerate Thumbnails', 'empower-pro-blocks' ),
 				'slug'       => 'regenerate-thumbnails/regenerate-thumbnails.php',
 				'public_url' => 'https://wordpress.org/plugins/regenerate-thumbnails/',
 			),
 			array(
-				'name'       => __( 'Imsanity', 'leadership-pro' ),
+				'name'       => __( 'Imsanity', 'empower-pro-blocks' ),
 				'slug'       => 'imsanity/imsanity.php',
 				'public_url' => 'https://wordpress.org/plugins/imsanity/',
 			),
 			array(
-				'name'       => __( 'Responsive WordPress Slider - Soliloquy Lite', 'leadership-pro' ),
+				'name'       => __( 'Responsive WordPress Slider - Soliloquy Lite', 'empower-pro-blocks' ),
 				'slug'       => 'soliloquy-lite/soliloquy-lite.php',
 				'public_url' => 'https://wordpress.org/plugins/soliloquy-lite/',
 			),
@@ -519,7 +519,7 @@ return array(
 				),
 			),
 		),
-		'leadership-pro-footer' => array(
+		'empower-pro-blocks-footer' => array(
 			array(
 				'type' => 'custom_html',
 				'args' => array(

@@ -1,14 +1,14 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$leadership_pro_content = <<<CONTENT
+$empower_pro_blocks_content = <<<CONTENT
 <!-- wp:paragraph {"fontSize":"large"} -->
 <p class="has-large-font-size">This is a sample intro paragraph and can be used to introduce readers to your article. </p>
 <!-- /wp:paragraph -->
@@ -52,4 +52,4 @@ share with them what is on your mind.</p>
 <!-- /wp:paragraph -->
 CONTENT;
 
-return $leadership_pro_content;
+return $empower_pro_blocks_content;

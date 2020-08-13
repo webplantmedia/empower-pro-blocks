@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro child theme.
+ * Empower Pro Blocks child theme.
  *
  * Theme supports.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0-or-later
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 return array(
@@ -34,11 +34,11 @@ return array(
 		'skip-links',
 	),
 	'genesis-menus'         => array(
-		'primary'    => __( 'Header Menu', 'leadership-pro' ),
-		// 'secondary'  => __( 'Footer Menu', 'leadership-pro' ),
-		// 'tertiary'   => __( 'Top Bar Menu', 'leadership-pro' ),
-		'primary-cta' => __( 'Header Menu CTA', 'leadership-pro' ),
-		// 'mobile-cta' => __( 'Mobile CTA', 'leadership-pro' ),
+		'primary'    => __( 'Header Menu', 'empower-pro-blocks' ),
+		// 'secondary'  => __( 'Footer Menu', 'empower-pro-blocks' ),
+		// 'tertiary'   => __( 'Top Bar Menu', 'empower-pro-blocks' ),
+		'primary-cta' => __( 'Header Menu CTA', 'empower-pro-blocks' ),
+		// 'mobile-cta' => __( 'Mobile CTA', 'empower-pro-blocks' ),
 	),
 	'genesis-structural-wraps' => array(
 		'header',
