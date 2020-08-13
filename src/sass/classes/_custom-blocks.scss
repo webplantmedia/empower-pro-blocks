@@ -663,15 +663,6 @@ ul.highlight,
 	}
 }
 
-//grayscale
-.wp-block-image.grayscale img {
-	filter: grayscale(100%);
-	@include animation-all;
-	&:hover {
-		filter: none;
-	}
-}
-
 // Hex 
 .wp-block-group.hex {
 	background-color: transparent !important;

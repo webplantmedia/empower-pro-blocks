@@ -11,3 +11,16 @@
 		text-align: center;
 	}
 }
+
+//grayscale
+.wp-block-image.is-style-grayscale img {
+	filter: grayscale(100%);
+}
+//grayscale
+.wp-block-image.is-style-grayscale-to-color img {
+	filter: grayscale(100%);
+	@include animation-all;
+	&:hover {
+		filter: none;
+	}
+}

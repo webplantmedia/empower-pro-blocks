@@ -69,3 +69,13 @@ registerBlockStyle( 'core/heading' , {
 	label: __( 'Content Width' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/image' , {
+	name: 'grayscale-to-color',
+	label: __( 'Grayscale to Color' ),
+	isDefault: false,
+} );
+registerBlockStyle( 'core/image' , {
+	name: 'grayscale',
+	label: __( 'Grayscale' ),
+	isDefault: false,
+} );

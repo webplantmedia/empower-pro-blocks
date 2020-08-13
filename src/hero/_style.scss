@@ -144,8 +144,12 @@
 					}
 				}
 
-				&.wp-block-buttons .wp-block-button {
-					margin-right: 30px;
+				.wp-block-buttons {
+					display: flex;
+				}
+
+				.wp-block-buttons .wp-block-button {
+					margin-right: 20px;
 				}
 
 				@media screen and ( max-width: $mobile_width ) {

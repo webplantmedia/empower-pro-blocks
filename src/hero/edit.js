@@ -546,8 +546,6 @@ function HeroEdit( {
 												formattingControls={ [] }
 											/>
 										</div>
-									</div>
-									<div class="wp-block-buttons">
 										<div class="wp-block-button is-style-text icon">
 											{ button3Icon && (
 												<div style={ button3Style } class="button-icon-before button3-icon">{ renderSVG(button3Icon) }</div>
