@@ -1,0 +1,40 @@
+<?php
+/**
+ * Leadership Pro child theme.
+ *
+ * @package Leadership_Pro
+ * @author  Web Plant Media
+ * @license GPL-2.0+
+ * @link    https://webplantmedia.com/product/leadership-pro/
+ */
+
+$leadership_pro_combine = array();
+
+if ( current_theme_supports( 'leadership-pro-shop-menu-cart' ) ) {
+	$leadership_pro_combine[] = '.cart-menu';
+}
+
+if ( current_theme_supports( 'leadership-pro-menu-search' ) ) {
+	$leadership_pro_combine[] = '.post-search-sub-menu';
+}
+$leadership_pro_combine[] = '.dropdownRoot';
+$leadership_pro_combine[] = '.nav-primary-cta';
+// $leadership_pro_combine[] = '.nav-tertiary';
+
+/**
+ * Leadership Pro responsive menus settings. (Requires Genesis 3.0+.)
+ */
+return array(
+	'script' => array(
+		'mainMenu'            => '<span class="flex-wrap"><span class="line-1"></span><span class="line-2"></span><span class="line-3"></span></span>',
+		'menuIconClass'       => 'burger-menu',
+		'menuIconOpenedClass' => 'burger-menu-open',
+		'subMenuIconClass'    => 'ion-ios-arrow-down',
+		'menuClasses'         => array(
+			'combine' => $leadership_pro_combine,
+		),
+	),
+	'extras' => array(
+		'media_query_width' => '1023px',
+	),
+);

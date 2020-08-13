@@ -48,6 +48,7 @@ function globalNavDropdowns(e) {
 }
 
 function globalNavPopup(e) {
+	console.log(e);
     var t = this,
         n = Strut.touch.isSupported ? "touchend" : "click";
 	this.activeClass = "activated", this.root = document.querySelector(e), this.link = this.root.querySelector(".menu-toggle"), this.popup = this.root.querySelector(".popup"), /*this.closeButton = this.root.querySelector(".popupCloseButton"),*/ this.link.addEventListener(n, function(e) {
