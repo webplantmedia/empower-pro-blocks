@@ -1,16 +1,16 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This file adds the default theme settings to the Leadership Pro Theme.
+ * This file adds the default theme settings to the Empower Pro Blocks Theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-add_filter( 'simple_social_default_styles', 'leadership_pro_social_default_styles' );
+add_filter( 'simple_social_default_styles', 'empower_pro_blocks_social_default_styles' );
 /**
  * Set Simple Social Icon defaults.
  *
@@ -19,7 +19,7 @@ add_filter( 'simple_social_default_styles', 'leadership_pro_social_default_style
  * @param array $defaults Social style defaults.
  * @return array Modified social style defaults.
  */
-function leadership_pro_social_default_styles( $defaults ) {
+function empower_pro_blocks_social_default_styles( $defaults ) {
 
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 	$args       = $appearance['simple-social-icons-settings'];

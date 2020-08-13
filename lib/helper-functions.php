@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
- * This defines the helper functions for use in the Leadership Pro Theme.
+ * This defines the helper functions for use in the Empower Pro Blocks Theme.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 /**
@@ -18,7 +18,7 @@
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
  */
-function leadership_pro_color_contrast( $color ) {
+function empower_pro_blocks_color_contrast( $color ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 
@@ -42,7 +42,7 @@ function leadership_pro_color_contrast( $color ) {
  * @param int    $adjust_percent The amount to reduce or increase brightness by.
  * @return string Hex code for the adjusted color brightness.
  */
-function leadership_pro_color_brightness( $hex_code, $adjust_percent ) {
+function empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
 
 	$hex_code = ltrim( $hex_code, '#' );
 
@@ -74,7 +74,7 @@ function leadership_pro_color_brightness( $hex_code, $adjust_percent ) {
  * @param bool   $array Whether to return an array. Used in images.php.
  * @return string|array RGBA code for the adjusted color brightness.
  */
-function leadership_pro_color_rgba( $color, $alpha, $array = false ) {
+function empower_pro_blocks_color_rgba( $color, $alpha, $array = false ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 
@@ -95,7 +95,7 @@ function leadership_pro_color_rgba( $color, $alpha, $array = false ) {
 
 }
 
-add_filter( 'body_class', 'leadership_pro_half_width_entry_class' );
+add_filter( 'body_class', 'empower_pro_blocks_half_width_entry_class' );
 /**
  * Defines the half width entries body class.
  *
@@ -104,7 +104,7 @@ add_filter( 'body_class', 'leadership_pro_half_width_entry_class' );
  * @param array $classes Current classes.
  * @return array $classes Updated class array.
  */
-function leadership_pro_half_width_entry_class( $classes ) {
+function empower_pro_blocks_half_width_entry_class( $classes ) {
 
 	$site_layout     = genesis_site_layout();
 	$content_archive = genesis_get_option( 'content_archive' );
@@ -133,7 +133,7 @@ function leadership_pro_half_width_entry_class( $classes ) {
 
 }
 
-add_filter( 'genesis_attr_entry', 'leadership_pro_entry_class', 10, 3 );
+add_filter( 'genesis_attr_entry', 'empower_pro_blocks_entry_class', 10, 3 );
 /**
  * Adds alignment post class.
  *
@@ -144,7 +144,7 @@ add_filter( 'genesis_attr_entry', 'leadership_pro_entry_class', 10, 3 );
  * @param array $args The attribute arguments.
  * @return array Amended attributes for entry element.
  */
-function leadership_pro_entry_class( $attributes, $context, $args ) {
+function empower_pro_blocks_entry_class( $attributes, $context, $args ) {
 
 	$alignment = genesis_get_option( 'image_alignment' );
 	$thumbnail = genesis_get_option( 'content_archive_thumbnail' );
@@ -174,7 +174,7 @@ function leadership_pro_entry_class( $attributes, $context, $args ) {
  * @param string $size Optional. The thumbnail size.
  * @return bool Whether the post has an image attached.
  */
-function leadership_pro_has_post_thumbnail( $post_id = null, $size = 'full' ) {
+function empower_pro_blocks_has_post_thumbnail( $post_id = null, $size = 'full' ) {
 
 	if ( is_404() ) {
 		return false;
@@ -205,7 +205,7 @@ function leadership_pro_has_post_thumbnail( $post_id = null, $size = 'full' ) {
  * @param int $post_id Optional. The post ID.
  * @return int|string The thumbnail ID or an empty string.
  */
-function leadership_pro_get_post_thumbnail_id( $post_id = null ) {
+function empower_pro_blocks_get_post_thumbnail_id( $post_id = null ) {
 
 	if ( is_404() ) {
 		return '';
@@ -235,7 +235,7 @@ function leadership_pro_get_post_thumbnail_id( $post_id = null ) {
  * @param string $input Text to compact.
  * @return $input
  */
-function leadership_pro_compact( $input ) {
+function empower_pro_blocks_compact( $input ) {
 	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
 
 	return $input;
@@ -248,7 +248,7 @@ function leadership_pro_compact( $input ) {
  *
  * @return bool
  */
-function leadership_pro_is_soliloquy_activated() {
+function empower_pro_blocks_is_soliloquy_activated() {
 	return class_exists( 'Soliloquy_Lite' ) ? true : false;
 }
 
@@ -259,7 +259,7 @@ function leadership_pro_is_soliloquy_activated() {
  *
  * @return bool
  */
-function leadership_pro_is_woocommerce_activated() {
+function empower_pro_blocks_is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 
@@ -270,7 +270,7 @@ function leadership_pro_is_woocommerce_activated() {
  *
  * @return bool
  */
-function leadership_pro_is_wedocs_activated() {
+function empower_pro_blocks_is_wedocs_activated() {
 	return class_exists( 'WeDocs' ) ? true : false;
 }
 
@@ -281,7 +281,7 @@ function leadership_pro_is_wedocs_activated() {
  *
  * @return bool
  */
-function leadership_pro_is_wedocs_home_page() {
+function empower_pro_blocks_is_wedocs_home_page() {
 	if ( function_exists( 'wedocs_get_option' ) ) {
 		$docs_home = intval( wedocs_get_option( 'docs_home', 'wedocs_settings' ) );
 		$post_id   = intval( get_the_ID() );

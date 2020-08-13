@@ -18,7 +18,7 @@ function empower_pro_blocks_superfish_args_url() {
 add_filter( 'genesis_superfish_args_url', 'empower_pro_blocks_superfish_args_url', 99 );
 
 
-add_action( 'wp_head', 'leadership_pro_load_images' );
+add_action( 'wp_head', 'empower_pro_blocks_load_images' );
 /**
  * Adjusts featured images.
  *
@@ -26,7 +26,7 @@ add_action( 'wp_head', 'leadership_pro_load_images' );
  *
  * @since 1.0.0
  */
-function leadership_pro_load_images() {
+function empower_pro_blocks_load_images() {
 
 	require_once CHILD_DIR . '/lib/images.php';
 
@@ -37,55 +37,55 @@ add_image_size( 'header-image', 1600, 420, true );
 add_image_size( 'featured-image', 1600, 880, true );
 add_image_size( 'portfolio', 510, 650, true );
 
-add_action( 'genesis_before_while', 'leadership_pro_genesis_before_while', 99 );
+add_action( 'genesis_before_while', 'empower_pro_blocks_genesis_before_while', 99 );
 /**
  * Insert a parent div container over the blog loop function.
  * This is needed to apply advanced Grid CSS on the blog and archive pages.
  *
  * @since 1.0.0
  */
-function leadership_pro_genesis_before_while() {
+function empower_pro_blocks_genesis_before_while() {
 	echo '<div class="genesis-loop-container">';
 }
 
-add_action( 'genesis_after_endwhile', 'leadership_pro_genesis_after_endwhile', 1 );
+add_action( 'genesis_after_endwhile', 'empower_pro_blocks_genesis_after_endwhile', 1 );
 /**
  * Close parent div container. See comment in function above.
  *
  * @since 1.0.0
  */
-function leadership_pro_genesis_after_endwhile() {
+function empower_pro_blocks_genesis_after_endwhile() {
 	echo '</div>';
 }
 
 // Add menu search support by default.
-add_theme_support( 'leadership-pro-menu-search' );
+add_theme_support( 'empower-pro-blocks-menu-search' );
 
 // Registers the responsive menus.
 if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 	genesis_register_responsive_menus( empower_pro_blocks_get_config( 'responsive-menus' ) );
 }
 
-// add_action( 'wp_enqueue_scripts', 'leadership_pro_enqueue_scripts_styles', 9 );
+// add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_enqueue_scripts_styles', 9 );
 /**
  * Enqueues scripts and styles.
  *
  * @since 1.0.0
  */
-function leadership_pro_enqueue_scripts_styles() {
+function empower_pro_blocks_enqueue_scripts_styles() {
 
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
-	wp_enqueue_style( 'leadership-pro-main', get_stylesheet_directory_uri() . '/css/style-theme.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-main', get_stylesheet_directory_uri() . '/css/style-theme.css', array(), CHILD_THEME_VERSION );
 
-	wp_enqueue_style( 'leadership-pro-fonts', $appearance['fonts-url'], array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-fonts', $appearance['fonts-url'], array(), CHILD_THEME_VERSION );
 
-	$css = leadership_pro_get_css( $appearance );
+	$css = empower_pro_blocks_get_css( $appearance );
 
-	wp_add_inline_style( 'leadership-pro-main', $css );
+	wp_add_inline_style( 'empower-pro-blocks-main', $css );
 
 	if ( ! has_custom_logo() || is_customize_preview() ) {
-		wp_enqueue_style( 'leadership-pro-title-font', $appearance['title-font-url'], array(), CHILD_THEME_VERSION );
+		wp_enqueue_style( 'empower-pro-blocks-title-font', $appearance['title-font-url'], array(), CHILD_THEME_VERSION );
 	}
 
 	/* wp_enqueue_style( 'dashicons' ); */
@@ -93,16 +93,16 @@ function leadership_pro_enqueue_scripts_styles() {
 	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), CHILD_THEME_VERSION );
 	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), CHILD_THEME_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-theme-js', CHILD_URL . '/js/theme.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-theme-js', CHILD_URL . '/js/theme.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-scroll-js', CHILD_URL . '/js/scroll.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-scroll-js', CHILD_URL . '/js/scroll.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-typewriter-js', CHILD_URL . '/js/typewriter.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-typewriter-js', CHILD_URL . '/js/typewriter.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-	wp_enqueue_script( 'leadership-pro-dropdown-menu-js', CHILD_URL . '/js/dropdown-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'empower-pro-blocks-dropdown-menu-js', CHILD_URL . '/js/dropdown-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 
-add_action( 'after_setup_theme', 'leadership_pro_theme_support', 9 );
+add_action( 'after_setup_theme', 'empower_pro_blocks_theme_support', 9 );
 /**
  * Add desired theme supports.
  *
@@ -110,7 +110,7 @@ add_action( 'after_setup_theme', 'leadership_pro_theme_support', 9 );
  *
  * @since 3.0.0
  */
-function leadership_pro_theme_support() {
+function empower_pro_blocks_theme_support() {
 	$theme_supports = empower_pro_blocks_get_config( 'theme-supports' );
 	foreach ( $theme_supports as $feature => $args ) {
 		add_theme_support( $feature, $args );
@@ -126,7 +126,7 @@ add_theme_support( 'customize-selective-refresh-widgets' );
 // Displays custom logo in site title area.
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );
 
-// add_filter( 'get_custom_logo', 'leadership_pro_add_sticky_logo', 10, 2 );
+// add_filter( 'get_custom_logo', 'empower_pro_blocks_add_sticky_logo', 10, 2 );
 /**
  * Add sticky logo to site-header.
  *
@@ -136,7 +136,7 @@ add_action( 'genesis_site_title', 'the_custom_logo', 0 );
  * @param string $blog_id Return blog ID.
  * @return array $html
  */
-function leadership_pro_add_sticky_logo( $html, $blog_id ) {
+function empower_pro_blocks_add_sticky_logo( $html, $blog_id ) {
 	$appearance     = empower_pro_blocks_get_config( 'appearance' );
 	$custom_logo_id = $appearance['logo-sticky'];
 
@@ -176,7 +176,7 @@ function leadership_pro_add_sticky_logo( $html, $blog_id ) {
 
 }
 
-add_filter( 'genesis_customizer_theme_settings_config', 'leadership_pro_remove_customizer_settings' );
+add_filter( 'genesis_customizer_theme_settings_config', 'empower_pro_blocks_remove_customizer_settings' );
 /**
  * Removes output of genesis header settings in the Customizer.
  *
@@ -185,7 +185,7 @@ add_filter( 'genesis_customizer_theme_settings_config', 'leadership_pro_remove_c
  * @param array $config Original Customizer items.
  * @return array Filtered Customizer items.
  */
-function leadership_pro_remove_customizer_settings( $config ) {
+function empower_pro_blocks_remove_customizer_settings( $config ) {
 
 	unset( $config['genesis']['sections']['genesis_header'] );
 	return $config;
@@ -210,7 +210,7 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
-add_action( 'genesis_theme_settings_metaboxes', 'leadership_pro_remove_genesis_metaboxes' );
+add_action( 'genesis_theme_settings_metaboxes', 'empower_pro_blocks_remove_genesis_metaboxes' );
 /**
  * Removes navigation meta box.
  *
@@ -218,15 +218,15 @@ add_action( 'genesis_theme_settings_metaboxes', 'leadership_pro_remove_genesis_m
  *
  * @param string $_genesis_theme_settings_pagehook The page hook name.
  */
-function leadership_pro_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
+function empower_pro_blocks_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 
 	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
 
 }
 
-add_filter( 'genesis_attr_site-header', 'leadership_pro_add_class' );
+add_filter( 'genesis_attr_site-header', 'empower_pro_blocks_add_class' );
 // Add extra class to content
-function leadership_pro_add_class( $attributes ) {
+function empower_pro_blocks_add_class( $attributes ) {
 	$attributes['class'] = $attributes['class']. ' globalNav noDropdownTransition';
 	// $attributes['class'] = $attributes['class']. ' globalNav overlayActive dropdownActive';
 	return $attributes;
@@ -236,8 +236,8 @@ function leadership_pro_add_class( $attributes ) {
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
-add_filter( 'nav_menu_link_attributes', 'leadership_pro_menu_atts', 10, 3 );
-function leadership_pro_menu_atts( $atts, $item, $args ) {
+add_filter( 'nav_menu_link_attributes', 'empower_pro_blocks_menu_atts', 10, 3 );
+function empower_pro_blocks_menu_atts( $atts, $item, $args ) {
 	// inspect $item
 	if ( 'primary' === $args->theme_location ) {
 		$href = $atts['href'];
@@ -251,8 +251,8 @@ function leadership_pro_menu_atts( $atts, $item, $args ) {
 	return $atts;
 }
 
-add_action( 'genesis_header', 'leadership_pro_site_header_background', 1 );
-function leadership_pro_site_header_background() {
+add_action( 'genesis_header', 'empower_pro_blocks_site_header_background', 1 );
+function empower_pro_blocks_site_header_background() {
 	$html = '';
 
 	$html .= '<div id="site-header-background" class="site-header-background">';
@@ -261,7 +261,7 @@ function leadership_pro_site_header_background() {
 	echo $html;
 }
 
-add_action( 'genesis_header', 'leadership_pro_do_nav_submenu', 12 );
+add_action( 'genesis_header', 'empower_pro_blocks_do_nav_submenu', 12 );
 /**
  * Reduces the secondary navigation menu to one level depth.
  *
@@ -270,7 +270,7 @@ add_action( 'genesis_header', 'leadership_pro_do_nav_submenu', 12 );
  * @param array $args The WP navigation menu arguments.
  * @return array The modified menu arguments.
  */
-function leadership_pro_do_nav_submenu() {
+function empower_pro_blocks_do_nav_submenu() {
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	$id = $appearance['mega_menu'];
@@ -305,7 +305,7 @@ function leadership_pro_do_nav_submenu() {
 	echo $html;
 }
 
-add_action( 'genesis_header', 'leadership_pro_do_mobile_menu', 12 );
+add_action( 'genesis_header', 'empower_pro_blocks_do_mobile_menu', 12 );
 /**
  * Reduces the secondary navigation menu to one level depth.
  *
@@ -314,7 +314,7 @@ add_action( 'genesis_header', 'leadership_pro_do_mobile_menu', 12 );
  * @param array $args The WP navigation menu arguments.
  * @return array The modified menu arguments.
  */
-function leadership_pro_do_mobile_menu() {
+function empower_pro_blocks_do_mobile_menu() {
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	$mobile_menu_id = $appearance['mobile_menu'];
@@ -353,7 +353,7 @@ function leadership_pro_do_mobile_menu() {
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
 
-add_filter( 'wp_nav_menu_args', 'leadership_pro_secondary_menu_args' );
+add_filter( 'wp_nav_menu_args', 'empower_pro_blocks_secondary_menu_args' );
 /**
  * Reduces the secondary navigation menu to one level depth.
  *
@@ -362,7 +362,7 @@ add_filter( 'wp_nav_menu_args', 'leadership_pro_secondary_menu_args' );
  * @param array $args The WP navigation menu arguments.
  * @return array The modified menu arguments.
  */
-function leadership_pro_secondary_menu_args( $args ) {
+function empower_pro_blocks_secondary_menu_args( $args ) {
 
 	if ( 'primary' === $args['theme_location'] ) {
 		$args['depth'] = 1;
@@ -384,7 +384,7 @@ function leadership_pro_secondary_menu_args( $args ) {
 
 }
 
-add_filter( 'genesis_skip_links_output', 'leadership_pro_skip_links_output' );
+add_filter( 'genesis_skip_links_output', 'empower_pro_blocks_skip_links_output' );
 /**
  * Removes skip link for primary navigation and adds skip link for footer widgets.
  *
@@ -393,22 +393,22 @@ add_filter( 'genesis_skip_links_output', 'leadership_pro_skip_links_output' );
  * @param array $links The list of skip links.
  * @return array $links The modified list of skip links.
  */
-function leadership_pro_skip_links_output( $links ) {
+function empower_pro_blocks_skip_links_output( $links ) {
 
 	unset( $links['genesis-nav-primary'] );
 	unset( $links['genesis-content'] );
 
-	$links['leadership-pro-page-title'] = __( 'Skip to content', 'leadership-pro' );
+	$links['empower-pro-blocks-page-title'] = __( 'Skip to content', 'empower-pro-blocks' );
 
-	if ( is_active_sidebar( 'leadership-pro-footer' ) ) {
-		$links['footer'] = __( 'Skip to footer', 'leadership-pro' );
+	if ( is_active_sidebar( 'empower-pro-blocks-footer' ) ) {
+		$links['footer'] = __( 'Skip to footer', 'empower-pro-blocks' );
 	}
 
 	return $links;
 
 }
 
-add_filter( 'genesis_author_box_gravatar_size', 'leadership_pro_author_box_gravatar' );
+add_filter( 'genesis_author_box_gravatar_size', 'empower_pro_blocks_author_box_gravatar' );
 /**
  * Modifies the size of the Gravatar in the author box.
  *
@@ -417,13 +417,13 @@ add_filter( 'genesis_author_box_gravatar_size', 'leadership_pro_author_box_grava
  * @param int $size Current Gravatar size.
  * @return int New size.
  */
-function leadership_pro_author_box_gravatar( $size ) {
+function empower_pro_blocks_author_box_gravatar( $size ) {
 
 	return 84;
 
 }
 
-add_filter( 'genesis_comment_list_args', 'leadership_pro_comments_gravatar' );
+add_filter( 'genesis_comment_list_args', 'empower_pro_blocks_comments_gravatar' );
 /**
  * Modifies the size of the Gravatar in the entry comments.
  *
@@ -432,14 +432,14 @@ add_filter( 'genesis_comment_list_args', 'leadership_pro_comments_gravatar' );
  * @param array $args The comment list arguments.
  * @return array Arguments with new avatar size.
  */
-function leadership_pro_comments_gravatar( $args ) {
+function empower_pro_blocks_comments_gravatar( $args ) {
 
 	$args['avatar_size'] = 45;
 	return $args;
 
 }
 
-add_filter( 'genesis_more_text', 'leadership_pro_more_text', 10, 1 );
+add_filter( 'genesis_more_text', 'empower_pro_blocks_more_text', 10, 1 );
 /**
  * Modifies the generic more link markup for posts.
  *
@@ -448,13 +448,13 @@ add_filter( 'genesis_more_text', 'leadership_pro_more_text', 10, 1 );
  * @param string $text The current text.
  * @return string The new more link HTML.
  */
-function leadership_pro_more_text( $text ) {
+function empower_pro_blocks_more_text( $text ) {
 
-	return sprintf( '%s &#x2192;', genesis_a11y_more_link( __( 'Continue Reading', 'leadership-pro' ) ) );
+	return sprintf( '%s &#x2192;', genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
 
 }
 
-add_filter( 'excerpt_more', 'leadership_pro_excerpt_more', 10, 1 );
+add_filter( 'excerpt_more', 'empower_pro_blocks_excerpt_more', 10, 1 );
 /**
  * Modifies the generic more link markup for posts.
  *
@@ -463,17 +463,17 @@ add_filter( 'excerpt_more', 'leadership_pro_excerpt_more', 10, 1 );
  * @param string $more The current $more HTML.
  * @return string The new $more link HTML.
  */
-function leadership_pro_excerpt_more( $more ) {
+function empower_pro_blocks_excerpt_more( $more ) {
 
 	if ( is_page_template( 'page_blog.php' ) || is_home() || is_archive() || is_search() ) {
-		$more = sprintf( '...<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'leadership-pro' ) ) );
+		$more = sprintf( '...<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
 	}
 
 	return $more;
 
 }
 
-add_filter( 'wp_trim_excerpt', 'leadership_pro_wp_trim_excerpt', 10, 2 );
+add_filter( 'wp_trim_excerpt', 'empower_pro_blocks_wp_trim_excerpt', 10, 2 );
 /**
  * Add read more to user entered excerpt.
  *
@@ -483,10 +483,10 @@ add_filter( 'wp_trim_excerpt', 'leadership_pro_wp_trim_excerpt', 10, 2 );
  * @param string $raw_text the original raw HTML.
  * @return string The new HTML.
  */
-function leadership_pro_wp_trim_excerpt( $text, $raw_text ) {
+function empower_pro_blocks_wp_trim_excerpt( $text, $raw_text ) {
 
 	if ( '' !== $raw_text ) {
-		$more = sprintf( '<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'leadership-pro' ) ) );
+		$more = sprintf( '<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
 		$text = $text . $more;
 	}
 
@@ -494,7 +494,7 @@ function leadership_pro_wp_trim_excerpt( $text, $raw_text ) {
 
 }
 
-add_filter( 'genesis_post_info', 'leadership_pro_modify_post_info' );
+add_filter( 'genesis_post_info', 'empower_pro_blocks_modify_post_info' );
 /**
  * Modifies the meta information in the entry header.
  *
@@ -503,7 +503,7 @@ add_filter( 'genesis_post_info', 'leadership_pro_modify_post_info' );
  * @param string $post_info Current post info.
  * @return string New post info.
  */
-function leadership_pro_modify_post_info( $post_info ) {
+function empower_pro_blocks_modify_post_info( $post_info ) {
 
 	global $post;
 
@@ -528,7 +528,7 @@ function leadership_pro_modify_post_info( $post_info ) {
  * @param string $id The sidebar ID.
  * @return int|void The number of widgets, or nothing.
  */
-function leadership_pro_count_widgets( $id ) {
+function empower_pro_blocks_count_widgets( $id ) {
 
 	$sidebars_widgets = wp_get_sidebars_widgets();
 
@@ -546,9 +546,9 @@ function leadership_pro_count_widgets( $id ) {
  * @param string $id The widget ID.
  * @return string The class.
  */
-function leadership_pro_widget_area_class( $id ) {
+function empower_pro_blocks_widget_area_class( $id ) {
 
-	$count = leadership_pro_count_widgets( $id );
+	$count = empower_pro_blocks_count_widgets( $id );
 
 	$class = '';
 
@@ -576,9 +576,9 @@ function leadership_pro_widget_area_class( $id ) {
  * @param string $id The widget ID.
  * @return string The class.
  */
-function leadership_pro_cta_widget_area_class( $id ) {
+function empower_pro_blocks_cta_widget_area_class( $id ) {
 
-	$count = leadership_pro_count_widgets( $id );
+	$count = empower_pro_blocks_count_widgets( $id );
 
 	$class = '';
 
@@ -595,18 +595,18 @@ function leadership_pro_cta_widget_area_class( $id ) {
 genesis_register_sidebar(
 	array(
 		'id'          => 'social-icons',
-		'name'        => __( 'Social Icons', 'leadership-pro' ),
-		'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'leadership-pro' ),
+		'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
+		'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
 	)
 );
 
-add_action( 'genesis_before_footer', 'leadership_pro_footer_widgets' );
+add_action( 'genesis_before_footer', 'empower_pro_blocks_footer_widgets' );
 /**
  * Adds the flexible footer widget area.
  *
  * @since 1.0.0
  */
-function leadership_pro_footer_widgets() {
+function empower_pro_blocks_footer_widgets() {
 
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
@@ -639,13 +639,13 @@ function leadership_pro_footer_widgets() {
 
 }
 
-add_action( 'genesis_meta', 'leadership_pro_add_portfolio_breadcrumbs' );
+add_action( 'genesis_meta', 'empower_pro_blocks_add_portfolio_breadcrumbs' );
 /**
  * Add portfolio breadcrumbs.
  *
  * @since 1.0.0
  */
-function leadership_pro_add_portfolio_breadcrumbs() {
+function empower_pro_blocks_add_portfolio_breadcrumbs() {
 
 	if ( is_post_type_archive( 'portfolio' ) || is_singular( 'portfolio' ) ) {
 		add_action( 'genesis_before_loop', 'genesis_do_breadcrumbs', 11 );
@@ -653,7 +653,7 @@ function leadership_pro_add_portfolio_breadcrumbs() {
 
 }
 
-add_action( 'genesis_footer', 'leadership_pro_social_icons', 14 );
+add_action( 'genesis_footer', 'empower_pro_blocks_social_icons', 14 );
 /**
  * Wrap nav elements in div element.
  *
@@ -661,7 +661,7 @@ add_action( 'genesis_footer', 'leadership_pro_social_icons', 14 );
  *
  * @return void
  */
-function leadership_pro_social_icons() {
+function empower_pro_blocks_social_icons() {
 
 	$has_social = false;
 
@@ -680,7 +680,7 @@ function leadership_pro_social_icons() {
 	}
 }
 
-add_action( 'genesis_header', 'leadership_pro_top_bar', 8 );
+add_action( 'genesis_header', 'empower_pro_blocks_top_bar', 8 );
 /**
  * Wrap nav elements in div element.
  *
@@ -688,7 +688,7 @@ add_action( 'genesis_header', 'leadership_pro_top_bar', 8 );
  *
  * @return void
  */
-function leadership_pro_top_bar() {
+function empower_pro_blocks_top_bar() {
 
 	$has_nav    = false;
 	$has_social = false;
@@ -738,7 +738,7 @@ function leadership_pro_top_bar() {
 	}
 }
 
-add_action( 'genesis_header', 'leadership_pro_add_menu_primary_cta', 13 );
+add_action( 'genesis_header', 'empower_pro_blocks_add_menu_primary_cta', 13 );
 /**
  * Wrap nav elements in div element.
  *
@@ -746,7 +746,7 @@ add_action( 'genesis_header', 'leadership_pro_add_menu_primary_cta', 13 );
  *
  * @return void
  */
-function leadership_pro_add_menu_primary_cta() {
+function empower_pro_blocks_add_menu_primary_cta() {
 	$has_nav = false;
 
 	if ( has_nav_menu( 'primary-cta' ) ) {
@@ -768,7 +768,7 @@ function leadership_pro_add_menu_primary_cta() {
 	}
 }
 
-add_action( 'genesis_footer', 'leadership_pro_mobile_cta', 11 );
+add_action( 'genesis_footer', 'empower_pro_blocks_mobile_cta', 11 );
 /**
  * Display search before nav menu.
  *
@@ -776,11 +776,11 @@ add_action( 'genesis_footer', 'leadership_pro_mobile_cta', 11 );
  *
  * @return void
  */
-function leadership_pro_mobile_cta() {
-	$button_text = genesis_get_custom_field( 'leadership_pro_mobile_button_text' );
+function empower_pro_blocks_mobile_cta() {
+	$button_text = genesis_get_custom_field( 'empower_pro_blocks_mobile_button_text' );
 
 	if ( $button_text ) {
-		$button_url = genesis_get_custom_field( 'leadership_pro_mobile_button_url' );
+		$button_url = genesis_get_custom_field( 'empower_pro_blocks_mobile_button_url' );
 
 		$html  = '<nav class="nav-mobile-cta nav-custom-mobile-cta">';
 		$html .= '<ul id="menu-mobile-cta" class="menu genesis-nav-menu menu-mobile-cta anchor-scroll">';
@@ -809,7 +809,7 @@ function leadership_pro_mobile_cta() {
 	);
 }
 
-add_action( 'genesis_header', 'leadership_pro_menu_search', 11 );
+add_action( 'genesis_header', 'empower_pro_blocks_menu_search', 11 );
 /**
  * Display search before nav menu.
  *
@@ -817,14 +817,14 @@ add_action( 'genesis_header', 'leadership_pro_menu_search', 11 );
  *
  * @return void
  */
-function leadership_pro_menu_search() {
-	if ( ! current_theme_supports( 'leadership-pro-menu-search' ) ) {
+function empower_pro_blocks_menu_search() {
+	if ( ! current_theme_supports( 'empower-pro-blocks-menu-search' ) ) {
 		return;
 	}
 
 	echo '<nav class="post-search-menu in-menu-bar"><ul class="search-menu">';
 
-	echo '<li id="leadership-pro-post-search-menu-item" class="post-search menu-item">';
+	echo '<li id="empower-pro-blocks-post-search-menu-item" class="post-search menu-item">';
 	echo '<a class="post_search_link" href="#">';
 	echo '<i class="ion-ios-search"></i>';
 	echo '</a>';
@@ -833,7 +833,7 @@ function leadership_pro_menu_search() {
 	echo '</ul></nav>';
 }
 
-add_action( 'genesis_header', 'leadership_pro_woocommerce_menu_post_search_bar', 14 );
+add_action( 'genesis_header', 'empower_pro_blocks_woocommerce_menu_post_search_bar', 14 );
 /**
  * Display post search bar.
  *
@@ -841,19 +841,19 @@ add_action( 'genesis_header', 'leadership_pro_woocommerce_menu_post_search_bar',
  *
  * @return void
  */
-function leadership_pro_woocommerce_menu_post_search_bar() {
-	if ( ! current_theme_supports( 'leadership-pro-menu-search' ) ) {
+function empower_pro_blocks_woocommerce_menu_post_search_bar() {
+	if ( ! current_theme_supports( 'empower-pro-blocks-menu-search' ) ) {
 		return;
 	}
 
 	echo '<nav id="post-search-dropdown" class="post-search-sub-menu"><ul id="genesis-nav-post-search" class="menu genesis-nav-menu"><li class="post-search-item">';
 	echo '<div class="post_search_form_content">';
 
-	$is_docs_home = leadership_pro_is_wedocs_home_page();
+	$is_docs_home = empower_pro_blocks_is_wedocs_home_page();
 
 	if ( class_exists( 'WeDocs_Search_Widget' ) && ( $is_docs_home || is_singular( 'docs' ) || ( is_search() && 'docs' === get_query_var( 'post_type' ) ) ) ) {
 		the_widget( 'WeDocs_Search_Widget' );
-	} elseif ( current_theme_supports( 'leadership-pro-shop-menu-search' ) ) {
+	} elseif ( current_theme_supports( 'empower-pro-blocks-shop-menu-search' ) ) {
 		if ( function_exists( 'get_product_search_form' ) ) {
 			get_product_search_form();
 		}
@@ -865,17 +865,17 @@ function leadership_pro_woocommerce_menu_post_search_bar() {
 	echo '</li></ul></nav>';
 }
 
-add_action( 'wp_loaded', 'leadership_pro_check_features', 11 );
+add_action( 'wp_loaded', 'empower_pro_blocks_check_features', 11 );
 /**
  * Check WooCommerce gallery features.
  *
  * @since 1.0.0
  */
-function leadership_pro_check_features() {
+function empower_pro_blocks_check_features() {
 	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	if ( $appearance['hide-menu-search'] ) {
-		remove_theme_support( 'leadership-pro-menu-search' );
+		remove_theme_support( 'empower-pro-blocks-menu-search' );
 	}
 }
 
@@ -886,7 +886,7 @@ function leadership_pro_check_features() {
  */
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
-add_action( 'genesis_entry_header', 'leadership_pro_sticky_label', 1 );
+add_action( 'genesis_entry_header', 'empower_pro_blocks_sticky_label', 1 );
 /**
  * Filter Genesis Post Titles to add a [NEW] label for posts that have been published within the last 90 days.
  *
@@ -894,8 +894,8 @@ add_action( 'genesis_entry_header', 'leadership_pro_sticky_label', 1 );
  *
  * @return void
  */
-function leadership_pro_sticky_label() {
+function empower_pro_blocks_sticky_label() {
 	if ( 'post' === get_post_type() && is_sticky() ) {
-		echo '<span class="sticky">' . wp_kses_post( __( 'Featured', 'leadership-pro' ) ) . '</span>';
+		echo '<span class="sticky">' . wp_kses_post( __( 'Featured', 'empower-pro-blocks' ) ) . '</span>';
 	}
 }

@@ -1,21 +1,21 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
  * Move page headings and titles.
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 /**
- * Opens the leadership-pro title section.
+ * Opens the empower-pro-blocks title section.
  *
  * @since 1.0.0
  */
-function leadership_pro_header_title_wrap() {
+function empower_pro_blocks_header_title_wrap() {
 	genesis_markup(
 		array(
 			'open'    => '<div %s><div class="wrap"><div class="inner-container">',
@@ -25,11 +25,11 @@ function leadership_pro_header_title_wrap() {
 }
 
 /**
- * Closes the leadership-pro title section.
+ * Closes the empower-pro-blocks title section.
  *
  * @since 1.0.0
  */
-function leadership_pro_header_title_end_wrap() {
+function empower_pro_blocks_header_title_end_wrap() {
 	genesis_markup(
 		array(
 			'close'   => '</div></div></div>',
@@ -38,23 +38,23 @@ function leadership_pro_header_title_end_wrap() {
 	);
 }
 
-add_filter( 'genesis_attr_leadership-pro-page-title', 'leadership_pro_add_header_attributes' );
+add_filter( 'genesis_attr_empower-pro-blocks-page-title', 'empower_pro_blocks_add_header_attributes' );
 /**
- * Adds custom attributes for the leadership-pro header wrap.
+ * Adds custom attributes for the empower-pro-blocks header wrap.
  *
  * @since 1.0.0
  *
  * @param array $attributes The element attributes.
  * @return array $attributes The element attributes.
  */
-function leadership_pro_add_header_attributes( $attributes ) {
+function empower_pro_blocks_add_header_attributes( $attributes ) {
 
 	$attributes['id'] = 'empower-pro-blocks-page-title';
 	return $attributes;
 
 }
 
-add_filter( 'genesis_attr_entry', 'leadership_pro_entry_attributes', 10, 3 );
+add_filter( 'genesis_attr_entry', 'empower_pro_blocks_entry_attributes', 10, 3 );
 /**
  * Add itemref attribute to link entry-title.
  *
@@ -65,7 +65,7 @@ add_filter( 'genesis_attr_entry', 'leadership_pro_entry_attributes', 10, 3 );
  * @param array $args The attribute arguments.
  * @return array Amended attributes for entry element.
  */
-function leadership_pro_entry_attributes( $attributes, $context, $args ) {
+function empower_pro_blocks_entry_attributes( $attributes, $context, $args ) {
 
 	if ( is_singular() && ! isset( $args['params']['is_widget'] ) ) {
 		$attributes['itemref'] = 'empower-pro-blocks-page-title';
@@ -74,16 +74,16 @@ function leadership_pro_entry_attributes( $attributes, $context, $args ) {
 
 }
 
-add_action( 'genesis_meta', 'leadership_pro_move_page_headers' );
+add_action( 'genesis_meta', 'empower_pro_blocks_move_page_headers' );
 /**
  * Moves page title above content wrap.
  *
  * @since 1.0.0
  */
-function leadership_pro_move_page_headers() {
+function empower_pro_blocks_move_page_headers() {
 
-	add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_header_title_wrap', 1 );
-	add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_header_title_end_wrap', 18 );
+	add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_header_title_wrap', 1 );
+	add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_header_title_end_wrap', 18 );
 
 	if ( ( is_page() || is_single() ) && ! is_page_template( 'page_blog.php' ) ) {
 		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
@@ -95,10 +95,10 @@ function leadership_pro_move_page_headers() {
 		add_action( 'genesis_before_content_sidebar_wrap', 'genesis_entry_header_markup_open', 5 );
 		add_action( 'genesis_before_content_sidebar_wrap', 'genesis_entry_header_markup_close', 15 );
 		add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_post_title' );
-		add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_featured_image', 16 );
+		add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_featured_image', 16 );
 
 		// Adds has-featured-image body class.
-		add_filter( 'body_class', 'leadership_pro_has_featured_image' );
+		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image' );
 
 	} else {
 		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
@@ -114,8 +114,8 @@ function leadership_pro_move_page_headers() {
 	}
 
 	if ( is_404() ) {
-		add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_featured_image', 16 );
-		add_filter( 'body_class', 'leadership_pro_has_featured_image' );
+		add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_featured_image', 16 );
+		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image' );
 	}
 
 	$is_woocommerce_shop = class_exists( 'WooCommerce' ) && is_post_type_archive( 'product' );
@@ -130,12 +130,12 @@ function leadership_pro_move_page_headers() {
 
 	if ( $is_woocommerce_shop ) {
 		add_filter( 'woocommerce_show_page_title', '__return_false' );
-		add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_woocommerce_title' );
+		add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_woocommerce_title' );
 	}
 
 }
 
-add_action( 'genesis_before_while', 'leadership_pro_remove_author_pro_header' );
+add_action( 'genesis_before_while', 'empower_pro_blocks_remove_author_pro_header' );
 /**
  * Remove duplicate title markup on book singles.
  *
@@ -147,7 +147,7 @@ add_action( 'genesis_before_while', 'leadership_pro_remove_author_pro_header' );
  *
  * @since 1.0.0
  */
-function leadership_pro_remove_author_pro_header() {
+function empower_pro_blocks_remove_author_pro_header() {
 
 	if ( ! is_singular( 'books' ) ) {
 		return;
@@ -163,11 +163,11 @@ function leadership_pro_remove_author_pro_header() {
 /**
  * Output WooCommerce title.
  *
- * Used in `leadership_pro_move_page_headers()` to move the shop title.
+ * Used in `empower_pro_blocks_move_page_headers()` to move the shop title.
  *
  * @since 1.0.0
  */
-function leadership_pro_woocommerce_title() {
+function empower_pro_blocks_woocommerce_title() {
 
 	echo '<h1 class="woocommerce-products-header__title page-title">';
 	woocommerce_page_title();
@@ -175,13 +175,13 @@ function leadership_pro_woocommerce_title() {
 
 }
 
-add_action( 'genesis_loop', 'leadership_pro_remove_404_title' );
+add_action( 'genesis_loop', 'empower_pro_blocks_remove_404_title' );
 /**
  * Removes default 404 entry title.
  *
  * @since  1.0.0
  */
-function leadership_pro_remove_404_title() {
+function empower_pro_blocks_remove_404_title() {
 
 	if ( ! is_404() ) {
 		return;
@@ -192,13 +192,13 @@ function leadership_pro_remove_404_title() {
 
 }
 
-add_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_404_title' );
+add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_404_title' );
 /**
  * Outputs 404 entry title in new position.
  *
  * @since  1.0.0
  */
-function leadership_pro_404_title() {
+function empower_pro_blocks_404_title() {
 
 	if ( ! is_404() ) {
 		return;
@@ -207,14 +207,14 @@ function leadership_pro_404_title() {
 		array(
 			'open'    => '<h1 %s>',
 			'close'   => '</h1>',
-			'content' => apply_filters( 'leadership_pro_404_entry_title', __( '404 Page Not Found', 'leadership-pro' ) ),
+			'content' => apply_filters( 'empower_pro_blocks_404_entry_title', __( '404 Page Not Found', 'empower-pro-blocks' ) ),
 			'context' => 'entry-title',
 		)
 	);
 
 }
 
-add_action( 'genesis_after_loop', 'leadership_pro_remove_404_title_filters' );
+add_action( 'genesis_after_loop', 'empower_pro_blocks_remove_404_title_filters' );
 /**
  * Removes 404 entry-title filters.
  *
@@ -223,14 +223,14 @@ add_action( 'genesis_after_loop', 'leadership_pro_remove_404_title_filters' );
  *
  * @since 1.0.0
  */
-function leadership_pro_remove_404_title_filters() {
+function empower_pro_blocks_remove_404_title_filters() {
 
 	remove_filter( 'genesis_markup_entry-title_open', '__return_false' );
 	remove_filter( 'genesis_markup_entry-title_close', '__return_false' );
 
 }
 
-add_action( 'be_title_toggle_remove', 'leadership_pro_integrate_genesis_title_toggle' );
+add_action( 'be_title_toggle_remove', 'empower_pro_blocks_integrate_genesis_title_toggle' );
 /**
  * Integrates with Genesis Title Toggle.
  *
@@ -241,15 +241,15 @@ add_action( 'be_title_toggle_remove', 'leadership_pro_integrate_genesis_title_to
  * @see https://wordpress.org/plugins/genesis-title-toggle/
  * @see https://www.billerickson.net/code/genesis-title-toggle-theme-integration
  */
-function leadership_pro_integrate_genesis_title_toggle() {
+function empower_pro_blocks_integrate_genesis_title_toggle() {
 
-	remove_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_header_title_wrap', 1 );
-	remove_action( 'genesis_before_content_sidebar_wrap', 'leadership_pro_header_title_end_wrap', 18 );
+	remove_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_header_title_wrap', 1 );
+	remove_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_header_title_end_wrap', 18 );
 	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_entry_header_markup_open', 5 );
 	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_post_title' );
 	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_entry_header_markup_close', 15 );
-	add_filter( 'genesis_skip_links_output', 'leadership_pro_adjust_skip_links' );
-	remove_filter( 'genesis_attr_entry', 'leadership_pro_entry_attributes' );
+	add_filter( 'genesis_skip_links_output', 'empower_pro_blocks_adjust_skip_links' );
+	remove_filter( 'genesis_attr_entry', 'empower_pro_blocks_entry_attributes' );
 
 }
 
@@ -261,10 +261,10 @@ function leadership_pro_integrate_genesis_title_toggle() {
  * @param array $links The list of skip links.
  * @return array $links The modified list of skip links.
  */
-function leadership_pro_adjust_skip_links( $links ) {
+function empower_pro_blocks_adjust_skip_links( $links ) {
 
 	unset( $links['empower-pro-blocks-page-title'] );
-	array_unshift( $links, array( 'genesis-content' => __( 'Skip to content', 'leadership-pro' ) ) );
+	array_unshift( $links, array( 'genesis-content' => __( 'Skip to content', 'empower-pro-blocks' ) ) );
 
 	return $links;
 

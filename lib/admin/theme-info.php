@@ -1,13 +1,13 @@
 <?php
 /**
- * Leadership Pro.
+ * Empower Pro Blocks.
  *
  * This file adds an admin page for help links..
  *
- * @package Leadership_Pro
+ * @package Empower_Pro_Blocks
  * @author  Web Plant Media
  * @license GPL-2.0+
- * @link    https://webplantmedia.com/product/leadership-pro/
+ * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
 ?>
@@ -68,15 +68,15 @@
 		<h1>
 		<?php
 			/* Translators: this string is the currenty theme version number. */
-			printf( esc_html__( 'Leadership Pro Child Theme - Version&nbsp;%s', 'leadership-pro' ), esc_html( EMPOWER_PRO_BLOCKS_VERSION ) );
+			printf( esc_html__( 'Empower Pro Blocks Child Theme - Version&nbsp;%s', 'empower-pro-blocks' ), esc_html( EMPOWER_PRO_BLOCKS_VERSION ) );
 		?>
 		</h1>
 
 		<p class="webpm-author about-author"><img class="" src="<?php echo esc_url( EMPOWER_PRO_BLOCKS_URL ); ?>/lib/admin/author.jpg" /></p>
 
 		<?php /* Translators: this string is a link to the theme authors page. */ ?>
-		<p class="webpm-about-text about-text"><?php printf( esc_html__( 'Thank you for using a %1$s child theme developed by %2$s! We are dedicated to making premium coded themes with beautiful designs that are easy to use and fast to install.', 'leadership-pro' ), '<a href="https://webplantmedia.com/go/genesis-features/" target="_blank">' . esc_html__( 'Genesis', 'leadership-pro' ) . '</a>', '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'leadership-pro' ) . '</a>' ); ?></p>
-		<p class="about-logo"><a href="https://webplantmedia.com" target="_blank" class="wp-badge" style="font-size:8px;letter-spacing:1.5px;text-transform:uppercase;"><?php esc_html_e( 'Web•Plant•Media', 'leadership-pro' ); ?></a></p>
+		<p class="webpm-about-text about-text"><?php printf( esc_html__( 'Thank you for using a %1$s child theme developed by %2$s! We are dedicated to making premium coded themes with beautiful designs that are easy to use and fast to install.', 'empower-pro-blocks' ), '<a href="https://webplantmedia.com/go/genesis-features/" target="_blank">' . esc_html__( 'Genesis', 'empower-pro-blocks' ) . '</a>', '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'empower-pro-blocks' ) . '</a>' ); ?></p>
+		<p class="about-logo"><a href="https://webplantmedia.com" target="_blank" class="wp-badge" style="font-size:8px;letter-spacing:1.5px;text-transform:uppercase;"><?php esc_html_e( 'Web•Plant•Media', 'empower-pro-blocks' ); ?></a></p>
 
 		<div style="margin-bottom:40px;">
 
@@ -84,7 +84,7 @@
 			<?php
 				printf(
 					/* translators: %s: smiling face with smiling eyes emoji */
-					esc_html__( 'Getting Started with the Leadership Pro Theme %1$s%2$s%3$s', 'leadership-pro' ),
+					esc_html__( 'Getting Started with the Empower Pro Blocks Theme %1$s%2$s%3$s', 'empower-pro-blocks' ),
 					'&#x1F468',
 					'&#x200D',
 					'&#x1F4BB'
@@ -92,18 +92,18 @@
 				?>
 			</h2>
 
-			<?php $leadership_pro_services = leadership_pro_dashboard_get_articles(); ?>
+			<?php $empower_pro_blocks_services = empower_pro_blocks_dashboard_get_articles(); ?>
 
 			<div class="webpm-cols under-the-hood two-col">
 
-				<?php foreach ( $leadership_pro_services as $leadership_pro_service ) : ?>
+				<?php foreach ( $empower_pro_blocks_services as $empower_pro_blocks_service ) : ?>
 
 					<div class="col">
 
 						<h3 style="margin:1.33em 0;font-size:1em;line-height:inherit;color:#23282d;">
-							<a target="_blank" href="<?php echo esc_url( $leadership_pro_service['link'] ); ?>"><?php echo $leadership_pro_service['title']; /* WPCS: XSS OK. already escaped */ ?><i class="dashicons dashicons-external"></i></a>
+							<a target="_blank" href="<?php echo esc_url( $empower_pro_blocks_service['link'] ); ?>"><?php echo $empower_pro_blocks_service['title']; /* WPCS: XSS OK. already escaped */ ?><i class="dashicons dashicons-external"></i></a>
 						</h3>
-						<p><?php echo $leadership_pro_service['description']; /* WPCS: XSS OK. HTML output. */ ?></p>
+						<p><?php echo $empower_pro_blocks_service['description']; /* WPCS: XSS OK. HTML output. */ ?></p>
 
 					</div>
 
@@ -121,24 +121,24 @@
 				<?php
 					printf(
 						/* translators: %s: smiling face with smiling eyes emoji */
-						esc_html__( 'Premium Genesis Child Theme with Support %s', 'leadership-pro' ),
+						esc_html__( 'Premium Genesis Child Theme with Support %s', 'empower-pro-blocks' ),
 						'&#x1F60A'
 					);
 					?>
 			</h2>
 
-			<?php $leadership_pro_services = leadership_pro_dashboard_get_services(); ?>
+			<?php $empower_pro_blocks_services = empower_pro_blocks_dashboard_get_services(); ?>
 
 			<div class="webpm-cols under-the-hood two-col">
 
-				<?php foreach ( $leadership_pro_services as $leadership_pro_service ) : ?>
+				<?php foreach ( $empower_pro_blocks_services as $empower_pro_blocks_service ) : ?>
 
 					<div class="col">
 
 						<h3 style="margin:1.33em 0;font-size:1em;line-height:inherit;color:#23282d;">
-							<a target="_blank" href="<?php echo esc_url( $leadership_pro_service['link'] ); ?>"><?php echo $leadership_pro_service['title']; /* WPCS: XSS OK. already escaped */ ?><i class="dashicons dashicons-external"></i></a>
+							<a target="_blank" href="<?php echo esc_url( $empower_pro_blocks_service['link'] ); ?>"><?php echo $empower_pro_blocks_service['title']; /* WPCS: XSS OK. already escaped */ ?><i class="dashicons dashicons-external"></i></a>
 						</h3>
-						<p><?php echo $leadership_pro_service['description']; /* WPCS: XSS OK. HTML output. */ ?></p>
+						<p><?php echo $empower_pro_blocks_service['description']; /* WPCS: XSS OK. HTML output. */ ?></p>
 
 					</div>
 
@@ -152,13 +152,13 @@
 
 		<div style="margin-bottom:40px;">
 
-			<h2 style="font-size:1.4em;font-weight:600;text-align:left;"><?php echo esc_html__( 'Help Articles by WordPress Experts', 'leadership-pro' ); ?></h2>
+			<h2 style="font-size:1.4em;font-weight:600;text-align:left;"><?php echo esc_html__( 'Help Articles by WordPress Experts', 'empower-pro-blocks' ); ?></h2>
 
 			<div class="under-the-hood two-col">
 
 				<div class="col">
 
-					<?php leadership_pro_dashboard_static_feed(); ?>
+					<?php empower_pro_blocks_dashboard_static_feed(); ?>
 
 				</div>
 
