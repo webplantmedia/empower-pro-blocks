@@ -28,7 +28,15 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
-function GridEdit( { 
+const INNER_BLOCKS_TEMPLATE = [
+	[
+		'empower-pro-blocks/column',
+		{
+		},
+	],
+];
+
+function FooterEdit( { 
 	attributes,
 	setAttributes,
 	className,
@@ -56,7 +64,7 @@ function GridEdit( {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Grid Settings' ) } initialOpen={ true }>
+				<PanelBody title={ __( 'Footer Settings' ) } initialOpen={ true }>
 					<SelectControl
 						label={ __( "Columns" ) }
 						value={ columns }
@@ -75,7 +83,7 @@ function GridEdit( {
 						onChange={ ( value ) => setAttributes( { columns: value } ) }
 					/>
 					<RangeControl
-						label={ __( 'Grid Spacing' ) }
+						label={ __( 'Footer Spacing' ) }
 						value={ spacing }
 						onChange={ ( value ) =>
 							setAttributes( {
@@ -87,7 +95,7 @@ function GridEdit( {
 						step={ 10 }
 					/>
 					<RangeControl
-						label={ __( 'Grid Row Spacing' ) }
+						label={ __( 'Footer Row Spacing' ) }
 						value={ spacingRow }
 						onChange={ ( value ) =>
 							setAttributes( {
@@ -99,7 +107,7 @@ function GridEdit( {
 						step={ 10 }
 					/>
 					<RangeControl
-						label={ __( 'Responsive Grid Spacing' ) }
+						label={ __( 'Responsive Footer Spacing' ) }
 						value={ rspacing }
 						onChange={ ( value ) =>
 							setAttributes( {
@@ -111,7 +119,7 @@ function GridEdit( {
 						step={ 10 }
 					/>
 					<RangeControl
-						label={ __( 'Responsive Grid Row Spacing' ) }
+						label={ __( 'Responsive Footer Row Spacing' ) }
 						value={ rspacingRow }
 						onChange={ ( value ) =>
 							setAttributes( {
@@ -136,12 +144,12 @@ function GridEdit( {
 	);
 
 	const classes = classnames( className,
-		columns ? 'grid-columns-' + columns : {},
+		columns ? 'footer-columns-' + columns : {},
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
-		spacing || spacing === 0 ? 'grid-gap-' + spacing : {},
-		rspacing || rspacing === 0 ? 'r-grid-gap-' + rspacing : {},
-		spacingRow || spacingRow === 0 ? 'grid-row-gap-' + spacingRow : {},
-		rspacingRow || rspacingRow === 0 ? 'r-grid-row-gap-' + rspacingRow : {},
+		spacing || spacing === 0 ? 'footer-gap-' + spacing : {},
+		rspacing || rspacing === 0 ? 'r-footer-gap-' + rspacing : {},
+		spacingRow || spacingRow === 0 ? 'footer-row-gap-' + spacingRow : {},
+		rspacingRow || rspacingRow === 0 ? 'r-footer-row-gap-' + rspacingRow : {},
 	);
 
 	return (
@@ -154,7 +162,7 @@ function GridEdit( {
 					}
 					__experimentalTagName="div"
 					__experimentalPassedProps={ {
-						className: 'wp-block-grid__inner-container',
+						className: 'wp-block-footer__inner-container',
 					} }
 				/>
 			</div>
@@ -162,4 +170,4 @@ function GridEdit( {
 	);
 }
 
-export default GridEdit;
+export default FooterEdit;

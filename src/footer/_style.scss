@@ -1,24 +1,6 @@
-.wp-block-empower-pro-blocks-grid {
-	border: 1px dashed $admin_border_color;
-	padding: 20px;
-}
-
-.wp-block-empower-pro-blocks-grid {
-	// grid Block Columns
-	> .block-editor-block-list__layout {
-		grid-template-columns: 1fr 1fr;
-
-		> * {
-			width: 100%;
-			border: 1px dashed $admin_border_color;
-			padding: 20px;
-			margin: 0;
-			height: 100%;
-		}
-	}
-
+.wp-block-empower-pro-blocks-footer {
 	&.is-vertically-aligned-bottom {
-		.block-editor-block-list__layout {
+		.wp-block-footer__inner-container {
 			align-items: flex-end;
 
 			> * {
@@ -28,7 +10,7 @@
 	}
 
 	&.is-vertically-aligned-top {
-		.block-editor-block-list__layout {
+		.wp-block-footer__inner-container {
 			align-items: flex-start;
 
 			> * {
@@ -38,7 +20,7 @@
 	}
 
 	&.is-vertically-aligned-center {
-		.block-editor-block-list__layout {
+		.wp-block-footer__inner-container {
 			align-items: center;
 
 			> * {
@@ -46,70 +28,82 @@
 			}
 		}
 	}
+
+	// Footer Block Columns
+	> .wp-block-footer__inner-container {
+		grid-template-columns: 1fr 1fr;
+
+		> * {
+			margin: 0 !important;
+			height: 100%;
+		}
+	}
 }
 
-.grid-columns-4 {
-	> .block-editor-block-list__layout {
+.footer-columns-4 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 
-.grid-columns-3 {
-	> .block-editor-block-list__layout {
+.footer-columns-3 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
-.grid-columns-7-3 {
-	> .block-editor-block-list__layout {
+.footer-columns-7-3 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 7fr 3fr;
 	}
 }
 
-.grid-columns-6-4 {
-	> .block-editor-block-list__layout {
+.footer-columns-6-4 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 6fr 4fr;
 	}
 }
 
-.grid-columns-3-7 {
-	> .block-editor-block-list__layout {
+.footer-columns-3-7 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 3fr 7fr;
 	}
 }
 
-.grid-columns-5-5 {
-	> .block-editor-block-list__layout {
+.footer-columns-5-5 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 1fr 1fr;
 	}
 }
 
-.grid-columns-4-6 {
-	> .block-editor-block-list__layout {
+.footer-columns-4-6 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 4fr 6fr;
 	}
 }
 
-.grid-columns-25-35-20-20 {
-	> .block-editor-block-list__layout {
+.footer-columns-25-35-20-20 {
+	> .wp-block-footer__inner-container {
 		grid-template-columns: 25fr 35fr 20fr 20fr;
 	}
 }
 
-.wp-block-empower-pro-blocks-grid {
+.wp-block-empower-pro-blocks-footer {
 	&.items-center {
-		> .block-editor-block-list__layout {
+		> .wp-block-footer__inner-container {
 			align-items: center;
 		}
 	}
 
-	> .block-editor-block-list__layout {
+	> .wp-block-footer__inner-container {
 		display: grid;
 		grid-template-rows: 1fr;
 		grid-gap: 60px 60px;
 
-		> *:last-child {
-			margin-bottom: 0 !important;
+		> .wp-block-footer > .wp-block-footer__inner-container {
+			> *:last-child {
+				margin-bottom: 0 !important;
+			}
 		}
 
 		@media only screen and ( max-width: $ipad_width ) {
@@ -123,8 +117,8 @@
 		}
 	}
 
-	&.grid-columns-4--3--2--1 {
-		> .block-editor-block-list__layout {
+	&.footer-columns-4--3--2--1 {
+		> .wp-block-footer__inner-container {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 
 			@media only screen and ( max-width: $ipad_width ) {
@@ -139,8 +133,8 @@
 		}
 	}
 
-	&.grid-columns-3-7--3-7--3-7--1 {
-		> .block-editor-block-list__layout {
+	&.footer-columns-3-7--3-7--3-7--1 {
+		> .wp-block-footer__inner-container {
 			grid-template-columns: 3fr 7fr;
 
 			@media only screen and ( max-width: $ipad_width ) {
@@ -155,30 +149,31 @@
 		}
 	}
 
+
 	$sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 	@each $size in $sizes {
-		&.grid-gap-#{$size} {
-			> .block-editor-block-list__layout {
+		&.footer-gap-#{$size} {
+			> .wp-block-footer__inner-container {
 				grid-gap: #{$size}px #{$size}px;
 			}
 		}
 
-		&.r-grid-gap-#{$size} {
-			> div.block-editor-block-list__layout {
+		&.r-footer-gap-#{$size} {
+			> div.wp-block-footer__inner-container {
 				@media only screen and ( max-width: $ipad_width ) {
 					grid-gap: #{$size}px #{$size}px;
 				}
 			}
 		}
 
-		&.grid-row-gap-#{$size} {
-			> .block-editor-block-list__layout {
+		&.footer-row-gap-#{$size} {
+			> .wp-block-footer__inner-container {
 				grid-row-gap: #{$size}px !important;
 			}
 		}
 
-		&.r-grid-row-gap-#{$size} {
-			> div.block-editor-block-list__layout {
+		&.r-footer-row-gap-#{$size} {
+			> div.wp-block-footer__inner-container {
 				@media only screen and ( max-width: $ipad_width ) {
 					grid-row-gap: #{$size}px !important;
 				}
