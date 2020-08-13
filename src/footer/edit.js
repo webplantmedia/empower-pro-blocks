@@ -36,6 +36,8 @@ const INNER_BLOCKS_TEMPLATE = [
 	],
 ];
 
+const ALLOWED_BLOCKS = [ 'empower-pro-blocks/column' ];
+
 function FooterEdit( { 
 	attributes,
 	setAttributes,
@@ -160,6 +162,8 @@ function FooterEdit( {
 					renderAppender={
 						() => <InnerBlocks.ButtonBlockAppender />
 					}
+					template={ INNER_BLOCKS_TEMPLATE }
+					allowedBlocks={ ALLOWED_BLOCKS }
 					__experimentalTagName="div"
 					__experimentalPassedProps={ {
 						className: 'wp-block-footer__inner-container',

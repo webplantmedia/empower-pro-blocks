@@ -181,3 +181,52 @@
 		}
 	}
 }
+
+.wp-block-empower-pro-blocks-footer {
+	.wp-block-latest-posts li {
+		padding-left: 0;
+		padding-right: 15px;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	.wp-block-empower-pro-blocks-column {
+		> * {
+			margin-bottom: 0;
+		}
+
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		a {
+			text-decoration: none;
+			color: $anchor_color;
+		}
+
+		ul {
+			margin-left: 0;
+			padding-left: 0;
+
+			li {
+				list-style-type: none;
+				
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		h4 {
+			margin-top: 60px;
+			margin-bottom: 40px;
+
+			@include widget-title;
+		}
+	}
+}

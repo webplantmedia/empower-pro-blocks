@@ -1,3 +1,8 @@
+.wp-block-empower-pro-blocks-footer .wp-block-footer__inner-container {
+	> .block-list-appender > .block-editor-button-block-appender {
+		height: 100% !important;
+	}
+}
 .wp-block-empower-pro-blocks-footer {
 	border: 1px dashed $admin_border_color;
 	padding: 20px;
@@ -182,6 +187,24 @@
 				@media only screen and ( max-width: $ipad_width ) {
 					grid-row-gap: #{$size}px !important;
 				}
+			}
+		}
+	}
+}
+
+.wp-block-empower-pro-blocks-footer {
+	.wp-block-empower-pro-blocks-column {
+		.block-editor-block-list__layout {
+			> * {
+				margin-bottom: 0;
+			}
+
+			> *:first-child {
+				margin-top: 0 !important;
+			}
+
+			> *:last-child {
+				margin-bottom: 0 !important;
 			}
 		}
 	}

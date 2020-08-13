@@ -1,3 +1,10 @@
+.wp-block-empower-pro-blocks-grid .wp-block-grid__inner-container {
+	> .block-list-appender > .block-editor-inserter,
+	> .block-list-appender > .block-editor-inserter > .block-editor-button-block-appender,
+	> .block-list-appender > .block-editor-button-block-appender {
+		height: 100% !important;
+	}
+}
 .wp-block-empower-pro-blocks-grid {
 	border: 1px dashed $admin_border_color;
 	padding: 20px;

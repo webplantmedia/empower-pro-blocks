@@ -3,7 +3,8 @@
 	"category": "abilitie-blocks",
 	"parent": [
 		"empower-pro-blocks/filter",
-		"empower-pro-blocks/grid"
+		"empower-pro-blocks/grid",
+		"empower-pro-blocks/footer"
 	],
 	"attributes": {
 	},
