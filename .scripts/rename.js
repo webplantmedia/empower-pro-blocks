@@ -202,10 +202,10 @@ function replaceStrings( file ) {
 	);
 
 	// Replace the prefixes.
-	content = content.replace(
+	/* content = content.replace(
 		new RegExp( old_Slug.replace('_pro','') + '_', 'g' ),
 		new_Slug + '_'
-	);
+	); */
 
 	// Replace the prefixes.
 	content = content.replace(
@@ -214,10 +214,10 @@ function replaceStrings( file ) {
 	);
 
 	// Replace the prefixes.
-	content = content.replace(
+	/* content = content.replace(
 		new RegExp( oldSlug.replace('-pro',''), 'g' ),
 		newSlug
-	);
+	); */
 
 	// Replace the prefixes.
 	content = content.replace(
