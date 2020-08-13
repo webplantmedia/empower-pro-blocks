@@ -136,7 +136,7 @@
 	$( document ).ready(
 		function() {
 			$( '.table-player' ).on(
-				'hover',
+				'mouseenter',
 				'div',
 				function () {
 
