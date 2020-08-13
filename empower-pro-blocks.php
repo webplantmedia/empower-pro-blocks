@@ -73,3 +73,16 @@ if ( empower_pro_blocks_is_soliloquy_activated() ) {
 }
 
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/site-elements.php';
+
+function empower_pro_blocks_category( $categories, $post ) {
+	return array_merge(
+		array(
+			array(
+				'slug' => 'abilitie-blocks',
+				'title' => __( 'Abilitie Blocks', 'empower-pro-blocks' ),
+			),
+		),
+		$categories,
+	);
+}
+add_filter( 'block_categories', 'empower_pro_blocks_category', 10, 2);

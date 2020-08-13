@@ -292,3 +292,64 @@ function leadership_pro_is_wedocs_home_page() {
 
 	return false;
 }
+
+/**
+ * Locate and require a config file.
+ *
+ * First, search child theme for the config. If config file doesn't exist in the child,
+ * search the parent for the config file.
+ *
+ * @since 2.8.0
+ *
+ * @param string $config The config file to look for (not including .php file extension).
+ * @return array The config data.
+ */
+function empower_pro_blocks_get_config( $config ) {
+
+	$child_file  = sprintf( '%sconfig/%s.php', plugin_dir_path( __FILE__ ), $config );
+
+	$data = [];
+
+	if ( is_readable( $child_file ) ) {
+		$data = require $child_file;
+	}
+
+	return (array) $data;
+
+}
+
+/**
+ * Compact css.
+ *
+ * @since 1.01
+ *
+ * @param string $input Text to compact.
+ * @return $input
+ */
+function empower_pro_blocks_compact( $input ) {
+	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
+
+	return $input;
+}
+
+/**
+ * Query WooCommerce activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function empower_pro_blocks_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+
+/**
+ * Query Soliloquy activation
+ *
+ * @since 1.01
+ *
+ * @return bool
+ */
+function empower_pro_blocks_is_soliloquy_activated() {
+	return class_exists( 'Soliloquy_Lite' ) ? true : false;
+}
