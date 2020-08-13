@@ -67,7 +67,7 @@ if ( ! class_exists( 'Empower_Pro_Blocks_Upgrade' ) ) :
 			global $wp_version;
 
 			// If updates are disabled.
-			$theme_upgrade = genesis_get_config( 'theme-upgrade' );
+			$theme_upgrade = empower_pro_blocks_get_config( 'theme-upgrade' );
 			if ( ! $theme_upgrade['check-for-updates'] ) {
 				return array();
 			}

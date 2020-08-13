@@ -20,8 +20,9 @@ add_action( 'customize_register', 'empower_pro_blocks_customizer_register' );
  */
 function empower_pro_blocks_customizer_register( $wp_customize ) {
 
-	$appearance    = genesis_get_config( 'appearance' );
-	$theme_upgrade = genesis_get_config( 'theme-upgrade' );
+	$appearance    = empower_pro_blocks_get_config( 'appearance' );
+	$theme_upgrade = empower_pro_blocks_get_config( 'theme-upgrade' );
+	$site_element_pages = empower_pro_blocks_fetch_all_site_elements();
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -71,6 +72,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['primary-color'],
 			'sanitize_callback' => 'sanitize_hex_color',
+			'type' => 'option',
 		)
 	);
 
@@ -92,6 +94,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['secondary-color'],
 			'sanitize_callback' => 'sanitize_hex_color',
+			'type' => 'option',
 		)
 	);
 
@@ -123,6 +126,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['hide-menu-search'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -143,6 +147,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['mobile-cta-text'],
 			'sanitize_callback' => 'wp_kses_post',
+			'type' => 'option',
 		)
 	);
 
@@ -162,6 +167,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -182,6 +188,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -202,6 +209,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -211,9 +219,10 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'label'       => __( 'Footer Menu', 'empower-pro-blocks' ),
 			'description' => __( 'Select page with footer menu.', 'empower-pro-blocks' ),
 			'section'     => 'empower_pro_blocks_menu_settings',
-			'type'        => 'dropdown-pages',
+			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_footer_menu',
-			'allow_addition' => true,
+			'choices'  => $site_element_pages,
+			'default'  => $appearance['footer_menu'],
 		)
 	);
 
@@ -233,6 +242,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['post-image'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -253,6 +263,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['page-image'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -273,6 +284,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $theme_upgrade['check-for-updates'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -294,6 +306,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			array(
 				'default'           => $appearance['portfolio-image'],
 				'sanitize_callback' => 'absint',
+				'type' => 'option',
 			)
 		);
 
@@ -316,6 +329,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			array(
 				'default'           => $appearance['event-image'],
 				'sanitize_callback' => 'absint',
+				'type' => 'option',
 			)
 		);
 
@@ -337,6 +351,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default' => $appearance['logo-sticky'],
 			// 'sanitize_callback' => 'esc_attr',
+			'type' => 'option',
 		)
 	);
 
@@ -359,6 +374,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['logo-width'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -383,6 +399,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['logo-top-spacing'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -407,6 +424,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['logo-bottom-spacing'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -430,6 +448,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['shop-columns'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -456,6 +475,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		array(
 			'default'           => $appearance['shop-rows'],
 			'sanitize_callback' => 'absint',
+			'type' => 'option',
 		)
 	);
 
@@ -547,6 +567,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			array(
 				'default'           => $setting['default'],
 				'sanitize_callback' => 'absint',
+				'type' => 'option',
 			)
 		);
 

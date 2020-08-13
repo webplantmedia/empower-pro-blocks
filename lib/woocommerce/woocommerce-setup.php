@@ -133,7 +133,7 @@ add_action( 'wp_loaded', 'empower_pro_blocks_woocommerce_check_features', 11 );
  * @since 1.0.0
  */
 function empower_pro_blocks_woocommerce_check_features() {
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	if ( $appearance['shop-post-menu-search'] ) {
 		remove_theme_support( 'empower-pro-blocks-shop-menu-search' );
@@ -451,7 +451,7 @@ add_filter( 'woocommerce_upsell_display_args', 'empower_pro_blocks_related_produ
  * @return array
  */
 function empower_pro_blocks_related_products_args( $args ) {
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	$args = array_merge(
 		$args,
@@ -473,7 +473,7 @@ add_filter( 'loop_shop_columns', 'empower_pro_blocks_loop_columns' );
  * @return int
  */
 function empower_pro_blocks_loop_columns() {
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	return $appearance['shop-columns'];
 }
@@ -487,7 +487,7 @@ add_filter( 'loop_shop_per_page', 'empower_pro_blocks_loop_per_page', 20 );
  * @return int
  */
 function empower_pro_blocks_loop_per_page() {
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	$limit = $appearance['shop-rows'] * $appearance['shop-columns'];
 
@@ -524,7 +524,7 @@ add_filter( 'empower_pro_blocks_show_above_footer_cta', 'empower_pro_blocks_remo
  */
 function empower_pro_blocks_remove_footer_cta( $show ) {
 
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	if ( is_woocommerce() ) {
 		if ( $appearance['shop-footer-cta'] ) {

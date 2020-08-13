@@ -8,7 +8,7 @@
  * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-$empower_pro_blocks_check_for_updates = get_theme_mod( 'empower_pro_blocks_check_for_updates', 1 );
+$empower_pro_blocks_check_for_updates = get_option( 'empower_pro_blocks_check_for_updates', 1 );
 
 return array(
 	'check-for-updates' => $empower_pro_blocks_check_for_updates,

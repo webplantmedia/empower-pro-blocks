@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_woocommerce_css' );
  */
 function empower_pro_blocks_woocommerce_css() {
 
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
 
 	$woo_css = '';
 

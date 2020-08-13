@@ -19,35 +19,35 @@ $empower_pro_blocks_default_colors = array(
 	'eighth' => '#ffcc2a',
 );
 
-$empower_pro_blocks_primary_color              = get_theme_mod( 'empower_pro_blocks_primary_color', $empower_pro_blocks_default_colors['primary'] );
+$empower_pro_blocks_primary_color              = get_option( 'empower_pro_blocks_primary_color', $empower_pro_blocks_default_colors['primary'] );
 $empower_pro_blocks_primary_color_brightness   = empower_pro_blocks_color_brightness( $empower_pro_blocks_primary_color, 0.15 );
 $empower_pro_blocks_primary_color_contrast     = empower_pro_blocks_color_contrast( $empower_pro_blocks_primary_color );
 
-$empower_pro_blocks_secondary_color            = get_theme_mod( 'empower_pro_blocks_secondary_color', $empower_pro_blocks_default_colors['secondary'] );
+$empower_pro_blocks_secondary_color            = get_option( 'empower_pro_blocks_secondary_color', $empower_pro_blocks_default_colors['secondary'] );
 $empower_pro_blocks_secondary_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_secondary_color, 0.15 );
 $empower_pro_blocks_secondary_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_secondary_color );
 
-$empower_pro_blocks_third_color                = get_theme_mod( 'empower_pro_blocks_third_color', $empower_pro_blocks_default_colors['third'] );
+$empower_pro_blocks_third_color                = get_option( 'empower_pro_blocks_third_color', $empower_pro_blocks_default_colors['third'] );
 $empower_pro_blocks_third_color_brightness     = empower_pro_blocks_color_brightness( $empower_pro_blocks_third_color, 0.15 );
 $empower_pro_blocks_third_color_contrast       = empower_pro_blocks_color_contrast( $empower_pro_blocks_third_color );
 
-$empower_pro_blocks_fourth_color            = get_theme_mod( 'empower_pro_blocks_fourth_color', $empower_pro_blocks_default_colors['fourth'] );
+$empower_pro_blocks_fourth_color            = get_option( 'empower_pro_blocks_fourth_color', $empower_pro_blocks_default_colors['fourth'] );
 $empower_pro_blocks_fourth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_fourth_color, 0.15 );
 $empower_pro_blocks_fourth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_fourth_color );
 
-$empower_pro_blocks_fifth_color            = get_theme_mod( 'empower_pro_blocks_fifth_color', $empower_pro_blocks_default_colors['fifth'] );
+$empower_pro_blocks_fifth_color            = get_option( 'empower_pro_blocks_fifth_color', $empower_pro_blocks_default_colors['fifth'] );
 $empower_pro_blocks_fifth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_fifth_color, 0.15 );
 $empower_pro_blocks_fifth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_fifth_color );
 
-$empower_pro_blocks_sixth_color            = get_theme_mod( 'empower_pro_blocks_sixth_color', $empower_pro_blocks_default_colors['sixth'] );
+$empower_pro_blocks_sixth_color            = get_option( 'empower_pro_blocks_sixth_color', $empower_pro_blocks_default_colors['sixth'] );
 $empower_pro_blocks_sixth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_sixth_color, 0.15 );
 $empower_pro_blocks_sixth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_sixth_color );
 
-$empower_pro_blocks_seventh_color            = get_theme_mod( 'empower_pro_blocks_seventh_color', $empower_pro_blocks_default_colors['seventh'] );
+$empower_pro_blocks_seventh_color            = get_option( 'empower_pro_blocks_seventh_color', $empower_pro_blocks_default_colors['seventh'] );
 $empower_pro_blocks_seventh_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_seventh_color, 0.15 );
 $empower_pro_blocks_seventh_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_seventh_color, 0.15 );
 
-$empower_pro_blocks_eighth_color            = get_theme_mod( 'empower_pro_blocks_eighth_color', $empower_pro_blocks_default_colors['eighth'] );
+$empower_pro_blocks_eighth_color            = get_option( 'empower_pro_blocks_eighth_color', $empower_pro_blocks_default_colors['eighth'] );
 $empower_pro_blocks_eighth_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_eighth_color, 0.15 );
 $empower_pro_blocks_eighth_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_eighth_color );
 
@@ -71,32 +71,32 @@ $empower_pro_blocks_white_color            = '#ffffff';
 $empower_pro_blocks_white_color_brightness = empower_pro_blocks_color_brightness( $empower_pro_blocks_white_color, 0.15 );
 $empower_pro_blocks_white_color_contrast   = empower_pro_blocks_color_contrast( $empower_pro_blocks_white_color );
 
-$empower_pro_blocks_logo_sticky                = get_theme_mod( 'empower_pro_blocks_logo_sticky', '' );
-$empower_pro_blocks_logo_width                 = get_theme_mod( 'empower_pro_blocks_logo_width', 270 );
-$empower_pro_blocks_logo_top_spacing           = get_theme_mod( 'empower_pro_blocks_logo_top_spacing', 20 );
-$empower_pro_blocks_logo_bottom_spacing        = get_theme_mod( 'empower_pro_blocks_logo_bottom_spacing', 10 );
-$empower_pro_blocks_shop_post_menu_search      = get_theme_mod( 'empower_pro_blocks_shop_post_menu_search', 0 );
-$empower_pro_blocks_shop_hide_menu_cart        = get_theme_mod( 'empower_pro_blocks_shop_hide_menu_cart', 0 );
-$empower_pro_blocks_shop_gallery_zoom          = get_theme_mod( 'empower_pro_blocks_shop_gallery_zoom', 0 );
-$empower_pro_blocks_shop_gallery_lightbox      = get_theme_mod( 'empower_pro_blocks_shop_gallery_lightbox', 0 );
-$empower_pro_blocks_shop_gallery_slider        = get_theme_mod( 'empower_pro_blocks_shop_gallery_slider', 0 );
-$empower_pro_blocks_shop_hide_stars            = get_theme_mod( 'empower_pro_blocks_shop_hide_stars', 0 );
-$empower_pro_blocks_shop_product_hide_stars    = get_theme_mod( 'empower_pro_blocks_shop_product_hide_stars', 0 );
-$empower_pro_blocks_shop_hide_result_count     = get_theme_mod( 'empower_pro_blocks_shop_hide_result_count', 0 );
-$empower_pro_blocks_shop_hide_catalog_ordering = get_theme_mod( 'empower_pro_blocks_shop_hide_catalog_ordering', 0 );
-$empower_pro_blocks_shop_product_hide_meta     = get_theme_mod( 'empower_pro_blocks_shop_product_hide_meta', 0 );
-$empower_pro_blocks_shop_columns               = get_theme_mod( 'empower_pro_blocks_shop_columns', 3 );
-$empower_pro_blocks_shop_rows                  = get_theme_mod( 'empower_pro_blocks_shop_rows', 2 );
-$empower_pro_blocks_shop_footer_cta            = get_theme_mod( 'empower_pro_blocks_shop_footer_cta', 0 );
-$empower_pro_blocks_post_image                 = get_theme_mod( 'empower_pro_blocks_post_image', 1 );
-$empower_pro_blocks_page_image                 = get_theme_mod( 'empower_pro_blocks_page_image', 1 );
-$empower_pro_blocks_mobile_cta_text            = get_theme_mod( 'empower_pro_blocks_mobile_cta_text', 'Contact' );
-$empower_pro_blocks_mega_menu                  = get_theme_mod( 'empower_pro_blocks_mega_menu', '' );
-$empower_pro_blocks_mobile_menu                = get_theme_mod( 'empower_pro_blocks_mobile_menu', '' );
-$empower_pro_blocks_footer_menu                = get_theme_mod( 'empower_pro_blocks_footer_menu', '' );
-$empower_pro_blocks_hide_menu_search           = get_theme_mod( 'empower_pro_blocks_hide_menu_search', 1 );
-$empower_pro_blocks_portfolio_image            = get_theme_mod( 'empower_pro_blocks_portfolio_image', 1 );
-$empower_pro_blocks_event_image                = get_theme_mod( 'empower_pro_blocks_event_image', 1 );
+$empower_pro_blocks_logo_sticky                = get_option( 'empower_pro_blocks_logo_sticky', '' );
+$empower_pro_blocks_logo_width                 = get_option( 'empower_pro_blocks_logo_width', 270 );
+$empower_pro_blocks_logo_top_spacing           = get_option( 'empower_pro_blocks_logo_top_spacing', 20 );
+$empower_pro_blocks_logo_bottom_spacing        = get_option( 'empower_pro_blocks_logo_bottom_spacing', 10 );
+$empower_pro_blocks_shop_post_menu_search      = get_option( 'empower_pro_blocks_shop_post_menu_search', 0 );
+$empower_pro_blocks_shop_hide_menu_cart        = get_option( 'empower_pro_blocks_shop_hide_menu_cart', 0 );
+$empower_pro_blocks_shop_gallery_zoom          = get_option( 'empower_pro_blocks_shop_gallery_zoom', 0 );
+$empower_pro_blocks_shop_gallery_lightbox      = get_option( 'empower_pro_blocks_shop_gallery_lightbox', 0 );
+$empower_pro_blocks_shop_gallery_slider        = get_option( 'empower_pro_blocks_shop_gallery_slider', 0 );
+$empower_pro_blocks_shop_hide_stars            = get_option( 'empower_pro_blocks_shop_hide_stars', 0 );
+$empower_pro_blocks_shop_product_hide_stars    = get_option( 'empower_pro_blocks_shop_product_hide_stars', 0 );
+$empower_pro_blocks_shop_hide_result_count     = get_option( 'empower_pro_blocks_shop_hide_result_count', 0 );
+$empower_pro_blocks_shop_hide_catalog_ordering = get_option( 'empower_pro_blocks_shop_hide_catalog_ordering', 0 );
+$empower_pro_blocks_shop_product_hide_meta     = get_option( 'empower_pro_blocks_shop_product_hide_meta', 0 );
+$empower_pro_blocks_shop_columns               = get_option( 'empower_pro_blocks_shop_columns', 3 );
+$empower_pro_blocks_shop_rows                  = get_option( 'empower_pro_blocks_shop_rows', 2 );
+$empower_pro_blocks_shop_footer_cta            = get_option( 'empower_pro_blocks_shop_footer_cta', 0 );
+$empower_pro_blocks_post_image                 = get_option( 'empower_pro_blocks_post_image', 1 );
+$empower_pro_blocks_page_image                 = get_option( 'empower_pro_blocks_page_image', 1 );
+$empower_pro_blocks_mobile_cta_text            = get_option( 'empower_pro_blocks_mobile_cta_text', 'Contact' );
+$empower_pro_blocks_mega_menu                  = get_option( 'empower_pro_blocks_mega_menu', '' );
+$empower_pro_blocks_mobile_menu                = get_option( 'empower_pro_blocks_mobile_menu', '' );
+$empower_pro_blocks_footer_menu                = get_option( 'empower_pro_blocks_footer_menu', '' );
+$empower_pro_blocks_hide_menu_search           = get_option( 'empower_pro_blocks_hide_menu_search', 1 );
+$empower_pro_blocks_portfolio_image            = get_option( 'empower_pro_blocks_portfolio_image', 1 );
+$empower_pro_blocks_event_image                = get_option( 'empower_pro_blocks_event_image', 1 );
 
 return array(
 	'fonts-url'                    => '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Source+Sans+Pro:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap',
