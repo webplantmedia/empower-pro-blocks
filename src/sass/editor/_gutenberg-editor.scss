@@ -33,10 +33,10 @@
 }
 
 /* Site Elements */
-.wp-block,
-.post-type-site-element .wp-block[data-align="wide"],
-.post-type-site-element .wp-block[data-align="full"] {
-	max-width: none;
+.post-type-site_element .wp-block,
+.post-type-site_element .wp-block[data-align="wide"],
+.post-type-site_element .wp-block[data-align="full"] {
+	max-width: none !important;
 	// max-width: calc(100% - 100px);
 }
 

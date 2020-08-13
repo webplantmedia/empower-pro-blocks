@@ -177,9 +177,10 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'label'       => __( 'Mega Menu', 'empower-pro-blocks' ),
 			'description' => __( 'Select page with mega menu.', 'empower-pro-blocks' ),
 			'section'     => 'empower_pro_blocks_menu_settings',
-			'type'        => 'dropdown-pages',
+			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_mega_menu',
-			'allow_addition' => true,
+			'choices'  => $site_element_pages,
+			'default'  => $appearance['mega_menu'],
 		)
 	);
 
