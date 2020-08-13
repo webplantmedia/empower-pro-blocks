@@ -225,7 +225,8 @@
 	font-weight: $heading_font_weight;
 	line-height: $heading_font_line_height;
 	letter-spacing: $heading_font_letter_spacing;
-	margin: 0 0 $margin_bottom;
+	margin-top: 0;
+	margin-bottom: $margin_bottom;
 	text-decoration: none;
 	color: $heading_color;
 	font-style: $heading_font_style;
