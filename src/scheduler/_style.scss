@@ -14,8 +14,9 @@
 	div.column-title {
 		// @include box-shadow;
 		flex-grow: 1;
-		padding: 40px 30px;
 		border-radius: 0;
+		height: 130px;
+		max-height: 130px;
 		// border-top-left-radius: $border_radius_medium;
 		// border-top-right-radius: $border_radius_medium;
 		font-size: $button_font_size;

@@ -90,7 +90,6 @@ function SchedulerEdit( {
 
 	return (
 		<>
-			{ controls }
 			<div className={ wrapperClasses }>
 				<div class="column-title">
 					<RichText
@@ -112,14 +111,16 @@ function SchedulerEdit( {
 						formattingControls={ [] }
 					/>
 				</div>
-				<InnerBlocks
-					templateLock={ false }
-					allowedBlocks={ ALLOWED_BLOCKS }
-					renderAppender={
-						() => <InnerBlocks.ButtonBlockAppender />
-					}
-					__experimentalTagName="div"
-				/>
+				<div class="column-data">
+					<InnerBlocks
+						templateLock={ false }
+						allowedBlocks={ ALLOWED_BLOCKS }
+						renderAppender={
+							() => <InnerBlocks.ButtonBlockAppender />
+						}
+						__experimentalTagName="div"
+					/>
+				</div>
 			</div>
 		</>
 	);

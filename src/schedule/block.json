@@ -2,45 +2,11 @@
 	"name": "empower-pro-blocks/schedule",
 	"category": "abilitie-blocks",
 	"attributes": {
-		"headerColor": {
-			"type": "string",
-			"default": "primary"
-		},
-		"button1Text": {
-			"type": "string",
-			"source": "text",
-			"default": "Month 1",
-			"selector": ".button1"
-		},
-		"button1TextSub": {
-			"type": "string",
-			"source": "text",
-			"default": "16 Hours",
-			"selector": ".button1sub"
-		},
-		"button2Text": {
-			"type": "string",
-			"source": "text",
-			"default": "Month 2",
-			"selector": ".button2"
-		},
-		"button2TextSub": {
-			"type": "string",
-			"source": "text",
-			"default": "22 Hours",
-			"selector": ".button2sub"
-		},
-		"button3Text": {
-			"type": "string",
-			"source": "text",
-			"default": "Month 3",
-			"selector": ".button3"
-		},
-		"button3TextSub": {
-			"type": "string",
-			"source": "text",
-			"default": "10 Hours",
-			"selector": ".button3sub"
-		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+		],
+		"lightBlockWrapper": false
 	}
 }

@@ -1,5 +1,26 @@
 .wp-block-empower-pro-blocks-schedule {
-	.wp-block-empower-pro-blocks-column {
+	.wp-block-schedule__inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 60px 0px;
+
+		> div {
+			width: 100%;
+		}
+
+		@media screen and ( max-width: $tablet_width ) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.wp-block-empower-pro-blocks-schedule {
+	.wp-block-schedule__inner-wrap {
+		display: block;
+	}
+}
+.wp-block-empower-pro-blocks-schedule {
+	.wp-block-schedule__inner-wrap {
 		border: 1px dashed $admin_border_color;
 		padding: 0 20px;
 	}

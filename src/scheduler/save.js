@@ -26,7 +26,21 @@ export default function save( { attributes } ) {
 
 	return (
 		<div className={ wrapperClasses }>
-			<InnerBlocks.Content />
+			<div class="column-title">
+				<RichText.Content
+					tagName="span"
+					value={ text }
+					className="span-title"
+				/>
+				<RichText.Content
+					tagName="span"
+					value={ textSub }
+					className="span-text"
+				/>
+			</div>
+			<div class="column-data">
+				<InnerBlocks.Content />
+			</div>
 		</div>
 	);
 }
