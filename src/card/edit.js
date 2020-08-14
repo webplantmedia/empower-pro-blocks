@@ -330,7 +330,6 @@ function CardEdit( {
 								} )
 							}
 							value={ heading }
-							formattingControls={ [] }
 							tagName={ tagName }
 						/>
 						<RichText
@@ -352,7 +351,6 @@ function CardEdit( {
 									value={ button1Text }
 									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 									className="wp-block-button__link button1"
-									formattingControls={ [] }
 								/>
 							</div>
 						</div>

@@ -340,7 +340,7 @@
 			padding-bottom: 0;
 		}
 
-		span::after {
+		> span::after {
 			content: " ";
 			width: 1px;
 			height: 11px;
@@ -354,7 +354,7 @@
 			top: -1px;
 		}
 
-		span:last-child::after {
+		> span:last-child::after {
 			margin: 0;
 			display: none;
 		}

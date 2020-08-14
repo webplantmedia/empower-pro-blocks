@@ -97,9 +97,7 @@ function FilterEdit( {
 								placeholder={ __( 'Button 1' ) }
 								value={ button1Text }
 								onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-								withoutInteractiveFormatting
 								className="button1"
-								formattingControls={ [] }
 							/>
 						</div>
 						<div data-filter=".filter2">
@@ -109,9 +107,7 @@ function FilterEdit( {
 								placeholder={ __( 'Button 2' ) }
 								value={ button2Text }
 								onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-								withoutInteractiveFormatting
 								className="button2"
-								formattingControls={ [] }
 							/>
 						</div>
 						<div data-filter=".filter3">
@@ -121,9 +117,7 @@ function FilterEdit( {
 								placeholder={ __( 'Button 3' ) }
 								value={ button3Text }
 								onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-								withoutInteractiveFormatting
 								className="button3"
-								formattingControls={ [] }
 							/>
 						</div>
 					</div>

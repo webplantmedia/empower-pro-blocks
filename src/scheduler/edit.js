@@ -128,18 +128,14 @@ function SchedulerEdit( {
 						placeholder={ __( 'Title' ) }
 						value={ text }
 						onChange={ ( value ) => setAttributes( { text: value } ) }
-						withoutInteractiveFormatting
 						className="span-title"
-						formattingControls={ [] }
 					/>
 					<RichText
 						tagName="span"
 						placeholder={ __( 'Sub Title' ) }
 						value={ textSub }
 						onChange={ ( value ) => setAttributes( { textSub: value } ) }
-						withoutInteractiveFormatting
 						className="span-text"
-						formattingControls={ [] }
 					/>
 				</div>
 				<div class="column-data">

@@ -505,7 +505,6 @@ function HeroEdit( {
 									placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 									onChange={ onHeadingChange }
 									value={ heading }
-									formattingControls={ [] }
 								/>
 								<RichText
 									tagName="p"
@@ -517,7 +516,6 @@ function HeroEdit( {
 										} )
 									}
 									value={ text }
-									formattingControls={ [] }
 								/>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button is-style-text">
@@ -525,9 +523,7 @@ function HeroEdit( {
 											placeholder={ __( 'Button 1' ) }
 											value={ button1Text }
 											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
-											withoutInteractiveFormatting
 											className="wp-block-button__link button1"
-											formattingControls={ [] }
 										/>
 									</div>
 								</div>
@@ -541,9 +537,7 @@ function HeroEdit( {
 												placeholder={ __( 'Button 2' ) }
 												value={ button2Text }
 												onChange={ ( value ) => setAttributes( { button2Text: value } ) }
-												withoutInteractiveFormatting
 												className="wp-block-button__link button2"
-												formattingControls={ [] }
 											/>
 										</div>
 										<div class="wp-block-button is-style-text icon">
@@ -554,9 +548,7 @@ function HeroEdit( {
 												placeholder={ __( 'Button 3' ) }
 												value={ button3Text }
 												onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-												withoutInteractiveFormatting
 												className="wp-block-button__link button3"
-												formattingControls={ [] }
 											/>
 										</div>
 									</div>

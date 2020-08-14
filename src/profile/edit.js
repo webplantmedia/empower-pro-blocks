@@ -281,7 +281,6 @@ function ProfileEdit( {
 								} )
 							}
 							value={ heading }
-							formattingControls={ [] }
 							tagName={ tagName }
 						/>
 						<RichText

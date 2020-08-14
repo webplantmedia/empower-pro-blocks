@@ -28,8 +28,12 @@
 }
 
 /* URL inspector field in sidebar */
-.url-input-inspector-field input {
+.components-panel input.block-editor-url-input__input[type="text"] {
 	max-width: 100% !important;
+	box-shadow: 0 0 0 transparent;
+	transition: box-shadow .1s linear;
+	border-radius: 2px;
+	border: 1px solid #757575;
 }
 
 /* Site Elements */
