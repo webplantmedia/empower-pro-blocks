@@ -8,7 +8,7 @@
 		},
 		"iconSize": {
 			"type": "number",
-			"default": ""
+			"default": "14"
 		},
 		"marginBottom": {
 			"type": "number",
@@ -16,7 +16,7 @@
 		},
 		"topOffset": {
 			"type": "number",
-			"default": ""
+			"default": "0"
 		},
 		"text": {
 			"type": "string",

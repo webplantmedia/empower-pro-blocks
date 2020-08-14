@@ -104,6 +104,12 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .has-$color-background-color {
 				background-color: ${ $color . '_color' } !important;
 			}
+
+			html .wp-block-empower-pro-blocks-schedule-item.has-$color-item-color.schedule-highlight .icon-text {
+				background-color: ${ $color . '_color' } !important;
+				color: ${ $color . '_contrast_color' } !important;
+			}
+			html .wp-block-empower-pro-blocks-schedule-item.has-$color-item-color .icon-heading,
 			html .icon-heading.has-$color-heading-color,
 			html .has-text-color.has-$color-text-color {
 				color: ${ $color . '_color' } !important;

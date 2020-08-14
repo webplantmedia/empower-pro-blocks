@@ -114,6 +114,19 @@ function ScheduleItemBlock( {
 						onChange={ ( value ) => setAttributes( value ? { highlight: true } : { highlight: false } ) }
 						checked={ highlight === true }
 					/>
+					<hr />
+					<RangeControl
+						label={ __( 'Margin Bottom' ) }
+						value={ marginBottom }
+						onChange={ ( value ) =>
+							setAttributes( {
+								marginBottom: value,
+							} )
+						}
+						min={ 0 }
+						max={ 150 }
+						step={ 1 }
+					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Icon' ) } initialOpen={ true }>
 					<SelectControl
@@ -200,18 +213,6 @@ function ScheduleItemBlock( {
 						max={ 50 }
 						step={ 1 }
 					/>
-					<RangeControl
-						label={ __( 'Margin Bottom' ) }
-						value={ marginBottom }
-						onChange={ ( value ) =>
-							setAttributes( {
-								marginBottom: value,
-							} )
-						}
-						min={ 0 }
-						max={ 150 }
-						step={ 1 }
-					/>
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Icon Color' ) }
@@ -233,29 +234,28 @@ function ScheduleItemBlock( {
 	const classes = classnames( className, 
 		'wp-block-schedule-item__outer-wrapper',
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
+		highlight ? 'schedule-highlight' : {},
+		{ [ textColor.class ]: textColor.class },
 	);
 
 	const headingClasses = classnames( 
-		'icon-heading', 
-	);
+		'icon-heading', {
+	} );
 
 	const subHeadingClasses = classnames( 
 		'icon-text', {
-		[ textColor.class ]: textColor.class,
-		[ 'has-text-color' ]: textColor.class,
 	} );
 
 	const iconClasses = classnames( 
 		'button-icon-before', 
 		grayscale ? 'grayscale' : {},
-		highlight ? 'highlight' : {},
 		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		{ [ iconColor.class ]: iconColor.class, }
 	);
 
 	const containerStyle = {
-		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
+		...( marginBottom || marginBottom === 0 ? { paddingBottom: marginBottom+"px" } : {} ),
 	};
 
 	const iconInnerStyle = {
@@ -288,13 +288,15 @@ function ScheduleItemBlock( {
 							className={ headingClasses }
 							tagName="span"
 						/>
-						<RichText
-							placeholder={ __( 'Text' ) }
-							value={ text }
-							onChange={ ( value ) => setAttributes( { text: value } ) }
-							tagName="span"
-							className={ subHeadingClasses }
-						/>
+						<span class="icon-text-wrapper">
+							<RichText
+								placeholder={ __( 'Text' ) }
+								value={ text }
+								onChange={ ( value ) => setAttributes( { text: value } ) }
+								tagName="span"
+								className={ subHeadingClasses }
+							/>
+						</span>
 						<RichText
 							placeholder={ __( 'Info' ) }
 							value={ info }
@@ -310,7 +312,7 @@ function ScheduleItemBlock( {
 }
 
 const ScheduleItemEdit = compose( [
-	withColors( { textColor: 'text-color', iconColor: 'icon-color' } ),
+	withColors( { textColor: 'item-color', iconColor: 'icon-color' } ),
 ] )( ScheduleItemBlock );
 
 export default ScheduleItemEdit;

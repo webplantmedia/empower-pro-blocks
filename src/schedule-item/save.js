@@ -32,26 +32,32 @@ export default function save( { attributes } ) {
 		imageIcon,
 	} = attributes;
 
+	const itemColorClassName = getColorClassName( 'item-color', textColor );
+
 	const classes = classnames(
 		'wp-block-schedule-item__outer-wrapper',
 		{ [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment },
+		highlight ? 'schedule-highlight' : {},
+		itemColorClassName, 
 	);
 
 	const headingClasses = classnames(
 		'icon-heading',
 	);
 
+	const subHeadingClass = classnames( 'icon-text',
+	);
+
 	const iconClasses = classnames(
 		'button-icon-before',
 		grayscale ? 'grayscale' : {},
-		highlight ? 'highlight' : {},
 		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		getColorClassName( 'icon-color', iconColor ),
 	);
 
 	const containerStyle = {
-		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
+		...( marginBottom || marginBottom === 0 ? { paddingBottom: marginBottom+"px" } : {} ),
 	};
 
 	const iconInnerStyle = {
@@ -59,13 +65,6 @@ export default function save( { attributes } ) {
 		...( imageStyle ? { height: iconSize+"px" } : {} ),
 		...( topOffset ? { marginTop: topOffset+"px" } : {} ),
 	};
-
-	const textColorClassName = getColorClassName( 'text-color', textColor );
-
-	const subHeadingClass = classnames( 'icon-text',
-		textColorClassName, 
-		{ [ "has-text-color" ]: textColorClassName },
-	);
 
 	return (
 		<div style={ containerStyle } className={ classes }>
@@ -86,11 +85,13 @@ export default function save( { attributes } ) {
 						value={ heading }
 						className={ headingClasses }
 					/>
-					<RichText.Content
-						tagName="span"
-						value={ text }
-						className={ subHeadingClass }
-					/>
+					<span class="icon-text-wrapper">
+						<RichText.Content
+							tagName="span"
+							value={ text }
+							className={ subHeadingClass }
+						/>
+					</span>
 					<RichText.Content
 						tagName="span"
 						value={ info }

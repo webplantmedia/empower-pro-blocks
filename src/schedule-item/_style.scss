@@ -1,6 +1,10 @@
 .wp-block-empower-pro-blocks-schedule-item {
+	position: relative;
+
 	.wp-block-schedule-item__text-wrap {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.wp-block-schedule-item__inner-wrap {
@@ -25,13 +29,15 @@
 			align-items: center;
 		}
 	}
-
 	.button-icon-before {
 		flex: 0 0 60px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		box-sizing: content-box;
+		transition: all 0.2s;
+		position: relative;
+		z-index: 1;
 
 		@media screen and ( max-width: $mobile_width ) {
 			max-width: 64px;
@@ -65,8 +71,25 @@
 		}
 
 		svg {
-			fill: $text_color;
+			fill: $dark_text_color;
 		}
+	}
+
+	&:hover .button-icon-before  {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+
+	&::after {
+		content: "";
+		height: 100%;
+		width: 2px;
+		border-left: 2px dashed $border_color;
+		position: absolute;
+		top: 13px;
+		bottom: 0;
+		left: 29px;
+		z-index: 0;
 	}
 
 	.icon-text {
@@ -75,6 +98,7 @@
 	}
 	.icon-heading,
 	.icon-info,
+	.icon-text-wrapper,
 	.icon-text {
 		width: 100%;
 		display: block;
@@ -87,6 +111,17 @@
 		margin-bottom: 3px;
 		color: $dark_text_color;
 	}
+
+	&.schedule-highlight .icon-heading {
+		text-transform: uppercase;
+	}
+
+	&.schedule-highlight .icon-text {
+		display: inline-block;
+		padding: 1px 5px;
+		width: auto;
+	}
+
 	.icon-text {
 		font-size: $body_font_size_xsmall;
 		color: $dark_text_color;
