@@ -3178,7 +3178,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! exports provided: name, category, attributes, supports, default */
 /***/ (function(module) {
 
-eval("!(function webpackMissingModule() { var e = new Error(\"Cannot find module './block.json'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n//# sourceURL=webpack:///./src/schedule/block.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/schedule\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"attributes\\\":{},\\\"supports\\\":{\\\"align\\\":[\\\"wide\\\"],\\\"lightBlockWrapper\\\":false}}\");\n\n//# sourceURL=webpack:///./src/schedule/block.json?");
 
 /***/ }),
 
