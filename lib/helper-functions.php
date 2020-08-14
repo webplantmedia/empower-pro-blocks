@@ -26,7 +26,11 @@ function empower_pro_blocks_color_contrast( $color ) {
 	$green = hexdec( substr( $hexcolor, 2, 2 ) );
 	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
 
-	$luminosity = ( ( $red * 0.1726 ) + ( $green * 0.1152 ) + ( $blue * 0.0722 ) );
+	$luminosity = ( ( $red * 0.2726 ) + ( $green * 0.2152 ) + ( $blue * 0.0722 ) );
+	// if ( $color == "#ffffff" ) {
+		// pr($color);
+		// pr($luminosity);
+	// }
 
 	return ( $luminosity > 100 ) ? '#222222' : '#ffffff';
 

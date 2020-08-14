@@ -1,0 +1,26 @@
+{
+	"name": "empower-pro-blocks/scheduler",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "text",
+			"default": "Month 1",
+			"selector": ".span-title"
+		},
+		"textSub": {
+			"type": "string",
+			"source": "text",
+			"default": "16 Hours",
+			"selector": ".span-text"
+		},
+		"headerColor": {
+			"type": "string",
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"reusable": true,
+		"html": false
+	}
+}

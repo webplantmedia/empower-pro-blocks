@@ -36,13 +36,11 @@ import { __ } from '@wordpress/i18n';
 
 const INNER_BLOCKS_TEMPLATE = [
 	[
-		'empower-pro-blocks/column',
+		'empower-pro-blocks/scheduler',
 		{
 		},
 	],
 ];
-
-const ALLOWED_BLOCKS = [ 'core/paragraph' ];
 
 function ScheduleEdit( {
 	attributes,
@@ -124,8 +122,7 @@ function ScheduleEdit( {
 									renderAppender={
 										() => <InnerBlocks.ButtonBlockAppender />
 									}
-									templateLock={ false }
-									allowedBlocks={ ALLOWED_BLOCKS }
+									templateLock="all"
 									template={ INNER_BLOCKS_TEMPLATE }
 								/>
 							</div>
@@ -156,8 +153,7 @@ function ScheduleEdit( {
 									renderAppender={
 										() => <InnerBlocks.ButtonBlockAppender />
 									}
-									templateLock={ false }
-									allowedBlocks={ ALLOWED_BLOCKS }
+									templateLock="all"
 									template={ INNER_BLOCKS_TEMPLATE }
 								/>
 							</div>
@@ -188,8 +184,7 @@ function ScheduleEdit( {
 									renderAppender={
 										() => <InnerBlocks.ButtonBlockAppender />
 									}
-									templateLock={ false }
-									allowedBlocks={ ALLOWED_BLOCKS }
+									templateLock="all"
 									template={ INNER_BLOCKS_TEMPLATE }
 								/>
 							</div>

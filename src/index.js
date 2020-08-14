@@ -25,6 +25,7 @@ import * as card from './card';
 import * as profile from './profile';
 import * as footer from './footer';
 import * as schedule from './schedule';
+import * as scheduler from './scheduler';
 
 /**
  * Function to register an individual block.
@@ -60,4 +61,5 @@ const registerBlock = ( block ) => {
 	profile,
 	footer,
 	schedule,
+	scheduler,
 ].forEach( registerBlock );
