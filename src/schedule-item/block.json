@@ -21,13 +21,13 @@
 		"text": {
 			"type": "string",
 			"source": "text",
-			"default": "",
+			"default": "2 hours",
 			"selector": ".icon-text"
 		},
 		"info": {
 			"type": "string",
 			"source": "text",
-			"default": "",
+			"default": "Finance Basics and Accounting",
 			"selector": ".icon-info"
 		},
 		"grayscale": {
@@ -51,7 +51,7 @@
 		"heading": {
 			"type": "string",
 			"source": "text",
-			"default": "",
+			"default": "1st Tuesday",
 			"selector": ".icon-heading"
 		},
 		"textColor": {

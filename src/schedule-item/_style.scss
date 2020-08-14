@@ -27,9 +27,10 @@
 	}
 
 	.button-icon-before {
-		flex: 0 0 30px;
+		flex: 0 0 60px;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		box-sizing: content-box;
 
 		@media screen and ( max-width: $mobile_width ) {
@@ -73,8 +74,26 @@
 		margin-bottom: 0 !important;
 	}
 	.icon-heading,
+	.icon-info,
 	.icon-text {
 		width: 100%;
 		display: block;
+	}
+
+	.icon-heading {
+		@include heading;
+		@include h4;
+		// font-weight: $body_font_weight_bold;
+		margin-bottom: 3px;
+		color: $dark_text_color;
+	}
+	.icon-text {
+		font-size: $body_font_size_xsmall;
+		color: $dark_text_color;
+		font-style: italic;
+	}
+	.icon-info {
+		font-size: $body_font_size_small;
+		color: $gray_text_color;
 	}
 }
