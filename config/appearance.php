@@ -102,6 +102,7 @@ return array(
 	'fonts-url'                    => '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Source+Sans+Pro:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap',
 	'title-font-url'               => '',
 	'icons-url'                    => '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+	'icons-js-url'                 => '//unpkg.com/ionicons@5.1.2/dist/ionicons.js',
 	'content-width'                => 750,
 	// Colors.
 	'primary-color'                => $empower_pro_blocks_primary_color,
