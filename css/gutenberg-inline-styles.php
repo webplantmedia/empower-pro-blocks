@@ -109,6 +109,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 				background-color: ${ $color . '_color' } !important;
 				color: ${ $color . '_contrast_color' } !important;
 			}
+			html .has-inline-color.has-$color-color,
 			html .wp-block-empower-pro-blocks-schedule-item.has-$color-item-color .icon-heading,
 			html .icon-heading.has-$color-heading-color,
 			html .has-text-color.has-$color-text-color {

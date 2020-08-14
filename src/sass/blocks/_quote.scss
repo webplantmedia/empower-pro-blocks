@@ -19,6 +19,7 @@ blockquote {
 	position: relative;
 	z-index: 0;
 
+	.wp-block-quote__citation,
 	cite {
 		color: $text_color;
 		font-family: $body_font_family;
