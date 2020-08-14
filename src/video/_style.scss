@@ -12,6 +12,8 @@
 			justify-content: center;
 
 			.wp-block-group {
+				position: relative;
+				z-index: 1;
 				&:first-child {
 					margin-bottom: 0 !important;
 				}
