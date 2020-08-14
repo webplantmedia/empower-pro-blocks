@@ -21,11 +21,12 @@
 
 	@media only screen and ( max-width: $content_max_width_tablet ) {
 		width: 33.3333%;
+		height: 100px;
 	}
 
 	figure {
 		filter: grayscale(100%);
-		opacity: 0.5;
+		opacity: 0.8;
 		@include animation-all;
 
 		&:hover {
