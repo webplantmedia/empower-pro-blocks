@@ -24,8 +24,6 @@
 		border-radius: 0;
 		height: 130px;
 		max-height: 130px;
-		// border-top-left-radius: $border_radius_medium;
-		// border-top-right-radius: $border_radius_medium;
 		font-size: $button_font_size;
 		background-color: #fff !important;
 		color: $text_color !important;
@@ -41,6 +39,8 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			border-top-left-radius: $border_radius_medium;
+			border-top-right-radius: $border_radius_medium;
 		}
 
 		span.span-title {
@@ -54,7 +54,7 @@
 		span.span-text {
 			@include heading;
 			@include h4;
-			font-size: $heading_font_size_h4_tiny;
+			font-size: $heading_font_size_h4_tiny !important;
 			opacity: 0.5;
 			text-transform: uppercase;
 			letter-spacing: $heading_font_size_h4_tiny_letter_spacing;
