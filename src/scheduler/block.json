@@ -1,6 +1,9 @@
 {
 	"name": "empower-pro-blocks/scheduler",
 	"category": "abilitie-blocks",
+	"parent" : [
+		"empower-pro-blocks/schedule"
+	],
 	"attributes": {
 		"text": {
 			"type": "string",
@@ -24,7 +27,7 @@
 		}
 	},
 	"supports": {
-		"reusable": true,
+		"reusable": false,
 		"lightBlockWrapper": false,
 		"html": false
 	}

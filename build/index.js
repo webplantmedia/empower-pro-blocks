@@ -3222,10 +3222,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************************!*\
   !*** ./src/scheduler/block.json ***!
   \**********************************/
-/*! exports provided: name, category, attributes, supports, default */
+/*! exports provided: name, category, parent, attributes, supports, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/scheduler\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"attributes\\\":{\\\"text\\\":{\\\"type\\\":\\\"string\\\",\\\"source\\\":\\\"text\\\",\\\"default\\\":\\\"Month 1\\\",\\\"selector\\\":\\\".span-title\\\"},\\\"textSub\\\":{\\\"type\\\":\\\"string\\\",\\\"source\\\":\\\"text\\\",\\\"default\\\":\\\"16 Hours\\\",\\\"selector\\\":\\\".span-text\\\"},\\\"headerColor\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"primary\\\"},\\\"align\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"wide\\\"}},\\\"supports\\\":{\\\"reusable\\\":true,\\\"lightBlockWrapper\\\":false,\\\"html\\\":false}}\");\n\n//# sourceURL=webpack:///./src/scheduler/block.json?");
+eval("module.exports = JSON.parse(\"{\\\"name\\\":\\\"empower-pro-blocks/scheduler\\\",\\\"category\\\":\\\"abilitie-blocks\\\",\\\"parent\\\":[\\\"empower-pro-blocks/schedule\\\"],\\\"attributes\\\":{\\\"text\\\":{\\\"type\\\":\\\"string\\\",\\\"source\\\":\\\"text\\\",\\\"default\\\":\\\"Month 1\\\",\\\"selector\\\":\\\".span-title\\\"},\\\"textSub\\\":{\\\"type\\\":\\\"string\\\",\\\"source\\\":\\\"text\\\",\\\"default\\\":\\\"16 Hours\\\",\\\"selector\\\":\\\".span-text\\\"},\\\"headerColor\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"primary\\\"},\\\"align\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"wide\\\"}},\\\"supports\\\":{\\\"reusable\\\":false,\\\"lightBlockWrapper\\\":false,\\\"html\\\":false}}\");\n\n//# sourceURL=webpack:///./src/scheduler/block.json?");
 
 /***/ }),
 
