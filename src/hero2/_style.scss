@@ -56,7 +56,7 @@
 		.hero2-content .wp-block-image {
 			text-align: right;
 			margin-bottom: 0;
-			display: block;
+			// display: block;
 		}
 	}
 
@@ -320,6 +320,8 @@
 
 		> * {
 			max-height: 90px;
+			height: 90px;
+			vertical-align: top;
 		}
 	}
 
