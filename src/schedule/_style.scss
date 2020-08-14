@@ -4,14 +4,32 @@
 		justify-content: center;
 		align-items: flex-start;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 60px 0px;
+		grid-gap: 30px 0px;
 
 		> div {
 			width: 100%;
 		}
 
+		> .wp-block-empower-pro-blocks-scheduler {
+			&:first-child {
+				> .column-title {
+					border-left-width: 0;
+				}
+			}
+
+			&:last-child {
+				> .column-title {
+					border-right-width: 0;
+				}
+			}
+		}
+
 		@media screen and ( max-width: $tablet_width ) {
 			grid-template-columns: 1fr;
+
+			> .wp-block-empower-pro-blocks-scheduler {
+				border-width: 0;
+			}
 		}
 	}
 }
