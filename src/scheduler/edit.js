@@ -37,10 +37,6 @@ import { __ } from '@wordpress/i18n';
 const ALLOWED_BLOCKS = [ 'empower-pro-blocks/schedule-item' ];
 
 function dimRatioToClass( ratio ) {
-	if ( ratio === 100 ) {
-		return '';
-	}
-
 	if ( ratio === 0 ) {
 		return 'has-background-dim-value-0';
 	}
