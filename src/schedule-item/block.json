@@ -20,9 +20,15 @@
 		},
 		"text": {
 			"type": "string",
-			"source": "html",
+			"source": "text",
 			"default": "",
 			"selector": ".icon-text"
+		},
+		"info": {
+			"type": "string",
+			"source": "text",
+			"default": "",
+			"selector": ".icon-info"
 		},
 		"grayscale": {
 			"type": "boolean",
@@ -44,7 +50,7 @@
 		},
 		"heading": {
 			"type": "string",
-			"source": "html",
+			"source": "text",
 			"default": "",
 			"selector": ".icon-heading"
 		},

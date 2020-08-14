@@ -20,6 +20,7 @@ export default function save( { attributes } ) {
 		topOffset,
 		marginBottom,
 		text,
+		info,
 		heading,
 		verticalAlignment,
 		textColor,
@@ -61,7 +62,7 @@ export default function save( { attributes } ) {
 
 	const textColorClassName = getColorClassName( 'text-color', textColor );
 
-	const className = classnames( 'icon-text',
+	const subHeadingClass = classnames( 'icon-text',
 		textColorClassName, 
 		{ [ "has-text-color" ]: textColorClassName },
 	);
@@ -88,7 +89,12 @@ export default function save( { attributes } ) {
 					<RichText.Content
 						tagName="span"
 						value={ text }
-						className={ className ? className : undefined }
+						className={ subHeadingClass }
+					/>
+					<RichText.Content
+						tagName="span"
+						value={ info }
+						className="icon-info"
 					/>
 				</div>
 			</div>

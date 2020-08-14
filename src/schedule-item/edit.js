@@ -56,6 +56,7 @@ function ScheduleItemBlock( {
 		topOffset,
 		marginBottom,
 		text,
+		info,
 		heading,
 		verticalAlignment,
 		image,
@@ -293,6 +294,13 @@ function ScheduleItemBlock( {
 							onChange={ ( value ) => setAttributes( { text: value } ) }
 							tagName="span"
 							className={ subHeadingClasses }
+						/>
+						<RichText
+							placeholder={ __( 'Info' ) }
+							value={ info }
+							onChange={ ( value ) => setAttributes( { info: value } ) }
+							tagName="span"
+							className="icon-info"
 						/>
 					</div>
 				</div>
