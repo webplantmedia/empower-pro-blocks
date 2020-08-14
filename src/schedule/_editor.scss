@@ -12,6 +12,21 @@
 		@media screen and ( max-width: $tablet_width ) {
 			grid-template-columns: 1fr;
 		}
+
+		> .wp-block:first-child > .wp-block-empower-pro-blocks-scheduler {
+			> .column-title {
+				// border-left-width: 0;
+				border-top-left-radius: $border_radius_medium;
+			}
+		}
+
+		> .wp-block:last-child > .wp-block-empower-pro-blocks-scheduler {
+			> .column-title {
+				// border-right-width: 0;
+				border-top-right-radius: $border_radius_medium;
+			}
+		}
+
 	}
 }
 .wp-block-empower-pro-blocks-schedule {

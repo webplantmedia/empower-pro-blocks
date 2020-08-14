@@ -13,13 +13,15 @@
 		> .wp-block-empower-pro-blocks-scheduler {
 			&:first-child {
 				> .column-title {
-					border-left-width: 0;
+					// border-left-width: 0;
+					border-top-left-radius: $border_radius_medium;
 				}
 			}
 
 			&:last-child {
 				> .column-title {
-					border-right-width: 0;
+					// border-right-width: 0;
+					border-top-right-radius: $border_radius_medium;
 				}
 			}
 		}
@@ -28,7 +30,7 @@
 			grid-template-columns: 1fr;
 
 			> .wp-block-empower-pro-blocks-scheduler {
-				border-width: 0;
+				// border-width: 0;
 			}
 		}
 	}
