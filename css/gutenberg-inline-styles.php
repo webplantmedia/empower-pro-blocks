@@ -148,6 +148,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html .table-player .active.color-scheme-$color .pill {
 				background-color: #fff !important;
 			}
+			html .wp-block-empower-pro-blocks-container.has-$color-container-color .wp-block-container__inner-content,
 			html .wp-block-empower-pro-blocks-card.has-$color-card-color .wp-block-card__inner-content,
 			html .hero2-content.has-$color-background-color > .wp-block-group__inner-container,
 			html .hero-content.has-$color-background-color > .wp-block-group__inner-container {

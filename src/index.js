@@ -27,6 +27,7 @@ import * as footer from './footer';
 import * as schedule from './schedule';
 import * as scheduler from './scheduler';
 import * as scheduleItem from './schedule-item';
+import * as container from './container';
 
 /**
  * Function to register an individual block.
@@ -64,4 +65,5 @@ const registerBlock = ( block ) => {
 	schedule,
 	scheduler,
 	scheduleItem,
+	container,
 ].forEach( registerBlock );

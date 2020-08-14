@@ -1,0 +1,13 @@
+{
+	"name": "empower-pro-blocks/container",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"containerColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"containerStyle": {
+			"type": "string"
+		}
+	}
+}
