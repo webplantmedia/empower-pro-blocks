@@ -4,7 +4,7 @@
 	"attributes": {
 		"icon": {
 			"type": "string",
-			"default": "home"
+			"default": "circle"
 		},
 		"iconSize": {
 			"type": "number",
@@ -12,7 +12,7 @@
 		},
 		"marginBottom": {
 			"type": "number",
-			"default": ""
+			"default": "40"
 		},
 		"topOffset": {
 			"type": "number",

@@ -1,5 +1,7 @@
 .wp-block-empower-pro-blocks-schedule-item {
 	position: relative;
+	padding-top: 30px;
+	padding-right: 30px;
 
 	.wp-block-schedule-item__text-wrap {
 		width: 100%;
@@ -86,7 +88,7 @@
 		width: 2px;
 		border-left: 2px dashed $border_color;
 		position: absolute;
-		top: 13px;
+		top: 43px;
 		bottom: 0;
 		left: 29px;
 		z-index: 0;

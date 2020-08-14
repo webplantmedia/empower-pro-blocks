@@ -69,16 +69,14 @@ export default function save( { attributes } ) {
 	return (
 		<div style={ containerStyle } className={ classes }>
 			<div className="wp-block-schedule-item__inner-wrap">
-				{ "icon" === imageIcon && icon && (
-					<div class={ iconClasses }>
+				<div class={ iconClasses }>
+					{ "icon" === imageIcon && icon && (
 						<div class="button-icon-inner" style={ iconInnerStyle }>{ renderSVG(icon) }</div>
-					</div>
-				) }
-				{ "image" === imageIcon && image && (
-					<div class={ iconClasses }>
+					) }
+					{ "image" === imageIcon && image && (
 						<div class="button-icon-inner" style={ iconInnerStyle }><img src={image.url} /></div>
-					</div>
-				) }
+					) }
+				</div>
 				<div class="wp-block-schedule-item__text-wrap">
 					<RichText.Content
 						tagName="span"
