@@ -36,8 +36,9 @@
 
 		span.span-title {
 			@include heading;
-			@include h3;
+			@include h4;
 			margin-bottom: 0;
+			text-transform: uppercase;
 		}
 
 		span.span-text {
@@ -46,6 +47,7 @@
 			font-size: $heading_font_size_h4_tiny;
 			opacity: 0.5;
 			text-transform: uppercase;
+			letter-spacing: $heading_font_size_h4_tiny_letter_spacing;
 			margin-bottom: 0;
 		}
 	}
