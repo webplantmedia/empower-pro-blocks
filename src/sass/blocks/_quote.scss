@@ -12,7 +12,11 @@ blockquote {
 		letter-spacing: $quote_font_letter_spacing;
 	}
 
-	padding: 20px 40px;
+	&,
+	&.has-text-align-center {
+		padding: 20px 40px;
+	}
+
 	margin-top: 80px;
 	margin-bottom: 80px;
 	border-width: 0;

@@ -1,3 +1,14 @@
 .wp-block-empower-pro-blocks-container {
 	transform: none !important;
+	.wp-block-container__inner-content {
+		> .block-editor-block-list__layout > .wp-block {
+			&:first-child > * {
+				margin-top: 0;
+			}
+			&:last-child > *:nth-last-child(2),
+			&:last-child > * {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
