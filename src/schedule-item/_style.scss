@@ -1,0 +1,80 @@
+.wp-block-empower-pro-blocks-schedule-item {
+	.wp-block-schedule-item__text-wrap {
+		width: 100%;
+	}
+
+	.wp-block-schedule-item__inner-wrap {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&.is-vertically-aligned-bottom {
+		.wp-block-schedule-item__inner-wrap {
+			align-items: flex-end;
+		}
+	}
+
+	&.is-vertically-aligned-top {
+		.wp-block-schedule-item__inner-wrap {
+			align-items: flex-start;
+		}
+	}
+
+	&.is-vertically-aligned-center {
+		.wp-block-schedule-item__inner-wrap {
+			align-items: center;
+		}
+	}
+
+	.button-icon-before {
+		flex: 0 0 30px;
+		display: flex;
+		align-items: center;
+		box-sizing: content-box;
+
+		@media screen and ( max-width: $mobile_width ) {
+			max-width: 64px;
+			padding-right: 20px;
+		}
+
+		.button-icon-inner {
+			width: 18px;
+
+			@media screen and ( max-width: $mobile_width ) {
+				height: auto !important;
+			}
+		}
+
+		&.is-image-icon {
+			margin-top: 0;
+		}
+
+		&.grayscale {
+			@include grayscale;
+		}
+
+		&.image-style-hex svg,
+		&.image-style-hex img {
+			@include hex-crop;
+		}
+
+		&.image-style-circle svg,
+		&.image-style-circle img {
+			@include circle-crop;
+		}
+
+		svg {
+			fill: $text_color;
+		}
+	}
+
+	.icon-text {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+	.icon-heading,
+	.icon-text {
+		width: 100%;
+		display: block;
+	}
+}
