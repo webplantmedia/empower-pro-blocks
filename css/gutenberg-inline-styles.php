@@ -76,6 +76,10 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 
 	foreach ( $colors as $color ) {
 		$css .= "
+			html .has-$color-header-color .schedule-table div.column-title span {
+				color: ${ $color . '_contrast_color' } !important;
+			}
+			html .has-$color-header-color .schedule-table div.column-title,
 			html .has-$color-overlay-color {
 				background-color: ${ $color . '_color' } !important;
 			}

@@ -24,6 +24,7 @@ import * as grid from './grid';
 import * as card from './card';
 import * as profile from './profile';
 import * as footer from './footer';
+import * as schedule from './schedule';
 
 /**
  * Function to register an individual block.
@@ -58,4 +59,5 @@ const registerBlock = ( block ) => {
 	card,
 	profile,
 	footer,
+	schedule,
 ].forEach( registerBlock );
