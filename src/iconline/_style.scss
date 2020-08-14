@@ -1,0 +1,71 @@
+.wp-block-empower-pro-blocks-iconline {
+	.wp-block-iconline__text-wrap {
+		width: 100%;
+	}
+
+	.wp-block-iconline__inner-wrap {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&.is-vertically-aligned-bottom {
+		.wp-block-iconline__inner-wrap {
+			align-items: flex-end;
+		}
+	}
+
+	&.is-vertically-aligned-top {
+		.wp-block-iconline__inner-wrap {
+			align-items: flex-start;
+		}
+	}
+
+	&.is-vertically-aligned-center {
+		.wp-block-iconline__inner-wrap {
+			align-items: center;
+		}
+	}
+
+	.button-icon-before {
+		flex: 0 0 30px;
+		display: flex;
+		align-items: center;
+		box-sizing: content-box;
+
+		.button-icon-inner {
+			width: 18px;
+			margin-top: 2px;
+
+			@media screen and ( max-width: $mobile_width ) {
+				height: auto !important;
+			}
+		}
+
+		&.is-image-icon {
+			margin-top: 0;
+		}
+
+		&.grayscale {
+			@include grayscale;
+		}
+
+		&.image-style-hex svg,
+		&.image-style-hex img {
+			@include hex-crop;
+		}
+
+		&.image-style-circle svg,
+		&.image-style-circle img {
+			@include circle-crop;
+		}
+
+		svg {
+			fill: $text_color;
+		}
+	}
+
+	.icon-text {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+}

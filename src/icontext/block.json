@@ -42,10 +42,6 @@
 		"imageStyle": {
 			"type": "string"
 		},
-		"hasHeading": {
-			"type": "boolean",
-			"default": false
-		},
 		"imageIcon": {
 			"type": "string",
 			"default": "icon"

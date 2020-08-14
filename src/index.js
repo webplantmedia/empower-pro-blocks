@@ -15,6 +15,7 @@ import * as styles from './styles.js';
 import * as hero from './hero';
 import * as hero2 from './hero2';
 import * as icontext from './icontext';
+import * as iconline from './iconline';
 import * as spacer from './spacer';
 import * as video from './video';
 import * as background from './background';
@@ -53,6 +54,7 @@ const registerBlock = ( block ) => {
 	hero,
 	hero2,
 	icontext,
+	iconline,
 	spacer,
 	video,
 	background,

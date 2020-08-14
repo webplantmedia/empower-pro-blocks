@@ -1,0 +1,61 @@
+{
+	"name": "empower-pro-blocks/iconline",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"icon": {
+			"type": "string",
+			"default": "home"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": ""
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": ""
+		},
+		"topOffset": {
+			"type": "number",
+			"default": ""
+		},
+		"iconSpacing": {
+			"type": "number",
+			"default": "" 
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"default": "",
+			"selector": ".icon-text"
+		},
+		"fontSize": {
+			"type": "string"
+		},
+		"grayscale": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageStyle": {
+			"type": "string"
+		},
+		"imageIcon": {
+			"type": "string",
+			"default": "icon"
+		},
+		"image": {
+			"type": "object"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"verticalAlignment": {
+			"type": "string"
+		},
+		"customFontSize": {
+			"type": "number"
+		}
+	}
+}
