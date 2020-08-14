@@ -14,14 +14,14 @@
 		}
 
 		> .wp-block:first-child > .wp-block-empower-pro-blocks-scheduler {
-			> .column-title {
+			> .column-title .dim-bg {
 				// border-left-width: 0;
 				border-top-left-radius: $border_radius_medium;
 			}
 		}
 
 		> .wp-block:last-child > .wp-block-empower-pro-blocks-scheduler {
-			> .column-title {
+			> .column-title .dim-bg {
 				// border-right-width: 0;
 				border-top-right-radius: $border_radius_medium;
 			}

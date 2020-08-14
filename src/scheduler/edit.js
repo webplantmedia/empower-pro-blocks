@@ -36,6 +36,20 @@ import { __ } from '@wordpress/i18n';
 
 const ALLOWED_BLOCKS = [ 'empower-pro-blocks/schedule-item' ];
 
+function dimRatioToClass( ratio ) {
+	if ( ratio === 100 ) {
+		return '';
+	}
+
+	if ( ratio === 0 ) {
+		return 'has-background-dim-value-0';
+	}
+
+	return ! ratio
+		? null
+		: 'has-background-dim-value-' + 10 * Math.round( ratio / 10 );
+}
+
 function SchedulerEdit( {
 	attributes,
 	setAttributes,
@@ -46,6 +60,7 @@ function SchedulerEdit( {
 } ) {
 	const {
 		text,
+		dimRatio,
 		textSub,
 	} = attributes;
 
@@ -64,14 +79,22 @@ function SchedulerEdit( {
 						},
 					] }
 				>
+					<RangeControl
+						label={ __( 'Opacity' ) }
+						value={ dimRatio }
+						onChange={ ( value ) =>
+							setAttributes( {
+								dimRatio: value,
+							} )
+						}
+						min={ 0 }
+						max={ 100 }
+						step={ 10 }
+						required
+					/>
 				</PanelColorGradientSettings>
 			</InspectorControls>
 		</>
-	);
-
-	const wrapperClasses = classnames( className,
-		'empower-pro-blocks-scheduler',
-		{ [ headerColor.class ]: headerColor.class, }
 	);
 
 	const { hasChildBlocks, rootClientId } = useSelect(
@@ -88,11 +111,22 @@ function SchedulerEdit( {
 		[ clientId ]
 	);
 
+	const wrapperClasses = classnames( className,
+		'empower-pro-blocks-scheduler',
+		{ [ headerColor.class ]: headerColor.class, },
+	);
+
+	const bgClasses = classnames( 
+		'dim-bg',
+		dimRatioToClass( dimRatio ), 
+	);
+
 	return (
 		<>
 			{ controls }
 			<div className={ wrapperClasses }>
 				<div class="column-title">
+					<div className={ bgClasses } />
 					<RichText
 						tagName="span"
 						placeholder={ __( 'Title' ) }

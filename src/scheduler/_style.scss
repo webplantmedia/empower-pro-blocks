@@ -33,12 +33,22 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		position: relative;
+
+		div.dim-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
 
 		span.span-title {
 			@include heading;
 			@include h4;
 			margin-bottom: 0;
 			text-transform: uppercase;
+			position: relative;
 		}
 
 		span.span-text {
@@ -49,6 +59,7 @@
 			text-transform: uppercase;
 			letter-spacing: $heading_font_size_h4_tiny_letter_spacing;
 			margin-bottom: 0;
+			position: relative;
 		}
 	}
 

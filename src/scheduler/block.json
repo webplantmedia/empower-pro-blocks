@@ -17,6 +17,10 @@
 			"default": "16 Hours",
 			"selector": ".span-text"
 		},
+		"dimRatio": {
+			"type": "number",
+			"default": 100 
+		},
 		"headerColor": {
 			"type": "string",
 			"default": "primary"

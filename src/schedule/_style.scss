@@ -12,14 +12,14 @@
 
 		> .wp-block-empower-pro-blocks-scheduler {
 			&:first-child {
-				> .column-title {
+				> .column-title .dim-bg {
 					// border-left-width: 0;
 					border-top-left-radius: $border_radius_medium;
 				}
 			}
 
 			&:last-child {
-				> .column-title {
+				> .column-title .dim-bg {
 					// border-right-width: 0;
 					border-top-right-radius: $border_radius_medium;
 				}
