@@ -23,7 +23,6 @@ export default function save( { attributes } ) {
 		marginBottom,
 		text,
 		fontSize,
-		hasHeading,
 		level,
 		heading,
 		verticalAlignment,
@@ -99,13 +98,11 @@ export default function save( { attributes } ) {
 					</div>
 				) }
 				<div class="wp-block-icontext__text-wrap">
-					{ hasHeading && (
-						<RichText.Content
-							tagName={ tagName }
-							value={ heading }
-							className={ headingClasses }
-						/>
-					) }
+					<RichText.Content
+						tagName={ tagName }
+						value={ heading }
+						className={ headingClasses }
+					/>
 					<RichText.Content
 						tagName="p"
 						value={ text }

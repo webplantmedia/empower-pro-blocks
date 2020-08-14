@@ -69,7 +69,6 @@ function IconTextBlock( {
 		marginBottom,
 		text,
 		heading,
-		hasHeading,
 		verticalAlignment,
 		level,
 		image,
@@ -109,37 +108,28 @@ function IconTextBlock( {
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Heading' ) }>
-					<ToggleControl
-						label={ __( 'Display heading' ) }
-						onChange={ ( value ) => setAttributes( value ? { hasHeading: true } : { hasHeading: false } ) }
-						checked={ hasHeading === true }
+				<PanelColorGradientSettings
+					title={ __( 'Heading settings' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: headingColor.color,
+							onColorChange: setHeadingColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+					<HeadingToolbar
+						isCollapsed={ false }
+						minLevel={ 2 }
+						maxLevel={ 7 }
+						selectedLevel={ level }
+						onChange={ ( value ) =>
+							setAttributes( { level: value } )
+						}
 					/>
-				</PanelBody>
-				{ hasHeading && (
-					<PanelColorGradientSettings
-						title={ __( 'Heading settings' ) }
-						initialOpen={ true }
-						settings={ [
-							{
-								colorValue: headingColor.color,
-								onColorChange: setHeadingColor,
-								disableCustomColors: true,
-								label: __( 'Color' ),
-							},
-						] }
-					>
-						<HeadingToolbar
-							isCollapsed={ false }
-							minLevel={ 2 }
-							maxLevel={ 7 }
-							selectedLevel={ level }
-							onChange={ ( value ) =>
-								setAttributes( { level: value } )
-							}
-						/>
-					</PanelColorGradientSettings>
-				) }
+				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={ __( 'Text Settings' ) }
 					initialOpen={ true }
@@ -155,6 +145,18 @@ function IconTextBlock( {
 					<FontSizePicker
 						value={ fontSize.size }
 						onChange={ setFontSize }
+					/>
+					<RangeControl
+						label={ __( 'Margin Bottom' ) }
+						value={ marginBottom }
+						onChange={ ( value ) =>
+							setAttributes( {
+								marginBottom: value,
+							} )
+						}
+						min={ 0 }
+						max={ 150 }
+						step={ 1 }
 					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Icon' ) } initialOpen={ true }>
@@ -254,32 +256,22 @@ function IconTextBlock( {
 						max={ 250 }
 						step={ 1 }
 					/>
-					<RangeControl
-						label={ __( 'Margin Bottom' ) }
-						value={ marginBottom }
-						onChange={ ( value ) =>
-							setAttributes( {
-								marginBottom: value,
-							} )
-						}
-						min={ 0 }
-						max={ 150 }
-						step={ 1 }
-					/>
 				</PanelBody>
-				<PanelColorGradientSettings
-					title={ __( 'Icon Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: iconColor.color,
-							onColorChange: setIconColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
+				{ "icon" === imageIcon &&
+					<PanelColorGradientSettings
+						title={ __( 'Icon Color' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: iconColor.color,
+								onColorChange: setIconColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				}
 			</InspectorControls>
 		</>
 	);
@@ -335,17 +327,15 @@ function IconTextBlock( {
 						</div>
 					) }
 					<div class="wp-block-icontext__text-wrap">
-						{ hasHeading && (
-							<RichText
-								placeholder={ __( 'Start writing' ) }
-								value={ heading }
-								onChange={ ( value ) => setAttributes( { heading: value } ) }
-								className={ headingClasses }
-								tagName={ tagName }
-							/>
-						) }
 						<RichText
-							placeholder={ __( 'Start writing' ) }
+							placeholder={ __( 'Heading' ) }
+							value={ heading }
+							onChange={ ( value ) => setAttributes( { heading: value } ) }
+							className={ headingClasses }
+							tagName={ tagName }
+						/>
+						<RichText
+							placeholder={ __( 'Text' ) }
 							value={ text }
 							onChange={ ( value ) => setAttributes( { text: value } ) }
 							tagName="p"

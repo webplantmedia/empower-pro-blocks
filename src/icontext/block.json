@@ -8,7 +8,7 @@
 		},
 		"iconSize": {
 			"type": "number",
-			"default": ""
+			"default": 110
 		},
 		"marginBottom": {
 			"type": "number",
@@ -20,7 +20,7 @@
 		},
 		"iconSpacing": {
 			"type": "number",
-			"default": ""
+			"default": 140 
 		},
 		"text": {
 			"type": "string",

@@ -24,9 +24,9 @@
 			}
 
 			@media only screen and ( max-width: $ipad_width ) {
-				display: flex;
-				flex-direction: column-reverse;
-				grid-gap: 0 !important;
+				// display: flex;
+				// flex-direction: column-reverse;
+				grid-row-gap: 100px !important;
 				align-items: center;
 			}
 		}
@@ -92,7 +92,8 @@
 			}
 			.wp-block-video {
 				position: relative;
-				width: 600px;
+				width: 100%;
+				max-width: 600px;
 				margin-top: 18px;
 				min-height: 300px;
 				margin-bottom: 0;
