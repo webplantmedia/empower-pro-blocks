@@ -167,6 +167,16 @@
 
 				@media screen and ( max-width: $mobile_width ) {
 					height: 114px;
+
+					.wp-block-buttons {
+						display: block;
+
+						.wp-block-button {
+							display: block;
+							margin-right: 0;
+						}
+					}
+
 				}
 			}
 
