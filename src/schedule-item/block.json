@@ -1,6 +1,9 @@
 {
 	"name": "empower-pro-blocks/schedule-item",
 	"category": "abilitie-blocks",
+	"parent": [
+		"empower-pro-blocks/scheduler"
+	],
 	"attributes": {
 		"icon": {
 			"type": "string",
@@ -8,15 +11,15 @@
 		},
 		"iconSize": {
 			"type": "number",
-			"default": "14"
+			"default": 14
 		},
 		"marginBottom": {
 			"type": "number",
-			"default": "40"
+			"default": 40
 		},
 		"topOffset": {
 			"type": "number",
-			"default": "0"
+			"default": 0
 		},
 		"text": {
 			"type": "string",
@@ -58,7 +61,8 @@
 			"type": "string"
 		},
 		"iconColor": {
-			"type": "string"
+			"type": "string",
+			"default": "primary"
 		},
 		"verticalAlignment": {
 			"type": "string"

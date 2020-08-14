@@ -42,4 +42,8 @@
 			margin-bottom: 0;
 		}
 	}
+
+	.column-data > .wp-block-empower-pro-blocks-schedule-item:last-child::after {
+		display: none;
+	}
 }

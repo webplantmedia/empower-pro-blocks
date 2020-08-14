@@ -34,7 +34,7 @@ import {
 import { useSelect, useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 
-const ALLOWED_BLOCKS = [ 'core/paragraph' ];
+const ALLOWED_BLOCKS = [ 'empower-pro-blocks/schedule-item' ];
 
 function SchedulerEdit( {
 	attributes,

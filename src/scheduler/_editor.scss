@@ -1,4 +1,9 @@
-.wp-block-empower-pro-blocks-column {
+.wp-block-empower-pro-blocks-scheduler {
 	// border: 1px dashed $admin_border_color;
 	// padding: 0 20px;
+
+	.column-data > .block-editor-block-list__layout > *:nth-last-child(2) .wp-block-empower-pro-blocks-schedule-item::after,
+	.column-data > .block-editor-block-list__layout > *:last-child .wp-block-empower-pro-blocks-schedule-item::after {
+		display: none;
+	}
 }
