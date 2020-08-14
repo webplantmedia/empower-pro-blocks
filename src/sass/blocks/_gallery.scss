@@ -13,6 +13,27 @@
 	}
 }
 
+// is-style-showcase
+.wp-block-gallery.is-style-showcase .blocks-gallery-item {
+	flex: 1 1 auto;
+	margin-right: 0 !important;
+	margin-bottom: 0 !important;
+
+	@media only screen and ( max-width: $content_max_width_tablet ) {
+		width: 33.3333%;
+	}
+
+	figure {
+		filter: grayscale(100%);
+		opacity: 0.5;
+		@include animation-all;
+
+		&:hover {
+			opacity: 1;
+			filter: none;
+		}
+	}
+}
 // is-style-brands
 .wp-block-gallery.is-style-brands {
 	display: block;
