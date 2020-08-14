@@ -27,6 +27,7 @@ export default function save( { attributes } ) {
 		image,
 		imageStyle,
 		grayscale,
+		highlight,
 		imageIcon,
 	} = attributes;
 
@@ -42,6 +43,7 @@ export default function save( { attributes } ) {
 	const iconClasses = classnames(
 		'button-icon-before',
 		grayscale ? 'grayscale' : {},
+		highlight ? 'highlight' : {},
 		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		getColorClassName( 'icon-color', iconColor ),

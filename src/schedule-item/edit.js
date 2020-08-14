@@ -61,6 +61,7 @@ function ScheduleItemBlock( {
 		image,
 		imageStyle,
 		grayscale,
+		highlight,
 		imageIcon,
 	} = attributes;
 
@@ -107,6 +108,11 @@ function ScheduleItemBlock( {
 						},
 					] }
 				>
+					<ToggleControl
+						label={ __( 'Highlight' ) }
+						onChange={ ( value ) => setAttributes( value ? { highlight: true } : { highlight: false } ) }
+						checked={ highlight === true }
+					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Icon' ) } initialOpen={ true }>
 					<SelectControl
@@ -241,6 +247,7 @@ function ScheduleItemBlock( {
 	const iconClasses = classnames( 
 		'button-icon-before', 
 		grayscale ? 'grayscale' : {},
+		highlight ? 'highlight' : {},
 		imageStyle ? 'image-style-' + imageStyle : {}, 
 		{ [ 'is-image-icon' ]: 'image' === imageIcon },
 		{ [ iconColor.class ]: iconColor.class, }

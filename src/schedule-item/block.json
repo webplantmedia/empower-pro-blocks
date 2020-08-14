@@ -28,6 +28,10 @@
 			"type": "boolean",
 			"default": false
 		},
+		"highlight": {
+			"type": "boolean",
+			"default": false
+		},
 		"imageStyle": {
 			"type": "string"
 		},
