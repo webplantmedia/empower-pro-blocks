@@ -3,6 +3,23 @@
 		margin-top: 0;
 		margin-bottom: 0;
 	}
+
+	> .column-title {
+		border-right: 1px solid rgba(255, 255, 255, .1);
+		border-left: 1px solid rgba(255, 255, 255, .1);
+	}
+
+	&:first-child {
+		> .column-title {
+			border-left-width: 0;
+		}
+	}
+
+	&:last-child {
+		> .column-title {
+			border-right-width: 0;
+		}
+	}
 }
 
 .wp-block-empower-pro-blocks-scheduler {
@@ -14,6 +31,8 @@
 	div.column-title {
 		// @include box-shadow;
 		flex-grow: 1;
+		padding: 0 20px;
+		margin-bottom: 20px;
 		border-radius: 0;
 		height: 130px;
 		max-height: 130px;
