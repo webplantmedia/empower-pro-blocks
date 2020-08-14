@@ -90,6 +90,7 @@ function SchedulerEdit( {
 
 	return (
 		<>
+			{ controls }
 			<div className={ wrapperClasses }>
 				<div class="column-title">
 					<RichText
