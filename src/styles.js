@@ -74,3 +74,8 @@ registerBlockStyle( 'core/gallery' , {
 	label: __( 'Showcase' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/list' , {
+	name: 'medium-spacing',
+	label: __( 'Medium Spacing' ),
+	isDefault: false,
+} );
