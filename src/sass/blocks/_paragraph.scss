@@ -1,25 +1,25 @@
 /* Font Sizes */
 .has-tiny-font-size {
-	font-size: $body_font_size_tiny;
+	font-size: $body_font_size_tiny !important;
 }
 
 .has-small-font-size {
-	font-size: $body_font_size_small;
+	font-size: $body_font_size_small !important;
 }
 
 .has-xsmall-font-size {
-	font-size: $body_font_size_xsmall;
+	font-size: $body_font_size_xsmall !important;
 }
 
 .has-regular-font-size {
-	font-size: $body_font_size;
+	font-size: $body_font_size !important;
 }
 
 .has-large-font-size {
-	font-size: $body_font_size_large;
+	font-size: $body_font_size_large !important;
 
 	@media only screen and (max-width: $ipad_width) {
-		font-size: $body_font_size_large - 2;
+		font-size: $body_font_size_large - 2 !important;
 	}
 }
 
@@ -27,7 +27,7 @@
 	font-size: $body_font_size_larger;
 
 	@media only screen and (max-width: $ipad_width) {
-		font-size: $body_font_size_larger - 4;
+		font-size: $body_font_size_larger - 4 !important;
 	}
 }
 

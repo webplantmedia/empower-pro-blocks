@@ -168,6 +168,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 			html ul.has-$color-color > li::before {
 				color: ${ $color . '_color' } !important;
 			}
+			html ol.has-$color-color > li::marker,
 			html ul.has-$color-color > li::marker {
 				color: ${ $color . '_color' } !important;
 			}
