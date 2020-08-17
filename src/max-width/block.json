@@ -1,0 +1,10 @@
+{
+	"name": "empower-pro-blocks/max-width",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"maxWidth": {
+			"type": "number",
+			"default": 750
+		}
+	}
+}
