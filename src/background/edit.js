@@ -133,12 +133,14 @@ function BackgroundEdit( {
 						options={ [
 							{ value: "", label: __( "None" ) },
 							{ value: "top", label: __( "Top Slant" ) },
+							{ value: "top-crop", label: __( "Top Slant (Crop)" ) },
 							{ value: "bottom", label: __( "Bottom Slant" ) },
+							{ value: "bottom-crop", label: __( "Bottom Slant (Crop)" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { slant: value } ) }
 					/>
 				</PanelBody>
-				{ slant !== "" && (
+				{ ( slant === "top" || slant === "bottom" ) && (
 					<PanelColorGradientSettings
 						title={ __( 'Slant Background' ) }
 						initialOpen={ true }

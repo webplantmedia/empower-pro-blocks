@@ -123,6 +123,7 @@
 	}
 
 	// slant
+	&.display-top-crop-slant,
 	&.display-top-slant .wp-block-background__color-container {
 		-webkit-clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
 		clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 100%);
@@ -136,7 +137,8 @@
 			clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
 		}
 	}
-
+	
+	&.display-bottom-crop-slant,
 	&.display-bottom-slant .wp-block-background__color-container {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% calc( 100% - 160px ), 0 100%);
