@@ -40,19 +40,19 @@
 		},
 		"topHeight": {
 			"type": "number",
-			"default": 200
+			"default": 100
 		},
 		"topMobileHeight": {
 			"type": "number",
-			"default": 150 
+			"default": 100 
 		},
 		"bottomHeight": {
 			"type": "number",
-			"default": 300
+			"default": 100
 		},
 		"bottomMobileHeight": {
 			"type": "number",
-			"default": 140 
+			"default": 100 
 		},
 		"align": {
 			"type": "string",
