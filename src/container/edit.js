@@ -52,19 +52,6 @@ function ContainerEdit( {
 		<>
 			<InspectorControls>
 				<PanelColorGradientSettings
-					title={ __( 'Background Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: backgroundColor.color,
-							onColorChange: setBackgroundColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
 					title={ __( 'Container Color' ) }
 					initialOpen={ true }
 					settings={ [
@@ -87,6 +74,19 @@ function ContainerEdit( {
 						onChange={ ( value ) => setAttributes( { containerStyle: value } ) }
 					/>
 				</PanelBody>
+				<PanelColorGradientSettings
+					title={ __( 'Background Color' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: backgroundColor.color,
+							onColorChange: setBackgroundColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+				</PanelColorGradientSettings>
 			</InspectorControls>
 		</>
 	);

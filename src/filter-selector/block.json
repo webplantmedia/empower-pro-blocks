@@ -20,7 +20,15 @@
 			"default": "Our Values",
 			"selector": ".button3"
 		},
-		"buttonBackgroundColor": {
+		"button1BackgroundColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"button2BackgroundColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"button3BackgroundColor": {
 			"type": "string",
 			"default": "primary"
 		}

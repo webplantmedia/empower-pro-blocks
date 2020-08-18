@@ -17,7 +17,9 @@ export default function save( { attributes } ) {
 		button1Text,
 		button2Text,
 		button3Text,
-		buttonBackgroundColor,
+		button1BackgroundColor,
+		button2BackgroundColor,
+		button3BackgroundColor,
 	} = attributes;
 
 	const classes = classnames(
@@ -27,19 +29,19 @@ export default function save( { attributes } ) {
 	const button1Classes = classnames(
 		'button1',
 		'wp-block-button__link',
-		getColorClassName( 'background-color', buttonBackgroundColor ),
+		getColorClassName( 'background-color', button1BackgroundColor ),
 	)
 
 	const button2Classes = classnames(
 		'button2',
 		'wp-block-button__link',
-		getColorClassName( 'background-color', buttonBackgroundColor ),
+		getColorClassName( 'background-color', button2BackgroundColor ),
 	)
 
 	const button3Classes = classnames(
 		'button3',
 		'wp-block-button__link',
-		getColorClassName( 'background-color', buttonBackgroundColor ),
+		getColorClassName( 'background-color', button3BackgroundColor ),
 	)
 
 	return (

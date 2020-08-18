@@ -36,19 +36,19 @@ import { __ } from '@wordpress/i18n';
 
 const INNER_BLOCKS_TEMPLATE = [
 	[
-		'empower-pro-blocks/column',
+		'empower-pro-blocks/container',
 		{
 			className: "filter2-1 active",
 		},
 	],
 	[
-		'empower-pro-blocks/column',
+		'empower-pro-blocks/container',
 		{
 			className: "filter2-2",
 		},
 	],
 	[
-		'empower-pro-blocks/column',
+		'empower-pro-blocks/container',
 		{
 			className: "filter2-3",
 		},
@@ -86,7 +86,7 @@ function FilterEdit( {
 			<div className={ classes }>
 				<InnerBlocks 
 					template={ INNER_BLOCKS_TEMPLATE }
-					templateLock="insert"
+					templateLock="all"
 				/>
 			</div>
 		</>

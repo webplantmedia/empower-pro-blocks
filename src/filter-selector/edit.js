@@ -43,8 +43,12 @@ function Filter2Edit( {
 	noticeUI,
 	toggleSelection,
 	noticeOperations,
-	buttonBackgroundColor,
-	setButtonBackgroundColor,
+	button1BackgroundColor,
+	setButton1BackgroundColor,
+	button2BackgroundColor,
+	setButton2BackgroundColor,
+	button3BackgroundColor,
+	setButton3BackgroundColor,
 } ) {
 	const {
 		button1Text,
@@ -58,12 +62,38 @@ function Filter2Edit( {
 		<>
 			<InspectorControls>
 				<PanelColorGradientSettings
-					title={ __( 'Button Background Color' ) }
+					title={ __( 'Button 1 Background Color' ) }
 					initialOpen={ true }
 					settings={ [
 						{
-							colorValue: buttonBackgroundColor.color,
-							onColorChange: setButtonBackgroundColor,
+							colorValue: button1BackgroundColor.color,
+							onColorChange: setButton1BackgroundColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+				</PanelColorGradientSettings>
+				<PanelColorGradientSettings
+					title={ __( 'Button 2 Background Color' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: button2BackgroundColor.color,
+							onColorChange: setButton2BackgroundColor,
+							disableCustomColors: true,
+							label: __( 'Color' ),
+						},
+					] }
+				>
+				</PanelColorGradientSettings>
+				<PanelColorGradientSettings
+					title={ __( 'Button 3 Background Color' ) }
+					initialOpen={ true }
+					settings={ [
+						{
+							colorValue: button3BackgroundColor.color,
+							onColorChange: setButton3BackgroundColor,
 							disableCustomColors: true,
 							label: __( 'Color' ),
 						},
@@ -81,19 +111,19 @@ function Filter2Edit( {
 	const button1Classes = classnames(
 		'button1',
 		'wp-block-button__link',
-		{ [ buttonBackgroundColor.class ]: buttonBackgroundColor.class, },
+		{ [ button1BackgroundColor.class ]: button1BackgroundColor.class, },
 	)
 
 	const button2Classes = classnames(
 		'button1',
 		'wp-block-button__link',
-		{ [ buttonBackgroundColor.class ]: buttonBackgroundColor.class, },
+		{ [ button2BackgroundColor.class ]: button2BackgroundColor.class, },
 	)
 
 	const button3Classes = classnames(
 		'button1',
 		'wp-block-button__link',
-		{ [ buttonBackgroundColor.class ]: buttonBackgroundColor.class, },
+		{ [ button3BackgroundColor.class ]: button3BackgroundColor.class, },
 	)
 
 	return (
@@ -138,5 +168,5 @@ function Filter2Edit( {
 
 export default compose( [
 	withNotices,
-	withColors( { buttonBackgroundColor: 'background-color' } ),
+	withColors( { button1BackgroundColor: 'background-color', button2BackgroundColor: 'background-color', button3BackgroundColor: 'background-color' } ),
 ] )( Filter2Edit );
