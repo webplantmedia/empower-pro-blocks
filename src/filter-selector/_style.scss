@@ -6,6 +6,8 @@
 		.wp-block-button {
 			margin-right: 0;
 			margin-bottom: 20px;
+			float: left; 
+			clear: left;
 
 			&:last-child {
 				margin-bottom: 0;
