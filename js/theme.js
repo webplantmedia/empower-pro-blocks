@@ -214,7 +214,7 @@
 					var index = $this.index();
 
 					if ( $container.length ) {
-						$target = $container.children().eq(index);
+						$target = $container.children().children().eq(index);
 					}
 
 					if ( $target.length ) {

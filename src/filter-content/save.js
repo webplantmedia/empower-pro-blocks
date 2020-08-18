@@ -21,7 +21,9 @@ export default function save( { attributes } ) {
 
 	return (
 		<div className={ classes }>
-			<InnerBlocks.Content />
+			<div className="filter-content-inner">
+				<InnerBlocks.Content />
+			</div>
 		</div>
 	);
 }

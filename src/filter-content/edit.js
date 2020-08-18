@@ -77,10 +77,12 @@ function FilterContentEdit( {
 	return (
 		<>
 			<div className={ classes }>
-				<InnerBlocks 
-					template={ INNER_BLOCKS_TEMPLATE }
-					allowedBlocks={ ALLOWED_BLOCKS }
-				/>
+				<div className="filter-content-inner">
+					<InnerBlocks 
+						template={ INNER_BLOCKS_TEMPLATE }
+						allowedBlocks={ ALLOWED_BLOCKS }
+					/>
+				</div>
 			</div>
 		</>
 	);
