@@ -10,19 +10,19 @@
 	margin-left: 2em;
 }
 
-.wp-block-image figure,
-.wp-block-image .alignwide,
-.wp-block-image .alignfull,
-.wp-block-embed.alignwide,
-.wp-block-embed.alignfull {
+.wp-block-image,
+.wp-block-image,
+.wp-block-image,
+.wp-block-embed,
+.wp-block-embed {
 	margin-bottom: $margin_bottom;
 }
 
 p {
-	+ .wp-block-image .alignwide,
-	+ .wp-block-image .alignfull,
-	+ .wp-block-embed.alignwide,
-	+ .wp-block-embed.alignfull {
+	+ .wp-block-image,
+	+ .wp-block-image,
+	+ .wp-block-embed,
+	+ .wp-block-embed {
 		margin-top: 37px;
 	}
 }

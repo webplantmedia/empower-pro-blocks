@@ -2,6 +2,10 @@ ul {
 	&.is-style-medium-spacing {
 		& > li {
 			margin-bottom: 20px !important;
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
 		}
 	}
 }

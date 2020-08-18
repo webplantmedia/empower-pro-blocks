@@ -1,6 +1,7 @@
 a.aligncenter img {
 	display: block;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 a.alignnone {
@@ -25,25 +26,29 @@ a.alignright {
 
 img.centered,
 .aligncenter {
-	display: block;
-	margin: 0 auto 24px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 img.alignnone,
 .alignnone {
-	margin-bottom: 24px;
+	// margin-bottom: 24px;
 }
 
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 0 24px 24px 0;
+	// margin: 0 24px 24px 0;
+	margin-right: 24px;
+	margin-left: 0;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-	margin: 0 0 24px 24px;
+	// margin: 0 0 24px 24px;
+	margin-left: 24px;
+	margin-right: 0;
 }
 
 .gallery-caption,
