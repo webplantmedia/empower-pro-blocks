@@ -211,12 +211,10 @@
 					var container   = $parent.attr( 'data-container' );
 					var collapse    = $parent.attr( 'data-collapse' );
 					var $container  = $( container );
-					var filterValue = $this.attr( 'data-filter' );
-
-					console.log($container);
+					var index = $this.index();
 
 					if ( $container.length ) {
-						$target = $container.find( filterValue );
+						$target = $container.children().eq(index);
 					}
 
 					if ( $target.length ) {

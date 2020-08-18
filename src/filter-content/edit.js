@@ -37,25 +37,18 @@ import { __ } from '@wordpress/i18n';
 const INNER_BLOCKS_TEMPLATE = [
 	[
 		'empower-pro-blocks/container',
-		{
-			className: "filter2-1 active",
-		},
 	],
 	[
 		'empower-pro-blocks/container',
-		{
-			className: "filter2-2",
-		},
 	],
 	[
 		'empower-pro-blocks/container',
-		{
-			className: "filter2-3",
-		},
 	],
 ];
 
-function FilterEdit( {
+const ALLOWED_BLOCKS = [ 'empower-pro-blocks/container' ];
+
+function FilterContentEdit( {
 	attributes,
 	setAttributes,
 	isSelected,
@@ -86,7 +79,7 @@ function FilterEdit( {
 			<div className={ classes }>
 				<InnerBlocks 
 					template={ INNER_BLOCKS_TEMPLATE }
-					templateLock="all"
+					allowedBlocks={ ALLOWED_BLOCKS }
 				/>
 			</div>
 		</>
@@ -95,4 +88,4 @@ function FilterEdit( {
 
 export default compose( [
 	withNotices,
-] )( FilterEdit );
+] )( FilterContentEdit );

@@ -17,6 +17,7 @@ import {
 	ToggleControl,
 	TextControl,
 	TextareaControl,
+	SelectControl,
 	withNotices,
 } from '@wordpress/components';
 
@@ -34,7 +35,7 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-function Filter2Edit( {
+function FilterSelectorEdit( {
 	attributes,
 	setAttributes,
 	hasInnerBlocks,
@@ -49,11 +50,15 @@ function Filter2Edit( {
 	setButton2BackgroundColor,
 	button3BackgroundColor,
 	setButton3BackgroundColor,
+	button4BackgroundColor,
+	setButton4BackgroundColor,
 } ) {
 	const {
 		button1Text,
 		button2Text,
 		button3Text,
+		button4Text,
+		buttons,
 	} = attributes;
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
@@ -61,6 +66,20 @@ function Filter2Edit( {
 	const controls = (
 		<>
 			<InspectorControls>
+				<PanelBody title={ __( 'Buttons' ) } initialOpen={ true }>
+					<RangeControl
+						label={ __( 'Number' ) }
+						value={ buttons }
+						onChange={ ( value ) =>
+							setAttributes( {
+								buttons: value,
+							} )
+						}
+						min={ 3 }
+						max={ 4 }
+						step={ 1 }
+					/>
+				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Button 1 Background Color' ) }
 					initialOpen={ true }
@@ -100,12 +119,27 @@ function Filter2Edit( {
 					] }
 				>
 				</PanelColorGradientSettings>
+				{ buttons > 3 && (
+					<PanelColorGradientSettings
+						title={ __( 'Button 4 Background Color' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: button4BackgroundColor.color,
+								onColorChange: setButton4BackgroundColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				) }
 			</InspectorControls>
 		</>
 	);
 
 	const classes = classnames( className, 
-		'wp-block-filter2-wrapper',
+		'wp-block-filter-selector-wrapper',
 	);
 	
 	const button1Classes = classnames(
@@ -126,13 +160,19 @@ function Filter2Edit( {
 		{ [ button3BackgroundColor.class ]: button3BackgroundColor.class, },
 	)
 
+	const button4Classes = classnames(
+		'button1',
+		'wp-block-button__link',
+		{ [ button4BackgroundColor.class ]: button4BackgroundColor.class, },
+	)
+
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
-				<div className="wp-block-filter2__inner-wrap">
+				<div className="wp-block-filter-selector__inner-wrap">
 					<div class="filtering wp-block-buttons item-selected" data-container=".filter-content" data-collapse="false">
-						<div class="wp-block-button is-style-text active" data-filter=".filter2-1">
+						<div class="wp-block-button is-style-text active" data-filter=".filter-selector-1">
 							<RichText
 								tagName="a"
 								placeholder={ __( 'Button 1' ) }
@@ -141,7 +181,7 @@ function Filter2Edit( {
 								className={ button1Classes }
 							/>
 						</div>
-						<div class="wp-block-button is-style-text" data-filter=".filter2-2">
+						<div class="wp-block-button is-style-text" data-filter=".filter-selector-2">
 							<RichText
 								tagName="a"
 								placeholder={ __( 'Button 2' ) }
@@ -150,7 +190,7 @@ function Filter2Edit( {
 								className={ button2Classes }
 							/>
 						</div>
-						<div class="wp-block-button is-style-text" data-filter=".filter2-3">
+						<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
 							<RichText
 								tagName="a"
 								placeholder={ __( 'Button 3' ) }
@@ -159,6 +199,17 @@ function Filter2Edit( {
 								className={ button3Classes }
 							/>
 						</div>
+						{ buttons > 3 && (
+							<div class="wp-block-button is-style-text" data-filter=".filter-selector-4">
+								<RichText
+									tagName="a"
+									placeholder={ __( 'Button 4' ) }
+									value={ button4Text }
+									onChange={ ( value ) => setAttributes( { button4Text: value } ) }
+									className={ button4Classes }
+								/>
+							</div>
+						) }
 					</div>
 				</div>
 			</div>
@@ -168,5 +219,5 @@ function Filter2Edit( {
 
 export default compose( [
 	withNotices,
-	withColors( { button1BackgroundColor: 'background-color', button2BackgroundColor: 'background-color', button3BackgroundColor: 'background-color' } ),
-] )( Filter2Edit );
+	withColors( { button1BackgroundColor: 'background-color', button2BackgroundColor: 'background-color', button3BackgroundColor: 'background-color', button4BackgroundColor: 'background-color' } ),
+] )( FilterSelectorEdit );

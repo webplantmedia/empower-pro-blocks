@@ -20,6 +20,12 @@
 			"default": "Our Values",
 			"selector": ".button3"
 		},
+		"button4Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Team",
+			"selector": ".button4"
+		},
 		"button1BackgroundColor": {
 			"type": "string",
 			"default": "primary"
@@ -31,6 +37,14 @@
 		"button3BackgroundColor": {
 			"type": "string",
 			"default": "primary"
+		},
+		"button4BackgroundColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttons": {
+			"type": "number",
+			"default": 3
 		}
 	}
 }

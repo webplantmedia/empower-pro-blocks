@@ -37,21 +37,12 @@ import { __ } from '@wordpress/i18n';
 const INNER_BLOCKS_TEMPLATE = [
 	[
 		'empower-pro-blocks/column',
-		{
-			className: "filter1",
-		},
 	],
 	[
 		'empower-pro-blocks/column',
-		{
-			className: "filter2",
-		},
 	],
 	[
 		'empower-pro-blocks/column',
-		{
-			className: "filter3",
-		},
 	],
 ];
 
