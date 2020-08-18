@@ -29,6 +29,7 @@ export default function save( { attributes } ) {
 		focalPoint,
 		url,
 		iconUrl,
+		iconHeight,
 		heading,
 		text,
 		button1Text,
@@ -54,6 +55,10 @@ export default function save( { attributes } ) {
 	if ( focalPoint ) {
 		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
 	}
+
+	const iconStyle = {
+		...( iconHeight ? { height: iconHeight + "px", maxHeight: iconHeight + "px" } : {} ),
+	};
 
 	const classes = classnames(
 		'wp-block-hero2__outer-wrapper',
@@ -112,7 +117,7 @@ export default function save( { attributes } ) {
 							<div className="wp-block-hero2__inner-content">
 								{ iconUrl && (
 									<figure class="wp-block-image size-large">
-										<img src={ iconUrl } alt="" class="" />
+										<img src={ iconUrl } style={ iconStyle } alt="" class="" />
 									</figure>
 								) }
 								<div class="hero2-tags">

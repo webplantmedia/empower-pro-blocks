@@ -22,6 +22,9 @@
 		"iconId": {
 			"type": "number"
 		},
+		"iconHeight": {
+			"type": "number"
+		},
 		"dimRatio": {
 			"type": "number",
 			"default": 50

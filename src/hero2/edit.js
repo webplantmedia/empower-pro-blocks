@@ -80,6 +80,7 @@ function HeroEdit( {
 		leftPillDimRatio,
 		rightPillDimRatio,
 		focalPoint,
+		iconHeight,
 		showContent,
 		url,
 		iconUrl,
@@ -95,16 +96,6 @@ function HeroEdit( {
 	const onSelectIconMedia = attributesFromIconMedia( setAttributes );
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
-
-	const style = {
-		...( backgroundType === IMAGE_BACKGROUND_TYPE
-			? backgroundImageStyles( url )
-			: {} ),
-	};
-
-	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
-	}
 
 	const controls = (
 		<>
@@ -216,8 +207,25 @@ function HeroEdit( {
 								</Button>
 							</PanelRow>
 						) }
-					</PanelBody>
-				) }
+						{ iconUrl && (
+							<Fragment>
+								<hr />
+								<RangeControl
+									label={ __( 'Icon Height' ) }
+									value={ iconHeight }
+									onChange={ ( value ) =>
+										setAttributes( {
+											iconHeight: value,
+										} )
+									}
+									min={ 0 }
+									max={ 100 }
+									step={ 10 }
+								/>
+							</Fragment>
+						) }
+						</PanelBody>
+					) }
 				<PanelColorGradientSettings
 					title={ __( 'Overlay' ) }
 					initialOpen={ true }
@@ -358,6 +366,20 @@ function HeroEdit( {
 		{ [ rightPillColor.class ]: rightPillColor.class },
 	);
 
+	const style = {
+		...( backgroundType === IMAGE_BACKGROUND_TYPE
+			? backgroundImageStyles( url )
+			: {} ),
+	};
+
+	const iconStyle = {
+		...( iconHeight ? { height: iconHeight + "px", maxHeight: iconHeight + "px" } : {} ),
+	};
+
+	if ( focalPoint ) {
+		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
+	}
+
 	return (
 		<>
 			{ controls }
@@ -382,7 +404,7 @@ function HeroEdit( {
 								<div className="wp-block-hero2__inner-content">
 									{ iconUrl && (
 										<figure class="wp-block-image size-large">
-											<img src={ iconUrl } alt="" class="" />
+											<img src={ iconUrl } style={ iconStyle } alt="" class="" />
 										</figure>
 									) }
 									<div class="hero2-tags">
