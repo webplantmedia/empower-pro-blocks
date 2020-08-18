@@ -72,14 +72,16 @@ function MaxWidthEdit( {
 	return (
 		<>
 			{ controls }
-			<div className={ classes } style={ style }>
-				<InnerBlocks
-					templateLock={ false }
-					renderAppender={
-						() => <InnerBlocks.ButtonBlockAppender />
-					}
-					__experimentalTagName="div"
-				/>
+			<div className={ classes }>
+				<div className="wp-block-max-width__inner" style={ style }>
+					<InnerBlocks
+						templateLock={ false }
+						renderAppender={
+							() => <InnerBlocks.ButtonBlockAppender />
+						}
+						__experimentalTagName="div"
+					/>
+				</div>
 			</div>
 		</>
 	);
