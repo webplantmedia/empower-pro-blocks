@@ -185,8 +185,8 @@
 	}
 }
 
-@for $i from 1 through 20 {
-	$x: 300 + ( $i * 50 );
+@for $i from 1 through 30 {
+	$x: 200 + ( $i * 50 );
 
 	.max-w-#{$x} {
 		max-width: #{$x}px !important;
