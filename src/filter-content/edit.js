@@ -86,7 +86,7 @@ function FilterEdit( {
 			<div className={ classes }>
 				<InnerBlocks 
 					template={ INNER_BLOCKS_TEMPLATE }
-					templateLock="all"
+					templateLock="insert"
 				/>
 			</div>
 		</>

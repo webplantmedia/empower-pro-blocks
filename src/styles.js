@@ -79,3 +79,8 @@ registerBlockStyle( 'core/list' , {
 	label: __( 'Medium Spacing' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/heading' , {
+	name: 'button-heading',
+	label: __( 'Button Heading' ),
+	isDefault: false,
+} );
