@@ -105,8 +105,6 @@ function empower_pro_blocks_get_css( $appearance ) {
 			color: $primary_contrast_color !important;
 		}
 
-		html .filtering > span,
-		html .filtering > div,
 		html .more-from-category a,
 		html .widget_mc4wp_form_widget input[type='submit'],
 		html .sidebar .widget_mc4wp_form_widget input[type='submit'],
@@ -133,10 +131,6 @@ function empower_pro_blocks_get_css( $appearance ) {
 			color: $primary_contrast_color;
 		}
 
-		html .filtering > span:focus,
-		html .filtering > span:hover,
-		html .filtering > div:focus,
-		html .filtering > div:hover,
 		html .more-from-category a:hover,
 		html .more-from-category a:focus,
 		html .widget_mc4wp_form_widget input[type='submit']:focus,

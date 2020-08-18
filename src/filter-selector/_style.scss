@@ -1,0 +1,15 @@
+.wp-block-empower-pro-blocks-filter-selector {
+	.wp-block-buttons {
+		display: flex;
+		flex-direction: column;
+
+		.wp-block-button {
+			margin-right: 0;
+			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

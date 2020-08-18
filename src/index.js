@@ -30,6 +30,7 @@ import * as scheduler from './scheduler';
 import * as scheduleItem from './schedule-item';
 import * as container from './container';
 import * as maxWidth from './max-width';
+import * as filterSelector from './filter-selector';
 
 /**
  * Function to register an individual block.
@@ -70,4 +71,5 @@ const registerBlock = ( block ) => {
 	scheduleItem,
 	container,
 	maxWidth,
+	filterSelector,
 ].forEach( registerBlock );
