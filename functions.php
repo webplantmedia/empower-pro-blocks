@@ -185,21 +185,25 @@ function empower_pro_blocks_init() {
 	unregister_sidebar( 'sidebar-alt' );
 
 	// Removes site layouts.
-	genesis_unregister_layout( 'content-sidebar-sidebar' );
-	genesis_unregister_layout( 'sidebar-content-sidebar' );
-	genesis_unregister_layout( 'sidebar-sidebar-content' );
+	if ( function_exists( 'genesis_unregister_layout' ) ) {
+		genesis_unregister_layout( 'content-sidebar-sidebar' );
+		genesis_unregister_layout( 'sidebar-content-sidebar' );
+		genesis_unregister_layout( 'sidebar-sidebar-content' );
+	}
 
 	// Removes output of primary navigation right extras.
 	remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 	remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
-	genesis_register_sidebar(
-		array(
-			'id'          => 'social-icons',
-			'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
-			'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
-		)
-	);
+	if ( function_exists( 'genesis_register_sidebar' ) ) {
+		genesis_register_sidebar(
+			array(
+				'id'          => 'social-icons',
+				'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
+				'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
+			)
+		);
+	}
 
 	// Repositions primary navigation menu.
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
