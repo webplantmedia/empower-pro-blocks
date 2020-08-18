@@ -1,0 +1,25 @@
+.wp-block-empower-pro-blocks-filter-content {
+	position: relative;
+
+	> .wp-block-empower-pro-blocks-column {
+		// visibility: hidden;
+		// transition: all .4s;
+		// opacity: 0;
+		position: absolute;
+		display: none;
+		// height: 100vh;
+		// overflow: hidden;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		&.active {
+			// visibility: visible;
+			display: block;
+			// opacity: 1;
+			position: relative;
+			// height: auto;
+			// overflow: visible;
+		}
+	}
+}

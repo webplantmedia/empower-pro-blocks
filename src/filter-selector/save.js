@@ -45,8 +45,8 @@ export default function save( { attributes } ) {
 	return (
 		<div className={ classes }>
 			<div className="wp-block-filter2__inner-wrap">
-				<div class="filtering wp-block-buttons" data-container=".filter-content" data-collapse="false">
-					<div class="wp-block-button is-style-text" data-filter=".filter2-1">
+				<div class="filtering wp-block-buttons item-selected" data-container=".filter-content" data-collapse="false">
+					<div class="wp-block-button is-style-text active" data-filter=".filter2-1">
 						<RichText.Content
 							tagName="a"
 							value={ button1Text }

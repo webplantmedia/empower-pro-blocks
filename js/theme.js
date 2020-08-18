@@ -213,6 +213,8 @@
 					var $container  = $( container );
 					var filterValue = $this.attr( 'data-filter' );
 
+					console.log($container);
+
 					if ( $container.length ) {
 						$target = $container.find( filterValue );
 					}
