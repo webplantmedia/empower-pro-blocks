@@ -37,6 +37,9 @@ import { __ } from '@wordpress/i18n';
 const INNER_BLOCKS_TEMPLATE = [
 	[
 		'empower-pro-blocks/container',
+		{
+			className: "active",
+		},
 	],
 	[
 		'empower-pro-blocks/container',
