@@ -56,7 +56,7 @@ export default function save( { attributes } ) {
 	const classes = classnames( 
 		slantBackgroundColorClassName, 
 		{ [ "has-background-color" ]: slantBackgroundColorClassName },
-		{ [ 'display-' + slant + '-slant' ]: slant !== "", },
+		slant ? 'display-' + slant + '-slant' : {},
 	);
 
 	const innerClasses = classnames(

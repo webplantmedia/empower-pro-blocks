@@ -278,7 +278,7 @@ function BackgroundEdit( {
 	const classes = classnames( className, 
 		{ [ slantBackgroundColor.class ]: slantBackgroundColor.class, },
 		{ [ 'has-background-color' ]: slantBackgroundColor.class, },
-		{ [ 'display-' + slant + '-slant' ]: slant !== "", }
+		slant ? 'display-' + slant + '-slant' : {},
 	);
 
 	const innerClasses = classnames(
