@@ -84,3 +84,8 @@ registerBlockStyle( 'core/heading' , {
 	label: __( 'Button Heading' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/cover' , {
+	name: 'spotlight',
+	label: __( 'Spotlight' ),
+	isDefault: false,
+} );

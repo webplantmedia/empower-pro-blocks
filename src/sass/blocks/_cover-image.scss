@@ -60,6 +60,6 @@
 	color: #fff !important;
 }
 
-.ab-block-container.hero-section .has-background-dim {
-	opacity: 1;
+.wp-block-cover.is-style-spotlight {
+	@include box-shadow( $weight: 'heavy' );
 }
