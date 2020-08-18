@@ -19,6 +19,7 @@ export const settings = {
 	title: __( 'Max Width' ),
 	icon,
 	supports: {
+		align: ["full", "wide"],
 		html: false,
 	},
 	save,

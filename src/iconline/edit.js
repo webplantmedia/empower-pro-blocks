@@ -197,7 +197,7 @@ function IconLineBlock( {
 								iconSize: value,
 							} )
 						}
-						min={ 7 }
+						min={ 0 }
 						max={ 150 }
 						step={ 1 }
 					/>
