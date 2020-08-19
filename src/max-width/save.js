@@ -27,7 +27,7 @@ export default function save( { attributes } ) {
 	};
 
 	return (
-		<div className={ classes } style={ style }>
+		<div className={ classes }>
 			<div className="wp-block-max-width__inner" style={ style }>
 				<InnerBlocks.Content />
 			</div>

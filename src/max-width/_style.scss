@@ -1,4 +1,6 @@
 .wp-block-empower-pro-blocks-max-width {
-	margin-left: auto;
-	margin-right: auto;
+	.wp-block-max-width__inner {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
