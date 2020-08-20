@@ -6,6 +6,9 @@
 			"type": "string",
 			"default": "primary"
 		},
+		"backgroundColor": {
+			"type": "string"
+		},
 		"containerSize": {
 			"type": "string"
 		},

@@ -111,10 +111,11 @@ function ContainerEdit( {
 		}
 	);
 
-	const innerClasses = classnames( 'wp-block-container__inner-content', {
-		[ backgroundColor.class ]: backgroundColor.class,
-		[ 'has-background-color' ]: backgroundColor.class,
-	} );
+	const innerClasses = classnames(
+		'wp-block-container__inner-content',
+		{ [ backgroundColor.class ]: backgroundColor.class, },
+		{ [ 'has-background-color' ]: backgroundColor.class, },
+	);
 
 	return (
 		<>

@@ -52,7 +52,6 @@ export default function save( { attributes } ) {
 		'wp-block-button__link',
 		getColorClassName( 'background-color', button4BackgroundColor ),
 	)
-	console.log(buttons);
 
 	return (
 		<div className={ classes }>
