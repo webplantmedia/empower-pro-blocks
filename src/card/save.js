@@ -43,7 +43,7 @@ export default function save( { attributes } ) {
 
 	const classes = classnames(
 		'wp-block-card__outer-wrapper',
-		'plain' === cardStyle ? 'is-plain-style' : {},
+		cardStyle ? 'is-' + cardStyle + '-style' : {},
 		getColorClassName( 'card-color', cardColor ),
 	);
 

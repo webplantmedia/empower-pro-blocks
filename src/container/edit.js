@@ -72,6 +72,7 @@ function ContainerEdit( {
 						options={ [
 							{ value: "", label: __( "Default" ) },
 							{ value: "plain", label: __( "Plain" ) },
+							{ value: "border", label: __( "Border" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { containerStyle: value } ) }
 					/>
@@ -104,7 +105,7 @@ function ContainerEdit( {
 
 	const classes = classnames( className, 
 		'wp-block-container__outer-wrapper',
-		'plain' === containerStyle ? 'is-plain-style' : {},
+		containerStyle ? 'is-' + containerStyle + '-style' : {},
 		'small' === containerSize ? 'is-small-size' : {},
 		{
 			[ containerColor.class ]: containerColor.class,

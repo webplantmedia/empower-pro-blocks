@@ -198,6 +198,7 @@ function CardEdit( {
 						options={ [
 							{ value: "", label: __( "Default" ) },
 							{ value: "plain", label: __( "Plain" ) },
+							{ value: "border", label: __( "Border" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
 					/>
@@ -265,7 +266,7 @@ function CardEdit( {
 
 	const classes = classnames( className, 
 		'wp-block-card__outer-wrapper',
-		'plain' === cardStyle ? 'is-plain-style' : {},
+		cardStyle ? 'is-' + cardStyle + '-style' : {},
 		{
 			[ cardColor.class ]: cardColor.class,
 		}

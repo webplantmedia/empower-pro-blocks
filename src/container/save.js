@@ -24,7 +24,7 @@ export default function save( { attributes } ) {
 
 	const classes = classnames(
 		'wp-block-container__outer-wrapper',
-		'plain' === containerStyle ? 'is-plain-style' : {},
+		containerStyle ? 'is-' + containerStyle + '-style' : {},
 		'small' === containerSize ? 'is-small-size' : {},
 		getColorClassName( 'container-color', containerColor ),
 	);
