@@ -89,6 +89,7 @@ function FilterEdit( {
 								value={ button1Text }
 								onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 								className="button1"
+								withoutInteractiveFormatting
 							/>
 						</div>
 						<div data-filter=".filter2">
@@ -99,6 +100,7 @@ function FilterEdit( {
 								value={ button2Text }
 								onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 								className="button2"
+								withoutInteractiveFormatting
 							/>
 						</div>
 						<div data-filter=".filter3">
@@ -109,6 +111,7 @@ function FilterEdit( {
 								value={ button3Text }
 								onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 								className="button3"
+								withoutInteractiveFormatting
 							/>
 						</div>
 					</div>

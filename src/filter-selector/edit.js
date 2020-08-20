@@ -181,6 +181,7 @@ function FilterSelectorEdit( {
 								value={ button1Text }
 								onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 								className={ button1Classes }
+								withoutInteractiveFormatting
 							/>
 						</div>
 						<div class="wp-block-button is-style-text" data-filter=".filter-selector-2">
@@ -190,18 +191,20 @@ function FilterSelectorEdit( {
 								value={ button2Text }
 								onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 								className={ button2Classes }
+								withoutInteractiveFormatting
 							/>
 						</div>
 						{ buttons > 2 && (
-						<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
-							<RichText
-								tagName="a"
-								placeholder={ __( 'Button 3' ) }
-								value={ button3Text }
-								onChange={ ( value ) => setAttributes( { button3Text: value } ) }
-								className={ button3Classes }
-							/>
-						</div>
+							<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
+								<RichText
+									tagName="a"
+									placeholder={ __( 'Button 3' ) }
+									value={ button3Text }
+									onChange={ ( value ) => setAttributes( { button3Text: value } ) }
+									className={ button3Classes }
+									withoutInteractiveFormatting
+								/>
+							</div>
 						) }
 						{ buttons > 3 && (
 							<div class="wp-block-button is-style-text" data-filter=".filter-selector-4">
@@ -211,6 +214,7 @@ function FilterSelectorEdit( {
 									value={ button4Text }
 									onChange={ ( value ) => setAttributes( { button4Text: value } ) }
 									className={ button4Classes }
+									withoutInteractiveFormatting
 								/>
 							</div>
 						) }

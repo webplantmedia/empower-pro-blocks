@@ -285,6 +285,7 @@ function ScheduleItemBlock( {
 							onChange={ ( value ) => setAttributes( { heading: value } ) }
 							className={ headingClasses }
 							tagName="span"
+							withoutInteractiveFormatting
 						/>
 						<span class="icon-text-wrapper">
 							<RichText
@@ -293,6 +294,7 @@ function ScheduleItemBlock( {
 								onChange={ ( value ) => setAttributes( { text: value } ) }
 								tagName="span"
 								className={ subHeadingClasses }
+								withoutInteractiveFormatting
 							/>
 						</span>
 						<RichText
@@ -301,6 +303,7 @@ function ScheduleItemBlock( {
 							onChange={ ( value ) => setAttributes( { info: value } ) }
 							tagName="span"
 							className="icon-info"
+							withoutInteractiveFormatting
 						/>
 					</div>
 				</div>

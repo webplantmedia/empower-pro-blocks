@@ -414,6 +414,7 @@ function HeroEdit( {
 											value={ button1Text }
 											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 											className="button1"
+											withoutInteractiveFormatting
 										/>
 										<RichText
 											tagName="span"
@@ -421,6 +422,7 @@ function HeroEdit( {
 											value={ button2Text }
 											onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 											className="button2"
+											withoutInteractiveFormatting
 										/>
 										<RichText
 											tagName="span"
@@ -428,6 +430,7 @@ function HeroEdit( {
 											value={ button3Text }
 											onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 											className="button3"
+											withoutInteractiveFormatting
 										/>
 									</div>
 									<RichText
@@ -436,6 +439,7 @@ function HeroEdit( {
 										placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
 										onChange={ ( value ) => setAttributes( { heading: value } ) }
 										value={ heading }
+										withoutInteractiveFormatting
 									/>
 									<RichText
 										tagName="p"
