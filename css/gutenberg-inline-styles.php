@@ -181,7 +181,6 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 		html .ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-more-link,
 		html .ab-block-post-grid .ab-block-post-grid-link.ab-text-link {
 			border-color: $primary_color !important;
-			color: $primary_color !important;
 		}
 
 		html .ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-more-link:hover,

@@ -278,7 +278,6 @@ function empower_pro_blocks_get_css( $appearance ) {
 		html a.button.text {
 			background-color: transparent !important;
 			border-bottom: 2px solid $primary_color;
-			color: $primary_color;
 		}
 
 		html a.more-link:focus,
