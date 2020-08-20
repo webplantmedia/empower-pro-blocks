@@ -75,7 +75,7 @@ function FilterSelectorEdit( {
 								buttons: value,
 							} )
 						}
-						min={ 3 }
+						min={ 2 }
 						max={ 4 }
 						step={ 1 }
 					/>
