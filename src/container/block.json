@@ -6,6 +6,9 @@
 			"type": "string",
 			"default": "primary"
 		},
+		"containerSize": {
+			"type": "string"
+		},
 		"containerStyle": {
 			"type": "string"
 		}

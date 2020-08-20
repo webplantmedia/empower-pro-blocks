@@ -46,6 +46,7 @@ function ContainerEdit( {
 } ) {
 	const {
 		containerStyle,
+		containerSize,
 	} = attributes;
 
 	const controls = (
@@ -70,8 +71,18 @@ function ContainerEdit( {
 						value={ containerStyle }
 						options={ [
 							{ value: "", label: __( "Default" ) },
+							{ value: "plain", label: __( "Plain" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { containerStyle: value } ) }
+					/>
+					<SelectControl
+						label={ __( "Size" ) }
+						value={ containerSize }
+						options={ [
+							{ value: "", label: __( "Default" ) },
+							{ value: "small", label: __( "Small" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { containerSize: value } ) }
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
@@ -94,6 +105,7 @@ function ContainerEdit( {
 	const classes = classnames( className, 
 		'wp-block-container__outer-wrapper',
 		'plain' === containerStyle ? 'is-plain-style' : {},
+		'small' === containerSize ? 'is-small-size' : {},
 		{
 			[ containerColor.class ]: containerColor.class,
 		}
