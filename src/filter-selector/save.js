@@ -72,13 +72,15 @@ export default function save( { attributes } ) {
 							className={ button2Classes }
 						/>
 					</div>
-					<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
-						<RichText.Content
-							tagName="a"
-							value={ button3Text }
-							className={ button3Classes }
-						/>
-					</div>
+					{ buttons > 2 && (
+						<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
+							<RichText.Content
+								tagName="a"
+								value={ button3Text }
+								className={ button3Classes }
+							/>
+						</div>
+					) }
 					{ buttons > 3 && (
 						<div class="wp-block-button is-style-text" data-filter=".filter-selector-4">
 							<RichText.Content

@@ -106,19 +106,21 @@ function FilterSelectorEdit( {
 					] }
 				>
 				</PanelColorGradientSettings>
-				<PanelColorGradientSettings
-					title={ __( 'Button 3 Background Color' ) }
-					initialOpen={ true }
-					settings={ [
-						{
-							colorValue: button3BackgroundColor.color,
-							onColorChange: setButton3BackgroundColor,
-							disableCustomColors: true,
-							label: __( 'Color' ),
-						},
-					] }
-				>
-				</PanelColorGradientSettings>
+				{ buttons > 2 && (
+					<PanelColorGradientSettings
+						title={ __( 'Button 3 Background Color' ) }
+						initialOpen={ true }
+						settings={ [
+							{
+								colorValue: button3BackgroundColor.color,
+								onColorChange: setButton3BackgroundColor,
+								disableCustomColors: true,
+								label: __( 'Color' ),
+							},
+						] }
+					>
+					</PanelColorGradientSettings>
+				) }
 				{ buttons > 3 && (
 					<PanelColorGradientSettings
 						title={ __( 'Button 4 Background Color' ) }
@@ -190,6 +192,7 @@ function FilterSelectorEdit( {
 								className={ button2Classes }
 							/>
 						</div>
+						{ buttons > 2 && (
 						<div class="wp-block-button is-style-text" data-filter=".filter-selector-3">
 							<RichText
 								tagName="a"
@@ -199,6 +202,7 @@ function FilterSelectorEdit( {
 								className={ button3Classes }
 							/>
 						</div>
+						) }
 						{ buttons > 3 && (
 							<div class="wp-block-button is-style-text" data-filter=".filter-selector-4">
 								<RichText
