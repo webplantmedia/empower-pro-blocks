@@ -222,6 +222,8 @@ blockquote.wp-block-quote.is-style-large cite,
 	opacity: 0.2 !important;
 }
 
+.wp-block-quote.is-style-white-quote .wp-block-quote__citation,
+.wp-block-quote.is-style-white-quote .wp-block-quote__citation::before,
 .is-style-white-quote cite,
 .quote-icon-white-color cite {
 	color: #fff !important;
