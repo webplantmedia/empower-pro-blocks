@@ -250,6 +250,10 @@ blockquote.wp-block-quote.is-style-large cite,
 	background-image: url(../images/quote-burgundy.svg) !important;
 }
 
+.is-style-deep-red-quote::before {
+	background-image: url(../images/quote-deepred.svg) !important;
+}
+
 // .is-style-hide-quote::after,
 .is-style-hide-quote::before,
 .hide-quote-icon::before {

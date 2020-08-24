@@ -30,6 +30,11 @@ registerBlockStyle( 'core/quote' , {
 	isDefault: false,
 } );
 registerBlockStyle( 'core/quote' , {
+	name: 'deep-red-quote',
+	label: __( 'Deep Red' ),
+	isDefault: false,
+} );
+registerBlockStyle( 'core/quote' , {
 	name: 'burgundy-quote',
 	label: __( 'Burgundy' ),
 	isDefault: false,
