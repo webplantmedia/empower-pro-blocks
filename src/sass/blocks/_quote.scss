@@ -222,6 +222,11 @@ blockquote.wp-block-quote.is-style-large cite,
 	opacity: 0.2 !important;
 }
 
+.is-style-white-quote cite,
+.quote-icon-white-color cite {
+	color: #fff !important;
+}
+
 .is-style-purple-quote::before,
 .quote-icon-purple-color::before {
 	background-image: url(../images/quote-purple.svg) !important;
