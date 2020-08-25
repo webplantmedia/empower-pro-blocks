@@ -101,6 +101,13 @@ function HeroEdit( {
 		<>
 			<BlockControls>
 				<MediaReplaceFlow
+					mediaId={ iconId }
+					allowedTypes={ [ 'image' ] }
+					accept="image/*"
+					onSelect={ onSelectIconMedia }
+					name="Icon"
+				/>
+				<MediaReplaceFlow
 					mediaId={ id }
 					mediaURL={ url }
 					allowedTypes={ ALLOWED_MEDIA_TYPES }

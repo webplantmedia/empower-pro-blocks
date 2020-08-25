@@ -51,11 +51,16 @@
 				}
 			}
 
+			& > *:first-child {
+				margin-top: 20px;
+			}
+
 		}
 
 		.hero2-content .wp-block-image {
 			text-align: right;
 			margin-bottom: 26px;
+			margin-top: 0 !important;
 			// display: block;
 		}
 	}
