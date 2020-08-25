@@ -120,29 +120,31 @@ export default function save( { attributes } ) {
 										<img src={ iconUrl } style={ iconStyle } alt="" class="" />
 									</figure>
 								) }
-								<div class="hero2-tags">
-									{ button1Text && (
-										<RichText.Content
-											tagName="span"
-											value={ button1Text }
-											className="button1"
-										/>
-									) }
-									{ button2Text && (
-										<RichText.Content
-											tagName="span"
-											value={ button2Text }
-											className="button2"
-										/>
-									) }
-									{ button3Text && (
-										<RichText.Content
-											tagName="span"
-											value={ button3Text }
-											className="button3"
-										/>
-									) }
-								</div>
+								{ ( button1Text || button2Text || button3Text ) && (
+									<div class="hero2-tags">
+										{ button1Text && (
+											<RichText.Content
+												tagName="span"
+												value={ button1Text }
+												className="button1"
+											/>
+										) }
+										{ button2Text && (
+											<RichText.Content
+												tagName="span"
+												value={ button2Text }
+												className="button2"
+											/>
+										) }
+										{ button3Text && (
+											<RichText.Content
+												tagName="span"
+												value={ button3Text }
+												className="button3"
+											/>
+										) }
+									</div>
+								) }
 								<RichText.Content
 									tagName="h1"
 									className="hero2-heading mb-20"

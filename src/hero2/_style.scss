@@ -55,7 +55,7 @@
 
 		.hero2-content .wp-block-image {
 			text-align: right;
-			margin-bottom: 0;
+			margin-bottom: 26px;
 			// display: block;
 		}
 	}
@@ -328,7 +328,7 @@
 	.hero2-tags {
 		display: inline-block;
 		vertical-align: middle;
-		margin-top: 26px;
+		margin-top: 0;
 		margin-bottom: 20px;
 		@include button-font;
 
