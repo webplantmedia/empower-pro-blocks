@@ -16,7 +16,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Video' ),
+	title: __( 'Hero Video' ),
 	icon,
 	supports: {
 		align: ["full"],
