@@ -63,6 +63,16 @@
 			@include circle-crop;
 		}
 
+		&.image-style-hex,
+		&.image-style-circle {
+			.button-icon-inner {
+				@media screen and ( max-width: $mobile_width ) {
+					width: 64px !important;
+					height: 64px !important;
+				}
+			}
+		}
+
 		svg {
 			fill: $text_color;
 		}
