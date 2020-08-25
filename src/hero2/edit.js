@@ -410,7 +410,7 @@ function HeroEdit( {
 									<div class="hero2-tags">
 										<RichText
 											tagName="span"
-											placeholder={ __( 'Button 1' ) }
+											placeholder={ __( 'Text 1' ) }
 											value={ button1Text }
 											onChange={ ( value ) => setAttributes( { button1Text: value } ) }
 											className="button1"
@@ -418,7 +418,7 @@ function HeroEdit( {
 										/>
 										<RichText
 											tagName="span"
-											placeholder={ __( 'Button 2' ) }
+											placeholder={ __( 'Text 2' ) }
 											value={ button2Text }
 											onChange={ ( value ) => setAttributes( { button2Text: value } ) }
 											className="button2"
@@ -426,7 +426,7 @@ function HeroEdit( {
 										/>
 										<RichText
 											tagName="span"
-											placeholder={ __( 'Button 3' ) }
+											placeholder={ __( 'Text 3' ) }
 											value={ button3Text }
 											onChange={ ( value ) => setAttributes( { button3Text: value } ) }
 											className="button3"

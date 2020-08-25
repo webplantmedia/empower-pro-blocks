@@ -121,21 +121,27 @@ export default function save( { attributes } ) {
 									</figure>
 								) }
 								<div class="hero2-tags">
-									<RichText.Content
-										tagName="span"
-										value={ button1Text }
-										className="button1"
-									/>
-									<RichText.Content
-										tagName="span"
-										value={ button2Text }
-										className="button2"
-									/>
-									<RichText.Content
-										tagName="span"
-										value={ button3Text }
-										className="button3"
-									/>
+									{ button1Text && (
+										<RichText.Content
+											tagName="span"
+											value={ button1Text }
+											className="button1"
+										/>
+									) }
+									{ button2Text && (
+										<RichText.Content
+											tagName="span"
+											value={ button2Text }
+											className="button2"
+										/>
+									) }
+									{ button3Text && (
+										<RichText.Content
+											tagName="span"
+											value={ button3Text }
+											className="button3"
+										/>
+									) }
 								</div>
 								<RichText.Content
 									tagName="h1"
