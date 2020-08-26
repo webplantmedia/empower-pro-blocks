@@ -32,6 +32,7 @@ import * as container from './container';
 import * as maxWidth from './max-width';
 import * as filterSelector from './filter-selector';
 import * as filterContent from './filter-content';
+import * as videoPlayer from './video-player';
 
 /**
  * Function to register an individual block.
@@ -74,4 +75,5 @@ const registerBlock = ( block ) => {
 	maxWidth,
 	filterSelector,
 	filterContent,
+	videoPlayer,
 ].forEach( registerBlock );

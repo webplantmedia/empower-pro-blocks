@@ -1,0 +1,53 @@
+.wp-block-empower-pro-blocks-video-player {
+	.video-player {
+		position: relative;
+		display: block;
+
+		> .wp-block-video-player__inner-container {
+			border-radius: $border_radius;
+			background-color: $body_background_color;
+			box-shadow: 6px 32px 36px rgba(0,0,0,.2);
+			overflow: hidden;
+
+			@media only screen and ( min-width: $ipad_width_1 ) {
+				position: absolute;
+				width: 600px;
+				left: 50px;
+				top: 0;
+				overflow: visible;
+			}
+
+			.wp-block-image {
+				position: absolute;
+				top: 3px;
+				right: 0;
+				width: 600px;
+				margin: 0;
+
+				@media only screen and ( max-width: $ipad_width ) {
+					width: 100%;
+				}
+				
+				img {
+					border-top-left-radius: $border_radius;
+					border-top-right-radius: $border_radius;
+				}
+			}
+			.wp-block-video {
+				position: relative;
+				width: 100%;
+				max-width: 600px;
+				margin-top: 18px;
+				min-height: 300px;
+				margin-bottom: 0;
+
+				video {
+					vertical-align: top;
+					border-bottom-left-radius: $border_radius;
+					border-bottom-right-radius: $border_radius;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "empower-pro-blocks/video-player",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"url": {
+			"type": "string"
+		},
+		"id": {
+			"type": "number"
+		},
+		"topVideoImage": {
+			"type": "string",
+			"default": "/images/browser-ui-top.svg"
+		}
+	}
+}
