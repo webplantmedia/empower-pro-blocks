@@ -12,9 +12,12 @@ import {
 	Button,
 	PanelRow,
 	RangeControl,
+	Disabled,
 	TextControl,
 	withNotices,
 } from '@wordpress/components';
+
+import VideoCommonSettings from './edit-common-settings';
 
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes';
 import {
@@ -58,6 +61,13 @@ function VideoPlayerEdit( {
 		id,
 		url,
 		topVideoImage,
+		autoplay,
+		controls,
+		loop,
+		muted,
+		poster,
+		preload,
+		playsInline,
 	} = attributes;
 
 	const onSelectMedia = attributesFromMedia( setAttributes );
@@ -76,7 +86,7 @@ function VideoPlayerEdit( {
 	);
 
 
-	const controls = (
+	const blockControls = (
 		<>
 			<BlockControls>
 				<MediaReplaceFlow
@@ -120,6 +130,12 @@ function VideoPlayerEdit( {
 						</PanelRow>
 					) }
 				</PanelBody>
+				<PanelBody title={ __( 'Video settings' ) }>
+					<VideoCommonSettings
+						setAttributes={ setAttributes }
+						attributes={ attributes }
+					/>
+				</PanelBody>
 			</InspectorControls>
 		</>
 	);
@@ -133,7 +149,7 @@ function VideoPlayerEdit( {
 
 	return (
 		<>
-			{ controls }
+			{ blockControls }
 			<div className={ classes }>
 				<div class="wp-block-video-player__inner-container">
 					<figure class="wp-block-image size-full">
@@ -141,13 +157,14 @@ function VideoPlayerEdit( {
 					</figure>
 					<figure class="wp-block-video">
 						{ url && (
-							<video
-								className="wp-block-hero__video-background"
-								autoPlay
-								muted
-								loop
-								src={ url }
-							/>
+							<Disabled>
+								<video
+									className="wp-block-hero__video-background"
+									controls={ controls }
+									poster={ poster }
+									src={ url }
+								/>
+							</Disabled>
 						) }
 					</figure>
 				</div>

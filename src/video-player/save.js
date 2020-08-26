@@ -27,6 +27,13 @@ export default function save( { attributes } ) {
 	const {
 		url,
 		topVideoImage,
+		autoplay,
+		controls,
+		loop,
+		muted,
+		poster,
+		preload,
+		playsInline,
 	} = attributes;
 
 	const classes = classnames(
@@ -45,10 +52,14 @@ export default function save( { attributes } ) {
 					{ url && (
 						<video
 							className="wp-block-hero__video-background"
-							autoPlay
-							muted
-							loop
+							autoPlay={ autoplay }
+							controls={ controls }
+							loop={ loop }
+							muted={ muted }
+							poster={ poster }
+							preload={ preload !== 'metadata' ? preload : undefined }
 							src={ url }
+							playsInline={ playsInline }
 						/>
 					) }
 				</figure>
