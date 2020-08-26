@@ -718,8 +718,8 @@ html .sticky-scroll .scroll-highlight.ab-block-container .ab-container-inside {
 }
 
 // Pricing Guide
-table.wp-block-table.program-guide,
-table.wp-block-table.pricing-guide {
+.wp-block-table.program-guide table,
+.wp-block-table.pricing-guide table {
 	table-layout: fixed;
 
 	thead tr {
@@ -801,8 +801,8 @@ table.wp-block-table.pricing-guide {
 	}
 }
 
-table.wp-block-table.program-guide,
-table.wp-block-table.pricing-guide {
+.wp-block-table.program-guide table,
+.wp-block-table.pricing-guide table {
 	tr.sub-head {
 		td {
 			background-color: $body_background_color_two;
@@ -903,10 +903,14 @@ table.wp-block-table.pricing-guide {
 	}
 }
 
-table.wp-block-table.program-guide {
+.wp-block-table.program-guide table {
 	box-shadow: none;
 	position: relative;
 	margin-top: 25px;
+
+	@media screen and ( max-width: $tablet_width ) {
+		margin-top: 0;
+	}
 
 	tr {
 		border-bottom: $table_border_width solid $table_border_color;
@@ -945,17 +949,18 @@ table.wp-block-table.program-guide {
 
 	thead {
 		td.sub-title {
-			position: -webkit-sticky;
-			position: sticky;
-			top: $nav_height + 160;
-			z-index: 10;
-			background: rgba( 255, 255, 255, 0.9);
-			// @include vertical-gradient($body_background_color, transparent, 80%, 100%);
+			// position: -webkit-sticky;
+			// position: sticky;
+			// top: $nav_height + 160;
+			// z-index: 10;
+			// background: rgba( 255, 255, 255, 0.9);
 
-			@media screen and ( max-width: $ipad_width ) {
-				position: relative;
-				top: auto !important;
-			}
+			// // @include vertical-gradient($body_background_color, transparent, 80%, 100%);
+
+			// @media screen and ( max-width: $ipad_width ) {
+				// position: relative;
+				// top: auto !important;
+			// }
 		}
 	}
 	tfoot {
@@ -1095,11 +1100,10 @@ table.wp-block-table.program-guide {
 }
 
 .admin-bar {
-	table.wp-block-table.program-guide {
+	.wp-block-table.program-guide table {
 		thead {
 			td {
-				top: $nav_height + 160 + 32;
-
+				// top: $nav_height + 160 + 32;
 			}
 		}
 	}
