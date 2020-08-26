@@ -64,28 +64,31 @@
 			border-radius: $border_radius;
 			background-color: $body_background_color;
 			box-shadow: 6px 32px 36px rgba(0,0,0,.2);
-			overflow: hidden;
+			position: absolute;
+			width: 600px;
+			left: 50px;
+			top: 0px;
+			// overflow: hidden;
 
-			@media only screen and ( min-width: $ipad_width_1 ) {
-				position: absolute;
-				width: 600px;
-				left: 50px;
-				top: 0;
-				overflow: visible;
+			@media only screen and ( max-width: $ipad_width ) {
+				top: -50px;
+				width: 450px;
+			}
+
+			@media only screen and ( max-width: $tablet_width ) {
+				// overflow: visible;
+				position: relative;
+				left: auto;
+				top: auto;
+				width: 100%;
 			}
 
 			.wp-block-image {
-				position: absolute;
-				top: 3px;
-				right: 0;
-				width: 600px;
 				margin: 0;
 
-				@media only screen and ( max-width: $ipad_width ) {
-					width: 100%;
-				}
-				
-				img {
+				> * {
+					display: block;
+					vertical-align: top;
 					border-top-left-radius: $border_radius;
 					border-top-right-radius: $border_radius;
 				}
@@ -94,8 +97,7 @@
 				position: relative;
 				width: 100%;
 				max-width: 600px;
-				margin-top: 18px;
-				min-height: 300px;
+				margin-top: 0;
 				margin-bottom: 0;
 
 				video {
