@@ -3,6 +3,7 @@
  */
 import classnames from 'classnames';
 
+import { useCallback } from '@wordpress/element';
 /**
  * WordPress dependencies
  */
@@ -61,6 +62,20 @@ function VideoPlayerEdit( {
 
 	const onSelectMedia = attributesFromMedia( setAttributes );
 
+	const onSelectURL = useCallback(
+		( newURL ) => {
+			if ( newURL !== url ) {
+				setAttributes( {
+					url: newURL,
+					id: undefined,
+					backgroundType: undefined,
+				} );
+			}
+		},
+		[ url, setAttributes ]
+	);
+
+
 	const controls = (
 		<>
 			<BlockControls>
@@ -70,6 +85,7 @@ function VideoPlayerEdit( {
 					allowedTypes={ ALLOWED_MEDIA_TYPES }
 					accept="video/*"
 					onSelect={ onSelectMedia }
+					onSelectURL={ onSelectURL }
 					name="Video"
 				/>
 			</BlockControls>

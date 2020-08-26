@@ -45,9 +45,6 @@ export function attributesFromMedia( setAttributes ) {
 			url: media.url,
 			id: media.id,
 			backgroundType: mediaType,
-			...( mediaType === VIDEO_BACKGROUND_TYPE
-				? { focalPoint: undefined, hasParallax: undefined }
-				: {} ),
 		} );
 	};
 }
