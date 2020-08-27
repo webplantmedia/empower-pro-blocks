@@ -1,0 +1,23 @@
+{
+	"name": "empower-pro-blocks/accordion-item",
+	"category": "abilitie-blocks",
+	"attributes": {
+		"marginBottom": {
+			"type": "number",
+			"default": ""
+		},
+		"level": {
+			"type": "number",
+			"default": 4
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"default": "",
+			"selector": ".icon-heading"
+		},
+		"headingColor": {
+			"type": "string"
+		}
+	}
+}

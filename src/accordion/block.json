@@ -1,0 +1,12 @@
+{
+	"name": "empower-pro-blocks/accordion",
+	"category": "abilitie-blocks",
+	"attributes": {
+	},
+	"supports": {
+		"align": [
+			"wide"
+		],
+		"lightBlockWrapper": false
+	}
+}

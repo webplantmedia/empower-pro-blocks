@@ -33,6 +33,8 @@ import * as maxWidth from './max-width';
 import * as filterSelector from './filter-selector';
 import * as filterContent from './filter-content';
 import * as videoPlayer from './video-player';
+import * as accordion from './accordion';
+import * as accordionItem from './accordion-item';
 
 /**
  * Function to register an individual block.
@@ -76,4 +78,6 @@ const registerBlock = ( block ) => {
 	filterSelector,
 	filterContent,
 	videoPlayer,
+	accordion,
+	accordionItem,
 ].forEach( registerBlock );
