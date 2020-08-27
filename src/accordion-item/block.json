@@ -14,10 +14,14 @@
 			"type": "string",
 			"source": "html",
 			"default": "",
-			"selector": ".icon-heading"
+			"selector": ".accordion-heading"
 		},
 		"headingColor": {
 			"type": "string"
+		},
+		"accordionOpen": {
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

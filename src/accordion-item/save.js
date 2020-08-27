@@ -8,7 +8,7 @@ import classnames from 'classnames';
  */
 import {
 	RichText,
-	getFontSizeClass,
+	InnerBlocks,
 	getColorClassName,
 } from '@wordpress/block-editor';
 
@@ -20,6 +20,7 @@ export default function save( { attributes } ) {
 		level,
 		heading,
 		headingColor,
+		accordionOpen,
 	} = attributes;
 
 	const classes = classnames(
@@ -28,7 +29,8 @@ export default function save( { attributes } ) {
 
 	const headingClasses = classnames(
 		'accordion-heading', 
-		getColorClassName( 'heading-color', headingColor ),
+		{ [ 'has-text-color' ]: headingColor, },
+		getColorClassName( 'text-color', headingColor ),
 	);
 
 	const tagName = 'h' + level;
@@ -37,21 +39,21 @@ export default function save( { attributes } ) {
 		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
 	};
 
-	const fontSizeClass = getFontSizeClass( fontSize );
-
 	return (
 		<div style={ containerStyle } className={ classes }>
 			<div className="wp-block-accordion-item__inner-wrap">
-				<div class="wp-block-accordion-item__heading-wrap">
-					<RichText.Content
-						tagName={ tagName }
-						value={ heading }
-						className={ headingClasses }
-					/>
-				</div>
-				<div class="wp-block-accordion-item__text-wrap">
-					<InnerBlocks.Content />
-				</div>
+				<details open={ accordionOpen }>
+					<summary className="wp-block-accordion-item__title">
+						<RichText.Content
+							tagName={ tagName }
+							value={ heading }
+							className={ headingClasses }
+						/>
+					</summary>
+					<div className="wp-block-accordion-item__text">
+						<InnerBlocks.Content />
+					</div>
+				</details>
 			</div>
 		</div>
 	);

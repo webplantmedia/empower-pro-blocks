@@ -31,6 +31,7 @@ import {
 	BlockControls,
 	FontSizePicker,
 	InspectorControls,
+	InnerBlocks,
 	withFontSizes,
 	MediaUpload,
 	withColors,
@@ -53,6 +54,7 @@ function AccordionItemBlock( {
 		marginBottom,
 		heading,
 		level,
+		accordionOpen,
 	} = attributes;
 
 	const controls = (
@@ -104,7 +106,8 @@ function AccordionItemBlock( {
 
 	const headingClasses = classnames( 
 		'accordion-heading', 
-		{ [ headingColor.class ]: headingColor.class, }
+		{ [ 'has-text-color' ]: headingColor.class, },
+		{ [ headingColor.class ]: headingColor.class, },
 	);
 
 	const containerStyle = {
@@ -118,24 +121,26 @@ function AccordionItemBlock( {
 			{ controls }
 			<div style={ containerStyle } className={ classes }>
 				<div className="wp-block-accordion-item__inner-wrap">
-					<div class="wp-block-accordion-item__heading-wrap">
-						<RichText
-							placeholder={ __( 'Heading' ) }
-							value={ heading }
-							onChange={ ( value ) => setAttributes( { heading: value } ) }
-							className={ headingClasses }
-							tagName={ tagName }
-						/>
-					</div>
-					<div class="wp-block-accordion-item__text-wrap">
-						<InnerBlocks
-							templateLock={ false }
-							renderAppender={
-								() => <InnerBlocks.ButtonBlockAppender />
-							}
-							__experimentalTagName="div"
-						/>
-					</div>
+					<details open={ accordionOpen }>
+						<summary className="wp-block-accordion-item__title">
+							<RichText
+								placeholder={ __( 'Heading' ) }
+								value={ heading }
+								onChange={ ( value ) => setAttributes( { heading: value } ) }
+								className={ headingClasses }
+								tagName={ tagName }
+							/>
+						</summary>
+						<div className="wp-block-accordion-item__text">
+							<InnerBlocks
+								templateLock={ false }
+								renderAppender={
+									() => <InnerBlocks.ButtonBlockAppender />
+								}
+								__experimentalTagName="div"
+							/>
+						</div>
+					</details>
 				</div>
 			</div>
 		</>
@@ -143,7 +148,7 @@ function AccordionItemBlock( {
 }
 
 const AccordionItemEdit = compose( [
-	withColors( { headingColor: 'heading-color' } ),
+	withColors( { headingColor: 'text-color' } ),
 ] )( AccordionItemBlock );
 
 export default AccordionItemEdit;
