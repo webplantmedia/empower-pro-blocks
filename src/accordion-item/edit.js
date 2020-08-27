@@ -53,7 +53,7 @@ function AccordionItemBlock( {
 	const {
 		marginBottom,
 		heading,
-		level,
+		headingType,
 		accordionOpen,
 	} = attributes;
 
@@ -72,14 +72,16 @@ function AccordionItemBlock( {
 						},
 					] }
 				>
-					<HeadingToolbar
-						isCollapsed={ false }
-						minLevel={ 2 }
-						maxLevel={ 7 }
-						selectedLevel={ level }
-						onChange={ ( value ) =>
-							setAttributes( { level: value } )
-						}
+					<SelectControl
+						label={ __( "Heading Type" ) }
+						value={ headingType }
+						options={ [
+							{ value: "", label: __( "p" ) },
+							{ value: "h2", label: __( "h2" ) },
+							{ value: "h3", label: __( "h3" ) },
+							{ value: "h4", label: __( "h4" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { headingType: value } ) }
 					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Display' ) } initialOpen={ true }>
@@ -105,16 +107,15 @@ function AccordionItemBlock( {
 	);
 
 	const headingClasses = classnames( 
-		'accordion-heading', 
-		{ [ 'has-text-color' ]: headingColor.class, },
+		'wp-block-accordion-item__title',
+		headingColor.class ? 'has-text-color' : {},
 		{ [ headingColor.class ]: headingColor.class, },
+		headingType ? headingType : "p-type",
 	);
 
 	const containerStyle = {
 		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
 	};
-
-	const tagName = 'h' + level;
 
 	return (
 		<>
@@ -122,15 +123,13 @@ function AccordionItemBlock( {
 			<div style={ containerStyle } className={ classes }>
 				<div className="wp-block-accordion-item__inner-wrap">
 					<details open={ accordionOpen }>
-						<summary className="wp-block-accordion-item__title">
-							<RichText
-								placeholder={ __( 'Heading' ) }
-								value={ heading }
-								onChange={ ( value ) => setAttributes( { heading: value } ) }
-								className={ headingClasses }
-								tagName={ tagName }
-							/>
-						</summary>
+						<RichText
+							placeholder={ __( 'Heading' ) }
+							value={ heading }
+							onChange={ ( value ) => setAttributes( { heading: value } ) }
+							className={ headingClasses }
+							tagName="summary"
+						/>
 						<div className="wp-block-accordion-item__text">
 							<InnerBlocks
 								templateLock={ false }

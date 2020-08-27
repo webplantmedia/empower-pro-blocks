@@ -1,2 +1,123 @@
 .wp-block-empower-pro-blocks-accordion-item {
+	.wp-block-accordion-item__title {
+		cursor: pointer;
+		outline: 0;
+	}
+
+	details[open] summary + .wp-block-accordion-item__text {
+		animation: sweep 0.4s ease-in-out;
+	}
+	.wp-block-accordion-item__text {
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+		
+		margin-bottom: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	details summary {
+		list-style: none;
+	}
+
+	details summary::-webkit-details-marker {
+		display: none;
+	}
+
+	details {
+		position: relative;
+	}
+
+	details[open] {
+		.wp-block-accordion-item__title {
+			&::before {
+				content: "\f3d0";
+				left: -4px;
+			}
+		}
+	}
+
+	.wp-block-accordion-item__title {
+		padding-left: 30px;
+		padding-right: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: transparent;
+		margin-bottom: 0 !important;
+
+		&.p-type {
+			font-weight: $body_font_weight;
+			font-size: $body_font_size_large;
+		}
+
+		&::before {
+
+			@include ionicon;
+			content: "\f3d3";
+			position: absolute;
+			top: 16px;
+			font-size: 20px;
+			left: 0;
+		}
+
+		& + .wp-block-accordion-item__text {
+			padding-left: 30px;
+			padding-right: 0;
+		}
+
+		&.h2 {
+			&,
+			& + .wp-block-accordion-item__text {
+				padding-left: 50px;
+			}
+
+			&::before {
+				font-size: 40px;
+				top: 26px;
+
+				@media screen and ( max-width: $ipad_width ) {
+					font-size: 30px;
+					top: 20px;
+				}
+			}
+		}
+
+		&.h3 {
+			&,
+			& + .wp-block-accordion-item__text {
+				padding-left: 30px;
+			}
+
+			&::before {
+				font-size: 26px;
+				top: 16px;
+
+				@media screen and ( max-width: $ipad_width ) {
+					font-size: 20px;
+					top: 14px;
+				}
+			}
+		}
+
+		&.h4 {
+			&,
+			& + .wp-block-accordion-item__text {
+				padding-left: 30px;
+			}
+
+			&::before {
+				font-size: 20px;
+				top: 13px;
+
+				@media screen and ( max-width: $ipad_width ) {
+					font-size: 18px;
+					top: 12px;
+				}
+			}
+		}
+	}
 }

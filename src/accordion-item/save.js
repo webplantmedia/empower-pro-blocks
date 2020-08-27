@@ -17,9 +17,9 @@ import renderSVG from "../../dist/blocks/renderIcon"
 export default function save( { attributes } ) {
 	const {
 		marginBottom,
-		level,
 		heading,
 		headingColor,
+		headingType,
 		accordionOpen,
 	} = attributes;
 
@@ -27,13 +27,14 @@ export default function save( { attributes } ) {
 		'wp-block-accordion-item__outer-wrapper',
 	);
 
-	const headingClasses = classnames(
-		'accordion-heading', 
-		{ [ 'has-text-color' ]: headingColor, },
-		getColorClassName( 'text-color', headingColor ),
-	);
+	const headingColorClass = getColorClassName( 'text-color', headingColor );
 
-	const tagName = 'h' + level;
+	const headingClasses = classnames(
+		'wp-block-accordion-item__title',
+		headingColorClass ? 'has-text-color' : {},
+		headingColorClass,
+		headingType ? headingType : "p-type",
+	);
 
 	const containerStyle = {
 		...( marginBottom || marginBottom === 0 ? { marginBottom: marginBottom+"px" } : {} ),
@@ -43,13 +44,11 @@ export default function save( { attributes } ) {
 		<div style={ containerStyle } className={ classes }>
 			<div className="wp-block-accordion-item__inner-wrap">
 				<details open={ accordionOpen }>
-					<summary className="wp-block-accordion-item__title">
-						<RichText.Content
-							tagName={ tagName }
-							value={ heading }
-							className={ headingClasses }
-						/>
-					</summary>
+					<RichText.Content
+						tagName="summary"
+						value={ heading }
+						className={ headingClasses }
+					/>
 					<div className="wp-block-accordion-item__text">
 						<InnerBlocks.Content />
 					</div>
