@@ -37,6 +37,7 @@ import {
 } from './shared';
 import svgline from '../../dist/svg/line';
 import svgrightpill from '../../dist/svg/rightpill';
+import svgbackground from '../../dist/svg/background';
 
 const MIN_SPACER_HEIGHT = 0;
 const MAX_SPACER_HEIGHT = 500;
@@ -136,6 +137,7 @@ function BackgroundEdit( {
 							{ value: "top-crop", label: __( "Top Slant (Crop)" ) },
 							{ value: "bottom", label: __( "Bottom Slant" ) },
 							{ value: "bottom-crop", label: __( "Bottom Slant (Crop)" ) },
+							{ value: "bottom-curve", label: __( "Bottom Curve" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { slant: value } ) }
 					/>
@@ -287,8 +289,9 @@ function BackgroundEdit( {
 
 	const backgroundClasses = classnames(
 		"wp-block-background__color-container",
-		{ [ 'has-background-color' ]: backgroundColor.class, },
-		{ [ backgroundColor.class ]: backgroundColor.class, }
+		backgroundColor.class && slant != 'bottom-curve' ? 'has-background-color' : {},
+		backgroundColor.class && slant != 'bottom-curve' ? backgroundColor.class : {},
+		backgroundColor.class && slant == 'bottom-curve' ? backgroundColor.class.replace('background-color', 'svg-fill-color') : {},
 	);
 
 	const leftPillClasses = classnames( 
@@ -344,7 +347,11 @@ function BackgroundEdit( {
 						{ svgrightpill }
 					</div>
 				) }
-				<div className={ backgroundClasses } />
+				<div className={ backgroundClasses }>
+					{ slant == "bottom-curve" && (
+						svgbackground
+					) }
+				</div>
 				<div className={ innerClasses }>
 					<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 					<div className="block-wrap">

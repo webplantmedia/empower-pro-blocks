@@ -16,6 +16,7 @@ import {
 } from './shared';
 import svgline from '../../dist/svg/line';
 import svgrightpill from '../../dist/svg/rightpill';
+import svgbackground from '../../dist/svg/background';
 
 export default function save( { attributes } ) {
 	const {
@@ -37,11 +38,8 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const slantBackgroundColorClassName = getColorClassName( 'background-color', slantBackgroundColor );
+	const backgroundColorClassName = getColorClassName( 'background-color', backgroundColor );
 
-	const backgroundClass = getColorClassName(
-		'background-color',
-		backgroundColor
-	);
 	const rightPillClasses = classnames( 
 		'below-fold-background',
 		dimRatioToClass( rightPillDimRatio ),
@@ -64,8 +62,10 @@ export default function save( { attributes } ) {
 	);
 
 	const backgroundClasses = classnames(
-		backgroundClass, 
 		"wp-block-background__color-container",
+		backgroundColorClassName && slant != 'bottom-curve' ? 'has-background-color' : {},
+		backgroundColorClassName && slant != 'bottom-curve' ? backgroundColorClassName : {},
+		backgroundColorClassName && slant == 'bottom-curve' ? backgroundColorClassName.replace('background-color', 'svg-fill-color') : {},
 	);
 
 	const topHeightClassName = classnames( {
@@ -107,7 +107,11 @@ export default function save( { attributes } ) {
 					{ svgrightpill }
 				</div>
 			) }
-			<div className={ backgroundClasses } />
+			<div className={ backgroundClasses }>
+				{ slant === "bottom-curve" && (
+					svgbackground
+				) }
+			</div>
 			<div className={ innerClasses }>
 				<div className={ topHeightClassName } style={ { height: topHeight } } aria-hidden />
 				<div className="block-wrap">

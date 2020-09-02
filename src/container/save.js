@@ -30,7 +30,6 @@ export default function save( { attributes } ) {
 	);
 
 	const backgroundColorClassName = getColorClassName( 'background-color', backgroundColor );
-	console.log(backgroundColorClassName);
 
 	const innerClasses = classnames(
 		'wp-block-container__inner-content',

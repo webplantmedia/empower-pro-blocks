@@ -1,0 +1,3 @@
+.wp-block-embed.is-style-spotlight .wp-block-embed__wrapper {
+	@include box-shadow( $weight: 'heavy' );
+}
