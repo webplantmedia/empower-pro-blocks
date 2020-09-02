@@ -468,7 +468,7 @@ add_filter( 'excerpt_more', 'empower_pro_blocks_excerpt_more', 10, 1 );
 function empower_pro_blocks_excerpt_more( $more ) {
 
 	if ( is_page_template( 'page_blog.php' ) || is_home() || is_archive() || is_search() ) {
-		$more = sprintf( '...<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
+		$more = sprintf( '...<p class="more-link-wrapper"><a href="%s" class="more-link">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
 	}
 
 	return $more;
@@ -488,7 +488,7 @@ add_filter( 'wp_trim_excerpt', 'empower_pro_blocks_wp_trim_excerpt', 10, 2 );
 function empower_pro_blocks_wp_trim_excerpt( $text, $raw_text ) {
 
 	if ( '' !== $raw_text ) {
-		$more = sprintf( '<p class="more-link-wrapper"><a href="%s" class="more-link button">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
+		$more = sprintf( '<p class="more-link-wrapper"><a href="%s" class="more-link">%s &#x2192;</a></p>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'empower-pro-blocks' ) ) );
 		$text = $text . $more;
 	}
 

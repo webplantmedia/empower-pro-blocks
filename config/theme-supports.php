@@ -48,4 +48,7 @@ return array(
 		'footer-widgets',
 		'footer'
 	),
+	'post-formats' => array( 
+		'link'
+	),
 );

@@ -29,13 +29,14 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php';
 
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/theme-defaults.php';
-require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
 
 // Includes Customizer CSS.
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';
+
 
 add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
 /**
@@ -48,9 +49,8 @@ add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
 function empower_pro_blocks_gutenberg_support() {
 	// Add inline style for gutenberg blocks.
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/gutenberg.php';
+	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
 }
-
-require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
 
 if ( empower_pro_blocks_is_woocommerce_activated() ) {
 
