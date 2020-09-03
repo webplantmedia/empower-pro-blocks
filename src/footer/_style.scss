@@ -100,6 +100,10 @@
 		grid-template-rows: 1fr;
 		grid-gap: 60px 60px;
 
+		> p {
+			display: none; /* fixed strange bug with empty p elements being inserted in footer. */
+		}
+
 		> .wp-block-footer > .wp-block-footer__inner-container {
 			> *:last-child {
 				margin-bottom: 0 !important;

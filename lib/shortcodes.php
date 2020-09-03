@@ -85,6 +85,7 @@ function empower_pro_blocks_get_default_args() {
 		'post_status'      => 'publish',
 		'ignore_sticky'    => 1,
 		'exclude_current'  => 1,
+		'col'              => 3,
 
 		'excerpt'          => false,
 		'meta'             => true,
@@ -153,10 +154,15 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 	// Get the posts query.
 	$posts = empower_pro_blocks_get_posts( $args );
 
+	$column_class = 'blog-three-columns';
+	if ( $args['col'] == 2 ) {
+		$column_class = 'blog-two-columns';
+	}
+
 	if ( $posts->have_posts() ) :
 
 		// Recent posts wrapper
-		$html = '<div ' . ( ! empty( $args['cssID'] ) ? 'id="' . sanitize_html_class( $args['cssID'] ) . '"' : '' ) . ' class="blog-shortcode blog-three-columns ' . ( ! empty( $args['css_class'] ) ? '' . sanitize_html_class( $args['css_class'] ) . '' : '' ) . '">';
+		$html = '<div ' . ( ! empty( $args['cssID'] ) ? 'id="' . sanitize_html_class( $args['cssID'] ) . '"' : '' ) . ' class="blog-shortcode '.$column_class.' ' . ( ! empty( $args['css_class'] ) ? '' . sanitize_html_class( $args['css_class'] ) . '' : '' ) . '">';
 
 			$html .= '<div class="blog-shortcode-loop-container">';
 
@@ -299,12 +305,14 @@ function empower_pro_blocks_get_posts( $args = array() ) {
 
 	// Limit posts based on category.
 	if ( ! empty( $args['cat'] ) ) {
-		$query['category__in'] = $args['cat'];
+		$cat = explode(',', $args['cat']);
+		$query['category__in'] = $cat;
 	}
 
 	// Limit posts based on post tag.
 	if ( ! empty( $args['tag'] ) ) {
-		$query['tag__in'] = $args['tag'];
+		$tag = explode(',', $args['tag']);
+		$query['tag__in'] = $tag;
 	}
 
 	/**
