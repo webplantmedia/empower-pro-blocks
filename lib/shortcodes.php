@@ -161,9 +161,15 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 				while ( $posts->have_posts() ) : $posts->the_post();
 
-					$post_id = get_the_ID();
-					if ( has_post_format( 'link', $post_id ) ) {
+					$post_format_link = false;
+					$target = '_self';
+					if ( has_post_format( 'link' ) ) {
 						$permalink = empower_pro_blocks_get_link_url();
+						$post_format_link = true;
+						$target = "_blank";
+					}
+					else {
+						$permalink = get_permalink();
 					}
 					// Thumbnails
 					$thumb_id = get_post_thumbnail_id(); // Get the featured image id.
@@ -176,7 +182,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 							// Check if post has post thumbnail.
 							if ( has_post_thumbnail() ) :
-								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '"  rel="bookmark">';
+								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'"  rel="bookmark">';
 									$html .= '<div class="empower-pro-blocks-featured-image">';
 									if ( $img_url ) :
 										$html .= '<img class="' . esc_attr( $args['thumb_align'] ) . ' post-image entry-image" src="' . esc_url( $img_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
@@ -194,7 +200,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 							// Display default image.
 							elseif ( ! empty( $args['thumb_default'] ) ) :
-								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '"  rel="bookmark">';
+								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'" rel="bookmark">';
 									$html .= '<div class="empower-pro-blocks-featured-image">';
 										$html .= sprintf( '<img class="%1$s blog-thumb blog-default-thumb" src="%2$s" alt="%3$s" width="%4$s" height="%5$s">',
 											esc_attr( $args['thumb_align'] ),
@@ -213,7 +219,10 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 							$meta = '';
 							if ( $args['author'] ) :
-								$meta .= '<i class="byline">by</i> [post_author_posts_link]';
+								if ( ! $post_format_link ) {
+									$meta .= '<i class="byline">by</i> ';
+								}
+								$meta .= '[post_author_posts_link]';
 							endif;
 							if ( $args['author'] && $args['date'] ) :
 								$meta .= ' <i>on</i> ';
@@ -232,7 +241,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 								$html .= '</p>';
 							}
 
-							$html .= '<h2 class="entry-title"><a class="entry-title-link" href="' . esc_url( $permalink ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'recent-posts-widget-extended' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . esc_attr( get_the_title() ) . '</a></h2>';
+							$html .= '<h2 class="entry-title"><a class="entry-title-link" href="' . esc_url( $permalink ) . '" target="'.$target.'" title="' . sprintf( esc_attr__( 'Permalink to %s', 'recent-posts-widget-extended' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . esc_attr( get_the_title() ) . '</a></h2>';
 						$html .= '</header>';
 
 							if ( $args['excerpt'] ) :
@@ -243,7 +252,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 							if ( $args['readmore'] ) :
 								$html .= '<div class="entry-read-more">';
-								$html .= '<a href="' . esc_url( $permalink ) . '" class="more-link">' . $args['readmore_text'] . '</a>';
+								$html .= '<a href="' . esc_url( $permalink ) . '" target="'.$target.'" class="more-link">' . $args['readmore_text'] . '</a>';
 								$html .= '</div>';
 							endif;
 
