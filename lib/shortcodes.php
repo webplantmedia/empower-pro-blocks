@@ -87,6 +87,7 @@ function empower_pro_blocks_get_default_args() {
 		'exclude_current'  => 1,
 
 		'excerpt'          => false,
+		'meta'             => true,
 		'length'           => 10,
 		'thumb'            => true,
 		'thumb_height'     => 45,
@@ -207,28 +208,30 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 						$html .= '<header class="entry-header">';
 
-							$meta = '';
-							if ( $args['author'] ) :
-								if ( $post_format != "link" ) {
-									$meta .= '<i class="byline">by</i> ';
-								}
-								$meta .= '[post_author_posts_link]';
-							endif;
-							if ( $args['author'] && $args['date'] ) :
-								$meta .= ' <i>on</i> ';
-							endif;
-							if ( $args['date'] ) :
-								$meta .= '[post_date after=""]';
-							endif;
-							if ( $args['comment_count'] ) :
-								$meta .= ' [post_comments]';
-							endif;
-							$meta .= ' [post_edit]';
+							if ( $args['meta'] ) {
+								$meta = '';
+								if ( $args['author'] ) :
+									if ( $post_format != "link" ) {
+										$meta .= '<i class="byline">by</i> ';
+									}
+									$meta .= '[post_author_posts_link]';
+								endif;
+								if ( $args['author'] && $args['date'] ) :
+									$meta .= ' <i>on</i> ';
+								endif;
+								if ( $args['date'] ) :
+									$meta .= '[post_date after=""]';
+								endif;
+								if ( $args['comment_count'] ) :
+									$meta .= ' [post_comments]';
+								endif;
+								$meta .= ' [post_edit]';
 
-							if ( ! empty( $meta ) ) {
-								$html .= '<p class="entry-meta">';
-								$html .= do_shortcode( $meta );
-								$html .= '</p>';
+								if ( ! empty( $meta ) ) {
+									$html .= '<p class="entry-meta">';
+									$html .= do_shortcode( $meta );
+									$html .= '</p>';
+								}
 							}
 
 							$html .= '<h2 class="entry-title"><a class="entry-title-link" href="' . esc_url( $permalink ) . '" target="'.$target.'" title="' . sprintf( esc_attr__( 'Permalink to %s', 'recent-posts-widget-extended' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . esc_attr( get_the_title() ) . '</a></h2>';
