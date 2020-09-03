@@ -12,6 +12,7 @@ import {
  * Internal dependencies
  */
 import * as styles from './styles.js';
+import * as sidebar from './sidebar.js';
 import * as hero from './hero';
 import * as hero2 from './hero2';
 import * as icontext from './icontext';
