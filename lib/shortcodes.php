@@ -161,11 +161,11 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 				while ( $posts->have_posts() ) : $posts->the_post();
 
-					$post_format_link = false;
+					$post_format = get_post_format();
 					$target = '_self';
-					if ( has_post_format( 'link' ) ) {
+					if ( $post_format == "link" ) {
 						$permalink = empower_pro_blocks_get_link_url();
-						$post_format_link = true;
+						$post_format = "link";
 						$target = "_blank";
 					}
 					else {
@@ -181,36 +181,26 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 						if ( $args['thumb'] ) :
 
 							// Check if post has post thumbnail.
-							if ( has_post_thumbnail() ) :
-								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'"  rel="bookmark">';
-									$html .= '<div class="empower-pro-blocks-featured-image">';
-									if ( $img_url ) :
-										$html .= '<img class="' . esc_attr( $args['thumb_align'] ) . ' post-image entry-image" src="' . esc_url( $img_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
-									else :
-										$html .= get_the_post_thumbnail( get_the_ID(),
-											array( $args['thumb_width'], $args['thumb_height'] ),
-											array(
-												'class' => $args['thumb_align'] . ' post-image entry-image',
-												'alt'   => esc_attr( get_the_title() )
-											)
-										);
-									endif;
-									$html .= '</div>';
-								$html .= '</a>';
-
-							// Display default image.
-							elseif ( ! empty( $args['thumb_default'] ) ) :
-								$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'" rel="bookmark">';
-									$html .= '<div class="empower-pro-blocks-featured-image">';
-										$html .= sprintf( '<img class="%1$s blog-thumb blog-default-thumb" src="%2$s" alt="%3$s" width="%4$s" height="%5$s">',
-											esc_attr( $args['thumb_align'] ),
-											esc_url( $args['thumb_default'] ),
-											esc_attr( get_the_title() ),
-											(int) $args['thumb_width'],
-											(int) $args['thumb_height']
-										);
-									$html .= '</div>';
-								$html .= '</a>';
+							if ( in_array( $post_format, array( 'audio', 'video' ) ) ) :
+								$html .= get_the_content();
+							else :
+								if ( has_post_thumbnail() ) :
+									$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'"  rel="bookmark">';
+										$html .= '<div class="empower-pro-blocks-featured-image">';
+										if ( $img_url ) :
+											$html .= '<img class="' . esc_attr( $args['thumb_align'] ) . ' post-image entry-image" src="' . esc_url( $img_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
+										else :
+											$html .= get_the_post_thumbnail( get_the_ID(),
+												array( $args['thumb_width'], $args['thumb_height'] ),
+												array(
+													'class' => $args['thumb_align'] . ' post-image entry-image',
+													'alt'   => esc_attr( get_the_title() )
+												)
+											);
+										endif;
+										$html .= '</div>';
+									$html .= '</a>';
+								endif;
 							endif;
 
 						endif;
@@ -219,7 +209,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 							$meta = '';
 							if ( $args['author'] ) :
-								if ( ! $post_format_link ) {
+								if ( $post_format != "link" ) {
 									$meta .= '<i class="byline">by</i> ';
 								}
 								$meta .= '[post_author_posts_link]';

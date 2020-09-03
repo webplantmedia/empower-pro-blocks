@@ -49,6 +49,8 @@ return array(
 		'footer'
 	),
 	'post-formats' => array( 
-		'link'
+		'link',
+		'audio',
+		'video',
 	),
 );
