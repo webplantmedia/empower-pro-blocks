@@ -94,6 +94,7 @@ $empower_pro_blocks_mobile_cta_text            = get_option( 'empower_pro_blocks
 $empower_pro_blocks_mega_menu                  = get_option( 'empower_pro_blocks_mega_menu', '' );
 $empower_pro_blocks_mobile_menu                = get_option( 'empower_pro_blocks_mobile_menu', '' );
 $empower_pro_blocks_footer_menu                = get_option( 'empower_pro_blocks_footer_menu', '' );
+$empower_pro_blocks_popup                      = get_option( 'empower_pro_blocks_popup', '' );
 $empower_pro_blocks_hide_menu_search           = get_option( 'empower_pro_blocks_hide_menu_search', 1 );
 $empower_pro_blocks_portfolio_image            = get_option( 'empower_pro_blocks_portfolio_image', 1 );
 $empower_pro_blocks_event_image                = get_option( 'empower_pro_blocks_event_image', 1 );
@@ -184,6 +185,7 @@ return array(
 	'mega_menu'		               => $empower_pro_blocks_mega_menu,
 	'mobile_menu'		           => $empower_pro_blocks_mobile_menu,
 	'footer_menu'		           => $empower_pro_blocks_footer_menu,
+	'popup'		                   => $empower_pro_blocks_popup,
 	// Images.
 	'post-image'                   => $empower_pro_blocks_post_image,
 	'page-image'                   => $empower_pro_blocks_page_image,

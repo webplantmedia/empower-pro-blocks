@@ -633,6 +633,45 @@ function empower_pro_blocks_footer_widgets() {
 
 }
 
+add_action( 'genesis_after_footer', 'empower_pro_blocks_popup' );
+/**
+ * Adds the flexible footer widget area.
+ *
+ * @since 1.0.0
+ */
+function empower_pro_blocks_popup() {
+
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
+
+	$id = $appearance['popup'];
+
+	if ( ! $id ) {
+		return;
+	}
+
+	$post = get_post( $id );
+
+	if ( ! $post ) {
+		return;
+	}
+
+	$html = '';
+
+	$html .= '<div id="popup" class="cta-popup entry-content">';
+		$html .= '<div class="cta-popup-inner">';
+
+		$content = $post->post_content;
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$html .= $content;
+
+		$html .= '</div>';
+	$html .= '</div>';
+
+	echo $html;
+
+}
+
 add_action( 'genesis_meta', 'empower_pro_blocks_add_portfolio_breadcrumbs' );
 /**
  * Add portfolio breadcrumbs.

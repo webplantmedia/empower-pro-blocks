@@ -228,6 +228,28 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'empower_pro_blocks_popup',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_popup',
+		array(
+			'label'       => __( 'Popup', 'empower-pro-blocks' ),
+			'description' => __( 'Select page for call to action popup.', 'empower-pro-blocks' ),
+			'section'     => 'empower_pro_blocks_menu_settings',
+			'type'        => 'select',
+			'settings'    => 'empower_pro_blocks_popup',
+			'choices'  => $site_element_pages,
+			'default'  => $appearance['popup'],
+		)
+	);
+
 	// Basic settings section.
 	$wp_customize->add_section(
 		'empower_pro_blocks_basic_settings',
