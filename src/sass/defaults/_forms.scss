@@ -50,6 +50,29 @@ textarea {
 	textarea {
 		border-color: #fff !important;
 	}
+
+	label {
+		color: #fff !important;
+	}
+
+	.wpforms-uploader {
+		color: #fff;
+		border: 6px dashed #fff;
+		background-color: transparent;
+		border-radius: 0;
+
+		svg path {
+			fill: #fff;
+		}
+	}
+
+	div.wpforms-container div.wpforms-uploader .dz-preview .dz-details .dz-size {
+		color: #fff;
+	}
+	div.wpforms-container div.wpforms-uploader .dz-preview .dz-remove::after,
+	div.wpforms-container div.wpforms-uploader .dz-preview .dz-remove::before {
+		background-color: #fff;
+	}
 }
 
 #genesis-content div.wpforms-container-full .wpforms-form input,

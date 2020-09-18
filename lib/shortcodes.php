@@ -21,6 +21,71 @@ function empower_pro_blocks_shortcode( $atts, $content ) {
 }
 add_shortcode( 'empower_pro_blocks_blog', 'empower_pro_blocks_shortcode' );
 
+function empower_pro_blocks_blog_menu_items( $atts, $content ) {
+	// Get the posts query.
+	$args = array(
+		'limit'            => 3,
+		'offset'           => 0,
+		'order'            => 'DESC',
+		'orderby'          => 'date',
+		'cat'              => array(),
+		'tag'              => array(),
+		'taxonomy'         => '',
+		'post_type'        => array( 'post' ),
+		'post_status'      => 'publish',
+		'ignore_sticky'    => 1,
+		'exclude_current'  => 0,
+	);
+
+	$posts = empower_pro_blocks_get_posts( $args );
+
+	$html = '';
+	/*
+	<ul class="blogPosts">
+	  <li><a href="https://abilitie2.wpengine.com/learning-to-manage-in-vuca-environments-using-simulations/">
+		<span class="title ">Learning to Manage in VUCA Environments Using Simulations</span>
+		
+	  </a></li>
+	  <li><a href="https://abilitie2.wpengine.com/when-and-how-to-move-leadership-training-online/">
+		<span class="title ">When and How To Move Leadership Training Online</span>
+		
+	  </a></li>
+	  <li><a href="https://abilitie2.wpengine.com/the-measure-of-leadership-development-roi-youre-not-using-and-how-to-leverage-it/">
+		<span class="title ">The Measure of Leadership Development ROI You’re Not Using (and How to Leverage it)</span>
+		
+	  </a></li>
+	</ul>
+	 */
+
+	if ( $posts->have_posts() ) :
+		$html .= '<ul class="blogPosts">';
+
+			while ( $posts->have_posts() ) : $posts->the_post();
+
+				$post_format = get_post_format();
+				$target = '_self';
+				if ( $post_format == "link" ) {
+					$permalink = empower_pro_blocks_get_link_url();
+					$target = "_blank";
+				}
+				else {
+					$permalink = get_permalink();
+				}
+
+				$html .= '<li><a href="' . esc_url( $permalink ) . '" target="'.$target.'"><span class="title ">'.get_the_title().'</span></a></li>';
+
+			endwhile;
+		$html .= '</ul>';
+
+	endif;
+
+	// Restore original Post Data.
+	wp_reset_postdata();
+
+	return $html;
+}
+add_shortcode( 'empower_pro_blocks_blog_menu', 'empower_pro_blocks_blog_menu_items' );
+
 /**
  * Display list of tags for widget.
  *
