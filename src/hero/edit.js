@@ -45,6 +45,8 @@ import { withDispatch } from '@wordpress/data';
  */
 import {
 	attributesFromMedia,
+	attributesFromMedia2,
+	attributesFromMedia3,
 	IMAGE_BACKGROUND_TYPE,
 	VIDEO_BACKGROUND_TYPE,
 	backgroundImageStyles,
@@ -79,12 +81,18 @@ function HeroEdit( {
 } ) {
 	const {
 		id,
+		id2,
+		id3,
 		backgroundType,
 		dimRatio,
 		leftPillDimRatio,
 		rightPillDimRatio,
 		focalPoint,
+		focalPoint2,
+		focalPoint3,
 		url,
+		url2,
+		url3,
 		heading,
 		text,
 		typewriterSearch,
@@ -104,6 +112,8 @@ function HeroEdit( {
 		button3LinkTarget,
 	} = attributes;
 	const onSelectMedia = attributesFromMedia( setAttributes );
+	const onSelectMedia2 = attributesFromMedia2( setAttributes );
+	const onSelectMedia3 = attributesFromMedia3( setAttributes );
 
 	const { removeAllNotices, createErrorNotice } = noticeOperations;
 
@@ -113,9 +123,22 @@ function HeroEdit( {
 			: {} ),
 	};
 
+	const style2 = {
+		...( url2 ? backgroundImageStyles( url2 ) : {} ),
+	};
+
+	const style3 = {
+		...( url3 ? backgroundImageStyles( url3 ) : {} ),
+	};
+
 	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
-			100 }%`;
+		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
+	}
+	if ( focalPoint2 ) {
+		style2.backgroundPosition = `${ focalPoint2.x * 100 }% ${ focalPoint2.y * 100 }%`;
+	}
+	if ( focalPoint3 ) {
+		style3.backgroundPosition = `${ focalPoint3.x * 100 }% ${ focalPoint3.y * 100 }%`;
 	}
 
 	const replaceHeading = (h, ts, tr) => {
@@ -166,11 +189,27 @@ function HeroEdit( {
 					allowedTypes={ ALLOWED_MEDIA_TYPES }
 					accept="image/*,video/*"
 					onSelect={ onSelectMedia }
-					name="Background"
+					name="Slide 1"
+				/>
+				<MediaReplaceFlow
+					mediaId={ id2 }
+					mediaURL={ url2 }
+					allowedTypes={ [ "image" ] }
+					accept="image/*"
+					onSelect={ onSelectMedia2 }
+					name="Slide 2"
+				/>
+				<MediaReplaceFlow
+					mediaId={ id3 }
+					mediaURL={ url3 }
+					allowedTypes={ [ "image" ] }
+					accept="image/*"
+					onSelect={ onSelectMedia3 }
+					name="Slide 3"
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Media settings' ) } >
+				<PanelBody title={ __( 'Image or Video' ) } >
 					<PanelRow>
 						<MediaUpload
 							id={ id }
@@ -222,6 +261,96 @@ function HeroEdit( {
 					{ url && VIDEO_BACKGROUND_TYPE === backgroundType && (
 						<video autoPlay muted loop src={ url } />
 					) }
+				</PanelBody>
+				<PanelBody title={ __( 'Image 2 Slide' ) } initialOpen={ true }>
+					<PanelRow>
+						<MediaUpload
+							id={ id2 }
+							allowedTypes={ [ 'image' ] }
+							onSelect={ onSelectMedia2 }
+							render={ ( { open } ) => (
+								<Button onClick={ open } isSecondary={ true }>
+									Select Background Image	
+								</Button>
+							) }
+						/>
+					</PanelRow>
+					{ !! url2 && (
+						<PanelRow>
+							<Button
+								isSecondary
+								className=""
+								onClick={ () =>
+									setAttributes( {
+										url2: undefined,
+										id2: undefined,
+									} )
+								}
+							>
+								{ __( 'Clear Media' ) }
+							</Button>
+						</PanelRow>
+					) }
+					{ !! url2 && (
+						<hr />
+					) }
+					{ url2 &&
+						<FocalPointPicker
+							label={ __( 'Focal point picker' ) }
+							url={ url2 }
+							value={ focalPoint2 }
+							onChange={ ( value ) =>
+								setAttributes( {
+									focalPoint2: value,
+								} )
+							}
+						/>
+					}
+				</PanelBody>
+				<PanelBody title={ __( 'Image 3 Slide' ) } initialOpen={ true }>
+					<PanelRow>
+						<MediaUpload
+							id={ id3 }
+							allowedTypes={ [ 'image' ] }
+							onSelect={ onSelectMedia3 }
+							render={ ( { open } ) => (
+								<Button onClick={ open } isSecondary={ true }>
+									Select Background Image	
+								</Button>
+							) }
+						/>
+					</PanelRow>
+					{ !! url3 && (
+						<PanelRow>
+							<Button
+								isSecondary
+								className=""
+								onClick={ () =>
+									setAttributes( {
+										url3: undefined,
+										id3: undefined,
+									} )
+								}
+							>
+								{ __( 'Clear Media' ) }
+							</Button>
+						</PanelRow>
+					) }
+					{ !! url3 && (
+						<hr />
+					) }
+					{ url3 &&
+						<FocalPointPicker
+							label={ __( 'Focal point picker' ) }
+							url={ url3 }
+							value={ focalPoint3 }
+							onChange={ ( value ) =>
+								setAttributes( {
+									focalPoint3: value,
+								} )
+							}
+						/>
+					}
 				</PanelBody>
 				<PanelColorGradientSettings
 					title={ __( 'Overlay' ) }
@@ -478,23 +607,59 @@ function HeroEdit( {
 		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
 	};
 
+	const slideInit = url2 || url3 ? true : false;
+
 	return (
 		<>
 			{ controls }
 			<div className={ classes }>
 				<div className="wp-block-hero__inner-wrap">
 					<div className="wp-block-hero__inner-container">
-						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
-							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
-								<video
-									className="wp-block-hero__video-background"
-									autoPlay
-									muted
-									loop
-									src={ url }
-								/>
-							) }
-						</div>
+						{ slideInit && (
+							<div class="slider">
+								{ url && (
+									<div data-url={ url } style={ style } className="slide wp-block-hero__background-image">
+										{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+											<video
+												className="wp-block-hero__video-background"
+												autoPlay
+												muted
+												loop
+												src={ url }
+											/>
+										) }
+									</div>
+								) }
+								{ url2 && (
+									<div data-url={ url2 } style={ style2 } className="slide wp-block-hero__background-image">
+									</div>
+								) }
+								{ url3 && (
+									<div data-url={ url3 } style={ style3 } className="slide wp-block-hero__background-image">
+									</div>
+								) }
+							</div>
+						) }
+						{ slideInit && (
+							<div class="slider-controls">
+								<a class="arrow-left" href="javascript:void(0);"></a>
+								<div class="dots-wrapper"></div>
+								<a class="arrow-right" href="javascript:void(0);"></a>
+							</div>
+						) }
+						{ ! slideInit && (
+							<div data-url={ url } style={ style } className="wp-block-hero__background-image">
+								{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+									<video
+										className="wp-block-hero__video-background"
+										autoPlay
+										muted
+										loop
+										src={ url }
+									/>
+								) }
+							</div>
+						) }
 						<div className={ overlayClasses }>
 						</div>
 						<div className="hero-content">

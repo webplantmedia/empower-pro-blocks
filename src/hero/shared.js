@@ -46,8 +46,36 @@ export function attributesFromMedia( setAttributes ) {
 			id: media.id,
 			backgroundType: mediaType,
 			...( mediaType === VIDEO_BACKGROUND_TYPE
-				? { focalPoint: undefined, hasParallax: undefined }
+				? { focalPoint: undefined }
 				: {} ),
+		} );
+	};
+}
+
+export function attributesFromMedia2( setAttributes ) {
+	return ( media ) => {
+		if ( ! media || ! media.url ) {
+			setAttributes( { url2: undefined, id2: undefined } );
+			return;
+		}
+
+		setAttributes( {
+			url2: media.url,
+			id2: media.id,
+		} );
+	};
+}
+
+export function attributesFromMedia3( setAttributes ) {
+	return ( media ) => {
+		if ( ! media || ! media.url ) {
+			setAttributes( { url3: undefined, id3: undefined } );
+			return;
+		}
+
+		setAttributes( {
+			url3: media.url,
+			id3: media.id,
 		} );
 	};
 }

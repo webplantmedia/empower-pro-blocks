@@ -16,6 +16,18 @@
 		"id": {
 			"type": "number"
 		},
+		"url2": {
+			"type": "string"
+		},
+		"id2": {
+			"type": "number"
+		},
+		"url3": {
+			"type": "string"
+		},
+		"id3": {
+			"type": "number"
+		},
 		"dimRatio": {
 			"type": "number",
 			"default": 50
@@ -47,6 +59,12 @@
 			"default": "image"
 		},
 		"focalPoint": {
+			"type": "object"
+		},
+		"focalPoint2": {
+			"type": "object"
+		},
+		"focalPoint3": {
 			"type": "object"
 		},
 		"heading": {

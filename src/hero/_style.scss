@@ -70,6 +70,32 @@
 		overflow: visible;
 		position: relative;
 
+		> .slider {
+			margin: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow: hidden;
+			min-height: 430px;
+			height: 100%;
+			width: 100%;
+
+			.wp-block-hero__background-image {
+				margin: 0;
+				float: left;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				background-color: #000;
+				background-size: cover;
+				background-position: 50%;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+		}
 		> .wp-block-hero__background-image {
 			margin: 0;
 			position: absolute;
@@ -346,3 +372,84 @@
 		display: none;
 	}
 }
+
+.slider {
+	.slider-inner {
+		position: absolute;
+		height: 100%;
+
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		.slide {
+		}
+	}
+}
+.slider-controls {
+	display: flex;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	align-items: center;
+	z-index: 99;
+	height: 30px;
+
+	@media screen and ( max-width: $tablet_width ) {
+		display: none;
+	}
+}
+a[class|="arrow"] {
+	display: block;
+	width: 10px;
+	height: 10px;
+
+}
+
+a.arrow-left,
+a.arrow-right {
+	outline: none;
+	&,
+	&:hover {
+		color: #ffffff !important;
+		border-color: #ffffff !important;
+	}
+}
+
+.arrow-left {
+	border-bottom: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	transform: rotate(45deg);
+	transition: left 0.5s;
+}
+.arrow-right {
+	border-bottom: 2px solid #ffffff;
+	border-right: 2px solid #ffffff;
+	transform: rotate(-45deg);
+	transition: right 0.5s;
+}
+
+.dots-wrapper {
+	width: 100px;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background-color: white;
+		border-radius: 50%;
+		margin: 0 4px;
+		opacity: 0.5;
+		cursor: pointer;
+		transition: opacity 0.3s;
+
+		&.active,
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+

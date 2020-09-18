@@ -29,7 +29,11 @@ export default function save( { attributes } ) {
 	const {
 		backgroundType,
 		focalPoint,
+		focalPoint2,
+		focalPoint3,
 		url,
+		url2,
+		url3,
 		heading,
 		text,
 		typewriterSearch,
@@ -61,10 +65,21 @@ export default function save( { attributes } ) {
 			? backgroundImageStyles( url )
 			: {} ),
 	};
+	const style2 = {
+		...( url2 ? backgroundImageStyles( url2 ) : {} ),
+	};
+	const style3 = {
+		...( url3 ? backgroundImageStyles( url3 ) : {} ),
+	};
 
 	if ( focalPoint ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y *
-			100 }%`;
+		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
+	}
+	if ( focalPoint2 ) {
+		style2.backgroundPosition = `${ focalPoint2.x * 100 }% ${ focalPoint2.y * 100 }%`;
+	}
+	if ( focalPoint3 ) {
+		style3.backgroundPosition = `${ focalPoint3.x * 100 }% ${ focalPoint3.y * 100 }%`;
 	}
 
 	const classes = classnames(
@@ -103,21 +118,57 @@ export default function save( { attributes } ) {
 		...( button3IconSize ? { width: button3IconSize+"px" } : {} ),
 	};
 
+	const slideInit = url2 || url3 ? true : false;
+
 	return (
 		<div className={ classes }>
 			<div className="wp-block-hero__inner-wrap">
 				<div className="wp-block-hero__inner-container">
-					<div data-url={ url } style={ style } className="wp-block-hero__background-image">
-						{ VIDEO_BACKGROUND_TYPE === backgroundType && (
-							<video
-								className="wp-block-hero__video-background"
-								autoPlay
-								muted
-								loop
-								src={ url }
-							/>
-						) }
-					</div>
+					{ slideInit && (
+						<div class="slider">
+							{ url && (
+								<div data-url={ url } style={ style } className="slide wp-block-hero__background-image">
+									{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+										<video
+											className="wp-block-hero__video-background"
+											autoPlay
+											muted
+											loop
+											src={ url }
+										/>
+									) }
+								</div>
+							) }
+							{ url2 && (
+								<div data-url={ url2 } style={ style2 } className="slide wp-block-hero__background-image">
+								</div>
+							) }
+							{ url3 && (
+								<div data-url={ url3 } style={ style3 } className="slide wp-block-hero__background-image">
+								</div>
+							) }
+						</div>
+					) }
+					{ slideInit && (
+						<div class="slider-controls">
+							<a class="arrow-left" href="javascript:void(0);"></a>
+							<div class="dots-wrapper"></div>
+							<a class="arrow-right" href="javascript:void(0);"></a>
+						</div>
+					) }
+					{ ! slideInit && (
+						<div data-url={ url } style={ style } className="wp-block-hero__background-image">
+							{ VIDEO_BACKGROUND_TYPE === backgroundType && (
+								<video
+									className="wp-block-hero__video-background"
+									autoPlay
+									muted
+									loop
+									src={ url }
+								/>
+							) }
+						</div>
+					) }
 					<div className={ overlayClasses }>
 					</div>
 					<div className="hero-content">
