@@ -174,44 +174,6 @@ function empower_pro_blocks_remove_customizer_settings( $config ) {
 
 }
 
-function empower_pro_blocks_init() {
-	// Adds support for after entry widget.
-	add_theme_support( 'genesis-after-entry-widget-area' );
-
-	// Removes header right widget area.
-	unregister_sidebar( 'header-right' );
-
-	// Removes secondary sidebar.
-	unregister_sidebar( 'sidebar-alt' );
-
-	// Removes site layouts.
-	if ( function_exists( 'genesis_unregister_layout' ) ) {
-		genesis_unregister_layout( 'content-sidebar-sidebar' );
-		genesis_unregister_layout( 'sidebar-content-sidebar' );
-		genesis_unregister_layout( 'sidebar-sidebar-content' );
-	}
-
-	// Removes output of primary navigation right extras.
-	remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
-	remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
-
-	if ( function_exists( 'genesis_register_sidebar' ) ) {
-		genesis_register_sidebar(
-			array(
-				'id'          => 'social-icons',
-				'name'        => __( 'Social Icons', 'empower-pro-blocks' ),
-				'description' => __( 'Drag the Simple Social Icons to display social icons in your site.', 'empower-pro-blocks' ),
-			)
-		);
-	}
-
-	// Repositions primary navigation menu.
-	remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-}
-add_action( 'init', 'empower_pro_blocks_init' );
-
 add_action( 'genesis_theme_settings_metaboxes', 'empower_pro_blocks_remove_genesis_metaboxes' );
 /**
  * Removes navigation meta box.

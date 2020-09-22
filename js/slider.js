@@ -68,6 +68,7 @@ var slider_plugin = (function() {
 
     _.def.dotsWrapper.addEventListener('click', function (e) {
       if (e.target && e.target.nodeName == "LI") {
+		_.updateAutoSlider();
         _.curSlide = e.target.getAttribute('data-slide');
         _.gotoSlide();
       }
@@ -266,7 +267,14 @@ var slider_plugin = (function() {
 	  }
 
 	_.timeout = setTimeout(function() {
-		_.def.arrowRight.click();
+		// _.def.arrowRight.click();
+		if (_.curSlide == _.totalSlides) {
+		  _.curSlide = 0;
+		  _.sliderInner.style.left = -_.curSlide * _.slideW + 'px';
+		}
+		_.curSlide++;
+		_.gotoSlide();
+		_.updateAutoSlider();
 	}, delay);
   }
 

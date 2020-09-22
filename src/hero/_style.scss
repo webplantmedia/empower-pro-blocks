@@ -267,6 +267,10 @@
 		left: 0;
 		top: 0;
 		display: none;
+
+		@media screen and ( max-width: $ipad_width ) {
+			white-space: normal;
+		}
 	}
 
 	.cd-words-wrapper b.is-visible {

@@ -119,8 +119,6 @@
 	}
 
 	.entry-content {
-		display: none;
-
 		> *:last-child {
 			margin-bottom: 0;
 		}
@@ -185,6 +183,14 @@
 			// margin-bottom: 12%;
 		}
 	}
+
+	.entry.format-audio,
+	.entry.format-video {
+		.entry-content {
+			display: none !important;
+		}
+	}
+
 }
 
 .blog-shortcode.blog-three-columns .blog-shortcode-loop-container,

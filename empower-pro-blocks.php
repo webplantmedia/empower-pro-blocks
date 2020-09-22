@@ -87,3 +87,15 @@ function empower_pro_blocks_load_images() {
 	require_once EMPOWER_PRO_BLOCKS_DIR . '/lib/images.php';
 
 }
+
+add_action( 'init', 'empower_pro_blocks_init' );
+/**
+ * Load theme specific functions
+ *
+ * @since 1.0.0
+ */
+function empower_pro_blocks_init() {
+
+	require_once EMPOWER_PRO_BLOCKS_DIR . '/lib/theme-functions.php';
+
+}
