@@ -511,11 +511,17 @@ function empower_pro_blocks_modify_post_info( $post_info ) {
 
 	setup_postdata( $post );
 	$post_avatar = get_avatar( get_the_author_meta( 'email' ), 36 );
+	$post_format = get_post_format();
+
+	$byline = '';
+	if ( $post_format != "link" ) {
+		$byline = '<i class="byline">by</i> ';
+	}
 
 	if ( is_single() ) {
-		$post_info = $post_avatar . '<i class="byline">by</i> [post_author_posts_link] <i>on</i> [post_date after=""]  [post_comments] [post_edit]';
+		$post_info = $post_avatar . $byline . '[post_author_posts_link] <i>on</i> [post_date after=""]  [post_comments] [post_edit]';
 	} else {
-		$post_info = '<i class="byline">by</i> [post_author_posts_link] <i>on</i> [post_date]  [post_comments] [post_edit]';
+		$post_info = $byline . '[post_author_posts_link] <i>on</i> [post_date]  [post_comments] [post_edit]';
 	}
 
 	return $post_info;
@@ -657,8 +663,10 @@ function empower_pro_blocks_popup() {
 
 	$html = '';
 
-	$html .= '<div id="popup" class="cta-popup entry-content">';
-		$html .= '<div class="cta-popup-inner">';
+	$html .= '<div class="modal-overlay closed" id="modal-overlay"></div>';
+	$html .= '<div class="modal closed" id="modal">';
+		$html .= '<button class="close-button" id="close-button">Obvious Close Button</button>';
+		$html .= '<div class="modal-inner">';
 
 		$content = $post->post_content;
 		$content = apply_filters('the_content', $content);

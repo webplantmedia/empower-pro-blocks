@@ -119,7 +119,89 @@ function empower_pro_blocks_has_featured_image( $classes ) {
 
 // Move post image above post title.
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+add_action( 'genesis_entry_header', 'empower_pro_blocks_do_post_image', 1 );
+/**
+ * Echo the post image on archive pages.
+ *
+ * If this an archive page and the option is set to show thumbnail, then it gets the image size as per the theme
+ * setting, wraps it in the post permalink and echoes it.
+ *
+ * @since 1.1.0
+ */
+function empower_pro_blocks_do_post_image() {
+	$post_format = get_post_format();
+
+	if ( ! is_singular() && genesis_get_option( 'content_archive_thumbnail' ) ) {
+		if ( in_array( $post_format, array( 'audio', 'video' ) ) ) {
+			$media = $content = apply_filters( 'the_content', get_the_content() );
+		}
+		else {
+			$img = genesis_get_image(
+				[
+					'format'  => 'html',
+					'size'    => genesis_get_option( 'image_size' ),
+					'context' => 'archive',
+					'attr'    => genesis_parse_attr( 'entry-image', [] ),
+				]
+			);
+		}
+
+		if ( ! empty( $img ) ) {
+			genesis_markup(
+				[
+					'open'    => '<a %s>',
+					'close'   => '</a>',
+					'content' => $img,
+					'context' => 'entry-image-link',
+				]
+			);
+		}
+
+		if ( ! empty( $media ) ) {
+			genesis_markup(
+				[
+					'open'    => '<div %s>',
+					'close'   => '</div>',
+					'content' => $media,
+					'context' => 'entry-media-link',
+				]
+			);
+		}
+	}
+}
+
+remove_filter( 'genesis_attr_entry-image-link', 'genesis_attributes_entry_image_link' );
+add_filter( 'genesis_attr_entry-image-link', 'empower_pro_blocks_attributes_entry_image_link' );
+/**
+ * Add attributes for entry title link.
+ *
+ * @since 2.6.0
+ *
+ * @param array $attributes Existing attributes for entry title element.
+ * @return array Amended attributes for entry title element.
+ */
+function empower_pro_blocks_attributes_entry_image_link( $attributes ) {
+
+	$post_format = get_post_format();
+
+	$target = '_self';
+	if ( $post_format == "link" ) {
+		$permalink = empower_pro_blocks_get_link_url();
+		$target = "_blank";
+	}
+	else {
+		$permalink = get_permalink();
+	}
+
+	$attributes['href']        = $permalink;
+	$attributes['aria-hidden'] = 'true';
+	$attributes['tabindex']    = '-1';
+	$attributes['class']       = 'entry-image-link';
+	$attributes['target']      = $target;
+
+	return $attributes;
+
+}
 
 add_filter( 'genesis_get_image', 'empower_pro_blocks_wrap_featured_images', 10, 2 );
 add_filter( 'genesis_markup_entry-image-link_content', 'empower_pro_blocks_wrap_featured_images', 10, 2 );

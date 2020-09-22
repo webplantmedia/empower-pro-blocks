@@ -321,3 +321,10 @@ function empower_pro_blocks_is_woocommerce_activated() {
 function empower_pro_blocks_is_soliloquy_activated() {
 	return class_exists( 'Soliloquy_Lite' ) ? true : false;
 }
+
+function empower_pro_blocks_get_link_url() {
+    $content = get_the_content();
+    $has_url = get_url_in_content( $content );
+
+    return ( $has_url ) ? $has_url : get_permalink();
+}

@@ -284,3 +284,34 @@ add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_date_archive_titl
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 17 );
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_author_title_description', 17 );
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_blog_template_heading', 15 );
+
+remove_filter( 'genesis_attr_entry-title-link', 'genesis_attributes_entry_title_link' );
+add_filter( 'genesis_attr_entry-title-link', 'empower_pro_blocks_attributes_entry_title_link' );
+/**
+ * Add attributes for entry title link.
+ *
+ * @since 2.6.0
+ *
+ * @param array $attributes Existing attributes for entry title element.
+ * @return array Amended attributes for entry title element.
+ */
+function empower_pro_blocks_attributes_entry_title_link( $attributes ) {
+
+	$post_format = get_post_format();
+
+	$target = '_self';
+	if ( $post_format == "link" ) {
+		$permalink = empower_pro_blocks_get_link_url();
+		$target = "_blank";
+	}
+	else {
+		$permalink = get_permalink();
+	}
+
+	$attributes['rel']  = 'bookmark';
+	$attributes['href'] = $permalink;
+	$attributes['target'] = $target;
+
+	return $attributes;
+
+}
