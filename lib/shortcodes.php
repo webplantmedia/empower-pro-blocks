@@ -255,7 +255,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 							// Check if post has post thumbnail.
 							if ( in_array( $post_format, array( 'audio', 'video' ) ) ) :
 								$html .= '<div class="empower-pro-blocks-featured-image">';
-									$html .= $content = apply_filters( 'the_content', get_the_content() );
+									$html .= $content = apply_filters( 'the_content', do_blocks( get_the_content() ) );
 								$html .= '</div>';
 							else :
 								if ( has_post_thumbnail() ) :
