@@ -309,6 +309,7 @@
 			var modalOverlay = document.querySelector("#modal-overlay");
 			var closeButton = document.querySelector("#close-button");
 			var openButton = document.querySelector(".nav-primary-cta a");
+			var openButtonMobile = document.querySelector("a.button-mobile");
 
 
 			if ( modal ) {
@@ -318,6 +319,11 @@
 				});
 
 				openButton.addEventListener("click", function(event) {
+					event.preventDefault();
+					$(modalOverlay).fadeIn();
+					// modalOverlay.classList.toggle("closed");
+				});
+				openButtonMobile.addEventListener("click", function(event) {
 					event.preventDefault();
 					$(modalOverlay).fadeIn();
 					// modalOverlay.classList.toggle("closed");

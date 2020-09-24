@@ -19,11 +19,13 @@
 .modal {
   display: block;
   margin-top: 40px;
-  width: 600px;
+  width: 630px;
   max-width: 100%;
   min-height: 400px;
   z-index: 1000;
   padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +40,7 @@
 
 #close-button {
 	top: -15px;
-	right: -15px;
+	right: 0px;
 	bottom: auto;
 	left: auto;
 	position: absolute !important;
