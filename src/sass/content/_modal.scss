@@ -1,30 +1,3 @@
-.modal {
-  /* This way it could be display flex or grid or whatever also. */
-  display: block;
-  
-  /* Probably need media queries here */
-  width: 600px;
-  max-width: 100%;
-  
-  min-height: 400px;
-  
-  // position: absolute;
-
-  
-  z-index: 1000;
-  
-  // left: 50%;
-  // top: 20px;
-  
-  /* Use this for centering if unknown width/height */
-  // transform: translate(-50%, -50%);
-  
-  /* If known, negative margins are probably better (less chance of blurry text). */
-  /* margin: -200px 0 0 -200px; */
-  
-  background: white;
-  @include box-shadow;
-}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -35,19 +8,61 @@
   
   background: rgba(0, 0, 0, 0.6);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: center;
 
-  overflow: scroll;
+  overflow-y: scroll;
+  margin-bottom: 40px;
+}
+.modal {
+  display: block;
+  margin-top: 40px;
+  width: 600px;
+  max-width: 100%;
+  min-height: 400px;
+  z-index: 1000;
+  padding-bottom: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin-bar .modal {
+  display: block;
+  margin-top: 72px;
 }
 #modal-overlay.closed {
   display: none;
 }
 
 #close-button {
-	position: absolute;
-	z-index: 1;
+	top: -15px;
+	right: -15px;
+	bottom: auto;
+	left: auto;
+	position: absolute !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+    border: none !important;
+    background-color: #ffffff !important;
+    padding-top: 05px !important;
+    padding-right: 05px !important;
+    padding-bottom: 05px !important;
+    padding-left: 05px !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    fill: #333333 !important;
+    border-radius: 100% !important;
+    box-shadow: 0px 0px 0px 0px #333333 !important;
+    min-width: auto !important;
+	transform: none !important;
+}
+#close-button:hover {
+    background-color: #333 !important;
+    fill: #fff !important;
 }
 .modal-inner {
   top: 0;
@@ -55,5 +70,12 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding: 20px 50px 20px 20px;
+  // padding: 40px 40px 40px 40px;
+  padding: 0;
+  background: white;
+  @include box-shadow;
+
+  > * {
+	  margin-bottom: 0 !important;
+  }
 }

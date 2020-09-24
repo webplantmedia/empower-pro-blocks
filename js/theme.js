@@ -309,16 +309,20 @@
 			var modalOverlay = document.querySelector("#modal-overlay");
 			var closeButton = document.querySelector("#close-button");
 			var openButton = document.querySelector(".nav-primary-cta a");
+			var viewportHeight = window.innerHeight;
+			var modalHeight = modal.offsetHeight;
+			console.log(viewportHeight);
+			console.log(modalHeight);
 
 			closeButton.addEventListener("click", function() {
-				modal.classList.toggle("closed");
-				modalOverlay.classList.toggle("closed");
+				$(modalOverlay).fadeOut();
+				// modalOverlay.classList.toggle("closed");
 			});
 
 			openButton.addEventListener("click", function(event) {
 				event.preventDefault();
-				modal.classList.toggle("closed");
-				modalOverlay.classList.toggle("closed");
+				$(modalOverlay).fadeIn();
+				// modalOverlay.classList.toggle("closed");
 			});
 		}
 	);

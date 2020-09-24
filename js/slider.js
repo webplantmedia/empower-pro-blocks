@@ -54,7 +54,11 @@ var slider_plugin = (function() {
 
     $extendObj(_.def, settings);
 
-    _.init();
+	if (typeof(_.def.target) != 'undefined' && _.def.target != null)
+	{
+	  // Exists.
+	  _.init();
+	}
   }
 
   fifi_slider.prototype.buildDots = function () {

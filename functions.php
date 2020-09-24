@@ -627,7 +627,9 @@ function empower_pro_blocks_popup() {
 
 	$html .= '<div class="modal-overlay closed" id="modal-overlay">';
 		$html .= '<div class="modal" id="modal">';
-			$html .= '<button class="close-button" id="close-button">Obvious Close Button</button>';
+			$html .= '<button class="close-button" id="close-button">';
+				$html .= '<svg viewBox="0 0 384 512" style="display:block;height:22px;width:22px"><path d="M231.6 256l130.1-130.1c4.7-4.7 4.7-12.3 0-17l-22.6-22.6c-4.7-4.7-12.3-4.7-17 0L192 216.4 61.9 86.3c-4.7-4.7-12.3-4.7-17 0l-22.6 22.6c-4.7 4.7-4.7 12.3 0 17L152.4 256 22.3 386.1c-4.7 4.7-4.7 12.3 0 17l22.6 22.6c4.7 4.7 12.3 4.7 17 0L192 295.6l130.1 130.1c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17L231.6 256z"></path></svg>';
+			$html .= '</button>';
 			$html .= '<div class="modal-inner">';
 
 			$content = $post->post_content;
