@@ -38,22 +38,22 @@ textarea {
 }
 
 #master .white-form-fields {
-	div.wpforms-container-full .wpforms-form input[type="date"],
-	div.wpforms-container-full .wpforms-form input[type="datetime"],
-	div.wpforms-container-full .wpforms-form input[type="datetime-local"],
-	div.wpforms-container-full .wpforms-form input[type="email"],
-	div.wpforms-container-full .wpforms-form input[type="month"],
-	div.wpforms-container-full .wpforms-form input[type="number"],
-	div.wpforms-container-full .wpforms-form input[type="password"],
-	div.wpforms-container-full .wpforms-form input[type="range"],
-	div.wpforms-container-full .wpforms-form input[type="search"],
-	div.wpforms-container-full .wpforms-form input[type="tel"],
-	div.wpforms-container-full .wpforms-form input[type="text"],
-	div.wpforms-container-full .wpforms-form input[type="time"],
-	div.wpforms-container-full .wpforms-form input[type="url"],
-	div.wpforms-container-full .wpforms-form input[type="week"],
-	div.wpforms-container-full .wpforms-form select,
-	div.wpforms-container-full .wpforms-form textarea,
+	.wpforms-form input[type="date"],
+	.wpforms-form input[type="datetime"],
+	.wpforms-form input[type="datetime-local"],
+	.wpforms-form input[type="email"],
+	.wpforms-form input[type="month"],
+	.wpforms-form input[type="number"],
+	.wpforms-form input[type="password"],
+	.wpforms-form input[type="range"],
+	.wpforms-form input[type="search"],
+	.wpforms-form input[type="tel"],
+	.wpforms-form input[type="text"],
+	.wpforms-form input[type="time"],
+	.wpforms-form input[type="url"],
+	.wpforms-form input[type="week"],
+	.wpforms-form select,
+	.wpforms-form textarea,
 	input,
 	select,
 	textarea {
@@ -75,11 +75,11 @@ textarea {
 		}
 	}
 
-	div.wpforms-container div.wpforms-uploader .dz-preview .dz-details .dz-size {
+	div.wpforms-uploader .dz-preview .dz-details .dz-size {
 		color: #fff;
 	}
-	div.wpforms-container div.wpforms-uploader .dz-preview .dz-remove::after,
-	div.wpforms-container div.wpforms-uploader .dz-preview .dz-remove::before {
+	div.wpforms-uploader .dz-preview .dz-remove::after,
+	div.wpforms-uploader .dz-preview .dz-remove::before {
 		background-color: #fff;
 	}
 }

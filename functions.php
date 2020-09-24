@@ -258,7 +258,7 @@ function empower_pro_blocks_do_nav_submenu() {
 		$html .= '<div class="dropdownArrow" style="transform: translateX(636px) rotate(45deg);"></div>';
 		$html .= '<div class="dropdownContainer" style="transform: translateX(452px); width: 368px; height: 443px;">';
 
-		$content = $apost->post_content;
+		$content = $post->post_content;
 		$content = do_blocks( $content );
 		$content = do_shortcode( $content );
 		$html .= $content;
