@@ -21,7 +21,7 @@ function empower_pro_blocks_create_post_type() {
 			),
 			'public'        => true,
 			'exclude_from_search' => true,
-			'publicly_queryable' => false,
+			'publicly_queryable' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
 			'query_var'     => true,

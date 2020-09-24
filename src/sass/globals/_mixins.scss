@@ -167,10 +167,10 @@
 }
 
 @mixin background-2x($path, $ext: "png") {
-	background-image: url("$path" + "." + "$ext");
+	background-image: url($path + "." + $ext);
 
 	@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-		background-image: url("$path" + "-2x." + "$ext");
+		background-image: url($path + "-2x." + $ext);
 	}
 }
 
