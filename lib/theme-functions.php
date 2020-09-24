@@ -103,4 +103,21 @@ function empower_pro_blocks_do_post_content() {
 	the_content( $more_text );
 }
 
+remove_filter( 'genesis_attr_body', 'genesis_attributes_body' );
+add_filter( 'genesis_attr_body', 'empower_pro_blocks_attributes_body' );
+/**
+ * Add attributes for entry title link.
+ *
+ * @since 2.6.0
+ *
+ * @param array $attributes Existing attributes for entry title element.
+ * @return array Amended attributes for entry title element.
+ */
+function empower_pro_blocks_attributes_body( $attributes ) {
 
+	$attributes['id'] = "master";
+	$attributes['class'] = implode( ' ', get_body_class() );
+
+	return $attributes;
+
+}

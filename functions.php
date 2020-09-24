@@ -625,16 +625,17 @@ function empower_pro_blocks_popup() {
 
 	$html = '';
 
-	$html .= '<div class="modal-overlay closed" id="modal-overlay"></div>';
-	$html .= '<div class="modal closed" id="modal">';
-		$html .= '<button class="close-button" id="close-button">Obvious Close Button</button>';
-		$html .= '<div class="modal-inner">';
+	$html .= '<div class="modal-overlay closed" id="modal-overlay">';
+		$html .= '<div class="modal" id="modal">';
+			$html .= '<button class="close-button" id="close-button">Obvious Close Button</button>';
+			$html .= '<div class="modal-inner">';
 
-		$content = $post->post_content;
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		$html .= $content;
+			$content = $post->post_content;
+			$content = apply_filters('the_content', $content);
+			$content = str_replace(']]>', ']]&gt;', $content);
+			$html .= $content;
 
+			$html .= '</div>';
 		$html .= '</div>';
 	$html .= '</div>';
 
