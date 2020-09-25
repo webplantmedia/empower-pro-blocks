@@ -141,7 +141,7 @@ function empower_pro_blocks_move_page_headers() {
 		add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_featured_image', 16 );
 
 		// Adds has-featured-image body class.
-		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image' );
+		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image', 10, 1 );
 
 	} else {
 		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
@@ -158,7 +158,7 @@ function empower_pro_blocks_move_page_headers() {
 
 	if ( is_404() ) {
 		add_action( 'genesis_before_content_sidebar_wrap', 'empower_pro_blocks_featured_image', 16 );
-		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image' );
+		add_filter( 'body_class', 'empower_pro_blocks_has_featured_image', 10, 1 );
 	}
 
 	$is_woocommerce_shop = class_exists( 'WooCommerce' ) && is_post_type_archive( 'product' );
