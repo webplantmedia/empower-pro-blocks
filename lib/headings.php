@@ -74,6 +74,49 @@ function empower_pro_blocks_entry_attributes( $attributes, $context, $args ) {
 
 }
 
+/**
+ * Adds featured image body class.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Original body classes.
+ * @return array Modified body classes.
+ */
+function empower_pro_blocks_has_featured_image( $classes ) {
+
+	$appearance = empower_pro_blocks_get_config( 'appearance' );
+
+	if ( ! empower_pro_blocks_has_post_thumbnail() ) {
+		return $classes;
+	}
+
+	$page_template = get_page_template();
+
+	if ( is_singular( 'post' ) && $appearance['post-image'] ) {
+		$classes[] = 'has-featured-image';
+	}
+
+	if ( ( is_singular( 'page' ) || is_404() ) && $appearance['page-image'] ) {
+		$classes[] = 'has-featured-image';
+	}
+
+	if ( is_singular( 'portfolio' ) && $appearance['portfolio-image'] ) {
+		$classes[] = 'has-featured-image';
+	}
+
+	if ( is_singular( 'event' ) && $appearance['event-image'] ) {
+		$classes[] = 'has-featured-image';
+	}
+
+	if ( is_page_template( 'page_blog.php' ) || is_archive() || is_home() ) {
+		$classes[] = 'has-featured-images'; // Note plural for archives.
+	}
+
+	return $classes;
+
+}
+
+
 add_action( 'genesis_meta', 'empower_pro_blocks_move_page_headers' );
 /**
  * Moves page title above content wrap.

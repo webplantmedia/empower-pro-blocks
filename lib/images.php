@@ -78,42 +78,63 @@ function empower_pro_blocks_featured_image() {
 }
 
 /**
- * Adds featured image body class.
+ * Adds featured image to single posts, pages, and portfolio items.
  *
  * @since 1.0.0
- *
- * @param array $classes Original body classes.
- * @return array Modified body classes.
  */
-function empower_pro_blocks_has_featured_image( $classes ) {
+function empower_pro_blocks_featured_image_2() {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	$featured_image = '';
+	$appearance     = empower_pro_blocks_get_config( 'appearance' );
 
-	if ( ! empower_pro_blocks_has_post_thumbnail() ) {
-		return $classes;
+	if ( is_404() && ! $appearance['page-image'] ) {
+		return;
 	}
 
-	if ( is_singular( 'post' ) && $appearance['post-image'] ) {
-		$classes[] = 'has-featured-image';
+	if ( is_singular( 'post' ) && ! $appearance['post-image'] ) {
+		return;
 	}
 
-	if ( ( is_singular( 'page' ) || is_404() ) && $appearance['page-image'] ) {
-		$classes[] = 'has-featured-image';
+	if ( is_singular( 'page' ) && ! $appearance['page-image'] ) {
+		return;
 	}
 
-	if ( is_singular( 'portfolio' ) && $appearance['portfolio-image'] ) {
-		$classes[] = 'has-featured-image';
+	if ( is_singular( 'portfolio' ) && ! $appearance['portfolio-image'] ) {
+		return;
 	}
 
-	if ( is_singular( 'event' ) && $appearance['event-image'] ) {
-		$classes[] = 'has-featured-image';
+	if ( is_singular( 'event' ) && ! $appearance['event-image'] ) {
+		return;
 	}
 
-	if ( is_page_template( 'page_blog.php' ) || is_archive() || is_home() ) {
-		$classes[] = 'has-featured-images'; // Note plural for archives.
+	$image_id = empower_pro_blocks_get_post_thumbnail_id();
+	$class    = '';
+
+	if ( $image_id ) {
+		$image_alt      = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+		$featured_image = genesis_get_image(
+			array(
+				'format'  => 'html',
+				'size'    => 'full-size',
+				'context' => '',
+				'attr'    => array(
+					'alt'   => $image_alt,
+					'class' => 'empower-pro-blocks-single-image post-image',
+				),
+			)
+		);
+
+		// $caption = wp_get_attachment_caption( $image_id );
 	}
 
-	return $classes;
+	if ( $featured_image && ( is_singular( array( 'post', 'page', 'portfolio', 'event' ) ) || is_404() ) ) {
+		// if ( ! empty( $caption ) ) {
+			// $caption = '<figcaption>' . $caption . '</figcaption>';
+		// }
+
+		$html = '<div class="featured-image-2' . $class . '">' . $featured_image . '</div>';
+		echo wp_kses_post( $html );
+	}
 
 }
 
