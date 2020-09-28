@@ -233,6 +233,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 
 				while ( $posts->have_posts() ) : $posts->the_post();
 
+					$post = get_post(get_the_ID());
 					$post_format = get_post_format();
 					$target = '_self';
 					if ( $post_format == "link" ) {
@@ -255,7 +256,7 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 							// Check if post has post thumbnail.
 							if ( in_array( $post_format, array( 'audio', 'video' ) ) ) :
 								$html .= '<div class="empower-pro-blocks-featured-image">';
-									$html .= $content = apply_filters( 'the_content', do_blocks( get_the_content() ) );
+									$html .= $content = apply_filters( 'the_content', do_blocks( empower_pro_blocks_get_first_paragraph( get_the_content() ) ) );
 								$html .= '</div>';
 							else :
 								if ( has_post_thumbnail() ) :
@@ -311,9 +312,18 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 						$html .= '</header>';
 
 							if ( $args['excerpt'] ) :
-								$html .= '<div class="entry-content">';
-								$html .= '<p>'.wp_trim_words( apply_filters( 'empower_pro_blocks_excerpt', get_the_excerpt() ), $args['length'], '&hellip;' ).'</p>';
-								$html .= '</div>';
+								if ( in_array( $post_format, array( 'audio', 'video', 'link' ) ) ) {
+									if ( ! empty( $post->post_excerpt ) ) {
+										$html .= '<div class="entry-content">';
+										$html .= '<p>'.$post->post_excerpt.'</p>';
+										$html .= '</div>';
+									}
+								}
+								else {
+									$html .= '<div class="entry-content">';
+									$html .= '<p>'.apply_filters( 'empower_pro_blocks_excerpt', get_the_excerpt() ).'</p>';
+									$html .= '</div>';
+								}
 							endif;
 
 							if ( $args['readmore'] ) :

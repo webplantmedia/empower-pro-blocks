@@ -154,7 +154,7 @@ function empower_pro_blocks_do_post_image() {
 
 	if ( ! is_singular() && genesis_get_option( 'content_archive_thumbnail' ) ) {
 		if ( in_array( $post_format, array( 'audio', 'video' ) ) ) {
-			$media = $content = apply_filters( 'the_content', get_the_content() );
+			$media = $content = apply_filters( 'the_content', empower_pro_blocks_get_first_paragraph( get_the_content() ) );
 		}
 		else {
 			$img = genesis_get_image(

@@ -79,6 +79,9 @@ hr.wp-block-separator {
 	max-width: 100px;
 }
 
+.wp-block-audio {
+	margin-bottom: $margin_bottom;
+}
 .wp-block-audio audio {
 	display: inline-block;
 	width: 100%;

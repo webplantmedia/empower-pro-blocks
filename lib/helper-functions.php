@@ -328,3 +328,13 @@ function empower_pro_blocks_get_link_url() {
 
     return ( $has_url ) ? $has_url : get_permalink();
 }
+
+function empower_pro_blocks_get_first_paragraph( $content ) {
+	$pieces = explode( "\n\n", $content );
+
+	if ( ! empty( $pieces ) && array_key_exists( 0, $pieces ) ) {
+		return trim( $pieces[0] );
+	}
+
+	return $content;
+}
