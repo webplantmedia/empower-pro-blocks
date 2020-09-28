@@ -38,6 +38,7 @@ textarea {
 }
 
 #master .white-form-fields {
+	.wpforms-confirmation-container-full,
 	.wpforms-form input[type="date"],
 	.wpforms-form input[type="datetime"],
 	.wpforms-form input[type="datetime-local"],
@@ -60,6 +61,7 @@ textarea {
 		border-color: #fff !important;
 	}
 
+	.wpforms-confirmation-container-full p,
 	label {
 		color: #fff !important;
 	}

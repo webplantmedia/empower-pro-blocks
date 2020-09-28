@@ -13,10 +13,18 @@
 /* 860px + 30px so wide images match width in front-end and editor. */
 .wp-block[data-align="wide"] {
 	max-width: $content_max_width_full;
+
+	.wp-block {
+		max-width: none;
+	}
 }
 
 .wp-block[data-align="full"] {
 	max-width: none;
+
+	.wp-block {
+		max-width: none;
+	}
 }
 
 .block-wrap .wp-block {
