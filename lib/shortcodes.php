@@ -37,6 +37,8 @@ function empower_pro_blocks_blog_menu_items( $atts, $content ) {
 		'exclude_current'  => 0,
 	);
 
+	$args = wp_parse_args( $atts, $args );
+
 	$posts = empower_pro_blocks_get_posts( $args );
 
 	$html = '';
