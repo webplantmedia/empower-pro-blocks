@@ -49,6 +49,8 @@ add_action( 'genesis_entry_content', 'empower_pro_blocks_do_post_content' );
  * @since 1.1.0
  */
 function empower_pro_blocks_do_post_content() {
+	global $post;
+
 	if ( ! is_single() ) {
 		$post_format = get_post_format();
 
@@ -56,6 +58,11 @@ function empower_pro_blocks_do_post_content() {
 		if ( in_array( $post_format, array( 'link' ) ) ) {
 			$permalink = empower_pro_blocks_get_link_url();
 			$target = "_blank";
+
+			if ( has_excerpt() ) {
+				$excerpt = wpautop( $post->post_excerpt );
+				echo $excerpt;
+			}
 
 			$more = sprintf( '<p class="more-link-wrapper"><a href="%s" class="more-link" target="%s">%s &#x2192;</a></p>', $permalink, $target, genesis_a11y_more_link( __( 'Read Article', 'empower-pro-blocks' ) ) );
 
