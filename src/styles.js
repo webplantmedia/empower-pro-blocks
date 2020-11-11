@@ -74,6 +74,11 @@ registerBlockStyle( 'core/image' , {
 	label: __( 'Grayscale' ),
 	isDefault: false,
 } );
+registerBlockStyle( 'core/image' , {
+	name: 'spotlight',
+	label: __( 'Spotlight' ),
+	isDefault: false,
+} );
 registerBlockStyle( 'core/gallery' , {
 	name: 'showcase',
 	label: __( 'Showcase' ),

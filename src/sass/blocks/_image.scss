@@ -19,3 +19,6 @@
 		filter: none;
 	}
 }
+.wp-block-image.is-style-spotlight img {
+	@include box-shadow( $weight: 'heavy' );
+}
