@@ -312,7 +312,7 @@
 			var openButtonMobile = document.querySelector("a.button-mobile");
 
 
-			if ( modal ) {
+			if ( modal && openButton ) {
 				closeButton.addEventListener("click", function() {
 					$(modalOverlay).fadeOut();
 					// modalOverlay.classList.toggle("closed");
