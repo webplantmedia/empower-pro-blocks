@@ -51,6 +51,12 @@
 	background-color: $body_background_color;
 }
 
+.single-simulation_video {
+	.empower-pro-blocks-page-title {
+		padding-bottom: 40px;
+	}
+}
+
 .genesis-title-hidden {
 	.empower-pro-blocks-page-title {
 		display: none;
@@ -67,6 +73,10 @@
 h1.entry-title {
 	margin: 0 80px 0 80px;
 	text-align: center;
+}
+
+.single-simulation_video .entry-header .entry-title {
+	margin-bottom: 0px;
 }
 
 .empower-pro-blocks-page-title .archive-description .archive-title + *,

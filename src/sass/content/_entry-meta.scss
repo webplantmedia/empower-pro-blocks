@@ -18,6 +18,14 @@ p.entry-meta i,
 	color: $gray_text_color;
 }
 
+.single-simulation_video .entry-meta {
+	margin-bottom: 40px;
+}
+.single-simulation_video .entry-meta-url {
+	margin-bottom: 0px;
+}
+
+// .single-simulation_video .entry-meta-url a,
 .entry-meta a.entry-author-link,
 .entry-meta .entry-time,
 .entry-meta .post-edit-link,
