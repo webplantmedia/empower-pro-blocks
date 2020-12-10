@@ -4,9 +4,9 @@
 function globalNavDropdowns(e) {
     var t = this;
 	this.container = document.querySelector(e);
-	if ( ! this.container ) {
-		return;
-	}
+	// if ( ! this.container ) {
+		// return;
+	// }
 	this.root = this.container.querySelector(".site-header > .wrap"), this.primaryNav = this.root.querySelector(".nav-primary .menu"), this.primaryNavItem = this.root.querySelector(".nav-primary .menu-item:first-child a"), this.secondaryNavItem = this.root.querySelector(".nav-primary-cta .menu .menu-item:first-child a"), this.checkCollision(), window.addEventListener("load", this.checkCollision.bind(this)), window.addEventListener("resize", this.checkCollision.bind(this)), this.container.classList.add("noDropdownTransition"), this.dropdownBackground = this.container.querySelector(".dropdownBackground"), this.dropdownBackgroundAlt = this.container.querySelector(".alternateBackground"), this.dropdownContainer = this.container.querySelector(".dropdownContainer"), this.dropdownArrow = this.container.querySelector(".dropdownArrow"), this.dropdownRoots = Strut.queryArray(".hasDropdown", this.root), this.dropdownSections = Strut.queryArray(".dropdownSection", this.container).map(function(e) {
         return {
             el: e,
@@ -52,9 +52,9 @@ function globalNavDropdowns(e) {
 }
 
 function globalNavPopup(e) {
-	if ( ! this.root ) {
-		return;
-	}
+	// if ( ! this.root ) {
+		// return;
+	// }
     var t = this,
         n = Strut.touch.isSupported ? "touchend" : "click";
 	this.activeClass = "activated", this.root = document.querySelector(e), this.link = this.root.querySelector(".menu-toggle"), this.popup = this.root.querySelector(".popup"), /*this.closeButton = this.root.querySelector(".popupCloseButton"),*/ this.link.addEventListener(n, function(e) {
