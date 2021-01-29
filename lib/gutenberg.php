@@ -12,8 +12,8 @@ function empower_pro_blocks_category( $categories, $post ) {
 	return array_merge(
 		array(
 			array(
-				'slug' => 'abilitie-blocks',
-				'title' => __( 'Abilitie Blocks', 'empower-pro-blocks' ),
+				'slug' => 'empower-pro-blocks',
+				'title' => __( 'Empower Pro Blocks', 'empower-pro-blocks' ),
 			),
 		),
 		$categories,
