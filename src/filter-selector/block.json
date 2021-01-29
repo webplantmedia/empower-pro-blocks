@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/filter-selector",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"button1Text": {
 			"type": "string",

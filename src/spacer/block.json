@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/spacer",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"height": {
 			"type": "number",

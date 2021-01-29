@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/footer",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"columns": {
 			"type": "string"

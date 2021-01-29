@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/background",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"backgroundColor": {
 			"type": "string"

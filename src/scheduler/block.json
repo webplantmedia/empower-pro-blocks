@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/scheduler",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"parent" : [
 		"empower-pro-blocks/schedule"
 	],

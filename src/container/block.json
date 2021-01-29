@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/container",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"containerColor": {
 			"type": "string",

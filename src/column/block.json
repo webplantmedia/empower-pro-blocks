@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/column",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"parent": [
 		"empower-pro-blocks/filter",
 		"empower-pro-blocks/grid",

@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/icontext",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"icon": {
 			"type": "string",

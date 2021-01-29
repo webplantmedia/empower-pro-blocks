@@ -1,6 +1,6 @@
 {
 	"name": "empower-pro-blocks/hero",
-	"category": "abilitie-blocks",
+	"category": "empower-pro-blocks",
 	"attributes": {
 		"typewriterSearch": {
 			"type": "string",
