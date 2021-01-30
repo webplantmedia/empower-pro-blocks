@@ -86,7 +86,7 @@
 	}
 }
 
-@for $i from 5 through 50 {
+@for $i from 9 through 50 {
 	$x: $i * 10;
 	.mr-#{$x} {
 		margin-right: #{$x}px !important;
