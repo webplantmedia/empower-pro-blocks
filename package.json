@@ -10,13 +10,11 @@
 		"format:js": "wp-scripts format-js",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start & npm run compile & npm run sass",
-		"compile": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/blocks.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/theme.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/editor.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/woocommerce.scss --output build",
-		"sass": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map --watch src --output build",
+		"start": "wp-scripts start",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^12.1.1"
+		"@wordpress/scripts": "^12.5.0"
 	},
 	"dependencies": {
 		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
@@ -30,9 +28,8 @@
 		"@wordpress/keycodes": "^2.14.0",
 		"classnames": "^2.2.6",
 		"fast-average-color": "^6.0.2",
-		"node-sass": "^4.14.1",
 		"prop-types": "^15.7.2",
-		"react": "^16.13.1",
+		"react": "^16.14.0",
 		"react-dom": "^16.13.1",
 		"react-transition-group": "^4.4.1",
 		"tinycolor2": "^1.4.1"
