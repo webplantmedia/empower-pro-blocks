@@ -79,7 +79,7 @@ function empower_pro_blocks_custom_gutenberg_admin_css() {
 	wp_localize_script('empower-pro-blocks-editor', 'empower_pro_blocks', array(
 		'plugins_url' => plugins_url( 'empower-pro-blocks', EMPOWER_PRO_BLOCKS_DIR ),
 	));
-	wp_enqueue_style( 'empower-pro-blocks-editor', EMPOWER_PRO_BLOCKS_URL . 'build/editor.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/editor.css" ) );
+	wp_enqueue_style( 'empower-pro-blocks-editor', EMPOWER_PRO_BLOCKS_URL . 'css/editor.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "css/editor.css" ) );
 }
 add_action( 'enqueue_block_editor_assets', 'empower_pro_blocks_custom_gutenberg_admin_css' );
 
@@ -90,7 +90,7 @@ function empower_pro_blocks_custom_gutenberg_css() {
 	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
 	wp_enqueue_script( 'icons-js', $empower_pro_blocks_appearance['icons-js-url'], array(), EMPOWER_PRO_BLOCKS_VERSION, true );
 
-	wp_enqueue_style( 'empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'build/blocks.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/blocks.css" ) );
+	wp_enqueue_style( 'empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'css/blocks.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "css/blocks.css" ) );
 
 	$css = empower_pro_blocks_get_gutenberg_css( $empower_pro_blocks_appearance );
 	$css .= empower_pro_blocks_get_gutenberg_button_css( $empower_pro_blocks_appearance );
@@ -103,7 +103,7 @@ add_action( 'enqueue_block_assets', 'empower_pro_blocks_custom_gutenberg_css' );
 function empower_pro_blocks_enqueue_scripts() {
 	global $empower_pro_blocks_appearance;
 
-	wp_enqueue_style( 'empower-pro-blocks-theme', EMPOWER_PRO_BLOCKS_URL . 'build/theme.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "build/theme.css" ) );
+	wp_enqueue_style( 'empower-pro-blocks-theme', EMPOWER_PRO_BLOCKS_URL . 'css/theme.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "css/theme.css" ) );
 
 	$css = empower_pro_blocks_get_css( $empower_pro_blocks_appearance );
 	wp_add_inline_style( 'empower-pro-blocks-theme', $css );
