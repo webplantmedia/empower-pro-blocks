@@ -6,17 +6,18 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"start": "wp-scripts start & npm run compile & npm run sass",
-		"compile": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/blocks.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/theme.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/editor.scss --output build & node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map src/woocommerce.scss --output build",
-		"sass": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map build/map --watch src --output build",
+		"compile": "node-sass src/ --output-style compressed --indent-width 1 --indent-type tab --source-map css/map --output css",
+		"sass": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map css/map --watch src --output css",
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"packages-update": "wp-scripts packages-update"
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start & npm run compile & npm run sass"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^12.5.0"
+		"@wordpress/scripts": "^12.5.0",
+		"node-sass": "^4.14.1"
 	},
 	"dependencies": {
 		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
@@ -30,7 +31,6 @@
 		"@wordpress/keycodes": "^2.14.0",
 		"classnames": "^2.2.6",
 		"fast-average-color": "^6.0.2",
-		"node-sass": "^5.0.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.14.0",
 		"react-dom": "^16.13.1",
