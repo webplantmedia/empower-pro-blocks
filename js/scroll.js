@@ -38,11 +38,13 @@
 			} else {
 				$body.removeClass( 'sticky' );
 			}
-		} else if ( $mobileCTA.length ) {
+		}
+
+		if ( $mobileCTA.length ) {
 			if ( scroll > 600 ) {
-				$mobileCTA.addClass( 'sticky-mobile' );
-			} else {
 				$mobileCTA.removeClass( 'sticky-mobile' );
+			} else {
+				$mobileCTA.addClass( 'sticky-mobile' );
 			}
 		}
 

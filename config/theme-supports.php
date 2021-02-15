@@ -38,7 +38,7 @@ return array(
 		// 'secondary'  => __( 'Footer Menu', 'empower-pro-blocks' ),
 		// 'tertiary'   => __( 'Top Bar Menu', 'empower-pro-blocks' ),
 		'primary-cta' => __( 'Header Menu CTA', 'empower-pro-blocks' ),
-		// 'mobile-cta' => __( 'Mobile CTA', 'empower-pro-blocks' ),
+		'mobile-cta' => __( 'Mobile CTA', 'empower-pro-blocks' ),
 	),
 	'genesis-structural-wraps' => array(
 		'header',
