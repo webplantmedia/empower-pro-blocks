@@ -33,6 +33,7 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
 
 // Includes Customizer CSS.
+require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-vars-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';

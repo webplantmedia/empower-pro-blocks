@@ -18,6 +18,23 @@ p.entry-meta i,
 	color: $gray_text_color;
 }
 
+#master.single-event .empower-pro-blocks-page-title .entry-meta .entry-time {
+	// @include heading;
+	// @include h4;
+	@include button;
+	@include button-text;
+	color: $text_color;
+	cursor: default;
+
+	&::after {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		right: 0;
+		background-color: var(--epb-primary-color);
+	}
+}
+
 .single-simulation_video .entry-meta {
 	margin-bottom: 40px;
 }
