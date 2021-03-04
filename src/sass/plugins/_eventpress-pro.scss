@@ -213,11 +213,11 @@
 }
 
 // Filter
-.filtering-heading + .gb-block-container > .gb-container-inside > .gb-container-content,
-.filtering + .gb-block-container > .gb-container-inside > .gb-container-content {
+.filtering-heading + .wp-block-group > .wp-block-group__inner-container,
+.filtering + .wp-block-group > .wp-block-group__inner-container {
 	position: relative;
 
-	> .gb-block-container {
+	> .wp-block-group {
 		// visibility: hidden;
 		// transition: all .4s;
 		// opacity: 0;
