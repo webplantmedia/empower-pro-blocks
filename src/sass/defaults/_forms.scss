@@ -333,7 +333,7 @@ input[type="radio"]:checked {
 
 .filtering > span,
 .table-player > div,
-a.more-link,
+#master a.more-link,
 .above-footer-image #sb_instagram #sbi_load .sbi_follow_btn a,
 .above-footer-image #sb_instagram #sbi_load .sbi_load_btn,
 #master div.wpforms-container-full .wpforms-form input[type="submit"],
@@ -368,8 +368,8 @@ input[type="submit"],
 	}
 }
 
-a.more-link:focus,
-a.more-link:hover,
+#master a.more-link:focus,
+#master a.more-link:hover,
 .more-from-category a:focus,
 .more-from-category a:hover,
 a.button:focus,
@@ -473,6 +473,10 @@ input[type="submit"].small {
 	@include button-small;
 }
 
+.filtering > span {
+	transform: none !important;
+}
+
 .table-player > div {
 	&::after {
 		display: none;
@@ -492,7 +496,7 @@ input[type="submit"].large {
 	padding: 24px;
 }
 
-a.more-link,
+#master a.more-link,
 .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.is-style-text,
 .comment-reply-link,
 a.button.is-style-text,

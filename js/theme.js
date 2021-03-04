@@ -200,50 +200,35 @@
 
 	$( document ).ready(
 		function() {
-			$( '.filtering' ).on(
-				'click',
-				'div, span',
-				function () {
+				$( '.filtering' ).on(
+					'click',
+					'span',
+					function () {
 
-					var $this       = $( this );
-					var $parent     = $this.parent();
-					var $target     = '';
-					var container   = $parent.attr( 'data-container' );
-					var collapse    = $parent.attr( 'data-collapse' );
-					var $container  = $( container );
-					var index = $this.index();
+						var $this       = $( this );
+						var container   = $this.parent().attr( 'data-container' );
+						var $container  = $( container );
+						var filterValue = $this.attr( 'data-filter' );
 
-					if ( $container.length ) {
-						$target = $container.children().children().eq(index);
-					}
+						if ( $container.length ) {
+							var $target = $container.find( filterValue );
+						}
 
-					if ( $target.length ) {
-						if ( collapse == "false" ) {
-							if ( $this.hasClass('active')) {
-								// do nothing
-							}
-							else {
-								$this.addClass( 'active' ).siblings().removeClass( 'active' );
-								$target.addClass( 'active' ).siblings().removeClass( 'active' );
-								$parent.addClass( 'item-selected' );
+						if ( $target.length ) {
+							$this.addClass( 'active' ).siblings().removeClass( 'active' );
+							$target.addClass( 'active' ).siblings().removeClass( 'active' );
+						}
+
+						if ( $target.hasClass( 'filtering-auto-play-vimeo-video' ) ) {
+							if ( window.Vimeo !== undefined ) {
+								var iframe = $target[0];
+								var player = new Vimeo.Player(iframe);
+								player.play();
 							}
 						}
-						else {
-							if ( $this.hasClass('active')) {
-								$this.removeClass('active').siblings().removeClass( 'active' );
-								$target.removeClass( 'active' ).siblings().removeClass( 'active' );
-								$parent.removeClass( 'item-selected' );
-							}
-							else {
-								$this.addClass( 'active' ).siblings().removeClass( 'active' );
-								$target.addClass( 'active' ).siblings().removeClass( 'active' );
-								$parent.addClass( 'item-selected' );
-							}
-						}
-					}
 
-				}
-			);
+					}
+				);
 		}
 	);
 

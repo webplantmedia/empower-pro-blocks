@@ -27,7 +27,9 @@
 	}
 
 	.entry-title {
+		@include heading;
 		@include h2;
+		margin-bottom: 0;
 	}
 
 	.entry-content {
@@ -260,7 +262,26 @@
 	> span {
 		&:not(.active) {
 			background-color: transparent !important;
-			color: $text_color !important;
+			color: $dark_text_color !important;
+		}
+	}
+}
+
+@media screen and ( min-width: $ipad_width_1 ) {
+	#master .filtering-heading {
+		margin-bottom: 100px;
+		position: relative;
+
+		.filtering {
+			position: absolute;
+			top: 50%;
+			margin-top: -9px;
+			right: 0;
+			background-color: $body_background_color;
+		}
+
+		.elegant {
+			margin-bottom: 0;
 		}
 	}
 }

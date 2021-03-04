@@ -262,14 +262,14 @@ function empower_pro_blocks_get_css( $appearance ) {
 			color: $primary_bright_color;
 		}
 
-		html a.more-link::after,
+		#master a.more-link::after,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text::after,
 		html .comment-reply-link::after,
 		html a.button.text::after {
 			background-color: $primary_color !important;
 		}
 
-		html a.more-link:hover::after,
+		#master a.more-link:hover::after,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text:hover::after,
 		html .comment-reply-link:hover::after,
 		html a.button.text:hover::after {
@@ -287,7 +287,7 @@ function empower_pro_blocks_get_css( $appearance ) {
 			color: $primary_contrast_color !important;
 		}
 
-		html a.more-link,
+		#master a.more-link,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text,
 		html .comment-reply-link,
 		html a.button.text {
@@ -295,8 +295,8 @@ function empower_pro_blocks_get_css( $appearance ) {
 			border-bottom: 2px solid $primary_color;
 		}
 
-		html a.more-link:focus,
-		html a.more-link:hover,
+		#master a.more-link:focus,
+		#master a.more-link:hover,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text:focus,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text:hover,
 		html .comment-reply-link:focus,
