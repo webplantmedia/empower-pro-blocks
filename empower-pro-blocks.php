@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Empower Pro Blocks
  * Description:     Custom blocks for Empower Pro Blocks theme.
- * Version:         1.1.14
+ * Version:         1.1.16
  * Author:          Web Plant Media
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html

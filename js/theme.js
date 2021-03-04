@@ -200,7 +200,56 @@
 
 	$( document ).ready(
 		function() {
-				$( '.filtering' ).on(
+			$( '.filtering' ).on(
+				'click',
+				'div, span',
+				function () {
+
+					var $this       = $( this );
+					var $parent     = $this.parent();
+					var $target     = '';
+					var container   = $parent.attr( 'data-container' );
+					var collapse    = $parent.attr( 'data-collapse' );
+					var $container  = $( container );
+					var index = $this.index();
+
+					if ( $container.length ) {
+						$target = $container.children().children().eq(index);
+					}
+
+					if ( $target.length ) {
+						if ( collapse == "false" ) {
+							if ( $this.hasClass('active')) {
+								// do nothing
+							}
+							else {
+								$this.addClass( 'active' ).siblings().removeClass( 'active' );
+								$target.addClass( 'active' ).siblings().removeClass( 'active' );
+								$parent.addClass( 'item-selected' );
+							}
+						}
+						else {
+							if ( $this.hasClass('active')) {
+								$this.removeClass('active').siblings().removeClass( 'active' );
+								$target.removeClass( 'active' ).siblings().removeClass( 'active' );
+								$parent.removeClass( 'item-selected' );
+							}
+							else {
+								$this.addClass( 'active' ).siblings().removeClass( 'active' );
+								$target.addClass( 'active' ).siblings().removeClass( 'active' );
+								$parent.addClass( 'item-selected' );
+							}
+						}
+					}
+
+				}
+			);
+		}
+	);
+
+	$( document ).ready(
+		function() {
+				$( '.filtering2' ).on(
 					'click',
 					'span',
 					function () {
