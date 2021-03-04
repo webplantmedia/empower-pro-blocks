@@ -1723,3 +1723,23 @@ $sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 		}
 	}
 }
+
+@media screen and ( min-width: $ipad_width_1 ) {
+	.filtering-heading {
+		margin-bottom: 100px;
+		position: relative;
+
+		.filtering {
+			position: absolute;
+			top: 50%;
+			margin-top: -12px;
+			right: 0;
+			background-color: $body_background_color;
+		}
+
+		.elegant {
+			margin-bottom: 0;
+		}
+	}
+}
+

@@ -276,6 +276,17 @@ function empower_pro_blocks_get_css( $appearance ) {
 			background-color: $primary_bright_color !important;
 		}
 
+		html .filtering > span.active {
+			background-color: $primary_color !important;
+			color: $primary_contrast_color !important;
+		}
+
+		html .filtering > span.active:focus,
+		html .filtering > span.active:hover {
+			background-color: $primary_bright_color !important;
+			color: $primary_contrast_color !important;
+		}
+
 		html a.more-link,
 		html .soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.text,
 		html .comment-reply-link,

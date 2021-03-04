@@ -12,7 +12,7 @@
 	}
 }
 
-.event-container {
+#master .event-container {
 	.entry-meta,
 	.entry-read-more,
 	.entry-title {
@@ -20,11 +20,14 @@
 	}
 
 	.entry-meta {
-		margin-bottom: 0;
 	}
 
 	.entry-read-more {
 		margin-top: auto;
+	}
+
+	.entry-title {
+		@include h2;
 	}
 
 	.entry-content {
@@ -60,7 +63,7 @@
 
 	.event-item {
 		.entry-title {
-			font-size: $heading_font_size_h4;
+			// font-size: $heading_font_size_h4;
 		}
 	}
 
@@ -95,7 +98,7 @@
 	}
 
 	.event-container-inner .entry {
-		margin-bottom: $margin_bottom;
+		margin-bottom: 30px;
 		min-height: 48px;
 	}
 
@@ -141,9 +144,123 @@
 				margin-right: 0;
 			}
 		}
+
+		.wpforms-submit-container {
+			text-align: center;
+		}
+
+		.event-form-heading {
+			text-align: center;
+			margin-bottom: 0;
+		}
+		.event-over-message {
+			text-align: center;
+			a {
+				color: #fff;
+			}
+		}
+		.event-form-heading.event-over {
+			margin-bottom: 40px;
+		}
+		.event-form-wrapper {
+			background-color: #ffcc2a;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-top: 40px;
+			padding-bottom: 10px;
+			margin-top: 40px;
+			position: relative;
+
+			.wpforms-confirmation-container-full {
+				margin-top: 30px;
+			}
+
+			@media only screen and (max-width: $tablet_width) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+			.event-form-image-wrap {
+				position: absolute;
+				top: 0px;
+				right: 0;
+				left: 0;
+				height: 100%;
+				z-index: 0;
+				overflow: hidden;
+
+				.dots-background {
+					opacity: .1;
+					object-fit: cover;
+					height: 200%;
+					width: 200%;
+				}
+			}
+
+			.event-form-container {
+				position: relative;
+				z-index: 1;
+			}
+		}
 	}
 
 	.breadcrumb {
 		display: none;
+	}
+}
+
+// Filter
+.filtering-heading + .gb-block-container > .gb-container-inside > .gb-container-content,
+.filtering + .gb-block-container > .gb-container-inside > .gb-container-content {
+	position: relative;
+
+	> .gb-block-container {
+		// visibility: hidden;
+		// transition: all .4s;
+		// opacity: 0;
+		position: absolute;
+		display: none;
+		// height: 100vh;
+		// overflow: hidden;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		&.active {
+			// visibility: visible;
+			display: block;
+			// opacity: 1;
+			position: relative;
+			// height: auto;
+			// overflow: visible;
+		}
+	}
+}
+
+.filtering-container {
+	> .wp-block-group__inner-container > .wp-block-group {
+		position: absolute;
+		display: none;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		&.active {
+			display: block;
+			position: relative;
+		}
+	}
+}
+
+#master .filtering {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+
+	> span {
+		&:not(.active) {
+			background-color: transparent !important;
+			color: $text_color !important;
+		}
 	}
 }
