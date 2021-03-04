@@ -154,6 +154,7 @@
 		.event-form-heading {
 			text-align: center;
 			margin-bottom: 0;
+			color: var(--epb-primary-contrast-color);
 		}
 		.event-over-message {
 			text-align: center;
@@ -165,7 +166,7 @@
 			margin-bottom: 40px;
 		}
 		.event-form-wrapper {
-			background-color: #ffcc2a;
+			background-color: var(--epb-primary-color);
 			padding-left: 40px;
 			padding-right: 40px;
 			padding-top: 40px;
