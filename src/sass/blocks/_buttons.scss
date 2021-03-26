@@ -89,6 +89,7 @@
 }
 
 .wp-block-buttons.aligncenter {
+	justify-content: center;
 	.wp-block-button__link {
 		&::after {
 			width: 25%;
