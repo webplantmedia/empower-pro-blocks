@@ -86,9 +86,9 @@ add_action( 'enqueue_block_editor_assets', 'empower_pro_blocks_custom_gutenberg_
 function empower_pro_blocks_custom_gutenberg_css() {
 	global $empower_pro_blocks_appearance;
 
-	wp_enqueue_style( 'empower-pro-blocks-gutenberg-fonts', $empower_pro_blocks_appearance['fonts-url'], array(), EMPOWER_PRO_BLOCKS_VERSION);
-	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), EMPOWER_PRO_BLOCKS_VERSION );
-	wp_enqueue_script( 'icons-js', $empower_pro_blocks_appearance['icons-js-url'], array(), EMPOWER_PRO_BLOCKS_VERSION, true );
+	wp_enqueue_style( 'empower-pro-blocks-gutenberg-fonts', $empower_pro_blocks_appearance['fonts-url'], array(), null); // null allows google fonts to have multiple family args in url
+	wp_enqueue_style( 'ionicons', $empower_pro_blocks_appearance['icons-url'], array(), null );
+	wp_enqueue_script( 'icons-js', $empower_pro_blocks_appearance['icons-js-url'], array(), null, true );
 
 	wp_enqueue_style( 'empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'css/blocks.css', array(), filemtime( EMPOWER_PRO_BLOCKS_DIR . "css/blocks.css" ) );
 

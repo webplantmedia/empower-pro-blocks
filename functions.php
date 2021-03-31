@@ -60,7 +60,7 @@ function empower_pro_blocks_enqueue_scripts_styles() {
 
 	wp_enqueue_style( 'empower-pro-blocks-main', get_stylesheet_directory_uri() . '/css/style-theme.css', array(), CHILD_THEME_VERSION );
 
-	wp_enqueue_style( 'empower-pro-blocks-fonts', $appearance['fonts-url'], array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'empower-pro-blocks-fonts', $appearance['fonts-url'], array(), null ); // null allows google fonts to have multiple family args in url
 
 	$css = empower_pro_blocks_get_css( $appearance );
 
@@ -72,8 +72,8 @@ function empower_pro_blocks_enqueue_scripts_styles() {
 
 	/* wp_enqueue_style( 'dashicons' ); */
 
-	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), CHILD_THEME_VERSION );
-	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), CHILD_THEME_VERSION, true );
+	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), null );
+	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), null, true );
 
 	wp_enqueue_script( 'empower-pro-blocks-theme-js', CHILD_URL . '/js/theme.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
