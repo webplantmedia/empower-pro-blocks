@@ -175,6 +175,11 @@
 			position: relative;
 			color: var(--epb-primary-contrast-color);
 
+			&.past-event-form-wrapper {
+				margin-top: 0;
+				margin-bottom: 40px;
+			}
+
 			.wpforms-confirmation-container-full {
 				margin-top: 30px;
 			}
