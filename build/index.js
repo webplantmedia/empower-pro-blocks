@@ -9847,6 +9847,14 @@ function AccordionItemBlock(_ref) {
         headingType: value
       });
     }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Heading Text'),
+    value: heading,
+    onChange: function onChange(value) {
+      return setAttributes({
+        heading: value
+      });
+    }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Display'),
     initialOpen: true
@@ -9876,17 +9884,9 @@ function AccordionItemBlock(_ref) {
     className: "wp-block-accordion-item__inner-wrap"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("details", {
     open: accordionOpen
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["RichText"], {
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Heading'),
-    value: heading,
-    onChange: function onChange(value) {
-      return setAttributes({
-        heading: value
-      });
-    },
-    className: headingClasses,
-    tagName: "summary"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("summary", {
+    className: headingClasses
+  }, heading), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "wp-block-accordion-item__text"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__["InnerBlocks"], {
     templateLock: false,

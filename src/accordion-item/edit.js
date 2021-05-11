@@ -19,6 +19,7 @@ import {
 	Button,
 	RangeControl,
 	ToggleControl,
+	TextControl,
 	SelectControl,
 	withNotices,
 } from '@wordpress/components';
@@ -83,6 +84,11 @@ function AccordionItemBlock( {
 						] }
 						onChange={ ( value ) => setAttributes( { headingType: value } ) }
 					/>
+					<TextControl
+						label={ __( 'Heading Text' ) }
+						value={ heading }
+						onChange={ ( value ) => setAttributes( { heading: value } ) }
+					/>
 				</PanelColorGradientSettings>
 				<PanelBody title={ __( 'Display' ) } initialOpen={ true }>
 					<RangeControl
@@ -123,13 +129,9 @@ function AccordionItemBlock( {
 			<div style={ containerStyle } className={ classes }>
 				<div className="wp-block-accordion-item__inner-wrap">
 					<details open={ accordionOpen }>
-						<RichText
-							placeholder={ __( 'Heading' ) }
-							value={ heading }
-							onChange={ ( value ) => setAttributes( { heading: value } ) }
-							className={ headingClasses }
-							tagName="summary"
-						/>
+						<summary className={ headingClasses }>
+							{ heading }
+						</summary>
 						<div className="wp-block-accordion-item__text">
 							<InnerBlocks
 								templateLock={ false }
