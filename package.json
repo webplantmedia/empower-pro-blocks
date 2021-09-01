@@ -6,18 +6,15 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"compile": "node-sass src/ --output-style compressed --indent-width 1 --indent-type tab --source-map css/map --output css",
-		"sass": "node-sass --output-style compressed --indent-width 1 --indent-type tab --source-map css/map --watch src --output css",
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
-		"start": "wp-scripts start & npm run compile & npm run sass"
+		"start": "wp-scripts start & sass --watch src:css --style compressed"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^12.5.0",
-		"node-sass": "^4.14.1"
+		"@wordpress/scripts": "^12.5.0"
 	},
 	"dependencies": {
 		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
