@@ -8,6 +8,11 @@
  * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
+global $empower_pro_blocks_defaults;
+
+$empower_pro_blocks_css_vars = get_theme_mod( 'empower_pro_blocks_css_vars', trim( $empower_pro_blocks_defaults['css-vars'] ) );
+$empower_pro_blocks_vars     = empower_pro_blocks_sanitize_vars( $empower_pro_blocks_css_vars );
+
 $empower_pro_blocks_default_colors = array(
 	'primary'   => '#ed5652',
 	'secondary' => '#ff7226',
@@ -202,117 +207,5 @@ return array(
 		'icon_color'             => $empower_pro_blocks_text_color,
 		'icon_color_hover'       => $empower_pro_blocks_text_color_brightness,
 		'size'                   => 62,
-	),
-	// Editor.
-	'editor-color-palette'         => array(
-		array(
-			'name'  => __( 'Primary color', 'empower-pro-blocks' ),
-			'slug'  => 'primary',
-			'color' => $empower_pro_blocks_primary_color,
-		),
-		array(
-			'name'  => __( 'Secondary color', 'empower-pro-blocks' ),
-			'slug'  => 'secondary',
-			'color' => $empower_pro_blocks_secondary_color,
-		),
-		array(
-			'name'  => __( 'Third color', 'empower-pro-blocks' ),
-			'slug'  => 'third',
-			'color' => $empower_pro_blocks_third_color,
-		),
-		array(
-			'name'  => __( 'Fourth color', 'empower-pro-blocks' ),
-			'slug'  => 'fourth',
-			'color' => $empower_pro_blocks_fourth_color,
-		),
-		array(
-			'name'  => __( 'Fifth color', 'empower-pro-blocks' ),
-			'slug'  => 'fifth',
-			'color' => $empower_pro_blocks_fifth_color,
-		),
-		array(
-			'name'  => __( 'Sixth color', 'empower-pro-blocks' ),
-			'slug'  => 'sixth',
-			'color' => $empower_pro_blocks_sixth_color,
-		),
-		array(
-			'name'  => __( 'Seventh color', 'empower-pro-blocks' ),
-			'slug'  => 'seventh',
-			'color' => $empower_pro_blocks_seventh_color,
-		),
-		array(
-			'name'  => __( 'Eighth color', 'empower-pro-blocks' ),
-			'slug'  => 'eighth',
-			'color' => $empower_pro_blocks_eighth_color,
-		),
-		array(
-			'name'  => __( 'Body Text color', 'empower-pro-blocks' ),
-			'slug'  => 'bodytext',
-			'color' => $empower_pro_blocks_text_color,
-		),
-		array(
-			'name'  => __( 'Dark Text color', 'empower-pro-blocks' ),
-			'slug'  => 'darktext',
-			'color' => $empower_pro_blocks_darktext_color,
-		),
-		array(
-			'name'  => __( 'White color', 'empower-pro-blocks' ),
-			'slug'  => 'white',
-			'color' => $empower_pro_blocks_white_color,
-		),
-		array(
-			'name'  => __( 'Alternate Background color', 'empower-pro-blocks' ),
-			'slug'  => 'altbackground',
-			'color' => $empower_pro_blocks_altbackground_color,
-		),
-		array(
-			'name'  => __( 'Border color', 'empower-pro-blocks' ),
-			'slug'  => 'border',
-			'color' => $empower_pro_blocks_border_color,
-		),
-	),
-	'editor-font-sizes'            => array(
-		array(
-			'name'      => __( 'Tiny', 'empower-pro-blocks' ),
-			'shortName' => __( 'T', 'empower-pro-blocks' ),
-			'size'      => 13,
-			'slug'      => 'tiny',
-		),
-		array(
-			'name'      => __( 'X Small', 'empower-pro-blocks' ),
-			'shortName' => __( 'XS', 'empower-pro-blocks' ),
-			'size'      => 14,
-			'slug'      => 'xsmall',
-		),
-		array(
-			'name'      => __( 'Small', 'empower-pro-blocks' ),
-			'shortName' => __( 'S', 'empower-pro-blocks' ),
-			'size'      => 16,
-			'slug'      => 'small',
-		),
-		array(
-			'name'      => __( 'Normal', 'empower-pro-blocks' ),
-			'shortName' => __( 'M', 'empower-pro-blocks' ),
-			'size'      => 18,
-			'slug'      => 'normal',
-		),
-		array(
-			'name'      => __( 'Large', 'empower-pro-blocks' ),
-			'shortName' => __( 'L', 'empower-pro-blocks' ),
-			'size'      => 20,
-			'slug'      => 'large',
-		),
-		array(
-			'name'      => __( 'Larger', 'empower-pro-blocks' ),
-			'shortName' => __( 'XL', 'empower-pro-blocks' ),
-			'size'      => 24,
-			'slug'      => 'larger',
-		),
-		array(
-			'name'      => __( 'Huge', 'empower-pro-blocks' ),
-			'shortName' => __( 'H', 'empower-pro-blocks' ),
-			'size'      => 50,
-			'slug'      => 'huge',
-		),
 	),
 );

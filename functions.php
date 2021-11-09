@@ -56,24 +56,24 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
  */
 function empower_pro_blocks_enqueue_scripts_styles() {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
 	wp_enqueue_style( 'empower-pro-blocks-main', get_stylesheet_directory_uri() . '/css/style-theme.css', array(), CHILD_THEME_VERSION );
 
-	wp_enqueue_style( 'empower-pro-blocks-fonts', $appearance['fonts-url'], array(), null ); // null allows google fonts to have multiple family args in url
+	wp_enqueue_style( 'empower-pro-blocks-fonts', $empower_pro_blocks_appearance['fonts-url'], array(), null ); // null allows google fonts to have multiple family args in url
 
-	$css = empower_pro_blocks_get_css( $appearance );
+	$css = empower_pro_blocks_get_css( $empower_pro_blocks_appearance );
 
 	wp_add_inline_style( 'empower-pro-blocks-main', $css );
 
 	if ( ! has_custom_logo() || is_customize_preview() ) {
-		wp_enqueue_style( 'empower-pro-blocks-title-font', $appearance['title-font-url'], array(), CHILD_THEME_VERSION );
+		wp_enqueue_style( 'empower-pro-blocks-title-font', $empower_pro_blocks_appearance['title-font-url'], array(), CHILD_THEME_VERSION );
 	}
 
 	/* wp_enqueue_style( 'dashicons' ); */
 
-	wp_enqueue_style( 'icons', $appearance['icons-url'], array(), null );
-	wp_enqueue_script( 'icons-js', $appearance['icons-js-url'], array(), null, true );
+	wp_enqueue_style( 'icons', $empower_pro_blocks_appearance['icons-url'], array(), null );
+	wp_enqueue_script( 'icons-js', $empower_pro_blocks_appearance['icons-js-url'], array(), null, true );
 
 	wp_enqueue_script( 'empower-pro-blocks-theme-js', CHILD_URL . '/js/theme.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
@@ -119,8 +119,8 @@ add_action( 'genesis_site_title', 'the_custom_logo', 0 );
  * @return array $html
  */
 function empower_pro_blocks_add_sticky_logo( $html, $blog_id ) {
-	$appearance     = empower_pro_blocks_get_config( 'appearance' );
-	$custom_logo_id = $appearance['logo-sticky'];
+	global $empower_pro_blocks_appearance;
+	$custom_logo_id = $empower_pro_blocks_appearance['logo-sticky'];
 
 	// We have a logo. Logo is go.
 	if ( $custom_logo_id ) {
@@ -235,9 +235,9 @@ add_action( 'genesis_header', 'empower_pro_blocks_do_nav_submenu', 12 );
  * @return array The modified menu arguments.
  */
 function empower_pro_blocks_do_nav_submenu() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	$id = $appearance['mega_menu'];
+	$id = $empower_pro_blocks_appearance['mega_menu'];
 
 	if ( ! $id ) {
 		return;
@@ -279,9 +279,9 @@ add_action( 'genesis_header', 'empower_pro_blocks_do_mobile_menu', 12 );
  * @return array The modified menu arguments.
  */
 function empower_pro_blocks_do_mobile_menu() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	$mobile_menu_id = $appearance['mobile_menu'];
+	$mobile_menu_id = $empower_pro_blocks_appearance['mobile_menu'];
 
 	if ( ! $mobile_menu_id ) {
 		return;
@@ -570,9 +570,9 @@ add_action( 'genesis_before_footer', 'empower_pro_blocks_footer_widgets' );
  */
 function empower_pro_blocks_footer_widgets() {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	$id = $appearance['footer_menu'];
+	$id = $empower_pro_blocks_appearance['footer_menu'];
 
 	if ( ! $id ) {
 		return;
@@ -609,9 +609,9 @@ add_action( 'genesis_after_footer', 'empower_pro_blocks_popup' );
  */
 function empower_pro_blocks_popup() {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	$id = $appearance['popup'];
+	$id = $empower_pro_blocks_appearance['popup'];
 
 	if ( ! $id ) {
 		return;
@@ -873,16 +873,16 @@ function empower_pro_blocks_woocommerce_menu_post_search_bar() {
 	echo '</li></ul></nav>';
 }
 
-add_action( 'wp_loaded', 'empower_pro_blocks_check_features', 11 );
+add_action( 'wp', 'empower_pro_blocks_check_features', 11 );
 /**
  * Check WooCommerce gallery features.
  *
  * @since 1.0.0
  */
 function empower_pro_blocks_check_features() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	if ( $appearance['hide-menu-search'] ) {
+	if ( $empower_pro_blocks_appearance['hide-menu-search'] ) {
 		remove_theme_support( 'empower-pro-blocks-menu-search' );
 	}
 }
@@ -907,6 +907,3 @@ function empower_pro_blocks_sticky_label() {
 		echo '<span class="sticky">' . wp_kses_post( __( 'Featured', 'empower-pro-blocks' ) ) . '</span>';
 	}
 }
-
-global $empower_pro_blocks_appearance;
-$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );

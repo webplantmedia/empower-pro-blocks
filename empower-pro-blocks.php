@@ -23,6 +23,31 @@ function empower_pro_blocks_defines() {
 }
 add_action( 'init', 'empower_pro_blocks_defines' );
 
+global $empower_pro_blocks_defaults;
+global $empower_pro_blocks_appearance;
+
+add_action( 'after_setup_theme', 'empower_pro_blocks_defaults', 0 );
+
+/**
+ * Defaults
+ *
+ * @since 1.01
+ *
+ * @return void
+ */
+function empower_pro_blocks_defaults() {
+	global $empower_pro_blocks_defaults;
+
+	$empower_pro_blocks_defaults = empower_pro_blocks_get_config( 'defaults' );
+}
+
+add_action( 'wp', 'empower_pro_blocks_appearance', 0 );
+function empower_pro_blocks_appearance() {
+	global $empower_pro_blocks_appearance;
+
+	$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
+}
+
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'functions.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/customize.php';

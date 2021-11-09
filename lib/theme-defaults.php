@@ -21,8 +21,8 @@ add_filter( 'simple_social_default_styles', 'empower_pro_blocks_social_default_s
  */
 function empower_pro_blocks_social_default_styles( $defaults ) {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
-	$args       = $appearance['simple-social-icons-settings'];
+	global $empower_pro_blocks_appearance;
+	$args       = $empower_pro_blocks_appearance['simple-social-icons-settings'];
 
 	return wp_parse_args( $args, $defaults );
 

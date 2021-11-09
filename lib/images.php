@@ -18,25 +18,25 @@
 function empower_pro_blocks_featured_image() {
 
 	$featured_image = '';
-	$appearance     = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	if ( is_404() && ! $appearance['page-image'] ) {
+	if ( is_404() && ! $empower_pro_blocks_appearance['page-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'post' ) && ! $appearance['post-image'] ) {
+	if ( is_singular( 'post' ) && ! $empower_pro_blocks_appearance['post-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'page' ) && ! $appearance['page-image'] ) {
+	if ( is_singular( 'page' ) && ! $empower_pro_blocks_appearance['page-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'portfolio' ) && ! $appearance['portfolio-image'] ) {
+	if ( is_singular( 'portfolio' ) && ! $empower_pro_blocks_appearance['portfolio-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'event' ) && ! $appearance['event-image'] ) {
+	if ( is_singular( 'event' ) && ! $empower_pro_blocks_appearance['event-image'] ) {
 		return;
 	}
 
@@ -85,25 +85,25 @@ function empower_pro_blocks_featured_image() {
 function empower_pro_blocks_featured_image_2() {
 
 	$featured_image = '';
-	$appearance     = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	if ( is_404() && ! $appearance['page-image'] ) {
+	if ( is_404() && ! $empower_pro_blocks_appearance['page-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'post' ) && ! $appearance['post-image'] ) {
+	if ( is_singular( 'post' ) && ! $empower_pro_blocks_appearance['post-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'page' ) && ! $appearance['page-image'] ) {
+	if ( is_singular( 'page' ) && ! $empower_pro_blocks_appearance['page-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'portfolio' ) && ! $appearance['portfolio-image'] ) {
+	if ( is_singular( 'portfolio' ) && ! $empower_pro_blocks_appearance['portfolio-image'] ) {
 		return;
 	}
 
-	if ( is_singular( 'event' ) && ! $appearance['event-image'] ) {
+	if ( is_singular( 'event' ) && ! $empower_pro_blocks_appearance['event-image'] ) {
 		return;
 	}
 

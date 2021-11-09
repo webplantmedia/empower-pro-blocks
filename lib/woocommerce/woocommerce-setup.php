@@ -133,45 +133,45 @@ add_action( 'wp_loaded', 'empower_pro_blocks_woocommerce_check_features', 11 );
  * @since 1.0.0
  */
 function empower_pro_blocks_woocommerce_check_features() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	if ( $appearance['shop-post-menu-search'] ) {
+	if ( $empower_pro_blocks_appearance['shop-post-menu-search'] ) {
 		remove_theme_support( 'empower-pro-blocks-shop-menu-search' );
 	}
 
-	if ( $appearance['shop-hide-menu-cart'] ) {
+	if ( $empower_pro_blocks_appearance['shop-hide-menu-cart'] ) {
 		remove_theme_support( 'empower-pro-blocks-shop-menu-cart' );
 	}
 
-	if ( $appearance['shop-gallery-zoom'] ) {
+	if ( $empower_pro_blocks_appearance['shop-gallery-zoom'] ) {
 		remove_theme_support( 'wc-product-gallery-zoom' );
 	}
 
-	if ( $appearance['shop-gallery-lightbox'] ) {
+	if ( $empower_pro_blocks_appearance['shop-gallery-lightbox'] ) {
 		remove_theme_support( 'wc-product-gallery-lightbox' );
 	}
 
-	if ( $appearance['shop-gallery-slider'] ) {
+	if ( $empower_pro_blocks_appearance['shop-gallery-slider'] ) {
 		remove_theme_support( 'wc-product-gallery-slider' );
 	}
 
-	if ( $appearance['shop-hide-stars'] ) {
+	if ( $empower_pro_blocks_appearance['shop-hide-stars'] ) {
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 	}
 
-	if ( $appearance['shop-product-hide-stars'] ) {
+	if ( $empower_pro_blocks_appearance['shop-product-hide-stars'] ) {
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 	}
 
-	if ( $appearance['shop-hide-result-count'] ) {
+	if ( $empower_pro_blocks_appearance['shop-hide-result-count'] ) {
 		remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 	}
 
-	if ( $appearance['shop-hide-catalog-ordering'] ) {
+	if ( $empower_pro_blocks_appearance['shop-hide-catalog-ordering'] ) {
 		remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 	}
 
-	if ( $appearance['shop-product-hide-meta'] ) {
+	if ( $empower_pro_blocks_appearance['shop-product-hide-meta'] ) {
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 	}
 }
@@ -451,13 +451,13 @@ add_filter( 'woocommerce_upsell_display_args', 'empower_pro_blocks_related_produ
  * @return array
  */
 function empower_pro_blocks_related_products_args( $args ) {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
 	$args = array_merge(
 		$args,
 		array(
-			'posts_per_page' => $appearance['shop-columns'],
-			'columns'        => $appearance['shop-columns'],
+			'posts_per_page' => $empower_pro_blocks_appearance['shop-columns'],
+			'columns'        => $empower_pro_blocks_appearance['shop-columns'],
 		)
 	);
 
@@ -473,9 +473,9 @@ add_filter( 'loop_shop_columns', 'empower_pro_blocks_loop_columns' );
  * @return int
  */
 function empower_pro_blocks_loop_columns() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	return $appearance['shop-columns'];
+	return $empower_pro_blocks_appearance['shop-columns'];
 }
 
 add_filter( 'loop_shop_per_page', 'empower_pro_blocks_loop_per_page', 20 );
@@ -487,9 +487,9 @@ add_filter( 'loop_shop_per_page', 'empower_pro_blocks_loop_per_page', 20 );
  * @return int
  */
 function empower_pro_blocks_loop_per_page() {
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
-	$limit = $appearance['shop-rows'] * $appearance['shop-columns'];
+	$limit = $empower_pro_blocks_appearance['shop-rows'] * $empower_pro_blocks_appearance['shop-columns'];
 
 	return $limit;
 }
@@ -524,10 +524,10 @@ add_filter( 'empower_pro_blocks_show_above_footer_cta', 'empower_pro_blocks_remo
  */
 function empower_pro_blocks_remove_footer_cta( $show ) {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
 	if ( is_woocommerce() ) {
-		if ( $appearance['shop-footer-cta'] ) {
+		if ( $empower_pro_blocks_appearance['shop-footer-cta'] ) {
 			return false;
 		}
 	}

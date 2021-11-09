@@ -99,6 +99,25 @@ function empower_pro_blocks_color_rgba( $color, $alpha, $array = false ) {
 
 }
 
+/**
+ * Calculates if white or black would contrast more with the provided color.
+ *
+ * @since 1.0.0
+ *
+ * @param string $color A color in hex format.
+ * @return string The hex code for the most contrasting color: dark grey or white.
+ */
+function empower_pro_blocks_color_rgb( $color ) {
+
+	$hexcolor = str_replace( '#', '', $color );
+
+	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
+	$green = hexdec( substr( $hexcolor, 2, 2 ) );
+	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+
+	return $red . ',' . $green . ',' . $blue;
+}
+
 add_filter( 'body_class', 'empower_pro_blocks_half_width_entry_class' );
 /**
  * Defines the half width entries body class.
@@ -337,4 +356,62 @@ function empower_pro_blocks_get_first_paragraph( $content ) {
 	}
 
 	return $content;
+}
+
+function empower_pro_blocks_css_vars_to_array( $css_vars ) {
+	$arr = array();
+	$a = explode( "\n", $css_vars );
+	foreach ( $a as $v ) {
+		$line = explode( ":", $v );
+		if ( sizeof( $line ) == 2 ) {
+			$key = trim( ltrim( $line[0], "$" ) );
+			$value = trim( rtrim( trim( $line[1] ), ";" ) );
+			$arr[ $key ] = $value;
+		}
+	}
+
+	return $arr;
+}
+
+function empower_pro_blocks_parse_css_vars( $css_vars, $default ) {
+	$css_vars = empower_pro_blocks_sanitize_css_vars( $css_vars );
+
+	$new_css_vars = array();
+	foreach ( $css_vars as $key => $value ) {
+		$new_css_vars[ $key ] = $value;
+	}
+
+	return $new_css_vars;
+}
+
+function empower_pro_blocks_sanitize_vars( $vars ) {
+	$defaults = empower_pro_blocks_get_config( 'defaults' );
+
+	$default = $defaults['css-vars'];
+	$vars = empower_pro_blocks_css_vars_to_array( $vars );
+	$default = empower_pro_blocks_css_vars_to_array( $default );
+
+	$new_vars = array();
+	foreach ( $default as $key => $value ) {
+		if ( array_key_exists( $key, $vars ) ) {
+			$new_vars[ $key ] = $vars[ $key ];
+			unset( $vars[ $key ] );
+		}
+		else {
+			$new_vars[ $key ] = $value;
+		}
+	}
+
+	return $new_vars;
+}
+
+function empower_pro_blocks_sanitize_css_vars( $css_vars ) {
+	$new_vars = empower_pro_blocks_sanitize_vars( $css_vars );
+
+	$txt = '';
+	foreach ($new_vars as $key => $value) {
+		$txt .= $key . ': ' . $value . ";\n";
+	}
+
+	return trim( $txt );
 }

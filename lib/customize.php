@@ -20,7 +20,7 @@ add_action( 'customize_register', 'empower_pro_blocks_customizer_register' );
  */
 function empower_pro_blocks_customizer_register( $wp_customize ) {
 
-	$appearance    = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 	$theme_upgrade = empower_pro_blocks_get_config( 'theme-upgrade' );
 	$site_element_pages = empower_pro_blocks_fetch_all_site_elements();
 
@@ -70,7 +70,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_primary_color',
 		array(
-			'default'           => $appearance['primary-color'],
+			'default'           => $empower_pro_blocks_appearance['primary-color'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'type' => 'option',
 		)
@@ -92,7 +92,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_secondary_color',
 		array(
-			'default'           => $appearance['secondary-color'],
+			'default'           => $empower_pro_blocks_appearance['secondary-color'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'type' => 'option',
 		)
@@ -124,7 +124,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_hide_menu_search',
 		array(
-			'default'           => $appearance['hide-menu-search'],
+			'default'           => $empower_pro_blocks_appearance['hide-menu-search'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -145,7 +145,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_mobile_cta_text',
 		array(
-			'default'           => $appearance['mobile-cta-text'],
+			'default'           => $empower_pro_blocks_appearance['mobile-cta-text'],
 			'sanitize_callback' => 'wp_kses_post',
 			'type' => 'option',
 		)
@@ -180,7 +180,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_mega_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $appearance['mega_menu'],
+			'default'  => $empower_pro_blocks_appearance['mega_menu'],
 		)
 	);
 
@@ -202,7 +202,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_mobile_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $appearance['mobile_menu'],
+			'default'  => $empower_pro_blocks_appearance['mobile_menu'],
 		)
 	);
 
@@ -224,7 +224,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_footer_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $appearance['footer_menu'],
+			'default'  => $empower_pro_blocks_appearance['footer_menu'],
 		)
 	);
 
@@ -246,7 +246,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_popup',
 			'choices'  => $site_element_pages,
-			'default'  => $appearance['popup'],
+			'default'  => $empower_pro_blocks_appearance['popup'],
 		)
 	);
 
@@ -264,7 +264,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_post_image',
 		array(
-			'default'           => $appearance['post-image'],
+			'default'           => $empower_pro_blocks_appearance['post-image'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -285,7 +285,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_page_image',
 		array(
-			'default'           => $appearance['page-image'],
+			'default'           => $empower_pro_blocks_appearance['page-image'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -328,7 +328,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'empower_pro_blocks_portfolio_image',
 			array(
-				'default'           => $appearance['portfolio-image'],
+				'default'           => $empower_pro_blocks_appearance['portfolio-image'],
 				'sanitize_callback' => 'absint',
 				'type' => 'option',
 			)
@@ -351,7 +351,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'empower_pro_blocks_event_image',
 			array(
-				'default'           => $appearance['event-image'],
+				'default'           => $empower_pro_blocks_appearance['event-image'],
 				'sanitize_callback' => 'absint',
 				'type' => 'option',
 			)
@@ -373,7 +373,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_logo_sticky',
 		array(
-			'default' => $appearance['logo-sticky'],
+			'default' => $empower_pro_blocks_appearance['logo-sticky'],
 			// 'sanitize_callback' => 'esc_attr',
 			'type' => 'option',
 		)
@@ -396,7 +396,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_logo_width',
 		array(
-			'default'           => $appearance['logo-width'],
+			'default'           => $empower_pro_blocks_appearance['logo-width'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -421,7 +421,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_logo_top_spacing',
 		array(
-			'default'           => $appearance['logo-top-spacing'],
+			'default'           => $empower_pro_blocks_appearance['logo-top-spacing'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -446,7 +446,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_logo_bottom_spacing',
 		array(
-			'default'           => $appearance['logo-bottom-spacing'],
+			'default'           => $empower_pro_blocks_appearance['logo-bottom-spacing'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -470,7 +470,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_shop_columns',
 		array(
-			'default'           => $appearance['shop-columns'],
+			'default'           => $empower_pro_blocks_appearance['shop-columns'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -497,7 +497,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'empower_pro_blocks_shop_rows',
 		array(
-			'default'           => $appearance['shop-rows'],
+			'default'           => $empower_pro_blocks_appearance['shop-rows'],
 			'sanitize_callback' => 'absint',
 			'type' => 'option',
 		)
@@ -539,47 +539,47 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 
 	$display = array(
 		'post_menu_search'      => array(
-			'default' => $appearance['shop-post-menu-search'],
+			'default' => $empower_pro_blocks_appearance['shop-post-menu-search'],
 			'label'   => __( 'Search for posts instead of products in the main menu search.', 'empower-pro-blocks' ),
 		),
 		'hide_menu_cart'        => array(
-			'default' => $appearance['shop-hide-menu-cart'],
+			'default' => $empower_pro_blocks_appearance['shop-hide-menu-cart'],
 			'label'   => __( 'Hide shopping cart in main menu', 'empower-pro-blocks' ),
 		),
 		'hide_result_count'     => array(
-			'default' => $appearance['shop-hide-result-count'],
+			'default' => $empower_pro_blocks_appearance['shop-hide-result-count'],
 			'label'   => __( 'Hide result count string from shop page', 'empower-pro-blocks' ),
 		),
 		'hide_catalog_ordering' => array(
-			'default' => $appearance['shop-hide-catalog-ordering'],
+			'default' => $empower_pro_blocks_appearance['shop-hide-catalog-ordering'],
 			'label'   => __( 'Hide ordering dropdown from shop page', 'empower-pro-blocks' ),
 		),
 		'hide_stars'            => array(
-			'default' => $appearance['shop-hide-stars'],
+			'default' => $empower_pro_blocks_appearance['shop-hide-stars'],
 			'label'   => __( 'Hide product review stars from shop page', 'empower-pro-blocks' ),
 		),
 		'product_hide_stars'    => array(
-			'default' => $appearance['shop-product-hide-stars'],
+			'default' => $empower_pro_blocks_appearance['shop-product-hide-stars'],
 			'label'   => __( 'Hide product review stars from product page', 'empower-pro-blocks' ),
 		),
 		'product_hide_meta'     => array(
-			'default' => $appearance['shop-product-hide-meta'],
+			'default' => $empower_pro_blocks_appearance['shop-product-hide-meta'],
 			'label'   => __( 'Hide product meta from product page', 'empower-pro-blocks' ),
 		),
 		'gallery_zoom'          => array(
-			'default' => $appearance['shop-gallery-zoom'],
+			'default' => $empower_pro_blocks_appearance['shop-gallery-zoom'],
 			'label'   => __( 'Disable gallery zoom on product page', 'empower-pro-blocks' ),
 		),
 		'gallery_lightbox'      => array(
-			'default' => $appearance['shop-gallery-lightbox'],
+			'default' => $empower_pro_blocks_appearance['shop-gallery-lightbox'],
 			'label'   => __( 'Disable gallery lightbox on product page', 'empower-pro-blocks' ),
 		),
 		'gallery_slider'        => array(
-			'default' => $appearance['shop-gallery-slider'],
+			'default' => $empower_pro_blocks_appearance['shop-gallery-slider'],
 			'label'   => __( 'Disable gallery slider on product page', 'empower-pro-blocks' ),
 		),
 		'footer_cta'            => array(
-			'default' => $appearance['shop-footer-cta'],
+			'default' => $empower_pro_blocks_appearance['shop-footer-cta'],
 			'label'   => __( 'Disable Footer CTA on shop and product pages', 'empower-pro-blocks' ),
 		),
 	);

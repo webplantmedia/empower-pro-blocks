@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_woocommerce_css' );
  */
 function empower_pro_blocks_woocommerce_css() {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
 	$woo_css = '';
 
@@ -177,13 +177,13 @@ function empower_pro_blocks_woocommerce_css() {
 		}
 
 		',
-		$appearance['primary-color'],
-		$appearance['primary-bright-color'],
-		$appearance['primary-contrast-color'],
-		$appearance['secondary-color'],
-		$appearance['secondary-bright-color'],
-		$appearance['secondary-contrast-color'],
-		$appearance['text-color']
+		$empower_pro_blocks_appearance['primary-color'],
+		$empower_pro_blocks_appearance['primary-bright-color'],
+		$empower_pro_blocks_appearance['primary-contrast-color'],
+		$empower_pro_blocks_appearance['secondary-color'],
+		$empower_pro_blocks_appearance['secondary-bright-color'],
+		$empower_pro_blocks_appearance['secondary-contrast-color'],
+		$empower_pro_blocks_appearance['text-color']
 	);
 
 	if ( $woo_css ) {

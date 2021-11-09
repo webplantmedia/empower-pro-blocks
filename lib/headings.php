@@ -84,7 +84,7 @@ function empower_pro_blocks_entry_attributes( $attributes, $context, $args ) {
  */
 function empower_pro_blocks_has_featured_image( $classes ) {
 
-	$appearance = empower_pro_blocks_get_config( 'appearance' );
+	global $empower_pro_blocks_appearance;
 
 	if ( ! empower_pro_blocks_has_post_thumbnail() ) {
 		return $classes;
@@ -92,19 +92,19 @@ function empower_pro_blocks_has_featured_image( $classes ) {
 
 	$page_template = get_page_template();
 
-	if ( is_singular( 'post' ) && $appearance['post-image'] ) {
+	if ( is_singular( 'post' ) && $empower_pro_blocks_appearance['post-image'] ) {
 		$classes[] = 'has-featured-image';
 	}
 
-	if ( ( is_singular( 'page' ) || is_404() ) && $appearance['page-image'] ) {
+	if ( ( is_singular( 'page' ) || is_404() ) && $empower_pro_blocks_appearance['page-image'] ) {
 		$classes[] = 'has-featured-image';
 	}
 
-	if ( is_singular( 'portfolio' ) && $appearance['portfolio-image'] ) {
+	if ( is_singular( 'portfolio' ) && $empower_pro_blocks_appearance['portfolio-image'] ) {
 		$classes[] = 'has-featured-image';
 	}
 
-	if ( is_singular( 'event' ) && $appearance['event-image'] ) {
+	if ( is_singular( 'event' ) && $empower_pro_blocks_appearance['event-image'] ) {
 		$classes[] = 'has-featured-image';
 	}
 
