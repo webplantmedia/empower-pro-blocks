@@ -177,13 +177,13 @@ function empower_pro_blocks_woocommerce_css() {
 		}
 
 		',
-		$empower_pro_blocks_appearance['primary-color'],
-		$empower_pro_blocks_appearance['primary-bright-color'],
-		$empower_pro_blocks_appearance['primary-contrast-color'],
-		$empower_pro_blocks_appearance['secondary-color'],
-		$empower_pro_blocks_appearance['secondary-bright-color'],
-		$empower_pro_blocks_appearance['secondary-contrast-color'],
-		$empower_pro_blocks_appearance['text-color']
+		$empower_pro_blocks_appearance['vars']['primary-color'],
+		$empower_pro_blocks_appearance['vars']['primary-bright-color'],
+		$empower_pro_blocks_appearance['vars']['primary-contrast-color'],
+		$empower_pro_blocks_appearance['vars']['secondary-color'],
+		$empower_pro_blocks_appearance['vars']['secondary-bright-color'],
+		$empower_pro_blocks_appearance['vars']['secondary-contrast-color'],
+		$empower_pro_blocks_appearance['vars']['text-color']
 	);
 
 	if ( $woo_css ) {

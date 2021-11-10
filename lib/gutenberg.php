@@ -36,8 +36,13 @@ add_theme_support( 'responsive-embeds' );
 // Disable custom fonts.
 /* add_theme_support('disable-custom-font-sizes'); */
 
-// Get appearance config array.
-global $empower_pro_blocks_appearance;
+add_action( 'admin_init', 'empower_pro_blocks_gutenberg_init', 0 );
+function empower_pro_blocks_gutenberg_init() {
+	global $empower_pro_blocks_appearance;
+
+	$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
+
+}
 
 // Adds support for editor font sizes.
 add_theme_support( 'editor-font-sizes', $empower_pro_blocks_appearance['editor-font-sizes'] );

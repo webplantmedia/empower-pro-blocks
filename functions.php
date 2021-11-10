@@ -237,7 +237,7 @@ add_action( 'genesis_header', 'empower_pro_blocks_do_nav_submenu', 12 );
 function empower_pro_blocks_do_nav_submenu() {
 	global $empower_pro_blocks_appearance;
 
-	$id = $empower_pro_blocks_appearance['mega_menu'];
+	$id = $empower_pro_blocks_appearance['mega-menu'];
 
 	if ( ! $id ) {
 		return;
@@ -281,7 +281,7 @@ add_action( 'genesis_header', 'empower_pro_blocks_do_mobile_menu', 12 );
 function empower_pro_blocks_do_mobile_menu() {
 	global $empower_pro_blocks_appearance;
 
-	$mobile_menu_id = $empower_pro_blocks_appearance['mobile_menu'];
+	$mobile_menu_id = $empower_pro_blocks_appearance['mobile-menu'];
 
 	if ( ! $mobile_menu_id ) {
 		return;
@@ -572,7 +572,7 @@ function empower_pro_blocks_footer_widgets() {
 
 	global $empower_pro_blocks_appearance;
 
-	$id = $empower_pro_blocks_appearance['footer_menu'];
+	$id = $empower_pro_blocks_appearance['footer-menu'];
 
 	if ( ! $id ) {
 		return;

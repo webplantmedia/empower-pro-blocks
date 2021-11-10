@@ -424,27 +424,27 @@ function empower_pro_blocks_get_css( $appearance ) {
 
 	$css = sprintf(
 		$css,
-		$appearance['primary-color'],
-		$appearance['primary-bright-color'],
-		$appearance['primary-contrast-color'],
-		$appearance['secondary-color'],
-		$appearance['secondary-bright-color'],
-		$appearance['secondary-contrast-color'],
-		$appearance['bodytext-color'],
-		$appearance['darktext-color'],
-		$appearance['altbackground-color'],
-		$appearance['third-color'],
-		$appearance['third-bright-color'],
-		$appearance['fourth-color'],
-		$appearance['fourth-bright-color'],
-		$appearance['fifth-color'],
-		$appearance['fifth-bright-color'],
-		$appearance['sixth-color'],
-		$appearance['sixth-bright-color'],
-		$appearance['seventh-color'],
-		$appearance['seventh-bright-color'],
-		$appearance['eighth-color'],
-		$appearance['eighth-bright-color']
+		$appearance['vars']['primary-color'],
+		$appearance['vars']['primary-color-bright'],
+		$appearance['vars']['primary-color-contrast'],
+		$appearance['vars']['secondary-color'],
+		$appearance['vars']['secondary-color-bright'],
+		$appearance['vars']['secondary-color-contrast'],
+		$appearance['vars']['bodytext-color'],
+		$appearance['vars']['darktext-color'],
+		$appearance['vars']['altbackground-color'],
+		$appearance['vars']['third-color'],
+		$appearance['vars']['third-color-bright'],
+		$appearance['vars']['fourth-color'],
+		$appearance['vars']['fourth-color-bright'],
+		$appearance['vars']['fifth-color'],
+		$appearance['vars']['fifth-color-bright'],
+		$appearance['vars']['sixth-color'],
+		$appearance['vars']['sixth-color-bright'],
+		$appearance['vars']['seventh-color'],
+		$appearance['vars']['seventh-color-bright'],
+		$appearance['vars']['eighth-color'],
+		$appearance['vars']['eighth-color-bright']
 	);
 
 	$css2 = "
@@ -468,7 +468,7 @@ function empower_pro_blocks_get_css( $appearance ) {
 	$css = $css . $css2;
 
 	if ( $css ) {
-		$css = empower_pro_blocks_compact( $css );
+		// $css = empower_pro_blocks_compact( $css );
 	}
 
 	return $css;

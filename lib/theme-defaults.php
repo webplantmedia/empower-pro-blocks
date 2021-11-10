@@ -10,7 +10,7 @@
  * @link    https://webplantmedia.com/product/empower-pro-blocks/
  */
 
-add_filter( 'simple_social_default_styles', 'empower_pro_blocks_social_default_styles' );
+// add_filter( 'simple_social_default_styles', 'empower_pro_blocks_social_default_styles' );
 /**
  * Set Simple Social Icon defaults.
  *

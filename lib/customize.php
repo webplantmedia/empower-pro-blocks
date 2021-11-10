@@ -180,7 +180,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_mega_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $empower_pro_blocks_appearance['mega_menu'],
+			'default'  => $empower_pro_blocks_appearance['mega-menu'],
 		)
 	);
 
@@ -202,7 +202,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_mobile_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $empower_pro_blocks_appearance['mobile_menu'],
+			'default'  => $empower_pro_blocks_appearance['mobile-menu'],
 		)
 	);
 
@@ -224,7 +224,7 @@ function empower_pro_blocks_customizer_register( $wp_customize ) {
 			'type'        => 'select',
 			'settings'    => 'empower_pro_blocks_footer_menu',
 			'choices'  => $site_element_pages,
-			'default'  => $empower_pro_blocks_appearance['footer_menu'],
+			'default'  => $empower_pro_blocks_appearance['footer-menu'],
 		)
 	);
 

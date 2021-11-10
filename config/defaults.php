@@ -13,10 +13,18 @@ $css_vars = '';
 $colors = array(
 	'primary-color'   => '#ed5652',
 	'secondary-color' => '#ff7226',
-	'third-color'     => '#a44e9e',
-	'fourth-color'    => '#d43c31',
-	'fifth-color'     => '#42b97c',
-	'sixth-color'     => '#0000ff',
+	'third-color' => '#a44e9e',
+	'fourth-color' => '#d43c31',
+	'fifth-color' => '#42b97c',
+	'sixth-color' => '#942940',
+	'seventh-color' => '#176e99',
+	'eighth-color' => '#ffcc2a',
+	'text-color' => '#777777',
+	'darktext-color' => '#222222',
+	'altbackground-color' => '#f7f7f7',
+	'altbackground-color' => '#f7f7f7',
+	'border-color' => '#edecee',
+	'white-color' => '#ffffff',
 );
 
 foreach ( $colors as $key => $value ) {
@@ -35,11 +43,7 @@ body-background-color-two: #f5f5f5;
 heading-color: #333;
 heading-color-hover: #444;
 nav-color: #8e8e8e;
-text-color: #777777;
-text-color-bright: ' . empower_pro_blocks_color_brightness( '#222', 0.15 ) . ';
 text-color-hover: #444;
-dark-text-color: #222;
-border-color: #eeeeee;
 form-border-color: #dcdadd;
 table-border-color: #eeeeee;
 
@@ -197,7 +201,7 @@ return array(
 	'shop-rows'                    => 2,
 	'shop-footer-cta'              => 0,
 	// Menu.
-	'hide-menu-search'             => 0,
+	'hide-menu-search'             => 1,
 	'colored-menu-background'      => 0,
 	'transparent-menu-background'  => 1,
 	'display-banner-desktop'       => 0,
