@@ -44,6 +44,8 @@ function empower_pro_blocks_css_vars() {
 			}
 		} else {
 			switch ( $k ) {
+				case 'content-width':
+				case 'content-width-wide':
 				case 'logo-width':
 				case 'logo-mobile-width':
 				case 'logo-top-spacing':

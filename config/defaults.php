@@ -227,5 +227,6 @@ return array(
 	),
 	// Gutenberg.
 	'content-width'                => 750,
+	'content-width-wide'           => 1120,
 	'css-vars'                     => $css_vars,
 );

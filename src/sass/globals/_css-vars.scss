@@ -1,0 +1,36 @@
+$colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth, default-text, dark-text, "white", alternate-background, border;
+
+@each $color in $colors {
+	.has-background-dim.has-#{$color}-background-color,
+	.has-background.has-#{$color}-background-color {
+		background-color: var(--wp--preset--color--#{$color}) !important;
+	}
+	.has-text-color.has-#{$color}-color {
+		&,
+		a,
+		a:hover,
+		a:visited {
+			color: var(--wp--preset--color--#{$color}) !important;
+		}
+	}
+	.has-#{$color}-icon-color > *::before,
+	.has-#{$color}-icon-color::before {
+		color: var(--wp--preset--color--#{$color}) !important;
+	}
+	.has-#{$color}-border-color {
+		border-color: var(--wp--preset--color--#{$color}) !important;
+	}
+	.has-inline-color.has-#{$color}-color {
+		&,
+		a,
+		a:hover,
+		a:visited {
+			color: var(--wp--preset--color--#{$color}) !important;
+		}
+	}
+}
+
+$colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth;
+
+@each $color in $colors {
+}
