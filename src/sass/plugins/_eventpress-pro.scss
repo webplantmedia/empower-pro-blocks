@@ -154,7 +154,7 @@
 		.event-form-heading {
 			text-align: center;
 			margin-bottom: 0;
-			color: var(--epb-primary-contrast-color);
+			color: var(--epb-vars-primary-color-contrast);
 		}
 		.event-over-message {
 			text-align: center;
@@ -166,14 +166,14 @@
 			margin-bottom: 40px;
 		}
 		.event-form-wrapper {
-			background-color: var(--epb-primary-color);
+			background-color: var(--epb-vars-primary-color);
 			padding-left: 40px;
 			padding-right: 40px;
 			padding-top: 40px;
 			padding-bottom: 10px;
 			margin-top: 40px;
 			position: relative;
-			color: var(--epb-primary-contrast-color);
+			color: var(--epb-vars-primary-color-contrast);
 
 			&.past-event-form-wrapper {
 				margin-top: 0;
