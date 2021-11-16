@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Plugin Name:     Empower Pro Blocks
  * Description:     Custom blocks for Empower Pro Blocks theme.
- * Version:         1.1.33
+ * Version:         1.1.34
  * Author:          Web Plant Media
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
@@ -11,22 +12,22 @@
  * @package         empower-pro-blocks
  */
 
-define( 'EMPOWER_PRO_BLOCKS_DIR', plugin_dir_path( __FILE__ ) );
-define( 'EMPOWER_PRO_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
+define('EMPOWER_PRO_BLOCKS_DIR', plugin_dir_path(__FILE__));
+define('EMPOWER_PRO_BLOCKS_URL', plugin_dir_url(__FILE__));
 
-function empower_pro_blocks_defines() {
+function empower_pro_blocks_defines()
+{
 	$plugin_data = get_file_data(__FILE__, array('Version' => 'Version'), false);
 	$plugin_version = $plugin_data['Version'];
 
-	define( 'EMPOWER_PRO_BLOCKS_VERSION', $plugin_version );
-
+	define('EMPOWER_PRO_BLOCKS_VERSION', $plugin_version);
 }
-add_action( 'init', 'empower_pro_blocks_defines' );
+add_action('init', 'empower_pro_blocks_defines');
 
 global $empower_pro_blocks_defaults;
 global $empower_pro_blocks_appearance;
 
-add_action( 'after_setup_theme', 'empower_pro_blocks_defaults', 0 );
+add_action('after_setup_theme', 'empower_pro_blocks_defaults', 0);
 
 /**
  * Defaults
@@ -35,17 +36,19 @@ add_action( 'after_setup_theme', 'empower_pro_blocks_defaults', 0 );
  *
  * @return void
  */
-function empower_pro_blocks_defaults() {
+function empower_pro_blocks_defaults()
+{
 	global $empower_pro_blocks_defaults;
 
-	$empower_pro_blocks_defaults = empower_pro_blocks_get_config( 'defaults' );
+	$empower_pro_blocks_defaults = empower_pro_blocks_get_config('defaults');
 }
 
-add_action( 'wp', 'empower_pro_blocks_appearance', 0 );
-function empower_pro_blocks_appearance() {
+add_action('wp', 'empower_pro_blocks_appearance', 0);
+function empower_pro_blocks_appearance()
+{
 	global $empower_pro_blocks_appearance;
 
-	$empower_pro_blocks_appearance = empower_pro_blocks_get_config( 'appearance' );
+	$empower_pro_blocks_appearance = empower_pro_blocks_get_config('appearance');
 }
 
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/helper-functions.php';
@@ -64,7 +67,7 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';
 
 
-add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
+add_action('after_setup_theme', 'empower_pro_blocks_gutenberg_support');
 /**
  * Adds Gutenberg opt-in features and styling.
  *
@@ -72,13 +75,14 @@ add_action( 'after_setup_theme', 'empower_pro_blocks_gutenberg_support' );
  *
  * @since 1.1.0
  */
-function empower_pro_blocks_gutenberg_support() {
+function empower_pro_blocks_gutenberg_support()
+{
 	// Add inline style for gutenberg blocks.
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/gutenberg.php';
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/headings.php';
 }
 
-if ( empower_pro_blocks_is_woocommerce_activated() ) {
+if (empower_pro_blocks_is_woocommerce_activated()) {
 
 	// Adds WooCommerce support.
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/woocommerce/woocommerce-setup.php';
@@ -88,19 +92,17 @@ if ( empower_pro_blocks_is_woocommerce_activated() ) {
 
 	// Includes notice to install Genesis Connect for WooCommerce.
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/woocommerce/woocommerce-notice.php';
-
 }
 
-if ( empower_pro_blocks_is_soliloquy_activated() ) {
+if (empower_pro_blocks_is_soliloquy_activated()) {
 
 	// Load soliloquy functions.
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/soliloquy/soliloquy-setup.php';
-
 }
 
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/site-elements.php';
 
-add_action( 'wp_head', 'empower_pro_blocks_load_images' );
+add_action('wp_head', 'empower_pro_blocks_load_images');
 /**
  * Adjusts featured images.
  *
@@ -108,20 +110,20 @@ add_action( 'wp_head', 'empower_pro_blocks_load_images' );
  *
  * @since 1.0.0
  */
-function empower_pro_blocks_load_images() {
+function empower_pro_blocks_load_images()
+{
 
 	require_once EMPOWER_PRO_BLOCKS_DIR . '/lib/images.php';
-
 }
 
-add_action( 'init', 'empower_pro_blocks_init' );
+add_action('init', 'empower_pro_blocks_init');
 /**
  * Load theme specific functions
  *
  * @since 1.0.0
  */
-function empower_pro_blocks_init() {
+function empower_pro_blocks_init()
+{
 
 	require_once EMPOWER_PRO_BLOCKS_DIR . '/lib/theme-functions.php';
-
 }

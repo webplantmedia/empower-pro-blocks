@@ -15781,10 +15781,10 @@ function save(_ref) {
     style3.backgroundPosition = "".concat(focalPoint3.x * 100, "% ").concat(focalPoint3.y * 100, "%");
   }
 
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()('wp-block-hero__outer-wrapper', Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('hero-color', heroColor));
-  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('overlay-color', overlayColor));
-  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('left-pill-color', leftPillColor));
-  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('right-pill-color', rightPillColor));
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()("wp-block-hero__outer-wrapper", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("hero-color", heroColor));
+  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("overlay-color", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("overlay-color", overlayColor));
+  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("above-fold-background", "glide", "glide-left", "glide-down", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("left-pill-color", leftPillColor));
+  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("top-right-background", "glide", "glide-right", "glide-down", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_5__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("right-pill-color", rightPillColor));
 
   var button2Style = _objectSpread({}, button2IconSize ? {
     width: button2IconSize + "px"
@@ -16556,11 +16556,11 @@ function save(_ref) {
     maxHeight: iconHeight + "px"
   } : {});
 
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()('wp-block-hero2__outer-wrapper', Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('hero2-color', heroColor), showContent ? {} : 'hero-content-hidden');
-  var backgroundImageClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('wp-block-hero2__background-image', grayscale ? 'grayscale' : {});
-  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('overlay-color', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('overlay-color', overlayColor));
-  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('above-fold-background', 'glide', 'glide-left', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('left-pill-color', leftPillColor));
-  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()('top-right-background', 'glide', 'glide-right', 'glide-down', url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])('right-pill-color', rightPillColor));
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()("wp-block-hero2__outer-wrapper", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("hero2-color", heroColor), showContent ? {} : "hero-content-hidden");
+  var backgroundImageClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("wp-block-hero2__background-image", grayscale ? "grayscale" : {});
+  var overlayClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("overlay-color", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(dimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("overlay-color", overlayColor));
+  var leftPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("above-fold-background", "glide", "glide-left", "glide-down", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(leftPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("left-pill-color", leftPillColor));
+  var rightPillClasses = classnames__WEBPACK_IMPORTED_MODULE_2___default()("top-right-background", "glide", "glide-right", "glide-down", url ? Object(_shared__WEBPACK_IMPORTED_MODULE_4__["dimRatioToClass"])(rightPillDimRatio) : {}, Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["getColorClassName"])("right-pill-color", rightPillColor));
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: classes
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {

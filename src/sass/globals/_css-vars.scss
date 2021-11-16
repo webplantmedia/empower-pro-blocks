@@ -1,4 +1,5 @@
-$colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth, default-text, dark-text, "white", alternate-background, border;
+$colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
+	default-text, dark-text, "white", alternate-background, border;
 
 @each $color in $colors {
 	.has-background-dim.has-#{$color}-background-color,
@@ -33,4 +34,8 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth, defau
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth;
 
 @each $color in $colors {
+}
+
+#master .has-background-color {
+	color: var(--epb-vars-text-color) !important;
 }
