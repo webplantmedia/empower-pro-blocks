@@ -1,5 +1,5 @@
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
-	default-text, dark-text, "white", alternate-background, border;
+	default-text, dark-text, "white", background, altbackground, border;
 
 @each $color in $colors {
 	.has-background-dim.has-#{$color}-background-color,
@@ -36,6 +36,7 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth;
 @each $color in $colors {
 }
 
-#master .has-background-color {
-	color: var(--epb-vars-text-color) !important;
+.editor-styles-wrapper div .has-background-color,
+.site-container .has-background-color {
+	color: var(--wp--preset--text-color) !important;
 }

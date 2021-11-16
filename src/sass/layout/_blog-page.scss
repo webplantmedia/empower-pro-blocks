@@ -155,7 +155,6 @@
 	}
 
 	.entry {
-
 		@include box-shadow();
 		transition: all 0.4s;
 		background-color: $body_background_color;
@@ -172,7 +171,6 @@
 		}
 
 		&:hover {
-
 			@include box-shadow-hover();
 			// -webkit-transform: translateY(-5px);
 			// -moz-transform: translateY(-5px);
@@ -190,7 +188,6 @@
 			// display: none !important;
 		}
 	}
-
 }
 
 .blog-shortcode.blog-three-columns .blog-shortcode-loop-container,
@@ -212,8 +209,7 @@
 .blog.half-width-entries {
 	&.content-sidebar,
 	&.sidebar-content {
-
-		@media only screen and ( min-width: $ipad_width_1 ) and ( max-width: $desktop_width ) {
+		@media only screen and (min-width: $ipad_width_1) and (max-width: $desktop_width) {
 			.genesis-loop-container {
 				display: block;
 
@@ -223,7 +219,7 @@
 			}
 		}
 
-		@media only screen and ( min-width: $ipad_width_1 ) {
+		@media only screen and (min-width: $ipad_width_1) {
 			.empower-pro-blocks-page-title > .wrap {
 				margin-left: 0;
 				margin-right: 50px;

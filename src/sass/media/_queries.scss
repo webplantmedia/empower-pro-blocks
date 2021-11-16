@@ -1,4 +1,4 @@
-@media only screen and (max-width: $wide_width ) {
+@media only screen and (max-width: $wide_width) {
 	.block-wrap,
 	.wrap,
 	.breadcrumb {
@@ -22,7 +22,6 @@
 	.content-sidebar .content-sidebar-wrap .content {
 		max-width: 740px;
 	}
-
 }
 
 @media only screen and (max-width: $desktop_width) {
@@ -65,7 +64,6 @@
 			padding-right: 7%;
 		}
 	}
-
 }
 
 @media only screen and (max-width: $ipad_width) {
@@ -151,7 +149,6 @@
 	.full-width-entries .content {
 		width: 100%;
 	}
-
 }
 
 @media only screen and (max-width: $tablet_width) {
@@ -178,7 +175,6 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-
 }
 
 @media only screen and (max-width: $mobile_width) {
@@ -191,5 +187,4 @@
 	html .sidebar > :nth-child(2) {
 		// padding: 7%;
 	}
-
 }
