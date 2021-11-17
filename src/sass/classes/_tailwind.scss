@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @for $i from 0 through 40 {
 	$x: $i * 2;
 	.mr-#{$x} {
@@ -26,7 +28,7 @@
 	}
 }
 
-@media screen and ( max-width: $ipad_width ) {
+@media screen and (max-width: $ipad_width) {
 	@for $i from 0 through 40 {
 		$x: $i * 2;
 		.md\:mr-#{$x} {
@@ -56,7 +58,7 @@
 	}
 }
 
-@media screen and ( max-width: $mobile_width ) {
+@media screen and (max-width: $mobile_width) {
 	@for $i from 0 through 40 {
 		$x: $i * 2;
 		.sm\:mr-#{$x} {
@@ -114,7 +116,7 @@
 	}
 }
 
-@media screen and ( max-width: $ipad_width ) {
+@media screen and (max-width: $ipad_width) {
 	@for $i from 5 through 50 {
 		$x: $i * 10;
 		.md\:mr-#{$x} {
@@ -144,7 +146,7 @@
 	}
 }
 
-@media screen and ( max-width: $mobile_width ) {
+@media screen and (max-width: $mobile_width) {
 	@for $i from 5 through 50 {
 		$x: $i * 10;
 		.sm\:mr-#{$x} {
@@ -181,12 +183,12 @@
 
 @for $i from 1 through 10 {
 	.opacity-#{$i}0 {
-		opacity: #{($i/10)} !important;
+		opacity: #{(math.div($i, 10))} !important;
 	}
 }
 
 @for $i from 1 through 30 {
-	$x: 200 + ( $i * 50 );
+	$x: 200 + ($i * 50);
 
 	.max-w-#{$x} {
 		max-width: #{$x}px !important;

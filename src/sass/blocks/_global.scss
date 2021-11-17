@@ -1,10 +1,12 @@
+@use "sass:math";
+
 .has-background-dim-value-0 {
 	opacity: 0;
 }
 
 @for $i from 1 through 10 {
 	.has-background-dim-value-#{$i}0 {
-		opacity: $i/10;
+		opacity: math.div($i, 10);
 	}
 }
 
