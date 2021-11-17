@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks customizer defaults
  *
@@ -27,14 +28,14 @@ $colors = array(
 	'white-color' => '#ffffff',
 );
 
-foreach ( $colors as $key => $value ) {
+foreach ($colors as $key => $value) {
 	$css_vars .= $key . ': ' . $value . ";\n";
-	$css_vars .= $key . '-bright: ' . empower_pro_blocks_color_brightness( $value, 0.15 ) . ";\n";
-	$css_vars .= $key . '-contrast: ' . empower_pro_blocks_color_contrast( $value, 0.15 ) . ";\n";
-	$css_vars .= $key . '-rgb: ' . empower_pro_blocks_color_rgb( $value ) . ";\n";
+	$css_vars .= $key . '-bright: ' . empower_pro_blocks_color_brightness($value, 0.15) . ";\n";
+	$css_vars .= $key . '-contrast: ' . empower_pro_blocks_color_contrast($value, 0.15) . ";\n";
+	$css_vars .= $key . '-rgb: ' . empower_pro_blocks_color_rgb($value) . ";\n";
 }
 
-$css_vars .= ' 
+$css_vars .= '
 gray-text-color: #888;
 light-gray-text-color: #ccc;
 lightest-gray-text-color: #f5f5f5;
@@ -176,7 +177,8 @@ return array(
 	'fonts-url'                    => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Source+Sans+Pro:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap',
 	'custom-fonts-url'             => '',
 	'icons-url'                    => 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
-	'icons-js-url'                 => 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js',
+	'icons-js-url'                 => 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js',
+	'icons-esm-js-url'	           => 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js',
 	// Logo.
 	'logo-sticky'                  => '',
 	'logo-width'                   => 270,
