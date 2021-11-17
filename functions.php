@@ -894,9 +894,9 @@ function empower_pro_blocks_add_type_attribute($tag, $handle, $src)
 {
 	// if not your script, do nothing and return original $tag
 	if ('ionicons-esm' === $handle) {
-		return '<script nomodule src="' . esc_url($src) . '"></script>';
+		return '<script id="' . $handle . '" nomodule src="' . esc_url($src) . '"></script>';
 	} else if ('ionicons' === $handle) {
-		return '<script type="module" src="' . esc_url($src) . '"></script>';
+		return '<script id="' . $handle . '" type="module" src="' . esc_url($src) . '"></script>';
 	}
 
 	return $tag;
