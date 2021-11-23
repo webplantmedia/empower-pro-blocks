@@ -4,8 +4,9 @@
 	max-width: $content_width;
 }
 
-.wp-block-button:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
-    color: $light_gray_text_color;
+.wp-block-button:not(.has-text-color):not(.is-style-outline)
+	[data-rich-text-placeholder]::after {
+	color: $light_gray_text_color;
 }
 
 /* Width of "wide" blocks */
@@ -18,12 +19,41 @@
 		max-width: none;
 	}
 }
+.block-wrap {
+	.wp-block[data-align="wide"] {
+		margin-left: calc(var(--wp--custom--content-width-wide) / -2 + 100% / 2);
+		margin-right: calc(var(--wp--custom--content-width-wide) / -2 + 100% / 2);
+		min-width: calc(-1 * var(--wp--custom--content-width-wide));
+		max-width: 100%;
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		@media only screen and (max-width: $tablet_width) {
+			padding-left: 6%;
+			padding-right: 6%;
+			margin-left: calc(50% - (50vw));
+			margin-right: calc(50% - (50vw));
+			max-width: 1000%;
+			min-width: 0;
+			width: 100vw;
+		}
+	}
+}
 
 .wp-block[data-align="full"] {
 	max-width: none;
 
 	.wp-block {
 		max-width: none;
+	}
+}
+.block-wrap {
+	.wp-block[data-align="full"] {
+		margin-left: calc(50% - (50vw));
+		margin-right: calc(50% - (50vw));
+		max-width: 1000%;
+		width: 100vw;
 	}
 }
 
@@ -39,7 +69,7 @@
 .components-panel input.block-editor-url-input__input[type="text"] {
 	max-width: 100% !important;
 	box-shadow: 0 0 0 transparent;
-	transition: box-shadow .1s linear;
+	transition: box-shadow 0.1s linear;
 	border-radius: 2px;
 	border: 1px solid #757575;
 }
