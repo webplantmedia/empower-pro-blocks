@@ -64,6 +64,7 @@ function IconTextBlock({
 		topOffset,
 		iconSpacing,
 		marginBottom,
+		headingMarginBottom,
 		text,
 		heading,
 		fontSize,
@@ -123,6 +124,18 @@ function IconTextBlock({
 						maxLevel={7}
 						selectedLevel={level}
 						onChange={(value) => setAttributes({ level: value })}
+					/>
+					<RangeControl
+						label={__("Margin Bottom")}
+						value={headingMarginBottom}
+						onChange={(value) =>
+							setAttributes({
+								headingMarginBottom: value,
+							})
+						}
+						min={0}
+						max={150}
+						step={1}
 					/>
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
@@ -310,6 +323,12 @@ function IconTextBlock({
 			: {}),
 	};
 
+	const headingStyle = {
+		...(headingMarginBottom || headingMarginBottom === 0
+			? { marginBottom: headingMarginBottom + "px" }
+			: {}),
+	};
+
 	const iconInnerStyle = {
 		...(iconSize ? { width: iconSize + "px" } : {}),
 		...(imageStyle ? { height: iconSize + "px" } : {}),
@@ -344,6 +363,7 @@ function IconTextBlock({
 							onChange={(value) => setAttributes({ heading: value })}
 							className={headingClasses}
 							tagName={tagName}
+							style={headingStyle}
 						/>
 						<RichText
 							placeholder={__("Text")}

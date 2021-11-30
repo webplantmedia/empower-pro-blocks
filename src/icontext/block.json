@@ -20,7 +20,7 @@
 		},
 		"iconSpacing": {
 			"type": "number",
-			"default": 140 
+			"default": 140
 		},
 		"text": {
 			"type": "string",
@@ -54,6 +54,10 @@
 			"source": "html",
 			"default": "",
 			"selector": ".icon-heading"
+		},
+		"headingMarginBottom": {
+			"type": "number",
+			"default": ""
 		},
 		"headingColor": {
 			"type": "string"

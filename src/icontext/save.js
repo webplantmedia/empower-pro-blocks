@@ -17,6 +17,7 @@ export default function save({ attributes }) {
 		topOffset,
 		iconSpacing,
 		marginBottom,
+		headingMarginBottom,
 		text,
 		fontSize,
 		level,
@@ -62,6 +63,12 @@ export default function save({ attributes }) {
 			: {}),
 	};
 
+	const headingStyle = {
+		...(headingMarginBottom || headingMarginBottom === 0
+			? { marginBottom: headingMarginBottom + "px" }
+			: {}),
+	};
+
 	const iconInnerStyle = {
 		...(iconSize ? { width: iconSize + "px" } : {}),
 		...(imageStyle ? { height: iconSize + "px" } : {}),
@@ -97,6 +104,7 @@ export default function save({ attributes }) {
 						tagName={tagName}
 						value={heading}
 						className={headingClasses}
+						style={headingStyle}
 					/>
 					<RichText.Content
 						tagName="p"
