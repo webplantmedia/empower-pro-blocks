@@ -20,7 +20,7 @@
 		},
 		"iconSpacing": {
 			"type": "number",
-			"default": "" 
+			"default": ""
 		},
 		"text": {
 			"type": "string",
