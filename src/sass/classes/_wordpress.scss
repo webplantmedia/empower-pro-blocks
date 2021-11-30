@@ -66,6 +66,12 @@ img.alignright,
 
 .entry-content .wp-audio-shortcode,
 .entry-content .wp-playlist,
+.entry-content .wp-block-video,
 .entry-content .wp-video {
 	margin: 0 0 $margin_bottom;
+
+	video {
+		margin-bottom: 0;
+		display: block;
+	}
 }
