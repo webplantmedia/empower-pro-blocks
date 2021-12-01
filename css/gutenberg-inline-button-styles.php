@@ -83,6 +83,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 			}
 
 			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color:hover,
+			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color:focus,
 			html .wp-block-button.is-style-outline .wp-block-button__link.has-$color-background-color:active {
 				border-color: ${ $color . '_bright_color' } !important;
 				color: ${ $color . '_bright_color' } !important;
