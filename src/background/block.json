@@ -44,7 +44,7 @@
 		},
 		"topMobileHeight": {
 			"type": "number",
-			"default": 100 
+			"default": 100
 		},
 		"bottomHeight": {
 			"type": "number",
@@ -52,11 +52,16 @@
 		},
 		"bottomMobileHeight": {
 			"type": "number",
-			"default": 100 
+			"default": 100
 		},
 		"align": {
 			"type": "string",
 			"default": "full"
 		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["full"],
+		"html": false
 	}
 }

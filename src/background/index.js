@@ -1,27 +1,24 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
-import { pullquote as icon } from '@wordpress/icons';
+import { __ } from "@wordpress/i18n";
+import { pullquote as icon } from "@wordpress/icons";
 
 /**
  * Internal dependencies
  */
-import edit from './edit';
-import metadata from './block.json';
-import save from './save';
+import edit from "./edit";
+import metadata from "./block.json";
+import save from "./save";
 
-const { name } = metadata;
+const { name, supports } = metadata;
 
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Background' ),
+	title: __("Background"),
 	icon,
-	supports: {
-		align: ["full"],
-		html: false,
-	},
 	save,
 	edit,
+	supports: supports,
 };
