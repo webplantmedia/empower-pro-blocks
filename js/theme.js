@@ -52,7 +52,10 @@
 				var $header = $(".site-header");
 				var marginTop = Number(parseInt($("html").css("margin-top")));
 				offset = offset + marginTop;
-				offset = offset + 30;
+
+				if (!$anchor.hasClass("no-anchor-offset")) {
+					offset = offset + 30;
+				}
 
 				if ($anchor.hasClass("large-anchor-offset")) {
 					offset = offset + 60;
