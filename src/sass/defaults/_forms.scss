@@ -30,10 +30,10 @@ textarea {
 
 #master .wpforms-field-container {
 	// > *:first-child {
-		// padding-top: 0 !important;
+	// padding-top: 0 !important;
 	// }
 	// > *:last-child {
-		// padding-bottom: 0 !important;
+	// padding-bottom: 0 !important;
 	// }
 }
 
@@ -65,7 +65,6 @@ textarea {
 	.wpforms-confirmation-container-full p,
 	label {
 		color: #fff !important;
-
 	}
 
 	.wpforms-uploader {
@@ -144,12 +143,18 @@ body .select2-choice {
 	padding-right: 2.5em;
 	white-space: nowrap;
 
-	// @include background-2x("../images/select-caret","png");
+	@include background-2x("../images/select-caret", "png");
 }
 
-body .select2-container--default .select2-selection--single .select2-selection__placeholder,
+body
+	.select2-container--default
+	.select2-selection--single
+	.select2-selection__placeholder,
 body .select2-results__option,
-body .select2-container--default .select2-selection--single .select2-selection__rendered {
+body
+	.select2-container--default
+	.select2-selection--single
+	.select2-selection__rendered {
 	line-height: $body_font_line_height;
 	color: $text_color;
 	padding: 13px 16px 11px;
@@ -157,7 +162,9 @@ body .select2-container--default .select2-selection--single .select2-selection__
 }
 
 body .select2-container--default .select2-results__option[aria-selected="true"],
-body .select2-container--default .select2-results__option[data-selected="true"] {
+body
+	.select2-container--default
+	.select2-results__option[data-selected="true"] {
 	background-color: $form_border_color;
 }
 
@@ -167,8 +174,12 @@ body .select2-container--default .select2-selection--single {
 	border-radius: $form_border_radius; // has to set specific amount or else whole container is rounded.
 }
 
-body .select2-container--default .select2-results__option--highlighted[aria-selected],
-body .select2-container--default .select2-results__option--highlighted[data-selected] {
+body
+	.select2-container--default
+	.select2-results__option--highlighted[aria-selected],
+body
+	.select2-container--default
+	.select2-results__option--highlighted[data-selected] {
 	// background-color: $color_two;
 }
 
@@ -176,7 +187,10 @@ body .select2-search--dropdown {
 	padding: 0;
 }
 
-body .select2-container--default .select2-search--dropdown .select2-search__field,
+body
+	.select2-container--default
+	.select2-search--dropdown
+	.select2-search__field,
 body .select2-search--dropdown .select2-search__field {
 	border-radius: 0;
 	border-width: 0;
@@ -184,7 +198,10 @@ body .select2-search--dropdown .select2-search__field {
 	padding: 13px 16px 11px;
 }
 
-body .select2-dropdown.select2-dropdown--above .select2-search--dropdown .select2-search__field {
+body
+	.select2-dropdown.select2-dropdown--above
+	.select2-search--dropdown
+	.select2-search__field {
 	border-radius: $form_border_radius;
 	border-width: 0;
 }
@@ -258,7 +275,10 @@ input[type="checkbox"] {
 	top: 0;
 }
 
-#master div.wpforms-container-full .wpforms-form input[type="checkbox"]:checked::after,
+#master
+	div.wpforms-container-full
+	.wpforms-form
+	input[type="checkbox"]:checked::after,
 input[type="checkbox"]:checked::after {
 	content: "\f122";
 	display: inline-block;
@@ -297,7 +317,10 @@ input[type="radio"] {
 	top: 0;
 }
 
-#master div.wpforms-container-full .wpforms-form input[type="radio"]:checked::after,
+#master
+	div.wpforms-container-full
+	.wpforms-form
+	input[type="radio"]:checked::after,
 input[type="radio"]:checked::after {
 	content: " ";
 	width: 14px;
@@ -499,7 +522,10 @@ input[type="submit"].large {
 }
 
 #master a.more-link,
-.soliloquy-container .soliloquy-wrapper .soliloquy-caption .button.is-style-text,
+.soliloquy-container
+	.soliloquy-wrapper
+	.soliloquy-caption
+	.button.is-style-text,
 .comment-reply-link,
 a.button.is-style-text,
 button.is-style-text,
@@ -545,7 +571,6 @@ input[type="search"]::-webkit-search-results-button {
 	.button.button-hero::after {
 		display: none;
 	}
-
 }
 
 #master .wpforms-confirmation-container-full,
@@ -590,7 +615,10 @@ input[type="search"]::-webkit-search-results-button {
 	overflow: hidden !important;
 }
 
-#master div.wpforms-container-full .wpforms-form input.wpforms-smart-phone-field {
+#master
+	div.wpforms-container-full
+	.wpforms-form
+	input.wpforms-smart-phone-field {
 	padding-left: 50px;
 }
 #master div.wpforms-container-full .wpforms-form .wpforms-recaptcha-container {
