@@ -15669,10 +15669,11 @@ var _block_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_
 var name = _block_json__WEBPACK_IMPORTED_MODULE_3__.name;
 
 var settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Hero'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Hero"),
   icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["cover"],
   supports: {
     align: ["full"],
+    anchor: true,
     html: false
   },
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -16465,11 +16466,12 @@ var _block_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_
 var name = _block_json__WEBPACK_IMPORTED_MODULE_3__.name;
 
 var settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Hero2'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Hero2"),
   icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["cover"],
   supports: {
     align: ["full"],
-    html: false
+    html: false,
+    anchor: true
   },
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"],
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
