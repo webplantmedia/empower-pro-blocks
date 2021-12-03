@@ -50,6 +50,7 @@
 				scrollTop = $anchor.offset().top;
 
 				var $header = $(".site-header");
+				var $headerBackground = $(".site-header-background");
 				var marginTop = Number(parseInt($("html").css("margin-top")));
 				offset = offset + marginTop;
 
@@ -61,8 +62,8 @@
 					offset = offset + 60;
 				}
 
-				if ("fixed" === $header.css("position")) {
-					var headerHeight = $header.outerHeight(true);
+				if ("fixed" === $headerBackground.css("position")) {
+					var headerHeight = $headerBackground.outerHeight(true);
 					offset = offset + headerHeight;
 				}
 
