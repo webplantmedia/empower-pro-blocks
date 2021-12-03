@@ -31,7 +31,7 @@
 
 	// grid Block Columns
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
 		> * {
 			margin-top: 0 !important;
@@ -51,49 +51,55 @@
 
 .grid-columns-4 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+				0,
+				1fr
+			);
 	}
 }
 
 .grid-columns-3 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 	}
 }
 
 .grid-columns-7-3 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 7fr 3fr;
+		grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
 	}
 }
 
 .grid-columns-6-4 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 6fr 4fr;
+		grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
 	}
 }
 
 .grid-columns-3-7 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 3fr 7fr;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
 	}
 }
 
 .grid-columns-5-5 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	}
 }
 
 .grid-columns-4-6 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 4fr 6fr;
+		grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
 	}
 }
 
 .grid-columns-25-35-20-20 {
 	> .wp-block-grid__inner-container {
-		grid-template-columns: 25fr 35fr 20fr 20fr;
+		grid-template-columns: minmax(0, 25fr) minmax(0, 35fr) minmax(0, 20fr) minmax(
+				0,
+				20fr
+			);
 	}
 }
 
@@ -115,49 +121,51 @@
 			}
 		}
 
-		@media only screen and ( max-width: $ipad_width ) {
-			grid-template-columns: 1fr 1fr;
+		@media only screen and (max-width: $ipad_width) {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 			grid-gap: 60px 60px;
 		}
 
-		@media only screen and ( max-width: $tablet_width ) {
-			grid-template-columns: 1fr;
+		@media only screen and (max-width: $tablet_width) {
+			grid-template-columns: minmax(0, 1fr);
 			grid-gap: 60px 60px;
 		}
 	}
 
 	&.grid-columns-4--3--2--1 {
 		> .wp-block-grid__inner-container {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+					0,
+					1fr
+				);
 
-			@media only screen and ( max-width: $ipad_width ) {
-				grid-template-columns: 1fr 1fr 1fr;
+			@media only screen and (max-width: $ipad_width) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 			}
-			@media only screen and ( max-width: $tablet_width ) {
-				grid-template-columns: 1fr 1fr;
+			@media only screen and (max-width: $tablet_width) {
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 			}
-			@media only screen and ( max-width: $mobile_width ) {
-				grid-template-columns: 1fr;
+			@media only screen and (max-width: $mobile_width) {
+				grid-template-columns: minmax(0, 1fr);
 			}
 		}
 	}
 
 	&.grid-columns-3-7--3-7--3-7--1 {
 		> .wp-block-grid__inner-container {
-			grid-template-columns: 3fr 7fr;
+			grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
 
-			@media only screen and ( max-width: $ipad_width ) {
-				grid-template-columns: 3fr 7fr;
+			@media only screen and (max-width: $ipad_width) {
+				grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
 			}
-			@media only screen and ( max-width: $tablet_width ) {
-				grid-template-columns: 3fr 7fr;
+			@media only screen and (max-width: $tablet_width) {
+				grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
 			}
-			@media only screen and ( max-width: $mobile_width ) {
-				grid-template-columns: 1fr;
+			@media only screen and (max-width: $mobile_width) {
+				grid-template-columns: minmax(0, 1fr);
 			}
 		}
 	}
-
 
 	$sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 	@each $size in $sizes {
@@ -169,7 +177,7 @@
 
 		&.r-grid-gap-#{$size} {
 			> div.wp-block-grid__inner-container {
-				@media only screen and ( max-width: $ipad_width ) {
+				@media only screen and (max-width: $ipad_width) {
 					grid-gap: #{$size}px #{$size}px;
 				}
 			}
@@ -183,7 +191,7 @@
 
 		&.r-grid-row-gap-#{$size} {
 			> div.wp-block-grid__inner-container {
-				@media only screen and ( max-width: $ipad_width ) {
+				@media only screen and (max-width: $ipad_width) {
 					grid-row-gap: #{$size}px !important;
 				}
 			}
