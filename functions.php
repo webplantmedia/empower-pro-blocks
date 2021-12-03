@@ -48,7 +48,7 @@ add_theme_support('empower-pro-blocks-menu-search');
 
 // Registers the responsive menus.
 if (function_exists('genesis_register_responsive_menus')) {
-	genesis_register_responsive_menus(empower_pro_blocks_get_config('responsive-menus'));
+	// genesis_register_responsive_menus(empower_pro_blocks_get_config('responsive-menus'));
 }
 
 add_action('after_setup_theme', 'empower_pro_blocks_theme_support', 9);
