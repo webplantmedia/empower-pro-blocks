@@ -175,7 +175,7 @@
 			var replace = replace.split("|");
 			var search = $search.text();
 			if (Array.isArray(replace) && replace.length && search.length) {
-				$h1.empowerProBlocksTypewriter({
+				$h1.gallopTypewriter({
 					search: search,
 					replace: replace,
 				});

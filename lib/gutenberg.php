@@ -127,7 +127,7 @@ function empower_pro_blocks_enqueue_scripts()
 
 	wp_enqueue_script('empower-pro-blocks-scroll-js', EMPOWER_PRO_BLOCKS_URL . 'js/scroll.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
 
-	wp_enqueue_script('empower-pro-blocks-typewriter-js', EMPOWER_PRO_BLOCKS_URL . 'js/typewriter.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
+	wp_enqueue_script('typewriter', EMPOWER_PRO_BLOCKS_URL . 'js/typewriter.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
 
 	wp_enqueue_script('empower-pro-blocks-slider-js', EMPOWER_PRO_BLOCKS_URL . 'js/slider.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
 
