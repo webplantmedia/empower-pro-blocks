@@ -39,11 +39,6 @@ export default function save({ attributes }) {
 		backgroundColor,
 	} = attributes;
 
-	const slantBackgroundColorClassName = getColorClassName(
-		"slant-background-color",
-		slantBackgroundColor
-	);
-
 	const rightPillClasses = classnames(
 		"below-fold-background",
 		dimRatioToClass(rightPillDimRatio),
@@ -56,8 +51,12 @@ export default function save({ attributes }) {
 	);
 
 	const classes = classnames(
-		slantBackgroundColorClassName,
-		{ ["has-background-color"]: slantBackgroundColorClassName },
+		{
+			["has-" +
+			slantBackgroundColor +
+			"-background-color"]: slantBackgroundColor,
+			["has-background-color"]: slantBackgroundColor,
+		},
 		slant ? "display-" + slant + "-slant" : {}
 	);
 

@@ -7,7 +7,6 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 1;
 	}
 
 	&.display-bottom-curve-slant .wp-block-background__color-container {
@@ -92,7 +91,7 @@
 
 	.block-wrap {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 
 		> *:first-child {
 			margin-top: 0 !important;

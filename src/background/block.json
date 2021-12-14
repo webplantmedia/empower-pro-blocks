@@ -1,5 +1,4 @@
 {
-	"apiVersion": 2,
 	"name": "empower-pro-blocks/background",
 	"category": "empower-pro-blocks",
 	"attributes": {
@@ -63,10 +62,6 @@
 	"supports": {
 		"anchor": true,
 		"align": ["full"],
-		"html": false,
-		"color": {
-			"text": false,
-			"background": true
-		}
+		"html": false
 	}
 }

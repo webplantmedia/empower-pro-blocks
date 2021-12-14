@@ -24,7 +24,6 @@ import {
 	InnerBlocks,
 	withColors,
 	InspectorControls,
-	useBlockProps,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
@@ -47,6 +46,7 @@ function BackgroundEdit({
 	hasInnerBlocks,
 	slantBackgroundColor,
 	setSlantBackgroundColor,
+	backgroundColor,
 	setBackgroundColor,
 	leftPillColor,
 	setLeftPillColor,
@@ -65,7 +65,6 @@ function BackgroundEdit({
 		leftPillTop,
 		rightPillTop,
 		drawLineTop,
-		backgroundColor,
 		slant,
 	} = attributes;
 
@@ -93,6 +92,18 @@ function BackgroundEdit({
 	const controls = (
 		<>
 			<InspectorControls>
+				<PanelColorGradientSettings
+					title={__("Background")}
+					initialOpen={true}
+					settings={[
+						{
+							colorValue: backgroundColor.color,
+							onColorChange: setBackgroundColor,
+							disableCustomColors: true,
+							label: __("Color"),
+						},
+					]}
+				></PanelColorGradientSettings>
 				<PanelBody title={__("Draw Line Animation")} initialOpen={true}>
 					<ToggleControl
 						label={__("Display")}
@@ -270,20 +281,18 @@ function BackgroundEdit({
 		slant ? "display-" + slant + "-slant" : {}
 	);
 
-	const blockProps = useBlockProps({
-		className: classes,
-	});
-
 	const innerClasses = classnames("wp-block-background__inner-container");
 
 	const backgroundClasses = classnames(
 		"wp-block-background__color-container",
-		backgroundColor && slant != "bottom-curve" ? "has-background-color" : {},
-		backgroundColor && slant != "bottom-curve"
-			? "has-" + backgroundColor + "-background-color"
+		backgroundColor.class && slant != "bottom-curve"
+			? "has-background-color"
 			: {},
-		backgroundColor && slant == "bottom-curve"
-			? "has-" + backgroundColor + "-svg-fill-color"
+		backgroundColor.class && slant != "bottom-curve"
+			? backgroundColor.class
+			: {},
+		backgroundColor.class && slant == "bottom-curve"
+			? backgroundColor.class.replace("background-color", "svg-fill-color")
 			: {}
 	);
 
@@ -322,7 +331,7 @@ function BackgroundEdit({
 	return (
 		<>
 			{controls}
-			<div {...blockProps}>
+			<div className={classes}>
 				{drawLine && (
 					<div className="wp-block-group draw-line" style={drawLineStyle}>
 						<figure class="wp-block-image size-full">{svgline}</figure>
@@ -374,7 +383,8 @@ export default compose([
 		};
 	}),
 	withColors({
-		slantBackgroundColor: "slant-background-color",
+		slantBackgroundColor: "background-color",
+		backgroundColor: "background-color",
 		leftPillColor: "svg-fill-color",
 		rightPillColor: "svg-fill-color",
 	}),
