@@ -15,16 +15,19 @@
 		z-index: 1;
 	}
 
-	&.display-bottom-curve-slant .wp-block-background__color-container {
-		position: absolute;
-		top: auto;
-		right: auto;
-		bottom: -0px;
-		left: 50%;
-		margin-left: -980px;
-		width: 2732px;
-		max-width: 2732px;
-		z-index: 0;
+	&.display-bottom-curve-slant {
+		overflow: hidden;
+		.wp-block-background__color-container {
+			position: absolute;
+			top: auto;
+			right: auto;
+			bottom: -0px;
+			left: 50%;
+			margin-left: -980px;
+			width: 2732px;
+			max-width: 2732px;
+			z-index: 0;
+		}
 	}
 
 	.above-fold-background {
