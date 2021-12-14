@@ -140,20 +140,18 @@ function BackgroundEdit({
 						onChange={(value) => setAttributes({ slant: value })}
 					/>
 				</PanelBody>
-				{(slant === "top" || slant === "bottom") && (
-					<PanelColorGradientSettings
-						title={__("Slant Background")}
-						initialOpen={true}
-						settings={[
-							{
-								colorValue: slantBackgroundColor.color,
-								onColorChange: setSlantBackgroundColor,
-								disableCustomColors: true,
-								label: __("Color"),
-							},
-						]}
-					></PanelColorGradientSettings>
-				)}
+				<PanelColorGradientSettings
+					title={__("Slant Background")}
+					initialOpen={true}
+					settings={[
+						{
+							colorValue: slantBackgroundColor.color,
+							onColorChange: setSlantBackgroundColor,
+							disableCustomColors: true,
+							label: __("Color"),
+						},
+					]}
+				></PanelColorGradientSettings>
 				<PanelColorGradientSettings
 					title={__("Left Pill")}
 					initialOpen={true}
