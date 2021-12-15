@@ -1,10 +1,10 @@
 .wp-block-empower-pro-blocks-background {
 	position: relative;
 
-	.wp-block-background__inner-container {
-		position: relative;
-		z-index: 1;
-	}
+	// .wp-block-background__inner-container {
+	// position: relative;
+	// z-index: 1;
+	// }
 
 	.wp-block-background__color-container {
 		position: absolute;
@@ -12,7 +12,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 1;
+		// z-index: 1;
 	}
 
 	&.display-bottom-curve-slant {
@@ -104,7 +104,7 @@
 
 	.block-wrap {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 
 		> *:first-child {
 			margin-top: 0 !important;
