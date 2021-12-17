@@ -23,7 +23,6 @@ $colors = array(
 	'text-color' => '#777777',
 	'darktext-color' => '#222222',
 	'altbackground-color' => '#f7f7f7',
-	'altbackground-color' => '#f7f7f7',
 	'border-color' => '#edecee',
 	'white-color' => '#ffffff',
 );
