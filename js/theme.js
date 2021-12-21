@@ -55,7 +55,7 @@
 				offset = offset + marginTop;
 
 				if (
-					!$anchor.hasClass("no-anchor-offset") ||
+					!$anchor.hasClass("no-anchor-offset") &&
 					!$anchor.parent().hasClass("no-anchor-offset")
 				) {
 					offset = offset + 30;
