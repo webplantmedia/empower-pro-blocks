@@ -54,7 +54,10 @@
 				var marginTop = Number(parseInt($("html").css("margin-top")));
 				offset = offset + marginTop;
 
-				if (!$anchor.hasClass("no-anchor-offset")) {
+				if (
+					!$anchor.hasClass("no-anchor-offset") ||
+					!$anchor.parent().hasClass("no-anchor-offset")
+				) {
 					offset = offset + 30;
 				}
 
