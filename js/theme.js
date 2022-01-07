@@ -43,7 +43,9 @@
 		$anchor = $(anchor);
 
 		if ($anchor.length) {
-			if ($anchor.hasClass("learn-more")) {
+			if ($anchor.hasClass("modal")) {
+				return true;
+			} else if ($anchor.hasClass("learn-more")) {
 				$anchor = $(".learn-more");
 				scrollTop = $anchor.offset().top;
 			} else {
