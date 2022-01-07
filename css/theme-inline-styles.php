@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks.
  *
@@ -16,7 +17,8 @@
  *
  * @since 1.0.0
  */
-function empower_pro_blocks_get_css( $appearance ) {
+function empower_pro_blocks_get_css($appearance)
+{
 
 	$css = '';
 
@@ -430,7 +432,7 @@ function empower_pro_blocks_get_css( $appearance ) {
 		$appearance['vars']['secondary-color'],
 		$appearance['vars']['secondary-color-bright'],
 		$appearance['vars']['secondary-color-contrast'],
-		$appearance['vars']['bodytext-color'],
+		$appearance['vars']['text-color'],
 		$appearance['vars']['darktext-color'],
 		$appearance['vars']['altbackground-color'],
 		$appearance['vars']['third-color'],
@@ -467,7 +469,7 @@ function empower_pro_blocks_get_css( $appearance ) {
 
 	$css = $css . $css2;
 
-	if ( $css ) {
+	if ($css) {
 		// $css = empower_pro_blocks_compact( $css );
 	}
 

@@ -47,10 +47,10 @@ function empower_pro_blocks_gutenberg_init()
 }
 
 // Adds support for editor font sizes.
-add_theme_support('editor-font-sizes', $empower_pro_blocks_appearance['editor-font-sizes']);
+// add_theme_support('editor-font-sizes', $empower_pro_blocks_appearance['editor-font-sizes']);
 
 // Adds support for editor color palette.
-add_theme_support('editor-color-palette', $empower_pro_blocks_appearance['editor-color-palette']);
+// add_theme_support('editor-color-palette', $empower_pro_blocks_appearance['editor-color-palette']);
 
 add_action('after_setup_theme', 'empower_pro_blocks_content_width', 0);
 /**

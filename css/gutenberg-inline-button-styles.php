@@ -44,9 +44,9 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 	$eighth_color = '%22$s';
 	$eighth_bright_color = '%23$s';
 	$eighth_contrast_color = '%24$s';
-	$bodytext_color = '%25$s';
-	$bodytext_bright_color = '%26$s';
-	$bodytext_contrast_color = '%27$s';
+	$text_color = '%25$s';
+	$text_bright_color = '%26$s';
+	$text_contrast_color = '%27$s';
 	$darktext_color = '%28$s';
 	$darktext_bright_color = '%29$s';
 	$darktext_contrast_color = '%30$s';
@@ -60,7 +60,7 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 	$white_bright_color = '%38$s';
 	$white_contrast_color = '%39$s';
 
-	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'bodytext', 'darktext', 'altbackground', 'border', 'white' );
+	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
 
 	foreach ( $colors as $color ) {
 		$css .= "
@@ -165,9 +165,9 @@ function empower_pro_blocks_get_gutenberg_button_css( $appearance ) {
 		$appearance['vars']['eighth-color-bright'],
 		$appearance['vars']['eighth-color-contrast'],
 
-		$appearance['vars']['bodytext-color'],
-		$appearance['vars']['bodytext-color-bright'],
-		$appearance['vars']['bodytext-color-contrast'],
+		$appearance['vars']['text-color'],
+		$appearance['vars']['text-color-bright'],
+		$appearance['vars']['text-color-contrast'],
 
 		$appearance['vars']['darktext-color'],
 		$appearance['vars']['darktext-color-bright'],
