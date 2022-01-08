@@ -3,7 +3,7 @@
 /**
  * Plugin Name:     Empower Pro Blocks
  * Description:     Custom blocks for Empower Pro Blocks theme.
- * Version:         1.1.56
+ * Version:         1.1.57
  * Author:          Web Plant Media
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,6 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-vars-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-inline-styles.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-styles.php';
-require_once EMPOWER_PRO_BLOCKS_DIR . 'css/gutenberg-inline-button-styles.php';
 
 
 add_action('after_setup_theme', 'empower_pro_blocks_gutenberg_support');

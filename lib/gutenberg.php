@@ -104,7 +104,6 @@ function empower_pro_blocks_custom_gutenberg_css()
 	wp_enqueue_style('empower-pro-blocks-main', EMPOWER_PRO_BLOCKS_URL . 'css/blocks.css', array(), filemtime(EMPOWER_PRO_BLOCKS_DIR . "css/blocks.css"));
 
 	$css = empower_pro_blocks_get_gutenberg_css($empower_pro_blocks_appearance);
-	$css .= empower_pro_blocks_get_gutenberg_button_css($empower_pro_blocks_appearance);
 
 	wp_add_inline_style('empower-pro-blocks-main', $css);
 }

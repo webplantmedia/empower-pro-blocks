@@ -76,7 +76,6 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 	html .has-#{$color}-background-color {
 		background-color: var(--wp--custom--#{$color}-color) !important;
 	}
-
 	html
 		.wp-block-empower-pro-blocks-schedule-item.has-#{$color}-item-color.schedule-highlight
 		.icon-text {
