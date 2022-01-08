@@ -159,6 +159,147 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 	html ul.has-#{$color}-color > li::marker {
 		color: var(--wp--custom--#{$color}-color) !important;
 	}
+
+	html
+		.wp-block-empower-pro-blocks-hero2.has-#{$color}-hero2-color
+		.wp-block-hero2__inner-content
+		.wp-block-button.is-style-text
+		svg,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		svg {
+		fill: var(--wp--custom--#{$color}-color) !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		ion-icon,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		i,
+	html .has-text-color.has-#{$color}-color,
+	html
+		.wp-block-button
+		.wp-block-button__link.has-text-color.has-#{$color}-color,
+	html
+		.wp-block-button.is-style-text.icon
+		.wp-block-button__link.has-#{$color}-background-color
+		i {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+
+	html
+		.wp-block-button.is-style-outline
+		.wp-block-button__link.has-#{$color}-background-color,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+		background-color: transparent !important;
+	}
+
+	html
+		.wp-block-button.is-style-outline
+		.wp-block-button__link.has-#{$color}-background-color:hover,
+	html
+		.wp-block-button.is-style-outline
+		.wp-block-button__link.has-#{$color}-background-color:focus,
+	html
+		.wp-block-button.is-style-outline
+		.wp-block-button__link.has-#{$color}-background-color:active {
+		border-color: var(--wp--custom--#{$color}-color-bright) !important;
+		color: var(--wp--custom--#{$color}-color-bright) !important;
+		background-color: transparent !important;
+	}
+
+	html
+		.wp-block-empower-pro-blocks-card.has-#{$color}-card-color
+		.wp-block-button.is-style-text
+		.wp-block-button__link:hover,
+	html
+		.wp-block-empower-pro-blocks-card.has-#{$color}-card-color
+		.wp-block-button.is-style-text
+		.wp-block-button__link:focus,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		.wp-block-button__link:hover,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		.wp-block-button__link:focus,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color:hover,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color:focus {
+		color: var(--wp--custom--#{$color}-color-bright) !important;
+		background-color: transparent !important;
+	}
+
+	html
+		.wp-block-button
+		.wp-block-button__link.has-#{$color}-background-color:hover,
+	html
+		.wp-block-button
+		.wp-block-button__link.has-#{$color}-background-color:focus {
+		background-color: var(--wp--custom--#{$color}-color-bright) !important;
+	}
+
+	html
+		.wp-block-empower-pro-blocks-card.has-#{$color}-card-color
+		.wp-block-button.is-style-text
+		.wp-block-button__link::after,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		.wp-block-button__link::after,
+	html .wp-block-button .wp-block-button__link.has-#{$color}-background-color,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color::after {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		.wp-block-button__link:hover::after,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content
+		.wp-block-button.is-style-text
+		.wp-block-button__link:focus::after,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color:focus::after,
+	html
+		.wp-block-button.is-style-text
+		.wp-block-button__link.has-#{$color}-background-color:hover::after {
+		background-color: var(--wp--custom--#{$color}-color-bright) !important;
+	}
+	html .has-#{$color}-hero2-color .hero2-tags span,
+	html .has-#{$color}-color .hero-tags span {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .has-#{$color}-color .hero-tags span::after {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html
+		.wp-block-button.active
+		.wp-block-button__link.has-#{$color}-background-color {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
 }
 
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth;
