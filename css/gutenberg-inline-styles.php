@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks.
  *
@@ -17,7 +18,8 @@
  *
  * @return string
  */
-function empower_pro_blocks_get_gutenberg_css( $appearance ) {
+function empower_pro_blocks_get_gutenberg_css($appearance)
+{
 	$css = '';
 
 	$primary_color = '%1$s';
@@ -72,112 +74,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 	$white_bright_color = '%38$s';
 	$white_contrast_color = '%39$s';
 
-	$colors = array( 'primary', 'secondary', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'text', 'darktext', 'altbackground', 'border', 'white' );
-
-	foreach ( $colors as $color ) {
-		$css .= "
-			html .wp-block-empower-pro-blocks-scheduler.has-$color-header-color div.column-title span {
-				color: ${ $color . '_contrast_color' } !important;
-			}
-			html .wp-block-empower-pro-blocks-scheduler.has-$color-header-color div.column-title .dim-bg,
-			html .has-$color-overlay-color {
-				background-color: ${ $color . '_color' } !important;
-			}
-			html .has-$color-svg-fill-color svg path,
-			html .button-icon-before.has-$color-icon-color svg path,
-			html .wp-block-hero2__outer-wrapper .has-$color-right-pill-color svg path,
-			html .wp-block-hero__outer-wrapper .has-$color-right-pill-color svg path,
-			html .wp-block-empower-pro-blocks-hero2 .has-$color-left-pill-color svg path,
-			html .wp-block-empower-pro-blocks-hero .has-$color-left-pill-color svg path {
-				fill: ${ $color . '_color' } !important;
-			}
-			html .wp-block-empower-pro-blocks-hero2.has-$color-hero2-color .wp-block-hero2__inner-content,
-			html .wp-block-empower-pro-blocks-hero.has-$color-hero-color .wp-block-hero__inner-content {
-				border-color: ${ $color . '_color' } !important;
-			}
-			html .wp-block-group.callout.has-$color-background-color {
-				border-color: ${ $color . '_color' };
-			}
-			html .wp-block-group.callout.has-$color-background-color {
-				border-color: ${ $color . '_color' };
-			}
-			html .has-$color-background-color {
-				background-color: ${ $color . '_color' } !important;
-			}
-
-			html .wp-block-empower-pro-blocks-schedule-item.has-$color-item-color.schedule-highlight .icon-text {
-				background-color: ${ $color . '_color' } !important;
-				color: ${ $color . '_contrast_color' } !important;
-			}
-			html .has-inline-color.has-$color-color,
-			html .wp-block-empower-pro-blocks-schedule-item.has-$color-item-color .icon-heading,
-			html .icon-heading.has-$color-heading-color,
-			html .has-text-color.has-$color-text-color {
-				color: ${ $color . '_color' } !important;
-			}
-			html .has-text-color.has-$color-text-color:hover,
-			html .has-text-hover-color.has-$color-color:hover {
-				color: ${ $color . '_bright_color' } !important;
-			}
-			html .our-programs.color-scheme-$color .program-guide tbody td i {
-				background-color: ${ $color . '_color' } !important;
-				color: ${ $color . '_color' } !important;
-			}
-			html .table-player.color-scheme-$color::before {
-				background-color: ${ $color . '_color' } !important;
-			}
-			html .table-player .color-scheme-$color {
-				border-color: ${ $color . '_color' } !important;
-			}
-			html .table-player .color-scheme-$color .pill {
-				background-color: ${ $color . '_color' } !important;
-			}
-			html .table-player .color-scheme-$color span {
-				color: ${ $color . '_color' } !important;
-			}
-			html .table-player .color-scheme-$color span:hover {
-				color: ${ $color . '_bright_color' } !important;
-			}
-			html .table-player .active.color-scheme-$color {
-				background-color: ${ $color . '_color' } !important;
-				color: #fff !important;
-			}
-			html .table-player .active.color-scheme-$color span {
-				color: #fff !important;
-			}
-			html .table-player .active.color-scheme-$color .pill {
-				background-color: #fff !important;
-			}
-			html .wp-block-empower-pro-blocks-container.has-$color-container-color .wp-block-container__inner-content,
-			html .wp-block-empower-pro-blocks-card.has-$color-card-color .wp-block-card__inner-content,
-			html .hero2-content.has-$color-background-color > .wp-block-group__inner-container,
-			html .hero-content.has-$color-background-color > .wp-block-group__inner-container {
-				border-color: ${ $color . '_color' } !important;
-			}
-			html .wp-block-empower-pro-blocks-profile.has-$color-profile-color .profile-content .profile-heading::before,
-			html .hex.has-$color-background-color .blocks-gallery-item::after {
-				background-color: ${ $color . '_color' } !important;
-			}
-			html .hex.has-$color-background-color .hex-list li::marker {
-				color: ${ $color . '_color' } !important;
-			}
-			html .hex.has-$color-background-color .hex-list li.hover,
-			html .hex.has-$color-background-color .hex-list li:hover {
-				color: ${ $color . '_color' } !important;
-			}
-			html ul.has-$color-color > li::before {
-				color: ${ $color . '_color' } !important;
-			}
-			html ol.has-$color-color > li::marker,
-			html ul.has-$color-color > li::marker {
-				color: ${ $color . '_color' } !important;
-			}
-
-		";
-	}
-
 	$css .= "
-
 		html .ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-more-link,
 		html .ab-block-post-grid .ab-block-post-grid-link.ab-text-link {
 			border-color: $primary_color !important;
@@ -421,7 +318,7 @@ function empower_pro_blocks_get_gutenberg_css( $appearance ) {
 		$appearance['vars']['white-color-contrast'],
 	);
 
-	$css = empower_pro_blocks_compact( $css );
+	$css = empower_pro_blocks_compact($css);
 
 	return $css;
 }

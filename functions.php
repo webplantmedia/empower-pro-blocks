@@ -574,7 +574,7 @@ function empower_pro_blocks_footer_widgets()
 	echo $html;
 }
 
-add_action('genesis_after_footer', 'empower_pro_blocks_popup');
+// add_action('genesis_after_footer', 'empower_pro_blocks_popup');
 /**
  * Adds the flexible footer widget area.
  *

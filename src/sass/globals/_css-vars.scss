@@ -29,6 +29,136 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 			color: var(--wp--preset--color--#{$color}) !important;
 		}
 	}
+
+	html
+		.wp-block-empower-pro-blocks-scheduler.has-#{$color}-header-color
+		div.column-title
+		span {
+		color: var(--wp--custom--#{$color}-color-contrast) !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-scheduler.has-#{$color}-header-color
+		div.column-title
+		.dim-bg,
+	html .has-#{$color}-overlay-color {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .has-#{$color}-svg-fill-color svg path,
+	html .button-icon-before.has-#{$color}-icon-color svg path,
+	html .wp-block-hero2__outer-wrapper .has-#{$color}-right-pill-color svg path,
+	html .wp-block-hero__outer-wrapper .has-#{$color}-right-pill-color svg path,
+	html
+		.wp-block-empower-pro-blocks-hero2
+		.has-#{$color}-left-pill-color
+		svg
+		path,
+	html
+		.wp-block-empower-pro-blocks-hero
+		.has-#{$color}-left-pill-color
+		svg
+		path {
+		fill: var(--wp--custom--#{$color}-color) !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-hero2.has-#{$color}-hero2-color
+		.wp-block-hero2__inner-content,
+	html
+		.wp-block-empower-pro-blocks-hero.has-#{$color}-hero-color
+		.wp-block-hero__inner-content {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .wp-block-group.callout.has-#{$color}-background-color {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .wp-block-group.callout.has-#{$color}-background-color {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .has-#{$color}-background-color {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+
+	html
+		.wp-block-empower-pro-blocks-schedule-item.has-#{$color}-item-color.schedule-highlight
+		.icon-text {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+		color: var(--wp--custom--#{$color}-color-contrast) !important;
+	}
+	html .has-inline-color.has-#{$color}-color,
+	html
+		.wp-block-empower-pro-blocks-schedule-item.has-#{$color}-item-color
+		.icon-heading,
+	html .icon-heading.has-#{$color}-heading-color,
+	html .has-text-color.has-#{$color}-text-color {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .has-text-color.has-#{$color}-text-color:hover,
+	html .has-text-hover-color.has-#{$color}-color:hover {
+		color: var(--wp--custom--#{$color}-color-bright) !important;
+	}
+	html .our-programs.color-scheme-#{$color} .program-guide tbody td i {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player.color-scheme-#{$color}::before {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player .color-scheme-#{$color} {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player .color-scheme-#{$color} .pill {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player .color-scheme-#{$color} span {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player .color-scheme-#{$color} span:hover {
+		color: var(--wp--custom--#{$color}-color-bright) !important;
+	}
+	html .table-player .active.color-scheme-#{$color} {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+		color: #fff !important;
+	}
+	html .table-player .active.color-scheme-#{$color} span {
+		color: #fff !important;
+	}
+	html .table-player .active.color-scheme-#{$color} .pill {
+		background-color: #fff !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-container.has-#{$color}-container-color
+		.wp-block-container__inner-content,
+	html
+		.wp-block-empower-pro-blocks-card.has-#{$color}-card-color
+		.wp-block-card__inner-content,
+	html
+		.hero2-content.has-#{$color}-background-color
+		> .wp-block-group__inner-container,
+	html
+		.hero-content.has-#{$color}-background-color
+		> .wp-block-group__inner-container {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-profile.has-#{$color}-profile-color
+		.profile-content
+		.profile-heading::before,
+	html .hex.has-#{$color}-background-color .blocks-gallery-item::after {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .hex.has-#{$color}-background-color .hex-list li::marker {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .hex.has-#{$color}-background-color .hex-list li.hover,
+	html .hex.has-#{$color}-background-color .hex-list li:hover {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html ul.has-#{$color}-color > li::before {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html ol.has-#{$color}-color > li::marker,
+	html ul.has-#{$color}-color > li::marker {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
 }
 
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth;
