@@ -1,5 +1,7 @@
 .wp-block-empower-pro-blocks-schedule {
-	.wp-block-schedule__inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	.wp-block-schedule__inner-wrap
+		> .block-editor-inner-blocks
+		> .block-editor-block-list__layout {
 		display: grid;
 		justify-content: center;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -9,11 +11,11 @@
 			width: 100%;
 		}
 
-		@media screen and ( max-width: $tablet_width ) {
+		@media screen and (max-width: $tablet_width) {
 			grid-template-columns: 1fr;
 		}
 
-		@media screen and ( min-width: $tablet_width_1 ) {
+		@media screen and (min-width: $tablet_width_1) {
 			> .wp-block > .wp-block-empower-pro-blocks-scheduler {
 				> .column-title .dim-bg {
 					border-top-right-radius: 0;
@@ -33,7 +35,18 @@
 				}
 			}
 		}
+	}
 
+	&.schedule-columns-4 {
+		.wp-block-schedule__inner-wrap
+			> .block-editor-inner-blocks
+			> .block-editor-block-list__layout {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
+			@media screen and (max-width: $tablet_width) {
+				grid-template-columns: 1fr;
+			}
+		}
 	}
 }
 .wp-block-empower-pro-blocks-schedule {
