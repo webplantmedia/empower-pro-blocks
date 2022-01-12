@@ -10,7 +10,7 @@
 			width: 100%;
 		}
 
-		@media screen and ( min-width: $tablet_width_1 ) {
+		@media screen and (min-width: $tablet_width_1) {
 			> .wp-block-empower-pro-blocks-scheduler {
 				> .column-title .dim-bg {
 					border-top-right-radius: 0;
@@ -31,11 +31,21 @@
 			}
 		}
 
-		@media screen and ( max-width: $tablet_width ) {
+		@media screen and (max-width: $tablet_width) {
 			grid-template-columns: 1fr;
 
 			> .wp-block-empower-pro-blocks-scheduler {
 				// border-width: 0;
+			}
+		}
+	}
+
+	&.schedule-columns-4 {
+		.wp-block-schedule__inner-wrap {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
+			@media screen and (max-width: $tablet_width) {
+				grid-template-columns: 1fr;
 			}
 		}
 	}

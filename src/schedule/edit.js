@@ -1,49 +1,59 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
+import classnames from "classnames";
 
 /**
  * WordPress dependencies
  */
-import {
-	InnerBlocks,
-} from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
+import { InnerBlocks, InspectorControls } from "@wordpress/block-editor";
+import { PanelBody, SelectControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 const INNER_BLOCKS_TEMPLATE = [
-	[
-		'empower-pro-blocks/scheduler',
-		{
-		},
-	],
-	[
-		'empower-pro-blocks/scheduler',
-		{
-		},
-	],
-	[
-		'empower-pro-blocks/scheduler',
-		{
-		},
-	],
+	["empower-pro-blocks/scheduler", {}],
+	["empower-pro-blocks/scheduler", {}],
+	["empower-pro-blocks/scheduler", {}],
 ];
 
-function ScheduleEdit( {
-	className,
-} ) {
+const ALLOWED_BLOCKS = ["empower-pro-blocks/scheduler"];
 
-	const classes = classnames( className, 
-		'wp-block-schedule-wrapper',
+function ScheduleEdit({ attributes, setAttributes, className }) {
+	const { columns } = attributes;
+
+	const controls = (
+		<>
+			<InspectorControls>
+				<PanelBody title={__("Settings")} initialOpen={true}>
+					<SelectControl
+						label={__("Columns")}
+						value={columns}
+						options={[
+							{ value: "", label: __("3") },
+							{ value: "4", label: __("4") },
+						]}
+						onChange={(value) => setAttributes({ columns: value })}
+					/>
+				</PanelBody>
+			</InspectorControls>
+		</>
+	);
+
+	const classes = classnames(
+		className,
+		"wp-block-schedule-wrapper",
+		columns ? "schedule-columns-" + columns : {}
 	);
 
 	return (
 		<>
-			<div className={ classes }>
+			{controls}
+			<div className={classes}>
 				<div className="wp-block-schedule__inner-wrap">
-					<InnerBlocks 
-						templateLock="insert"
-						template={ INNER_BLOCKS_TEMPLATE }
+					<InnerBlocks
+						templateLock={false}
+						template={INNER_BLOCKS_TEMPLATE}
+						allowedBlocks={ALLOWED_BLOCKS}
 					/>
 				</div>
 			</div>

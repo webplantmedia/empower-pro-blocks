@@ -2,11 +2,12 @@
 	"name": "empower-pro-blocks/schedule",
 	"category": "empower-pro-blocks",
 	"attributes": {
+		"columns": {
+			"type": "string"
+		}
 	},
 	"supports": {
-		"align": [
-			"wide"
-		],
+		"align": ["wide"],
 		"lightBlockWrapper": false
 	}
 }
