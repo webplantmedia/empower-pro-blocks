@@ -213,17 +213,15 @@ function empower_pro_blocks_get_css($appearance)
 		html .nav-primary .genesis-nav-menu > li > a::after {
 		}
 
-		html .globalNav .button-mobile:focus,
-		html .globalNav .button-mobile:hover,
-		html .nav-primary .genesis-nav-menu li.moved-item-nav-primary-cta a:hover,
-		html .nav-primary-cta .genesis-nav-menu > li > a:hover {
-			background-color: $primary_color !important;
-			color: $primary_contrast_color !important;
-			background-color: #333 !important;
-			color: #fff !important;
+		html #master .globalNav .button-mobile:focus,
+		html #master .globalNav .button-mobile:hover,
+		html #master .nav-primary .genesis-nav-menu li.moved-item-nav-primary-cta a:hover,
+		html #master .nav-primary-cta .genesis-nav-menu > li > a:hover {
+			background-color: #333;
+			color: #fff;
 		}
 
-		html .nav-mobile-cta a {
+		html #master .nav-mobile-cta a {
 			background-color: #333 !important;
 			color: #fff !important;
 		}
