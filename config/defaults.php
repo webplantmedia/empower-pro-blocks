@@ -25,10 +25,12 @@ $colors = array(
 	'altbackground-color' => '#f7f7f7',
 	'border-color' => '#edecee',
 	'white-color' => '#ffffff',
+	'black-color' => '#ffffff',
 );
 
 foreach ($colors as $key => $value) {
 	$css_vars .= $key . ': ' . $value . ";\n";
+	$css_vars .= $key . '-hover: ' . empower_pro_blocks_color_brightness($value, 0.15) . ";\n";
 	$css_vars .= $key . '-bright: ' . empower_pro_blocks_color_brightness($value, 0.15) . ";\n";
 	$css_vars .= $key . '-contrast: ' . empower_pro_blocks_color_contrast($value, 0.15) . ";\n";
 	$css_vars .= $key . '-rgb: ' . empower_pro_blocks_color_rgb($value) . ";\n";
