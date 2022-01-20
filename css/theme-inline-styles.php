@@ -195,9 +195,9 @@ function empower_pro_blocks_get_css($appearance)
 			color: $primary_color;
 		}
 
-		html .nav-primary .genesis-nav-menu li a:focus,
-		html .nav-primary .genesis-nav-menu li a:hover {
-			color: $primary_color !important;
+		html #master .nav-primary .genesis-nav-menu li a:focus,
+		html #master .nav-primary .genesis-nav-menu li a:hover {
+			color: $primary_color;
 		}
 
 		html .nav-primary .genesis-nav-menu li:hover > a,
