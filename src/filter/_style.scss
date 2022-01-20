@@ -110,7 +110,7 @@
 			}
 		}
 
-		@media screen and ( max-width: $tablet_width ) {
+		@media screen and (max-width: $tablet_width) {
 			&.item-selected {
 				> div {
 					margin-bottom: 0;
@@ -131,9 +131,9 @@
 				color: $text_color !important;
 			}
 		}
-		@media screen and ( max-width: $tablet_width ) {
+		@media screen and (max-width: $tablet_width) {
 			display: block;
-			
+
 			> div {
 				margin-bottom: $margin_bottom_mobile;
 				padding: 30px 20px;
@@ -141,7 +141,7 @@
 		}
 	}
 
-	@media screen and ( min-width: $ipad_width_1 ) {
+	@media screen and (min-width: $ipad_width_1) {
 		.filtering-heading {
 			margin-bottom: 100px;
 			position: relative;
@@ -177,5 +177,4 @@
 			border-radius: 0 !important;
 		}
 	}
-
 }

@@ -1,5 +1,4 @@
 .entry-image-link {
-
 	@include object-fit();
 }
 
@@ -199,7 +198,7 @@
 				overflow: hidden;
 
 				.dots-background {
-					opacity: .1;
+					opacity: 0.1;
 					object-fit: cover;
 					height: 200%;
 					width: 200%;
@@ -219,8 +218,14 @@
 }
 
 // Filter
-.filtering-heading + .gb-block-container > .gb-container-inside > .gb-container-content,
-.filtering + .gb-block-container > .gb-container-inside > .gb-container-content {
+.filtering-heading
+	+ .gb-block-container
+	> .gb-container-inside
+	> .gb-container-content,
+.filtering
+	+ .gb-block-container
+	> .gb-container-inside
+	> .gb-container-content {
 	position: relative;
 
 	> .gb-block-container {
@@ -246,8 +251,8 @@
 	}
 }
 
-.filtering2-heading + .wp-block-group > .wp-block-group__inner-container,
-.filtering2 + .wp-block-group > .wp-block-group__inner-container {
+.filtering2-heading + .wp-block-group,
+.filtering2 + .wp-block-group {
 	position: relative;
 
 	> .wp-block-group {
@@ -301,7 +306,7 @@
 	}
 }
 
-@media screen and ( min-width: $ipad_width_1 ) {
+@media screen and (min-width: $ipad_width_1) {
 	#master .filtering2-heading {
 		margin-bottom: 100px;
 		position: relative;
