@@ -20,8 +20,9 @@ $colors = array(
 	'sixth-color' => '#942940',
 	'seventh-color' => '#176e99',
 	'eighth-color' => '#ffcc2a',
-	'text-color' => '#777777',
+	'defaulttext-color' => '#777777',
 	'darktext-color' => '#222222',
+	'bodybackground-color' => '#ffffff',
 	'altbackground-color' => '#f7f7f7',
 	'border-color' => '#edecee',
 	'white-color' => '#ffffff',
@@ -44,6 +45,10 @@ body-background-color: #fff;
 body-background-color-two: #f5f5f5;
 heading-color: #333;
 heading-color-hover: #444;
+heading-h3-h4-color: #333;
+heading-h3-h4-color-hover: #444;
+heading-h5-h6-color: #333;
+heading-h5-h6-margin-bottom: 30px;
 nav-color: #8e8e8e;
 text-color-hover: #444;
 form-border-color: #dcdadd;
@@ -78,6 +83,15 @@ title-font-letter-spacing: 5px;
 description-font-letter-spacing: 3px;
 description-font-size: 12px;
 
+page-title-font-family: "Source Sans Pro", sans-serif;;
+page-title-font-line-height: 1.2;
+page-title-font-letter-spacing: normal;
+page-title-font-weight: 300;
+page-title-font-style: normal;
+page-title-font-text-transform: uppercase;
+page-title-font-variant: normal;
+page-title-color: #333;
+
 heading-font-family: "Source Sans Pro", sans-serif;
 heading-font-line-height: 1.2;
 heading-font-letter-spacing: normal;
@@ -88,6 +102,7 @@ heading-font-h4-weight: 400;
 heading-font-h4-letter-spacing: 2px;
 heading-font-style: normal;
 heading-font-text-transform: none;
+heading-font-variant: normal;
 heading-font-size-hero-title: 80px;
 hero-font-line-height: 1.05;
 hero-font-letter-spacing: 2px;

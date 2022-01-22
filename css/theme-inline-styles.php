@@ -430,7 +430,7 @@ function empower_pro_blocks_get_css($appearance)
 		$appearance['vars']['secondary-color'],
 		$appearance['vars']['secondary-color-bright'],
 		$appearance['vars']['secondary-color-contrast'],
-		$appearance['vars']['text-color'],
+		$appearance['vars']['defaulttext-color'],
 		$appearance['vars']['darktext-color'],
 		$appearance['vars']['altbackground-color'],
 		$appearance['vars']['third-color'],

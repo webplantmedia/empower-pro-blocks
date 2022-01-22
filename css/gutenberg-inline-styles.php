@@ -297,9 +297,9 @@ function empower_pro_blocks_get_gutenberg_css($appearance)
 		$appearance['vars']['eighth-color-bright'],
 		$appearance['vars']['eighth-color-contrast'],
 
-		$appearance['vars']['text-color'],
-		$appearance['vars']['text-color-bright'],
-		$appearance['vars']['text-color-contrast'],
+		$appearance['vars']['defaulttext-color'],
+		$appearance['vars']['defaulttext-color-bright'],
+		$appearance['vars']['defaulttext-color-contrast'],
 
 		$appearance['vars']['darktext-color'],
 		$appearance['vars']['darktext-color-bright'],
