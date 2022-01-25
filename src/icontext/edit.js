@@ -39,6 +39,7 @@ import {
 	withColors,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	RichText,
+	URLInput,
 } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 import { withDispatch } from "@wordpress/data";
@@ -74,6 +75,8 @@ function IconTextBlock({
 		imageStyle,
 		grayscale,
 		imageIcon,
+		linkUrl,
+		linkTarget,
 	} = attributes;
 
 	const onVerticalAlignmentChange = (alignment) => {
@@ -291,6 +294,25 @@ function IconTextBlock({
 						]}
 					></PanelColorGradientSettings>
 				)}
+				<PanelBody title={__("Link Settings")} initialOpen={true}>
+					<URLInput
+						value={linkUrl}
+						className="url-input-inspector-field"
+						placeholder="Paste URL"
+						onChange={(value) => setAttributes({ linkUrl: value })}
+						autoFocus={false}
+						disableSuggestions={true}
+					/>
+					<ToggleControl
+						label={__("Open in new tab")}
+						onChange={(value) =>
+							setAttributes(
+								value ? { linkTarget: "_blank" } : { linkTarget: undefined }
+							)
+						}
+						checked={linkTarget === "_blank"}
+					/>
+				</PanelBody>
 			</InspectorControls>
 		</>
 	);
@@ -337,47 +359,56 @@ function IconTextBlock({
 
 	const tagName = "h" + level;
 
+	let content = (
+		<div className="wp-block-icontext__inner-wrap">
+			{"icon" === imageIcon && icon && (
+				<div style={iconStyle} class={iconClasses}>
+					<div class="button-icon-inner" style={iconInnerStyle}>
+						{renderSVG(icon)}
+					</div>
+				</div>
+			)}
+			{"image" === imageIcon && image && (
+				<div style={iconStyle} class={iconClasses}>
+					<div class="button-icon-inner" style={iconInnerStyle}>
+						<img src={image.url} />
+					</div>
+				</div>
+			)}
+			<div class="wp-block-icontext__text-wrap">
+				<RichText
+					placeholder={__("Heading")}
+					value={heading}
+					onChange={(value) => setAttributes({ heading: value })}
+					className={headingClasses}
+					tagName={tagName}
+					style={headingStyle}
+				/>
+				<RichText
+					placeholder={__("Text")}
+					value={text}
+					onChange={(value) => setAttributes({ text: value })}
+					tagName="p"
+					className={classnames("icon-text", {
+						["has-" + fontSize + "-font-size"]: fontSize,
+						[textColor.class]: textColor.class,
+						["has-text-color"]: textColor.class,
+					})}
+				/>
+			</div>
+		</div>
+	);
+
+	if (linkUrl) {
+		let temp = <a class="icon-text-link">{content}</a>;
+		content = temp;
+	}
+
 	return (
 		<>
 			{controls}
 			<div style={containerStyle} className={classes}>
-				<div className="wp-block-icontext__inner-wrap">
-					{"icon" === imageIcon && icon && (
-						<div style={iconStyle} class={iconClasses}>
-							<div class="button-icon-inner" style={iconInnerStyle}>
-								{renderSVG(icon)}
-							</div>
-						</div>
-					)}
-					{"image" === imageIcon && image && (
-						<div style={iconStyle} class={iconClasses}>
-							<div class="button-icon-inner" style={iconInnerStyle}>
-								<img src={image.url} />
-							</div>
-						</div>
-					)}
-					<div class="wp-block-icontext__text-wrap">
-						<RichText
-							placeholder={__("Heading")}
-							value={heading}
-							onChange={(value) => setAttributes({ heading: value })}
-							className={headingClasses}
-							tagName={tagName}
-							style={headingStyle}
-						/>
-						<RichText
-							placeholder={__("Text")}
-							value={text}
-							onChange={(value) => setAttributes({ text: value })}
-							tagName="p"
-							className={classnames("icon-text", {
-								["has-" + fontSize + "-font-size"]: fontSize,
-								[textColor.class]: textColor.class,
-								["has-text-color"]: textColor.class,
-							})}
-						/>
-					</div>
-				</div>
+				{content}
 			</div>
 		</>
 	);

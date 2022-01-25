@@ -1,4 +1,12 @@
 .wp-block-empower-pro-blocks-icontext {
+	.icon-text-link {
+		display: block;
+		text-decoration: none;
+
+		.icon-text,
+		.icon-heading {
+		}
+	}
 	.wp-block-icontext__text-wrap {
 		width: 100%;
 	}
@@ -32,7 +40,7 @@
 		align-items: center;
 		box-sizing: content-box;
 
-		@media screen and ( max-width: $mobile_width ) {
+		@media screen and (max-width: $mobile_width) {
 			max-width: 64px;
 			padding-right: 20px;
 		}
@@ -40,7 +48,7 @@
 		.button-icon-inner {
 			width: 18px;
 
-			@media screen and ( max-width: $mobile_width ) {
+			@media screen and (max-width: $mobile_width) {
 				height: auto !important;
 			}
 		}
@@ -66,7 +74,7 @@
 		&.image-style-hex,
 		&.image-style-circle {
 			.button-icon-inner {
-				@media screen and ( max-width: $mobile_width ) {
+				@media screen and (max-width: $mobile_width) {
 					width: 64px !important;
 					height: 64px !important;
 				}
@@ -81,5 +89,6 @@
 	.icon-text {
 		margin-top: 0 !important;
 		margin-bottom: 0 !important;
+		color: var(--wp--custom--defaulttext-color);
 	}
 }

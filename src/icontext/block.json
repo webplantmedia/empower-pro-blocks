@@ -73,6 +73,12 @@
 		},
 		"customFontSize": {
 			"type": "number"
+		},
+		"linkUrl": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string"
 		}
 	}
 }
