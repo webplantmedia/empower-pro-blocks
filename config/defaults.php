@@ -22,6 +22,7 @@ $colors = array(
 	'eighth-color' => '#ffcc2a',
 	'defaulttext-color' => '#777777',
 	'darktext-color' => '#222222',
+	'heading-color' => '#333333',
 	'bodybackground-color' => '#ffffff',
 	'altbackground-color' => '#f7f7f7',
 	'border-color' => '#edecee',
@@ -43,8 +44,6 @@ light-gray-text-color: #ccc;
 lightest-gray-text-color: #f5f5f5;
 body-background-color: #fff;
 body-background-color-two: #f5f5f5;
-heading-color: #333;
-heading-color-hover: #444;
 heading-h3-h4-color: #333;
 heading-h3-h4-color-hover: #444;
 heading-h5-h6-color: #333;
