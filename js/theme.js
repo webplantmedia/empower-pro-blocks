@@ -48,6 +48,10 @@
 			} else if ($anchor.hasClass("learn-more")) {
 				$anchor = $(".learn-more");
 				scrollTop = $anchor.offset().top;
+			} else if ($anchor.hasClass("scroll-content")) {
+				var html = document.querySelector("html");
+				var htmlOffset = $(html).css("margin-top").replace(/\D/g, "");
+				scrollTop = $anchor.position().top + $anchor.height() - htmlOffset;
 			} else {
 				scrollTop = $anchor.offset().top;
 
