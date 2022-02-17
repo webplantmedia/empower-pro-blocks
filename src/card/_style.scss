@@ -9,7 +9,7 @@
 
 	.wp-block-card__inner-content {
 		& p {
-			color: $text_color !important;
+			color: $text_color;
 		}
 
 		border-top: 14px solid $border_color;
@@ -17,7 +17,7 @@
 		height: 100%;
 		background-color: $body_background_color;
 		padding: 60px 30px;
-		box-shadow: 0 2px 30px 0 rgba(0,0,0,0.07);
+		box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.07);
 		border-radius: $border_radius;
 		border-top-left-radius: $border_radius_medium;
 		border-top-right-radius: $border_radius_medium;
@@ -74,13 +74,11 @@
 					@include circle-crop;
 				}
 			}
-
 		}
 
 		> *:last-child {
 			margin-bottom: 0;
 		}
-
 	}
 
 	&.is-border-style,
@@ -105,5 +103,4 @@
 			border: 3px solid $border_color;
 		}
 	}
-
 }

@@ -27,7 +27,7 @@ $colors = array(
 	'altbackground-color' => '#f7f7f7',
 	'border-color' => '#edecee',
 	'white-color' => '#ffffff',
-	'black-color' => '#ffffff',
+	'black-color' => '#000000',
 );
 
 foreach ($colors as $key => $value) {
