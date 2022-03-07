@@ -901,3 +901,17 @@ function empower_pro_blocks_add_type_attribute($tag, $handle, $src)
 
 	return $tag;
 }
+
+add_filter('genesis_get_image_default_args', 'empower_pro_blocks_stop_auto_featured_image', 10, 1);
+/**
+ * Stop Genesis archives from using first attached image as fallback when no featured image is set.
+ *
+ * @param  array $args Default image arguments.
+ *
+ * @return array       Amended default image arguments.
+ */
+function empower_pro_blocks_stop_auto_featured_image($args)
+{
+	$args['fallback'] = false;
+	return $args;
+}
