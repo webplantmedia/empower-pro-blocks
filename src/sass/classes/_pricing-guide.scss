@@ -592,7 +592,7 @@
 .table-player2 {
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-gap: 40px 40px;
+	grid-gap: 40px 20px;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	justify-content: center;
 	transition: all 0.2s;
