@@ -358,6 +358,7 @@ input[type="radio"]:checked {
 
 .filtering2 > span,
 .table-player > div,
+.table-player2 > div,
 #master a.more-link,
 .above-footer-image #sb_instagram #sbi_load .sbi_follow_btn a,
 .above-footer-image #sb_instagram #sbi_load .sbi_load_btn,
@@ -487,6 +488,7 @@ input[type="submit"].secondary:hover,
 
 .filtering2 > span,
 .table-player > div,
+.table-player2 > div,
 .above-footer-image #sb_instagram #sbi_load .sbi_follow_btn a,
 .above-footer-image #sb_instagram #sbi_load .sbi_load_btn,
 .more-from-category a,
@@ -503,6 +505,12 @@ input[type="submit"].small {
 }
 
 .table-player > div {
+	&::after {
+		display: none;
+	}
+}
+
+.table-player2 > div {
 	&::after {
 		display: none;
 	}

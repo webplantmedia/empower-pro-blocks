@@ -1,19 +1,18 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
-
+import classnames from "classnames";
 
 /**
  * Internal dependencies
  */
-import HeadingToolbar from '../../dist/blocks/heading-toolbar';
+import HeadingToolbar from "../../dist/blocks/heading-toolbar";
 
 /**
  * WordPress dependencies
  */
 // import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
-import { useCallback, Fragment } from '@wordpress/element';
+import { useCallback, Fragment } from "@wordpress/element";
 import {
 	PanelBody,
 	Button,
@@ -22,9 +21,9 @@ import {
 	RangeControl,
 	SelectControl,
 	TextControl,
-} from '@wordpress/components';
+} from "@wordpress/components";
 
-import { compose, withInstanceId } from '@wordpress/compose';
+import { compose, withInstanceId } from "@wordpress/compose";
 import {
 	AlignmentToolbar,
 	BlockControls,
@@ -37,16 +36,15 @@ import {
 	FontSizePicker,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	URLInput,
-} from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
-
+} from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
 
 /**
  * Module Constants
  */
-const ALLOWED_MEDIA_TYPES = [ 'image' ];
+const ALLOWED_MEDIA_TYPES = ["image"];
 
-function CardEdit( {
+function CardEdit({
 	attributes,
 	setAttributes,
 	isSelected,
@@ -61,7 +59,7 @@ function CardEdit( {
 	setHeadingColor,
 	backgroundColor,
 	setBackgroundColor,
-} ) {
+}) {
 	const {
 		id,
 		url,
@@ -77,281 +75,277 @@ function CardEdit( {
 		align,
 	} = attributes;
 
-	const tagName = 'h' + level;
+	const tagName = "h" + level;
 
 	const controls = (
 		<>
 			<BlockControls>
 				<MediaReplaceFlow
-					mediaId={ id }
-					mediaURL={ url }
-					allowedTypes={ ALLOWED_MEDIA_TYPES }
+					mediaId={id}
+					mediaURL={url}
+					allowedTypes={ALLOWED_MEDIA_TYPES}
 					accept="image/*"
-					onSelect={ ( media ) => 
-						setAttributes( {
+					onSelect={(media) =>
+						setAttributes({
 							url: media.url,
 							id: media.id,
-						} )
+						})
 					}
 					name="Icon"
 				/>
 				<AlignmentToolbar
-					value={ align }
-					onChange={ ( value ) =>
-						setAttributes( { align: value } )
-					}
+					value={align}
+					onChange={(value) => setAttributes({ align: value })}
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Icon settings' ) } >
+				<PanelBody title={__("Icon settings")}>
 					<PanelRow>
 						<MediaUpload
-							id={ id }
-							allowedTypes={ ALLOWED_MEDIA_TYPES }
-							onSelect={ ( media ) => 
-								setAttributes( {
+							id={id}
+							allowedTypes={ALLOWED_MEDIA_TYPES}
+							onSelect={(media) =>
+								setAttributes({
 									url: media.url,
 									id: media.id,
-								} )
+								})
 							}
-							render={ ( { open } ) => (
-								<Button onClick={ open } isSecondary={ true }>
-									Select Icon Image	
+							render={({ open }) => (
+								<Button onClick={open} isSecondary={true}>
+									Select Icon Image
 								</Button>
-							) }
+							)}
 						/>
 					</PanelRow>
-					{ !! url && (
+					{!!url && (
 						<PanelRow>
 							<Button
 								isSecondary
 								className=""
-								onClick={ () =>
-									setAttributes( {
+								onClick={() =>
+									setAttributes({
 										url: undefined,
 										id: undefined,
-									} )
+									})
 								}
 							>
-								{ __( 'Clear Media' ) }
+								{__("Clear Media")}
 							</Button>
 						</PanelRow>
-					) }
-					{ !! url && (
+					)}
+					{!!url && (
 						<Fragment>
 							<hr />
 							<RangeControl
-								label={ __( 'Icon Size' ) }
-								value={ imageHeight }
-								onChange={ ( value ) =>
-									setAttributes( {
+								label={__("Icon Size")}
+								value={imageHeight}
+								onChange={(value) =>
+									setAttributes({
 										imageHeight: value,
-									} )
+									})
 								}
-								min={ 60 }
-								max={ 300 }
-								step={ 1 }
+								min={20}
+								max={300}
+								step={1}
 							/>
 							<SelectControl
-								label={ __( "Image Style" ) }
-								value={ imageStyle }
-								options={ [
-									{ value: "", label: __( "None" ) },
-									{ value: "circle", label: __( "Circle" ) },
-									{ value: "hex", label: __( "Hex" ) },
-								] }
-								onChange={ ( value ) => setAttributes( { imageStyle: value } ) }
+								label={__("Image Style")}
+								value={imageStyle}
+								options={[
+									{ value: "", label: __("None") },
+									{ value: "circle", label: __("Circle") },
+									{ value: "hex", label: __("Hex") },
+								]}
+								onChange={(value) => setAttributes({ imageStyle: value })}
 							/>
 						</Fragment>
-					) }
+					)}
 				</PanelBody>
 				<PanelColorGradientSettings
-					title={ __( 'Background Color' ) }
-					initialOpen={ true }
-					settings={ [
+					title={__("Background Color")}
+					initialOpen={true}
+					settings={[
 						{
 							colorValue: backgroundColor.color,
 							onColorChange: setBackgroundColor,
 							disableCustomColors: true,
-							label: __( 'Color' ),
+							label: __("Color"),
 						},
-					] }
-				>
-				</PanelColorGradientSettings>
+					]}
+				></PanelColorGradientSettings>
 				<PanelColorGradientSettings
-					title={ __( 'Card Color' ) }
-					initialOpen={ true }
-					settings={ [
+					title={__("Card Color")}
+					initialOpen={true}
+					settings={[
 						{
 							colorValue: cardColor.color,
 							onColorChange: setCardColor,
 							disableCustomColors: true,
-							label: __( 'Color' ),
+							label: __("Color"),
 						},
-					] }
-				>
-				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Card Style' ) } initialOpen={ true }>
+					]}
+				></PanelColorGradientSettings>
+				<PanelBody title={__("Card Style")} initialOpen={true}>
 					<SelectControl
-						label={ __( "Style" ) }
-						value={ cardStyle }
-						options={ [
-							{ value: "", label: __( "Default" ) },
-							{ value: "plain", label: __( "Plain" ) },
-							{ value: "border", label: __( "Border" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
+						label={__("Style")}
+						value={cardStyle}
+						options={[
+							{ value: "", label: __("Default") },
+							{ value: "plain", label: __("Plain") },
+							{ value: "border", label: __("Border") },
+						]}
+						onChange={(value) => setAttributes({ cardStyle: value })}
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
-					title={ __( 'Heading' ) }
-					initialOpen={ true }
-					settings={ [
+					title={__("Heading")}
+					initialOpen={true}
+					settings={[
 						{
 							colorValue: headingColor.color,
 							onColorChange: setHeadingColor,
 							disableCustomColors: true,
-							label: __( 'Color' ),
+							label: __("Color"),
 						},
-					] }
+					]}
 				>
 					<HeadingToolbar
-						isCollapsed={ false }
-						minLevel={ 2 }
-						maxLevel={ 7 }
-						selectedLevel={ level }
-						onChange={ ( value ) =>
-							setAttributes( { level: value } )
-						}
+						isCollapsed={false}
+						minLevel={2}
+						maxLevel={7}
+						selectedLevel={level}
+						onChange={(value) => setAttributes({ level: value })}
 					/>
 				</PanelColorGradientSettings>
 				<PanelColorGradientSettings
-					title={ __( 'Text Settings' ) }
-					initialOpen={ true }
-					settings={ [
+					title={__("Text Settings")}
+					initialOpen={true}
+					settings={[
 						{
 							colorValue: textColor.color,
 							onColorChange: setTextColor,
 							disableCustomColors: true,
-							label: __( 'Color' ),
+							label: __("Color"),
 						},
-					] }
+					]}
 				>
-					<FontSizePicker
-						value={ fontSize.size }
-						onChange={ setFontSize }
-					/>
+					<FontSizePicker value={fontSize.size} onChange={setFontSize} />
 				</PanelColorGradientSettings>
-				<PanelBody title={ __( 'Call to Action Button' ) } initialOpen={ true }>
+				<PanelBody title={__("Call to Action Button")} initialOpen={true}>
 					<TextControl
-						label={ __( 'Text' ) }
-						value={ button1Text }
-						onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+						label={__("Text")}
+						value={button1Text}
+						onChange={(value) => setAttributes({ button1Text: value })}
 					/>
 					<URLInput
-						value={ button1URL }
+						value={button1URL}
 						className="url-input-inspector-field"
-						onChange={ value => setAttributes( { button1URL: value } ) }
-						autoFocus= { false }
+						onChange={(value) => setAttributes({ button1URL: value })}
+						autoFocus={false}
 					/>
 					<ToggleControl
-						label={ __( 'Open in new tab' ) }
-						onChange={ ( value ) => setAttributes( value ? { button1LinkTarget: '_blank' } : { button1LinkTarget: undefined } ) }
-						checked={ button1LinkTarget === '_blank' }
+						label={__("Open in new tab")}
+						onChange={(value) =>
+							setAttributes(
+								value
+									? { button1LinkTarget: "_blank" }
+									: { button1LinkTarget: undefined }
+							)
+						}
+						checked={button1LinkTarget === "_blank"}
 					/>
 				</PanelBody>
 			</InspectorControls>
 		</>
 	);
 
-	const classes = classnames( className, 
-		'wp-block-card__outer-wrapper',
-		cardStyle ? 'is-' + cardStyle + '-style' : {},
+	const classes = classnames(
+		className,
+		"wp-block-card__outer-wrapper",
+		cardStyle ? "is-" + cardStyle + "-style" : {},
 		{
-			[ cardColor.class ]: cardColor.class,
+			[cardColor.class]: cardColor.class,
 		}
 	);
 
-	const hClasses = classnames( 'card-heading', {
-		[ headingColor.class ]: headingColor.class,
-		[ 'has-text-color' ]: headingColor.class,
-		[ `has-text-align-${ align }` ]: align,
-	} );
+	const hClasses = classnames("card-heading", {
+		[headingColor.class]: headingColor.class,
+		["has-text-color"]: headingColor.class,
+		[`has-text-align-${align}`]: align,
+	});
 
-	const pClasses = classnames( 'card-text', {
-		[ fontSize.class ]: fontSize.class,
-		[ textColor.class ]: textColor.class,
-		[ 'has-text-color' ]: textColor.class,
-		[ `has-text-align-${ align }` ]: align,
-	} );
+	const pClasses = classnames("card-text", {
+		[fontSize.class]: fontSize.class,
+		[textColor.class]: textColor.class,
+		["has-text-color"]: textColor.class,
+		[`has-text-align-${align}`]: align,
+	});
 
 	const pStyles = {
-		fontSize: fontSize.size
-			? fontSize.size + 'px'
-			: undefined,
+		fontSize: fontSize.size ? fontSize.size + "px" : undefined,
 	};
 
 	const imageStyleRules = {
-		...( imageStyle && imageHeight ? { width: imageHeight+"px" } : {} ),
-		...( imageStyle && imageHeight ? { height: imageHeight+"px" } : {} ),
+		...(imageStyle && imageHeight ? { width: imageHeight + "px" } : {}),
+		...(imageStyle && imageHeight ? { height: imageHeight + "px" } : {}),
 	};
 
 	const imageStyleInnerRules = {
-		...( ! imageStyle && imageHeight ? { maxHeight: imageHeight+"px" } : {} ),
+		...(!imageStyle && imageHeight ? { maxHeight: imageHeight + "px" } : {}),
 	};
 
-	const imageClasses = classnames( 
-		'wp-block-image', 
-		imageStyle ? 'image-style-' + imageStyle : {}, 
-		imageHeight ? 'custom-height' : {}, 
+	const imageClasses = classnames(
+		"wp-block-image",
+		imageStyle ? "image-style-" + imageStyle : {},
+		imageHeight ? "custom-height" : {}
 	);
 
-	const innerClasses = classnames( 'wp-block-card__inner-content', {
-		[ backgroundColor.class ]: backgroundColor.class,
-		[ 'has-background-color' ]: backgroundColor.class,
-	} );
+	const innerClasses = classnames("wp-block-card__inner-content", {
+		[backgroundColor.class]: backgroundColor.class,
+		["has-background-color"]: backgroundColor.class,
+	});
 
 	return (
 		<>
-			{ controls }
-			<div className={ classes }>
+			{controls}
+			<div className={classes}>
 				<div className="card-content">
-					<div className={ innerClasses }>
-						{ url && (
-							<div style={ imageStyleRules } class={ imageClasses }>
-								<img src={url} style={ imageStyleInnerRules }/>
+					<div className={innerClasses}>
+						{url && (
+							<div style={imageStyleRules} class={imageClasses}>
+								<img src={url} style={imageStyleInnerRules} />
 							</div>
-						) }
+						)}
 						<RichText
-							className={ hClasses }
-							placeholder={ __( 'Heading', 'empower-pro-blocks' ) }
-							onChange={ ( value ) =>
-								setAttributes( {
+							className={hClasses}
+							placeholder={__("Heading", "empower-pro-blocks")}
+							onChange={(value) =>
+								setAttributes({
 									heading: value,
-								} )
+								})
 							}
-							value={ heading }
-							tagName={ tagName }
+							value={heading}
+							tagName={tagName}
 							withoutInteractiveFormatting
 						/>
 						<RichText
 							tagName="p"
-							placeholder={ __( 'Text', 'empower-pro-blocks' ) }
-							onChange={ ( value ) =>
-								setAttributes( {
+							placeholder={__("Text", "empower-pro-blocks")}
+							onChange={(value) =>
+								setAttributes({
 									text: value,
-								} )
+								})
 							}
-							value={ text }
-							className={ pClasses }
-							style={ pStyles }
+							value={text}
+							className={pClasses}
+							style={pStyles}
 						/>
 						<div class="wp-block-buttons">
 							<div class="wp-block-button is-style-text">
 								<RichText
-									placeholder={ __( 'Button 1' ) }
-									value={ button1Text }
-									onChange={ ( value ) => setAttributes( { button1Text: value } ) }
+									placeholder={__("Button 1")}
+									value={button1Text}
+									onChange={(value) => setAttributes({ button1Text: value })}
 									className="wp-block-button__link button1"
 									withoutInteractiveFormatting
 								/>
@@ -364,7 +358,12 @@ function CardEdit( {
 	);
 }
 
-export default compose( [
-	withFontSizes( 'fontSize' ),
-	withColors( { cardColor: 'card-color', headingColor: 'text-color', textColor: 'text-color', backgroundColor: 'background-color' } ),
-] )( CardEdit );
+export default compose([
+	withFontSizes("fontSize"),
+	withColors({
+		cardColor: "card-color",
+		headingColor: "text-color",
+		textColor: "text-color",
+		backgroundColor: "background-color",
+	}),
+])(CardEdit);

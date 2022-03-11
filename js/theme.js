@@ -174,6 +174,43 @@
 				}
 			}
 		});
+		$(".table-player2").on("mouseenter", "div", function () {
+			var $this = $(this);
+			var $parent = $this.parent();
+			var $children = $parent.children("div");
+			var $icons = "";
+
+			var allClasses = $children
+				.map(function () {
+					return $(this).data("insert");
+				})
+				.get();
+
+			allClasses = allClasses.join(" ");
+
+			var target = $parent.data("target");
+			var $target = $(target);
+			var filter = $this.data("filter");
+			var $filter = "";
+			var $allactive = "";
+			var insert = $this.data("insert");
+
+			if ($target.length) {
+				$this.removeClass("active").siblings().removeClass("active");
+				$parent.removeClass(allClasses);
+				$this.addClass("active");
+				$parent.addClass(insert);
+				$allactive = $target.find(".active");
+				$filter = $target.find(filter);
+
+				if ($allactive.length) {
+					$allactive.removeClass("active");
+				}
+				if ($filter.length) {
+					$filter.addClass("active");
+				}
+			}
+		});
 	});
 
 	$(document).ready(function () {

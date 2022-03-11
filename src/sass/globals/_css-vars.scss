@@ -98,6 +98,31 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		background-color: var(--wp--custom--#{$color}-color) !important;
 		color: var(--wp--custom--#{$color}-color) !important;
 	}
+	html .table-player2.color-scheme-#{$color}::before {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player2 .color-scheme-#{$color} {
+		border-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player2 .color-scheme-#{$color} .pill {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player2 .color-scheme-#{$color} span {
+		color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html .table-player2 .color-scheme-#{$color} span:hover {
+		color: var(--wp--custom--#{$color}-color-bright) !important;
+	}
+	html .table-player2 .active.color-scheme-#{$color} {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+		color: #fff !important;
+	}
+	html .table-player2 .active.color-scheme-#{$color} span {
+		color: #fff !important;
+	}
+	html .table-player2 .active.color-scheme-#{$color} .pill {
+		background-color: #fff !important;
+	}
 	html .table-player.color-scheme-#{$color}::before {
 		background-color: var(--wp--custom--#{$color}-color) !important;
 	}
