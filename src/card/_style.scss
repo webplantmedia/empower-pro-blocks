@@ -149,6 +149,10 @@
 			text-align: left;
 			margin: 0;
 			width: 100%;
+			padding-right: 40px;
+			@media screen and (max-width: $tablet_width) {
+				padding-right: 0;
+			}
 		}
 		.card-text {
 			grid-area: card-text;
