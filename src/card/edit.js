@@ -327,6 +327,7 @@ function CardEdit({
 	if (duration == 1) {
 		durationContent = (
 			<div class="card-duration">
+				<span>Duration</span>
 				<i class="colored icon ion-ios-time"></i>
 				<i class="icon ion-ios-time"></i>
 				<i class="icon ion-ios-time"></i>
@@ -335,6 +336,7 @@ function CardEdit({
 	} else if (duration == 2) {
 		durationContent = (
 			<div class="card-duration">
+				<span>Duration</span>
 				<i class="colored icon ion-ios-time"></i>
 				<i class="colored icon ion-ios-time"></i>
 				<i class="icon ion-ios-time"></i>
@@ -343,6 +345,7 @@ function CardEdit({
 	} else if (duration == 3) {
 		durationContent = (
 			<div class="card-duration">
+				<span>Duration</span>
 				<i class="colored icon ion-ios-time"></i>
 				<i class="colored icon ion-ios-time"></i>
 				<i class="colored icon ion-ios-time"></i>
