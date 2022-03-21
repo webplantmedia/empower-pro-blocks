@@ -38,6 +38,10 @@
 			"type": "number",
 			"default": 4
 		},
+		"duration": {
+			"type": "string",
+			"default": "0"
+		},
 		"backgroundColor": {
 			"type": "string"
 		},

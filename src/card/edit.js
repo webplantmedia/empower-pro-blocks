@@ -62,6 +62,7 @@ function CardEdit({
 }) {
 	const {
 		id,
+		duration,
 		url,
 		heading,
 		level,
@@ -193,6 +194,8 @@ function CardEdit({
 							{ value: "", label: __("Default") },
 							{ value: "plain", label: __("Plain") },
 							{ value: "border", label: __("Border") },
+							{ value: "list", label: __("List") },
+							{ value: "plainlist", label: __("Plain List") },
 						]}
 						onChange={(value) => setAttributes({ cardStyle: value })}
 					/>
@@ -231,6 +234,21 @@ function CardEdit({
 				>
 					<FontSizePicker value={fontSize.size} onChange={setFontSize} />
 				</PanelColorGradientSettings>
+				<PanelBody title={__("Duration settings")}>
+					<PanelRow>
+						<SelectControl
+							label={__("Duration")}
+							value={duration}
+							options={[
+								{ value: 0, label: __("0") },
+								{ value: 1, label: __("1") },
+								{ value: 2, label: __("2") },
+								{ value: 3, label: __("3") },
+							]}
+							onChange={(value) => setAttributes({ duration: value })}
+						/>
+					</PanelRow>
+				</PanelBody>
 				<PanelBody title={__("Call to Action Button")} initialOpen={true}>
 					<TextControl
 						label={__("Text")}
@@ -305,6 +323,33 @@ function CardEdit({
 		["has-background-color"]: backgroundColor.class,
 	});
 
+	let durationContent = "";
+	if (duration == 1) {
+		durationContent = (
+			<div class="card-duration">
+				<i class="colored icon ion-ios-time"></i>
+				<i class="icon ion-ios-time"></i>
+				<i class="icon ion-ios-time"></i>
+			</div>
+		);
+	} else if (duration == 2) {
+		durationContent = (
+			<div class="card-duration">
+				<i class="colored icon ion-ios-time"></i>
+				<i class="colored icon ion-ios-time"></i>
+				<i class="icon ion-ios-time"></i>
+			</div>
+		);
+	} else if (duration == 3) {
+		durationContent = (
+			<div class="card-duration">
+				<i class="colored icon ion-ios-time"></i>
+				<i class="colored icon ion-ios-time"></i>
+				<i class="colored icon ion-ios-time"></i>
+			</div>
+		);
+	}
+
 	return (
 		<>
 			{controls}
@@ -340,6 +385,7 @@ function CardEdit({
 							className={pClasses}
 							style={pStyles}
 						/>
+						{durationContent}
 						<div class="wp-block-buttons">
 							<div class="wp-block-button is-style-text">
 								<RichText

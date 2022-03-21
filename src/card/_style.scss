@@ -81,6 +81,8 @@
 		}
 	}
 
+	&.is-plainlist-style,
+	&.is-list-style,
 	&.is-border-style,
 	&.is-plain-style {
 		.wp-block-card__inner-content {
@@ -97,9 +99,112 @@
 		}
 	}
 
+	&.is-list-style,
 	&.is-border-style {
 		.wp-block-card__inner-content {
 			border: 3px solid $border_color;
+		}
+	}
+
+	&.is-plainlist-style .wp-block-card__inner-content,
+	&.is-list-style .wp-block-card__inner-content {
+		display: grid;
+		align-items: start;
+		margin: 0;
+		grid-template-columns: auto 1fr auto;
+		column-gap: 30px;
+		grid-template-areas:
+			"card-logo card-heading card-duration card-button"
+			"card-logo card-text card-duration card-button";
+
+		@media screen and (max-width: $tablet_width) {
+			grid-template-columns: auto 1fr;
+			column-gap: 0px;
+			row-gap: 0px;
+			grid-template-areas:
+				"card-logo card-heading"
+				"card-logo card-text"
+				"card-duration card-button";
+
+			.card-duration,
+			.wp-block-buttons {
+				padding-top: 50px;
+			}
+		}
+		@media screen and (max-width: $mobile_width) {
+			.card-duration,
+			.wp-block-buttons {
+				padding-top: 70px;
+			}
+		}
+		.wp-block-image {
+			grid-area: card-logo;
+			text-align: left;
+			justify-content: left;
+			margin: 0;
+			width: 60px;
+		}
+		.card-heading {
+			grid-area: card-heading;
+			text-align: left;
+			margin: 0;
+			width: 100%;
+		}
+		.card-text {
+			grid-area: card-text;
+			text-align: left;
+			margin: 0;
+			width: 100%;
+		}
+		.wp-block-buttons {
+			// display: flex;
+			grid-area: card-button;
+			margin-top: 0;
+			text-align: right;
+			margin: 0;
+			// align-items: center;
+			// height: 100%;
+			.wp-block-button {
+				margin: 0;
+			}
+		}
+		.card-duration {
+			// display: flex;
+			grid-area: card-duration;
+			margin: 0;
+			margin-top: 2px;
+			text-align: right;
+			// align-items: center;
+			// height: 100%;
+
+			i {
+				color: var(--wp--custom--defaulttext-color);
+				opacity: 0.5;
+				font-size: 24px;
+				margin-left: 3px;
+				margin-right: 3px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+				&:first-child {
+					margin-left: 0;
+				}
+				&.colored {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+$colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
+	defaulttext, darktext, heading, "white", "black", bodybackground,
+	altbackground, border;
+
+@each $color in $colors {
+	.wp-block-empower-pro-blocks-card.has-#{$color}-card-color {
+		.card-duration i.colored {
+			color: var(--wp--custom--#{$color}-color);
 		}
 	}
 }
