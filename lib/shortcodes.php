@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks.
  *
@@ -15,13 +16,15 @@
  *
  * @since  0.9.4
  */
-function empower_pro_blocks_shortcode( $atts, $content ) {
-	$args = shortcode_atts( empower_pro_blocks_get_default_args(), $atts );
-	return empower_pro_blocks_get_recent_posts( $args );
+function empower_pro_blocks_shortcode($atts, $content)
+{
+	$args = shortcode_atts(empower_pro_blocks_get_default_args(), $atts);
+	return empower_pro_blocks_get_recent_posts($args);
 }
-add_shortcode( 'empower_pro_blocks_blog', 'empower_pro_blocks_shortcode' );
+add_shortcode('empower_pro_blocks_blog', 'empower_pro_blocks_shortcode');
 
-function empower_pro_blocks_blog_menu_items( $atts, $content ) {
+function empower_pro_blocks_blog_menu_items($atts, $content)
+{
 	// Get the posts query.
 	$args = array(
 		'limit'            => 3,
@@ -31,52 +34,51 @@ function empower_pro_blocks_blog_menu_items( $atts, $content ) {
 		'cat'              => array(),
 		'tag'              => array(),
 		'taxonomy'         => '',
-		'post_type'        => array( 'post' ),
+		'post_type'        => array('post'),
 		'post_status'      => 'publish',
 		'ignore_sticky'    => 1,
 		'exclude_current'  => 0,
 	);
 
-	$args = wp_parse_args( $atts, $args );
+	$args = wp_parse_args($atts, $args);
 
-	$posts = empower_pro_blocks_get_posts( $args );
+	$posts = empower_pro_blocks_get_posts($args);
 
 	$html = '';
 	/*
 	<ul class="blogPosts">
 	  <li><a href="https://abilitie2.wpengine.com/learning-to-manage-in-vuca-environments-using-simulations/">
 		<span class="title ">Learning to Manage in VUCA Environments Using Simulations</span>
-		
+
 	  </a></li>
 	  <li><a href="https://abilitie2.wpengine.com/when-and-how-to-move-leadership-training-online/">
 		<span class="title ">When and How To Move Leadership Training Online</span>
-		
+
 	  </a></li>
 	  <li><a href="https://abilitie2.wpengine.com/the-measure-of-leadership-development-roi-youre-not-using-and-how-to-leverage-it/">
 		<span class="title ">The Measure of Leadership Development ROI You’re Not Using (and How to Leverage it)</span>
-		
+
 	  </a></li>
 	</ul>
 	 */
 
-	if ( $posts->have_posts() ) :
+	if ($posts->have_posts()) :
 		$html .= '<ul class="blogPosts">';
 
-			while ( $posts->have_posts() ) : $posts->the_post();
+		while ($posts->have_posts()) : $posts->the_post();
 
-				$post_format = get_post_format();
-				$target = '_self';
-				if ( $post_format == "link" ) {
-					$permalink = empower_pro_blocks_get_link_url();
-					$target = "_blank";
-				}
-				else {
-					$permalink = get_permalink();
-				}
+			$post_format = get_post_format();
+			$target = '_self';
+			if ($post_format == "link") {
+				$permalink = empower_pro_blocks_get_link_url();
+				$target = "_blank";
+			} else {
+				$permalink = get_permalink();
+			}
 
-				$html .= '<li><a href="' . esc_url( $permalink ) . '" target="'.$target.'"><span class="title ">'.get_the_title().'</span></a></li>';
+			$html .= '<li><a href="' . esc_url($permalink) . '" target="' . $target . '"><span class="title ">' . get_the_title() . '</span></a></li>';
 
-			endwhile;
+		endwhile;
 		$html .= '</ul>';
 
 	endif;
@@ -86,14 +88,15 @@ function empower_pro_blocks_blog_menu_items( $atts, $content ) {
 
 	return $html;
 }
-add_shortcode( 'empower_pro_blocks_blog_menu', 'empower_pro_blocks_blog_menu_items' );
+add_shortcode('empower_pro_blocks_blog_menu', 'empower_pro_blocks_blog_menu_items');
 
 /**
  * Display list of tags for widget.
  *
  * @since  0.9.9.1
  */
-function empower_pro_blocks_tags_list() {
+function empower_pro_blocks_tags_list()
+{
 
 	// Arguments
 	$args = array(
@@ -101,10 +104,10 @@ function empower_pro_blocks_tags_list() {
 	);
 
 	// Allow dev to filter the arguments
-	$args = apply_filters( 'empower_pro_blocks_tags_list_args', $args );
+	$args = apply_filters('empower_pro_blocks_tags_list_args', $args);
 
 	// Get the tags
-	$tags = get_terms( 'post_tag', $args );
+	$tags = get_terms('post_tag', $args);
 
 	return $tags;
 }
@@ -114,7 +117,8 @@ function empower_pro_blocks_tags_list() {
  *
  * @since  0.9.9.1
  */
-function empower_pro_blocks_cats_list() {
+function empower_pro_blocks_cats_list()
+{
 
 	// Arguments
 	$args = array(
@@ -122,10 +126,10 @@ function empower_pro_blocks_cats_list() {
 	);
 
 	// Allow dev to filter the arguments
-	$args = apply_filters( 'empower_pro_blocks_cats_list_args', $args );
+	$args = apply_filters('empower_pro_blocks_cats_list_args', $args);
 
 	// Get the cats
-	$cats = get_terms( 'category', $args );
+	$cats = get_terms('category', $args);
 
 	return $cats;
 }
@@ -135,10 +139,11 @@ function empower_pro_blocks_cats_list() {
  *
  * @since  0.9.4
  */
-function empower_pro_blocks_get_default_args() {
+function empower_pro_blocks_get_default_args()
+{
 
 	$defaults = array(
-		'title'             => esc_attr__( 'Recent Posts', 'empower-pro-blocks' ),
+		'title'             => esc_attr__('Recent Posts', 'empower-pro-blocks'),
 		'title_url'         => '',
 
 		'limit'            => 3,
@@ -148,7 +153,7 @@ function empower_pro_blocks_get_default_args() {
 		'cat'              => array(),
 		'tag'              => array(),
 		'taxonomy'         => '',
-		'post_type'        => array( 'post' ),
+		'post_type'        => array('post'),
 		'post_status'      => 'publish',
 		'ignore_sticky'    => 1,
 		'exclude_current'  => 1,
@@ -167,7 +172,7 @@ function empower_pro_blocks_get_default_args() {
 		'date_relative'    => false,
 		'date_modified'    => false,
 		'readmore'         => true,
-		'readmore_text'    => __( 'Read More', 'recent-posts-widget-extended' ),
+		'readmore_text'    => __('Read More', 'recent-posts-widget-extended'),
 		'comment_count'    => true,
 
 		'styles_default'   => true,
@@ -179,8 +184,7 @@ function empower_pro_blocks_get_default_args() {
 	);
 
 	// Allow plugins/themes developer to filter the default arguments.
-	return apply_filters( 'empower_pro_blocks_default_args', $defaults );
-
+	return apply_filters('empower_pro_blocks_default_args', $defaults);
 }
 
 /**
@@ -188,8 +192,9 @@ function empower_pro_blocks_get_default_args() {
  *
  * @since  0.9.4
  */
-function empower_pro_blocks_recent_posts( $args = array() ) {
-	echo empower_pro_blocks_get_recent_posts( $args );
+function empower_pro_blocks_recent_posts($args = array())
+{
+	echo empower_pro_blocks_get_recent_posts($args);
 }
 
 /**
@@ -199,146 +204,146 @@ function empower_pro_blocks_recent_posts( $args = array() ) {
  * @param  array  $args
  * @return string|array The HTML for the random posts.
  */
-function empower_pro_blocks_get_recent_posts( $args = array() ) {
+function empower_pro_blocks_get_recent_posts($args = array())
+{
 
 	// Set up a default, empty variable.
 	$html = '';
 
 	// Merge the input arguments and the defaults.
-	$args = wp_parse_args( $args, empower_pro_blocks_get_default_args() );
+	$args = wp_parse_args($args, empower_pro_blocks_get_default_args());
 
 	// Extract the array to allow easy use of variables.
-	extract( $args );
+	extract($args);
 
 	// Allow devs to hook in stuff before the loop.
-	do_action( 'empower_pro_blocks_before_loop' );
+	do_action('empower_pro_blocks_before_loop');
 
 	// If the default style is disabled then use the custom css if it's not empty.
-	if ( $args['styles_default'] === false && ! empty( $args['css'] ) ) {
+	if ($args['styles_default'] === false && !empty($args['css'])) {
 		echo '<style>' . $args['css'] . '</style>';
 	}
 
 	// Get the posts query.
-	$posts = empower_pro_blocks_get_posts( $args );
+	$posts = empower_pro_blocks_get_posts($args);
 
 	$column_class = 'blog-three-columns';
-	if ( $args['col'] == 2 ) {
+	if ($args['col'] == 2) {
 		$column_class = 'blog-two-columns';
 	}
 
-	if ( $posts->have_posts() ) :
+	if ($posts->have_posts()) :
 
 		// Recent posts wrapper
-		$html = '<div ' . ( ! empty( $args['cssID'] ) ? 'id="' . sanitize_html_class( $args['cssID'] ) . '"' : '' ) . ' class="blog-shortcode '.$column_class.' ' . ( ! empty( $args['css_class'] ) ? '' . sanitize_html_class( $args['css_class'] ) . '' : '' ) . '">';
+		$html = '<div ' . (!empty($args['cssID']) ? 'id="' . sanitize_html_class($args['cssID']) . '"' : '') . ' class="blog-shortcode ' . $column_class . ' ' . (!empty($args['css_class']) ? '' . sanitize_html_class($args['css_class']) . '' : '') . '">';
 
-			$html .= '<div class="blog-shortcode-loop-container">';
+		$html .= '<div class="blog-shortcode-loop-container">';
 
-				while ( $posts->have_posts() ) : $posts->the_post();
+		while ($posts->have_posts()) : $posts->the_post();
 
-					$post = get_post(get_the_ID());
-					$post_format = get_post_format();
-					$target = '_self';
-					if ( $post_format == "link" ) {
-						$permalink = empower_pro_blocks_get_link_url();
-						$post_format = "link";
-						$target = "_blank";
-					}
-					else {
-						$permalink = get_permalink();
-					}
-					// Thumbnails
-					$thumb_id = get_post_thumbnail_id(); // Get the featured image id.
-					$img_url  = wp_get_attachment_url( $thumb_id ); // Get img URL.
+			$post = get_post(get_the_ID());
+			$post_format = get_post_format();
+			$target = '_self';
+			if ($post_format == "link") {
+				$permalink = empower_pro_blocks_get_link_url();
+				$post_format = "link";
+				$target = "_blank";
+			} else {
+				$permalink = get_permalink();
+			}
+			// Thumbnails
+			$thumb_id = get_post_thumbnail_id(); // Get the featured image id.
+			$img_url  = wp_get_attachment_url($thumb_id); // Get img URL.
 
-					// Start recent posts markup.
-					$html .= '<article class="'.join( ' ', get_post_class() ).'">';
+			// Start recent posts markup.
+			$html .= '<article class="' . join(' ', get_post_class()) . '">';
 
-						if ( $args['thumb'] ) :
+			if ($args['thumb']) :
 
-							// Check if post has post thumbnail.
-							if ( in_array( $post_format, array( 'audio', 'video' ) ) ) :
-								$html .= '<div class="empower-pro-blocks-featured-image">';
-									$html .= $content = apply_filters( 'the_content', do_blocks( empower_pro_blocks_get_first_paragraph( get_the_content() ) ) );
-								$html .= '</div>';
-							else :
-								if ( has_post_thumbnail() ) :
-									$html .= '<a class="entry-image-link" href="' . esc_url( $permalink ) . '" target="'.$target.'"  rel="bookmark">';
-										$html .= '<div class="empower-pro-blocks-featured-image">';
-										if ( $img_url ) :
-											$html .= '<img class="' . esc_attr( $args['thumb_align'] ) . ' post-image entry-image" src="' . esc_url( $img_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
-										else :
-											$html .= get_the_post_thumbnail( get_the_ID(),
-												array( $args['thumb_width'], $args['thumb_height'] ),
-												array(
-													'class' => $args['thumb_align'] . ' post-image entry-image',
-													'alt'   => esc_attr( get_the_title() )
-												)
-											);
-										endif;
-										$html .= '</div>';
-									$html .= '</a>';
-								endif;
-							endif;
-
+				// Check if post has post thumbnail.
+				if (in_array($post_format, array('audio', 'video'))) :
+					$html .= '<div class="empower-pro-blocks-featured-image">';
+					$html .= $content = apply_filters('the_content', do_blocks(empower_pro_blocks_get_first_paragraph(get_the_content())));
+					$html .= '</div>';
+				else :
+					if (has_post_thumbnail()) :
+						$html .= '<a class="entry-image-link" href="' . esc_url($permalink) . '" target="' . $target . '"  rel="bookmark">';
+						$html .= '<div class="empower-pro-blocks-featured-image">';
+						if ($img_url) :
+							$html .= '<img class="' . esc_attr($args['thumb_align']) . ' post-image entry-image" src="' . esc_url($img_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+						else :
+							$html .= get_the_post_thumbnail(
+								get_the_ID(),
+								array($args['thumb_width'], $args['thumb_height']),
+								array(
+									'class' => $args['thumb_align'] . ' post-image entry-image',
+									'alt'   => esc_attr(get_the_title())
+								)
+							);
 						endif;
+						$html .= '</div>';
+						$html .= '</a>';
+					endif;
+				endif;
 
-						$html .= '<header class="entry-header">';
+			endif;
 
-							if ( $args['meta'] ) {
-								$meta = '';
-								if ( $args['author'] ) :
-									if ( $post_format != "link" ) {
-										$meta .= '<i class="byline">by</i> ';
-									}
-									$meta .= '[post_author_posts_link]';
-								endif;
-								if ( $args['author'] && $args['date'] ) :
-									$meta .= ' <i>on</i> ';
-								endif;
-								if ( $args['date'] ) :
-									$meta .= '[post_date after=""]';
-								endif;
-								if ( $args['comment_count'] ) :
-									$meta .= ' [post_comments]';
-								endif;
-								$meta .= ' [post_edit]';
+			$html .= '<header class="entry-header">';
 
-								if ( ! empty( $meta ) ) {
-									$html .= '<p class="entry-meta">';
-									$html .= do_shortcode( $meta );
-									$html .= '</p>';
-								}
-							}
+			if ($args['meta']) {
+				$meta = '';
+				if ($args['author']) :
+					if ($post_format != "link") {
+						$meta .= '<i class="byline">by</i> ';
+					}
+					$meta .= '[post_author_posts_link]';
+				endif;
+				if ($args['author'] && $args['date']) :
+					$meta .= ' <i>on</i> ';
+				endif;
+				if ($args['date']) :
+					$meta .= '[post_date after=""]';
+				endif;
+				if ($args['comment_count']) :
+					$meta .= ' [post_comments]';
+				endif;
+				$meta .= ' [post_edit]';
 
-							$html .= '<h2 class="entry-title"><a class="entry-title-link" href="' . esc_url( $permalink ) . '" target="'.$target.'" title="' . sprintf( esc_attr__( 'Permalink to %s', 'recent-posts-widget-extended' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . esc_attr( get_the_title() ) . '</a></h2>';
-						$html .= '</header>';
+				if (!empty($meta)) {
+					$html .= '<p class="entry-meta">';
+					$html .= do_shortcode($meta);
+					$html .= '</p>';
+				}
+			}
 
-							if ( $args['excerpt'] ) :
-								if ( in_array( $post_format, array( 'audio', 'video', 'link' ) ) ) {
-									if ( ! empty( $post->post_excerpt ) ) {
-										$html .= '<div class="entry-content">';
-										$html .= '<p>'.$post->post_excerpt.'</p>';
-										$html .= '</div>';
-									}
-								}
-								else {
-									$html .= '<div class="entry-content">';
-									$html .= '<p>'.apply_filters( 'empower_pro_blocks_excerpt', get_the_excerpt() ).'</p>';
-									$html .= '</div>';
-								}
-							endif;
+			$html .= '<h2 class="entry-title"><a class="entry-title-link" href="' . esc_url($permalink) . '" target="' . $target . '" title="' . sprintf(esc_attr__('Permalink to %s', 'recent-posts-widget-extended'), the_title_attribute('echo=0')) . '" rel="bookmark">' . esc_attr(get_the_title()) . '</a></h2>';
+			$html .= '</header>';
 
-							if ( $args['readmore'] ) :
-								$html .= '<div class="entry-read-more">';
-								$html .= '<a href="' . esc_url( $permalink ) . '" target="'.$target.'" class="more-link">' . $args['readmore_text'] . '</a>';
-								$html .= '</div>';
-							endif;
+			if ($args['excerpt']) :
+				if (in_array($post_format, array('audio', 'video', 'link'))) {
+					if (!empty($post->post_excerpt)) {
+						$html .= '<div class="entry-content">';
+						$html .= '<p>' . $post->post_excerpt . '</p>';
+						$html .= '</div>';
+					}
+				} else {
+					$html .= '<div class="entry-content">';
+					$html .= '<p>' . apply_filters('empower_pro_blocks_excerpt', get_the_excerpt()) . '</p>';
+					$html .= '</div>';
+				}
+			endif;
 
-					$html .= '</article>';
+			if ($args['readmore']) :
+				$html .= '<div class="entry-read-more">';
+				$html .= '<a href="' . esc_url($permalink) . '" target="' . $target . '" class="more-link">' . $args['readmore_text'] . '</a>';
+				$html .= '</div>';
+			endif;
 
-				endwhile;
+			$html .= '</article>';
 
-			$html .= '</div>';
+		endwhile;
+
+		$html .= '</div>';
 
 		$html .= '</div>';
 
@@ -348,11 +353,10 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
 	wp_reset_postdata();
 
 	// Allow devs to hook in stuff after the loop.
-	do_action( 'empower_pro_blocks_after_loop' );
+	do_action('empower_pro_blocks_after_loop');
 
 	// Return the  posts markup.
-	return wp_kses_post( $args['before'] ) . apply_filters( 'empower_pro_blocks_markup', $html ) . wp_kses_post( $args['after'] );
-
+	return wp_kses_post($args['before']) . apply_filters('empower_pro_blocks_markup', $html) . wp_kses_post($args['after']);
 }
 
 /**
@@ -362,7 +366,8 @@ function empower_pro_blocks_get_recent_posts( $args = array() ) {
  * @param  array  $args
  * @return array
  */
-function empower_pro_blocks_get_posts( $args = array() ) {
+function empower_pro_blocks_get_posts($args = array())
+{
 
 	// Query arguments.
 	$query = array(
@@ -376,18 +381,18 @@ function empower_pro_blocks_get_posts( $args = array() ) {
 	);
 
 	// Exclude current post
-	if ( $args['exclude_current'] ) {
-		$query['post__not_in'] = array( get_the_ID() );
+	if ($args['exclude_current']) {
+		$query['post__not_in'] = array(get_the_ID());
 	}
 
 	// Limit posts based on category.
-	if ( ! empty( $args['cat'] ) ) {
+	if (!empty($args['cat'])) {
 		$cat = explode(',', $args['cat']);
 		$query['category__in'] = $cat;
 	}
 
 	// Limit posts based on post tag.
-	if ( ! empty( $args['tag'] ) ) {
+	if (!empty($args['tag'])) {
 		$tag = explode(',', $args['tag']);
 		$query['tag__in'] = $tag;
 	}
@@ -396,15 +401,15 @@ function empower_pro_blocks_get_posts( $args = array() ) {
 	 * Taxonomy query.
 	 * Prop Miniloop plugin by Kailey Lampert.
 	 */
-	if ( ! empty( $args['taxonomy'] ) ) {
+	if (!empty($args['taxonomy'])) {
 
-		parse_str( $args['taxonomy'], $taxes );
+		parse_str($args['taxonomy'], $taxes);
 
 		$operator  = 'IN';
 		$tax_query = array();
-		foreach( array_keys( $taxes ) as $k => $slug ) {
-			$ids = explode( ',', $taxes[$slug] );
-			if ( count( $ids ) == 1 && $ids['0'] < 0 ) {
+		foreach (array_keys($taxes) as $k => $slug) {
+			$ids = explode(',', $taxes[$slug]);
+			if (count($ids) == 1 && $ids['0'] < 0) {
 				// If there is only one id given, and it's negative
 				// Let's treat it as 'posts not in'
 				$ids['0'] = $ids['0'] * -1;
@@ -419,15 +424,13 @@ function empower_pro_blocks_get_posts( $args = array() ) {
 		}
 
 		$query['tax_query'] = $tax_query;
-
 	}
 
 	// Allow plugins/themes developer to filter the default query.
-	$query = apply_filters( 'empower_pro_blocks_default_query_arguments', $query );
+	$query = apply_filters('empower_pro_blocks_default_query_arguments', $query);
 
 	// Perform the query.
-	$posts = new WP_Query( $query );
+	$posts = new WP_Query($query);
 
 	return $posts;
-
 }
