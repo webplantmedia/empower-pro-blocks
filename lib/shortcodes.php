@@ -152,6 +152,7 @@ function empower_pro_blocks_get_default_args()
 		'orderby'          => 'date',
 		'cat'              => array(),
 		'tag'              => array(),
+		'post_in' => array(),
 		'taxonomy'         => '',
 		'post_type'        => array('post'),
 		'post_status'      => 'publish',
@@ -389,6 +390,11 @@ function empower_pro_blocks_get_posts($args = array())
 	if (!empty($args['cat'])) {
 		$cat = explode(',', $args['cat']);
 		$query['category__in'] = $cat;
+	}
+
+	if (!empty($args['post_in'])) {
+		$post_in = explode(',', $args['post_in']);
+		$query['post__in'] = $post_in;
 	}
 
 	// Limit posts based on post tag.
