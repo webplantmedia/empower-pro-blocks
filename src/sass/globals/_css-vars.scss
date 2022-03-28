@@ -40,7 +40,9 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		.display-bottom-curve-slant.has-#{$color}-background-color
 		.wp-block-background__color-container
 		svg,
-	html .display-bottom-curve-slant .has-#{$color}-svg-fill-color,
+	html
+		.display-bottom-curve-slant
+		.wp-block-background__color-container.has-#{$color}-svg-fill-color,
 	html
 		.wp-block-empower-pro-blocks-scheduler.has-#{$color}-header-color
 		div.column-title
