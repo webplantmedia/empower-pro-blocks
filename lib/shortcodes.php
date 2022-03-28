@@ -395,6 +395,7 @@ function empower_pro_blocks_get_posts($args = array())
 	if (!empty($args['post_in'])) {
 		$post_in = explode(',', $args['post_in']);
 		$query['post__in'] = $post_in;
+		$query['orderby'] = 'post__in';
 	}
 
 	// Limit posts based on post tag.
