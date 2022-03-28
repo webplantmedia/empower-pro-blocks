@@ -19,17 +19,29 @@
 		overflow: hidden;
 		.wp-block-background__color-container {
 			position: absolute;
-			top: auto;
-			right: auto;
-			bottom: -0px;
-			left: 50%;
-			margin-left: -980px;
-			width: 2732px;
-			max-width: 2732px;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0px;
+			width: 120%;
+			margin-left: -10%;
+			margin-right: -10%;
+			// left: 50%;
+			// margin-left: -980px;
+			// // width: 2732px;
+			// max-width: 2732px;
 			z-index: 0;
+
+			&:before {
+			}
 
 			svg {
 				display: block;
+				position: absolute;
+				bottom: 0;
+				top: auto;
+				left: 0;
+				right: 0;
 			}
 		}
 	}

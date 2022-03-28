@@ -37,6 +37,11 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		color: var(--wp--custom--#{$color}-color-contrast) !important;
 	}
 	html
+		.wp-block-empower-pro-blocks-background.has-#{$color}-background-color
+		.wp-block-background__color-container
+		svg,
+	html .wp-block-empower-pro-blocks-background .has-#{$color}-svg-fill-color,
+	html
 		.wp-block-empower-pro-blocks-scheduler.has-#{$color}-header-color
 		div.column-title
 		.dim-bg,
