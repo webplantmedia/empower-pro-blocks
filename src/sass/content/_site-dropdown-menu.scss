@@ -1018,6 +1018,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	min-width: 300px;
 }
 
 .globalNav .dropdownContent {
@@ -1678,6 +1679,21 @@
 .abilitie-icon-9 {
 	background-image: url(../images/immersion-4.svg);
 }
+.abilitie-icon-manager {
+	background-image: url(../images/becoming-an-effective-manager.svg);
+}
+.abilitie-icon-business {
+	background-image: url(../images/building-business-financial-acumen.svg);
+}
+.abilitie-icon-executing {
+	background-image: url(../images/executing-in-cross-functional-environments.svg);
+}
+.abilitie-icon-strategic {
+	background-image: url(../images/creating-strategic-business-value.svg);
+}
+.abilitie-icon-leading {
+	background-image: url(../images/leading-organizational-change.svg);
+}
 @media only screen and (min-width: $ipad_width_1) {
 	.globalNav .linkContainer .icon-hover.abilitie-icon-1,
 	.globalNav .linkContainer:hover .abilitie-icon-1 {
@@ -1712,6 +1728,26 @@
 	.globalNav .linkContainer .icon-hover.abilitie-icon-6,
 	.globalNav .linkContainer:hover .abilitie-icon-6 {
 		background-image: url(../images/invited-hex-hover-3.svg);
+	}
+	.globalNav .linkContainer .icon-hover.abilitie-icon-manager,
+	.globalNav .linkContainer:hover .abilitie-icon-manager {
+		background-image: url(../images/becoming-an-effective-manager-gray.svg);
+	}
+	.globalNav .linkContainer .icon-hover.abilitie-icon-business,
+	.globalNav .linkContainer:hover .abilitie-icon-business {
+		background-image: url(../images/building-business-financial-acumen-gray.svg);
+	}
+	.globalNav .linkContainer .icon-hover.abilitie-icon-executing,
+	.globalNav .linkContainer:hover .abilitie-icon-executing {
+		background-image: url(../images/executing-in-cross-functional-environments-gray.svg);
+	}
+	.globalNav .linkContainer .icon-hover.abilitie-icon-strategic,
+	.globalNav .linkContainer:hover .abilitie-icon-strategic {
+		background-image: url(../images/creating-strategic-business-value-gray.svg);
+	}
+	.globalNav .linkContainer .icon-hover.abilitie-icon-leading,
+	.globalNav .linkContainer:hover .abilitie-icon-leading {
+		background-image: url(../images/leading-organizational-change-gray.svg);
 	}
 }
 .globalNav .linkContainer:hover .svg-icon {
