@@ -1518,6 +1518,10 @@
 	}
 
 	.linkGroup + .linkGroup {
+		padding-top: 0;
+	}
+	.linkGroup:last-child {
+		padding-top: 20px;
 		border-top: 2px solid $body_background_color_two;
 	}
 }
