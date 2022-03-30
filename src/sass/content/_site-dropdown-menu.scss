@@ -1084,6 +1084,12 @@
 			border-top-right-radius: $border_radius;
 			border-bottom-right-radius: $border_radius;
 		}
+
+		&.threeColumns {
+			.linkGroup {
+				// width: 400px;
+			}
+		}
 	}
 }
 .globalNav .linkGroup {
@@ -1146,6 +1152,7 @@
 	@include h4-alt;
 	margin-bottom: 30px;
 	padding: 0;
+	font-size: 15px;
 }
 .globalNav .linkContainer:hover .linkTitle,
 .globalNav .linkTitle:hover {
@@ -1212,6 +1219,44 @@
 }
 .globalNav .linkContainer:hover .new-badge {
 	background: #32325d;
+}
+.globalNav .dropdownRoot .threeColumns {
+	.linkGroup {
+		&:first-child {
+			padding-right: 25px;
+		}
+		&:nth-child(2) {
+			padding-left: 25px;
+		}
+		.productsGroup {
+			&.wide {
+				min-width: 350px;
+				max-width: 350px;
+			}
+		}
+		@media only screen and (max-width: $desktop_width) {
+			&:first-child {
+				padding-right: 15px;
+			}
+			&:nth-child(2) {
+				padding-left: 15px;
+			}
+			.productsGroup {
+				&.wide {
+					min-width: 280px;
+					max-width: 280px;
+				}
+			}
+		}
+		&:last-child {
+			// width: 300px;
+			// .productsGroup {
+			// &.wide {
+			// max-width: 300px;
+			// }
+			// }
+		}
+	}
 }
 .globalNav .dropdownRoot .productsGroup {
 	// display: -webkit-box;
@@ -1644,12 +1689,18 @@
 .abilitie-icon {
 	display: block;
 	transition: none;
-	margin-right: 20px;
+	margin-right: 5px;
+	margin-left: -13px;
+	margin-top: 3px;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: contain;
 	background-position: 50%;
-	width: 40px;
-	height: 40px;
+	width: 74px;
+	height: 26px;
+	@media only screen and (max-width: $desktop_width) {
+		width: 60px;
+		height: 20px;
+	}
 }
 
 .abilitie-icon-1 {

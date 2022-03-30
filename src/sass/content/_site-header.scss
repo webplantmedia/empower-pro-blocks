@@ -15,12 +15,12 @@
 		// max-width: calc( 100% - 100px);
 	}
 
-	@media only screen and ( max-width: $ipad_width ) {
+	@media only screen and (max-width: $ipad_width) {
 		background-color: $body_background_color;
 	}
 }
 
-@media only screen and ( min-width: $ipad_width_1 ) {
+@media only screen and (min-width: $ipad_width_1) {
 	.site-header-background {
 		display: block;
 		position: fixed;
@@ -36,7 +36,6 @@
 		.custom-logo-link:not(.sticky-logo-link) {
 			// @include clip;
 		}
-
 	}
 
 	.page-template-template-blocks,
@@ -47,26 +46,22 @@
 		}
 
 		.site-header .custom-logo-link:not(.sticky-logo-link) {
-
 			// @include unclip;
 		}
 
 		.site-header .custom-logo-link.sticky-logo-link {
-
 			// @include clip;
 		}
 	}
 }
 
-@media only screen and ( max-width: $ipad_width ) {
+@media only screen and (max-width: $ipad_width) {
 	.site-header {
 		.custom-logo-link:not(.sticky-logo-link) {
-
 			// @include clip;
 		}
 
 		.custom-logo-link.sticky-logo-link {
-
 			// @include unclip;
 		}
 	}
@@ -86,12 +81,10 @@
 	}
 	.site-header {
 		.custom-logo-link:not(.sticky-logo-link) {
-
 			// @include clip;
 		}
 
 		.custom-logo-link.sticky-logo-link {
-
 			// @include unclip;
 		}
 	}
@@ -178,7 +171,7 @@
 	.admin-bar .site-header {
 		// top: 32px;
 
-		@media screen and ( max-width: 782px ) {
+		@media screen and (max-width: 782px) {
 			// top: 46px;
 		}
 	}
@@ -197,7 +190,6 @@
 			// margin-bottom: 10px !important;
 		}
 	}
-
 }
 
 @media only screen and (max-width: $tablet_width) {
@@ -210,7 +202,6 @@
 			// margin-top: 10px !important;
 		}
 	}
-
 }
 
 @media only screen and (max-width: $mobile_width) {
@@ -229,7 +220,6 @@
 			// margin-top: 20px !important;
 		}
 	}
-
 }
 
 @media only screen and (max-width: $small_mobile_width) {
@@ -254,11 +244,14 @@
 		// margin-left: 0;
 		// margin-right: 0;
 	}
-
 }
 
 .nav-primary-cta {
 	position: fixed;
 	z-index: 110;
 	right: 50px;
+
+	@media only screen and (max-width: $desktop_width) {
+		right: 20px;
+	}
 }
