@@ -1020,6 +1020,18 @@
 	left: 0;
 	min-width: 300px;
 }
+.globalNav .dropdownRoot .dropdownContent.oneColumn.largeColumn {
+	max-width: 500px;
+	min-width: 500px;
+}
+.globalNav .dropdownRoot .dropdownContent.oneColumn.smallColumn {
+	max-width: 300px;
+	min-width: 300px;
+}
+.globalNav .dropdownRoot .dropdownContent.oneColumn.mediumColumn {
+	max-width: 400px;
+	min-width: 400px;
+}
 
 .globalNav .dropdownContent {
 	.linkGroup .medium-icons .linkContainer,
