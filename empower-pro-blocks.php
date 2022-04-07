@@ -99,7 +99,7 @@ if (empower_pro_blocks_is_soliloquy_activated()) {
 	require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/soliloquy/soliloquy-setup.php';
 }
 
-require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/site-elements.php';
+// require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/site-elements.php';
 
 add_action('wp_head', 'empower_pro_blocks_load_images');
 /**

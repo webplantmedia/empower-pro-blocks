@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks.
  *
@@ -18,22 +19,22 @@
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
  */
-function empower_pro_blocks_color_contrast( $color ) {
+function empower_pro_blocks_color_contrast($color)
+{
 
-	$hexcolor = str_replace( '#', '', $color );
+	$hexcolor = str_replace('#', '', $color);
 
-	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-	$green = hexdec( substr( $hexcolor, 2, 2 ) );
-	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+	$red   = hexdec(substr($hexcolor, 0, 2));
+	$green = hexdec(substr($hexcolor, 2, 2));
+	$blue  = hexdec(substr($hexcolor, 4, 2));
 
-	$luminosity = ( ( $red * 0.2726 ) + ( $green * 0.2152 ) + ( $blue * 0.0722 ) );
+	$luminosity = (($red * 0.2726) + ($green * 0.2152) + ($blue * 0.0722));
 	// if ( $color == "#ffffff" ) {
-		// pr($color);
-		// pr($luminosity);
+	// pr($color);
+	// pr($luminosity);
 	// }
 
-	return ( $luminosity > 100 ) ? '#222222' : '#ffffff';
-
+	return ($luminosity > 100) ? '#222222' : '#ffffff';
 }
 
 /**
@@ -46,25 +47,25 @@ function empower_pro_blocks_color_contrast( $color ) {
  * @param int    $adjust_percent The amount to reduce or increase brightness by.
  * @return string Hex code for the adjusted color brightness.
  */
-function empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
+function empower_pro_blocks_color_brightness($hex_code, $adjust_percent)
+{
 
-	$hex_code = ltrim( $hex_code, '#' );
+	$hex_code = ltrim($hex_code, '#');
 
-	if ( strlen( $hex_code ) === 3 ) {
+	if (strlen($hex_code) === 3) {
 		$hex_code = $hex_code[0] . $hex_code[0] . $hex_code[1] . $hex_code[1] . $hex_code[2] . $hex_code[2];
 	}
 
-	$hex_code = array_map( 'hexdec', str_split( $hex_code, 2 ) );
+	$hex_code = array_map('hexdec', str_split($hex_code, 2));
 
-	foreach ( $hex_code as & $color ) {
+	foreach ($hex_code as &$color) {
 		$adjustable_limit = $adjust_percent < 0 ? $color : 255 - $color;
-		$adjust_amount    = ceil( $adjustable_limit * $adjust_percent );
+		$adjust_amount    = ceil($adjustable_limit * $adjust_percent);
 
-		$color = str_pad( dechex( $color + $adjust_amount ), 2, '0', STR_PAD_LEFT );
+		$color = str_pad(dechex($color + $adjust_amount), 2, '0', STR_PAD_LEFT);
 	}
 
-	return '#' . implode( $hex_code );
-
+	return '#' . implode($hex_code);
 }
 
 /**
@@ -78,15 +79,16 @@ function empower_pro_blocks_color_brightness( $hex_code, $adjust_percent ) {
  * @param bool   $array Whether to return an array. Used in images.php.
  * @return string|array RGBA code for the adjusted color brightness.
  */
-function empower_pro_blocks_color_rgba( $color, $alpha, $array = false ) {
+function empower_pro_blocks_color_rgba($color, $alpha, $array = false)
+{
 
-	$hexcolor = str_replace( '#', '', $color );
+	$hexcolor = str_replace('#', '', $color);
 
-	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-	$green = hexdec( substr( $hexcolor, 2, 2 ) );
-	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+	$red   = hexdec(substr($hexcolor, 0, 2));
+	$green = hexdec(substr($hexcolor, 2, 2));
+	$blue  = hexdec(substr($hexcolor, 4, 2));
 
-	if ( $array ) {
+	if ($array) {
 		return array(
 			'r' => $red,
 			'g' => $green,
@@ -96,7 +98,6 @@ function empower_pro_blocks_color_rgba( $color, $alpha, $array = false ) {
 	}
 
 	return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
-
 }
 
 /**
@@ -107,18 +108,19 @@ function empower_pro_blocks_color_rgba( $color, $alpha, $array = false ) {
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
  */
-function empower_pro_blocks_color_rgb( $color ) {
+function empower_pro_blocks_color_rgb($color)
+{
 
-	$hexcolor = str_replace( '#', '', $color );
+	$hexcolor = str_replace('#', '', $color);
 
-	$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-	$green = hexdec( substr( $hexcolor, 2, 2 ) );
-	$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+	$red   = hexdec(substr($hexcolor, 0, 2));
+	$green = hexdec(substr($hexcolor, 2, 2));
+	$blue  = hexdec(substr($hexcolor, 4, 2));
 
 	return $red . ',' . $green . ',' . $blue;
 }
 
-add_filter( 'body_class', 'empower_pro_blocks_half_width_entry_class' );
+add_filter('body_class', 'empower_pro_blocks_half_width_entry_class');
 /**
  * Defines the half width entries body class.
  *
@@ -127,36 +129,36 @@ add_filter( 'body_class', 'empower_pro_blocks_half_width_entry_class' );
  * @param array $classes Current classes.
  * @return array $classes Updated class array.
  */
-function empower_pro_blocks_half_width_entry_class( $classes ) {
+function empower_pro_blocks_half_width_entry_class($classes)
+{
 
 	$site_layout     = genesis_site_layout();
-	$content_archive = genesis_get_option( 'content_archive' );
+	$content_archive = genesis_get_option('content_archive');
 
-	if ( is_home() || is_date() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) {
-		if ( 'full' === $content_archive ) {
+	if (is_home() || is_date() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template()) {
+		if ('full' === $content_archive) {
 			$classes[] = 'full-width-entries';
-		} elseif ( 'full-width-content' !== $site_layout ) { // Displaying sidebar.
+		} elseif ('full-width-content' !== $site_layout) { // Displaying sidebar.
 			$classes[] = 'half-width-entries';
 		} else {
 			$classes[] = 'half-width-entries';
 		}
-	} elseif ( is_post_type_archive( 'portfolio' ) ) {
+	} elseif (is_post_type_archive('portfolio')) {
 		$classes[] = 'third-width-entries';
-	} elseif ( is_tax( 'doc_tag' ) ) {
+	} elseif (is_tax('doc_tag')) {
 		$classes[] = 'half-width-entries';
-	} elseif ( is_post_type_archive( 'event' ) ) {
+	} elseif (is_post_type_archive('event')) {
 		$classes[] = 'half-width-entries';
 	}
 
-	if ( has_nav_menu( 'mobile-cta' ) ) {
+	if (has_nav_menu('mobile-cta')) {
 		$classes[] = 'has-mobile-cta';
 	}
 
 	return $classes;
-
 }
 
-add_filter( 'genesis_attr_entry', 'empower_pro_blocks_entry_class', 10, 3 );
+add_filter('genesis_attr_entry', 'empower_pro_blocks_entry_class', 10, 3);
 /**
  * Adds alignment post class.
  *
@@ -167,22 +169,22 @@ add_filter( 'genesis_attr_entry', 'empower_pro_blocks_entry_class', 10, 3 );
  * @param array $args The attribute arguments.
  * @return array Amended attributes for entry element.
  */
-function empower_pro_blocks_entry_class( $attributes, $context, $args ) {
+function empower_pro_blocks_entry_class($attributes, $context, $args)
+{
 
-	$alignment = genesis_get_option( 'image_alignment' );
-	$thumbnail = genesis_get_option( 'content_archive_thumbnail' );
-	$size      = genesis_get_option( 'image_size' );
+	$alignment = genesis_get_option('image_alignment');
+	$thumbnail = genesis_get_option('content_archive_thumbnail');
+	$size      = genesis_get_option('image_size');
 
-	if ( ! empty( $alignment ) && ! empty( $thumbnail ) && ! isset( $args['params']['is_widget'] ) && ( is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) ) {
+	if (!empty($alignment) && !empty($thumbnail) && !isset($args['params']['is_widget']) && (is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template())) {
 		$attributes['class'] = $attributes['class'] . ' entry-image-' . $alignment . '';
 	}
 
-	if ( ! empty( $size ) && ! empty( $thumbnail ) && ! isset( $args['params']['is_widget'] ) && ( is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template() ) ) {
+	if (!empty($size) && !empty($thumbnail) && !isset($args['params']['is_widget']) && (is_home() || is_category() || is_tag() || is_author() || is_search() || genesis_is_blog_template())) {
 		$attributes['class'] = $attributes['class'] . ' entry-image-' . $size . '';
 	}
 
 	return $attributes;
-
 }
 
 /**
@@ -197,9 +199,10 @@ function empower_pro_blocks_entry_class( $attributes, $context, $args ) {
  * @param string $size Optional. The thumbnail size.
  * @return bool Whether the post has an image attached.
  */
-function empower_pro_blocks_has_post_thumbnail( $post_id = null, $size = 'full' ) {
+function empower_pro_blocks_has_post_thumbnail($post_id = null, $size = 'full')
+{
 
-	if ( is_404() ) {
+	if (is_404()) {
 		return false;
 	}
 
@@ -213,7 +216,6 @@ function empower_pro_blocks_has_post_thumbnail( $post_id = null, $size = 'full' 
 	);
 
 	return (bool) $featured_image_url;
-
 }
 
 /**
@@ -228,9 +230,10 @@ function empower_pro_blocks_has_post_thumbnail( $post_id = null, $size = 'full' 
  * @param int $post_id Optional. The post ID.
  * @return int|string The thumbnail ID or an empty string.
  */
-function empower_pro_blocks_get_post_thumbnail_id( $post_id = null ) {
+function empower_pro_blocks_get_post_thumbnail_id($post_id = null)
+{
 
-	if ( is_404() ) {
+	if (is_404()) {
 		return '';
 	}
 
@@ -242,12 +245,11 @@ function empower_pro_blocks_get_post_thumbnail_id( $post_id = null ) {
 		)
 	);
 
-	if ( $featured_image_url ) {
-		return attachment_url_to_postid( $featured_image_url );
+	if ($featured_image_url) {
+		return attachment_url_to_postid($featured_image_url);
 	}
 
 	return '';
-
 }
 
 /**
@@ -257,8 +259,9 @@ function empower_pro_blocks_get_post_thumbnail_id( $post_id = null ) {
  *
  * @return bool
  */
-function empower_pro_blocks_is_wedocs_activated() {
-	return class_exists( 'WeDocs' ) ? true : false;
+function empower_pro_blocks_is_wedocs_activated()
+{
+	return class_exists('WeDocs') ? true : false;
 }
 
 /**
@@ -268,11 +271,12 @@ function empower_pro_blocks_is_wedocs_activated() {
  *
  * @return bool
  */
-function empower_pro_blocks_is_wedocs_home_page() {
-	if ( function_exists( 'wedocs_get_option' ) ) {
-		$docs_home = intval( wedocs_get_option( 'docs_home', 'wedocs_settings' ) );
-		$post_id   = intval( get_the_ID() );
-		if ( $docs_home === $post_id ) {
+function empower_pro_blocks_is_wedocs_home_page()
+{
+	if (function_exists('wedocs_get_option')) {
+		$docs_home = intval(wedocs_get_option('docs_home', 'wedocs_settings'));
+		$post_id   = intval(get_the_ID());
+		if ($docs_home === $post_id) {
 			return true;
 		}
 	}
@@ -291,18 +295,18 @@ function empower_pro_blocks_is_wedocs_home_page() {
  * @param string $config The config file to look for (not including .php file extension).
  * @return array The config data.
  */
-function empower_pro_blocks_get_config( $config ) {
+function empower_pro_blocks_get_config($config)
+{
 
-	$child_file  = sprintf( '%sconfig/%s.php', EMPOWER_PRO_BLOCKS_DIR, $config );
+	$child_file  = sprintf('%sconfig/%s.php', EMPOWER_PRO_BLOCKS_DIR, $config);
 
 	$data = [];
 
-	if ( is_readable( $child_file ) ) {
+	if (is_readable($child_file)) {
 		$data = require $child_file;
 	}
 
 	return (array) $data;
-
 }
 
 /**
@@ -313,8 +317,9 @@ function empower_pro_blocks_get_config( $config ) {
  * @param string $input Text to compact.
  * @return $input
  */
-function empower_pro_blocks_compact( $input ) {
-	$input = str_replace( array( "\r", "\n", "\t" ), '', $input );
+function empower_pro_blocks_compact($input)
+{
+	$input = str_replace(array("\r", "\n", "\t"), '', $input);
 
 	return $input;
 }
@@ -326,8 +331,9 @@ function empower_pro_blocks_compact( $input ) {
  *
  * @return bool
  */
-function empower_pro_blocks_is_woocommerce_activated() {
-	return class_exists( 'woocommerce' ) ? true : false;
+function empower_pro_blocks_is_woocommerce_activated()
+{
+	return class_exists('woocommerce') ? true : false;
 }
 
 /**
@@ -337,81 +343,87 @@ function empower_pro_blocks_is_woocommerce_activated() {
  *
  * @return bool
  */
-function empower_pro_blocks_is_soliloquy_activated() {
-	return class_exists( 'Soliloquy_Lite' ) ? true : false;
+function empower_pro_blocks_is_soliloquy_activated()
+{
+	return class_exists('Soliloquy_Lite') ? true : false;
 }
 
-function empower_pro_blocks_get_link_url() {
-    $content = get_the_content();
-    $has_url = get_url_in_content( $content );
+function empower_pro_blocks_get_link_url()
+{
+	$content = get_the_content();
+	$has_url = get_url_in_content($content);
 
-    return ( $has_url ) ? $has_url : get_permalink();
+	return ($has_url) ? $has_url : get_permalink();
 }
 
-function empower_pro_blocks_get_first_paragraph( $content ) {
-	$pieces = explode( "\n\n", $content );
+function empower_pro_blocks_get_first_paragraph($content)
+{
+	$pieces = explode("\n\n", $content);
 
-	if ( ! empty( $pieces ) && array_key_exists( 0, $pieces ) ) {
-		return trim( $pieces[0] );
+	if (!empty($pieces) && array_key_exists(0, $pieces)) {
+		return trim($pieces[0]);
 	}
 
 	return $content;
 }
 
-function empower_pro_blocks_css_vars_to_array( $css_vars ) {
+function empower_pro_blocks_css_vars_to_array($css_vars)
+{
 	$arr = array();
-	$a = explode( "\n", $css_vars );
-	foreach ( $a as $v ) {
-		$line = explode( ":", $v );
-		if ( sizeof( $line ) == 2 ) {
-			$key = trim( ltrim( $line[0], "$" ) );
-			$value = trim( rtrim( trim( $line[1] ), ";" ) );
-			$arr[ $key ] = $value;
+	$a = explode("\n", $css_vars);
+	foreach ($a as $v) {
+		$line = explode(":", $v);
+		if (sizeof($line) == 2) {
+			$key = trim(ltrim($line[0], "$"));
+			$value = trim(rtrim(trim($line[1]), ";"));
+			$arr[$key] = $value;
 		}
 	}
 
 	return $arr;
 }
 
-function empower_pro_blocks_parse_css_vars( $css_vars, $default ) {
-	$css_vars = empower_pro_blocks_sanitize_css_vars( $css_vars );
+function empower_pro_blocks_parse_css_vars($css_vars, $default)
+{
+	$css_vars = empower_pro_blocks_sanitize_css_vars($css_vars);
 
 	$new_css_vars = array();
-	foreach ( $css_vars as $key => $value ) {
-		$new_css_vars[ $key ] = $value;
+	foreach ($css_vars as $key => $value) {
+		$new_css_vars[$key] = $value;
 	}
 
 	return $new_css_vars;
 }
 
-function empower_pro_blocks_sanitize_vars( $vars ) {
-	$defaults = empower_pro_blocks_get_config( 'defaults' );
+function empower_pro_blocks_sanitize_vars($vars)
+{
+	$defaults = empower_pro_blocks_get_config('defaults');
 
 	$default = $defaults['css-vars'];
-	$vars = empower_pro_blocks_css_vars_to_array( $vars );
-	$default = empower_pro_blocks_css_vars_to_array( $default );
+	$vars = empower_pro_blocks_css_vars_to_array($vars);
+	$default = empower_pro_blocks_css_vars_to_array($default);
 
 	$new_vars = array();
-	foreach ( $default as $key => $value ) {
-		if ( array_key_exists( $key, $vars ) ) {
-			$new_vars[ $key ] = $vars[ $key ];
-			unset( $vars[ $key ] );
-		}
-		else {
-			$new_vars[ $key ] = $value;
+	foreach ($default as $key => $value) {
+		if (array_key_exists($key, $vars)) {
+			$new_vars[$key] = $vars[$key];
+			unset($vars[$key]);
+		} else {
+			$new_vars[$key] = $value;
 		}
 	}
 
 	return $new_vars;
 }
 
-function empower_pro_blocks_sanitize_css_vars( $css_vars ) {
-	$new_vars = empower_pro_blocks_sanitize_vars( $css_vars );
+function empower_pro_blocks_sanitize_css_vars($css_vars)
+{
+	$new_vars = empower_pro_blocks_sanitize_vars($css_vars);
 
 	$txt = '';
 	foreach ($new_vars as $key => $value) {
 		$txt .= $key . ': ' . $value . ";\n";
 	}
 
-	return trim( $txt );
+	return trim($txt);
 }
