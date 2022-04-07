@@ -207,7 +207,6 @@ function empower_pro_blocks_recent_posts($args = array())
  */
 function empower_pro_blocks_get_recent_posts($args = array())
 {
-
 	// Set up a default, empty variable.
 	$html = '';
 
@@ -264,7 +263,8 @@ function empower_pro_blocks_get_recent_posts($args = array())
 				// Check if post has post thumbnail.
 				if (in_array($post_format, array('audio', 'video'))) :
 					$html .= '<div class="empower-pro-blocks-featured-image">';
-					$html .= $content = apply_filters('the_content', do_blocks(empower_pro_blocks_get_first_paragraph(get_the_content())));
+					$content = empower_pro_blocks_get_first_paragraph(get_the_content());
+					$html .= $content;
 					$html .= '</div>';
 				else :
 					if (has_post_thumbnail()) :
@@ -349,6 +349,7 @@ function empower_pro_blocks_get_recent_posts($args = array())
 		$html .= '</div>';
 
 	endif;
+
 
 	// Restore original Post Data.
 	wp_reset_postdata();
