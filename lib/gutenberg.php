@@ -118,9 +118,9 @@ function empower_pro_blocks_enqueue_scripts()
 	$css = empower_pro_blocks_get_css($empower_pro_blocks_appearance);
 	wp_add_inline_style('empower-pro-blocks-theme', $css);
 
-	if (!has_custom_logo() || is_customize_preview()) {
-		wp_enqueue_style('empower-pro-blocks-title-font', $empower_pro_blocks_appearance['title-font-url'], array(), EMPOWER_PRO_BLOCKS_VERSION);
-	}
+	// if (!has_custom_logo() || is_customize_preview()) {
+	// wp_enqueue_style('empower-pro-blocks-title-font', $empower_pro_blocks_appearance['title-font-url'], array(), EMPOWER_PRO_BLOCKS_VERSION);
+	// }
 
 	wp_enqueue_script('empower-pro-blocks-theme-js', EMPOWER_PRO_BLOCKS_URL . 'js/theme.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
 
