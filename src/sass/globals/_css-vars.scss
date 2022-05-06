@@ -337,11 +337,7 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 	html .entry-content ul a:not(.button),
 	html .entry-content ol a:not(.button),
 	html .entry-content p a:not(.button) {
-		text-decoration: none;
-
-		mark {
-			text-decoration: underline;
-		}
+		// text-decoration: none;
 
 		&:hover {
 			mark.has-inline-color.has-#{$color}-color {

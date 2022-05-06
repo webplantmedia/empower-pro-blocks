@@ -74,6 +74,10 @@
 .entry-content p a:not(.button) {
 	color: var(--wp--custom--primary-color);
 
+	mark.has-inline-color {
+		text-decoration: underline;
+	}
+
 	&,
 	mark {
 		transition: all 0.4s;
