@@ -1,5 +1,6 @@
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
-	default-text, dark-text, "white", background, altbackground, border;
+	defaulttext, darktext, heading "white", "black", bodybackground, altbackground,
+	border;
 
 @each $color in $colors {
 	.has-background-dim.has-#{$color}-background-color,
@@ -330,6 +331,23 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		.wp-block-button.active
 		.wp-block-button__link.has-#{$color}-background-color {
 		color: var(--wp--custom--#{$color}-color) !important;
+	}
+
+	html .wp-block-paragraph a:not(.button),
+	html .entry-content ul a:not(.button),
+	html .entry-content ol a:not(.button),
+	html .entry-content p a:not(.button) {
+		text-decoration: none;
+
+		mark {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			mark.has-inline-color.has-#{$color}-color {
+				color: var(--wp--custom--#{$color}-color-bright) !important;
+			}
+		}
 	}
 }
 

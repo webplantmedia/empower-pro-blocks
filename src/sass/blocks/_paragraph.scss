@@ -68,6 +68,22 @@
 	text-transform: uppercase;
 }
 
+.wp-block-paragraph a:not(.button),
+.entry-content ul a:not(.button),
+.entry-content ol a:not(.button),
+.entry-content p a:not(.button) {
+	color: var(--wp--custom--primary-color);
+
+	&,
+	mark {
+		transition: all 0.4s;
+	}
+
+	&:hover {
+		color: var(--wp--custom--primary-color-bright);
+	}
+}
+
 .is-style-content-width {
 	max-width: $content_width !important;
 	margin-left: auto !important;

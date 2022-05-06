@@ -103,6 +103,15 @@ a.entry-author-link:hover {
 	text-align: center;
 }
 
+.single .entry-footer .entry-meta {
+	color: $gray_text_color;
+	padding: 0;
+	text-align: center;
+	max-width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .entry-categories,
 .entry-tags {
 	display: block;
@@ -113,8 +122,12 @@ a.entry-author-link:hover {
 	}
 }
 
-.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-author:not(:last-child)::after,
-.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-date:not(:last-child)::after,
+.ab-block-post-grid
+	.ab-post-grid-items
+	.ab-block-post-grid-author:not(:last-child)::after,
+.ab-block-post-grid
+	.ab-post-grid-items
+	.ab-block-post-grid-date:not(:last-child)::after,
 .entry-comments-link::before {
 	content: "\005C";
 	color: $gray_text_color;
@@ -174,5 +187,4 @@ a.entry-author-link:hover {
 		padding-left: 0;
 		padding-right: 0;
 	}
-
 }
