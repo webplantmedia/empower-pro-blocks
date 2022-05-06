@@ -1,6 +1,6 @@
 $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
-	defaulttext, darktext, heading "white", "black", bodybackground, altbackground,
-	border;
+	defaulttext, darktext, heading, "white", "black", bodybackground,
+	altbackground, border;
 
 @each $color in $colors {
 	.has-background-dim.has-#{$color}-background-color,
