@@ -334,9 +334,9 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 	}
 
 	html .wp-block-paragraph a:not(.button),
-	html .entry-content ul a:not(.button),
-	html .entry-content ol a:not(.button),
-	html .entry-content p a:not(.button) {
+	html .site-inner ul a:not(.button),
+	html .site-inner ol a:not(.button),
+	html .site-inner p a:not(.button) {
 		// text-decoration: none;
 
 		&:hover {
