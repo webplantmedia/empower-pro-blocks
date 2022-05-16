@@ -142,10 +142,10 @@ function empower_pro_blocks_single_post_nav()
 	}
 
 	$exclude = array();
-	$obj = get_category_by_slug('learn-to-lead-podcast');
-	$exclude[] = $obj->term_id;
-	$next_post = get_next_post(false, $exclude);
-	$prev_post = get_previous_post(false, $exclude);
+	// $obj = get_category_by_slug('learn-to-lead-podcast');
+	// $exclude[] = $obj->term_id;
+	$next_post = get_next_post(true, $exclude);
+	$prev_post = get_previous_post(true, $exclude);
 
 	if ($next_post || $prev_post) : ?>
 
@@ -153,15 +153,18 @@ function empower_pro_blocks_single_post_nav()
 			<div class="posts-nav-prev">
 				<?php if (!empty($prev_post)) : ?>
 					<a href="<?php echo get_permalink($prev_post); ?>">
-						<div class="posts-nav-image">
-							<div class="posts-nav-thumbnail">
-								<?php echo get_the_post_thumbnail($prev_post, 'large'); ?>
+						<?php $image = get_the_post_thumbnail($prev_post, 'large'); ?>
+						<?php if ($image) : ?>
+							<div class="posts-nav-image">
+								<div class="posts-nav-thumbnail">
+									<?php echo $image; ?>
+								</div>
 							</div>
-						</div>
+						<?php endif; ?>
 						<div class="posts-nav-title">
 							<span>
 								<ion-icon name="arrow-back-outline"></ion-icon>
-								<?php _e('Previous Article', 'empower-pro-blocks') ?>
+								<?php _e('Previous', 'empower-pro-blocks') ?>
 							</span>
 							<h4><?php echo get_the_title($prev_post); ?></h4>
 						</div>
@@ -171,14 +174,17 @@ function empower_pro_blocks_single_post_nav()
 			<div class="posts-nav-next">
 				<?php if (!empty($next_post)) : ?>
 					<a href="<?php echo get_permalink($next_post); ?>">
-						<div class="posts-nav-image">
-							<div class="posts-nav-thumbnail">
-								<?php echo get_the_post_thumbnail($next_post, 'large'); ?>
+						<?php $image = get_the_post_thumbnail($next_post, 'large'); ?>
+						<?php if ($image) : ?>
+							<div class="posts-nav-image">
+								<div class="posts-nav-thumbnail">
+									<?php echo get_the_post_thumbnail($next_post, 'large'); ?>
+								</div>
 							</div>
-						</div>
+						<?php endif; ?>
 						<div class="posts-nav-title">
 							<span>
-								<?php _e('Next Article', 'empower-pro-blocks') ?>
+								<?php _e('Next', 'empower-pro-blocks') ?>
 								<ion-icon name="arrow-forward-outline"></ion-icon>
 							</span>
 							<h4><?php echo get_the_title($next_post); ?></h4>
