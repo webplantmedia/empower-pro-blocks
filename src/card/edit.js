@@ -310,6 +310,7 @@ function CardEdit({
 
 	const imageStyleInnerRules = {
 		...(!imageStyle && imageHeight ? { maxHeight: imageHeight + "px" } : {}),
+		...(!imageStyle && imageHeight ? { minHeight: imageHeight + "px" } : {}),
 	};
 
 	const imageClasses = classnames(
