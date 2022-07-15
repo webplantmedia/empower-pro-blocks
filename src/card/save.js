@@ -162,6 +162,7 @@ export default function save({ attributes }) {
 									value={button1Text}
 									href={button1URL}
 									target={button1LinkTarget}
+									rel={button1LinkTarget && "noopener noreferrer"}
 								/>
 							</div>
 						</div>

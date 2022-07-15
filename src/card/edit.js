@@ -392,6 +392,7 @@ function CardEdit({
 						<div class="wp-block-buttons">
 							<div class="wp-block-button is-style-text">
 								<RichText
+									tagName="a"
 									placeholder={__("Button 1")}
 									value={button1Text}
 									onChange={(value) => setAttributes({ button1Text: value })}
