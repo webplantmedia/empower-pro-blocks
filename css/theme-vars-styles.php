@@ -162,18 +162,13 @@ function empower_pro_blocks_theme_vars_css()
 {
 	$css = empower_pro_blocks_css_vars();
 
-	$handle = 'empower-pro-blocks-main';
-	wp_add_inline_style($handle, $css);
+	wp_add_inline_style('empower-pro-blocks-main', $css);
 }
 
-add_action('enqueue_block_editor_assets', 'empower_pro_blocks_theme_vars_admin_css');
+add_action('enqueue_block_editor_assets', 'empower_pro_blocks_theme_vars_admin_css', 11);
 function empower_pro_blocks_theme_vars_admin_css()
 {
-	add_action('admin_head', 'empower_pro_blocks_inject_theme_vars_admin_css');
-}
-
-function empower_pro_blocks_inject_theme_vars_admin_css()
-{
 	$css = empower_pro_blocks_css_vars();
-	echo '<style type="text/css">' . $css . '</style>';
+
+	wp_add_inline_style('empower-pro-blocks-editor', $css);
 }
