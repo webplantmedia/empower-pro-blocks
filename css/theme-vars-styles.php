@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks.
  *
@@ -16,34 +17,36 @@
  *
  * @since 1.0.0
  */
-function empower_pro_blocks_css_vars() {
+function empower_pro_blocks_css_vars()
+{
 
 	global $empower_pro_blocks_appearance;
 
 	$css = ':root {';
 
-	foreach ( $empower_pro_blocks_appearance as $k => $v ) {
-		if ( $v === '' ) {
-			continue; }
+	foreach ($empower_pro_blocks_appearance as $k => $v) {
+		if ($v === '') {
+			continue;
+		}
 
-		if ( is_array( $v ) ) {
-			foreach ( $v as $kk => $vv ) {
+		if (is_array($v)) {
+			foreach ($v as $kk => $vv) {
 				// if ( $vv === '' ) { continue; }
 
-				if ( is_array( $vv ) ) {
-					if ( $k === 'editor-color-palette' ) {
-						$css .= empower_pro_blocks_css_line( $vv['slug'], $vv['color'], $k );
-					} elseif ( $k === 'editor-font-sizes' ) {
-						$css .= empower_pro_blocks_css_line( $vv['slug'], $vv['size'], $k );
+				if (is_array($vv)) {
+					if ($k === 'editor-color-palette') {
+						$css .= empower_pro_blocks_css_line($vv['slug'], $vv['color'], $k);
+					} elseif ($k === 'editor-font-sizes') {
+						$css .= empower_pro_blocks_css_line($vv['slug'], $vv['size'], $k);
 					}
 				} else {
-					if ( $k === 'vars' ) {
-						$css .= empower_pro_blocks_css_line( $kk, $vv, $k );
+					if ($k === 'vars') {
+						$css .= empower_pro_blocks_css_line($kk, $vv, $k);
 					}
 				}
 			}
 		} else {
-			switch ( $k ) {
+			switch ($k) {
 				case 'content-width':
 				case 'content-width-wide':
 				case 'logo-width':
@@ -52,7 +55,7 @@ function empower_pro_blocks_css_vars() {
 				case 'logo-bottom-spacing':
 				case 'logo-mobile-top-spacing':
 				case 'logo-mobile-bottom-spacing':
-					$css .= empower_pro_blocks_css_line( $k, $v . 'px' );
+					$css .= empower_pro_blocks_css_line($k, $v . 'px');
 					break;
 			}
 		}
@@ -60,21 +63,22 @@ function empower_pro_blocks_css_vars() {
 
 	$css .= '}';
 
-	$css = empower_pro_blocks_compact( $css );
+	$css = empower_pro_blocks_compact($css);
 
 	return $css;
 }
 
-function empower_pro_blocks_css_line( $key, $value, $parent_key = false ) {
+function empower_pro_blocks_css_line($key, $value, $parent_key = false)
+{
 
-	if ( '' === $value ) {
+	if ('' === $value) {
 		return '';
 	}
 
-	$key        = strtolower( str_replace( '_', '-', $key ) );
-	$parent_key = strtolower( str_replace( '_', '-', $parent_key ) );
+	$key        = strtolower(str_replace('_', '-', $key));
+	$parent_key = strtolower(str_replace('_', '-', $parent_key));
 
-	if ( $parent_key ) {
+	if ($parent_key) {
 		return '--epb-' . $parent_key . '-' . $key . ':' . $value . ';';
 	} else {
 		return '--epb-' . $key . ':' . $value . ';';
@@ -153,21 +157,23 @@ function empower_pro_blocks_css_line( $key, $value, $parent_key = false ) {
 	}
 }*/
 
-add_action( 'wp_enqueue_scripts', 'empower_pro_blocks_theme_vars_css' );
-function empower_pro_blocks_theme_vars_css() {
+add_action('wp_enqueue_scripts', 'empower_pro_blocks_theme_vars_css');
+function empower_pro_blocks_theme_vars_css()
+{
 	$css = empower_pro_blocks_css_vars();
 
 	$handle = 'empower-pro-blocks-main';
-	wp_add_inline_style( $handle, $css );
-
+	wp_add_inline_style($handle, $css);
 }
 
-add_action( 'enqueue_block_editor_assets', 'empower_pro_blocks_theme_vars_admin_css' );
-function empower_pro_blocks_theme_vars_admin_css() {
+add_action('enqueue_block_editor_assets', 'empower_pro_blocks_theme_vars_admin_css');
+function empower_pro_blocks_theme_vars_admin_css()
+{
 	add_action('admin_head', 'empower_pro_blocks_inject_theme_vars_admin_css');
 }
 
-function empower_pro_blocks_inject_theme_vars_admin_css() {
+function empower_pro_blocks_inject_theme_vars_admin_css()
+{
 	$css = empower_pro_blocks_css_vars();
-	echo '<style type="text/css">'.$css.'</style>';
+	echo '<style type="text/css">' . $css . '</style>';
 }
