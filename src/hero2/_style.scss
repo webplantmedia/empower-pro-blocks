@@ -2,18 +2,20 @@
 	// padding-bottom: 77px * 2;
 
 	.wp-block-hero2__inner-container {
-		& .wp-block-subhead,
-		& h1,
-		& h2,
-		& h3,
-		& h4,
-		& h5,
-		& h6 {
-			// color: $heading_color !important;
-			font-size: 48px;
+		:not(.hero2-heading-only) {
+			& .wp-block-subhead,
+			& h1,
+			& h2,
+			& h3,
+			& h4,
+			& h5,
+			& h6 {
+				// color: $heading_color !important;
+				font-size: 48px;
 
-			@media screen and ( max-width: $tablet_width ) {
-				font-size: 38px;
+				@media screen and (max-width: $tablet_width) {
+					font-size: 38px;
+				}
 			}
 		}
 
@@ -23,6 +25,22 @@
 
 		.hero2-content {
 			background-color: transparent !important;
+		}
+		.hero2-heading-only {
+			background-color: transparent !important;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.hero2-heading {
+				max-width: 900px;
+				text-align: center;
+				color: #ffffff;
+			}
 		}
 
 		.hero2-content > .wp-block-hero2__inner-content {
@@ -36,11 +54,11 @@
 			border-top-left-radius: $border_radius_medium;
 			border-top-right-radius: $border_radius_medium;
 
-			@media screen and ( max-width: $mobile_width ) {
+			@media screen and (max-width: $mobile_width) {
 				padding-bottom: 50px;
 			}
 
-			@media screen and ( min-width: $ipad_width_1 ) {
+			@media screen and (min-width: $ipad_width_1) {
 				> *,
 				> .h1,
 				> h1,
@@ -54,7 +72,6 @@
 			& > *:first-child {
 				margin-top: 20px;
 			}
-
 		}
 
 		.hero2-content .wp-block-image {
@@ -75,7 +92,7 @@
 		transition: none;
 		display: flex;
 		align-items: flex-end;
-		justify-content: start; 
+		justify-content: start;
 		overflow: visible;
 		position: relative;
 
@@ -98,7 +115,7 @@
 			align-items: center;
 
 			&.grayscale {
-				@include grayscale($hover:false);
+				@include grayscale($hover: false);
 			}
 		}
 
@@ -110,14 +127,14 @@
 			bottom: 0;
 		}
 
-		@media screen and ( min-width: $ipad_width_1 ) {
+		@media screen and (min-width: $ipad_width_1) {
 		}
 
 		> .hero2-content {
 			width: 100%;
 			margin-bottom: -77px;
 
-			@media screen and ( max-width: $mobile_width ) {
+			@media screen and (max-width: $mobile_width) {
 				// margin-bottom: -114px;
 			}
 		}
@@ -148,7 +165,6 @@
 				display: flex;
 
 				.wp-block-button {
-
 					&.is-style-text.icon {
 						display: flex;
 						align-items: center;
@@ -169,25 +185,24 @@
 					margin-right: 20px;
 				}
 
-				@media screen and ( max-width: $mobile_width ) {
+				@media screen and (max-width: $mobile_width) {
 					display: block;
 
 					&.wp-block-buttons .wp-block-button {
 						display: block;
 						margin-left: 0;
 					}
-
 				}
 
-				@media screen and ( max-width: $ipad_width ) {
+				@media screen and (max-width: $ipad_width) {
 				}
 
-				@media screen and ( max-width: $mobile_width ) {
+				@media screen and (max-width: $mobile_width) {
 					height: 114px;
 				}
 			}
 
-			@media screen and ( max-width: $ipad_width ) {
+			@media screen and (max-width: $ipad_width) {
 				margin-top: 0;
 				margin-left: 5%;
 				margin-right: 5%;
@@ -203,22 +218,22 @@
 			}
 		}
 
-		@media screen and ( max-width: $ipad_width ) {
+		@media screen and (max-width: $ipad_width) {
 		}
 
-		@media screen and ( max-width: $mobile_width ) {
+		@media screen and (max-width: $mobile_width) {
 		}
 
-		@media screen and ( max-height: 600px ) {
+		@media screen and (max-height: 600px) {
 			height: 500px;
 		}
 
-		@media screen and ( max-width: $ipad_width ) {
+		@media screen and (max-width: $ipad_width) {
 			height: 550px !important;
 			min-height: 0;
 		}
 
-		@media screen and ( max-width: $mobile_width ) {
+		@media screen and (max-width: $mobile_width) {
 			height: 550px !important;
 			min-height: 0;
 		}
@@ -271,7 +286,6 @@
 	}
 
 	.cd-headline.clip .cd-words-wrapper::after {
-
 		/* line */
 		content: "";
 		position: absolute;
@@ -367,34 +381,35 @@
 
 	&.hero-content-hidden {
 		.wp-block-hero2__inner-container {
-			@media screen and ( max-height: 600px ) {
+			@media screen and (max-height: 600px) {
 				height: 350px !important;
 				min-height: 0;
 			}
 
-			@media screen and ( max-width: $ipad_width ) {
+			@media screen and (max-width: $ipad_width) {
 				height: 350px !important;
 				min-height: 0;
 			}
 
-			@media screen and ( max-width: $mobile_width ) {
+			@media screen and (max-width: $mobile_width) {
 				height: 350px !important;
 				min-height: 0;
 			}
 		}
 	}
-
 }
 
 .admin-bar {
-	.wp-block-empower-pro-blocks-hero2 .wp-block-hero2__inner-wrap .wp-block-hero2__inner-container {
+	.wp-block-empower-pro-blocks-hero2
+		.wp-block-hero2__inner-wrap
+		.wp-block-hero2__inner-container {
 		$height: $nav_height + 32px + 77px;
 		height: calc((100vh) - #{$height});
 
-		@media screen and ( max-width: $ipad_width ) {
+		@media screen and (max-width: $ipad_width) {
 		}
 
-		@media screen and ( max-width: $sticky_admin_bar_width ) {
+		@media screen and (max-width: $sticky_admin_bar_width) {
 		}
 	}
 }
@@ -405,7 +420,7 @@
 	z-index: 50;
 	left: -320px;
 
-	@media only screen and ( max-width: $ipad_width ) {
+	@media only screen and (max-width: $ipad_width) {
 		display: none;
 	}
 }
@@ -416,7 +431,7 @@
 	z-index: 100;
 	right: -260px;
 
-	@media only screen and ( max-width: $ipad_width ) {
+	@media only screen and (max-width: $ipad_width) {
 		display: none;
 	}
 }

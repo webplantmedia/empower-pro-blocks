@@ -38,6 +38,7 @@ export default function save({ attributes }) {
 		leftPillColor,
 		rightPillColor,
 		showContent,
+		showTitle,
 		dimRatio,
 		leftPillDimRatio,
 		rightPillDimRatio,
@@ -110,6 +111,15 @@ export default function save({ attributes }) {
 						)}
 					</div>
 					<div className={overlayClasses}></div>
+					{!showContent && showTitle && (
+						<div className="hero2-heading-only">
+							<RichText.Content
+								tagName="h1"
+								className="hero2-heading"
+								value={heading}
+							/>
+						</div>
+					)}
 					{showContent && (
 						<div className="hero2-content">
 							<div className="wp-block-hero2__inner-content">
