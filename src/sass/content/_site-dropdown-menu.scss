@@ -860,9 +860,10 @@
 	// color: #32325d
 }
 .globalNav .hasDropdown {
-	cursor: pointer;
+	cursor: default;
+	// cursor: pointer;
 
-	&.active {
+	/*&.active {
 		> span {
 			&::after {
 				opacity: 1;
@@ -884,7 +885,7 @@
 			right: -7px;
 			transition: 0.4s;
 		}
-	}
+	}*/
 }
 .globalNav .item-home h1 {
 	line-height: 50px;

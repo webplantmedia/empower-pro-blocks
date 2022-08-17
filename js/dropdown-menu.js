@@ -66,7 +66,7 @@ function globalNavDropdowns(e) {
 				t.startCloseTimeout();
 			}),
 			e.addEventListener(n.click, function (e) {
-				// e.preventDefault();
+				e.preventDefault();
 			});
 	}),
 		this.dropdownContainer.addEventListener(n.end, function (e) {
