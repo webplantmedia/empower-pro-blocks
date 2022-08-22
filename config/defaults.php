@@ -171,6 +171,24 @@ nav-font-text-transform: uppercase;
 nav-font-style: normal;
 nav-height: 94px;
 
+nav-submenu-font-family: "Source Sans Pro",sans-serif;
+nav-submenu-font-size: 17px;
+nav-submenu-font-weight: 400;
+nav-submenu-font-weight-bold: 700;
+nav-submenu-font-line-height: 1.5;
+nav-submenu-font-letter-spacing: normal;
+nav-submenu-text-transform: none;
+nav-submenu-font-style: normal;
+nav-submenu-font-description-size: 15px;
+
+accent-font-family: "Source Sans Pro", sans-serif;;
+accent-font-weight: 400;
+accent-font-line-height: 1.3;
+accent-font-letter-spacing: 10px;
+accent-font-text-transform: uppercase;
+accent-font-style: normal;
+accent-font-size: 18px;
+
 border-radius-large: 50px;
 border-radius-medium: 14px;
 border-radius: 4px;

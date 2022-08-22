@@ -156,35 +156,6 @@ function empower_pro_blocks_remove_genesis_metaboxes($_genesis_theme_settings_pa
 	remove_meta_box('genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main');
 }
 
-add_filter('genesis_attr_site-header', 'empower_pro_blocks_add_class');
-// Add extra class to content
-function empower_pro_blocks_add_class($attributes)
-{
-	$attributes['class'] = $attributes['class'] . ' globalNav noDropdownTransition';
-	// $attributes['class'] = $attributes['class']. ' globalNav overlayActive dropdownActive';
-	return $attributes;
-}
-
-add_filter('nav_menu_link_attributes', 'empower_pro_blocks_menu_atts', 10, 3);
-function empower_pro_blocks_menu_atts($atts, $item, $args)
-{
-	// inspect $item
-	if ('primary' === $args->theme_location) {
-		$href = $atts['href'];
-		if (substr($href, 0, 1) === '#') {
-			$data_dropdown = ltrim($href, '#');
-			$atts['data-dropdown'] = $data_dropdown;
-			$class = 'hasDropdown';
-			if (isset($atts['class'])) {
-				$class = " " . $atts['class'];
-			}
-			$atts['class'] = $class;
-		}
-	}
-
-	return $atts;
-}
-
 add_action('genesis_header', 'empower_pro_blocks_site_header_background', 1);
 function empower_pro_blocks_site_header_background()
 {
@@ -192,96 +163,6 @@ function empower_pro_blocks_site_header_background()
 
 	$html .= '<div id="site-header-background" class="site-header-background">';
 	$html .= '</div>';
-
-	echo $html;
-}
-
-add_action('genesis_header', 'empower_pro_blocks_do_nav_submenu', 12);
-/**
- * Reduces the secondary navigation menu to one level depth.
- *
- * @since 1.0.0
- *
- * @param array $args The WP navigation menu arguments.
- * @return array The modified menu arguments.
- */
-function empower_pro_blocks_do_nav_submenu()
-{
-	global $empower_pro_blocks_appearance;
-
-	$id = $empower_pro_blocks_appearance['mega-menu'];
-
-	if (!$id) {
-		return;
-	}
-
-	$post = get_post($id);
-
-	if (!$post) {
-		return;
-	}
-
-	$html = '';
-
-	$html .= '<div id="dropdown-root" class="dropdownRoot">';
-	$html .= '<div class="dropdownBackground" style="transform: translateX(452px) scaleX(0.707692) scaleY(1.1075);">';
-	$html .= '<div class="alternateBackground" style="transform: translateY(255.53px);"></div>';
-	$html .= '</div>';
-	$html .= '<div class="dropdownArrow" style="transform: translateX(636px) rotate(45deg);"></div>';
-	$html .= '<div class="dropdownContainer" style="transform: translateX(452px); width: 368px; height: 443px;">';
-
-	$content = $post->post_content;
-	$content = do_blocks($content);
-	$content = do_shortcode($content);
-	$html .= $content;
-
-	$html .= '</div>';
-	$html .= '</div>';
-
-	echo $html;
-}
-
-add_action('genesis_header', 'empower_pro_blocks_do_mobile_menu', 12);
-/**
- * Reduces the secondary navigation menu to one level depth.
- *
- * @since 1.0.0
- *
- * @param array $args The WP navigation menu arguments.
- * @return array The modified menu arguments.
- */
-function empower_pro_blocks_do_mobile_menu()
-{
-	global $empower_pro_blocks_appearance;
-
-	$mobile_menu_id = $empower_pro_blocks_appearance['mobile-menu'];
-
-	if (!$mobile_menu_id) {
-		return;
-	}
-
-	$post = get_post($mobile_menu_id);
-
-	if (!$post) {
-		return;
-	}
-
-	$html = '';
-
-	$html .= '<div class="navSection mobile">';
-	$html .= '<button class="menu-toggle burger-menu" aria-expanded="false" aria-pressed="false" id="genesis-mobile-nav-primary"><span class="flex-wrap"><span class="line-1"></span><span class="line-2"></span><span class="line-3"></span></span></button>';
-	$html .= '<div class="popup">';
-	$html .= '<div class="popupContainer">';
-
-	$content = $post->post_content;
-	$content = do_blocks($content);
-	$content = do_shortcode($content);
-	$html .= $content;
-
-	$html .= '</div>';
-	$html .= '</div>';
-	$html .= '</div>';
-
 
 	echo $html;
 }

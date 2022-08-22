@@ -751,15 +751,15 @@
 .globalNav li a {
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
-	color: $text_color;
+	// color: var(--wp--custom--defaulttext-color);
 	-webkit-transition: color 0.1s;
 	transition: color 0.1s;
 }
-@media only screen and (min-width: $tablet_width_1) {
-	#master .globalNav li a:hover {
-		color: $dark_text_color;
-	}
-}
+// @media only screen and (min-width: $tablet_width_1) {
+// #master .globalNav li a:hover {
+// color: var(--wp--custom--darktext-color);
+// }
+// }
 .globalNav > .container-lg {
 	padding: 0;
 }
@@ -860,32 +860,7 @@
 	// color: #32325d
 }
 .globalNav .hasDropdown {
-	cursor: default;
-	// cursor: pointer;
-
-	/*&.active {
-		> span {
-			&::after {
-				opacity: 1;
-				right: 0;
-			}
-		}
-	}
-
-	> span {
-		display: flex;
-		align-items: center;
-		&::after {
-			@include ionicon;
-			content: "\f125";
-			font-size: $nav_font_size * 0.8;
-			margin-left: 7px;
-			position: absolute;
-			opacity: 0;
-			right: -7px;
-			transition: 0.4s;
-		}
-	}*/
+	// cursor: default;
 }
 .globalNav .item-home h1 {
 	line-height: 50px;
@@ -938,7 +913,7 @@
 }
 .globalNav .dropdownBackground {
 	background: #fff;
-	border-radius: 4px;
+	border-radius: var(--epb-vars-border-radius);
 	overflow: hidden;
 	box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
 		0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -966,7 +941,7 @@
 .globalNav .alternateBackground {
 	right: 0;
 	height: 1000px;
-	background: $body_background_color_two;
+	background: var(--wp--custom--altbackground-color);
 }
 .globalNav .dropdownArrow {
 	top: -6px;
@@ -1045,10 +1020,10 @@
 	left: 0;
 	min-width: 300px;
 }
-.globalNav .dropdownRoot .dropdownContent.oneColumn.largeColumn {
-	max-width: 500px;
-	min-width: 500px;
-}
+// .globalNav .dropdownRoot .dropdownContent.oneColumn.largeColumn {
+// max-width: 500px;
+// min-width: 500px;
+// }
 .globalNav .dropdownRoot .dropdownContent.oneColumn.smallColumn {
 	max-width: 300px;
 	min-width: 300px;
@@ -1073,12 +1048,12 @@
 			margin-right: 15px;
 			width: 20px;
 			height: 20px;
-			font-size: $heading_font_size_h4;
+			font-size: var(--epb-vars-heading-font-size-h4);
 			text-align: center;
 			margin-left: 0;
 
 			&:before {
-				color: $text_color;
+				color: var(--wp--custom--defaulttext-color);
 			}
 		}
 
@@ -1088,7 +1063,7 @@
 			&:hover {
 				i {
 					&:before {
-						color: $dark_text_color !important;
+						color: var(--wp--custom--darktext-color) !important;
 					}
 				}
 			}
@@ -1118,9 +1093,9 @@
 		}
 		.linkGroup:last-child {
 			width: 350px;
-			background-color: $body_background_color_two;
-			border-top-right-radius: $border_radius;
-			border-bottom-right-radius: $border_radius;
+			background-color: var(--wp--custom--altbackground-color);
+			border-top-right-radius: var(--epb-vars-border-radius);
+			border-bottom-right-radius: var(--epb-vars-border-radius);
 		}
 
 		&.threeColumns {
@@ -1160,13 +1135,13 @@
 }
 .globalNav .linkTitle {
 	margin: 0;
-	font-family: $nav_font_family;
-	font-size: $nav_font_size + 3;
-	font-weight: $nav_font_weight;
-	line-height: $nav_font_line_height;
-	// letter-spacing: $nav_font_letter_spacing;
-	// text-transform: $nav_font_text_transform;
-	font-style: $nav_font_style;
+	font-family: var(--nav-submenu-font-family);
+	font-size: var(--nav-submenu-font-size);
+	font-weight: var(--nav-submenu-font-weight);
+	line-height: var(--nav-submenu-font-line-height);
+	// letter-spacing: var(--nav-submenu-font-letter-spacing);
+	// text-transform: var(--nav-submenu-font-text-transform);
+	font-style: var(--nav-submenu-font-style);
 	// color: #6772e5;
 	// font-size: 16px;
 	// line-height: 22px;
@@ -1177,7 +1152,7 @@
 .globalNav .linkSub {
 	font-size: 15px;
 	line-height: 22px;
-	color: $gray_text_color;
+	color: var(--gray-text-color);
 	margin: 5px 0 0;
 	display: block;
 }
@@ -1187,17 +1162,17 @@
 	transition: color 0.1s;
 }
 .globalNav .linkGroupTitle {
-	@include h4-alt;
+	// @include h4-small;
 	margin-bottom: 30px;
 	padding: 0;
 	font-size: 15px;
 }
 .globalNav .linkContainer:hover .linkTitle,
 .globalNav .linkTitle:hover {
-	color: $dark_text_color !important;
+	color: var(--wp--custom--darktext-color) !important;
 }
 .globalNav .linkContainer:hover .linkSub {
-	color: $dark_text_color !important;
+	color: var(--wp--custom--darktext-color) !important;
 }
 .globalNav .hover-fillDark,
 .globalNav .hover-fillLight {
@@ -1599,16 +1574,16 @@
 		padding-right: 5%;
 	}
 
-	.linkGroup:first-child {
-		padding-top: 20px;
+	.dropdownContent:first-child > .linkGroup:first-child {
+		// padding-top: 20px;
 	}
 
 	.linkGroup + .linkGroup {
-		padding-top: 0;
+		// padding-top: 0;
 	}
 	.linkGroup:last-child {
-		padding-top: 20px;
-		border-top: 2px solid $body_background_color_two;
+		// padding-top: 20px;
+		// border-top: 2px solid var(--wp--custom--altbackground-color);
 	}
 }
 .globalNav .popupContainer {
@@ -1682,9 +1657,9 @@
 	display: block;
 	margin-left: 5%;
 	margin-right: 5%;
-	font-weight: $nav_font_weight;
-	border-radius: $button_radius;
-	background-color: $dark_text_color;
+	font-weight: var(--nav-font-weight);
+	border-radius: var(--button-radius);
+	background-color: var(--wp--custom--darktext-color);
 	color: #fff;
 	margin-bottom: 30px;
 
@@ -1694,7 +1669,7 @@
 	padding: 0 5% 20px 5%;
 }
 .globalNav .mobileProducts h3 {
-	@include h4-alt;
+	// @include h4-small;
 	padding: 0;
 	margin: 20px 0 20px 0;
 }

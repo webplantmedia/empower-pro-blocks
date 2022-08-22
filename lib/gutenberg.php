@@ -130,8 +130,6 @@ function empower_pro_blocks_enqueue_scripts()
 
 	wp_enqueue_script('empower-pro-blocks-slider-js', EMPOWER_PRO_BLOCKS_URL . 'js/slider.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
 
-	wp_enqueue_script('empower-pro-blocks-dropdown-menu-js', EMPOWER_PRO_BLOCKS_URL . 'js/dropdown-menu.js', array('jquery'), EMPOWER_PRO_BLOCKS_VERSION, true);
-
 	wp_enqueue_style('ionicons', $empower_pro_blocks_appearance['icons-url'], array(), null);
 	wp_enqueue_script('ionicons', $empower_pro_blocks_appearance['icons-js-url'], array(), null, true);
 	wp_enqueue_script('ionicons-esm', $empower_pro_blocks_appearance['icons-esm-js-url'], array(), null, true);

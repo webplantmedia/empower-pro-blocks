@@ -59,6 +59,7 @@ require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/class-empower-pro-blocks-upgrade.php'
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/theme-defaults.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/admin/dashboard.php';
 require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/shortcodes.php';
+require_once EMPOWER_PRO_BLOCKS_DIR . 'lib/mega-menu.php';
 
 // Includes Customizer CSS.
 require_once EMPOWER_PRO_BLOCKS_DIR . 'css/theme-vars-styles.php';
