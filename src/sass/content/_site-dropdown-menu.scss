@@ -860,7 +860,35 @@
 	// color: #32325d
 }
 .globalNav .hasDropdown {
-	// cursor: default;
+	cursor: default;
+}
+
+.globalNav .has-menu-link .hasDropdown {
+	cursor: pointer;
+
+	&.active {
+		> span {
+			&::after {
+				opacity: 1;
+				right: 0;
+			}
+		}
+	}
+
+	> span {
+		display: flex;
+		align-items: center;
+		&::after {
+			@include ionicon;
+			content: "\f125";
+			font-size: $nav_font_size * 0.8;
+			margin-left: 7px;
+			position: absolute;
+			opacity: 0;
+			right: -7px;
+			transition: 0.4s;
+		}
+	}
 }
 .globalNav .item-home h1 {
 	line-height: 50px;

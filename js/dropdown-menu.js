@@ -67,12 +67,22 @@ function globalNavDropdowns(e) {
 			}),
 			e.addEventListener(n.click, function (e) {
 				e.preventDefault();
-				/*if (Strut.touch.isSupported) {
+
+				if (!e.currentTarget.parentNode.classList.contains("has-menu-link")) {
+					return true;
+				}
+
+				if (Strut.touch.isSupported) {
 					var isActive = e.currentTarget.classList.contains("active");
+
 					if (!isActive) {
-						// window.location.href =
+						window.location.href = e.currentTarget.href;
 					}
-				}*/
+
+					return true;
+				}
+
+				window.location.href = e.currentTarget.href;
 			});
 	}),
 		this.dropdownContainer.addEventListener(n.end, function (e) {
