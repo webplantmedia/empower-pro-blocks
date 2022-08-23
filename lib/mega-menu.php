@@ -24,7 +24,7 @@ function empower_pro_blocks_mega_menu_wp()
 		add_action('wp_enqueue_scripts', 'empower_pro_blocks_mega_menu_scripts');
 		add_action('genesis_header', 'empower_pro_blocks_do_nav_submenu', 13);
 		add_filter('wp_nav_menu_args', 'empower_pro_blocks_mega_menu_args');
-		add_filter('genesis_superfish_enabled', '__return_true');
+		add_filter('genesis_superfish_enabled', '__return_false');
 		add_filter('genesis_attr_site-header', 'empower_pro_blocks_add_class');
 		add_filter('nav_menu_link_attributes', 'empower_pro_blocks_menu_atts', 10, 3);
 	}
