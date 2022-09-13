@@ -106,12 +106,12 @@
 			}
 		}
 
-		@media only screen and ( max-width: $ipad_width ) {
+		@media only screen and (max-width: $ipad_width) {
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 60px 60px;
 		}
 
-		@media only screen and ( max-width: $tablet_width ) {
+		@media only screen and (max-width: $tablet_width) {
 			grid-template-columns: 1fr;
 			grid-gap: 60px 60px;
 		}
@@ -121,13 +121,13 @@
 		> .wp-block-footer__inner-container {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 
-			@media only screen and ( max-width: $ipad_width ) {
+			@media only screen and (max-width: $ipad_width) {
 				grid-template-columns: 1fr 1fr 1fr;
 			}
-			@media only screen and ( max-width: $tablet_width ) {
+			@media only screen and (max-width: $tablet_width) {
 				grid-template-columns: 1fr 1fr;
 			}
-			@media only screen and ( max-width: $mobile_width ) {
+			@media only screen and (max-width: $mobile_width) {
 				grid-template-columns: 1fr;
 			}
 		}
@@ -137,18 +137,17 @@
 		> .wp-block-footer__inner-container {
 			grid-template-columns: 3fr 7fr;
 
-			@media only screen and ( max-width: $ipad_width ) {
+			@media only screen and (max-width: $ipad_width) {
 				grid-template-columns: 3fr 7fr;
 			}
-			@media only screen and ( max-width: $tablet_width ) {
+			@media only screen and (max-width: $tablet_width) {
 				grid-template-columns: 3fr 7fr;
 			}
-			@media only screen and ( max-width: $mobile_width ) {
+			@media only screen and (max-width: $mobile_width) {
 				grid-template-columns: 1fr;
 			}
 		}
 	}
-
 
 	$sizes: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0;
 	@each $size in $sizes {
@@ -160,7 +159,7 @@
 
 		&.r-footer-gap-#{$size} {
 			> div.wp-block-footer__inner-container {
-				@media only screen and ( max-width: $ipad_width ) {
+				@media only screen and (max-width: $ipad_width) {
 					grid-gap: #{$size}px #{$size}px;
 				}
 			}
@@ -174,7 +173,7 @@
 
 		&.r-footer-row-gap-#{$size} {
 			> div.wp-block-footer__inner-container {
-				@media only screen and ( max-width: $ipad_width ) {
+				@media only screen and (max-width: $ipad_width) {
 					grid-row-gap: #{$size}px !important;
 				}
 			}
@@ -215,7 +214,7 @@
 
 			li {
 				list-style-type: none;
-				
+
 				&::before {
 					display: none;
 				}
@@ -227,6 +226,30 @@
 			margin-bottom: 40px;
 
 			@include widget-title;
+
+			a {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+				position: relative;
+				padding-right: 14px;
+				justify-content: flex-start;
+
+				&:hover::after {
+					right: -3px;
+				}
+
+				&::after {
+					@include ionicon;
+					content: "\f125";
+					font-size: $nav_font_size * 0.8;
+					margin-left: 7px;
+					position: relative;
+					opacity: 1;
+					right: 0px;
+					transition: right 0.4s;
+				}
+			}
 		}
 	}
 }

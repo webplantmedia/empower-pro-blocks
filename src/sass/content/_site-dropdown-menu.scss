@@ -1648,6 +1648,35 @@
 .globalNav .popup a {
 	display: block;
 }
+.globalNav .popup {
+	h4,
+	h3 {
+		a {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			position: relative;
+			padding-right: 14px;
+			justify-content: flex-start;
+			color: $heading_color;
+
+			&:hover::after {
+				right: -3px;
+			}
+
+			&::after {
+				@include ionicon;
+				content: "\f125";
+				font-size: 70%;
+				margin-left: 7px;
+				position: relative;
+				opacity: 1;
+				right: 0px;
+				transition: right 0.4s;
+			}
+		}
+	}
+}
 .globalNav .popupCloseButton {
 	position: absolute;
 	right: 0;
