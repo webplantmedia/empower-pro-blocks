@@ -155,6 +155,7 @@ button-font-letter-spacing: 2px;
 button-font-weight: 400;
 button-font-style: normal;
 button-font-size: 14px;
+button-font-size-small: 13px;
 button-font-text-transform: uppercase;
 button-font-text-decoration: none;
 button-font-line-height: 1;
