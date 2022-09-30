@@ -202,8 +202,7 @@ form-input-height: 49px;
 slider-arrow-size: 40px;
 slider-pagination-size: 14px;
 
-margin-bottom: 40px;
-margin-bottom-mobile: 30px;
+bottom-spacing: 40px;
 ';
 
 return array(
