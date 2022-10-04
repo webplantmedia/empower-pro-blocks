@@ -233,16 +233,16 @@ function empower_pro_blocks_get_css($appearance)
 			color: $primary_color;
 		}
 
-		html .archive-pagination .active a,
-		html .archive-pagination .active a:focus,
-		html .archive-pagination .active a:hover {
+		html #master .archive-pagination .active a,
+		html #master .archive-pagination .active a:focus,
+		html #master .archive-pagination .active a:hover {
 			border-color: $secondary_color;
 			background-color: $secondary_color;
 			color: $secondary_contrast_color;
 		}
 
-		html .archive-pagination a:focus,
-		html .archive-pagination a:hover {
+		html #master .archive-pagination a:focus,
+		html #master .archive-pagination a:hover {
 			border-color: $secondary_color;
 			background-color: $secondary_color;
 			color: $secondary_contrast_color;
