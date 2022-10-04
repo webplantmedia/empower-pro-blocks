@@ -1,4 +1,13 @@
 .editor-styles-wrapper {
 	@include body-font;
 	margin: 0;
+
+	.p-strong,
+	.p-type {
+		@include body-font;
+	}
+
+	.p-strong {
+		font-weight: $body_font_weight_bold;
+	}
 }
