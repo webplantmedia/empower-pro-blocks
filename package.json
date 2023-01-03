@@ -14,7 +14,7 @@
 		"start": "wp-scripts start & sass --watch src:css --style compressed"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^12.5.0"
+		"@wordpress/scripts": "^25.1.0"
 	},
 	"dependencies": {
 		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
