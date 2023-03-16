@@ -13,7 +13,7 @@ function empower_pro_blocks_fetch_all_site_elements()
 	return array("" => "None") + $list;
 }
 
-function gallop_create_post_type()
+function empower_pro_blocks_create_post_type()
 {
 
 	$args = apply_filters(
@@ -50,4 +50,4 @@ function gallop_create_post_type()
 	register_post_type('site_element', $args);
 }
 
-add_action('init', 'gallop_create_post_type');
+add_action('init', 'empower_pro_blocks_create_post_type');
