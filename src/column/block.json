@@ -1,4 +1,6 @@
 {
+	"apiVersion": 2,
+	"version": "1.0",
 	"name": "empower-pro-blocks/column",
 	"category": "empower-pro-blocks",
 	"parent": [
@@ -6,8 +8,7 @@
 		"empower-pro-blocks/grid",
 		"empower-pro-blocks/footer"
 	],
-	"attributes": {
-	},
+	"attributes": {},
 	"supports": {
 		"reusable": false,
 		"html": false

@@ -1,4 +1,5 @@
 .wp-block-empower-pro-blocks-iconline {
+	width: 100%;
 	.wp-block-iconline__text-wrap {
 		width: 100%;
 	}
@@ -36,7 +37,7 @@
 			width: 18px;
 			margin-top: 2px;
 
-			@media screen and ( max-width: $mobile_width ) {
+			@media screen and (max-width: $mobile_width) {
 				height: auto !important;
 			}
 		}
@@ -67,7 +68,7 @@
 	.icon-text {
 		margin-top: 0 !important;
 		margin-bottom: 0 !important;
-		
+
 		a {
 			text-decoration: none;
 

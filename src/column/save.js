@@ -1,21 +1,20 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
 
 /**
  * WordPress dependencies
  */
-import { InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 
-export default function save( { attributes } ) {
-	const wrapperClasses = classnames(
-		'empower-pro-blocks-column',
-	);
+export default function save() {
+	const blockProps = useBlockProps.save({});
+
+	const innerBlocksProps = useInnerBlocksProps.save({});
 
 	return (
-		<div className={ wrapperClasses }>
-			<InnerBlocks.Content />
+		<div {...blockProps}>
+			<div {...innerBlocksProps} />
 		</div>
 	);
 }
