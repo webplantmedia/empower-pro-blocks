@@ -28,6 +28,8 @@ export default function save({ attributes }) {
 		iconUrl,
 		iconHeight,
 		heading,
+		headingFontSize,
+		headingFontSizeMobile,
 		text,
 		button1Text,
 		button2Text,
@@ -155,7 +157,11 @@ export default function save({ attributes }) {
 								)}
 								<RichText.Content
 									tagName="h1"
-									className="hero2-heading mb-20"
+									className={classnames("hero2-heading mb-20", {
+										["has-" + headingFontSize + "-font-size"]: headingFontSize,
+										["has-" + headingFontSizeMobile + "-mobile-font-size"]:
+											headingFontSizeMobile,
+									})}
 									value={heading}
 								/>
 								<RichText.Content

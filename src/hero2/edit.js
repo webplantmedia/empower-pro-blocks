@@ -25,6 +25,7 @@ import { rawShortcut, displayShortcut } from "@wordpress/keycodes";
 import {
 	BlockControls,
 	RichText,
+	FontSizePicker,
 	InspectorControls,
 	MediaUpload,
 	MediaReplaceFlow,
@@ -82,6 +83,8 @@ function HeroEdit({
 		focalPoint,
 		iconHeight,
 		showContent,
+		headingFontSize,
+		headingFontSizeMobile,
 		showTitle,
 		url,
 		iconUrl,
@@ -249,6 +252,26 @@ function HeroEdit({
 								/>
 							</Fragment>
 						)}
+						<Fragment>
+							<h4>Desktop</h4>
+							<FontSizePicker
+								label="Heading Font Size"
+								value={headingFontSize}
+								onChange={(value) => {
+									setAttributes({ headingFontSize: value });
+								}}
+							/>
+						</Fragment>
+						<Fragment>
+							<h4>Mobile</h4>
+							<FontSizePicker
+								label="Heading Font Size (Mobile)"
+								value={headingFontSizeMobile}
+								onChange={(value) => {
+									setAttributes({ headingFontSizeMobile: value });
+								}}
+							/>
+						</Fragment>
 					</PanelBody>
 				)}
 				<PanelColorGradientSettings
@@ -483,11 +506,15 @@ function HeroEdit({
 									</div>
 									<RichText
 										tagName="h1"
-										className="hero2-heading mb-20"
+										className={classnames("hero2-heading mb-20", {
+											["has-" + headingFontSize + "-font-size"]:
+												headingFontSize,
+											["has-" + headingFontSizeMobile + "-mobile-font-size"]:
+												headingFontSizeMobile,
+										})}
 										placeholder={__("Heading", "empower-pro-blocks")}
 										onChange={(value) => setAttributes({ heading: value })}
 										value={heading}
-										withoutInteractiveFormatting
 									/>
 									<RichText
 										tagName="p"

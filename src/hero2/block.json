@@ -5,6 +5,12 @@
 		"url": {
 			"type": "string"
 		},
+		"headingFontSize": {
+			"type": "string"
+		},
+		"headingFontSizeMobile": {
+			"type": "string"
+		},
 		"id": {
 			"type": "number"
 		},
