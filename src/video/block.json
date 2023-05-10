@@ -22,7 +22,7 @@
 		},
 		"topMobileHeight": {
 			"type": "number",
-			"default": 150 
+			"default": 150
 		},
 		"bottomHeight": {
 			"type": "number",
@@ -30,7 +30,7 @@
 		},
 		"bottomMobileHeight": {
 			"type": "number",
-			"default": 140 
+			"default": 140
 		},
 		"mobileColumnSpacing": {
 			"type": "number",
@@ -40,6 +40,9 @@
 			"type": "string",
 			"default": "/images/browser-ui-top.svg"
 		},
+		"topVideoLogosId": {
+			"type": "number"
+		},
 		"topVideoLogos": {
 			"type": "string",
 			"default": "/images/hero-video-logos1.svg"
@@ -47,6 +50,21 @@
 		"bottomVideoLogos": {
 			"type": "string",
 			"default": "/images/SalesLoft.svg"
+		},
+		"bottomVideoLogosId": {
+			"type": "number"
+		},
+		"url1": {
+			"type": "string"
+		},
+		"id1": {
+			"type": "number"
+		},
+		"url2": {
+			"type": "string"
+		},
+		"id2": {
+			"type": "number"
 		}
 	}
 }

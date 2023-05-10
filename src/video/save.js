@@ -30,6 +30,8 @@ export default function save({ attributes }) {
 		url,
 		backgroundImageColor,
 		topVideoImage,
+		topVideoLogosId,
+		bottomVideoLogosId,
 		topVideoLogos,
 		bottomVideoLogos,
 		topHeight,
@@ -65,8 +67,14 @@ export default function save({ attributes }) {
 	});
 
 	const topVideoImageUrl = empower_pro_blocks.plugins_url + topVideoImage;
-	const topVideoLogosUrl = empower_pro_blocks.plugins_url + topVideoLogos;
-	const bottomVideoLogosUrl = empower_pro_blocks.plugins_url + bottomVideoLogos;
+
+	const topVideoLogosUrl = topVideoLogosId
+		? topVideoLogos
+		: empower_pro_blocks.plugins_url + topVideoLogos;
+
+	const bottomVideoLogosUrl = bottomVideoLogosId
+		? bottomVideoLogos
+		: empower_pro_blocks.plugins_url + bottomVideoLogos;
 
 	return (
 		<div className={classes}>

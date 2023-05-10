@@ -99,7 +99,9 @@ function VideoEdit({
 		url,
 		topVideoImage,
 		topVideoLogos,
+		topVideoLogosId,
 		bottomVideoLogos,
+		bottomVideoLogosId,
 		topHeight,
 		topMobileHeight,
 		bottomHeight,
@@ -175,6 +177,76 @@ function VideoEdit({
 									setAttributes({
 										url: undefined,
 										id: undefined,
+									})
+								}
+							>
+								{__("Clear Media")}
+							</Button>
+						</PanelRow>
+					)}
+				</PanelBody>
+				<PanelBody title={__("Top Logos")}>
+					<PanelRow>
+						<MediaUpload
+							id={topVideoLogosId}
+							allowedTypes={["image"]}
+							onSelect={(media) =>
+								setAttributes({
+									topVideoLogos: media.url,
+									topVideoLogosId: media.id,
+								})
+							}
+							render={({ open }) => (
+								<Button onClick={open} isSecondary={true}>
+									Select Image
+								</Button>
+							)}
+						/>
+					</PanelRow>
+					{!!topVideoLogos && (
+						<PanelRow>
+							<Button
+								isSecondary
+								className=""
+								onClick={() =>
+									setAttributes({
+										topVideoLogos: "/images/hero-video-logos1.svg",
+										topVideoLogosId: undefined,
+									})
+								}
+							>
+								{__("Clear Media")}
+							</Button>
+						</PanelRow>
+					)}
+				</PanelBody>
+				<PanelBody title={__("Bottom Logos")}>
+					<PanelRow>
+						<MediaUpload
+							id={bottomVideoLogosId}
+							allowedTypes={["image"]}
+							onSelect={(media) =>
+								setAttributes({
+									bottomVideoLogos: media.url,
+									bottomVideoLogosId: media.id,
+								})
+							}
+							render={({ open }) => (
+								<Button onClick={open} isSecondary={true}>
+									Select Image
+								</Button>
+							)}
+						/>
+					</PanelRow>
+					{!!bottomVideoLogos && (
+						<PanelRow>
+							<Button
+								isSecondary
+								className=""
+								onClick={() =>
+									setAttributes({
+										bottomVideoLogos: "/images/SalesLoft.svg",
+										bottomVideoLogosId: undefined,
 									})
 								}
 							>
@@ -273,8 +345,12 @@ function VideoEdit({
 	});
 
 	const topVideoImageUrl = empower_pro_blocks.plugins_url + topVideoImage;
-	const topVideoLogosUrl = empower_pro_blocks.plugins_url + topVideoLogos;
-	const bottomVideoLogosUrl = empower_pro_blocks.plugins_url + bottomVideoLogos;
+	const topVideoLogosUrl = topVideoLogosId
+		? topVideoLogos
+		: empower_pro_blocks.plugins_url + topVideoLogos;
+	const bottomVideoLogosUrl = bottomVideoLogosId
+		? bottomVideoLogos
+		: empower_pro_blocks.plugins_url + bottomVideoLogos;
 
 	return (
 		<>
