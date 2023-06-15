@@ -53,7 +53,11 @@
 	@include button-outline;
 }
 
-.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wp-block-button .added_to_cart,
+.wc-block-grid
+	.wc-block-grid__products
+	.wc-block-grid__product
+	.wp-block-button
+	.added_to_cart,
 .wp-block-button .wp-block-button__link {
 	@include button;
 }
@@ -102,5 +106,4 @@
 
 div.wp-block-buttons .wp-block-button {
 	margin: 0;
-	margin-right: 20px;
 }

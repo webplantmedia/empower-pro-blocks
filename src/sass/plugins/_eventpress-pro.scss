@@ -15,10 +15,15 @@
 	.entry-meta,
 	.entry-read-more,
 	.entry-title {
-		text-align: center !important;
+		text-align: left !important;
 	}
 
 	.entry-meta {
+	}
+
+	.entry-header {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
 	}
 
 	.entry-read-more {
@@ -28,7 +33,7 @@
 	.entry-title {
 		@include heading;
 		@include h2;
-		margin-bottom: 0;
+		margin-bottom: 10px;
 	}
 
 	.entry-content {
@@ -47,10 +52,10 @@
 		flex-flow: column;
 
 		.entry-title {
-			font-size: $heading_font_size_h3;
+			font-size: 26px;
 
 			@media only screen and (max-width: $ipad_width) {
-				font-size: $heading_font_size_h3_ipad;
+				font-size: 22px;
 			}
 		}
 	}

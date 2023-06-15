@@ -17,11 +17,10 @@
 	// box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05)
 }
 
-@mixin box-shadow( $weight: 'default' ) {
-	@if ( $weight == 'heavy' ) {
+@mixin box-shadow($weight: "default") {
+	@if ($weight == "heavy") {
 		box-shadow: 0 2px 80px 0 rgba(0, 0, 0, 0.2);
-	}
-	@else {
+	} @else {
 		box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.07);
 	}
 
@@ -169,7 +168,10 @@
 @mixin background-2x($path, $ext: "png") {
 	background-image: url($path + "." + $ext);
 
-	@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+	@media all and (-webkit-min-device-pixel-ratio: 1.5),
+		all and (-o-min-device-pixel-ratio: 3/2),
+		all and (min--moz-device-pixel-ratio: 1.5),
+		all and (min-device-pixel-ratio: 1.5) {
 		background-image: url($path + "-2x." + $ext);
 	}
 }
@@ -182,7 +184,13 @@
 	background-image: -moz-linear-gradient(left, $from $start, $to $stop);
 
 	/* Safari 4+, Chrome 1+ */
-	background-image: -webkit-gradient(linear, left top, right top, color-stop($start, $from), color-stop($stop, $to));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop($start, $from),
+		color-stop($stop, $to)
+	);
 
 	/* Safari 5.1+, Chrome 10+ */
 	background-image: -webkit-linear-gradient(left, $from $start, $to $stop);
@@ -208,7 +216,13 @@
 	background-image: -moz-linear-gradient(top, $from $start, $to $stop);
 
 	/* Safari 4+, Chrome 1+ */
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop($start, $from), color-stop($stop, $to));
+	background-image: -webkit-gradient(
+		linear,
+		0 0,
+		0 100%,
+		color-stop($start, $from),
+		color-stop($stop, $to)
+	);
 
 	/* Safari 5.1+, Chrome 10+ */
 	background-image: -webkit-linear-gradient(top, $from $start, $to $stop);
@@ -282,7 +296,7 @@
 	line-height: $heading_font_line_height;
 	padding-right: 10%;
 
-	@media only screen and (min-width: ( $ipad_width + 1 ) ) {
+	@media only screen and (min-width: ( $ipad_width + 1 )) {
 		&.alignwide,
 		&.alignwide {
 			padding-right: 10% !important;
@@ -375,6 +389,7 @@
 	background-color: transparent !important;
 	border: 2px solid $border_color;
 	color: $button_font_text_color;
+	padding: calc(0.667em + 4px) 1.333em;
 }
 
 @mixin button-text() {
@@ -416,7 +431,6 @@
 		bottom: 0;
 		left: 0;
 		border-radius: 99em;
-
 	}
 
 	&:hover::after {
@@ -507,7 +521,7 @@
 	}
 }
 
-@mixin grayscale( $hover: true ) {
+@mixin grayscale($hover: true) {
 	filter: grayscale(100%);
 	@include animation-all;
 
@@ -519,7 +533,14 @@
 }
 
 @mixin hex-crop() {
-	-webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+	-webkit-clip-path: polygon(
+		25% 5%,
+		75% 5%,
+		100% 50%,
+		75% 95%,
+		25% 95%,
+		0% 50%
+	);
 	clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 	object-fit: cover;
 	width: 100%;
