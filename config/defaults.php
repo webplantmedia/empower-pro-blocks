@@ -12,14 +12,14 @@
 $css_vars = '';
 
 $colors = array(
-	'primary-color'   => '#ed5652',
-	'secondary-color' => '#ff7226',
+	'primary-color'   => '#e54844',
+	'secondary-color' => '#f58449',
 	'third-color' => '#a44e9e',
 	'fourth-color' => '#d43c31',
 	'fifth-color' => '#42b97c',
-	'sixth-color' => '#942940',
+	'sixth-color' => '#8d021f',
 	'seventh-color' => '#176e99',
-	'eighth-color' => '#ffcc2a',
+	'eighth-color' => '#ffc629',
 	'defaulttext-color' => '#777777',
 	'darktext-color' => '#222222',
 	'heading-color' => '#333333',
