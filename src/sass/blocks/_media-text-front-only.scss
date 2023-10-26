@@ -9,30 +9,30 @@ body #genesis-content .wp-block-media-text {
 			margin-bottom: 0;
 		}
 
-		@media only screen and (max-width: $tablet_width ) {
+		@media only screen and (max-width: $tablet_width) {
 			padding: 0 0 0 10%;
 		}
 
-		@media only screen and (max-width: 600px ) {
+		@media only screen and (max-width: 600px) {
 			padding: 0;
 		}
 	}
 
 	&.has-media-on-the-right {
 		.wp-block-media-text__content {
-			padding: 0 20% 0 0;
+			padding: 0 0 0 0;
 
-			@media only screen and (max-width: $tablet_width ) {
-				padding: 0 10% 0 0;
+			@media only screen and (max-width: $tablet_width) {
+				padding: 0 0 0 0;
 			}
 		}
 	}
 
-	@media only screen and (max-width: $ipad_width ) {
+	@media only screen and (max-width: $ipad_width) {
 		padding: 0;
 	}
 
-	@media only screen and (max-width: 600px ) {
+	@media only screen and (max-width: 600px) {
 		.wp-block-media-text__media,
 		.wp-block-media-text__content {
 			margin-bottom: $margin_bottom;
