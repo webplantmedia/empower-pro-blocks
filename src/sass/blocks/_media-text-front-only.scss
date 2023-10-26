@@ -20,10 +20,10 @@ body #genesis-content .wp-block-media-text {
 
 	&.has-media-on-the-right {
 		.wp-block-media-text__content {
-			padding: 0 0 0 0;
+			padding: 0 20% 0 0;
 
 			@media only screen and (max-width: $tablet_width) {
-				padding: 0 0 0 0;
+				padding: 0 10% 0 0;
 			}
 		}
 	}
