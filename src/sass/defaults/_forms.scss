@@ -363,6 +363,13 @@ input[type="checkbox"] {
 	background-color: #222 !important;
 	border-color: #222 !important;
 	cursor: pointer;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-style: normal;
 
 	&:hover {
 		background-color: #333 !important;
