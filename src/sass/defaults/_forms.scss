@@ -1,3 +1,24 @@
+#gallop .wp-block-search .wp-block-search__input,
+#gallop
+	div.wpforms-container-full
+	.wpforms-form
+	.wpforms-field-stripe-credit-card-cardnumber,
+#gallop .hbspt-form .hs-form input[type="date"],
+#gallop .hbspt-form .hs-form input[type="datetime"],
+#gallop .hbspt-form .hs-form input[type="datetime-local"],
+#gallop .hbspt-form .hs-form input[type="email"],
+#gallop .hbspt-form .hs-form input[type="month"],
+#gallop .hbspt-form .hs-form input[type="number"],
+#gallop .hbspt-form .hs-form input[type="password"],
+#gallop .hbspt-form .hs-form input[type="range"],
+#gallop .hbspt-form .hs-form input[type="search"],
+#gallop .hbspt-form .hs-form input[type="tel"],
+#gallop .hbspt-form .hs-form input[type="text"],
+#gallop .hbspt-form .hs-form input[type="time"],
+#gallop .hbspt-form .hs-form input[type="url"],
+#gallop .hbspt-form .hs-form input[type="week"],
+#gallop .hbspt-form .hs-form select,
+#gallop .hbspt-form .hs-form textarea,
 #master div.wpforms-container-full .wpforms-form input[type="date"],
 #master div.wpforms-container-full .wpforms-form input[type="datetime"],
 #master div.wpforms-container-full .wpforms-form input[type="datetime-local"],
@@ -38,6 +59,22 @@ textarea {
 }
 
 #master .white-form-fields {
+	.hbspt-form .hs-form input[type="date"],
+	.hbspt-form .hs-form input[type="datetime"],
+	.hbspt-form .hs-form input[type="datetime-local"],
+	.hbspt-form .hs-form input[type="email"],
+	.hbspt-form .hs-form input[type="month"],
+	.hbspt-form .hs-form input[type="number"],
+	.hbspt-form .hs-form input[type="password"],
+	.hbspt-form .hs-form input[type="range"],
+	.hbspt-form .hs-form input[type="search"],
+	.hbspt-form .hs-form input[type="tel"],
+	.hbspt-form .hs-form input[type="text"],
+	.hbspt-form .hs-form input[type="time"],
+	.hbspt-form .hs-form input[type="url"],
+	.hbspt-form .hs-form input[type="week"],
+	.hbspt-form .hs-form select,
+	.hbspt-form .hs-form textarea,
 	.wpforms-confirmation-container-full,
 	.wpforms-form input[type="date"],
 	.wpforms-form input[type="datetime"],
@@ -87,6 +124,10 @@ textarea {
 	}
 }
 
+#gallop .hbspt-form .hs-form input,
+#gallop .hbspt-form .hs-form label,
+#gallop .hbspt-form .hs-form select,
+#gallop .hbspt-form .hs-form button,
 #master div.wpforms-container-full .wpforms-form input,
 #master div.wpforms-container-full .wpforms-form label,
 #master div.wpforms-container-full .wpforms-form select,
@@ -94,19 +135,33 @@ textarea {
 	height: auto;
 }
 
-#master .mc4wp-form label,
+#gallop
+	.hbspt-form
+	#gallop
+	.hs-form
+	#gallop
+	.hs-form-field
+	#gallop
+	.hs-form-booleancheckbox
+	#master
+	.mc4wp-form
+	label,
 #master div.wpforms-container-full .wpforms-form .wpforms-field-label {
 	font-size: $body_font_size_xsmall;
 	line-height: $body_font_line_height;
 	font-weight: $body_font_weight_bold;
 }
 
+#gallop .hbspt-form .hs-form .hs-form-field > label,
 #master div.wpforms-container-full .wpforms-form .wpforms-field-sublabel {
 	font-size: $body_font_size_xsmall;
 	line-height: $body_font_line_height;
 	font-weight: $body_font_weight;
 }
 
+#gallop .hbspt-form .hs-form .hs-error-msgs label,
+#gallop .hbspt-form .hs-form .hs-error-msgs .hs-error-msg,
+#gallop .hbspt-form .hs-form .hs-error-msgs,
 #master div.wpforms-container-full .wpforms-form label.wpforms-error {
 	font-size: $body_font_size_xsmall;
 	line-height: $body_font_line_height;
@@ -114,6 +169,31 @@ textarea {
 
 fieldset {
 	border-color: $border_color;
+}
+
+#gallop legend.hs-field-desc {
+	font-size: $body_font_size_xsmall;
+	margin-bottom: 5px;
+}
+
+#gallop .hbspt-form .hs-form .hs-error-msgs {
+	display: block;
+	color: var(--wp--preset--color--vivid-red) !important;
+	font-size: $body_font_size_xsmall;
+	float: none;
+	cursor: default;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		label {
+			font-weight: $body_font_weight;
+		}
+	}
 }
 
 input,
@@ -126,6 +206,7 @@ select option {
 }
 
 select,
+body#gallop .hbspt-form .hs-form select,
 body div.wpforms-container-full .wpforms-form select,
 body .select2-container .select2-selection--single,
 body .select2-choice {
@@ -236,6 +317,8 @@ input[type="search"] {
 	-webkit-appearance: none;
 }
 
+#gallop .hbspt-form .hs-form input[type="checkbox"],
+#gallop .hbspt-form .hs-form input[type="radio"],
 #master div.wpforms-container-full .wpforms-form input[type="checkbox"],
 #master div.wpforms-container-full .wpforms-form input[type="radio"],
 input[type="checkbox"],
@@ -244,6 +327,8 @@ input[type="radio"] {
 	width: auto;
 }
 
+#gallop .hbspt-form .hs-form input[type="checkbox"],
+#gallop .hbspt-form .hs-form input[type="radio"],
 #master div.wpforms-container-full .wpforms-form input[type="checkbox"],
 #master div.wpforms-container-full .wpforms-form input[type="radio"],
 input[type="checkbox"],
@@ -253,6 +338,7 @@ input[type="radio"] {
 	}
 }
 
+#gallop .hbspt-form .hs-form input[type="checkbox"],
 #master div.wpforms-container-full .wpforms-form input[type="checkbox"],
 #master input[type="checkbox"],
 input[type="checkbox"] {
@@ -271,6 +357,7 @@ input[type="checkbox"] {
 	top: -2px;
 }
 
+#gallop .hbspt-form .hs-form input[type="checkbox"],
 #master .list-wrap input[type="checkbox"] {
 	top: 0;
 }
