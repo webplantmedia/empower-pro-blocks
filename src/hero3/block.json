@@ -197,7 +197,7 @@
 			"type": "string",
 			"source": "html",
 			"default": "Our Simulations",
-			"selector": "a.button3"
+			"selector": "a.button4"
 		},
 		"button4URL": {
 			"type": "string",
