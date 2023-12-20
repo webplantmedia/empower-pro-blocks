@@ -53,8 +53,14 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 	}
 	html .has-#{$color}-svg-fill-color svg path,
 	html .button-icon-before.has-#{$color}-icon-color svg path,
+	html .wp-block-hero3__outer-wrapper .has-#{$color}-right-pill-color svg path,
 	html .wp-block-hero2__outer-wrapper .has-#{$color}-right-pill-color svg path,
 	html .wp-block-hero__outer-wrapper .has-#{$color}-right-pill-color svg path,
+	html
+		.wp-block-empower-pro-blocks-hero3
+		.has-#{$color}-left-pill-color
+		svg
+		path,
 	html
 		.wp-block-empower-pro-blocks-hero2
 		.has-#{$color}-left-pill-color
@@ -67,6 +73,15 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		path {
 		fill: var(--wp--custom--#{$color}-color) !important;
 	}
+	html
+		.wp-block-empower-pro-blocks-hero3.has-#{$color}-hero3-color
+		.wp-block-hero3__inner-content
+		.wp-block-button::after {
+		background-color: var(--wp--custom--#{$color}-color) !important;
+	}
+	html
+		.wp-block-empower-pro-blocks-hero3.has-#{$color}-hero3-color
+		.wp-block-hero3__inner-content,
 	html
 		.wp-block-empower-pro-blocks-hero2.has-#{$color}-hero2-color
 		.wp-block-hero2__inner-content,
@@ -163,6 +178,9 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		.wp-block-empower-pro-blocks-card.has-#{$color}-card-color
 		.wp-block-card__inner-content,
 	html
+		.hero3-content.has-#{$color}-background-color
+		> .wp-block-group__inner-container,
+	html
 		.hero2-content.has-#{$color}-background-color
 		> .wp-block-group__inner-container,
 	html
@@ -192,6 +210,11 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		color: var(--wp--custom--#{$color}-color) !important;
 	}
 
+	html
+		.wp-block-empower-pro-blocks-hero3.has-#{$color}-hero3-color
+		.wp-block-hero3__inner-content
+		.wp-block-button.is-style-text
+		svg,
 	html
 		.wp-block-empower-pro-blocks-hero2.has-#{$color}-hero2-color
 		.wp-block-hero2__inner-content
@@ -320,6 +343,7 @@ $colors: primary, secondary, third, fourth, fifth, sixth, seventh, eighth,
 		.wp-block-button__link.has-#{$color}-background-color:hover::after {
 		background-color: var(--wp--custom--#{$color}-color-bright) !important;
 	}
+	html .has-#{$color}-hero3-color .hero3-tags span,
 	html .has-#{$color}-hero2-color .hero2-tags span,
 	html .has-#{$color}-color .hero-tags span {
 		color: var(--wp--custom--#{$color}-color) !important;

@@ -1,0 +1,219 @@
+{
+	"name": "empower-pro-blocks/hero3",
+	"category": "empower-pro-blocks",
+	"attributes": {
+		"typewriterSearch": {
+			"type": "string",
+			"default": "with Impact"
+		},
+		"typewriterReplace": {
+			"type": "string",
+			"default": "that Engages\nwith Results"
+		},
+		"url": {
+			"type": "string"
+		},
+		"id": {
+			"type": "number"
+		},
+		"url2": {
+			"type": "string"
+		},
+		"id2": {
+			"type": "number"
+		},
+		"url3": {
+			"type": "string"
+		},
+		"id3": {
+			"type": "number"
+		},
+		"button2IconUrl": {
+			"type": "string"
+		},
+		"butotn2IconId": {
+			"type": "number"
+		},
+		"button3IconUrl": {
+			"type": "string"
+		},
+		"butotn3IconId": {
+			"type": "number"
+		},
+		"button4IconUrl": {
+			"type": "string"
+		},
+		"butotn4IconId": {
+			"type": "number"
+		},
+		"dimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"leftPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"rightPillDimRatio": {
+			"type": "number",
+			"default": 50
+		},
+		"overlayColor": {
+			"type": "string"
+		},
+		"heroColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"leftPillColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"rightPillColor": {
+			"type": "string"
+		},
+		"backgroundType": {
+			"type": "string",
+			"default": "image"
+		},
+		"focalPoint": {
+			"type": "object"
+		},
+		"focalPoint2": {
+			"type": "object"
+		},
+		"focalPoint3": {
+			"type": "object"
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"default": "Leadership Development <span class=\"typewriter\" data-replace=\"that Engages|with Results\">with Impact</span>",
+			"selector": ".hero-heading"
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"default": "Develop your employees with our award-winning empower-pro-blocks programs and immersive business simulations.",
+			"selector": ".hero-text"
+		},
+		"button1Text": {
+			"type": "string",
+			"source": "html",
+			"default": "About Us",
+			"selector": "a.button1"
+		},
+		"button1URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button1",
+			"attribute": "href"
+		},
+		"button1LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button1",
+			"attribute": "target"
+		},
+		"button2Icon": {
+			"type": "string",
+			"default": "stop"
+		},
+		"button2IconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"button2TopText": {
+			"type": "string",
+			"source": "html",
+			"default": "For Me",
+			"selector": ".button2TopText"
+		},
+		"button2Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Programs",
+			"selector": "a.button2"
+		},
+		"button2URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button2",
+			"attribute": "href"
+		},
+		"button2LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button2",
+			"attribute": "target"
+		},
+		"button3Icon": {
+			"type": "string",
+			"default": "play"
+		},
+		"button3IconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"button3TopText": {
+			"type": "string",
+			"source": "html",
+			"default": "For My Team",
+			"selector": ".button3TopText"
+		},
+		"button3Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Simulations",
+			"selector": "a.button3"
+		},
+		"button3URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button3",
+			"attribute": "href"
+		},
+		"button3LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button3",
+			"attribute": "target"
+		},
+		"button4Icon": {
+			"type": "string",
+			"default": "play"
+		},
+		"button4IconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"button4TopText": {
+			"type": "string",
+			"source": "html",
+			"default": "For My Organization",
+			"selector": ".button4TopText"
+		},
+		"button4Text": {
+			"type": "string",
+			"source": "html",
+			"default": "Our Simulations",
+			"selector": "a.button3"
+		},
+		"button4URL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button3",
+			"attribute": "href"
+		},
+		"button4LinkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.button3",
+			"attribute": "target"
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	}
+}

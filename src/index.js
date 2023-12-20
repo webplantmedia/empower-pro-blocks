@@ -1,41 +1,42 @@
 /**
  * WordPress dependencies
  */
-import '@wordpress/core-data';
-import '@wordpress/block-editor';
+import "@wordpress/core-data";
+import "@wordpress/block-editor";
 import {
 	registerBlockType,
 	unstable__bootstrapServerSideBlockDefinitions,
-} from '@wordpress/blocks';
+} from "@wordpress/blocks";
 
 /**
  * Internal dependencies
  */
-import * as styles from './styles.js';
+import * as styles from "./styles.js";
 // import * as sidebar from './sidebar.js';
-import * as hero from './hero';
-import * as hero2 from './hero2';
-import * as icontext from './icontext';
-import * as iconline from './iconline';
-import * as spacer from './spacer';
-import * as video from './video';
-import * as background from './background';
-import * as filter from './filter';
-import * as column from './column';
-import * as grid from './grid';
-import * as card from './card';
-import * as profile from './profile';
-import * as footer from './footer';
-import * as schedule from './schedule';
-import * as scheduler from './scheduler';
-import * as scheduleItem from './schedule-item';
-import * as container from './container';
-import * as maxWidth from './max-width';
-import * as filterSelector from './filter-selector';
-import * as filterContent from './filter-content';
-import * as videoPlayer from './video-player';
-import * as accordion from './accordion';
-import * as accordionItem from './accordion-item';
+import * as hero from "./hero";
+import * as hero2 from "./hero2";
+import * as hero3 from "./hero3";
+import * as icontext from "./icontext";
+import * as iconline from "./iconline";
+import * as spacer from "./spacer";
+import * as video from "./video";
+import * as background from "./background";
+import * as filter from "./filter";
+import * as column from "./column";
+import * as grid from "./grid";
+import * as card from "./card";
+import * as profile from "./profile";
+import * as footer from "./footer";
+import * as schedule from "./schedule";
+import * as scheduler from "./scheduler";
+import * as scheduleItem from "./schedule-item";
+import * as container from "./container";
+import * as maxWidth from "./max-width";
+import * as filterSelector from "./filter-selector";
+import * as filterContent from "./filter-content";
+import * as videoPlayer from "./video-player";
+import * as accordion from "./accordion";
+import * as accordionItem from "./accordion-item";
 
 /**
  * Function to register an individual block.
@@ -43,15 +44,15 @@ import * as accordionItem from './accordion-item';
  * @param {Object} block The block to be registered.
  *
  */
-const registerBlock = ( block ) => {
-	if ( ! block ) {
+const registerBlock = (block) => {
+	if (!block) {
 		return;
 	}
 	const { settings, metadata, name } = block;
-	if ( metadata ) {
-		unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
+	if (metadata) {
+		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
 	}
-	registerBlockType( name, settings );
+	registerBlockType(name, settings);
 };
 
 [
@@ -60,6 +61,7 @@ const registerBlock = ( block ) => {
 	// Register all remaining core blocks.
 	hero,
 	hero2,
+	hero3,
 	icontext,
 	iconline,
 	spacer,
@@ -81,4 +83,4 @@ const registerBlock = ( block ) => {
 	videoPlayer,
 	accordion,
 	accordionItem,
-].forEach( registerBlock );
+].forEach(registerBlock);
