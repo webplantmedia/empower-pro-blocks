@@ -3,7 +3,7 @@
 function empower_pro_blocks_fetch_all_site_elements()
 {
 	$list = array();
-	$args = array('post_type' => 'site_element');
+	$args = array('post_type' => 'site_element', 'posts_per_page' => -1);
 	$posts = get_posts($args);
 
 	foreach ($posts as $post) {
