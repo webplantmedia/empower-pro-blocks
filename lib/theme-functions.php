@@ -50,9 +50,10 @@ function empower_pro_blocks_do_nav()
 			]
 		);
 		$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+		$menu = str_replace('nav-primary-home', 'nav-primary nav-primary-home', $menu);
 	} else if (is_page_template('template-blocks-mba.php')) {
 		// Do nothing if menu not supported.
-		if (!genesis_nav_menu_supported('primary-home') || !has_nav_menu('primary-home')) {
+		if (!genesis_nav_menu_supported('primary-mba') || !has_nav_menu('primary-mba')) {
 			return;
 		}
 
@@ -68,6 +69,7 @@ function empower_pro_blocks_do_nav()
 			]
 		);
 		$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+		$menu = str_replace('nav-primary-mba', 'nav-primary nav-primary-mba', $menu);
 	} else {
 
 		// Do nothing if menu not supported.
@@ -88,8 +90,6 @@ function empower_pro_blocks_do_nav()
 		);
 	}
 
-	$menu = str_replace('nav-primary-home', 'nav-primary nav-primary-home', $menu);
-	$menu = str_replace('nav-primary-mba', 'nav-primary nav-primary-mba', $menu);
 	echo $menu;
 }
 

@@ -656,6 +656,9 @@ function empower_pro_blocks_add_menu_primary_cta()
 		if ($theme_location === 'primary-cta-home') {
 			$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
 			$menu = str_replace('nav-primary-cta-home', 'nav-primary-cta nav-primary-cta-home', $menu);
+		}
+		if ($theme_location === 'primary-cta-mba') {
+			$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
 			$menu = str_replace('nav-primary-cta-mba', 'nav-primary-cta nav-primary-cta-mba', $menu);
 		}
 		echo $menu;
