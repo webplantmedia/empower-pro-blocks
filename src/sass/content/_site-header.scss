@@ -246,12 +246,27 @@
 	}
 }
 
-.nav-primary-cta {
+.nav-primary-auth-widget {
 	position: fixed;
 	z-index: 110;
 	right: 50px;
 
 	@media only screen and (max-width: $desktop_width) {
 		right: 20px;
+	}
+	@media only screen and (max-width: $ipad_width) {
+		right: calc(50px + 5%);
+	}
+	@media only screen and (max-width: $mobile_width) {
+		right: calc(40px + 5%);
+	}
+}
+.nav-primary-cta {
+	position: fixed;
+	z-index: 110;
+	right: 165px;
+
+	@media only screen and (max-width: $desktop_width) {
+		right: 120px;
 	}
 }

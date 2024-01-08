@@ -133,5 +133,8 @@ function empower_pro_blocks_enqueue_scripts()
 	wp_enqueue_style('ionicons', $empower_pro_blocks_appearance['icons-url'], array(), null);
 	wp_enqueue_script('ionicons', $empower_pro_blocks_appearance['icons-js-url'], array(), null, true);
 	wp_enqueue_script('ionicons-esm', $empower_pro_blocks_appearance['icons-esm-js-url'], array(), null, true);
+	// wp_enqueue_script('abilitie-widgets-runtime', "https://widgets.abilitie.com/runtime.js", array(), null, true);
+	// wp_enqueue_script('abilitie-widgets-polyfill', "https://widgets.abilitie.com/polyfills.js", array(), null, true);
+	// wp_enqueue_script('abilitie-widgets-main', "https://widgets.abilitie.com/main.js", array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'empower_pro_blocks_enqueue_scripts');
