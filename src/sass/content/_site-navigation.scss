@@ -453,6 +453,9 @@
 }
 
 #auth-widget > button {
+	min-height: 38px;
+}
+/*#auth-widget > button {
 	padding: 10px 20px;
 	height: auto !important;
 	font-weight: $nav_font_weight;
@@ -474,7 +477,7 @@
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-}
+}*/
 
 .nav-primary .genesis-nav-menu li.moved-item-nav-primary-cta a,
 .nav-primary-cta .genesis-nav-menu li > a {
