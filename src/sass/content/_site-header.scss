@@ -261,7 +261,23 @@
 		right: calc(50px + 5%);
 	}
 }
-.nav-primary-cta {
+.cta-wrapper {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	gap: 0px;
+	z-index: 110;
+	right: 50px;
+
+	@media only screen and (max-width: $desktop_width) {
+		right: 20px;
+	}
+
+	@media only screen and (max-width: $ipad_width) {
+		right: calc(5% + 50px);
+	}
+}
+/*.nav-primary-cta {
 	position: fixed;
 	z-index: 110;
 	right: 165px;
@@ -269,4 +285,4 @@
 	@media only screen and (max-width: $desktop_width) {
 		right: 120px;
 	}
-}
+}*/

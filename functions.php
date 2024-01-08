@@ -661,9 +661,8 @@ function empower_pro_blocks_add_menu_primary_cta()
 			$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
 			$menu = str_replace('nav-primary-cta-mba', 'nav-primary-cta nav-primary-cta-mba', $menu);
 		}
-		$abilitie_widget = '<div class="nav-primary-auth-widget"><div id="auth-widget"></div></div>';
-		echo $menu . $abilitie_widget;
-		// echo $menu;
+		$abilitie_widget = '<div id="auth-widget"></div>';
+		echo '<div class="cta-wrapper">' . $menu . $abilitie_widget .  '</div>';
 	}
 }
 

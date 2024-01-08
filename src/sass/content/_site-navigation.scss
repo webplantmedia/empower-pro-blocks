@@ -453,7 +453,12 @@
 }
 
 #auth-widget > button {
+	margin-left: 20px;
 	min-height: 38px;
+
+	@media only screen and (max-width: $desktop_width) {
+		margin-left: 10px;
+	}
 }
 /*#auth-widget > button {
 	padding: 10px 20px;
