@@ -29,9 +29,74 @@ if (function_exists('genesis_register_sidebar')) {
 	);
 }
 
+function empower_pro_blocks_do_nav()
+{
+
+	if (is_page_template('template-blocks-home.php')) {
+		// Do nothing if menu not supported.
+		if (!genesis_nav_menu_supported('primary-home') || !has_nav_menu('primary-home')) {
+			return;
+		}
+
+		$class = 'menu genesis-nav-menu menu-primary';
+		if (genesis_superfish_enabled()) {
+			$class .= ' js-superfish';
+		}
+
+		$menu = genesis_get_nav_menu(
+			[
+				'theme_location' => 'primary-home',
+				'menu_class'     => $class,
+			]
+		);
+		$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+	} else if (is_page_template('template-blocks-mba.php')) {
+		// Do nothing if menu not supported.
+		if (!genesis_nav_menu_supported('primary-home') || !has_nav_menu('primary-home')) {
+			return;
+		}
+
+		$class = 'menu genesis-nav-menu menu-primary';
+		if (genesis_superfish_enabled()) {
+			$class .= ' js-superfish';
+		}
+
+		$menu = genesis_get_nav_menu(
+			[
+				'theme_location' => 'primary-mba',
+				'menu_class'     => $class,
+			]
+		);
+		$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+	} else {
+
+		// Do nothing if menu not supported.
+		if (!genesis_nav_menu_supported('primary') || !has_nav_menu('primary')) {
+			return;
+		}
+
+		$class = 'menu genesis-nav-menu menu-primary';
+		if (genesis_superfish_enabled()) {
+			$class .= ' js-superfish';
+		}
+
+		$menu = genesis_get_nav_menu(
+			[
+				'theme_location' => 'primary',
+				'menu_class'     => $class,
+			]
+		);
+	}
+
+	$menu = str_replace('nav-primary-home', 'nav-primary nav-primary-home', $menu);
+	$menu = str_replace('nav-primary-mba', 'nav-primary nav-primary-mba', $menu);
+	echo $menu;
+}
+
+
 // Repositions primary navigation menu.
 remove_action('genesis_after_header', 'genesis_do_nav');
-add_action('genesis_header', 'genesis_do_nav', 12);
+add_action('genesis_header', 'empower_pro_blocks_do_nav', 12);
 
 remove_action('genesis_entry_content', 'genesis_do_post_content');
 add_action('genesis_entry_content', 'empower_pro_blocks_do_post_content');

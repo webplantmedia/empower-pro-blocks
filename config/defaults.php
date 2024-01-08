@@ -242,7 +242,11 @@ return array(
 	'display-banner-desktop'       => 0,
 	'mobile-cta-text'       => 'Contact',
 	'mega-menu'       => '',
+	'mega-menu-home'       => '',
+	'mega-menu-mba'       => '',
 	'mobile-menu'       => '',
+	'mobile-menu-home'       => '',
+	'mobile-menu-mba'       => '',
 	'footer-menu'       => '',
 	'popup'       => '',
 	// Images.

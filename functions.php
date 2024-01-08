@@ -187,6 +187,14 @@ function empower_pro_blocks_secondary_menu_args($args)
 		$args['depth'] = 1;
 	}
 
+	if ('primary-home' === $args['theme_location']) {
+		$args['depth'] = 1;
+	}
+
+	if ('primary-mba' === $args['theme_location']) {
+		$args['depth'] = 1;
+	}
+
 	if ('secondary' === $args['theme_location']) {
 		$args['depth'] = 1;
 	}
@@ -613,10 +621,24 @@ add_action('genesis_header', 'empower_pro_blocks_add_menu_primary_cta', 13);
 function empower_pro_blocks_add_menu_primary_cta()
 {
 	$has_nav = false;
+	$theme_location = 'primary-cta';
 
-	if (has_nav_menu('primary-cta')) {
-		$has_nav = true;
+	if (is_page_template('template-blocks-home.php')) {
+		if (has_nav_menu('primary-cta-home')) {
+			$has_nav = true;
+			$theme_location = 'primary-cta-home';
+		}
+	} else if (is_page_template('template-blocks-mba.php')) {
+		if (has_nav_menu('primary-cta-mba')) {
+			$has_nav = true;
+			$theme_location = 'primary-cta-mba';
+		}
+	} else {
+		if (has_nav_menu('primary-cta')) {
+			$has_nav = true;
+		}
 	}
+
 
 	if ($has_nav) {
 		$class = 'menu genesis-nav-menu menu-primary-cta';
@@ -624,12 +646,19 @@ function empower_pro_blocks_add_menu_primary_cta()
 			$class .= ' js-superfish';
 		}
 
-		genesis_nav_menu(
-			array(
-				'theme_location' => 'primary-cta',
+		$menu = genesis_get_nav_menu(
+			[
+				'theme_location' => $theme_location,
 				'menu_class'     => $class,
-			)
+			]
 		);
+
+		if ($theme_location === 'primary-cta-home') {
+			$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+			$menu = str_replace('nav-primary-cta-home', 'nav-primary-cta nav-primary-cta-home', $menu);
+			$menu = str_replace('nav-primary-cta-mba', 'nav-primary-cta nav-primary-cta-mba', $menu);
+		}
+		echo $menu;
 	}
 }
 

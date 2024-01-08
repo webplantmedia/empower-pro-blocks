@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Empower Pro Blocks child theme.
  *
@@ -34,11 +35,17 @@ return array(
 		'skip-links',
 	),
 	'genesis-menus'         => array(
-		'primary'    => __( 'Header Menu', 'empower-pro-blocks' ),
+		'primary'    => __('Header Menu', 'empower-pro-blocks'),
 		// 'secondary'  => __( 'Footer Menu', 'empower-pro-blocks' ),
 		// 'tertiary'   => __( 'Top Bar Menu', 'empower-pro-blocks' ),
-		'primary-cta' => __( 'Header Menu CTA', 'empower-pro-blocks' ),
-		'mobile-cta' => __( 'Mobile CTA', 'empower-pro-blocks' ),
+		'primary-cta' => __('Header Menu CTA', 'empower-pro-blocks'),
+		'primary-cta-home' => __('Header Menu CTA (Home)', 'empower-pro-blocks'),
+		'primary-cta-mba' => __('Header Menu CTA (MBA)', 'empower-pro-blocks'),
+		'primary-home' => __('Header Menu (Home)', 'empower-pro-blocks'),
+		'primary-mba' => __('Header Menu (12-Week MBA)', 'empower-pro-blocks'),
+		'mobile-cta' => __('Mobile CTA', 'empower-pro-blocks'),
+		'mobile-cta-home' => __('Mobile CTA (Home)', 'empower-pro-blocks'),
+		'mobile-cta-mba' => __('Mobile CTA (MBA)', 'empower-pro-blocks'),
 	),
 	'genesis-structural-wraps' => array(
 		'header',
@@ -48,7 +55,7 @@ return array(
 		'footer-widgets',
 		'footer'
 	),
-	'post-formats' => array( 
+	'post-formats' => array(
 		'link',
 		'audio',
 		'video',

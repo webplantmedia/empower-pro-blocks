@@ -189,6 +189,14 @@ function empower_pro_blocks_mega_menu_args($args)
 		$args['depth'] = 1;
 	}
 
+	if ('primary-home' === $args['theme_location']) {
+		$args['depth'] = 1;
+	}
+
+	if ('primary-mba' === $args['theme_location']) {
+		$args['depth'] = 1;
+	}
+
 	return $args;
 }
 
@@ -212,7 +220,7 @@ function empower_pro_blocks_add_class($attributes)
 function empower_pro_blocks_menu_atts($atts, $item, $args)
 {
 	// inspect $item
-	if ('primary' === $args->theme_location) {
+	if ('primary-home' === $args->theme_location || 'primary-mba' === $args->theme_location || 'primary' === $args->theme_location) {
 		$href = get_post_meta($item->ID, '_menu_item_dropdown_target', true);
 		if (substr($href, 0, 1) === '#') {
 			$data_dropdown = ltrim($href, '#');
@@ -240,7 +248,12 @@ function empower_pro_blocks_do_nav_submenu()
 {
 	global $empower_pro_blocks_appearance;
 
-	$id = $empower_pro_blocks_appearance['mega-menu'];
+	if (is_page_template('template-blocks-home.php'))
+		$id = $empower_pro_blocks_appearance['mega-menu-home'];
+	else if (is_page_template('template-blocks-mba.php'))
+		$id = $empower_pro_blocks_appearance['mega-menu-mba'];
+	else
+		$id = $empower_pro_blocks_appearance['mega-menu'];
 
 	if (!$id) {
 		return;

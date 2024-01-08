@@ -46,6 +46,18 @@ function empower_pro_blocks_customizer_register($wp_customize)
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
+			'nav_menu_locations[primary-home]',
+			array(
+				'selector' => '.nav-primary-home',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'nav_menu_locations[primary-mba]',
+			array(
+				'selector' => '.nav-primary-mba',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
 			'nav_menu_locations[secondary]',
 			array(
 				'selector' => '.nav-secondary',
@@ -161,6 +173,94 @@ function empower_pro_blocks_customizer_register($wp_customize)
 			'settings'    => 'empower_pro_blocks_mobile_menu',
 			'choices'  => $site_element_pages,
 			'default'  => $empower_pro_blocks_defaults['mobile-menu'],
+		)
+	);
+
+	$wp_customize->add_setting(
+		'empower_pro_blocks_mega_menu_home',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_mega_menu_home',
+		array(
+			'label'       => __('Mega Menu (Home)', 'empower-pro-blocks'),
+			'description' => __('Select page with mega menu.', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_menu_settings',
+			'type'        => 'select',
+			'settings'    => 'empower_pro_blocks_mega_menu_home',
+			'choices'  => $site_element_pages,
+			'default'  => $empower_pro_blocks_defaults['mega-menu-home'],
+		)
+	);
+
+	$wp_customize->add_setting(
+		'empower_pro_blocks_mobile_menu_home',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_mobile_menu_home',
+		array(
+			'label'       => __('Mobile Menu (Home', 'empower-pro-blocks'),
+			'description' => __('Select page with mobile menu.', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_menu_settings',
+			'type'        => 'select',
+			'settings'    => 'empower_pro_blocks_mobile_menu_home',
+			'choices'  => $site_element_pages,
+			'default'  => $empower_pro_blocks_defaults['mobile-menu-home'],
+		)
+	);
+
+	$wp_customize->add_setting(
+		'empower_pro_blocks_mega_menu_mba',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_mega_menu_mba',
+		array(
+			'label'       => __('Mega Menu (MBA)', 'empower-pro-blocks'),
+			'description' => __('Select page with mega menu.', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_menu_settings',
+			'type'        => 'select',
+			'settings'    => 'empower_pro_blocks_mega_menu_mba',
+			'choices'  => $site_element_pages,
+			'default'  => $empower_pro_blocks_defaults['mega-menu-mba'],
+		)
+	);
+
+	$wp_customize->add_setting(
+		'empower_pro_blocks_mobile_menu_mba',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_mobile_menu_mba',
+		array(
+			'label'       => __('Mobile Menu (MBA)', 'empower-pro-blocks'),
+			'description' => __('Select page with mobile menu.', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_menu_settings',
+			'type'        => 'select',
+			'settings'    => 'empower_pro_blocks_mobile_menu_mba',
+			'choices'  => $site_element_pages,
+			'default'  => $empower_pro_blocks_defaults['mobile-menu-mba'],
 		)
 	);
 
