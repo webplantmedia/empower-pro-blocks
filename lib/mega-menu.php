@@ -288,13 +288,19 @@ function empower_pro_blocks_do_mobile_menu()
 {
 	global $empower_pro_blocks_appearance;
 
-	$mobile_menu_id = $empower_pro_blocks_appearance['mobile-menu'];
+	if (is_page_template('template-blocks-home.php'))
+		$id = $empower_pro_blocks_appearance['mobile-menu-home'];
+	else if (is_page_template('template-blocks-mba.php'))
+		$id = $empower_pro_blocks_appearance['mobile-menu-mba'];
+	else
+		$id = $empower_pro_blocks_appearance['mobile-menu'];
 
-	if (!$mobile_menu_id) {
+
+	if (!$id) {
 		return;
 	}
 
-	$post = get_post($mobile_menu_id);
+	$post = get_post($id);
 
 	if (!$post) {
 		return;
