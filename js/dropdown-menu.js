@@ -4,41 +4,77 @@
 function globalNavDropdowns(e) {
 	var t = this;
 	this.container = document.querySelector(e);
-	// if ( ! this.container ) {
-	// return;
-	// }
-	(this.root = this.container.querySelector(".site-header > .wrap")),
-		(this.primaryNav = this.root.querySelector(".nav-primary .menu")),
-		(this.primaryNavItem = this.root.querySelector(
-			".nav-primary .menu-item:first-child a"
-		)),
-		(this.secondaryNavItem = this.root.querySelector(
-			".nav-primary-cta .menu .menu-item:first-child a"
-		)),
-		this.checkCollision(),
-		window.addEventListener("load", this.checkCollision.bind(this)),
-		window.addEventListener("resize", this.checkCollision.bind(this)),
-		this.container.classList.add("noDropdownTransition"),
-		(this.dropdownBackground = this.container.querySelector(
-			".dropdownBackground"
-		)),
-		(this.dropdownBackgroundAlt = this.container.querySelector(
-			".alternateBackground"
-		)),
-		(this.dropdownContainer =
-			this.container.querySelector(".dropdownContainer")),
-		(this.dropdownArrow = this.container.querySelector(".dropdownArrow")),
-		(this.dropdownRoots = Strut.queryArray(".hasDropdown", this.root)),
-		(this.dropdownSections = Strut.queryArray(
-			".dropdownSection",
-			this.container
-		).map(function (e) {
-			return {
-				el: e,
-				name: e.getAttribute("data-dropdown"),
-				content: e.querySelector(".dropdownContent"),
-			};
-		}));
+	if (!this.container) {
+		return;
+	}
+
+	this.root = this.container.querySelector(".site-header > .wrap");
+	if (!this.root) {
+		return;
+	}
+
+	this.primaryNav = this.container.querySelector(".nav-primary .menu");
+	if (!this.primaryNav) {
+		return;
+	}
+
+	this.primaryNavItem = this.container.querySelector(
+		".nav-primary .menu-item:first-child a"
+	);
+	if (!this.primaryNavItem) {
+		return;
+	}
+
+	this.secondaryNavItem = this.container.querySelector(
+		".nav-primary-cta .menu .menu-item:first-child a"
+	);
+	if (!this.secondaryNavItem) {
+		return;
+	}
+
+	this.checkCollision();
+	window.addEventListener("load", this.checkCollision.bind(this));
+	window.addEventListener("resize", this.checkCollision.bind(this));
+
+	this.container.classList.add("noDropdownTransition");
+
+	this.dropdownBackground = this.container.querySelector(".dropdownBackground");
+	if (!this.dropdownBackground) {
+		return;
+	}
+
+	this.dropdownBackgroundAlt = this.container.querySelector(
+		".alternateBackground"
+	);
+	if (!this.dropdownBackgroundAlt) {
+		return;
+	}
+
+	this.dropdownContainer = this.container.querySelector(".dropdownContainer");
+	if (!this.dropdownContainer) {
+		return;
+	}
+
+	this.dropdownArrow = this.container.querySelector(".dropdownArrow");
+	if (!this.dropdownArrow) {
+		return;
+	}
+
+	this.dropdownRoots = Strut.queryArray(".hasDropdown", this.root);
+	if (!this.dropdownRoots) {
+		return;
+	}
+
+	this.dropdownSections = Strut.queryArray(
+		".dropdownSection",
+		this.container
+	).map(function (e) {
+		return {
+			el: e,
+			name: e.getAttribute("data-dropdown"),
+			content: e.querySelector(".dropdownContent"),
+		};
+	});
 	var n = window.PointerEvent
 		? {
 				end: "pointerup",
