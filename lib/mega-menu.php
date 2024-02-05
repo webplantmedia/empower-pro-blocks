@@ -248,7 +248,25 @@ function empower_pro_blocks_do_nav_submenu()
 {
 	global $empower_pro_blocks_appearance;
 
-	if (is_page_template('template-blocks-home.php'))
+	if (is_singular('event')) {
+		$id = $empower_pro_blocks_appearance['mega-menu'];
+
+		$post_id = get_the_ID();
+		$category = '';
+		if ($terms = get_the_terms($post_id, 'features')) {
+			foreach ($terms as $term) {
+				if ($term->slug == '12-week-mba') {
+					$category = '12-week-mba';
+				} else if ($term->slug == 'abilitie') {
+					$category = 'abilitie';
+				}
+			}
+		}
+
+		if ($category === '12-week-mba') {
+			$id = $empower_pro_blocks_appearance['mega-menu-mba'];
+		}
+	} else if (is_page_template('template-blocks-home.php'))
 		$id = $empower_pro_blocks_appearance['mega-menu-home'];
 	else if (is_page_template('template-blocks-mba.php'))
 		$id = $empower_pro_blocks_appearance['mega-menu-mba'];
@@ -288,7 +306,26 @@ function empower_pro_blocks_do_mobile_menu()
 {
 	global $empower_pro_blocks_appearance;
 
-	if (is_page_template('template-blocks-home.php'))
+
+	if (is_singular('event')) {
+		$id = $empower_pro_blocks_appearance['mobile-menu'];
+
+		$post_id = get_the_ID();
+		$category = '';
+		if ($terms = get_the_terms($post_id, 'features')) {
+			foreach ($terms as $term) {
+				if ($term->slug == '12-week-mba') {
+					$category = '12-week-mba';
+				} else if ($term->slug == 'abilitie') {
+					$category = 'abilitie';
+				}
+			}
+		}
+
+		if ($category === '12-week-mba') {
+			$id = $empower_pro_blocks_appearance['mobile-menu-mba'];
+		}
+	} else if (is_page_template('template-blocks-home.php'))
 		$id = $empower_pro_blocks_appearance['mobile-menu-home'];
 	else if (is_page_template('template-blocks-mba.php'))
 		$id = $empower_pro_blocks_appearance['mobile-menu-mba'];
