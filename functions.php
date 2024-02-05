@@ -623,7 +623,28 @@ function empower_pro_blocks_add_menu_primary_cta()
 	$has_nav = false;
 	$theme_location = 'primary-cta';
 
-	if (is_page_template('template-blocks-home.php')) {
+	if (is_singular('event')) {
+		if (has_nav_menu('primary-cta')) {
+			$has_nav = true;
+		}
+
+		$post_id = get_the_ID();
+		$category = '';
+		if ($terms = get_the_terms($post_id, 'features')) {
+			foreach ($terms as $term) {
+				if ($term->slug == '12-week-mba') {
+					$category = '12-week-mba';
+				}
+			}
+		}
+
+		if ($category === '12-week-mba') {
+			if (has_nav_menu('primary-cta-mba')) {
+				$has_nav = true;
+				$theme_location = 'primary-cta-mba';
+			}
+		}
+	} else if (is_page_template('template-blocks-home.php')) {
 		if (has_nav_menu('primary-cta-home')) {
 			$has_nav = true;
 			$theme_location = 'primary-cta-home';

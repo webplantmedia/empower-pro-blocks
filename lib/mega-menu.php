@@ -257,8 +257,6 @@ function empower_pro_blocks_do_nav_submenu()
 			foreach ($terms as $term) {
 				if ($term->slug == '12-week-mba') {
 					$category = '12-week-mba';
-				} else if ($term->slug == 'abilitie') {
-					$category = 'abilitie';
 				}
 			}
 		}
@@ -316,8 +314,6 @@ function empower_pro_blocks_do_mobile_menu()
 			foreach ($terms as $term) {
 				if ($term->slug == '12-week-mba') {
 					$category = '12-week-mba';
-				} else if ($term->slug == 'abilitie') {
-					$category = 'abilitie';
 				}
 			}
 		}
