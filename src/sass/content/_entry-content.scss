@@ -5,6 +5,8 @@
 		background-color: var(--epb-vars-altbackground-color);
 		min-height: 100px;
 		text-decoration: none !important;
+		position: relative;
+		z-index: 1;
 		&:hover {
 			background-color: var(--epb-vars-altbackground-color-hover);
 			.epb-banner-button .wp-block-button__link {
@@ -21,6 +23,13 @@
 		// position: relative;
 		// z-index: 101;
 		.wrap {
+			// max-width: none !important;
+			// padding-left: 0 !important;
+			// padding-right: 0 !important;
+			@media only screen and (max-width: $ipad_width) {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
 			display: flex;
 			.epb-banner-image {
 				flex-shrink: 0;
@@ -39,6 +48,10 @@
 				padding-right: 40px;
 				color: var(--epb-vars-defaulttext-color);
 				text-decoration: none !important;
+				strong,
+				p {
+					margin-bottom: 0;
+				}
 				.long-text {
 					display: block;
 					@media only screen and (max-width: $tablet_width) {
