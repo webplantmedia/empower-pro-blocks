@@ -673,6 +673,105 @@ function empower_pro_blocks_customizer_register($wp_customize)
 			$option
 		);
 	}
+
+	// Basic settings section.
+	$wp_customize->add_section(
+		'empower_pro_blocks_banner_settings',
+		array(
+			'title'       => __('Banner Settings', 'empower-pro-blocks'),
+			'panel'       => 'empower_pro_blocks_settings',
+		)
+	);
+
+	// Add single post image setting to the Customizer.
+	$wp_customize->add_setting(
+		'empower_pro_blocks_banner_mba_image',
+		array(
+			'default'           => $empower_pro_blocks_defaults['banner-mba-image'],
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'empower_pro_blocks_banner_mba_image',
+			array(
+				'label'       => __('Banner Image (MBA)', 'empower-pro-blocks'),
+				'section'     => 'empower_pro_blocks_banner_settings',
+				'settings'    => 'empower_pro_blocks_banner_mba_image',
+			)
+		)
+	);
+	$wp_customize->add_setting(
+		'empower_pro_blocks_banner_mba_text',
+		array(
+			'default'           => $empower_pro_blocks_defaults['banner-mba-text'],
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_bannery_mba_text',
+		array(
+			'label'       => __('Banner Text (MBA)', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_banner_settings',
+			'settings'    => 'empower_pro_blocks_banner_mba_text',
+			'type' => 'textarea'
+		)
+	);
+	$wp_customize->add_setting(
+		'empower_pro_blocks_banner_mba_short_text',
+		array(
+			'default'           => $empower_pro_blocks_defaults['banner-mba-short-text'],
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_bannery_mba_short_text',
+		array(
+			'label'       => __('Banner Short Text (MBA)', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_banner_settings',
+			'settings'    => 'empower_pro_blocks_banner_mba_short_text',
+			'type' => 'textarea'
+		)
+	);
+	$wp_customize->add_setting(
+		'empower_pro_blocks_banner_mba_url',
+		array(
+			'default'           => $empower_pro_blocks_defaults['banner-mba-url'],
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_bannery_mba_url',
+		array(
+			'label'       => __('Banner URL (MBA)', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_banner_settings',
+			'settings'    => 'empower_pro_blocks_banner_mba_url',
+			'type' => 'text'
+		)
+	);
+
+	$wp_customize->add_setting(
+		'empower_pro_blocks_banner_mba_button',
+		array(
+			'default'           => $empower_pro_blocks_defaults['banner-mba-button'],
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'empower_pro_blocks_bannery_mba_button',
+		array(
+			'label'       => __('Banner Button Label (MBA)', 'empower-pro-blocks'),
+			'section'     => 'empower_pro_blocks_banner_settings',
+			'settings'    => 'empower_pro_blocks_banner_mba_button',
+			'type' => 'text'
+		)
+	);
 }
 
 add_action('customize_preview_init', 'empower_pro_blocks_customize_preview_init');

@@ -1,3 +1,66 @@
+.entry-content {
+	.epb-banner {
+		display: block;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		background-color: var(--epb-vars-altbackground-color);
+		min-height: 100px;
+		text-decoration: none !important;
+		&:hover {
+			background-color: var(--epb-vars-altbackground-color-hover);
+			.epb-banner-button .wp-block-button__link {
+				color: var(--epb-vars-darktext-color) !important;
+			}
+			.epb-banner-button .wp-block-button__link::after {
+				width: 98% !important;
+			}
+			.epb-banner-text {
+				color: var(--epb-vars-darktext-color) !important;
+			}
+		}
+
+		// position: relative;
+		// z-index: 101;
+		.wrap {
+			display: flex;
+			.epb-banner-image {
+				flex-shrink: 0;
+				img {
+					width: 180px;
+					display: block;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+			.epb-banner-text {
+				padding-top: 30px;
+				padding-bottom: 30px;
+				padding-left: 40px;
+				padding-right: 40px;
+				color: var(--epb-vars-defaulttext-color);
+				text-decoration: none !important;
+				.long-text {
+					display: block;
+					@media only screen and (max-width: $tablet_width) {
+						display: none;
+					}
+				}
+				.short-text {
+					display: none;
+					@media only screen and (max-width: $tablet_width) {
+						display: block;
+					}
+				}
+			}
+			.epb-banner-button {
+				margin-top: 10px;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
 .entry {
 	// background-color: #fff;
 	// margin-bottom: 60px;

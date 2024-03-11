@@ -32,7 +32,39 @@ if (function_exists('genesis_register_sidebar')) {
 function empower_pro_blocks_do_nav()
 {
 
-	if (is_page_template('template-blocks-home.php')) {
+	$category = '';
+	if (is_singular('event')) {
+		$post_id = get_the_ID();
+		$category = '';
+		if ($terms = get_the_terms($post_id, 'features')) {
+			foreach ($terms as $term) {
+				if ($term->slug == '12-week-mba') {
+					$category = '12-week-mba';
+				}
+			}
+		}
+	}
+
+	if ($category === '12-week-mba') {
+		// Do nothing if menu not supported.
+		if (!genesis_nav_menu_supported('primary-mba') || !has_nav_menu('primary-mba')) {
+			return;
+		}
+
+		$class = 'menu genesis-nav-menu menu-primary';
+		if (genesis_superfish_enabled()) {
+			$class .= ' js-superfish';
+		}
+
+		$menu = genesis_get_nav_menu(
+			[
+				'theme_location' => 'primary-mba',
+				'menu_class'     => $class,
+			]
+		);
+		$menu = str_replace('<nav', '<nav id="genesis-nav-primary"', $menu);
+		$menu = str_replace('nav-primary-mba', 'nav-primary nav-primary-mba', $menu);
+	} else if (is_page_template('template-blocks-home.php')) {
 		// Do nothing if menu not supported.
 		if (!genesis_nav_menu_supported('primary-home') || !has_nav_menu('primary-home')) {
 			return;
@@ -116,6 +148,7 @@ add_action('genesis_entry_content', 'empower_pro_blocks_do_post_content');
 function empower_pro_blocks_do_post_content()
 {
 	global $post;
+	global $empower_pro_blocks_defaults;
 
 	if (!is_single()) {
 		$post_format = get_post_format();
@@ -135,6 +168,18 @@ function empower_pro_blocks_do_post_content()
 			echo $more;
 
 			return;
+		}
+	}
+
+	if (is_page_template('template-blocks-mba.php')) {
+		global $empower_pro_blocks_appearance;
+		$url = $empower_pro_blocks_appearance['banner-mba-url'];
+		$text = $empower_pro_blocks_appearance['banner-mba-text'];
+		$short = $empower_pro_blocks_appearance['banner-mba-short-text'];
+		$image = $empower_pro_blocks_appearance['banner-mba-image'];
+		$button = $empower_pro_blocks_appearance['banner-mba-button'];
+		if ($text && $image) {
+			echo sprintf('<a href="%2$s" class="epb-banner alignfull"><div class="wrap"><div class="epb-banner-image"><img src="%1$s" /></div><div class="epb-banner-text"><div class="long-text">%3$s</div><div class="short-text">%5$s</div><div class="epb-banner-button wp-block-buttons"><div class="wp-block-button is-style-text"><span class="wp-block-button__link has-primary-background-color has-background" href="%2$s">%4$s</span></div></div></div></div></a>', $image, $url, $text, $button, $short);
 		}
 	}
 
@@ -189,8 +234,21 @@ add_filter('genesis_attr_body', 'empower_pro_blocks_attributes_body');
 function empower_pro_blocks_attributes_body($attributes)
 {
 
+	$class = '';
+	if (is_singular('event')) {
+		$post_id = get_the_ID();
+		$category = '';
+		if ($terms = get_the_terms($post_id, 'features')) {
+			foreach ($terms as $term) {
+				if ($term->slug == '12-week-mba') {
+					$class = 'mba-event-single';
+				}
+			}
+		}
+	}
+
 	$attributes['id'] = "master";
-	$attributes['class'] = implode(' ', get_body_class());
+	$attributes['class'] = implode(' ', get_body_class($class));
 
 	return $attributes;
 }
