@@ -23,7 +23,7 @@
 		// position: relative;
 		// z-index: 101;
 		.wrap {
-			// max-width: none !important;
+			max-width: none !important;
 			// padding-left: 0 !important;
 			// padding-right: 0 !important;
 			@media only screen and (max-width: $ipad_width) {
@@ -42,10 +42,11 @@
 				}
 			}
 			.epb-banner-text {
-				padding-top: 30px;
-				padding-bottom: 30px;
-				padding-left: 40px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				padding-left: 20px;
 				padding-right: 40px;
+				font-size: var(--epb-vars-body-font-size-small);
 				color: var(--epb-vars-defaulttext-color);
 				text-decoration: none !important;
 				strong,
@@ -70,6 +71,9 @@
 				flex-shrink: 0;
 				display: flex;
 				align-items: center;
+				.wp-block-button__link {
+					font-size: var(--epb-vars-body-font-size-xsmall) !important;
+				}
 			}
 		}
 	}
