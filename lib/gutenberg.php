@@ -138,3 +138,13 @@ function empower_pro_blocks_enqueue_scripts()
 	wp_enqueue_script('abilitie-widgets-main', "https://widgets.abilitie.com/main.js", array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'empower_pro_blocks_enqueue_scripts');
+
+function empower_pro_blocks_add_type_attribute_two($tag, $handle, $src)
+{
+	// Add type="module" to specific scripts
+	if ('abilitie-widgets-runtime' === $handle || 'abilitie-widgets-polyfill' === $handle || 'abilitie-widgets-main' === $handle) {
+		$tag = '<script type="module" src="' . esc_url($src) . '"></script>';
+	}
+	return $tag;
+}
+add_filter('script_loader_tag', 'empower_pro_blocks_add_type_attribute_two', 10, 3);
