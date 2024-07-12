@@ -207,7 +207,7 @@ bottom-spacing: 40px;
 
 return array(
 	// Fonts.
-	'fonts-url'                    => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Source+Sans+Pro:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap',
+	'fonts-url'                    => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Source+Sans+Pro:100,100i,300,300i,400,400i,600,600i,700,700i|Caveat:wght@700&display=swap',
 	'custom-fonts-url'             => '',
 	'icons-url'                    => 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
 	'icons-js-url'                 => 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js',
